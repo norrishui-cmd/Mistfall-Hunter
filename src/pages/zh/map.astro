@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { MAPS, CATEGORIES } from '../../data/maps';
+
+const lang = 'zh' as const;
+const site = Astro.site ?? new URL('https://mistfallhunter.me');
+const catByType = Object.fromEntries(CATEGORIES.map((c) => [c.type, c]));
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '首页', item: new URL('/zh/', site).href },
+    { '@type': 'ListItem', position: 2, name: '地图', item: new URL('/zh/map', site).href },
+  ],
+};
+---
+
+<BaseLayout
+  lang={lang}
+  path="/map"
+  title="Mistfall Hunter 交互式地图：撤离点、Boss 与搜刮"
+  description="Mistfall Hunter 交互式地图，覆盖 Solemn Needles 与 Hallowgrove——可切换撤离点、Mist Lord Boss、高价值搜刮与地标，支持平移、缩放与过滤。"
+  jsonLd={[breadcrumb]}
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">交互式地图</span>
+      <h1 class="page-title">Mistfall Hunter 交互式地图</h1>
+      <p class="lead">
+        平移、缩放，并按撤离点、Boss、搜刮和地标过滤每个区域。用标签切换地图；点任意标记看详情。
+      </p>
+
+      <div class="callout callout--warn">
+        <span class="eyebrow">早期版本</span>
+        <p>
+          底图为示意性图示，下面的标记也只是示例。真实、经核实的点位会在 7 月 30 日发售后随社区探索逐步补充——
+          请常回来看它一点点填满。
+        </p>
+      </div>
+
+      <div class="maptabs" role="tablist">
+        {MAPS.map((m, i) => (
+          <button type="button" data-target={m.id} class={i === 0 ? 'is-active' : ''}>{m.zh.name}</button>
+        ))}
+      </div>
+
+      <div class="mapfilters">
+        {CATEGORIES.map((c) => (
+          <label class="legend-chip" data-type={c.type}>
+            <input type="checkbox" value={c.type} checked />
+            <svg class="m-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style={`color:${c.color}`}><path d={c.icon} /></svg>
+            <span class="chip-label">{c.zh}</span>
+          </label>
+        ))}
+      </div>
+
+      <div class="mapwrap">
+        {MAPS.map((m, i) => (
+          <div class="mapstage" data-map={m.id} hidden={i !== 0}>
+            <div class="mapzoom">
+              <button type="button" data-act="in" aria-label="放大">+</button>
+              <button type="button" data-act="out" aria-label="缩小">−</button>
+              <button type="button" data-act="reset" aria-label="复位">⤾</button>
+            </div>
+            <div class="mapstage-inner">
+              <img class="mapimg" src={m.image} alt={`${m.zh.name} 示意地图`} width="1000" height="700" />
+              {m.markers.map((mk) => {
+                const c = catByType[mk.type];
+                return (
+                  <button
+                    class="marker"
+                    data-type={mk.type}
+                    data-name={mk.zh.name}
+                    data-note={mk.zh.note ?? ''}
+                    style={`left:${mk.x}%;top:${mk.y}%;color:${c.color}`}
+                    aria-label={mk.zh.name}
+                    type="button"
+                  >
+                    <svg class="m-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d={c.icon} /></svg>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mapinfo" id="mapinfo"><span class="mi-hint">点一个标记查看详情。</span></div>
+
+      <div class="prose" style="margin-top:2.5rem">
+        {MAPS.map((m) => (
+          <Fragment>
+            <h2>{m.zh.name}</h2>
+            <p>{m.zh.intro}</p>
+            <ul>
+              {m.markers.map((mk) => (
+                <li><strong>{mk.zh.name}</strong>{mk.zh.note ? ` — ${mk.zh.note}` : ''}</li>
+              ))}
+            </ul>
+          </Fragment>
+        ))}
+        <p>
+          刚上手？先看<a href="/zh/beginner-guide">撤离机制怎么运作</a>，或用<a href="/zh/classes">Tier List</a> 挑个职业。
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .maptabs { display: flex; gap: 0.4rem; margin: 1.5rem 0 1rem; flex-wrap: wrap; }
+  .maptabs button {
+    font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.03em;
+    padding: 0.55em 1em; background: var(--stone); color: var(--ash);
+    border: 1px solid var(--line); border-radius: 2px; cursor: pointer;
+  }
+  .maptabs button:hover { color: var(--gylden); }
+  .maptabs button.is-active { color: #0e1014; background: var(--gylden); border-color: var(--gylden); }
+
+  .mapfilters { display: flex; flex-wrap: wrap; gap: 0.5rem 0.7rem; margin-bottom: 1rem; }
+  .legend-chip {
+    display: inline-flex; align-items: center; gap: 0.45em;
+    font-family: var(--mono); font-size: 0.74rem; color: var(--bone);
+    cursor: pointer; user-select: none; border: 1px solid var(--line);
+    padding: 0.35em 0.65em; border-radius: 2px; transition: opacity 0.15s ease;
+  }
+  .legend-chip input { position: absolute; opacity: 0; width: 0; height: 0; }
+  .legend-chip .m-icon { width: 16px; height: 16px; }
+  .legend-chip:has(input:not(:checked)) { opacity: 0.4; }
+  .legend-chip:has(input:focus-visible) { outline: 2px solid var(--gylden-glow); outline-offset: 2px; }
+
+  .mapstage {
+    position: relative; aspect-ratio: 1000 / 700; max-height: 72vh;
+    overflow: hidden; border: 1px solid var(--line); border-radius: 4px;
+    background: var(--abyss); touch-action: none; cursor: grab;
+  }
+  .mapstage.grabbing { cursor: grabbing; }
+  .mapstage[hidden] { display: none; }
+  .mapstage-inner { position: absolute; top: 0; left: 0; width: 100%; transform-origin: 0 0; will-change: transform; }
+  .mapimg { display: block; width: 100%; height: auto; user-select: none; -webkit-user-drag: none; pointer-events: none; }
+
+  .marker {
+    position: absolute; transform: translate(-50%, -50%);
+    width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; background: rgba(14, 16, 20, 0.85); border: 1.5px solid currentColor;
+    cursor: pointer; padding: 0;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), 0 0 10px -2px currentColor;
+  }
+  .marker .m-icon { width: 15px; height: 15px; }
+  .marker:hover { background: rgba(24, 27, 34, 0.95); }
+  .marker.is-active { box-shadow: 0 0 0 2px currentColor, 0 0 14px 0 currentColor; }
+
+  .mapwrap.hide-extract .marker[data-type="extract"],
+  .mapwrap.hide-boss .marker[data-type="boss"],
+  .mapwrap.hide-loot .marker[data-type="loot"],
+  .mapwrap.hide-landmark .marker[data-type="landmark"] { display: none; }
+
+  .mapzoom { position: absolute; top: 0.6rem; right: 0.6rem; z-index: 5; display: flex; flex-direction: column; gap: 0.3rem; }
+  .mapzoom button {
+    width: 2rem; height: 2rem; font-family: var(--mono); font-size: 1.05rem; line-height: 1;
+    background: rgba(14, 16, 20, 0.85); color: var(--bone); border: 1px solid var(--line);
+    border-radius: 3px; cursor: pointer;
+  }
+  .mapzoom button:hover { border-color: var(--gylden); color: var(--gylden); }
+
+  .mapinfo {
+    margin-top: 0.9rem; min-height: 3.4rem; border: 1px solid var(--line); border-radius: 4px;
+    padding: 0.9rem 1rem; background: var(--stone); display: flex; flex-direction: column; gap: 0.25rem;
+  }
+  .mapinfo .mi-hint { color: var(--ash); font-size: 0.9rem; }
+  .mapinfo .mi-type {
+    font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--mi-accent, var(--gylden));
+  }
+  .mapinfo .mi-name { font-family: var(--display); font-size: 1.2rem; color: var(--bone); }
+  .mapinfo .mi-note { color: var(--ash); font-size: 0.92rem; line-height: 1.5; }
+</style>
+
+<script>
+  import '../../scripts/map.ts';
+</script>
