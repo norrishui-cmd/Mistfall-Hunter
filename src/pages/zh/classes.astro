@@ -1,0 +1,226 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang = 'zh' as const;
+const site = Astro.site ?? new URL('https://mistfallhunter.me');
+
+const tiers = [
+  { tier: 'S', cls: 'tier-s', names: 'Sorcerer · Shadowstrix', note: '最高的伤害上限，以及最强的单人猎人。' },
+  { tier: 'A', cls: 'tier-a', names: 'Blackarrow · Withered Knight', note: '最强远程输出，以及最强近战决斗者。' },
+  { tier: 'B', cls: 'tier-b', names: 'Mercenary', note: '最稳的选择，也是最适合新手的职业。' },
+  { tier: 'C', cls: 'tier-c', names: 'Seer（仅单人）', note: '单人最弱——但在配合默契的三人队里能跃升到 S 级。' },
+];
+
+const classes = [
+  {
+    name: 'Sorcerer',
+    badge: 'S', cls: 'tier-s',
+    role: '远程法师 · 脆皮炮台',
+    body: '伤害之王。Elemental 路线叠加火、雷、冰的元素反应；Stardust 路线则换成瞬发爆发。一段短闪让你脱离近战。你能从远处秒清怪群、赢下团战——只要没人贴到你脸上。',
+    strengths: '最高伤害上限、清怪极快、团战统治力强。',
+    weaknesses: '血量极低——一次站位失误就会被秒。',
+    best: '能管理好间距和站位的玩家。',
+  },
+  {
+    name: 'Shadowstrix',
+    badge: 'S', cls: 'tier-s',
+    role: '潜行刺客 · 匕首',
+    body: '单人之王。潜入隐身、选定目标、爆发秒杀，然后消失重置。你来决定战斗何时发生——这在撤离游戏里就是一切。正面硬刚里若开手打空会很吃亏，但你几乎不必硬刚。',
+    strengths: '最强单人职业、掌控每一次接战、顶级决斗者。',
+    weaknesses: '公平对拼容错低；面对超肉目标吃力。',
+    best: '单人玩家，以及喜欢猎杀其他猎人的人。',
+  },
+  {
+    name: 'Mercenary',
+    badge: 'B', cls: 'tier-b',
+    role: '重甲前排 · 单手剑盾或大锤',
+    body: '新手职业。重甲、格挡、招架、盾击和击晕，让它成为最容错的入门方式。它样样都行、但样样不顶尖，所以到了高端会被压制——可在你的前几十小时里，这是最安全的位置。',
+    strengths: '肉、容错、可靠。最佳新手之选。',
+    weaknesses: '万金油——面对高手会掉队。红光（不可格挡）攻击千万别挡。',
+    best: '新手，以及想扛住自己失误的玩家。',
+  },
+  {
+    name: 'Blackarrow',
+    badge: 'A', cls: 'tier-a',
+    role: '弓箭手 · 远程',
+    body: '把远程压制玩明白。Archer 路线靠蓄力箭和箭矢引爆；Hunter 路线则上流血、麻痹等减益。安全距离下对 Boss 和 PvE 的伤害极佳，靠持续骚扰单人也很强——前提是你的准头够稳。',
+    strengths: 'Boss/PvE 伤害高、远程安全骚扰、单人强。',
+    weaknesses: '吃准头；一旦被贴近就变弱。',
+    best: '准头好、偏爱远程作战的玩家。',
+  },
+  {
+    name: 'Seer',
+    badge: 'C', cls: 'tier-c',
+    role: '辅助 · 法器或锤',
+    body: '团队放大器。治疗、护盾、增益和控制，能让一支小队熬过本该输掉的战斗；Reverent（护盾）路线比纯奶更好上手。在配合默契的三人队里它确实是顶级。但单人几乎没有击杀压力——这是唯一一个成败全看队伍的职业。',
+    strengths: '在默契三人队里价值极大；让团队屹立不倒。',
+    weaknesses: '单人时是差距明显的最弱职业。',
+    best: '固定小队，以及专职辅助的玩家。',
+  },
+  {
+    name: 'Withered Knight',
+    badge: 'A', cls: 'tier-a',
+    role: '重甲近战决斗者 · 双手巨剑 · 最新职业',
+    body: '最新加入的纯进攻职业。招牌的 Wither 机制会叠加一层减益，随后引爆造成高额伤害与处决；一把抓钩能把想逃的目标拽回近身范围。连招丰富、能招架，它要的就是时刻贴在你脸上。',
+    strengths: '强力的 1v1 决斗，Wither 引爆带来的高爆发。',
+    weaknesses: '必须留在近战——会被远程放风筝，连招中被偷袭很吃亏。',
+    best: '为近战决斗而生的进攻型玩家。',
+  },
+];
+
+const faqs = [
+  { q: 'Mistfall Hunter 有几个职业？', a: '六个：Sorcerer、Shadowstrix、Mercenary、Blackarrow、Seer，以及 Withered Knight。' },
+  { q: '新手最适合哪个职业？', a: 'Mercenary——重甲、格挡和招架让它在你学习阶段最容错。' },
+  { q: '最强的职业是哪个？', a: '目前 Sorcerer 伤害上限最高，也是测试里的统治级职业。发售前后预计会有平衡调整。' },
+  { q: '单人最强的职业是？', a: 'Shadowstrix，靠隐身和随心所欲的接战。Blackarrow 是最强的远程单人选择。' },
+  { q: 'Seer 很弱吗？', a: '只有单人时弱，几乎没有击杀压力。在配合默契的三人队里，它是游戏里最强的职业之一。' },
+];
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '首页', item: new URL('/zh/', site).href },
+    { '@type': 'ListItem', position: 2, name: '职业', item: new URL('/zh/classes', site).href },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'zh-Hans',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<BaseLayout
+  lang={lang}
+  path="/classes"
+  title="Mistfall Hunter 职业 & Tier List：六大职业排名"
+  description="Mistfall Hunter 六大职业全排名——Sorcerer、Shadowstrix、Mercenary、Blackarrow、Seer、Withered Knight——附 solo、PvP 与新手的最佳选择。"
+  jsonLd={[breadcrumb, faqSchema]}
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">职业 &amp; Tier List</span>
+      <h1 class="page-title">Mistfall Hunter 职业 &amp; Tier List</h1>
+      <p class="lead">
+        六大职业，玩法差异很大。一句话版：<strong>Sorcerer</strong> 打得最痛、
+        <strong>Shadowstrix</strong> 单人最强、<strong>Mercenary</strong> 最好上手、
+        <strong>Seer</strong> 只有组队才出彩。下面是完整排名和逐一解析。
+      </p>
+
+      <hr class="thread" />
+
+      <h2 class="section-title">Tier List</h2>
+      <div class="tier-table">
+        {tiers.map((t) => (
+          <div class="tier-row">
+            <span class={`tier-badge ${t.cls}`}>{t.tier}</span>
+            <div class="tier-info">
+              <span class="tier-names">{t.names}</span>
+              <span class="tier-note">{t.note}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="eyebrow">先看这条</span>
+        <p>
+          这份排名基于测试期 meta、且偏 PvP。强度会随场景变化——Seer 单人是 C 级、三人队却是 S 级——
+          而 Sorcerer 的统治力引来了大量平衡吐槽，7 月 30 日发售前后预计会调整。挑你觉得好玩的；
+          配装到位，几乎everything 都可用。
+        </p>
+      </div>
+
+      {classes.map((c) => (
+        <article class="class-block">
+          <div class="class-head">
+            <h2 class="class-name">{c.name}</h2>
+            <span class={`tier-badge ${c.cls}`}>{c.badge}</span>
+          </div>
+          <p class="class-role">{c.role}</p>
+          <p class="class-body">{c.body}</p>
+          <dl class="sw">
+            <div><dt>优势</dt><dd>{c.strengths}</dd></div>
+            <div><dt>劣势</dt><dd>{c.weaknesses}</dd></div>
+            <div><dt>适合</dt><dd>{c.best}</dd></div>
+          </dl>
+        </article>
+      ))}
+
+      <div class="prose">
+        <h2>配装马上就来</h2>
+        <p>
+          职业只是一半——像 Valor、Stoic 这样的词缀，加上天赋与符文，才决定一个职业实际怎么打。
+          完整的配装库正在路上。刚上手游戏？先看<a href="/zh/beginner-guide">撤离机制怎么运作</a>。
+        </p>
+      </div>
+
+      <h2 class="section-title" style="margin-top:2.5rem">常见问题</h2>
+      <div class="faq">
+        {faqs.map((f) => (
+          <div class="faq-item">
+            <p class="faq-q">{f.q}</p>
+            <p class="faq-a">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .tier-table {
+    border: 1px solid var(--line);
+    margin: 1.5rem 0 0;
+  }
+  .tier-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.1rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .tier-row:last-child { border-bottom: 0; }
+  .tier-info { display: flex; flex-direction: column; gap: 0.15rem; }
+  .tier-names { font-family: var(--display); font-size: 1.2rem; font-weight: 600; color: var(--bone); }
+  .tier-note { color: var(--ash); font-size: 0.88rem; }
+
+  .tier-badge {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 3px;
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid;
+  }
+  .tier-s { color: #f2d27a; border-color: #c8a042; background: rgba(200, 160, 66, 0.12); }
+  .tier-a { color: #9fd0c9; border-color: #5f8f89; background: rgba(127, 168, 163, 0.12); }
+  .tier-b { color: var(--bone); border-color: var(--ash); background: rgba(150, 156, 166, 0.1); }
+  .tier-c { color: #d08a82; border-color: #9b4a4a; background: rgba(177, 90, 82, 0.1); }
+
+  .class-block {
+    padding: 1.6rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .class-block:first-of-type { border-top: 1px solid var(--line); }
+  .class-head { display: flex; align-items: center; gap: 0.8rem; }
+  .class-name { font-family: var(--display); font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 600; margin: 0; color: var(--bone); }
+  .class-role { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--gylden); margin: 0.5rem 0 0.9rem; }
+  .class-body { color: var(--bone); margin: 0 0 1.1rem; max-width: 44rem; line-height: 1.8; }
+  .sw { display: grid; gap: 1px; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); background: var(--line); border: 1px solid var(--line); margin: 0; }
+  .sw > div { background: var(--abyss); padding: 0.85rem 1rem; }
+  .sw dt { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ash); margin-bottom: 0.3rem; }
+  .sw dd { margin: 0; color: var(--bone); font-size: 0.92rem; line-height: 1.5; }
+</style>
