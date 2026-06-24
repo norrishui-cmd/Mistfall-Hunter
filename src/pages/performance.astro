@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const lang = 'en' as const;
+const site = Astro.site ?? new URL('https://mistfallhunter.me');
+
+const quickFixes = [
+  { t: 'Update your GPU drivers', d: 'Install the latest NVIDIA, AMD, or Intel driver. Stutter on a fresh game is very often an out-of-date driver.' },
+  { t: 'Verify the game files', d: 'Steam → right-click the game → Properties → Installed Files → Verify integrity. On Xbox, use Manage → repair. Fixes corrupt shader/asset files.' },
+  { t: 'Kill background apps', d: 'Close browsers, downloads, and anything eating CPU or RAM while you play.' },
+  { t: 'Disable in-game overlays', d: 'Turn off Discord, GeForce Experience / NVIDIA App, and Xbox Game Bar overlays — a very common cause of both stutter and crashes.' },
+  { t: 'Force max performance', d: 'On laptops, set the game to your dedicated GPU. Set Windows to the High performance power plan and leave Game Mode on.' },
+];
+
+const faqs = [
+  { q: 'Why does Mistfall Hunter stutter so much?', a: 'A lot of it is the game itself — the beta had widespread stuttering even on high-end PCs, and the developer named stability its top fix before launch. Driver updates, an in-game frame cap, and lower shadow/fog settings reduce it on your end while patches address the rest.' },
+  { q: 'How do I fix crashes?', a: 'Update GPU drivers and Windows, verify the game files, disable overlays (Discord/NVIDIA/Game Bar), lower settings, remove any GPU overclock, and make sure you have enough free RAM and VRAM.' },
+  { q: 'Do I need a paid FPS booster or a VPN?', a: 'No. "Booster" apps and VPNs do not fix engine-level stutter or shader compilation, and a VPN does nothing for frame rate. The free steps on this page plus the game patches are what actually matter.' },
+  { q: 'Will Mistfall Hunter run on my PC?', a: 'Official system requirements were not finalized at the time of writing. As a current-gen Unreal-style title, a modern multi-core CPU, 16GB RAM, and a recent mid-range GPU should handle it once it is patched. We will add confirmed specs when they are published.' },
+];
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', site).href },
+    { '@type': 'ListItem', position: 2, name: 'Performance', item: new URL('/performance', site).href },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<BaseLayout
+  lang={lang}
+  path="/performance"
+  title="Mistfall Hunter Stuttering & FPS Fix (No Paid Booster)"
+  description="A clean, honest fix for Mistfall Hunter stuttering, low FPS, and crashes — driver and in-game settings that actually help. No paid 'FPS booster' or VPN required."
+  jsonLd={[breadcrumb, faqSchema]}
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Performance</span>
+      <h1 class="page-title">Fix Mistfall Hunter stuttering &amp; low FPS</h1>
+      <p class="lead">
+        The stutter is real and partly on the game — but the right drivers, a frame cap, and a few
+        settings genuinely smooth it out. No paid "booster" needed. Here's the clean version.
+      </p>
+
+      <hr class="thread" />
+
+      <div class="prose">
+        <h2>Is it you or the game?</h2>
+        <p>
+          Mostly the game, for now. The beta saw widespread stuttering and crashes <strong>even on
+          high-end hardware</strong>, and the developer has said stability is its number-one fix
+          before the July 30 launch — so expect it to improve with patches. The steps below cut the
+          part that's on your end and make frametimes smoother in the meantime.
+        </p>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="eyebrow">Skip the snake oil</span>
+        <p>
+          You do <strong>not</strong> need a paid "FPS booster" app or a VPN. They don't fix
+          engine-level stutter or shader compilation, and a VPN does nothing for frame rate. Free
+          driver updates and the in-game settings here are what move the needle.
+        </p>
+      </div>
+
+      <h2 class="section-title">Quick fixes — do these first</h2>
+      <ol class="checklist">
+        {quickFixes.map((f, i) => (
+          <li class="check-step">
+            <span class="check-num">{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h3 class="check-title">{f.t}</h3>
+              <p class="check-desc">{f.d}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      <div class="prose">
+        <h2>In-game settings that cut stutter</h2>
+        <p>Once the basics are done, these settings give the biggest smoothness gains:</p>
+        <ul>
+          <li><strong>Cap your frame rate</strong> (or enable V-Sync). Even frametimes feel far smoother than a high but spiky frame rate — this is the single best fix for stutter.</li>
+          <li><strong>Lower Shadows and View / Draw Distance first.</strong> These usually cost the most for the least visual loss.</li>
+          <li><strong>Turn down Volumetric Fog and heavy effects.</strong> The mist is everywhere in this game and is a likely culprit for frame drops.</li>
+          <li><strong>Motion Blur off.</strong> Cheap clarity win.</li>
+          <li><strong>Try exclusive Fullscreen</strong> instead of Borderless if you get regular hitching.</li>
+          <li><strong>Drop Texture quality only if VRAM is your bottleneck</strong> (textures pop in, stutter when turning).</li>
+        </ul>
+
+        <h2>Shader &amp; traversal stutter</h2>
+        <p>
+          Brief hitching the first time you enter an area, or right after launch, is usually shader
+          compilation. Let the game sit through any "compiling shaders" / initial load without
+          alt-tabbing, and expect the first run through a new zone to smooth out on the second pass.
+        </p>
+
+        <h2>If it crashes</h2>
+        <ul>
+          <li>Update GPU drivers and Windows.</li>
+          <li>Verify / repair the game files.</li>
+          <li>Disable overlays (Discord, NVIDIA App, Xbox Game Bar).</li>
+          <li>Remove any GPU overclock — including factory "OC" profiles if you're unstable.</li>
+          <li>Make sure you have enough free RAM and VRAM; close memory hogs.</li>
+        </ul>
+
+        <h2>Console (Xbox &amp; PS5)</h2>
+        <p>
+          Fewer levers here: install the latest system and game updates, pick a Performance mode if
+          one is offered, and fully close/reinstall the game if crashes persist. The rest is on the
+          launch patches.
+        </p>
+
+        <h2>Bottom line</h2>
+        <p>
+          Part of the stutter is the build and will improve as Bellring patches it; the rest you can
+          tame today with drivers, a frame cap, and lighter shadows and fog. No paid tool will do it
+          for you. New to the game? Here's <a href="/beginner-guide">how extraction works</a>, or
+          pick a class with the <a href="/classes">tier list</a>.
+        </p>
+      </div>
+
+      <div class="callout">
+        <span class="eyebrow">Heads-up</span>
+        <p>
+          Exact setting names are based on the beta and general PC tuning — the final game's menu may
+          label things slightly differently. This page updates as launch settings and official specs
+          are confirmed.
+        </p>
+      </div>
+
+      <h2 class="section-title" style="margin-top:2.5rem">FAQ</h2>
+      <div class="faq">
+        {faqs.map((f) => (
+          <div class="faq-item">
+            <p class="faq-q">{f.q}</p>
+            <p class="faq-a">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .checklist {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  .check-step {
+    display: flex;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .check-num {
+    font-family: var(--mono);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gylden);
+    line-height: 1.4;
+    flex: 0 0 auto;
+    min-width: 2.2rem;
+  }
+  .check-title {
+    font-family: var(--display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--bone);
+    margin: 0 0 0.3rem;
+    line-height: 1.1;
+  }
+  .check-desc {
+    margin: 0;
+    color: var(--ash);
+    line-height: 1.6;
+  }
+</style>
