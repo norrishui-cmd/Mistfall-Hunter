@@ -1,0 +1,189 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang = 'zh' as const;
+const site = Astro.site ?? new URL('https://mistfallhunter.me');
+
+const quickFixes = [
+  { t: '更新显卡驱动', d: '装上最新的 NVIDIA、AMD 或 Intel 驱动。新游戏卡顿，很多时候就是驱动过旧。' },
+  { t: '校验游戏文件', d: 'Steam → 右键游戏 → 属性 → 已安装文件 → 验证文件完整性。Xbox 用"管理 → 修复"。可修复损坏的着色器/资源文件。' },
+  { t: '关掉后台程序', d: '玩的时候关闭浏览器、下载，以及任何占 CPU 或内存的东西。' },
+  { t: '关闭游戏内悬浮层', d: '关掉 Discord、GeForce Experience / NVIDIA App、Xbox Game Bar 的 overlay——这是卡顿和崩溃都很常见的元凶。' },
+  { t: '强制最高性能', d: '笔记本上把游戏指定到独显。Windows 设为"高性能"电源计划，并保持游戏模式开启。' },
+];
+
+const faqs = [
+  { q: 'Mistfall Hunter 为什么这么卡？', a: '很大一部分是游戏本身——测试期即便高配 PC 也普遍卡顿，开发商已把稳定性列为发售前的首要修复项。更新驱动、游戏内限帧、调低阴影/雾效能在你这边减轻卡顿，其余靠后续补丁。' },
+  { q: '崩溃怎么修？', a: '更新显卡驱动和 Windows、校验游戏文件、关闭悬浮层（Discord/NVIDIA/Game Bar）、调低画质、取消任何显卡超频，并确保有足够的空闲内存和显存。' },
+  { q: '需要买付费加速器或 VPN 吗？', a: '不需要。"加速器"软件和 VPN 修不了引擎级卡顿或着色器编译，VPN 对帧数毫无帮助。本页这些免费步骤加上游戏补丁，才是真正有用的。' },
+  { q: '我的电脑跑得动 Mistfall Hunter 吗？', a: '截至撰稿时官方配置尚未最终公布。作为一款当世代的虚幻风格游戏，现代多核 CPU、16GB 内存、近几年的中端显卡，在打过补丁后应能胜任。确认的配置公布后我们会补上。' },
+];
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '首页', item: new URL('/zh/', site).href },
+    { '@type': 'ListItem', position: 2, name: '性能优化', item: new URL('/zh/performance', site).href },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'zh-Hans',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<BaseLayout
+  lang={lang}
+  path="/performance"
+  title="Mistfall Hunter 卡顿 & 帧数修复（不用付费加速器）"
+  description="一份干净、诚实的 Mistfall Hunter 卡顿、低帧与崩溃修复——真正有用的驱动与游戏内设置。不需要任何付费加速器或 VPN。"
+  jsonLd={[breadcrumb, faqSchema]}
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">性能优化</span>
+      <h1 class="page-title">修复 Mistfall Hunter 卡顿与低帧</h1>
+      <p class="lead">
+        卡顿是真的，且有一部分在游戏本身——但对的驱动、限帧和几项设置，确实能把它抚平。
+        不需要付费"加速器"。下面是干净版。
+      </p>
+
+      <hr class="thread" />
+
+      <div class="prose">
+        <h2>是你的问题还是游戏的问题？</h2>
+        <p>
+          目前主要是游戏的问题。测试期出现了普遍的卡顿和崩溃，<strong>即便高配硬件也不例外</strong>，
+          开发商也表示稳定性是 7 月 30 日发售前的头号修复项——所以预计会随补丁改善。
+          下面的步骤先把属于你这边的那部分降下去，同时让帧时间更平滑。
+        </p>
+      </div>
+
+      <div class="callout callout--warn">
+        <span class="eyebrow">别交智商税</span>
+        <p>
+          你<strong>不</strong>需要付费"加速器"软件或 VPN。它们修不了引擎级卡顿或着色器编译，
+          VPN 对帧数也毫无作用。免费的驱动更新和这里的游戏内设置，才是真正有效的。
+        </p>
+      </div>
+
+      <h2 class="section-title">优先做这几步</h2>
+      <ol class="checklist">
+        {quickFixes.map((f, i) => (
+          <li class="check-step">
+            <span class="check-num">{String(i + 1).padStart(2, '0')}</span>
+            <div>
+              <h3 class="check-title">{f.t}</h3>
+              <p class="check-desc">{f.d}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      <div class="prose">
+        <h2>能减卡顿的游戏内设置</h2>
+        <p>基础做完后，这些设置带来的平滑提升最大：</p>
+        <ul>
+          <li><strong>限制帧率</strong>（或开 V-Sync）。平稳的帧时间比又高又抖的帧率顺得多——这是治卡顿的头号手段。</li>
+          <li><strong>先降阴影和视距 / 绘制距离。</strong>通常它们最耗性能、画面损失却最小。</li>
+          <li><strong>调低体积雾和重特效。</strong>这游戏到处是浓雾，很可能是掉帧的元凶。</li>
+          <li><strong>关掉动态模糊。</strong>便宜的清晰度提升。</li>
+          <li><strong>若频繁卡顿，试试独占全屏</strong>，别用无边框。</li>
+          <li><strong>仅当显存吃紧时再降材质</strong>（材质迟显、转身时卡）。</li>
+        </ul>
+
+        <h2>着色器 / 场景切换卡顿</h2>
+        <p>
+          第一次进入某区域、或刚启动时的短暂卡顿，通常是着色器编译。遇到"正在编译着色器"/初次加载时，
+          让它跑完、别 alt-tab；新区域第一趟会卡、第二趟通常就顺了。
+        </p>
+
+        <h2>如果崩溃</h2>
+        <ul>
+          <li>更新显卡驱动和 Windows。</li>
+          <li>校验 / 修复游戏文件。</li>
+          <li>关闭悬浮层（Discord、NVIDIA App、Xbox Game Bar）。</li>
+          <li>取消任何显卡超频——不稳定时连出厂"OC"档也关掉。</li>
+          <li>确保有足够空闲内存和显存，关掉吃内存的程序。</li>
+        </ul>
+
+        <h2>主机（Xbox 与 PS5）</h2>
+        <p>
+          可调的更少：装上最新系统与游戏更新，有性能模式就选性能模式，若持续崩溃就彻底关闭/重装游戏。
+          其余的就看发售补丁了。
+        </p>
+
+        <h2>结论</h2>
+        <p>
+          一部分卡顿是版本问题，会随 Bellring 的补丁改善；其余的今天就能靠驱动、限帧、调低阴影与雾效压下去。
+          没有任何付费工具能替你搞定。刚上手？看<a href="/zh/beginner-guide">撤离机制怎么运作</a>，
+          或用<a href="/zh/classes">Tier List</a> 挑个职业。
+        </p>
+      </div>
+
+      <div class="callout">
+        <span class="eyebrow">提示</span>
+        <p>
+          具体设置名称基于测试版和通用 PC 调优——正式版菜单的叫法可能略有不同。
+          发售设置与官方配置确认后，本页会更新。
+        </p>
+      </div>
+
+      <h2 class="section-title" style="margin-top:2.5rem">常见问题</h2>
+      <div class="faq">
+        {faqs.map((f) => (
+          <div class="faq-item">
+            <p class="faq-q">{f.q}</p>
+            <p class="faq-a">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .checklist {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+  .check-step {
+    display: flex;
+    gap: 1.1rem;
+    align-items: flex-start;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .check-num {
+    font-family: var(--mono);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gylden);
+    line-height: 1.4;
+    flex: 0 0 auto;
+    min-width: 2.2rem;
+  }
+  .check-title {
+    font-family: var(--display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--bone);
+    margin: 0 0 0.3rem;
+    line-height: 1.1;
+  }
+  .check-desc {
+    margin: 0;
+    color: var(--ash);
+    line-height: 1.6;
+  }
+</style>
