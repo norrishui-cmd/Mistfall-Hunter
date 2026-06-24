@@ -1,0 +1,270 @@
+/* =========================================================================
+   Mistfall Hunter Hub — design system
+   Concept: a cold, dead world (Weavereach) seeping with the corrupting
+   GOLDEN MIST. Signature motif = the "Web of Fate" gold thread, used as
+   dividers, the 1px gaps in the woven card grid, and eyebrow ticks.
+   ========================================================================= */
+
+:root {
+  /* color — corruption (warm gold) bleeding into the cold dark */
+  --abyss: #0e1014;        /* base background, cold near-black */
+  --stone: #181b22;        /* raised panels */
+  --stone-2: #20242d;      /* hover / elevated */
+  --bone: #ece6d6;         /* primary text, parchment-bone */
+  --ash: #969ca6;          /* muted cold text */
+  --faint: #5c616b;        /* disabled / very muted */
+  --gylden: #c8a042;       /* corroded gold — primary accent */
+  --gylden-glow: #f2d27a;  /* brighter gold — highlights */
+  --mist: #7fa8a3;         /* cold mist teal — used sparingly */
+  --ichor: #b15a52;        /* faded blood — danger / death, sparing */
+  --line: rgba(200, 160, 66, 0.16); /* gold hairline / thread */
+
+  /* type */
+  --display: "Cormorant Garamond", "Noto Serif SC", Georgia, "Songti SC", serif;
+  --body: "Hanken Grotesk", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --mono: "Spline Sans Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* layout */
+  --maxw: 68rem;
+  --maxw-prose: 44rem;
+}
+
+/* ---------- reset / base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--abyss);
+  color: var(--bone);
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* the mist seeping in from above — fixed, ambient */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(70% 38% at 50% -8%, rgba(200, 160, 66, 0.07), transparent 60%);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--gylden); }
+
+:focus-visible { outline: 2px solid var(--gylden-glow); outline-offset: 2px; border-radius: 2px; }
+
+h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.08; color: var(--bone); }
+
+/* ---------- layout helpers ---------- */
+.container { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: 1.25rem; }
+.section { padding-block: clamp(2.5rem, 7vh, 4.5rem); }
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  background: var(--gylden); color: #0e1014;
+  padding: 0.6em 1em; font-family: var(--mono); font-size: 0.85rem; text-decoration: none;
+}
+.skip-link:focus { left: 0; }
+
+/* ---------- signature: the Web of Fate thread ---------- */
+.thread {
+  position: relative; height: 1px; border: 0;
+  margin: clamp(2.5rem, 6vh, 4rem) 0;
+  background: linear-gradient(90deg, transparent, var(--line) 15%, var(--gylden) 50%, var(--line) 85%, transparent);
+}
+.thread::after {
+  content: ""; position: absolute; top: 50%; left: 50%;
+  width: 6px; height: 6px; background: var(--gylden-glow);
+  transform: translate(-50%, -50%) rotate(45deg);
+  box-shadow: 0 0 8px rgba(242, 210, 122, 0.5);
+}
+
+/* ---------- eyebrow (mono label with a thread tick) ---------- */
+.eyebrow {
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--gylden);
+  display: inline-flex; align-items: center; gap: 0.6em;
+}
+.eyebrow::before { content: ""; width: 16px; height: 1px; background: var(--gylden); display: inline-block; }
+
+/* ---------- headings used outside .prose ---------- */
+.h1 {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(2.9rem, 9vw, 5.5rem); letter-spacing: 0.01em; line-height: 0.95;
+  margin: 0.8rem 0 0; color: var(--bone);
+}
+.page-title {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.02; margin: 0.8rem 0 0;
+}
+.section-title {
+  font-family: var(--display); font-weight: 600;
+  font-size: clamp(1.8rem, 5vw, 2.6rem); margin: 0.5rem 0 0;
+}
+
+/* ---------- hero ---------- */
+.hero {
+  position: relative; overflow: hidden;
+  padding-block: clamp(4rem, 13vh, 9rem) clamp(3rem, 8vh, 6rem);
+  border-bottom: 1px solid var(--line);
+}
+.hero::before {
+  content: ""; position: absolute; inset: -25% -12% auto -12%; height: 130%;
+  z-index: 0; pointer-events: none; filter: blur(10px);
+  background:
+    radial-gradient(58% 50% at 50% 0%, rgba(200, 160, 66, 0.20), transparent 70%),
+    radial-gradient(42% 42% at 82% 18%, rgba(127, 168, 163, 0.08), transparent 70%);
+  animation: drift 24s ease-in-out infinite alternate;
+}
+.hero > * { position: relative; z-index: 1; }
+@keyframes drift {
+  from { transform: translateX(-2%) translateY(0); }
+  to   { transform: translateX(3%) translateY(-1.5%); }
+}
+.hero-thesis {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(1.4rem, 4.2vw, 2.15rem); line-height: 1.25;
+  color: var(--gylden-glow); max-width: 22ch; margin: 1.4rem 0 1.2rem;
+}
+.hero-sub { color: var(--ash); max-width: 48ch; font-size: 1.05rem; margin: 0 0 2rem; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5em;
+  font-family: var(--mono); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.04em;
+  text-decoration: none; padding: 0.8em 1.4em;
+  border: 1px solid var(--gylden); color: var(--gylden);
+  background: transparent; border-radius: 2px;
+  transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+.btn:hover {
+  background: rgba(200, 160, 66, 0.1); color: var(--gylden-glow);
+  box-shadow: 0 0 0 1px rgba(200, 160, 66, 0.2), 0 10px 34px -12px rgba(200, 160, 66, 0.4);
+}
+.btn-ghost { border-color: var(--line); color: var(--bone); }
+.btn-ghost:hover { border-color: var(--ash); background: rgba(255, 255, 255, 0.03); color: var(--bone); box-shadow: none; }
+
+/* ---------- woven card grid (1px gaps = gold threads) ---------- */
+.cards {
+  display: grid; gap: 1px;
+  grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
+  background: var(--line); border: 1px solid var(--line);
+  margin-top: 1.8rem;
+}
+.card {
+  background: var(--abyss); padding: 1.7rem 1.5rem;
+  display: flex; flex-direction: column; gap: 0.55rem;
+  text-decoration: none; color: inherit;
+  transition: background 0.18s ease;
+}
+a.card:hover { background: var(--stone); }
+a.card:hover .card-title { color: var(--gylden-glow); }
+.card-title {
+  font-family: var(--display); font-size: 1.45rem; font-weight: 600;
+  color: var(--bone); line-height: 1.1; transition: color 0.18s ease;
+}
+.card-desc { color: var(--ash); font-size: 0.92rem; line-height: 1.55; }
+.card-arrow { margin-top: auto; font-family: var(--mono); font-size: 0.8rem; color: var(--gylden); }
+.card.soon { opacity: 0.55; }
+.soon-badge {
+  align-self: flex-start; font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--ash);
+  border: 1px solid var(--line); padding: 0.2em 0.5em; border-radius: 2px;
+}
+
+/* ---------- quick facts ---------- */
+.facts {
+  display: grid; gap: 1px;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  background: var(--line); border: 1px solid var(--line); margin: 1.6rem 0;
+}
+.fact { background: var(--abyss); padding: 1rem 1.1rem; }
+.fact dt {
+  font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ash); margin-bottom: 0.3rem;
+}
+.fact dd { margin: 0; color: var(--bone); font-size: 0.98rem; line-height: 1.45; }
+
+/* ---------- prose (content pages) ---------- */
+.prose { max-width: var(--maxw-prose); }
+.prose > p { margin: 0 0 1.15rem; color: var(--bone); }
+.prose h2 { font-family: var(--display); font-weight: 600; font-size: clamp(1.5rem, 4.2vw, 2rem); margin: 2.5rem 0 0.9rem; }
+.prose h3 { font-family: var(--display); font-weight: 600; font-size: 1.3rem; margin: 1.8rem 0 0.6rem; color: var(--bone); }
+.prose a { color: var(--gylden); text-underline-offset: 3px; }
+.prose ul { margin: 0 0 1.15rem; padding-left: 1.15rem; }
+.prose li { margin: 0.35rem 0; }
+.prose li::marker { color: var(--gylden); }
+.prose strong { color: var(--bone); font-weight: 700; }
+.lead {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(1.2rem, 3vw, 1.55rem); line-height: 1.4; color: var(--bone);
+  margin: 1.2rem 0 0; max-width: 52rem;
+}
+
+/* ---------- callout ---------- */
+.callout {
+  border-left: 2px solid var(--gylden); background: rgba(200, 160, 66, 0.05);
+  padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0;
+}
+.callout .eyebrow { margin-bottom: 0.45rem; }
+.callout p { margin: 0; color: var(--bone); }
+.callout--warn { border-left-color: var(--ichor); background: rgba(177, 90, 82, 0.06); }
+.callout--warn .eyebrow { color: var(--ichor); }
+.callout--warn .eyebrow::before { background: var(--ichor); }
+
+/* ---------- FAQ ---------- */
+.faq { border-top: 1px solid var(--line); margin-top: 1rem; }
+.faq-item { border-bottom: 1px solid var(--line); padding: 1.2rem 0; }
+.faq-q { font-family: var(--display); font-size: 1.2rem; font-weight: 600; color: var(--bone); margin: 0 0 0.4rem; }
+.faq-a { color: var(--ash); margin: 0; line-height: 1.6; }
+
+/* ---------- header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(14, 16, 20, 0.85); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; padding-block: 0.8rem; }
+.brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+.brand img { width: 28px; height: 28px; }
+.brand-name { display: block; font-family: var(--display); font-weight: 700; font-size: 1.1rem; color: var(--bone); letter-spacing: 0.02em; line-height: 1; }
+.brand-tag { display: block; font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gylden); margin-top: 0.18rem; }
+.header-right { display: flex; align-items: center; gap: 0.5rem; margin-left: auto; min-width: 0; max-width: 100%; }
+.nav { display: flex; align-items: center; gap: 0.15rem; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.nav::-webkit-scrollbar { display: none; }
+.nav a, .nav .navlink {
+  font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.04em;
+  padding: 0.5em 0.7em; white-space: nowrap; text-decoration: none; border-radius: 2px;
+}
+.nav a { color: var(--ash); }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--gylden); }
+.nav .navlink { color: var(--faint); display: inline-flex; align-items: center; gap: 0.4em; cursor: default; }
+.mini-soon { font-size: 0.55rem; border: 1px solid var(--line); padding: 0.05em 0.35em; border-radius: 2px; }
+.lang-switch {
+  font-family: var(--mono); font-size: 0.75rem; color: var(--bone);
+  border: 1px solid var(--line); padding: 0.4em 0.7em; border-radius: 2px;
+  text-decoration: none; white-space: nowrap;
+}
+.lang-switch:hover { border-color: var(--gylden); color: var(--gylden); }
+
+/* ---------- footer ---------- */
+.site-footer { border-top: 1px solid var(--line); margin-top: 4rem; padding-block: 2.5rem; }
+.footer-inner { display: flex; flex-direction: column; gap: 0.9rem; }
+.footer-brand { font-family: var(--display); font-size: 1.1rem; color: var(--bone); }
+.footer-disclaimer { color: var(--faint); font-size: 0.8rem; max-width: 50rem; line-height: 1.65; margin: 0; }
+.footer-meta { font-family: var(--mono); font-size: 0.72rem; color: var(--ash); letter-spacing: 0.04em; }
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero::before { animation: none; }
+  * { transition-duration: 0.001ms !important; }
+}

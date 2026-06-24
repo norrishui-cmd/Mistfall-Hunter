@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang = 'zh' as const;
+
+const videoGameSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: 'Mistfall Hunter',
+  description:
+    'Bellring Games 开发的暗黑奇幻第三人称 PvPvE 撤离类动作 RPG。潜入 Gyldenmist 浓雾，击杀怪物与敌对猎人夺取战利品，并在死亡掉光之前成功撤离。',
+  genre: ['Action RPG', 'Extraction', 'Dark Fantasy', 'PvPvE'],
+  gamePlatform: ['PC', 'Steam', 'Xbox Series X|S', 'PlayStation 5'],
+  publisher: { '@type': 'Organization', name: 'Bellring Games' },
+  applicationCategory: 'Game',
+  operatingSystem: 'Windows, Xbox Series X|S, PlayStation 5',
+  datePublished: '2026-07-30',
+};
+
+const cards = [
+  {
+    title: '发售日期 · 平台 · 价格',
+    desc: '什么时候上线、在哪玩、是否免费。Bellring 官宣后随时更新。',
+    href: '/zh/release-date',
+    live: true,
+  },
+  {
+    title: '撤离机制怎么运作',
+    desc: '核心循环、Soul of Return，以及为什么死亡会让你掉光一切。新人从这里开始。',
+    live: false,
+  },
+  {
+    title: '职业 Tier List',
+    desc: '六大职业的 solo / PvP / 新手排名——Sorcerer、Shadowstrix、Mercenary 等。',
+    live: false,
+  },
+  {
+    title: '交互式地图',
+    desc: '撤离点、Boss 刷新、高价值搜刮点，按区域分层呈现。',
+    live: false,
+  },
+  {
+    title: '配装与词缀',
+    desc: '经过实测的配装：技能、天赋、符文，以及真正影响强度的词缀。',
+    live: false,
+  },
+  {
+    title: '武器与系统',
+    desc: '武器分支、Gem 系统、耐力与装备成长线，讲清楚、不灌水。',
+    live: false,
+  },
+];
+---
+
+<BaseLayout
+  lang={lang}
+  path="/"
+  title="Mistfall Hunter 攻略站 — 配装、地图与生存指南"
+  description="非官方 Mistfall Hunter 攻略与数据库：发售日期、职业 Tier List、配装、交互式地图与新手指南，覆盖这款暗黑奇幻 PvPvE 撤离 RPG。"
+  jsonLd={[videoGameSchema]}
+>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">非官方攻略 &amp; 数据库</span>
+      <h1 class="h1">Mistfall<br />Hunter</h1>
+      <p class="hero-thesis">
+        潜入 Gyldenmist。带着满载的战利品归来——或者失去一切。
+      </p>
+      <p class="hero-sub">
+        Bellring Games 出品的暗黑奇幻 PvPvE 撤离 RPG。六大职业、刀剑与魔法交织的硬核战斗，规则只有一条：
+        在浓雾里倒下，你就会掉光所有东西。这是一个由玩家搭建的中心站，专注配装、地图与生存。
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="/zh/release-date">发售日期与价格</a>
+        <a class="btn btn-ghost" href="#about">这是什么游戏？</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- START HERE -->
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">从这里开始</span>
+      <h2 class="section-title">规划你的下一趟</h2>
+      <div class="cards">
+        {cards.map((card) =>
+          card.live ? (
+            <a class="card" href={card.href}>
+              <span class="card-title">{card.title}</span>
+              <span class="card-desc">{card.desc}</span>
+              <span class="card-arrow">查看 →</span>
+            </a>
+          ) : (
+            <div class="card soon">
+              <span class="soon-badge">即将上线</span>
+              <span class="card-title">{card.title}</span>
+              <span class="card-desc">{card.desc}</span>
+            </div>
+          )
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <span class="eyebrow">这场狩猎</span>
+      <h2 class="section-title">Mistfall Hunter 是什么？</h2>
+      <div class="prose">
+        <p>
+          Mistfall Hunter 是一款第三人称撤离类动作 RPG，背景设定在被诸神遗弃的世界
+          <strong>Weavereach</strong>。诸神陨落后，他们的血化为 <strong>Gyldenmist</strong>——一种会腐蚀一切的金色浓雾。
+          你扮演一名被复活的 Gyldhunter，深入浓雾、收割其中的战利品，夺回命运被撕裂的部分。
+        </p>
+        <p>
+          每一趟都是一场豪赌。你降落到被浓雾笼罩的区域，与被腐蚀的怪物及敌对猎人争夺战利品，
+          然后赶在被人终结之前撤离。死亡是绝对的：一旦战败，你携带的一切都会丢失。想离开，
+          你得猎杀一只 <strong>Returner Woodling</strong>，拿到 <strong>Soul of Return</strong>——
+          那是为你开辟归途的钥匙。
+        </p>
+        <p>
+          可以单人，也可以最多三人组队。六大职业刀魔并用——从爆发极高的 Sorcerer 到主打格挡与招架的
+          Mercenary——并通过天赋、符文与词缀打磨你的配装。它是一款长期运营的游戏：每个赛季都会用新职业、
+          新区域和新遗物重塑 meta。
+        </p>
+      </div>
+
+      <dl class="facts">
+        <div class="fact"><dt>开发商</dt><dd>Bellring Games</dd></div>
+        <div class="fact"><dt>类型</dt><dd>暗黑奇幻 PvPvE 撤离 ARPG</dd></div>
+        <div class="fact"><dt>平台</dt><dd>PC（Steam）、Xbox Series X|S、PlayStation 5</dd></div>
+        <div class="fact"><dt>人数</dt><dd>单人或最多 3 人组队</dd></div>
+        <div class="fact"><dt>发售</dt><dd>2026 年 7 月 30 日</dd></div>
+        <div class="fact"><dt>价格</dt><dd>尚未官宣</dd></div>
+      </dl>
+
+      <p class="prose">
+        <a href="/zh/release-date">查看完整的发售、平台与定价说明 →</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const lang = 'en' as const;
+const site = Astro.site ?? new URL('https://mistfallhunter.me');
+
+const faqs = [
+  {
+    q: 'When does Mistfall Hunter come out?',
+    a: 'Mistfall Hunter launches globally on July 30, 2026 at 01:00 UTC.',
+  },
+  {
+    q: 'What platforms is Mistfall Hunter on?',
+    a: 'PC via Steam and the Xbox app, Xbox Series X|S, and PlayStation 5.',
+  },
+  {
+    q: 'Is Mistfall Hunter on Game Pass?',
+    a: 'Yes — it is available day one on Xbox Game Pass for Xbox and PC.',
+  },
+  {
+    q: 'Is Mistfall Hunter free-to-play?',
+    a: "It isn't officially confirmed. The Xbox store has listed it as Free to Play, but Bellring Games has not locked final pricing yet.",
+  },
+  {
+    q: 'Is Mistfall Hunter on PS5?',
+    a: 'Yes, it launches on PlayStation 5.',
+  },
+  {
+    q: 'Does beta progress carry over to the full game?',
+    a: 'No. The open beta was a data-wipe test; participants keep only cosmetic launch rewards.',
+  },
+];
+
+const videoGameSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: 'Mistfall Hunter',
+  description:
+    'A dark fantasy third-person PvPvE extraction action RPG from Bellring Games.',
+  genre: ['Action RPG', 'Extraction', 'Dark Fantasy', 'PvPvE'],
+  gamePlatform: ['PC', 'Steam', 'Xbox Series X|S', 'PlayStation 5'],
+  publisher: { '@type': 'Organization', name: 'Bellring Games' },
+  applicationCategory: 'Game',
+  operatingSystem: 'Windows, Xbox Series X|S, PlayStation 5',
+  datePublished: '2026-07-30',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', site).href },
+    { '@type': 'ListItem', position: 2, name: 'Release date', item: new URL('/release-date', site).href },
+  ],
+};
+---
+
+<BaseLayout
+  lang={lang}
+  path="/release-date"
+  title="Mistfall Hunter Release Date, Platforms & Price (2026)"
+  description="Mistfall Hunter launches July 30, 2026 on PC, Xbox, and PS5 — day one on Game Pass. Release time, platforms, beta details, and whether it's free-to-play."
+  jsonLd={[videoGameSchema, faqSchema, breadcrumbSchema]}
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Release date</span>
+      <h1 class="page-title">Mistfall Hunter release date, platforms &amp; price</h1>
+      <p class="lead">
+        Mistfall Hunter launches on <strong>July 30, 2026 at 01:00 UTC</strong>, on PC, Xbox, and
+        PlayStation 5 — day one on Xbox Game Pass. Final pricing hasn't been confirmed yet. Here's
+        everything that's locked in, and what still isn't.
+      </p>
+
+      <hr class="thread" />
+
+      <div class="prose">
+        <h2>When does Mistfall Hunter release?</h2>
+        <p>
+          Bellring Games has set the global launch for <strong>July 30, 2026 at 01:00 UTC</strong>.
+          Some outlets list July 29 — that's the same launch seen from earlier time zones in the
+          Americas, so treat the July 30 UTC time as the anchor and convert it to your local clock.
+          The date follows the open beta that ran during Steam Next Fest and closed on June 22, 2026.
+        </p>
+
+        <h2>What platforms is it on?</h2>
+        <p>Mistfall Hunter launches across PC and current-gen consoles:</p>
+        <ul>
+          <li>PC via Steam</li>
+          <li>PC via the Xbox app / Microsoft Store</li>
+          <li>Xbox Series X|S</li>
+          <li>PlayStation 5</li>
+        </ul>
+        <p>
+          On Xbox and PC it's available day one through <strong>Xbox Game Pass</strong>. Note that
+          console play needs an online multiplayer subscription (Game Pass Core or Ultimate) for its
+          PvPvE matches.
+        </p>
+
+        <h2>Is Mistfall Hunter free-to-play?</h2>
+        <div class="callout callout--warn">
+          <span class="eyebrow">Not confirmed</span>
+          <p>
+            Bellring hasn't locked final pricing. The Xbox listing has shown it as Free to Play,
+            which points toward a free release — but until there's an official price announcement,
+            treat it as unconfirmed.
+          </p>
+        </div>
+        <p>
+          If it does land as free-to-play, expect cosmetics and a battle-pass-style model rather than
+          a box price, which is standard for the extraction genre. This page updates the moment
+          pricing is official.
+        </p>
+
+        <h2>Was there a beta? Does my progress carry over?</h2>
+        <p>
+          Yes — the first open beta ran on Steam and Xbox during Steam Next Fest and closed on
+          <strong>June 22, 2026</strong>. It was a data-wipe test, so none of that progress carries
+          into the full game. Players who joined earn exclusive cosmetic rewards (such as a beta
+          avatar frame and emote) that unlock at launch when you sign in with the same account.
+        </p>
+        <p>
+          The beta also drew complaints about stuttering and crashes, even on strong hardware, and
+          Bellring has said stability is its top fix before launch. If you hit performance issues,
+          they're known build problems rather than something on your end.
+        </p>
+
+        <h2>How to get ready for launch</h2>
+        <ul>
+          <li>Wishlist it on Steam, or add it on the Xbox and PlayStation stores, to get a launch notification.</li>
+          <li>If you have Game Pass, it'll appear in your library on day one.</li>
+          <li>Follow the official Discord and channels for the pricing announcement.</li>
+        </ul>
+      </div>
+
+      <h2 class="section-title" style="margin-top:2.5rem">FAQ</h2>
+      <div class="faq">
+        {faqs.map((f) => (
+          <div class="faq-item">
+            <p class="faq-q">{f.q}</p>
+            <p class="faq-a">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
