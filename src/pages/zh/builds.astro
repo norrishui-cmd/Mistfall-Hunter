@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { BUILDS, CLASS_LIST, AFFIXES, TAG_ZH } from '../../data/builds';
+
+const lang = 'zh' as const;
+const site = Astro.site ?? new URL('https://mistfallhunter.me');
+const nameById = Object.fromEntries(CLASS_LIST.map((c) => [c.id, c.name]));
+
+const faqs = [
+  {
+    q: '这些是 Mistfall Hunter 的最强配装吗？',
+    a: '它们是基于各职业机制的起手方向。游戏 2026 年 7 月 30 日发售、meta 尚未定型，所以请把它们当作"从哪开始"，而不是定论。',
+  },
+  {
+    q: '新手最适合哪套配装？',
+    a: 'Mercenary 的 Block & Punish——护甲、格挡和招架让你在学习阶段扛得住失误。',
+  },
+  {
+    q: '定型配装什么时候补上？',
+    a: '发售后随社区在正式版里实测逐步补充。本页会随 meta 成形，补上确认的技能、天赋、符文与具体词缀。',
+  },
+];
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '首页', item: new URL('/zh/', site).href },
+    { '@type': 'ListItem', position: 2, name: '配装', item: new URL('/zh/builds', site).href },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: 'zh-Hans',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+
+<BaseLayout
+  lang={lang}
+  path="/builds"
+  title="Mistfall Hunter 配装 & 词缀：各职业起手配装"
+  description="Mistfall Hunter 各职业配装方向——Sorcerer、Shadowstrix、Mercenary、Blackarrow、Seer、Withered Knight——以及词缀系统。可按职业筛选。"
+  jsonLd={[breadcrumb, faqSchema]}
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">配装 &amp; 词缀</span>
+      <h1 class="page-title">Mistfall Hunter 配装 &amp; 词缀</h1>
+      <p class="lead">
+        每个职业的起手配装方向，以及词缀系统如何融入其中。按职业筛选，找到与你打法相符的方向，再细调。
+      </p>
+
+      <div class="callout callout--warn">
+        <span class="eyebrow">发售前</span>
+        <p>
+          meta 尚未定型——游戏 2026 年 7 月 30 日发售。这些是基于各职业已知机制的<strong>起手方向</strong>，
+          而非带确认数值的定型配装。确认的技能、天赋、符文与具体词缀，会随社区在正式版里实测逐步补上。
+        </p>
+      </div>
+
+      <div class="prose">
+        <h2>装备系统怎么运作</h2>
+        <p>
+          你的强度不只来自职业。装备会roll出<strong>词缀</strong>来塑造你的打法，你还会镶嵌<strong>宝石（Gem）</strong>、
+          追求<strong>传奇装备</strong>，并在此之上叠加<strong>天赋</strong>与<strong>符文</strong>。
+          配装的本质，就是把这些选择都指向同一个目标——爆发、生存、控制或辅助。下面先帮你定目标，具体的随解锁再填。
+        </p>
+      </div>
+
+      <h2 class="section-title" style="margin-top:2rem">配装方向</h2>
+      <div class="bfilter">
+        <button type="button" data-filter="all" class="is-active">全部</button>
+        {CLASS_LIST.map((c) => (
+          <button type="button" data-filter={c.id}>{c.name}</button>
+        ))}
+      </div>
+
+      <div class="buildgrid">
+        {BUILDS.map((b) => (
+          <article class="buildcard" data-class={b.cls}>
+            <div class="build-head">
+              <span class="build-class">{nameById[b.cls]}</span>
+              <div class="build-tags">
+                {b.tags.map((t) => <span class="tag">{TAG_ZH[t] ?? t}</span>)}
+              </div>
+            </div>
+            <h3 class="build-title">{b.title}</h3>
+            <p class="build-summary">{b.zh.summary}</p>
+            <dl class="build-meta">
+              <div><dt>核心思路</dt><dd>{b.zh.core}</dd></div>
+              <div><dt>侧重</dt><dd>{b.zh.priorities.join(' · ')}</dd></div>
+            </dl>
+          </article>
+        ))}
+      </div>
+
+      <h2 class="section-title" style="margin-top:2.5rem">词缀</h2>
+      <div class="prose">
+        <p>
+          词缀是装备上roll出的修饰——正是它把"职业"变成"配装"。你去追那些推进你既定目标的词缀
+          （更高爆发、更强生存、更低冷却），其余的重roll或替换掉。
+        </p>
+      </div>
+      <div class="callout">
+        <span class="eyebrow">效果待发售确认</span>
+        <p>
+          这些词缀名出现在测试里。这里先列出我们在追踪的内容；具体效果与数值，等正式版确认后再补全。
+        </p>
+      </div>
+      <div class="affixlist">
+        {AFFIXES.map((a) => <span class="affix">{a}</span>)}
+      </div>
+
+      <div class="prose" style="margin-top:2rem">
+        <p>
+          拿不准选哪个职业？去<a href="/zh/classes">Tier List</a> 对比，在<a href="/zh/beginner-guide">新手指南</a>里学循环，
+          或在<a href="/zh/map">交互式地图</a>上踩点。
+        </p>
+      </div>
+
+      <h2 class="section-title" style="margin-top:2.5rem">常见问题</h2>
+      <div class="faq">
+        {faqs.map((f) => (
+          <div class="faq-item">
+            <p class="faq-q">{f.q}</p>
+            <p class="faq-a">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .bfilter { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 1.3rem 0 1.4rem; }
+  .bfilter button {
+    font-family: var(--mono); font-size: 0.76rem; letter-spacing: 0.03em;
+    padding: 0.5em 0.9em; background: var(--stone); color: var(--ash);
+    border: 1px solid var(--line); border-radius: 2px; cursor: pointer;
+  }
+  .bfilter button:hover { color: var(--gylden); }
+  .bfilter button.is-active { color: #0e1014; background: var(--gylden); border-color: var(--gylden); }
+
+  .buildgrid {
+    display: grid; gap: 1px; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    background: var(--line); border: 1px solid var(--line);
+  }
+  .buildcard { background: var(--abyss); padding: 1.4rem 1.4rem 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .buildcard[hidden] { display: none; }
+  .build-head { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; flex-wrap: wrap; }
+  .build-class { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gylden); }
+  .build-tags { display: flex; gap: 0.3rem; flex-wrap: wrap; }
+  .tag {
+    font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ash); border: 1px solid var(--line); padding: 0.12em 0.45em; border-radius: 2px;
+  }
+  .build-title { font-family: var(--display); font-size: 1.5rem; font-weight: 600; color: var(--bone); margin: 0; line-height: 1.1; }
+  .build-summary { color: var(--bone); margin: 0; line-height: 1.7; }
+  .build-meta { margin: 0.4rem 0 0; display: flex; flex-direction: column; gap: 0.7rem; }
+  .build-meta > div { display: flex; flex-direction: column; gap: 0.2rem; }
+  .build-meta dt { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ash); }
+  .build-meta dd { margin: 0; color: var(--bone); font-size: 0.92rem; line-height: 1.6; }
+
+  .affixlist { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .affix {
+    font-family: var(--mono); font-size: 0.8rem; color: var(--bone);
+    border: 1px solid var(--line); background: var(--stone);
+    padding: 0.4em 0.8em; border-radius: 2px;
+  }
+</style>
+
+<script>
+  import '../../scripts/builds.ts';
+</script>
