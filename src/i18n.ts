@@ -14,29 +14,27 @@ export const ui = {
     'site.name': 'Mistfall Hunter Hub',
     'site.tagline': 'Unofficial guide & database',
     'nav.home': 'Home',
-    'nav.release': 'Release date',
-    'nav.beginner': 'Beginner guide',
-    'nav.classes': 'Classes',
-    'nav.performance': 'Performance',
-    'nav.map': 'Maps',
-    'nav.builds': 'Builds',
+    'nav.release': 'Release',
+    'nav.news': 'News',
+    'nav.guides': 'Guides',
+    'nav.tools': 'Tools',
+    'nav.about': 'About',
     'nav.soon': 'Soon',
     'footer.disclaimer':
       'Unofficial fan-made resource. Not affiliated with, endorsed by, or sponsored by Bellring Games. All game names, assets, and trademarks belong to their respective owners.',
   },
   zh: {
     'site.name': 'Mistfall Hunter 攻略站',
-    'site.tagline': '非官方攻略 & 数据库',
+    'site.tagline': '非官方攻略与数据库',
     'nav.home': '首页',
-    'nav.release': '发售日期',
-    'nav.beginner': '新手指南',
-    'nav.classes': '职业',
-    'nav.performance': '性能优化',
-    'nav.map': '地图',
-    'nav.builds': '配装',
+    'nav.release': '发售',
+    'nav.news': '新闻',
+    'nav.guides': '攻略',
+    'nav.tools': '工具',
+    'nav.about': '关于',
     'nav.soon': '即将上线',
     'footer.disclaimer':
-      '非官方粉丝资源，与 Bellring Games 无任何隶属、背书或赞助关系。游戏名称、素材与商标归各自所有者所有。',
+      '非官方玩家资源，与 Bellring Games 无隶属、背书或赞助关系。游戏名称、素材与商标归各自所有者所有。',
   },
 } as const;
 
@@ -56,12 +54,6 @@ export function useTranslations(lang: Lang) {
   };
 }
 
-/**
- * Build a localized URL from a canonical English path.
- * localizePath('/release-date', 'zh') -> '/zh/release-date'
- * localizePath('/', 'zh')             -> '/zh/'
- * localizePath('/release-date', 'en') -> '/release-date'
- */
 export function localizePath(path: string = '/', lang: Lang = defaultLang): string {
   const clean = path === '/' ? '' : path;
   if (lang === defaultLang) return clean || '/';
