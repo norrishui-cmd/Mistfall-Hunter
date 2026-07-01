@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PriorityLinks from '../../components/PriorityLinks.astro';
+import FaqBlock from '../../components/FaqBlock.astro';
 import { getSeoPages } from '../../data/seoPages';
 import type { SeoPage } from '../../data/seoPages';
 
@@ -90,19 +91,7 @@ const faqSchema = page.faqs
         ))}
       </div>
 
-      {page.faqs && (
-        <>
-          <h2 class="section-title" style="margin-top:2.5rem">FAQ</h2>
-          <div class="faq">
-            {page.faqs.map((f) => (
-              <div class="faq-item">
-                <p class="faq-q">{f.q}</p>
-                <p class="faq-a">{f.a}</p>
-              </div>
-            ))}
-          </div>
-        </>
-      )}
+      <FaqBlock faqs={page.faqs} title="常见问题" />
     </div>
   </section>
 

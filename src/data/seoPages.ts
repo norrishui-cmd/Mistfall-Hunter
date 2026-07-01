@@ -1,6 +1,7 @@
 import type { Lang } from '../i18n';
 import type { PriorityLink } from './priorityLinks';
 import { enExpansionPages, zhExpansionPages } from './urlExpansion';
+import { enFaqPages, zhFaqPages } from './faqExpansion';
 
 export type SeoSection = {
   heading: string;
@@ -388,7 +389,9 @@ export const zhPages: SeoPage[] = [
 ];
 
 export function getSeoPages(lang: Lang): SeoPage[] {
-  return lang === 'zh' ? [...zhPages, ...zhExpansionPages] : [...enPages, ...enExpansionPages];
+  return lang === 'zh'
+    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages]
+    : [...enPages, ...enExpansionPages, ...enFaqPages];
 }
 
 export function getSeoPage(lang: Lang, slug: string): SeoPage | undefined {
