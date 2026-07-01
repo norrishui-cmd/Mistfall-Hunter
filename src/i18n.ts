@@ -11,7 +11,7 @@ export const defaultLang = 'en' as const;
 
 export const ui = {
   en: {
-    'site.name': 'Mistfall Hunter Hub',
+    'site.name': 'Mistfall Hunter Wiki and Hub',
     'site.tagline': 'Unofficial guide & database',
     'nav.home': 'Home',
     'nav.release': 'Release',
@@ -24,7 +24,7 @@ export const ui = {
       'Unofficial fan-made resource. Not affiliated with, endorsed by, or sponsored by Bellring Games. All game names, assets, and trademarks belong to their respective owners.',
   },
   zh: {
-    'site.name': 'Mistfall Hunter 攻略站',
+    'site.name': 'Mistfall Hunter Wiki 攻略站',
     'site.tagline': '非官方攻略与数据库',
     'nav.home': '首页',
     'nav.release': '发售',
