@@ -1,4 +1,5 @@
 import type { Lang } from '../i18n';
+import { enExpansionLinks, zhExpansionLinks } from './urlExpansion';
 
 export type PriorityLink = {
   title: string;
@@ -42,6 +43,6 @@ const zhLinks: PriorityLink[] = [
 ];
 
 export function getPriorityLinks(lang: Lang, groups?: PriorityLink['group'][]): PriorityLink[] {
-  const links = lang === 'zh' ? zhLinks : enLinks;
+  const links = lang === 'zh' ? [...zhLinks, ...zhExpansionLinks] : [...enLinks, ...enExpansionLinks];
   return groups ? links.filter((link) => groups.includes(link.group)) : links;
 }

@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PriorityLinks from '../../components/PriorityLinks.astro';
-import { zhPages } from '../../data/seoPages';
+import { getSeoPages } from '../../data/seoPages';
 import type { SeoPage } from '../../data/seoPages';
 
 export function getStaticPaths() {
-  return zhPages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+  return getSeoPages('zh').map((page) => ({ params: { slug: page.slug }, props: { page } }));
 }
 
 const lang = 'zh' as const;
@@ -91,7 +91,7 @@ const faqSchema = page.faqs
       </div>
 
       {page.faqs && (
-        <Fragment>
+        <>
           <h2 class="section-title" style="margin-top:2.5rem">FAQ</h2>
           <div class="faq">
             {page.faqs.map((f) => (
@@ -101,7 +101,7 @@ const faqSchema = page.faqs
               </div>
             ))}
           </div>
-        </Fragment>
+        </>
       )}
     </div>
   </section>
