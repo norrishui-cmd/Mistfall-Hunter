@@ -91,7 +91,7 @@ const faqSchema = page.faqs
       </div>
 
       {page.faqs && (
-        <>
+        <Fragment>
           <h2 class="section-title" style="margin-top:2.5rem">FAQ</h2>
           <div class="faq">
             {page.faqs.map((f) => (
@@ -101,7 +101,7 @@ const faqSchema = page.faqs
               </div>
             ))}
           </div>
-        </>
+        </Fragment>
       )}
     </div>
   </section>
