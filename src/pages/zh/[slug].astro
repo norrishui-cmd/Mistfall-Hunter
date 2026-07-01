@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PriorityLinks from '../../components/PriorityLinks.astro';
-import { zhPages, type SeoPage } from '../../data/seoPages';
+import { zhPages } from '../../data/seoPages';
+import type { SeoPage } from '../../data/seoPages';
 
 export function getStaticPaths() {
   return zhPages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
