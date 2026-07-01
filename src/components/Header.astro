@@ -3,7 +3,7 @@ import { useTranslations, localizePath, type Lang } from '../i18n';
 
 interface Props {
   lang: Lang;
-  path: string; // canonical English path of the current page
+  path: string;
 }
 
 const { lang, path } = Astro.props;
@@ -12,11 +12,10 @@ const t = useTranslations(lang);
 const items = [
   { key: 'nav.home', path: '/', live: true },
   { key: 'nav.release', path: '/release-date', live: true },
-  { key: 'nav.beginner', path: '/beginner-guide', live: true },
-  { key: 'nav.classes', path: '/classes', live: true },
-  { key: 'nav.performance', path: '/performance', live: true },
-  { key: 'nav.map', path: '/map', live: true },
-  { key: 'nav.builds', path: '/builds', live: true },
+  { key: 'nav.news', path: '/news', live: true },
+  { key: 'nav.guides', path: '/guides', live: true },
+  { key: 'nav.tools', path: '/tools', live: true },
+  { key: 'nav.about', path: '/about', live: true },
 ];
 
 const other: Lang = lang === 'zh' ? 'en' : 'zh';
