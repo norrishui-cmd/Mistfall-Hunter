@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PriorityLinks from '../components/PriorityLinks.astro';
+import { enPages, type SeoPage } from '../data/seoPages';
+
+export function getStaticPaths() {
+  return enPages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+
+const lang = 'en' as const;
+const { page } = Astro.props as { page: SeoPage };
+const site = Astro.site ?? new URL('https://mistfallhunter.me');
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', site).href },
+    { '@type': 'ListItem', position: 2, name: page.h1, item: new URL(`/${page.slug}`, site).href },
+  ],
+};
+
+const faqSchema = page.faqs
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: page.faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    }
+  : undefined;
+---
+
+<BaseLayout
+  lang={lang}
+  path={`/${page.slug}`}
+  title={page.title}
+  description={page.description}
+  jsonLd={faqSchema ? [breadcrumb, faqSchema] : [breadcrumb]}
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">{page.eyebrow}</span>
+      <h1 class="page-title">{page.h1}</h1>
+      <p class="lead">{page.lead}</p>
+
+      {page.updated && (
+        <div class="callout">
+          <span class="eyebrow">Status</span>
+          <p>{page.updated}</p>
+        </div>
+      )}
+
+      {page.facts && (
+        <dl class="facts">
+          {page.facts.map((fact) => (
+            <div class="fact"><dt>{fact.k}</dt><dd>{fact.v}</dd></div>
+          ))}
+        </dl>
+      )}
+
+      {page.cards && (
+        <div class="cards" style="margin-top:1.8rem">
+          {page.cards.map((card) => (
+            <a class="card" href={card.href}>
+              <span class="card-title">{card.title}</span>
+              <span class="card-desc">{card.desc}</span>
+              <span class="card-arrow">Open -></span>
+            </a>
+          ))}
+        </div>
+      )}
+
+      <hr class="thread" />
+
+      <div class="prose">
+        {page.sections.map((section) => (
+          <Fragment>
+            <h2>{section.heading}</h2>
+            {section.body.map((paragraph) => <p>{paragraph}</p>)}
+            {section.bullets && (
+              <ul>
+                {section.bullets.map((item) => <li>{item}</li>)}
+              </ul>
+            )}
+          </Fragment>
+        ))}
+      </div>
+
+      {page.faqs && (
+        <>
+          <h2 class="section-title" style="margin-top:2.5rem">FAQ</h2>
+          <div class="faq">
+            {page.faqs.map((f) => (
+              <div class="faq-item">
+                <p class="faq-q">{f.q}</p>
+                <p class="faq-a">{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  </section>
+
+  <PriorityLinks lang={lang} groups={[page.group, 'guides', 'tools']} limit={6} />
+</BaseLayout>
