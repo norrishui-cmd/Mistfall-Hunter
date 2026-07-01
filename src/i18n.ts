@@ -18,6 +18,7 @@ export const ui = {
     'nav.news': 'News',
     'nav.guides': 'Guides',
     'nav.tools': 'Tools',
+    'nav.faq': 'FAQ',
     'nav.about': 'About',
     'nav.soon': 'Soon',
     'footer.disclaimer':
@@ -31,6 +32,7 @@ export const ui = {
     'nav.news': '新闻',
     'nav.guides': '攻略',
     'nav.tools': '工具',
+    'nav.faq': 'FAQ',
     'nav.about': '关于',
     'nav.soon': '即将上线',
     'footer.disclaimer':
