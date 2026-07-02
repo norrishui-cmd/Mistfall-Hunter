@@ -391,6 +391,63 @@ a.card:hover .card-title { color: var(--gylden-glow); }
   font-family: var(--mono);
   font-size: 0.72rem;
 }
+.quality-panel {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.025);
+  margin-top: 1.8rem;
+  padding: clamp(1rem, 3vw, 1.35rem);
+}
+.quality-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem 1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.9rem;
+  margin-bottom: 1rem;
+}
+.quality-head p {
+  margin: 0;
+  color: var(--ash);
+}
+.quality-head a {
+  color: var(--gylden);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+.quality-grid {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.quality-grid section {
+  background: var(--abyss);
+  padding: 1rem;
+}
+.quality-grid h2 {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  color: var(--bone);
+  margin: 0 0 0.6rem;
+}
+.quality-grid ul {
+  margin: 0;
+  padding-left: 1.05rem;
+  color: var(--ash);
+  line-height: 1.55;
+}
+.quality-grid li { margin: 0.35rem 0; }
+.quality-grid li::marker { color: var(--gylden); }
+.quality-sources {
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  margin: 0.9rem 0 0;
+}
 
 /* ---------- callout ---------- */
 .callout {
@@ -442,6 +499,14 @@ a.card:hover .card-title { color: var(--gylden-glow); }
 .site-footer { border-top: 1px solid var(--line); margin-top: 4rem; padding-block: 2.5rem; }
 .footer-inner { display: flex; flex-direction: column; gap: 0.9rem; }
 .footer-brand { font-family: var(--display); font-size: 1.1rem; color: var(--bone); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.footer-links a {
+  color: var(--gylden);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-decoration: none;
+}
+.footer-links a:hover { color: var(--gylden-glow); }
 .footer-disclaimer { color: var(--faint); font-size: 0.8rem; max-width: 50rem; line-height: 1.65; margin: 0; }
 .footer-meta { font-family: var(--mono); font-size: 0.72rem; color: var(--ash); letter-spacing: 0.04em; }
 

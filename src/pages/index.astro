@@ -1,7 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import QualitySignals from '../components/QualitySignals.astro';
+import { getHubLinks } from '../data/siteQuality';
 
 const lang = 'en' as const;
+const hubLinks = getHubLinks(lang);
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
@@ -22,37 +25,31 @@ const cards = [
     title: 'Release date, platforms & price',
     desc: "When it launches, where to play, and whether it's free. Updated as Bellring confirms details.",
     href: '/release-date',
-    live: true,
   },
   {
     title: 'How extraction works',
-    desc: 'The core loop, the Soul of Return, and why dying costs you everything. New here? Start with this.',
+    desc: 'The core loop, the Soul of Return, and why dying costs you everything.',
     href: '/beginner-guide',
-    live: true,
   },
   {
     title: 'Class tier list',
-    desc: 'All six classes ranked for solo, PvP, and beginners — Sorcerer, Shadowstrix, Mercenary, and more.',
+    desc: 'All six classes ranked for solo, PvP, and beginner play.',
     href: '/classes',
-    live: true,
   },
   {
     title: 'Interactive map',
     desc: 'Extraction points, boss spawns, and high-value loot, layered for every zone in the mist.',
     href: '/map',
-    live: true,
   },
   {
     title: 'Builds & affixes',
-    desc: 'Starter loadout directions for every class, plus how the affix system fits in. Filter by class.',
+    desc: 'Starter loadout directions for every class, plus how the affix system fits in.',
     href: '/builds',
-    live: true,
   },
   {
     title: 'Fix stuttering & boost FPS',
-    desc: 'The stutter is a known issue. A clean, no-nonsense fix list — no paid "boosters" required.',
+    desc: 'A clean performance checklist for stutter, low FPS, crashes, and settings.',
     href: '/performance',
-    live: true,
   },
 ];
 ---
@@ -60,56 +57,45 @@ const cards = [
 <BaseLayout
   lang={lang}
   path="/"
-  title="Mistfall Hunter Wiki and Hub — Builds, Maps & Survival Guides"
-  description="Unofficial Mistfall Hunter guide and database: release date, class tier list, builds, interactive maps, and beginner help for the dark fantasy PvPvE extraction RPG."
+  title="Mistfall Hunter Wiki and Hub - Builds, Maps & Survival Guides"
+  description="Unofficial Mistfall Hunter guide and database: release date, class tier list, builds, interactive maps, bosses, FAQ, and beginner help for the dark fantasy PvPvE extraction RPG."
   jsonLd={[videoGameSchema]}
 >
-  <!-- HERO -->
   <section class="hero">
     <div class="container">
       <span class="eyebrow">Unofficial guide &amp; database</span>
       <h1 class="h1">Mistfall<br />Hunter</h1>
       <p class="hero-thesis">
-        Descend into the Gyldenmist. Come back with the haul — or lose everything.
+        Descend into the Gyldenmist. Come back with the haul, or lose everything.
       </p>
       <p class="hero-sub">
         A dark fantasy PvPvE extraction RPG from Bellring Games. Six classes, brutal
         melee-and-magic combat, and one rule: die in the mist and you drop it all. This is a
-        fan-built hub for builds, maps, and surviving your next run.
+        fan-built hub for builds, maps, bosses, and surviving your next run.
       </p>
       <div class="hero-cta">
         <a class="btn" href="/release-date">Release date &amp; price</a>
-        <a class="btn btn-ghost" href="#about">What is Mistfall Hunter?</a>
+        <a class="btn btn-ghost" href="/sitemap">Explore the wiki</a>
       </div>
     </div>
   </section>
 
-  <!-- START HERE -->
   <section class="section">
     <div class="container">
       <span class="eyebrow">Start here</span>
       <h2 class="section-title">Find your next run</h2>
       <div class="cards">
-        {cards.map((card) =>
-          card.live ? (
-            <a class="card" href={card.href}>
-              <span class="card-title">{card.title}</span>
-              <span class="card-desc">{card.desc}</span>
-              <span class="card-arrow">Read →</span>
-            </a>
-          ) : (
-            <div class="card soon">
-              <span class="soon-badge">Soon</span>
-              <span class="card-title">{card.title}</span>
-              <span class="card-desc">{card.desc}</span>
-            </div>
-          )
-        )}
+        {cards.map((card) => (
+          <a class="card" href={card.href}>
+            <span class="card-title">{card.title}</span>
+            <span class="card-desc">{card.desc}</span>
+            <span class="card-arrow">Read -></span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section class="section" id="about">
     <div class="container">
       <span class="eyebrow">The hunt</span>
@@ -117,37 +103,42 @@ const cards = [
       <div class="prose">
         <p>
           Mistfall Hunter is a third-person extraction action RPG set in <strong>Weavereach</strong>,
-          a world the gods abandoned. When they fell, their blood became the <strong>Gyldenmist</strong>
-          — a golden fog that corrupts everything it touches. You play a Gyldhunter, revived to
-          venture into the mist, harvest its spoils, and claw back what fate unraveled.
+          a world the gods abandoned. You play a Gyldhunter, venture into the Gyldenmist, fight
+          corrupted enemies and rival hunters, and extract before death wipes the run.
         </p>
         <p>
-          Each run is a gamble. You drop into a mist-choked zone, fight corrupted monsters and rival
-          hunters for loot, and race to extract before someone ends your run. Death is absolute: lose
-          the fight and you lose everything you were carrying. To get out, you hunt down a
-          <strong>Returner Woodling</strong> for the <strong>Soul of Return</strong> — the key that
-          carves a path home.
-        </p>
-        <p>
-          Play solo or in a squad of up to three. Pick from six classes that mix steel and magic —
-          from the burst-heavy Sorcerer to the shield-and-parry Mercenary — and tune your build with
-          talents, runes, and affixes. It's a live game: every season reshuffles the meta with new
-          classes, zones, and relics.
+          Each run is a gamble. You pick a class, enter a mist-choked zone, hunt for loot, and decide
+          whether another fight is worth risking the bag. To leave, preview coverage describes a
+          Soul of Return style extraction objective tied to a Returner target.
         </p>
       </div>
 
       <dl class="facts">
         <div class="fact"><dt>Developer</dt><dd>Bellring Games</dd></div>
         <div class="fact"><dt>Genre</dt><dd>Dark fantasy PvPvE extraction ARPG</dd></div>
-        <div class="fact"><dt>Platforms</dt><dd>PC (Steam), Xbox Series X|S, PlayStation 5</dd></div>
-        <div class="fact"><dt>Players</dt><dd>Solo or squads up to 3</dd></div>
+        <div class="fact"><dt>Platforms</dt><dd>PC, Xbox Series X|S, PlayStation 5</dd></div>
+        <div class="fact"><dt>Players</dt><dd>Solo or squads</dd></div>
         <div class="fact"><dt>Release</dt><dd>July 30, 2026</dd></div>
-        <div class="fact"><dt>Price</dt><dd>Not yet confirmed</dd></div>
+        <div class="fact"><dt>Status</dt><dd>Pre-launch tracker</dd></div>
       </dl>
 
-      <p class="prose">
-        <a href="/release-date">See the full release, platform, and pricing breakdown →</a>
-      </p>
+      <QualitySignals lang={lang} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Index hub</span>
+      <h2 class="section-title">Core pages for Google and players</h2>
+      <div class="cards">
+        {hubLinks.map((link) => (
+          <a class="card" href={link.href}>
+            <span class="card-title">{link.title}</span>
+            <span class="card-desc">{link.desc}</span>
+            <span class="card-arrow">Open -></span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 </BaseLayout>

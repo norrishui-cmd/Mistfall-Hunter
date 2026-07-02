@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# ⚠️ Update the domain to match astro.config.mjs `site`.
 Sitemap: https://mistfallhunter.me/sitemap-index.xml

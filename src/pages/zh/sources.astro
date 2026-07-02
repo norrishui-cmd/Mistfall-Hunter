@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { lastUpdated, sources } from '../../data/siteQuality';
+
+const lang = 'zh' as const;
+---
+
+<BaseLayout
+  lang={lang}
+  path="/sources"
+  title="Mistfall Hunter 来源与编辑政策"
+  description="Mistfall Hunter Wiki 攻略站来源与编辑政策，说明官方、商店、试玩报道和上线后实测信息的使用方式。"
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">来源</span>
+      <h1 class="page-title">来源与编辑政策</h1>
+      <p class="lead">
+        本站会区分已确认信息、预览观察和待上线后验证的内容。最后更新：{lastUpdated}。
+      </p>
+
+      <div class="prose">
+        <h2>信息处理方式</h2>
+        <p>
+          已确认事实来自官方页面、商店页面和开发/发行方信息；预览观察来自试玩报道；
+          具体数值、掉落、地图点位和配装强度，需要等正式版上线后用实测数据更新。
+        </p>
+      </div>
+
+      <div class="cards">
+        {sources.map((source) => (
+          <a class="card" href={source.url} rel="noopener noreferrer" target="_blank">
+            <span class="soon-badge">{source.type}</span>
+            <span class="card-title">{source.title}</span>
+            <span class="card-desc">{source.publisher}: {source.note}</span>
+            <span class="card-arrow">打开来源 -></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

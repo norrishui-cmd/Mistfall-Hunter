@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { lastUpdated, sources } from '../data/siteQuality';
+
+const lang = 'en' as const;
+---
+
+<BaseLayout
+  lang={lang}
+  path="/sources"
+  title="Mistfall Hunter Sources, References & Editorial Policy"
+  description="Sources and editorial policy for Mistfall Hunter Wiki and Hub, including official, storefront, preview, and launch verification references."
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Sources</span>
+      <h1 class="page-title">Sources and editorial policy</h1>
+      <p class="lead">
+        This site separates confirmed information from preview observations and launch-day
+        verification notes. Last updated: {lastUpdated}.
+      </p>
+
+      <div class="prose">
+        <h2>How information is handled</h2>
+        <p>
+          Confirmed facts come from official pages, storefronts, and publisher/developer messaging.
+          Preview observations come from hands-on coverage and may change before or after launch.
+          Exact values, drop tables, map markers, and build rankings should be rechecked with live
+          data before being treated as final.
+        </p>
+      </div>
+
+      <div class="cards">
+        {sources.map((source) => (
+          <a class="card" href={source.url} rel="noopener noreferrer" target="_blank">
+            <span class="soon-badge">{source.type}</span>
+            <span class="card-title">{source.title}</span>
+            <span class="card-desc">{source.publisher}: {source.note}</span>
+            <span class="card-arrow">Open source -></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

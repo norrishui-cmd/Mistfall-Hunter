@@ -1,15 +1,18 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import QualitySignals from '../../components/QualitySignals.astro';
+import { getHubLinks } from '../../data/siteQuality';
 
 const lang = 'zh' as const;
+const hubLinks = getHubLinks(lang);
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoGame',
   name: 'Mistfall Hunter',
   description:
-    'Bellring Games 开发的暗黑奇幻第三人称 PvPvE 撤离类动作 RPG。潜入 Gyldenmist 浓雾，击杀怪物与敌对猎人夺取战利品，并在死亡掉光之前成功撤离。',
-  genre: ['Action RPG', 'Extraction', 'Dark Fantasy', 'PvPvE'],
+    'Mistfall Hunter 是 Bellring Games 开发的暗黑奇幻 PvPvE 撤离动作 RPG。',
+  genre: ['动作 RPG', '撤离', '暗黑奇幻', 'PvPvE'],
   gamePlatform: ['PC', 'Steam', 'Xbox Series X|S', 'PlayStation 5'],
   publisher: { '@type': 'Organization', name: 'Bellring Games' },
   applicationCategory: 'Game',
@@ -18,132 +21,82 @@ const videoGameSchema = {
 };
 
 const cards = [
-  {
-    title: '发售日期 · 平台 · 价格',
-    desc: '什么时候上线、在哪玩、是否免费。Bellring 官宣后随时更新。',
-    href: '/zh/release-date',
-    live: true,
-  },
-  {
-    title: '撤离机制怎么运作',
-    desc: '核心循环、Soul of Return，以及为什么死亡会让你掉光一切。新人从这里开始。',
-    href: '/zh/beginner-guide',
-    live: true,
-  },
-  {
-    title: '职业 Tier List',
-    desc: '六大职业的 solo / PvP / 新手排名——Sorcerer、Shadowstrix、Mercenary 等。',
-    href: '/zh/classes',
-    live: true,
-  },
-  {
-    title: '交互式地图',
-    desc: '撤离点、Boss 刷新、高价值搜刮点，按区域分层呈现。',
-    href: '/zh/map',
-    live: true,
-  },
-  {
-    title: '配装与词缀',
-    desc: '每个职业的起手配装方向，加上词缀系统如何融入。可按职业筛选。',
-    href: '/zh/builds',
-    live: true,
-  },
-  {
-    title: '修复卡顿 · 提升帧数',
-    desc: '卡顿是已知问题。一份干净、不啰嗦的修复清单——不需要任何付费"加速器"。',
-    href: '/zh/performance',
-    live: true,
-  },
+  { title: '发售日、平台与价格', desc: '上线时间、平台、Game Pass 与定价状态。', href: '/zh/release-date' },
+  { title: '撤离机制', desc: '核心循环、Soul of Return 与死亡惩罚。', href: '/zh/beginner-guide' },
+  { title: '职业强度榜', desc: '六大职业的单人、PvP 与新手上手定位。', href: '/zh/classes' },
+  { title: '互动地图', desc: '撤离点、Boss、战利品和地标筛选。', href: '/zh/map' },
+  { title: '配装与词缀', desc: '职业构筑方向与词缀追踪。', href: '/zh/builds' },
+  { title: '性能优化', desc: '卡顿、低帧、崩溃和设置建议。', href: '/zh/performance' },
 ];
 ---
 
 <BaseLayout
   lang={lang}
   path="/"
-  title="Mistfall Hunter 攻略站 — 配装、地图与生存指南"
-  description="非官方 Mistfall Hunter 攻略与数据库：发售日期、职业 Tier List、配装、交互式地图与新手指南，覆盖这款暗黑奇幻 PvPvE 撤离 RPG。"
+  title="Mistfall Hunter Wiki 攻略站 - 配装、地图与生存指南"
+  description="Mistfall Hunter 非官方攻略与数据库：发售日、职业强度榜、配装、互动地图、Boss、FAQ 和新手指南。"
   jsonLd={[videoGameSchema]}
 >
-  <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <span class="eyebrow">非官方攻略 &amp; 数据库</span>
+      <span class="eyebrow">非官方攻略与数据库</span>
       <h1 class="h1">Mistfall<br />Hunter</h1>
-      <p class="hero-thesis">
-        潜入 Gyldenmist。带着满载的战利品归来——或者失去一切。
-      </p>
+      <p class="hero-thesis">进入 Gyldenmist，带着战利品撤离，或者失去一切。</p>
       <p class="hero-sub">
-        Bellring Games 出品的暗黑奇幻 PvPvE 撤离 RPG。六大职业、刀剑与魔法交织的硬核战斗，规则只有一条：
-        在浓雾里倒下，你就会掉光所有东西。这是一个由玩家搭建的中心站，专注配装、地图与生存。
+        这里是面向 Mistfall Hunter 的玩家攻略站，整理发售信息、职业、配装、地图、
+        Boss、FAQ 与上线后实测计划。
       </p>
       <div class="hero-cta">
-        <a class="btn" href="/zh/release-date">发售日期与价格</a>
-        <a class="btn btn-ghost" href="#about">这是什么游戏？</a>
+        <a class="btn" href="/zh/release-date">发售日与价格</a>
+        <a class="btn btn-ghost" href="/zh/sitemap">浏览攻略站</a>
       </div>
     </div>
   </section>
 
-  <!-- START HERE -->
   <section class="section">
     <div class="container">
-      <span class="eyebrow">从这里开始</span>
-      <h2 class="section-title">规划你的下一趟</h2>
+      <span class="eyebrow">开始阅读</span>
+      <h2 class="section-title">找到你的下一局路线</h2>
       <div class="cards">
-        {cards.map((card) =>
-          card.live ? (
-            <a class="card" href={card.href}>
-              <span class="card-title">{card.title}</span>
-              <span class="card-desc">{card.desc}</span>
-              <span class="card-arrow">查看 →</span>
-            </a>
-          ) : (
-            <div class="card soon">
-              <span class="soon-badge">即将上线</span>
-              <span class="card-title">{card.title}</span>
-              <span class="card-desc">{card.desc}</span>
-            </div>
-          )
-        )}
+        {cards.map((card) => (
+          <a class="card" href={card.href}>
+            <span class="card-title">{card.title}</span>
+            <span class="card-desc">{card.desc}</span>
+            <span class="card-arrow">查看 -></span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="section" id="about">
+  <section class="section">
     <div class="container">
-      <span class="eyebrow">这场狩猎</span>
-      <h2 class="section-title">Mistfall Hunter 是什么？</h2>
+      <span class="eyebrow">站点可信度</span>
+      <h2 class="section-title">预览信息与上线后实测分开处理</h2>
       <div class="prose">
         <p>
-          Mistfall Hunter 是一款第三人称撤离类动作 RPG，背景设定在被诸神遗弃的世界
-          <strong>Weavereach</strong>。诸神陨落后，他们的血化为 <strong>Gyldenmist</strong>——一种会腐蚀一切的金色浓雾。
-          你扮演一名被复活的 Gyldhunter，深入浓雾、收割其中的战利品，夺回命运被撕裂的部分。
-        </p>
-        <p>
-          每一趟都是一场豪赌。你降落到被浓雾笼罩的区域，与被腐蚀的怪物及敌对猎人争夺战利品，
-          然后赶在被人终结之前撤离。死亡是绝对的：一旦战败，你携带的一切都会丢失。想离开，
-          你得猎杀一只 <strong>Returner Woodling</strong>，拿到 <strong>Soul of Return</strong>——
-          那是为你开辟归途的钥匙。
-        </p>
-        <p>
-          可以单人，也可以最多三人组队。六大职业刀魔并用——从爆发极高的 Sorcerer 到主打格挡与招架的
-          Mercenary——并通过天赋、符文与词缀打磨你的配装。它是一款长期运营的游戏：每个赛季都会用新职业、
-          新区域和新遗物重塑 meta。
+          Mistfall Hunter 仍处于发售前阶段，因此本站会区分官方确认、媒体试玩观察和
+          正式版上线后需要验证的内容。地图点位、Boss 掉落、词缀数值和职业强度会在
+          正式版上线后继续更新。
         </p>
       </div>
+      <QualitySignals lang={lang} />
+    </div>
+  </section>
 
-      <dl class="facts">
-        <div class="fact"><dt>开发商</dt><dd>Bellring Games</dd></div>
-        <div class="fact"><dt>类型</dt><dd>暗黑奇幻 PvPvE 撤离 ARPG</dd></div>
-        <div class="fact"><dt>平台</dt><dd>PC（Steam）、Xbox Series X|S、PlayStation 5</dd></div>
-        <div class="fact"><dt>人数</dt><dd>单人或最多 3 人组队</dd></div>
-        <div class="fact"><dt>发售</dt><dd>2026 年 7 月 30 日</dd></div>
-        <div class="fact"><dt>价格</dt><dd>尚未官宣</dd></div>
-      </dl>
-
-      <p class="prose">
-        <a href="/zh/release-date">查看完整的发售、平台与定价说明 →</a>
-      </p>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">索引中心</span>
+      <h2 class="section-title">核心页面入口</h2>
+      <div class="cards">
+        {hubLinks.map((link) => (
+          <a class="card" href={link.href}>
+            <span class="card-title">{link.title}</span>
+            <span class="card-desc">{link.desc}</span>
+            <span class="card-arrow">打开 -></span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 </BaseLayout>

@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getHubLinks } from '../../data/siteQuality';
+import { getSeoPages } from '../../data/seoPages';
+
+const lang = 'zh' as const;
+const hubLinks = getHubLinks(lang);
+const dynamicLinks = getSeoPages(lang)
+  .filter((page) => !hubLinks.some((link) => link.href === `/zh/${page.slug}`))
+  .map((page) => ({
+    title: page.h1,
+    desc: page.description,
+    href: `/zh/${page.slug}`,
+  }));
+---
+
+<BaseLayout
+  lang={lang}
+  path="/sitemap"
+  title="Mistfall Hunter 中文站点地图"
+  description="Mistfall Hunter 中文 HTML 站点地图，收录核心攻略、地图、配装、Boss、工具、来源和更新页面。"
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">站点发现</span>
+      <h1 class="page-title">Mistfall Hunter 中文站点地图</h1>
+      <p class="lead">用于用户浏览和搜索引擎发现的重要页面入口。</p>
+
+      <div class="cards">
+        {hubLinks.map((link) => (
+          <a class="card" href={link.href}>
+            <span class="card-title">{link.title}</span>
+            <span class="card-desc">{link.desc}</span>
+            <span class="card-arrow">查看 -></span>
+          </a>
+        ))}
+      </div>
+
+      <div class="module-block">
+        <span class="eyebrow">长尾页面</span>
+        <div class="cards">
+          {dynamicLinks.slice(0, 36).map((link) => (
+            <a class="card" href={link.href}>
+              <span class="card-title">{link.title}</span>
+              <span class="card-desc">{link.desc}</span>
+              <span class="card-arrow">查看 -></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

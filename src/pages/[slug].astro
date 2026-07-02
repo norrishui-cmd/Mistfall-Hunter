@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PriorityLinks from '../components/PriorityLinks.astro';
 import FaqBlock from '../components/FaqBlock.astro';
 import SeoPageModules from '../components/SeoPageModules.astro';
+import QualitySignals from '../components/QualitySignals.astro';
 import { getSeoPages } from '../data/seoPages';
 import type { SeoPage } from '../data/seoPages';
 
@@ -77,6 +78,7 @@ const faqSchema = page.faqs
       )}
 
       <SeoPageModules page={page} />
+      <QualitySignals lang={lang} />
 
       <hr class="thread" />
 

@@ -26,6 +26,9 @@ export const ui = {
     'nav.soon': 'Soon',
     'footer.disclaimer':
       'Unofficial fan-made resource. Not affiliated with, endorsed by, or sponsored by Bellring Games. All game names, assets, and trademarks belong to their respective owners.',
+    'footer.sources': 'Sources',
+    'footer.updates': 'Updates',
+    'footer.sitemap': 'Sitemap',
   },
   zh: {
     'site.name': 'Mistfall Hunter Wiki 攻略站',
@@ -43,6 +46,9 @@ export const ui = {
     'nav.soon': '即将上线',
     'footer.disclaimer':
       '非官方玩家资源，与 Bellring Games 无隶属、背书或赞助关系。游戏名称、素材与商标归各自所有者所有。',
+    'footer.sources': '来源',
+    'footer.updates': '更新',
+    'footer.sitemap': '站点地图',
   },
 } as const;
 

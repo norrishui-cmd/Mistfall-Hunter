@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { lastUpdated } from '../data/siteQuality';
+
+const lang = 'en' as const;
+
+const roadmap = [
+  ['Now', 'Pre-launch structure', 'Release, platform, class, build, map, boss, FAQ, and tool pages are organized for crawl discovery.'],
+  ['Launch week', 'Live verification', 'Update map markers, class values, affixes, boss routes, drops, and performance notes with live data.'],
+  ['After patches', 'Refresh rankings', 'Re-check builds, tier lists, performance guidance, and boss reward value after balance updates.'],
+];
+---
+
+<BaseLayout
+  lang={lang}
+  path="/updates"
+  title="Mistfall Hunter Updates: Editorial Log & Launch Verification Plan"
+  description="Mistfall Hunter update log and launch verification plan for maps, builds, bosses, FAQ, sources, and guide accuracy."
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Updates</span>
+      <h1 class="page-title">Editorial updates and launch verification</h1>
+      <p class="lead">
+        This page explains what is updated now, what needs live-game confirmation, and how the site
+        will refresh guides after launch. Current editorial date: {lastUpdated}.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Timing</th><th>Focus</th><th>What changes</th></tr>
+          </thead>
+          <tbody>
+            {roadmap.map((row) => (
+              <tr>{row.map((cell) => <td>{cell}</td>)}</tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="prose">
+        <h2>Why this matters for rankings</h2>
+        <p>
+          Mistfall Hunter is still pre-launch, so many searches need a tracker rather than a fake
+          definitive answer. Pages are written to be useful now, then upgraded with tested data when
+          the game is playable.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

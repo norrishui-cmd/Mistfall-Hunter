@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { lastUpdated } from '../../data/siteQuality';
+
+const lang = 'zh' as const;
+
+const roadmap = [
+  ['当前', '发售前结构', '整理发售、平台、职业、配装、地图、Boss、FAQ 和工具页面，提升抓取发现。'],
+  ['发售周', '实测验证', '补充地图点位、职业数值、词缀、Boss 路线、掉落和性能表现。'],
+  ['补丁后', '刷新排名', '根据平衡补丁更新配装、职业强度、性能建议和 Boss 奖励价值。'],
+];
+---
+
+<BaseLayout
+  lang={lang}
+  path="/updates"
+  title="Mistfall Hunter 更新记录与上线验证计划"
+  description="Mistfall Hunter 更新记录与上线验证计划，覆盖地图、配装、Boss、FAQ、来源和攻略准确性。"
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">更新</span>
+      <h1 class="page-title">更新记录与上线验证计划</h1>
+      <p class="lead">当前编辑日期：{lastUpdated}。正式上线后会用实测内容替换预览占位。</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>时间</th><th>重点</th><th>更新内容</th></tr>
+          </thead>
+          <tbody>
+            {roadmap.map((row) => (
+              <tr>{row.map((cell) => <td>{cell}</td>)}</tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

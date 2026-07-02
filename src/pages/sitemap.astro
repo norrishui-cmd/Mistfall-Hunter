@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getHubLinks } from '../data/siteQuality';
+import { getSeoPages } from '../data/seoPages';
+
+const lang = 'en' as const;
+const hubLinks = getHubLinks(lang);
+const dynamicLinks = getSeoPages(lang)
+  .filter((page) => !hubLinks.some((link) => link.href === `/${page.slug}`))
+  .map((page) => ({
+    title: page.h1,
+    desc: page.description,
+    href: `/${page.slug}`,
+    cluster: page.group,
+  }));
+
+const groups = [
+  { key: 'core', title: 'Core pages' },
+  { key: 'release', title: 'Release and news' },
+  { key: 'guides', title: 'Guides' },
+  { key: 'maps', title: 'Maps' },
+  { key: 'builds', title: 'Builds' },
+  { key: 'bosses', title: 'Bosses' },
+  { key: 'tools', title: 'Tools' },
+];
+---
+
+<BaseLayout
+  lang={lang}
+  path="/sitemap"
+  title="Mistfall Hunter HTML Sitemap"
+  description="Human-readable Mistfall Hunter sitemap for core guide pages, maps, builds, bosses, tools, sources, and update pages."
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Discovery</span>
+      <h1 class="page-title">Mistfall Hunter sitemap</h1>
+      <p class="lead">
+        A crawl-friendly index of the site’s most important pages. Submit the XML sitemap in
+        Google Search Console, and use this page as the human-readable discovery hub.
+      </p>
+
+      {groups.map((group) => {
+        const links = hubLinks.filter((link) => link.cluster === group.key);
+        return links.length ? (
+          <div class="module-block">
+            <span class="eyebrow">{group.title}</span>
+            <div class="cards">
+              {links.map((link) => (
+                <a class="card" href={link.href}>
+                  <span class="card-title">{link.title}</span>
+                  <span class="card-desc">{link.desc}</span>
+                  <span class="card-arrow">Open -></span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ) : null;
+      })}
+
+      <div class="module-block">
+        <span class="eyebrow">Long-tail pages</span>
+        <div class="cards">
+          {dynamicLinks.slice(0, 36).map((link) => (
+            <a class="card" href={link.href}>
+              <span class="card-title">{link.title}</span>
+              <span class="card-desc">{link.desc}</span>
+              <span class="card-arrow">Open -></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
