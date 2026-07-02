@@ -2,6 +2,7 @@ import type { Lang } from '../i18n';
 import type { PriorityLink } from './priorityLinks';
 import { enExpansionPages, zhExpansionPages } from './urlExpansion';
 import { enFaqPages, zhFaqPages } from './faqExpansion';
+import { enGrowthPages, zhGrowthPages } from './urlGrowthPlan';
 
 export type SeoSection = {
   heading: string;
@@ -9,9 +10,16 @@ export type SeoSection = {
   bullets?: string[];
 };
 
+export type SeoTable = {
+  title: string;
+  headers: string[];
+  rows: string[][];
+};
+
 export type SeoPage = {
   slug: string;
   group: PriorityLink['group'];
+  template?: 'guide' | 'map' | 'build' | 'boss' | 'tool' | 'faq';
   title: string;
   description: string;
   eyebrow: string;
@@ -21,6 +29,11 @@ export type SeoPage = {
   sections: SeoSection[];
   cards?: { title: string; desc: string; href: string }[];
   facts?: { k: string; v: string }[];
+  intent?: { primary: string; secondary: string[]; freshness: string };
+  checklist?: string[];
+  steps?: { title: string; body: string }[];
+  tables?: SeoTable[];
+  relatedSearches?: string[];
   faqs?: { q: string; a: string }[];
 };
 
@@ -390,8 +403,8 @@ export const zhPages: SeoPage[] = [
 
 export function getSeoPages(lang: Lang): SeoPage[] {
   return lang === 'zh'
-    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages]
-    : [...enPages, ...enExpansionPages, ...enFaqPages];
+    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages]
+    : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages];
 }
 
 export function getSeoPage(lang: Lang, slug: string): SeoPage | undefined {

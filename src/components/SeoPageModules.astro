@@ -1,0 +1,115 @@
+---
+import type { SeoPage } from '../data/seoPages';
+
+interface Props {
+  page: SeoPage;
+  labels?: {
+    intent: string;
+    primary: string;
+    secondary: string;
+    freshness: string;
+    checklist: string;
+    steps: string;
+    tables: string;
+    related: string;
+  };
+}
+
+const { page } = Astro.props as Props;
+const labels = Astro.props.labels ?? {
+  intent: 'Search intent',
+  primary: 'Primary',
+  secondary: 'Secondary',
+  freshness: 'Freshness',
+  checklist: 'Checklist',
+  steps: 'Step plan',
+  tables: 'Reference table',
+  related: 'Related searches',
+};
+---
+
+{(page.intent || page.checklist) && (
+  <div class={`seo-module seo-module--${page.template ?? 'guide'}`}>
+    {page.intent && (
+      <div class="intent-grid">
+        <div>
+          <span class="eyebrow">{labels.intent}</span>
+          <h2>{page.intent.primary}</h2>
+          <p>{page.intent.freshness}</p>
+        </div>
+        <dl class="intent-list">
+          <div>
+            <dt>{labels.primary}</dt>
+            <dd>{page.intent.primary}</dd>
+          </div>
+          <div>
+            <dt>{labels.secondary}</dt>
+            <dd>{page.intent.secondary.join(', ')}</dd>
+          </div>
+          <div>
+            <dt>{labels.freshness}</dt>
+            <dd>{page.intent.freshness}</dd>
+          </div>
+        </dl>
+      </div>
+    )}
+
+    {page.checklist && (
+      <div class="module-block">
+        <h2>{labels.checklist}</h2>
+        <ul class="check-grid">
+          {page.checklist.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    )}
+  </div>
+)}
+
+{page.steps && (
+  <div class="module-block">
+    <span class="eyebrow">{labels.steps}</span>
+    <div class="step-grid">
+      {page.steps.map((step, index) => (
+        <article class="step-card">
+          <span>{String(index + 1).padStart(2, '0')}</span>
+          <h3>{step.title}</h3>
+          <p>{step.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+)}
+
+{page.tables && (
+  <div class="module-block">
+    <span class="eyebrow">{labels.tables}</span>
+    {page.tables.map((table) => (
+      <div class="table-wrap">
+        <h2>{table.title}</h2>
+        <table>
+          <thead>
+            <tr>
+              {table.headers.map((header) => <th>{header}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {table.rows.map((row) => (
+              <tr>
+                {row.map((cell) => <td>{cell}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    ))}
+  </div>
+)}
+
+{page.relatedSearches && (
+  <div class="module-block">
+    <span class="eyebrow">{labels.related}</span>
+    <div class="query-chips">
+      {page.relatedSearches.map((query) => <span>{query}</span>)}
+    </div>
+  </div>
+)}

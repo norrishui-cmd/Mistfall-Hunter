@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PriorityLinks from '../../components/PriorityLinks.astro';
 import FaqBlock from '../../components/FaqBlock.astro';
+import SeoPageModules from '../../components/SeoPageModules.astro';
 import { getSeoPages } from '../../data/seoPages';
 import type { SeoPage } from '../../data/seoPages';
 
@@ -74,6 +75,20 @@ const faqSchema = page.faqs
           ))}
         </div>
       )}
+
+      <SeoPageModules
+        page={page}
+        labels={{
+          intent: '搜索意图',
+          primary: '核心词',
+          secondary: '相关词',
+          freshness: '更新策略',
+          checklist: '检查清单',
+          steps: '执行步骤',
+          tables: '资料表',
+          related: '相关搜索',
+        }}
+      />
 
       <hr class="thread" />
 
