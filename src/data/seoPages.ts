@@ -3,6 +3,7 @@ import type { PriorityLink } from './priorityLinks';
 import { enExpansionPages, zhExpansionPages } from './urlExpansion';
 import { enFaqPages, zhFaqPages } from './faqExpansion';
 import { enGrowthPages, zhGrowthPages } from './urlGrowthPlan';
+import { enLongTailPages, zhLongTailPages } from './urlLongTailPlan';
 
 export type SeoSection = {
   heading: string;
@@ -403,8 +404,8 @@ export const zhPages: SeoPage[] = [
 
 export function getSeoPages(lang: Lang): SeoPage[] {
   return lang === 'zh'
-    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages]
-    : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages];
+    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages, ...zhLongTailPages]
+    : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages, ...enLongTailPages];
 }
 
 export function getSeoPage(lang: Lang, slug: string): SeoPage | undefined {
