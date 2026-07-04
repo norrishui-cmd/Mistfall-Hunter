@@ -4,6 +4,7 @@ import { enExpansionPages, zhExpansionPages } from './urlExpansion';
 import { enFaqPages, zhFaqPages } from './faqExpansion';
 import { enGrowthPages, zhGrowthPages } from './urlGrowthPlan';
 import { enLongTailPages, zhLongTailPages } from './urlLongTailPlan';
+import { enCluster2Pages, zhCluster2Pages } from './urlLongTailCluster2';
 
 export type SeoSection = {
   heading: string;
@@ -404,8 +405,8 @@ export const zhPages: SeoPage[] = [
 
 export function getSeoPages(lang: Lang): SeoPage[] {
   return lang === 'zh'
-    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages, ...zhLongTailPages]
-    : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages, ...enLongTailPages];
+    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages, ...zhLongTailPages, ...zhCluster2Pages]
+    : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages, ...enLongTailPages, ...enCluster2Pages];
 }
 
 export function getSeoPage(lang: Lang, slug: string): SeoPage | undefined {
