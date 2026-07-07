@@ -103,6 +103,7 @@ export const enPages: SeoPage[] = [
       { title: 'Builds', desc: 'Starter loadout directions and affix tracking.', href: '/builds' },
       { title: 'Weapons', desc: 'Combat roles and weapon-choice principles.', href: '/weapons' },
       { title: 'Bosses', desc: 'Mist Lord prep, PvE threat reading, and reward routing.', href: '/bosses' },
+      { title: 'FAQ index', desc: 'Fast answers — each one links to its own focused, updated page.', href: '/faq' },
     ],
   },
   {
@@ -301,6 +302,7 @@ export const zhPages: SeoPage[] = [
       { title: '配装', desc: '起手构筑方向与词缀追踪。', href: '/zh/builds' },
       { title: '武器', desc: '战斗定位与武器选择原则。', href: '/zh/weapons' },
       { title: 'Boss', desc: 'Mist Lord 准备、PvE 威胁与收益路线。', href: '/zh/bosses' },
+      { title: '常见问题索引', desc: '快速答案——每个问题都指向独立、持续更新的深度页面。', href: '/zh/faq' },
     ],
   },
   {
@@ -403,10 +405,42 @@ export const zhPages: SeoPage[] = [
   },
 ];
 
+// Slugs that are indexable right now: the core hub pages plus evergreen,
+// fact-based long-tail. Everything else in the merged set is still BUILT and
+// internally linked (so no broken links), but carries a noindex tag until we
+// have verified 1.0 data — this keeps pre-launch speculation out of the index.
+export const INDEXABLE_SLUGS = new Set<string>([
+  // core hub pages
+  'news', 'guides', 'tools', 'about', 'weapons', 'bosses', 'loot', 'soul-of-return',
+  // evergreen, fact-based long-tail (safe to index pre-launch)
+  'platforms', 'game-pass', 'game-pass-pc', 'ps5', 'ps5-performance', 'steam',
+  'steam-deck', 'steam-next-fest-demo', 'system-requirements', 'free-to-play',
+  'controller-settings', 'server-status', 'pvp-or-pve',
+]);
+
+export function isIndexable(slug: string): boolean {
+  return INDEXABLE_SLUGS.has(slug);
+}
+
+// Keep the first page for any given slug. Prevents duplicate getStaticPaths
+// entries (which fail the build) when the merged arrays overlap.
+function dedupeBySlug(pages: SeoPage[]): SeoPage[] {
+  const seen = new Set<string>();
+  const out: SeoPage[] = [];
+  for (const page of pages) {
+    if (seen.has(page.slug)) continue;
+    seen.add(page.slug);
+    out.push(page);
+  }
+  return out;
+}
+
 export function getSeoPages(lang: Lang): SeoPage[] {
-  return lang === 'zh'
-    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages, ...zhLongTailPages, ...zhCluster2Pages]
-    : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages, ...enLongTailPages, ...enCluster2Pages];
+  const merged =
+    lang === 'zh'
+      ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages, ...zhLongTailPages, ...zhCluster2Pages]
+      : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages, ...enLongTailPages, ...enCluster2Pages];
+  return dedupeBySlug(merged);
 }
 
 export function getSeoPage(lang: Lang, slug: string): SeoPage | undefined {

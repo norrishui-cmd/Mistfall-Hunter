@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { CLASSES, GOALS, AFFIX_GROUPS, AFFIXES } from '../data/planner';
+
+const lang = 'en' as const;
+const site = Astro.site ?? new URL('https://mistfallhunter.me');
+const firstClass = CLASSES[0].id;
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', site).href },
+    { '@type': 'ListItem', position: 2, name: 'Tools', item: new URL('/tools', site).href },
+    { '@type': 'ListItem', position: 3, name: 'Build Planner', item: new URL('/build-planner', site).href },
+  ],
+};
+
+const appSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Mistfall Hunter Build Planner',
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'Web',
+  url: new URL('/build-planner', site).href,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description:
+    'Free interactive Mistfall Hunter build planner: pick a class and path, set your goal, prioritise affixes, and share your build with a link.',
+};
+---
+
+<BaseLayout
+  lang={lang}
+  path="/build-planner"
+  title="Mistfall Hunter Build Planner: Class, Path & Affix Tool"
+  description="Free Mistfall Hunter build planner — pick a class and path, set your goal, prioritise affixes, and get a shareable build link. Covers all six classes."
+  jsonLd={[breadcrumb, appSchema]}
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Tools</span>
+      <h1 class="page-title">Mistfall Hunter build planner</h1>
+      <p class="lead">
+        Pick a class and path, set your goal, then prioritise the affixes you want. Your build
+        updates live and the page URL becomes a shareable link — send it to a friend or save it.
+      </p>
+
+      <div class="callout callout--warn">
+        <span class="eyebrow">Pre-launch</span>
+        <p>
+          Class names, paths, and affix names are from the beta. Exact skill, talent, and affix
+          values aren't confirmed yet — the game launches July 30, 2026. Use this to plan a
+          direction; the meta isn't settled, and skills/talents get added with 1.0 data.
+        </p>
+      </div>
+
+      <div class="planner">
+        <div class="pl-step">
+          <span class="pl-step-label">1 · Class</span>
+          <div class="pl-chips">
+            {CLASSES.map((c, i) => (
+              <button
+                type="button"
+                class={`pl-class${i === 0 ? ' is-active' : ''}`}
+                data-cls={c.id}
+                data-label={c.name}
+                data-note={c.en.note}
+              >
+                {c.name}<small>{c.role}</small>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div class="pl-step">
+          <span class="pl-step-label">2 · Path</span>
+          <div class="pl-chips">
+            {CLASSES.map((c) =>
+              c.paths.map((p, pi) => (
+                <button
+                  type="button"
+                  class={`pl-path${c.id === firstClass && pi === 0 ? ' is-active' : ''}`}
+                  data-cls={c.id}
+                  data-path={p.id}
+                  data-label={p.name}
+                  data-note={p.en.note}
+                  hidden={c.id !== firstClass}
+                >
+                  {p.name}
+                </button>
+              ))
+            )}
+          </div>
+        </div>
+
+        <div class="pl-step">
+          <span class="pl-step-label">3 · Goal <span class="pl-opt">(optional)</span></span>
+          <div class="pl-chips">
+            {GOALS.map((g) => (
+              <button type="button" class="pl-goal" data-goal={g.id} data-label={g.en.label}>{g.en.label}</button>
+            ))}
+          </div>
+        </div>
+
+        <div class="pl-step">
+          <span class="pl-step-label">4 · Priority affixes</span>
+          <p class="pl-hint">Beta-observed names — exact effects confirm at launch. Grouping is our provisional read of the names.</p>
+          {AFFIX_GROUPS.map((grp) => (
+            <div class="pl-affixgroup">
+              <span class="pl-group-label">{grp.en}</span>
+              <div class="pl-chips">
+                {AFFIXES.filter((a) => a.group === grp.id).map((a) => (
+                  <button type="button" class="pl-affix" data-affix={a.id} data-label={a.name} data-group={a.group}>{a.name}</button>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="pl-summary" id="pl-summary" data-none="none yet" data-copied="Link copied!">
+        <span class="eyebrow">Your build</span>
+        <h2 class="pl-sum-title"><span id="pl-sum-class">Mercenary</span> · <span id="pl-sum-path">Sword &amp; Shield</span></h2>
+        <p class="pl-sum-line"><span class="pl-k">Goal</span><span id="pl-sum-goal">—</span></p>
+        <p class="pl-sum-note" id="pl-sum-note"></p>
+        <p class="pl-sum-line"><span class="pl-k">Focus</span><span id="pl-sum-focus"></span></p>
+        <p class="pl-sum-line"><span class="pl-k">Priority affixes (<span id="pl-sum-count">0</span>)</span><span id="pl-sum-affixlist">none yet</span></p>
+        <div class="pl-actions">
+          <button type="button" id="pl-copy" class="btn">Copy share link</button>
+          <button type="button" id="pl-reset" class="btn btn-ghost">Reset</button>
+        </div>
+        <p class="pl-fine">Skills &amp; talents will be added with 1.0 data.</p>
+      </div>
+
+      <div class="prose" style="margin-top:2.5rem">
+        <p>
+          Not sure which class fits? Compare them on the <a href="/classes">tier list</a>, learn the
+          loop in the <a href="/beginner-guide">beginner guide</a>, or see starter directions in
+          <a href="/builds"> builds</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .planner { display: flex; flex-direction: column; gap: 1.6rem; margin-top: 1.5rem; }
+  .pl-step { display: flex; flex-direction: column; gap: 0.6rem; }
+  .pl-step-label { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gylden); }
+  .pl-opt { color: var(--ash); }
+  .pl-hint { color: var(--ash); font-size: 0.82rem; margin: -0.2rem 0 0.2rem; }
+  .pl-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+
+  .pl-class, .pl-path, .pl-goal, .pl-affix {
+    font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.02em;
+    padding: 0.5em 0.85em; background: var(--stone); color: var(--bone);
+    border: 1px solid var(--line); border-radius: 2px; cursor: pointer; transition: all 0.14s ease;
+  }
+  .pl-class small { display: block; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ash); margin-top: 0.15em; }
+  .pl-class:hover, .pl-path:hover, .pl-goal:hover, .pl-affix:hover { border-color: var(--gylden); }
+  .pl-class.is-active, .pl-path.is-active, .pl-goal.is-active { background: var(--gylden); border-color: var(--gylden); color: #0e1014; }
+  .pl-class.is-active small { color: rgba(14, 16, 20, 0.7); }
+  .pl-affix.is-on { border-color: var(--gylden); color: var(--gylden-glow); box-shadow: inset 0 0 0 1px var(--gylden); }
+  .pl-path[hidden] { display: none; }
+
+  .pl-affixgroup { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.7rem; }
+  .pl-group-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ash); }
+
+  .pl-summary {
+    margin-top: 2rem; border: 1px solid var(--line); border-left: 2px solid var(--gylden);
+    border-radius: 4px; padding: 1.3rem 1.4rem; background: var(--stone);
+  }
+  .pl-sum-title { font-family: var(--display); font-size: 1.7rem; font-weight: 600; color: var(--bone); margin: 0.3rem 0 0.8rem; line-height: 1.1; }
+  .pl-sum-line { display: flex; flex-wrap: wrap; gap: 0.5rem 0.8rem; margin: 0.35rem 0; color: var(--bone); font-size: 0.95rem; }
+  .pl-k { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ash); align-self: center; }
+  .pl-sum-note { color: var(--ash); font-size: 0.92rem; line-height: 1.55; margin: 0.5rem 0; }
+  .pl-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.1rem; }
+  .pl-fine { color: var(--ash); font-size: 0.78rem; margin: 0.9rem 0 0; }
+</style>
+
+<script>
+  import '../scripts/planner.ts';
+</script>

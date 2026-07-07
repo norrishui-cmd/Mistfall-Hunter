@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { CLASSES, GOALS, AFFIX_GROUPS, AFFIXES } from '../../data/planner';
+
+const lang = 'zh' as const;
+const site = Astro.site ?? new URL('https://mistfallhunter.me');
+const firstClass = CLASSES[0].id;
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '首页', item: new URL('/zh/', site).href },
+    { '@type': 'ListItem', position: 2, name: '工具', item: new URL('/zh/tools', site).href },
+    { '@type': 'ListItem', position: 3, name: '配装规划器', item: new URL('/zh/build-planner', site).href },
+  ],
+};
+
+const appSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Mistfall Hunter 配装规划器',
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'Web',
+  url: new URL('/zh/build-planner', site).href,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description:
+    '免费的 Mistfall Hunter 配装规划器：选职业与流派、设定目标、勾选优先词缀，并生成可分享的配装链接。覆盖全部六个职业。',
+};
+---
+
+<BaseLayout
+  lang={lang}
+  path="/build-planner"
+  title="Mistfall Hunter 配装规划器：职业 · 流派 · 词缀工具"
+  description="免费的 Mistfall Hunter 配装规划器——选职业与流派、设定目标、勾选优先词缀,生成可分享的配装链接。覆盖全部六个职业。"
+  jsonLd={[breadcrumb, appSchema]}
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">工具</span>
+      <h1 class="page-title">Mistfall Hunter 配装规划器</h1>
+      <p class="lead">
+        选职业和流派、设定目标,再勾选你要优先的词缀。配装会实时更新,页面链接会变成可分享的链接——发给队友或存下来。
+      </p>
+
+      <div class="callout callout--warn">
+        <span class="eyebrow">发售前</span>
+        <p>
+          职业名、流派、词缀名都来自测试期。技能、天赋、词缀的具体数值尚未确认——游戏 2026 年 7 月 30 日发售。
+          这里用来规划方向;meta 未定型,技能/天赋会在 1.0 数据出来后补充。
+        </p>
+      </div>
+
+      <div class="planner">
+        <div class="pl-step">
+          <span class="pl-step-label">1 · 职业</span>
+          <div class="pl-chips">
+            {CLASSES.map((c, i) => (
+              <button
+                type="button"
+                class={`pl-class${i === 0 ? ' is-active' : ''}`}
+                data-cls={c.id}
+                data-label={c.name}
+                data-note={c.zh.note}
+              >
+                {c.name}<small>{c.role}</small>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div class="pl-step">
+          <span class="pl-step-label">2 · 流派</span>
+          <div class="pl-chips">
+            {CLASSES.map((c) =>
+              c.paths.map((p, pi) => (
+                <button
+                  type="button"
+                  class={`pl-path${c.id === firstClass && pi === 0 ? ' is-active' : ''}`}
+                  data-cls={c.id}
+                  data-path={p.id}
+                  data-label={p.name}
+                  data-note={p.zh.note}
+                  hidden={c.id !== firstClass}
+                >
+                  {p.name}
+                </button>
+              ))
+            )}
+          </div>
+        </div>
+
+        <div class="pl-step">
+          <span class="pl-step-label">3 · 目标 <span class="pl-opt">(可选)</span></span>
+          <div class="pl-chips">
+            {GOALS.map((g) => (
+              <button type="button" class="pl-goal" data-goal={g.id} data-label={g.zh.label}>{g.zh.label}</button>
+            ))}
+          </div>
+        </div>
+
+        <div class="pl-step">
+          <span class="pl-step-label">4 · 优先词缀</span>
+          <p class="pl-hint">测试期出现的名字——具体效果发售时确认。分组是我们对名字的暂定理解。</p>
+          {AFFIX_GROUPS.map((grp) => (
+            <div class="pl-affixgroup">
+              <span class="pl-group-label">{grp.zh}</span>
+              <div class="pl-chips">
+                {AFFIXES.filter((a) => a.group === grp.id).map((a) => (
+                  <button type="button" class="pl-affix" data-affix={a.id} data-label={a.name} data-group={a.group}>{a.name}</button>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="pl-summary" id="pl-summary" data-none="暂无" data-copied="链接已复制!">
+        <span class="eyebrow">你的配装</span>
+        <h2 class="pl-sum-title"><span id="pl-sum-class">Mercenary</span> · <span id="pl-sum-path">Sword &amp; Shield</span></h2>
+        <p class="pl-sum-line"><span class="pl-k">目标</span><span id="pl-sum-goal">—</span></p>
+        <p class="pl-sum-note" id="pl-sum-note"></p>
+        <p class="pl-sum-line"><span class="pl-k">侧重</span><span id="pl-sum-focus"></span></p>
+        <p class="pl-sum-line"><span class="pl-k">优先词缀 (<span id="pl-sum-count">0</span>)</span><span id="pl-sum-affixlist">暂无</span></p>
+        <div class="pl-actions">
+          <button type="button" id="pl-copy" class="btn">复制分享链接</button>
+          <button type="button" id="pl-reset" class="btn btn-ghost">重置</button>
+        </div>
+        <p class="pl-fine">技能与天赋将在 1.0 数据出来后补充。</p>
+      </div>
+
+      <div class="prose" style="margin-top:2.5rem">
+        <p>
+          拿不准选哪个职业?去<a href="/zh/classes">Tier List</a> 对比,在<a href="/zh/beginner-guide">新手指南</a>里学循环,
+          或在<a href="/zh/builds">配装</a>里看起手方向。
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .planner { display: flex; flex-direction: column; gap: 1.6rem; margin-top: 1.5rem; }
+  .pl-step { display: flex; flex-direction: column; gap: 0.6rem; }
+  .pl-step-label { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gylden); }
+  .pl-opt { color: var(--ash); }
+  .pl-hint { color: var(--ash); font-size: 0.82rem; margin: -0.2rem 0 0.2rem; }
+  .pl-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+
+  .pl-class, .pl-path, .pl-goal, .pl-affix {
+    font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.02em;
+    padding: 0.5em 0.85em; background: var(--stone); color: var(--bone);
+    border: 1px solid var(--line); border-radius: 2px; cursor: pointer; transition: all 0.14s ease;
+  }
+  .pl-class small { display: block; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ash); margin-top: 0.15em; }
+  .pl-class:hover, .pl-path:hover, .pl-goal:hover, .pl-affix:hover { border-color: var(--gylden); }
+  .pl-class.is-active, .pl-path.is-active, .pl-goal.is-active { background: var(--gylden); border-color: var(--gylden); color: #0e1014; }
+  .pl-class.is-active small { color: rgba(14, 16, 20, 0.7); }
+  .pl-affix.is-on { border-color: var(--gylden); color: var(--gylden-glow); box-shadow: inset 0 0 0 1px var(--gylden); }
+  .pl-path[hidden] { display: none; }
+
+  .pl-affixgroup { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 0.7rem; }
+  .pl-group-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ash); }
+
+  .pl-summary {
+    margin-top: 2rem; border: 1px solid var(--line); border-left: 2px solid var(--gylden);
+    border-radius: 4px; padding: 1.3rem 1.4rem; background: var(--stone);
+  }
+  .pl-sum-title { font-family: var(--display); font-size: 1.7rem; font-weight: 600; color: var(--bone); margin: 0.3rem 0 0.8rem; line-height: 1.1; }
+  .pl-sum-line { display: flex; flex-wrap: wrap; gap: 0.5rem 0.8rem; margin: 0.35rem 0; color: var(--bone); font-size: 0.95rem; }
+  .pl-k { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ash); align-self: center; }
+  .pl-sum-note { color: var(--ash); font-size: 0.92rem; line-height: 1.55; margin: 0.5rem 0; }
+  .pl-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.1rem; }
+  .pl-fine { color: var(--ash); font-size: 0.78rem; margin: 0.9rem 0 0; }
+</style>
+
+<script>
+  import '../../scripts/planner.ts';
+</script>

@@ -4,7 +4,7 @@ import PriorityLinks from '../components/PriorityLinks.astro';
 import FaqBlock from '../components/FaqBlock.astro';
 import SeoPageModules from '../components/SeoPageModules.astro';
 import QualitySignals from '../components/QualitySignals.astro';
-import { getSeoPages } from '../data/seoPages';
+import { getSeoPages, isIndexable } from '../data/seoPages';
 import type { SeoPage } from '../data/seoPages';
 
 export function getStaticPaths() {
@@ -13,6 +13,7 @@ export function getStaticPaths() {
 
 const lang = 'en' as const;
 const { page } = Astro.props as { page: SeoPage };
+const noindex = !isIndexable(page.slug);
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
 
 const breadcrumb = {
@@ -42,6 +43,7 @@ const faqSchema = page.faqs
   path={`/${page.slug}`}
   title={page.title}
   description={page.description}
+  noindex={noindex}
   jsonLd={faqSchema ? [breadcrumb, faqSchema] : [breadcrumb]}
 >
   <section class="section">

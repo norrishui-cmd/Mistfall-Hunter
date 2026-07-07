@@ -12,9 +12,10 @@ interface Props {
   path?: string;
   image?: string;
   jsonLd?: object[];
+  noindex?: boolean;
 }
 
-const { title, description, lang, path = '/', image, jsonLd } = Astro.props;
+const { title, description, lang, path = '/', image, jsonLd, noindex } = Astro.props;
 const htmlLang = lang === 'zh' ? 'zh-Hans' : 'en';
 const skipLabel = lang === 'zh' ? '跳到正文' : 'Skip to content';
 ---
@@ -29,6 +30,7 @@ const skipLabel = lang === 'zh' ? '跳到正文' : 'Skip to content';
       path={path}
       image={image}
       jsonLd={jsonLd}
+      noindex={noindex}
     />
   </head>
   <body>

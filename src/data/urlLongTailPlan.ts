@@ -572,8 +572,170 @@ function localizedCards(cards?: SeoPage['cards']) {
   }));
 }
 
+// Real, hand-translated content for the slugs that are currently INDEXABLE
+// (see INDEXABLE_SLUGS in seoPages.ts). These are live-eligible pages, so
+// unlike the rest of this file's generic placeholder derivation, they get a
+// full Chinese translation of the actual checklist/steps/table/FAQ content
+// instead of boilerplate meta-commentary about the page itself.
+const zhRealContent: Record<
+  string,
+  {
+    sections: SeoPage['sections'];
+    checklist?: string[];
+    steps?: SeoPage['steps'];
+    tables?: SeoPage['tables'];
+    faqs?: SeoPage['faqs'];
+  }
+> = {
+  'controller-settings': {
+    sections: [
+      { heading: '发售前说明', body: ['具体设置项名称和数值范围要等正式版才能核实。这个页面先给出调试顺序，方便你知道该先测什么。'] },
+      { heading: '主机优先级', body: ['如果主机版提供性能模式和画质模式，撤离玩法通常应该优先选更流畅的帧率，而不是画面细节。'] },
+    ],
+    checklist: ['先调摄像机灵敏度', '给远程职业测试瞄准灵敏度', '检查震动是否舒适', '尽量重新映射紧急按键', '主机优先选性能模式'],
+    steps: [
+      { title: '调整摄像机手感', body: '摄像机转动要够快以应对 PvP，但也不能快到近战走位变得凌乱。' },
+      { title: '按职业测试需求', body: 'Mercenary 更看重格挡和闪避手感；Blackarrow 更看重瞄准和跟枪。' },
+      { title: '实战后再微调', body: '打完真实战斗后一次只改一项设置，而不是对着菜单瞎猜。' },
+    ],
+    tables: [{
+      title: '手柄调试优先级',
+      headers: ['职业风格', '设置重点', '原因'],
+      rows: [
+        ['近战', '摄像机、闪避、格挡输入', '时机与走位'],
+        ['远程', '瞄准灵敏度、辅助瞄准选项', '跟枪与精度'],
+        ['辅助', '索敌、快捷输入', '紧急反应速度'],
+      ],
+    }],
+    faqs: [
+      { q: 'Mistfall Hunter 能用手柄玩吗？', a: '主机版本默认支持手柄，PC 玩家发售时也应检查手柄选项。' },
+      { q: '应该先改哪个设置？', a: '先调摄像机灵敏度，再给远程职业调瞄准灵敏度。' },
+    ],
+  },
+  'game-pass-pc': {
+    sections: [
+      { heading: '为什么 PC Game Pass 值得关注', body: ['首发订阅入口可能带来大量新玩家，这也意味着早期房间里会有很多同样在摸索路线的新人。'] },
+      { heading: '还需要确认的信息', body: ['预载时间、安装包大小、具体订阅名称和各地区上线表现，都建议临近发售时再次核实。'] },
+    ],
+    checklist: ['查看 Xbox App 上架信息', '确认订阅可访问', '预留 SSD 空间', '更新显卡驱动', '开局前先看新手指南'],
+    steps: [
+      { title: '确认可访问性', body: '临近发售时检查游戏是否出现在你的 PC Game Pass 或 Game Pass Ultimate 库里。' },
+      { title: '准备安装', body: '预留好 SSD 空间，留意 Xbox App 里的预载或安装时间。' },
+      { title: '排队前先调设置', body: '在进入正式撤离对局前，先过一遍性能设置。' },
+    ],
+    tables: [{
+      title: 'PC Game Pass 发售清单',
+      headers: ['项目', '原因', '时机'],
+      rows: [
+        ['订阅', '访问游戏的前提', '发售前'],
+        ['安装 Xbox App', 'PC Game Pass 主要入口', '预载开放时'],
+        ['性能设置', '保护你的第一局正式对局', '首局前'],
+      ],
+    }],
+    faqs: [
+      { q: 'Mistfall Hunter 在 PC Game Pass 上吗？', a: '官方信息显示会支持 Game Pass 访问，但具体 PC 可用性建议临近发售时在 Xbox App 里确认。' },
+      { q: '能通过 Xbox App 预载吗？', a: '预载时间仍需临近发售时由商店确认。' },
+    ],
+  },
+  'ps5-performance': {
+    sections: [
+      { heading: '预期情况', body: ['PS5 属于已公布的平台之一，但具体性能模式名称和发售表现，建议以商店页面和补丁说明为准再确认。'] },
+      { heading: '第一天建议', body: ['在确认发售版本在你的主机和设置下运行稳定之前，先别把最好的装备拿去冒险。'] },
+    ],
+    checklist: ['先确认性能模式', '调整手柄灵敏度', '关注发售补丁说明', '确认联机条件', '稳定前先别打高风险局'],
+    steps: [
+      { title: '优先选帧率稳定', body: '撤离战斗通常更依赖流畅的帧节奏，而不是额外的画面细节。' },
+      { title: '调整手柄手感', body: '在进入 PvP 密集路线前先调好摄像机和瞄准。' },
+      { title: '先用低价值配装测试', body: '带贵重装备之前，先用低风险的局测试性能和手感。' },
+    ],
+    tables: [{
+      title: 'PS5 发售检查项',
+      headers: ['检查项', '为什么重要', '建议动作'],
+      rows: [
+        ['性能模式', '帧率稳定性影响战斗时机', '优先选更流畅的模式'],
+        ['手柄灵敏度', '影响远程和近战的反应', 'PvP 前先调好'],
+        ['补丁说明', '可能修复崩溃或卡顿', '开局前先看一遍'],
+      ],
+    }],
+    faqs: [
+      { q: 'Mistfall Hunter 会有 PS5 性能模式吗？', a: '具体性能模式名称需要发售时确认；如果有，建议优先选更流畅的选项。' },
+      { q: 'PS5 玩家该用默认手柄设置吗？', a: '测试阶段用默认设置没问题，但远程职业建议调整摄像机和瞄准灵敏度。' },
+    ],
+  },
+  'steam-deck': {
+    sections: [
+      { heading: '为什么做这个页面', body: ['PC 动作游戏很快就会有 Steam Deck 相关搜索，但兼容性取决于性能、输入支持和联机系统。这个页面是追踪器，不是承诺。'] },
+      { heading: '建议先测试的设置', body: ['如果游戏能运行，建议先降低阴影、视距、特效和雾效，而不是先牺牲可读性；如果能提升稳定性，可以加个帧数上限。'] },
+    ],
+    checklist: ['查看 Steam Deck 验证状态', '关注反作弊兼容性', '测试手柄按键布局', '先降低较重的画质设置', '发售前不要假设 PvP 表现稳定'],
+    steps: [
+      { title: '先确认兼容性', body: '在商店或实测确认之前，不要假设 Steam Deck 一定支持。' },
+      { title: '低成本测试性能', body: '如果能运行，先用低风险路线测试帧节奏，再考虑正式对局。' },
+      { title: '调整操作方式', body: '在掌机小屏幕上，按键布局、摄像机灵敏度和瞄准手感更加重要。' },
+    ],
+    tables: [{
+      title: 'Steam Deck 观察清单',
+      headers: ['项目', '当前状态', '原因'],
+      rows: [
+        ['官方验证', '待确认', '决定预期兼容程度'],
+        ['反作弊', '待确认', '可能影响联机功能'],
+        ['帧节奏', '待测试', '对 PvP 和闪避至关重要'],
+      ],
+    }],
+    faqs: [
+      { q: 'Mistfall Hunter 有 Steam Deck 官方认证吗？', a: '建议临近发售时查看认证状态；本页在此之前按未确认处理。' },
+      { q: 'Steam Deck 上能联机吗？', a: '取决于最终兼容性、Proton 表现和反作弊要求。' },
+    ],
+  },
+  'server-status': {
+    sections: [
+      { heading: '发售前状态', body: ['官方服务器状态渠道在发售前可能还没完全启用。等 Bellring 或各平台商店公布维护信息后，这个页面会同步更新。'] },
+      { heading: '为什么这类页面有搜索价值', body: ['发售期间玩家会密集搜索服务器和报错相关的词。一个整洁的追踪页能帮他们找到实际可行的下一步，也能把这些搜索留在站内。'] },
+    ],
+    checklist: ['先查看官方渠道', '确认平台服务状态', '别反复尝试有风险的重连', '记录具体报错信息', '把服务器问题和 PC 性能问题分开看'],
+    steps: [
+      { title: '先看官方说明', body: '维护和故障公告应该排在本地排查之前。' },
+      { title: '检查平台状态', body: 'Steam、Xbox、PlayStation 和 Game Pass 的访问问题可能和游戏服务器本身无关。' },
+      { title: '最后再本地排查', body: '先排除大范围故障，再重启、校验文件、检查网络。' },
+    ],
+    tables: [{
+      title: '连接问题排查',
+      headers: ['症状', '可能原因', '优先检查'],
+      rows: [
+        ['登录排队', '服务器负载', '官方更新'],
+        ['商店安装问题', '平台服务', 'Steam/Xbox/PSN 状态'],
+        ['对局中崩溃', '客户端稳定性', '性能页面'],
+        ['只有一个网络掉线', '本地网络', '路由器与防火墙'],
+      ],
+    }],
+    faqs: [
+      { q: 'Mistfall Hunter 服务器是不是宕机了？', a: '先查看官方渠道和平台状态；发售后这个页面会同步已知故障信息。' },
+      { q: '掉线一定是性能问题吗？', a: '不一定。掉线可能来自服务器、平台、网络或客户端稳定性等多个环节。' },
+    ],
+  },
+};
+
 export const zhLongTailPages: SeoPage[] = enLongTailPages.map((page) => {
   const copy = zhCopy[page.slug];
+  const real = zhRealContent[page.slug];
+  if (real) {
+    return {
+      ...page,
+      ...copy,
+      cards: localizedCards(page.cards),
+      sections: real.sections,
+      intent: {
+        primary: copy.h1,
+        secondary: page.intent?.secondary ?? ['攻略', '路线', '设置'],
+        freshness: '正式版上线后用实测数据、截图和补丁信息更新。',
+      },
+      checklist: real.checklist ?? page.checklist,
+      steps: real.steps ?? page.steps,
+      tables: real.tables ?? page.tables,
+      relatedSearches: [`${copy.h1} 攻略`, `${copy.h1} 设置`, `${copy.h1} 路线`],
+      faqs: real.faqs ?? page.faqs,
+    };
+  }
   return {
     ...page,
     ...copy,

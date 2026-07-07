@@ -479,7 +479,52 @@ function localizeCards(cards?: SeoPage['cards']) {
 
 export const enCluster2Pages: SeoPage[] = pages.map(toSeoPage);
 
-export const zhCluster2Pages: SeoPage[] = enCluster2Pages.map((page) => ({
+// Real, hand-translated content for the one cluster2 slug that is currently
+// INDEXABLE (see INDEXABLE_SLUGS in seoPages.ts: 'steam-next-fest-demo').
+// Every other slug in this file is still noindexed pre-launch, so it keeps
+// the generic English-drafted placeholder below untouched for now.
+const zhRealContentBySlug: Record<string, SeoPage> = {
+  'steam-next-fest-demo': {
+    slug: 'steam-next-fest-demo',
+    group: 'news',
+    template: 'faq',
+    title: 'Mistfall Hunter Steam Next Fest 试玩回顾：玩家学到了什么、哪些会保留',
+    description: 'Mistfall Hunter Steam Next Fest 试玩回顾，覆盖试玩获取方式、测试期学习重点、进度删档预期、奖励与发售准备。',
+    eyebrow: '试玩回顾',
+    h1: 'Steam Next Fest 试玩回顾',
+    lead: '试玩期最大的价值是学习：路线、战斗习惯、职业手感和性能表现，都比临时的游戏进度更值得记录。',
+    checklist: ['别假设进度会保留', '记录职业手感笔记', '写下遇到的性能问题', '练习撤离时机', '关注官方发售说明'],
+    steps: [
+      { title: '把试玩时间花在系统上', body: '重点学习战斗、耐力、撤离和职业节奏，而不是追逐临时解锁内容。' },
+      { title: '记下有用的设置', body: '把表现稳定的性能设置和手柄灵敏度记录下来。' },
+      { title: '为发售重置做好准备', body: '除非官方说明另有奖励，否则把发售当作全新开始来对待。' },
+    ],
+    tables: [{
+      title: '试玩内容留存价值',
+      headers: ['内容', '是否可能保留', '说明'],
+      rows: [
+        ['路线认知', '如果地图不变可能保留', '有助于早期撤离'],
+        ['职业手感', '大多数仍然有用', '数值可能调整，但定位思路仍然有参考价值'],
+        ['临时进度', '通常不会保留', '测试或试玩进度常见删档'],
+      ],
+    }],
+    sections: [
+      { heading: '搜索意图', body: ['玩家搜索试玩相关页面，通常是想知道现在还能不能玩、进度会不会保留，以及试玩对发售版意味着什么。'] },
+      { heading: '还需要核实的信息', body: ['建议在更新前查看 Steam 官方动态、Bellring 公告、试玩开放时间、奖励说明和试玩后的补丁记录。'] },
+    ],
+    faqs: [
+      { q: '试玩进度会带到正式版吗？', a: '除非官方发售说明确认特定的保留奖励，否则应把试玩或测试进度当作临时的。' },
+      { q: '试玩期间该重点学什么？', a: '重点练习撤离时机、职业手感、路线安全和性能设置。' },
+    ],
+    cards: localizeCards(enCluster2Pages.find((p) => p.slug === 'steam-next-fest-demo')?.cards),
+    relatedSearches: ['Mistfall Hunter Steam Next Fest 中文', 'Mistfall Hunter 试玩', 'Mistfall Hunter 测试进度'],
+  },
+};
+
+export const zhCluster2Pages: SeoPage[] = enCluster2Pages.map((page) => {
+  const real = zhRealContentBySlug[page.slug];
+  if (real) return real;
+  return {
   ...page,
   title: `${page.title} | Chinese Wiki Draft`,
   description: `${page.description} Chinese URL draft with the same verified-data policy.`,
@@ -504,7 +549,8 @@ export const zhCluster2Pages: SeoPage[] = enCluster2Pages.map((page) => ({
     { q: 'Is this page thin content?', a: 'No. It has a unique URL, intent block, checklist, step plan, reference table, FAQ, and internal links. The page also marks what must be verified after launch.' },
     { q: 'Why is some Chinese content drafted in English?', a: 'This avoids encoding and deployment risk for the current patch. The page can be localized safely in a dedicated pass.' },
   ],
-}));
+  };
+});
 
 export const enCluster2Links: PriorityLink[] = enCluster2Pages.map((page) => ({
   title: page.h1,
