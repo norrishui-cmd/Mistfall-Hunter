@@ -92,9 +92,19 @@ export const enExpansionPages: SeoPage[] = [
     h1: 'Is Mistfall Hunter free to play?',
     lead: 'Final pricing should be treated as unconfirmed until the developer or storefronts lock it. This page tracks the signals without pretending the answer is final.',
     sections: [
-      { heading: 'Current pricing status', body: ['Mistfall Hunter has been associated with free-to-play signals on storefronts, and it is also expected on Game Pass. However, until official pricing is locked, the safest wording is that final price and monetization details are not fully confirmed.'] },
-      { heading: 'What free-to-play would mean', body: ['If the game launches free-to-play, expect monetization to focus on cosmetics, account services, or seasonal systems rather than raw power. Extraction communities are very sensitive to pay-to-win, so this is an important launch-watch topic.'] },
+      { heading: 'Current pricing status', body: ['Mistfall Hunter has been associated with free-to-play signals on storefronts, and it is also expected on Game Pass. A recent official community update said pricing will be announced once it is locked in, which had not happened as of this writing. Treat the exact launch price as unconfirmed until a storefront shows a number.'] },
+      { heading: 'Price is separate from the pay-to-win question', body: ['The Steam store page states there are no pay-to-win mechanics and no paid stat boosts, and it lists in-app purchases as a feature — meaning some form of purchase will exist, most likely cosmetic. That is a separate question from the base price itself: whether the game is free-to-play, a one-time purchase, or something else. See the dedicated pay-to-win tracker for the full breakdown of what Bellring has and hasn\u2019t confirmed on monetization.'] },
+      { heading: "Beta being free doesn't confirm launch pricing", body: ['The Open Beta that ran through June 22 was free to download and try on Steam, Xbox, and PlayStation, which is a common source of confusion. A free beta or demo period does not by itself confirm the launch business model — plenty of premium games run free trial periods before release.'] },
       { heading: 'What to check at launch', body: ['Check whether the store shows a price, whether cosmetic packs exist, whether a battle pass or season pass is present, and whether any purchasable item affects gameplay.'], bullets: ['Store price', 'Founder or cosmetic packs', 'Battle pass or season pass', 'Currency packs', 'Any gameplay-affecting purchases'] },
+    ],
+    cards: [
+      { title: 'Pay-to-win tracker', desc: 'What Bellring has confirmed about monetization fairness.', href: '/pay-to-win' },
+      { title: 'Editions tracker', desc: 'What we know about Deluxe vs Standard so far.', href: '/editions' },
+    ],
+    faqs: [
+      { q: 'Was the open beta actually free?', a: 'Yes, the Open Beta (through June 22) was free to download and try. That does not by itself confirm the launch price or business model.' },
+      { q: 'Is there a no pay-to-win promise?', a: 'Yes. The official Steam listing states no pay-to-win mechanics and no paid stat boosts. In-app purchases are listed as a feature, so some purchases will exist — likely cosmetic.' },
+      { q: 'When will the final price be announced?', a: 'Not yet scheduled. An official community update said pricing will be shared once it is locked in, which had not happened as of this writing.' },
     ],
   },
   {
@@ -264,9 +274,19 @@ export const zhExpansionPages: SeoPage[] = [
     h1: 'Mistfall Hunter 是免费游戏吗？',
     lead: '在开发商或商店最终锁定前，价格仍应视为未完全确认。本页会追踪信号，但不把未确认信息说成定论。',
     sections: [
-      { heading: '当前定价状态', body: ['Mistfall Hunter 曾出现免费游玩相关商店信号，同时也预计进入 Game Pass。不过在官方定价锁定前，最稳妥的说法是最终价格和商业化细节尚未完全确认。'] },
-      { heading: '如果是免费游戏意味着什么', body: ['如果正式采用免费模式，商业化大概率集中在外观、账号服务或赛季系统，而不是直接出售战力。撤离游戏社区对 pay-to-win 非常敏感，所以这是首日需要重点观察的话题。'] },
+      { heading: '当前定价状态', body: ['Mistfall Hunter 曾出现免费游玩相关商店信号，同时也预计进入 Game Pass。近期一条官方社区动态表示，定价会在锁定后公布——截至目前尚未公布。在商店显示具体数字之前，应把最终售价视为未确认。'] },
+      { heading: '价格和 pay-to-win 是两个问题', body: ['Steam 商店页面写明没有 pay-to-win 机制、没有付费战力加成，并把内购列为功能之一——意味着会存在某种形式的购买，大概率是外观类。这和基础价格本身是两个问题：究竟是免费游玩、买断制，还是其他模式。Bellring 在商业化上具体确认过什么、还有哪些没确认，可以看专门的 pay-to-win 追踪页。'] },
+      { heading: '测试免费，不等于正式版定价已确定', body: ['6 月 22 日结束的公测在 Steam、Xbox 与 PlayStation 上都是免费下载试玩，这也是最容易造成误解的地方。免费的测试或试玩期本身并不能说明正式发售的商业模式——不少买断制游戏在发售前也会开放免费试玩期。'] },
       { heading: '发售时检查项', body: ['检查商店是否显示价格、是否有外观包、是否有战令或赛季通行证，以及是否存在影响玩法的付费物品。'], bullets: ['商店价格', '创始包或外观包', '战令或赛季通行证', '货币包', '影响玩法的付费项'] },
+    ],
+    cards: [
+      { title: 'Pay-to-win 追踪', desc: 'Bellring 在商业化公平性上已经确认的内容。', href: '/zh/pay-to-win' },
+      { title: '版本追踪', desc: '目前已知的 Deluxe 与 Standard 版本信息。', href: '/zh/editions' },
+    ],
+    faqs: [
+      { q: '公测真的是免费的吗？', a: '是的，6 月 22 日结束的公测可以免费下载试玩。但这本身并不能确认正式版的售价或商业模式。' },
+      { q: '官方承诺过不 pay-to-win 吗？', a: '是的。Steam 官方页面写明没有 pay-to-win 机制、没有付费战力加成。内购被列为功能之一，所以会有某种形式的购买——大概率是外观类。' },
+      { q: '最终价格什么时候公布？', a: '暂无时间表。一条官方社区动态表示定价会在锁定后公布，但截至目前还没有锁定。' },
     ],
   },
   {

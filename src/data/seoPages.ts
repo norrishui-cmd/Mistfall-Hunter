@@ -5,6 +5,8 @@ import { enFaqPages, zhFaqPages } from './faqExpansion';
 import { enGrowthPages, zhGrowthPages } from './urlGrowthPlan';
 import { enLongTailPages, zhLongTailPages } from './urlLongTailPlan';
 import { enCluster2Pages, zhCluster2Pages } from './urlLongTailCluster2';
+import { enLaunchPages, zhLaunchPages } from './launchExpansion';
+import { enCluster3Pages, zhCluster3Pages } from './urlLongTailCluster3';
 
 export type SeoSection = {
   heading: string;
@@ -71,6 +73,9 @@ export const enPages: SeoPage[] = [
       { title: 'Release date breakdown', desc: 'Launch time, platforms, Game Pass, PS5, Steam, and price status.', href: '/release-date' },
       { title: 'Performance watch', desc: 'Stutter, crashes, and what to change before patches land.', href: '/performance' },
       { title: 'Beginner prep', desc: 'Learn extraction before launch day chaos starts.', href: '/beginner-guide' },
+      { title: 'Is it pay-to-win?', desc: "What Bellring has confirmed about monetization.", href: '/pay-to-win' },
+      { title: 'Editions tracker', desc: 'Standard vs Deluxe, what is known so far.', href: '/editions' },
+      { title: 'Anti-cheat tracker', desc: 'No system named yet — what to watch for.', href: '/anti-cheat' },
     ],
     faqs: [
       { q: 'When is Mistfall Hunter coming out?', a: 'July 30, 2026 at 01:00 UTC is the announced global launch anchor.' },
@@ -158,6 +163,11 @@ export const enPages: SeoPage[] = [
       { k: 'Genre', v: 'Dark fantasy PvPvE extraction ARPG' },
       { k: 'Platforms', v: 'PC, Xbox Series X|S, PlayStation 5' },
       { k: 'Launch', v: 'July 30, 2026 at 01:00 UTC' },
+    ],
+    cards: [
+      { title: 'Official channels', desc: 'Real Discord, X, YouTube, and website links.', href: '/community' },
+      { title: 'Age rating & content', desc: 'ESRB Mature, and what that covers.', href: '/age-rating' },
+      { title: 'Is it pay-to-win?', desc: "What Bellring has confirmed about monetization.", href: '/pay-to-win' },
     ],
   },
   {
@@ -281,6 +291,9 @@ export const zhPages: SeoPage[] = [
       { title: '发售信息', desc: '上线时间、平台、Game Pass、PS5、Steam 与价格状态。', href: '/zh/release-date' },
       { title: '性能观察', desc: '卡顿、崩溃与补丁前可调整的设置。', href: '/zh/performance' },
       { title: '新手准备', desc: '发售日之前先理解撤离循环。', href: '/zh/beginner-guide' },
+      { title: '是否数值付费', desc: 'Bellring 官方对氪金机制的确认。', href: '/zh/pay-to-win' },
+      { title: '版本追踪', desc: '标准版与豪华版，目前已知信息。', href: '/zh/editions' },
+      { title: '反作弊追踪', desc: '尚未点名具体系统——该关注什么。', href: '/zh/anti-cheat' },
     ],
   },
   {
@@ -341,6 +354,11 @@ export const zhPages: SeoPage[] = [
       { k: '类型', v: '暗黑奇幻 PvPvE 撤离 ARPG' },
       { k: '平台', v: 'PC、Xbox Series X|S、PlayStation 5' },
       { k: '发售', v: '2026 年 7 月 30 日 01:00 UTC' },
+    ],
+    cards: [
+      { title: '官方渠道', desc: '真实的 Discord、X、YouTube 与官网链接。', href: '/zh/community' },
+      { title: '年龄分级与内容', desc: 'ESRB Mature，具体覆盖哪些内容。', href: '/zh/age-rating' },
+      { title: '是否数值付费', desc: 'Bellring 官方对氪金机制的确认。', href: '/zh/pay-to-win' },
     ],
   },
   {
@@ -416,6 +434,8 @@ export const INDEXABLE_SLUGS = new Set<string>([
   'platforms', 'game-pass', 'game-pass-pc', 'ps5', 'ps5-performance', 'steam',
   'steam-deck', 'steam-next-fest-demo', 'system-requirements', 'free-to-play',
   'controller-settings', 'server-status', 'pvp-or-pve',
+  'community', 'pay-to-win', 'age-rating',
+  'glossary', 'language-support', 'similar-games',
 ]);
 
 export function isIndexable(slug: string): boolean {
@@ -438,8 +458,8 @@ function dedupeBySlug(pages: SeoPage[]): SeoPage[] {
 export function getSeoPages(lang: Lang): SeoPage[] {
   const merged =
     lang === 'zh'
-      ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages, ...zhLongTailPages, ...zhCluster2Pages]
-      : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages, ...enLongTailPages, ...enCluster2Pages];
+      ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages, ...zhLongTailPages, ...zhCluster2Pages, ...zhLaunchPages, ...zhCluster3Pages]
+      : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages, ...enLongTailPages, ...enCluster2Pages, ...enLaunchPages, ...enCluster3Pages];
   return dedupeBySlug(merged);
 }
 

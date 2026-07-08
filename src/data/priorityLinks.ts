@@ -4,6 +4,8 @@ import { enFaqLinks, zhFaqLinks } from './faqExpansion';
 import { enGrowthLinks, zhGrowthLinks } from './urlGrowthPlan';
 import { enLongTailLinks, zhLongTailLinks } from './urlLongTailPlan';
 import { enCluster2Links, zhCluster2Links } from './urlLongTailCluster2';
+import { enLaunchLinks, zhLaunchLinks } from './launchExpansion';
+import { enCluster3Links, zhCluster3Links } from './urlLongTailCluster3';
 
 export type PriorityLink = {
   title: string;
@@ -63,8 +65,8 @@ const zhLinks: PriorityLink[] = [
 export function getPriorityLinks(lang: Lang, groups?: PriorityLink['group'][]): PriorityLink[] {
   const merged =
     lang === 'zh'
-      ? [...zhLinks, ...zhExpansionLinks, ...zhFaqLinks, ...zhGrowthLinks, ...zhLongTailLinks, ...zhCluster2Links]
-      : [...enLinks, ...enExpansionLinks, ...enFaqLinks, ...enGrowthLinks, ...enLongTailLinks, ...enCluster2Links];
+      ? [...zhLinks, ...zhExpansionLinks, ...zhFaqLinks, ...zhGrowthLinks, ...zhLongTailLinks, ...zhCluster2Links, ...zhLaunchLinks, ...zhCluster3Links]
+      : [...enLinks, ...enExpansionLinks, ...enFaqLinks, ...enGrowthLinks, ...enLongTailLinks, ...enCluster2Links, ...enLaunchLinks, ...enCluster3Links];
   const seen = new Set<string>();
   const links = merged.filter((link) => {
     if (seen.has(link.href)) return false;

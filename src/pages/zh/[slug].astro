@@ -69,13 +69,16 @@ const faqSchema = page.faqs
 
       {page.cards && (
         <div class="cards" style="margin-top:1.8rem">
-          {page.cards.map((card) => (
-            <a class="card" href={card.href}>
-              <span class="card-title">{card.title}</span>
-              <span class="card-desc">{card.desc}</span>
-              <span class="card-arrow">查看 -></span>
-            </a>
-          ))}
+          {page.cards.map((card) => {
+            const external = card.href.startsWith('http');
+            return (
+              <a class="card" href={card.href} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>
+                <span class="card-title">{card.title}</span>
+                <span class="card-desc">{card.desc}</span>
+                <span class="card-arrow">{external ? '访问 ->' : '查看 ->'}</span>
+              </a>
+            );
+          })}
         </div>
       )}
 

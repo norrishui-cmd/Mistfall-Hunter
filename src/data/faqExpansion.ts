@@ -116,12 +116,12 @@ export const enFaqPages: SeoPage[] = [
     h1: 'Mistfall Hunter preload and download size',
     lead: 'Preload and file-size details are usually finalized close to launch, so this page tracks what to check and how to prepare before servers open.',
     sections: [
-      { heading: 'Preload status', body: ['Final preload timing and download size are not locked in this guide yet. Steam, Xbox app, Game Pass, and PS5 can each publish preload details at different times.'] },
+      { heading: 'Preload status', body: ['Final preload timing and download size for the 1.0 client are not locked in this guide yet. Steam, Xbox app, Game Pass, and PS5 can each publish preload details at different times. As a reference point, the June 2026 open beta client was reported at roughly 45GB — useful for gauging storage needs, though the launch build\'s final size may differ.'] },
       { heading: 'Launch prep checklist', body: ['Wishlist or add the game to your library, keep enough SSD space free, update GPU drivers, and read the beginner guide before rushing into the first crowded extraction lobbies.'], bullets: ['Free SSD space', 'Update GPU drivers', 'Check Game Pass install button', 'Watch Steam news posts', 'Read the extraction guide'] },
     ],
     faqs: [
       { q: 'Can I preload Mistfall Hunter?', a: 'Preload has not been finalized in this guide. Check your storefront close to launch.' },
-      { q: 'How big is Mistfall Hunter?', a: 'Final download size still needs storefront confirmation.' },
+      { q: 'How big is Mistfall Hunter?', a: 'The June 2026 open beta was reported at roughly 45GB. The 1.0 launch client\'s exact size still needs storefront confirmation, though beta size is a reasonable ballpark for storage planning.' },
       { q: 'Should I install on SSD?', a: 'Yes. For a modern action RPG with dense maps, an SSD is the safest recommendation.' },
     ],
   },
@@ -132,15 +132,16 @@ export const enFaqPages: SeoPage[] = [
     description: 'Mistfall Hunter beta rewards guide covering Steam Next Fest demo progress, wipes, cosmetic rewards, and what carries into launch.',
     eyebrow: 'Beta rewards',
     h1: 'Mistfall Hunter beta rewards and progress',
-    lead: 'Demo and beta progress should be treated as temporary unless Bellring confirms otherwise. Cosmetic participation rewards are the item to watch.',
+    lead: 'Beta progress does not carry over, but Bellring has now confirmed two specific cosmetic rewards for beta participants at launch.',
     sections: [
-      { heading: 'Progress carryover', body: ['Steam Next Fest style demos are normally test environments, and extraction games in particular tend to wipe progression between beta and launch. This site treats gameplay progress as non-transferable unless officially confirmed.'] },
-      { heading: 'Reward types to watch', body: ['If beta rewards carry over, expect cosmetic-only items such as avatar frames, emotes, titles, or launch participation badges rather than gameplay power.'], bullets: ['Avatar frame', 'Emote', 'Title', 'Profile badge', 'Launch participation cosmetic'] },
+      { heading: 'Progress carryover', body: ['Steam Next Fest style demos are normally test environments, and extraction games in particular tend to wipe progression between beta and launch. Bellring has confirmed the June 2026 open beta was a full data wipe: no gameplay progress carries into the 1.0 launch.'] },
+      { heading: 'Confirmed launch rewards', body: ['Bellring confirmed via an official post that players who sign in with the same account used during the June 2026 beta will receive the Avatar Frame "Bell of Return" and the Pose "Finger Heart" via in-game mail at launch. Beyond these two specific items, treat further reward details as unconfirmed.'] },
+      { heading: 'Other reward types to watch', body: ['Outside the two confirmed items above, any additional beta-linked rewards would likely follow the same cosmetic-only pattern seen elsewhere in the beta (badges, poses, currency bundles) rather than gameplay power.'], bullets: ['Avatar frame (confirmed: Bell of Return)', 'Pose / emote (confirmed: Finger Heart)', 'Additional cosmetics (unconfirmed)', 'Launch participation badge (unconfirmed)'] },
     ],
     faqs: [
-      { q: 'Does demo progress carry over?', a: 'Assume no unless Bellring announces otherwise.' },
-      { q: 'Will beta rewards affect gameplay?', a: 'They should be treated as cosmetic unless official notes say otherwise.' },
-      { q: 'Do I need the same account?', a: 'If rewards exist, using the same platform account is usually required.' },
+      { q: 'Does demo progress carry over?', a: 'No — Bellring has confirmed the beta was a full data wipe. Only the two specific cosmetic rewards below carry over, not gameplay progress.' },
+      { q: 'What beta rewards are confirmed?', a: 'Bellring has confirmed an Avatar Frame ("Bell of Return") and a Pose emote ("Finger Heart") for players who sign in with their beta account at launch.' },
+      { q: 'Do I need the same account?', a: 'Yes — Bellring has confirmed you must sign in with the same account used during the beta to reclaim these rewards.' },
     ],
   },
   {
@@ -187,7 +188,7 @@ export const enFaqPages: SeoPage[] = [
     h1: 'Hallowgrove map guide',
     lead: 'Hallowgrove is one of the known preview maps and a natural early route-learning target for launch players.',
     sections: [
-      { heading: 'Why Hallowgrove matters', body: ['Preview coverage names Hallowgrove as a playable area, making it one of the safest map keywords to build around before launch. Treat exact marker positions as provisional until live mapping begins.'] },
+      { heading: 'Why Hallowgrove matters', body: ['Preview coverage names Hallowgrove as a playable area, making it one of the safest map keywords to build around before launch. Treat exact marker positions as provisional until live mapping begins.', 'Note: some press coverage of the beta spells this map "Hallowgrave" instead of "Hallowgrove." We\'re tracking both spellings until Bellring\'s own materials settle on one consistently.'] },
       { heading: 'Route priorities', body: ['Start by learning safe movement, likely extraction lanes, boss-adjacent danger, and where player traffic naturally converges. The map guide should become more precise after launch data is verified.'], bullets: ['Scout exits first', 'Avoid noisy boss pulls early', 'Track player traffic', 'Bank first upgrades', 'Update markers after launch'] },
     ],
     faqs: [
@@ -328,12 +329,12 @@ export const zhFaqPages: SeoPage[] = [
     h1: 'Mistfall Hunter 预载与下载大小',
     lead: '预载和文件大小信息通常要临近发售才会最终确定，这个页面会持续追踪该检查什么、如何在服务器开放前做好准备。',
     sections: [
-      { heading: '预载状态', body: ['本页暂未锁定最终的预载时间和下载大小。Steam、Xbox App、Game Pass 和 PS5 各自公布预载信息的时间可能都不一样。'] },
+      { heading: '预载状态', body: ['1.0 正式版的最终预载时间和下载大小本页暂未锁定。Steam、Xbox App、Game Pass 和 PS5 各自公布预载信息的时间可能都不一样。作为参考，2026 年 6 月公测客户端大小约为 45GB，可用于估算所需空间，但正式版最终大小可能有所不同。'] },
       { heading: '发售准备清单', body: ['先把游戏加入愿望单或库，预留足够的 SSD 空间，更新显卡驱动，并在冲进拥挤的首日撤离房间之前先看一遍新手指南。'], bullets: ['预留 SSD 空间', '更新显卡驱动', '检查 Game Pass 的安装按钮', '关注 Steam 动态', '阅读撤离指南'] },
     ],
     faqs: [
       { q: 'Mistfall Hunter 能预载吗？', a: '本页暂未确认预载信息，请临近发售时查看你的商店平台。' },
-      { q: 'Mistfall Hunter 有多大？', a: '最终下载大小还需要商店确认。' },
+      { q: 'Mistfall Hunter 有多大？', a: '2026 年 6 月公测客户端约为 45GB。1.0 正式版的确切大小仍需商店确认，但公测大小可以作为预留空间的参考。' },
       { q: '应该装在 SSD 上吗？', a: '是的。对于地图密集的现代动作 RPG 来说，SSD 是更稳妥的选择。' },
     ],
   },
@@ -344,15 +345,16 @@ export const zhFaqPages: SeoPage[] = [
     description: 'Mistfall Hunter 测试奖励指南，覆盖 Steam Next Fest 试玩进度、删档情况、外观奖励，以及哪些内容会延续到正式版。',
     eyebrow: '测试奖励',
     h1: 'Mistfall Hunter 测试奖励与进度',
-    lead: '除非 Bellring 明确说明，否则 Demo 和测试进度都应视为临时性的。外观类参与奖励是唯一值得关注的延续内容。',
+    lead: '测试进度不会延续，但 Bellring 现已确认两项测试参与者会在发售时获得的具体外观奖励。',
     sections: [
-      { heading: '进度是否会延续', body: ['Steam Next Fest 风格的试玩通常是测试环境，撤离类游戏尤其容易在测试和正式版之间删档进度。本站在官方明确说明之前，默认游戏内进度不会延续。'] },
-      { heading: '值得关注的奖励类型', body: ['如果测试奖励会延续，预计会是外观类内容，例如头像框、表情、称号或首发参与徽章，而不是影响数值的内容。'], bullets: ['头像框', '表情', '称号', '个人资料徽章', '首发参与外观'] },
+      { heading: '进度是否会延续', body: ['Steam Next Fest 风格的试玩通常是测试环境，撤离类游戏尤其容易在测试和正式版之间删档进度。Bellring 已确认 2026 年 6 月的公测是完整删档：游戏内进度不会延续到 1.0 正式版。'] },
+      { heading: '已确认的发售奖励', body: ['Bellring 通过官方帖子确认，凡是用公测同一账号登录的玩家，发售时会通过游戏内邮件收到头像框"Bell of Return"与姿势"Finger Heart"。除了这两项具体内容，其余奖励细节仍应视为未确认。'] },
+      { heading: '其他可能的奖励类型', body: ['除了上述两项已确认内容，其余与测试关联的奖励大概率会延续测试期已经出现的纯外观模式（徽章、姿势、货币礼包），而不会是影响数值的内容。'], bullets: ['头像框（已确认：Bell of Return）', '姿势/表情（已确认：Finger Heart）', '其他外观（未确认）', '首发参与徽章（未确认）'] },
     ],
     faqs: [
-      { q: 'Demo 进度会延续吗？', a: '除非 Bellring 另行宣布，否则应默认不会延续。' },
-      { q: '测试奖励会影响数值强度吗？', a: '除非官方说明另有规定，否则应视为纯外观内容。' },
-      { q: '需要用同一个账号吗？', a: '如果存在奖励，通常需要使用同一平台账号。' },
+      { q: 'Demo 进度会延续吗？', a: '不会——Bellring 已确认公测是完整删档。只有下面这两项具体外观奖励会延续，游戏内进度不会。' },
+      { q: '目前确认了哪些测试奖励？', a: 'Bellring 已确认，用测试期账号登录的玩家发售时会获得头像框"Bell of Return"和姿势表情"Finger Heart"。' },
+      { q: '需要用同一个账号吗？', a: '是的——Bellring 已确认必须使用测试期同一账号登录才能领取这些奖励。' },
     ],
   },
   {
@@ -399,7 +401,7 @@ export const zhFaqPages: SeoPage[] = [
     h1: 'Hallowgrove 地图攻略',
     lead: 'Hallowgrove 是已知的预览地图之一，也是发售后适合优先熟悉路线的目标区域。',
     sections: [
-      { heading: '为什么 Hallowgrove 值得关注', body: ['预览报道中把 Hallowgrove 列为可游玩区域，这让它成为发售前比较稳妥的地图相关关键词。具体标记位置在正式版实测前，应视为示意性质。'] },
+      { heading: '为什么 Hallowgrove 值得关注', body: ['预览报道中把 Hallowgrove 列为可游玩区域，这让它成为发售前比较稳妥的地图相关关键词。具体标记位置在正式版实测前，应视为示意性质。', '提示：部分公测相关报道把这张地图拼作"Hallowgrave"而非"Hallowgrove"。在 Bellring 官方材料统一拼法之前，本站会同时关注两种拼法。'] },
       { heading: '路线优先级', body: ['先从安全的移动路线、可能的撤离通道、Boss 附近的危险区域，以及玩家常聚集的位置入手。等正式版数据核实后，地图攻略会更加精确。'], bullets: ['先侦察出口', '早期避免招惹 Boss', '留意玩家动向', '尽早把首件升级入库', '发售后更新标记'] },
     ],
     faqs: [
