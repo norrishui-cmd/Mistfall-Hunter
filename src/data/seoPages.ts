@@ -7,6 +7,7 @@ import { enLongTailPages, zhLongTailPages } from './urlLongTailPlan';
 import { enCluster2Pages, zhCluster2Pages } from './urlLongTailCluster2';
 import { enLaunchPages, zhLaunchPages } from './launchExpansion';
 import { enCluster3Pages, zhCluster3Pages } from './urlLongTailCluster3';
+import { INDEXABLE_SLUGS, isIndexableSlug } from './seoRegistry.mjs';
 
 export type SeoSection = {
   heading: string;
@@ -30,6 +31,21 @@ export type SeoPage = {
   h1: string;
   lead: string;
   updated?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  verifiedAt?: string;
+  sources?: {
+    title: string;
+    publisher: string;
+    url: string;
+    sourceType: 'official' | 'store' | 'first-party-news' | 'preview';
+    supports?: string[];
+  }[];
+  evidenceStatus?: {
+    confirmed?: string[];
+    betaObserved?: string[];
+    unverified?: string[];
+  };
   sections: SeoSection[];
   cards?: { title: string; desc: string; href: string }[];
   facts?: { k: string; v: string }[];
@@ -75,7 +91,7 @@ export const enPages: SeoPage[] = [
       { title: 'Beginner prep', desc: 'Learn extraction before launch day chaos starts.', href: '/beginner-guide' },
       { title: 'Is it pay-to-win?', desc: "What Bellring has confirmed about monetization.", href: '/pay-to-win' },
       { title: 'Editions tracker', desc: 'Standard vs Deluxe, what is known so far.', href: '/editions' },
-      { title: 'Anti-cheat tracker', desc: 'No system named yet — what to watch for.', href: '/anti-cheat' },
+      { title: 'Anti-cheat tracker', desc: 'Steam lists Bellring Anti-Cheat and a kernel-level notice.', href: '/anti-cheat' },
     ],
     faqs: [
       { q: 'When is Mistfall Hunter coming out?', a: 'July 30, 2026 at 01:00 UTC is the announced global launch anchor.' },
@@ -293,7 +309,7 @@ export const zhPages: SeoPage[] = [
       { title: '新手准备', desc: '发售日之前先理解撤离循环。', href: '/zh/beginner-guide' },
       { title: '是否数值付费', desc: 'Bellring 官方对氪金机制的确认。', href: '/zh/pay-to-win' },
       { title: '版本追踪', desc: '标准版与豪华版，目前已知信息。', href: '/zh/editions' },
-      { title: '反作弊追踪', desc: '尚未点名具体系统——该关注什么。', href: '/zh/anti-cheat' },
+      { title: '反作弊追踪', desc: 'Steam 已列出 Bellring Anti-Cheat 与内核级提示。', href: '/zh/anti-cheat' },
     ],
   },
   {
@@ -423,23 +439,10 @@ export const zhPages: SeoPage[] = [
   },
 ];
 
-// Slugs that are indexable right now: the core hub pages plus evergreen,
-// fact-based long-tail. Everything else in the merged set is still BUILT and
-// internally linked (so no broken links), but carries a noindex tag until we
-// have verified 1.0 data — this keeps pre-launch speculation out of the index.
-export const INDEXABLE_SLUGS = new Set<string>([
-  // core hub pages
-  'news', 'guides', 'tools', 'about', 'weapons', 'bosses', 'loot', 'soul-of-return',
-  // evergreen, fact-based long-tail (safe to index pre-launch)
-  'platforms', 'game-pass', 'game-pass-pc', 'ps5', 'ps5-performance', 'steam',
-  'steam-deck', 'steam-next-fest-demo', 'system-requirements', 'free-to-play',
-  'controller-settings', 'server-status', 'pvp-or-pve',
-  'community', 'pay-to-win', 'age-rating',
-  'glossary', 'language-support', 'similar-games',
-]);
+export { INDEXABLE_SLUGS };
 
 export function isIndexable(slug: string): boolean {
-  return INDEXABLE_SLUGS.has(slug);
+  return isIndexableSlug(slug);
 }
 
 // Keep the first page for any given slug. Prevents duplicate getStaticPaths

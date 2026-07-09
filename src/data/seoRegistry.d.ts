@@ -1,0 +1,12 @@
+export const SITE_URL: string;
+export const INDEXABLE_STATIC_PATHS: Set<string>;
+export const INDEXABLE_SLUGS: Set<string>;
+export const NOINDEX_REVIEW_NOTES: Record<string, string>;
+export function normalizeSeoPath(path?: string): string;
+export function slugFromPath(path?: string): string;
+export function isLocalizedPath(path?: string): boolean;
+export function isIndexableSlug(slug: string): boolean;
+export function isIndexablePath(path?: string): boolean;
+export function localizedSeoPath(path?: string, lang?: 'en' | 'zh'): string;
+export function getIndexablePaths(): string[];
+export function isIndexableUrl(url: string): boolean;

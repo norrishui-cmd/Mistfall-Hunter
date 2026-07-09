@@ -87,7 +87,7 @@ export const enExpansionPages: SeoPage[] = [
     slug: 'free-to-play',
     group: 'news',
     title: 'Is Mistfall Hunter Free to Play? Price & Monetization Tracker',
-    description: 'Mistfall Hunter free-to-play and price tracker covering launch pricing status, Xbox listing signals, Game Pass, cosmetics, and monetization expectations.',
+    description: 'Mistfall Hunter free-to-play and price tracker covering launch pricing status, Xbox listing signals, Game Pass, in-app purchases, and pay-to-win claims as separate questions.',
     eyebrow: 'Price tracker',
     h1: 'Is Mistfall Hunter free to play?',
     lead: 'Final pricing should be treated as unconfirmed until the developer or storefronts lock it. This page tracks the signals without pretending the answer is final.',
@@ -95,7 +95,7 @@ export const enExpansionPages: SeoPage[] = [
       { heading: 'Current pricing status', body: ['Mistfall Hunter has been associated with free-to-play signals on storefronts, and it is also expected on Game Pass. A recent official community update said pricing will be announced once it is locked in, which had not happened as of this writing. Treat the exact launch price as unconfirmed until a storefront shows a number.'] },
       { heading: 'Price is separate from the pay-to-win question', body: ['The Steam store page states there are no pay-to-win mechanics and no paid stat boosts, and it lists in-app purchases as a feature — meaning some form of purchase will exist, most likely cosmetic. That is a separate question from the base price itself: whether the game is free-to-play, a one-time purchase, or something else. See the dedicated pay-to-win tracker for the full breakdown of what Bellring has and hasn\u2019t confirmed on monetization.'] },
       { heading: "Beta being free doesn't confirm launch pricing", body: ['The Open Beta that ran through June 22 was free to download and try on Steam, Xbox, and PlayStation, which is a common source of confusion. A free beta or demo period does not by itself confirm the launch business model — plenty of premium games run free trial periods before release.'] },
-      { heading: 'What to check at launch', body: ['Check whether the store shows a price, whether cosmetic packs exist, whether a battle pass or season pass is present, and whether any purchasable item affects gameplay.'], bullets: ['Store price', 'Founder or cosmetic packs', 'Battle pass or season pass', 'Currency packs', 'Any gameplay-affecting purchases'] },
+      { heading: 'What to check at launch', body: ['Check whether the store shows a base price, whether in-app purchases are listed, whether Game Pass access is available in your region, and whether any purchasable item affects gameplay. Do not infer a specific shop structure until it is visible in official materials.'], bullets: ['Store price', 'Game Pass access', 'In-app purchase listing', 'Any gameplay-affecting purchases'] },
     ],
     cards: [
       { title: 'Pay-to-win tracker', desc: 'What Bellring has confirmed about monetization fairness.', href: '/pay-to-win' },

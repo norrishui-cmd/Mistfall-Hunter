@@ -39,7 +39,8 @@ const videoGameSchema = {
     'A dark fantasy third-person PvPvE extraction action RPG from Bellring Games.',
   genre: ['Action RPG', 'Extraction', 'Dark Fantasy', 'PvPvE'],
   gamePlatform: ['PC', 'Steam', 'Xbox Series X|S', 'PlayStation 5'],
-  publisher: { '@type': 'Organization', name: 'Bellring Games' },
+  developer: { '@type': 'Organization', name: 'Bellring Games' },
+  publisher: { '@type': 'Organization', name: 'Skystone Games' },
   applicationCategory: 'Game',
   operatingSystem: 'Windows, Xbox Series X|S, PlayStation 5',
   datePublished: '2026-07-30',
@@ -60,7 +61,7 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', site).href },
-    { '@type': 'ListItem', position: 2, name: 'Release date', item: new URL('/release-date', site).href },
+    { '@type': 'ListItem', position: 2, name: 'Release date', item: new URL('/release-date/', site).href },
   ],
 };
 ---
@@ -117,9 +118,9 @@ const breadcrumbSchema = {
           </p>
         </div>
         <p>
-          If it does land as free-to-play, expect cosmetics and a battle-pass-style model rather than
-          a box price, which is standard for the extraction genre. This page updates the moment
-          pricing is official.
+          Keep the pricing questions separate: final base price is not confirmed, Game Pass access
+          is listed for launch, storefronts may list in-app purchases, and pay-to-win claims should
+          only be judged from official wording and live store contents.
         </p>
 
         <h2>Was there a beta? Does my progress carry over?</h2>

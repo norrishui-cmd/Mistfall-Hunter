@@ -1,11 +1,13 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { SITE_URL, isIndexableUrl } from './src/data/seoRegistry.mjs';
 
 // Used for canonical URLs, hreflang tags, and the XML sitemap.
-const SITE = 'https://mistfallhunter.me';
+const SITE = SITE_URL;
 
 export default defineConfig({
   site: SITE,
+  trailingSlash: 'always',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'zh'],
@@ -15,10 +17,11 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
+      filter: (page) => isIndexableUrl(page),
       i18n: {
         defaultLocale: 'en',
         locales: {
-          en: 'en-US',
+          en: 'en',
           zh: 'zh-CN',
         },
       },

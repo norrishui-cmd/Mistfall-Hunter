@@ -6,6 +6,7 @@ import { enLongTailLinks, zhLongTailLinks } from './urlLongTailPlan';
 import { enCluster2Links, zhCluster2Links } from './urlLongTailCluster2';
 import { enLaunchLinks, zhLaunchLinks } from './launchExpansion';
 import { enCluster3Links, zhCluster3Links } from './urlLongTailCluster3';
+import { isIndexablePath, normalizeSeoPath } from './seoRegistry.mjs';
 
 export type PriorityLink = {
   title: string;
@@ -69,8 +70,10 @@ export function getPriorityLinks(lang: Lang, groups?: PriorityLink['group'][]): 
       : [...enLinks, ...enExpansionLinks, ...enFaqLinks, ...enGrowthLinks, ...enLongTailLinks, ...enCluster2Links, ...enLaunchLinks, ...enCluster3Links];
   const seen = new Set<string>();
   const links = merged.filter((link) => {
-    if (seen.has(link.href)) return false;
-    seen.add(link.href);
+    const href = normalizeSeoPath(link.href);
+    if (!isIndexablePath(href) || seen.has(href)) return false;
+    seen.add(href);
+    link.href = href;
     return true;
   });
   return groups ? links.filter((link) => groups.includes(link.group)) : links;

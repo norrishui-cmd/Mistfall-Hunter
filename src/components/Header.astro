@@ -1,5 +1,6 @@
 ---
 import { useTranslations, localizePath, type Lang } from '../i18n';
+import { isIndexablePath } from '../data/seoRegistry.mjs';
 
 interface Props {
   lang: Lang;
@@ -18,9 +19,8 @@ const items = [
   { key: 'nav.builds', path: '/builds', live: true },
   { key: 'nav.bosses', path: '/bosses', live: true },
   { key: 'nav.tools', path: '/tools', live: true },
-  { key: 'nav.faq', path: '/faq', live: true },
   { key: 'nav.about', path: '/about', live: true },
-];
+].filter((item) => isIndexablePath(localizePath(item.path, lang)));
 
 const other: Lang = lang === 'zh' ? 'en' : 'zh';
 const otherLabel = other === 'zh' ? '中文' : 'English';
@@ -58,7 +58,7 @@ const otherLabel = other === 'zh' ? '中文' : 'English';
       <a
         class="lang-switch"
         href={localizePath(path, other)}
-        hreflang={other === 'zh' ? 'zh-Hans' : 'en'}
+        hreflang={other === 'zh' ? 'zh-CN' : 'en'}
       >
         {otherLabel}
       </a>

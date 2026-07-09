@@ -29,7 +29,7 @@ export const enGrowthPages: SeoPage[] = [
     h1: 'Hallowgrove Chaos map guide',
     lead: 'Hallowgrove Chaos is a natural long-tail map target for players searching higher-risk route advice once map variants are confirmed.',
     sections: [
-      { heading: 'Search intent', body: ['Players looking for Hallowgrove Chaos usually want a route, not lore. This page is built to become the landing page for danger zones, extraction exits, boss pressure, and loot notes as soon as live markers are verified.'] },
+      { heading: 'What players want to know', body: ['Players looking for Hallowgrove Chaos usually want a route, not lore. This page is built to become the landing page for danger zones, extraction exits, boss pressure, and loot notes as soon as live markers are verified.'] },
       { heading: 'Pre-launch route plan', body: ['Treat chaos variants as higher-commitment runs. Secure extraction knowledge first, avoid long noisy clears until you know traffic patterns, and only push deeper after banking a few safe upgrades.'], bullets: ['Scout exits', 'Avoid blind boss pulls', 'Listen before looting', 'Bank early upgrades', 'Update route notes after launch'] },
       { heading: 'Google target', body: ['The page targets queries around Hallowgrove Chaos map, Hallowgrove Chaos guide, extraction routes, and high-risk loot locations.'] },
     ],
