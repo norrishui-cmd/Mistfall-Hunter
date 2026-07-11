@@ -5,8 +5,7 @@ import { enFaqPages, zhFaqPages } from './faqExpansion';
 import { enGrowthPages, zhGrowthPages } from './urlGrowthPlan';
 import { enLongTailPages, zhLongTailPages } from './urlLongTailPlan';
 import { enCluster2Pages, zhCluster2Pages } from './urlLongTailCluster2';
-import { enLaunchPages, zhLaunchPages } from './launchExpansion';
-import { enCluster3Pages, zhCluster3Pages } from './urlLongTailCluster3';
+import { enRapidExpansionPages, zhRapidExpansionPages } from './urlRapidExpansion';
 
 export type SeoSection = {
   heading: string;
@@ -39,20 +38,6 @@ export type SeoPage = {
   tables?: SeoTable[];
   relatedSearches?: string[];
   faqs?: { q: string; a: string }[];
-  // --- quality-gate fields (see qualityGate.ts) ---
-  // Dominant confidence tier for this page's core claim. Optional so the
-  // 70+ pages written before this system don't need a retroactive edit to
-  // keep building; the gate treats a missing tier as a reporting gap, not
-  // an automatic fail, for existing content.
-  confidence?: 'confirmed' | 'reported' | 'datamined' | 'unconfirmed';
-  // Structured citations backing this page's claims. Required (>=2,
-  // non-self-referential) for any NEW candidate page to pass the gate.
-  sources?: { label: string; href: string }[];
-  // Opt-in: set true only for catalog-style pages where EVERY section is
-  // independently a full answer (e.g. a future one-entry-per-boss page),
-  // as opposed to a narrative guide building toward one point. See
-  // qualityGate.ts's sectionsSubstanceOk for what this changes.
-  strictSections?: boolean;
 };
 
 export const enPages: SeoPage[] = [
@@ -87,9 +72,6 @@ export const enPages: SeoPage[] = [
       { title: 'Release date breakdown', desc: 'Launch time, platforms, Game Pass, PS5, Steam, and price status.', href: '/release-date' },
       { title: 'Performance watch', desc: 'Stutter, crashes, and what to change before patches land.', href: '/performance' },
       { title: 'Beginner prep', desc: 'Learn extraction before launch day chaos starts.', href: '/beginner-guide' },
-      { title: 'Is it pay-to-win?', desc: "What Bellring has confirmed about monetization.", href: '/pay-to-win' },
-      { title: 'Editions tracker', desc: 'Standard vs Deluxe, what is known so far.', href: '/editions' },
-      { title: 'Anti-cheat tracker', desc: 'No system named yet — what to watch for.', href: '/anti-cheat' },
     ],
     faqs: [
       { q: 'When is Mistfall Hunter coming out?', a: 'July 30, 2026 at 01:00 UTC is the announced global launch anchor.' },
@@ -122,7 +104,6 @@ export const enPages: SeoPage[] = [
       { title: 'Builds', desc: 'Starter loadout directions and affix tracking.', href: '/builds' },
       { title: 'Weapons', desc: 'Combat roles and weapon-choice principles.', href: '/weapons' },
       { title: 'Bosses', desc: 'Mist Lord prep, PvE threat reading, and reward routing.', href: '/bosses' },
-      { title: 'FAQ index', desc: 'Fast answers — each one links to its own focused, updated page.', href: '/faq' },
     ],
   },
   {
@@ -177,11 +158,6 @@ export const enPages: SeoPage[] = [
       { k: 'Genre', v: 'Dark fantasy PvPvE extraction ARPG' },
       { k: 'Platforms', v: 'PC, Xbox Series X|S, PlayStation 5' },
       { k: 'Launch', v: 'July 30, 2026 at 01:00 UTC' },
-    ],
-    cards: [
-      { title: 'Official channels', desc: 'Real Discord, X, YouTube, and website links.', href: '/community' },
-      { title: 'Age rating & content', desc: 'ESRB Mature, and what that covers.', href: '/age-rating' },
-      { title: 'Is it pay-to-win?', desc: "What Bellring has confirmed about monetization.", href: '/pay-to-win' },
     ],
   },
   {
@@ -305,9 +281,6 @@ export const zhPages: SeoPage[] = [
       { title: '发售信息', desc: '上线时间、平台、Game Pass、PS5、Steam 与价格状态。', href: '/zh/release-date' },
       { title: '性能观察', desc: '卡顿、崩溃与补丁前可调整的设置。', href: '/zh/performance' },
       { title: '新手准备', desc: '发售日之前先理解撤离循环。', href: '/zh/beginner-guide' },
-      { title: '是否数值付费', desc: 'Bellring 官方对氪金机制的确认。', href: '/zh/pay-to-win' },
-      { title: '版本追踪', desc: '标准版与豪华版，目前已知信息。', href: '/zh/editions' },
-      { title: '反作弊追踪', desc: '尚未点名具体系统——该关注什么。', href: '/zh/anti-cheat' },
     ],
   },
   {
@@ -329,7 +302,6 @@ export const zhPages: SeoPage[] = [
       { title: '配装', desc: '起手构筑方向与词缀追踪。', href: '/zh/builds' },
       { title: '武器', desc: '战斗定位与武器选择原则。', href: '/zh/weapons' },
       { title: 'Boss', desc: 'Mist Lord 准备、PvE 威胁与收益路线。', href: '/zh/bosses' },
-      { title: '常见问题索引', desc: '快速答案——每个问题都指向独立、持续更新的深度页面。', href: '/zh/faq' },
     ],
   },
   {
@@ -368,11 +340,6 @@ export const zhPages: SeoPage[] = [
       { k: '类型', v: '暗黑奇幻 PvPvE 撤离 ARPG' },
       { k: '平台', v: 'PC、Xbox Series X|S、PlayStation 5' },
       { k: '发售', v: '2026 年 7 月 30 日 01:00 UTC' },
-    ],
-    cards: [
-      { title: '官方渠道', desc: '真实的 Discord、X、YouTube 与官网链接。', href: '/zh/community' },
-      { title: '年龄分级与内容', desc: 'ESRB Mature，具体覆盖哪些内容。', href: '/zh/age-rating' },
-      { title: '是否数值付费', desc: 'Bellring 官方对氪金机制的确认。', href: '/zh/pay-to-win' },
     ],
   },
   {
@@ -437,44 +404,10 @@ export const zhPages: SeoPage[] = [
   },
 ];
 
-// Slugs that are indexable right now: the core hub pages plus evergreen,
-// fact-based long-tail. Everything else in the merged set is still BUILT and
-// internally linked (so no broken links), but carries a noindex tag until we
-// have verified 1.0 data — this keeps pre-launch speculation out of the index.
-export const INDEXABLE_SLUGS = new Set<string>([
-  // core hub pages
-  'news', 'guides', 'tools', 'about', 'weapons', 'bosses', 'loot', 'soul-of-return',
-  // evergreen, fact-based long-tail (safe to index pre-launch)
-  'platforms', 'game-pass', 'game-pass-pc', 'ps5', 'ps5-performance', 'steam',
-  'steam-deck', 'steam-next-fest-demo', 'system-requirements', 'free-to-play',
-  'controller-settings', 'server-status', 'pvp-or-pve',
-  'community', 'pay-to-win', 'age-rating',
-  'glossary', 'language-support', 'similar-games',
-]);
-
-export function isIndexable(slug: string): boolean {
-  return INDEXABLE_SLUGS.has(slug);
-}
-
-// Keep the first page for any given slug. Prevents duplicate getStaticPaths
-// entries (which fail the build) when the merged arrays overlap.
-function dedupeBySlug(pages: SeoPage[]): SeoPage[] {
-  const seen = new Set<string>();
-  const out: SeoPage[] = [];
-  for (const page of pages) {
-    if (seen.has(page.slug)) continue;
-    seen.add(page.slug);
-    out.push(page);
-  }
-  return out;
-}
-
 export function getSeoPages(lang: Lang): SeoPage[] {
-  const merged =
-    lang === 'zh'
-      ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages, ...zhLongTailPages, ...zhCluster2Pages, ...zhLaunchPages, ...zhCluster3Pages]
-      : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages, ...enLongTailPages, ...enCluster2Pages, ...enLaunchPages, ...enCluster3Pages];
-  return dedupeBySlug(merged);
+  return lang === 'zh'
+    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages, ...zhLongTailPages, ...zhCluster2Pages, ...zhRapidExpansionPages]
+    : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages, ...enLongTailPages, ...enCluster2Pages, ...enRapidExpansionPages];
 }
 
 export function getSeoPage(lang: Lang, slug: string): SeoPage | undefined {

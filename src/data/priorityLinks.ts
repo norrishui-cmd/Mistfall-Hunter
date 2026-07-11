@@ -4,8 +4,7 @@ import { enFaqLinks, zhFaqLinks } from './faqExpansion';
 import { enGrowthLinks, zhGrowthLinks } from './urlGrowthPlan';
 import { enLongTailLinks, zhLongTailLinks } from './urlLongTailPlan';
 import { enCluster2Links, zhCluster2Links } from './urlLongTailCluster2';
-import { enLaunchLinks, zhLaunchLinks } from './launchExpansion';
-import { enCluster3Links, zhCluster3Links } from './urlLongTailCluster3';
+import { enRapidExpansionLinks, zhRapidExpansionLinks } from './urlRapidExpansion';
 
 export type PriorityLink = {
   title: string;
@@ -22,7 +21,6 @@ const enLinks: PriorityLink[] = [
   { title: 'Class tier list', desc: 'All six classes ranked for solo, PvP, and beginner play.', href: '/classes', group: 'guides' },
   { title: 'Best builds', desc: 'Role-based build hub for classes, affixes, solo play, and boss routes.', href: '/best-builds', group: 'guides' },
   { title: 'Builds & affixes', desc: 'Starter build directions and affix tracking for every class.', href: '/builds', group: 'guides' },
-  { title: 'Build planner', desc: 'Pick a class, path, goal, and priority affixes, then copy a shareable build link.', href: '/build-planner', group: 'tools' },
   { title: 'Interactive map', desc: 'Zone maps with extraction, boss, loot, and landmark filters.', href: '/map', group: 'tools' },
   { title: 'Extraction map', desc: 'Safe exit planning, Soul of Return routing, and route risk.', href: '/extraction-map', group: 'tools' },
   { title: 'Tools hub', desc: 'Map, build planner roadmap, FPS checklist, and run planning utilities.', href: '/tools', group: 'tools' },
@@ -46,7 +44,6 @@ const zhLinks: PriorityLink[] = [
   { title: '职业强度榜', desc: '六大职业在单人、PvP 与新手上手维度的排名。', href: '/zh/classes', group: 'guides' },
   { title: '最佳配装', desc: '按职业、词缀、单人、Boss 路线组织的配装中心。', href: '/zh/best-builds', group: 'guides' },
   { title: '配装与词缀', desc: '每个职业的起手构筑方向与词缀追踪。', href: '/zh/builds', group: 'guides' },
-  { title: '配装规划器', desc: '选职业、流派、目标与优先词缀，一键生成可分享的配装链接。', href: '/zh/build-planner', group: 'tools' },
   { title: '互动地图', desc: '按撤离点、Boss、战利品与地标筛选区域地图。', href: '/zh/map', group: 'tools' },
   { title: '撤离地图', desc: '安全路线、Soul of Return 与出口规划。', href: '/zh/extraction-map', group: 'tools' },
   { title: '工具中心', desc: '地图、构筑规划、帧率排查与跑图工具入口。', href: '/zh/tools', group: 'tools' },
@@ -63,15 +60,9 @@ const zhLinks: PriorityLink[] = [
 ];
 
 export function getPriorityLinks(lang: Lang, groups?: PriorityLink['group'][]): PriorityLink[] {
-  const merged =
+  const links =
     lang === 'zh'
-      ? [...zhLinks, ...zhExpansionLinks, ...zhFaqLinks, ...zhGrowthLinks, ...zhLongTailLinks, ...zhCluster2Links, ...zhLaunchLinks, ...zhCluster3Links]
-      : [...enLinks, ...enExpansionLinks, ...enFaqLinks, ...enGrowthLinks, ...enLongTailLinks, ...enCluster2Links, ...enLaunchLinks, ...enCluster3Links];
-  const seen = new Set<string>();
-  const links = merged.filter((link) => {
-    if (seen.has(link.href)) return false;
-    seen.add(link.href);
-    return true;
-  });
+      ? [...zhLinks, ...zhExpansionLinks, ...zhFaqLinks, ...zhGrowthLinks, ...zhLongTailLinks, ...zhCluster2Links, ...zhRapidExpansionLinks]
+      : [...enLinks, ...enExpansionLinks, ...enFaqLinks, ...enGrowthLinks, ...enLongTailLinks, ...enCluster2Links, ...enRapidExpansionLinks];
   return groups ? links.filter((link) => groups.includes(link.group)) : links;
 }
