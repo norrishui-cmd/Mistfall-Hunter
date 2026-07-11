@@ -235,7 +235,7 @@ const pages: DraftPage[] = [
       ['Temporary progress', 'Usually no', 'Beta or demo progress is commonly wiped'],
     ],
     sections: [
-      { heading: 'What players want to know', body: ['Players search demo pages to learn whether they can still play, whether progress carries, and what the demo means for launch.'] },
+      { heading: 'Search intent', body: ['Players search demo pages to learn whether they can still play, whether progress carries, and what the demo means for launch.'] },
       { heading: 'What to verify', body: ['Official Steam news, Bellring announcements, demo availability, reward language, and post-demo patch notes should be checked before updates.'] },
     ],
     faqs: [

@@ -2,17 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getHubLinks } from '../../data/siteQuality';
 import { getSeoPages } from '../../data/seoPages';
-import { isIndexablePath, normalizeSeoPath } from '../../data/seoRegistry.mjs';
 
 const lang = 'zh' as const;
 const hubLinks = getHubLinks(lang);
 const dynamicLinks = getSeoPages(lang)
-  .filter((page) => isIndexablePath(`/zh/${page.slug}/`))
-  .filter((page) => !hubLinks.some((link) => link.href === normalizeSeoPath(`/zh/${page.slug}/`)))
+  .filter((page) => !hubLinks.some((link) => link.href === `/zh/${page.slug}`))
   .map((page) => ({
     title: page.h1,
     desc: page.description,
-    href: normalizeSeoPath(`/zh/${page.slug}/`),
+    href: `/zh/${page.slug}`,
   }));
 ---
 

@@ -1,6 +1,5 @@
 ---
-import { ui, type Lang } from '../i18n';
-import { isIndexablePath, localizedSeoPath, normalizeSeoPath } from '../data/seoRegistry.mjs';
+import { localizePath, ui, type Lang } from '../i18n';
 
 interface Props {
   title: string;
@@ -23,16 +22,11 @@ const {
 } = Astro.props;
 
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
-const canonicalPath = localizedSeoPath(path, lang);
-const canonical = new URL(canonicalPath, site).href;
-const enPath = localizedSeoPath(path, 'en');
-const zhPath = localizedSeoPath(path, 'zh');
-const enHref = new URL(enPath, site).href;
-const zhHref = new URL(zhPath, site).href;
+const canonical = new URL(localizePath(path, lang), site).href;
+const enHref = new URL(localizePath(path, 'en'), site).href;
+const zhHref = new URL(localizePath(path, 'zh'), site).href;
 const ogImage = new URL(image, site).href;
 const siteName = ui[lang]['site.name'];
-const hasEnAlternate = isIndexablePath(enPath) || normalizeSeoPath(enPath) === normalizeSeoPath(canonicalPath);
-const hasZhAlternate = isIndexablePath(zhPath) || normalizeSeoPath(zhPath) === normalizeSeoPath(canonicalPath);
 
 const websiteSchema = {
   '@context': 'https://schema.org',
@@ -42,7 +36,15 @@ const websiteSchema = {
   inLanguage: lang === 'zh' ? 'zh-Hans' : 'en',
 };
 
-const schemas = [websiteSchema, ...jsonLd];
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Mistfall Hunter Wiki and Hub',
+  url: site.href,
+  logo: new URL('/favicon.svg', site).href,
+};
+
+const schemas = [websiteSchema, organizationSchema, ...jsonLd];
 ---
 
 <meta charset="utf-8" />
@@ -56,8 +58,8 @@ const schemas = [websiteSchema, ...jsonLd];
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
 
-{hasEnAlternate && <link rel="alternate" hreflang="en" href={enHref} />}
-{hasZhAlternate && <link rel="alternate" hreflang="zh-CN" href={zhHref} />}
+<link rel="alternate" hreflang="en" href={enHref} />
+<link rel="alternate" hreflang="zh-Hans" href={zhHref} />
 <link rel="alternate" hreflang="x-default" href={enHref} />
 
 <!-- Open Graph -->
@@ -74,6 +76,14 @@ const schemas = [websiteSchema, ...jsonLd];
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@500;600&display=swap"
+  rel="stylesheet"
+/>
 
 <!-- Structured data -->
 {schemas.map((schema) => (

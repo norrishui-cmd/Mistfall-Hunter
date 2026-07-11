@@ -1,7 +1,6 @@
 // Shared chrome strings + i18n helpers.
 // Page bodies are written directly in each page file in the right language;
 // this file only holds nav / header / footer strings used everywhere.
-import { localizedSeoPath } from './data/seoRegistry.mjs';
 
 export const languages = {
   en: 'English',
@@ -70,5 +69,7 @@ export function useTranslations(lang: Lang) {
 }
 
 export function localizePath(path: string = '/', lang: Lang = defaultLang): string {
-  return localizedSeoPath(path, lang);
+  const clean = path === '/' ? '' : path;
+  if (lang === defaultLang) return clean || '/';
+  return `/zh${clean || '/'}`;
 }

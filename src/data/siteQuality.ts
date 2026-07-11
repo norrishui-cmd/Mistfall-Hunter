@@ -1,5 +1,4 @@
 import type { Lang } from '../i18n';
-import { isIndexablePath, normalizeSeoPath } from './seoRegistry.mjs';
 
 export type SourceRef = {
   title: string;
@@ -29,14 +28,14 @@ export const sources: SourceRef[] = [
   {
     title: 'Mistfall Hunter on Steam',
     publisher: 'Steam',
-    url: 'https://store.steampowered.com/app/3282300/Mistfall_Hunter/',
+    url: 'https://store.steampowered.com/app/2683540/Mistfall_Hunter/',
     type: 'store',
     note: 'Storefront reference for PC availability, tags, screenshots, and release messaging.',
   },
   {
     title: 'Mistfall Hunter Xbox listing',
     publisher: 'Xbox',
-    url: 'https://www.xbox.com/en-US/games/store/mistfall-hunter/9p8x6tvw9zw8',
+    url: 'https://www.xbox.com/games/store/mistfall-hunter/9nq85plc2n6h',
     type: 'store',
     note: 'Storefront reference for Xbox, Game Pass, platform, and availability signals.',
   },
@@ -87,16 +86,13 @@ const zhHubLinks: HubLink[] = enHubLinks.map((link) => ({
 }));
 
 export function getHubLinks(lang: Lang): HubLink[] {
-  return (lang === 'zh' ? zhHubLinks : enHubLinks)
-    .filter((link) => isIndexablePath(link.href))
-    .map((link) => ({ ...link, href: normalizeSeoPath(link.href) }));
+  return lang === 'zh' ? zhHubLinks : enHubLinks;
 }
 
 export function getSourceLabels(lang: Lang) {
   return lang === 'zh'
     ? {
         updated: '最后更新',
-        verified: '最后核验',
         quality: '内容可信度',
         confirmed: '已确认',
         preview: '预览观察',
@@ -105,11 +101,10 @@ export function getSourceLabels(lang: Lang) {
       }
     : {
         updated: 'Last updated',
-        verified: 'Last verified',
         quality: 'Editorial quality',
         confirmed: 'Confirmed',
-        preview: 'Observed in beta',
-        verify: 'Still unconfirmed',
+        preview: 'Preview-based',
+        verify: 'To verify',
         sources: 'Primary sources',
       };
 }

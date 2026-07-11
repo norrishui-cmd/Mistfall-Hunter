@@ -4,19 +4,27 @@ import type { SeoPage } from '../data/seoPages';
 interface Props {
   page: SeoPage;
   labels?: {
-    quick: string;
+    intent: string;
+    primary: string;
+    secondary: string;
+    freshness: string;
     checklist: string;
     steps: string;
     tables: string;
+    related: string;
   };
 }
 
 const { page } = Astro.props as Props;
 const labels = Astro.props.labels ?? {
-  quick: 'Quick answer',
+  intent: 'Search intent',
+  primary: 'Primary',
+  secondary: 'Secondary',
+  freshness: 'Freshness',
   checklist: 'Checklist',
   steps: 'Step plan',
   tables: 'Reference table',
+  related: 'Related searches',
 };
 ---
 
@@ -25,10 +33,24 @@ const labels = Astro.props.labels ?? {
     {page.intent && (
       <div class="intent-grid">
         <div>
-          <span class="eyebrow">{labels.quick}</span>
+          <span class="eyebrow">{labels.intent}</span>
           <h2>{page.intent.primary}</h2>
           <p>{page.intent.freshness}</p>
         </div>
+        <dl class="intent-list">
+          <div>
+            <dt>{labels.primary}</dt>
+            <dd>{page.intent.primary}</dd>
+          </div>
+          <div>
+            <dt>{labels.secondary}</dt>
+            <dd>{page.intent.secondary.join(', ')}</dd>
+          </div>
+          <div>
+            <dt>{labels.freshness}</dt>
+            <dd>{page.intent.freshness}</dd>
+          </div>
+        </dl>
       </div>
     )}
 
@@ -80,5 +102,14 @@ const labels = Astro.props.labels ?? {
         </table>
       </div>
     ))}
+  </div>
+)}
+
+{page.relatedSearches && (
+  <div class="module-block">
+    <span class="eyebrow">{labels.related}</span>
+    <div class="query-chips">
+      {page.relatedSearches.map((query) => <span>{query}</span>)}
+    </div>
   </div>
 )}

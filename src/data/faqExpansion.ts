@@ -143,6 +143,10 @@ export const enFaqPages: SeoPage[] = [
       { q: 'What beta rewards are confirmed?', a: 'Bellring has confirmed an Avatar Frame ("Bell of Return") and a Pose emote ("Finger Heart") for players who sign in with their beta account at launch.' },
       { q: 'Do I need the same account?', a: 'Yes — Bellring has confirmed you must sign in with the same account used during the beta to reclaim these rewards.' },
     ],
+    confidence: 'confirmed',
+    sources: [
+      { label: 'Steam Community hub (official Bellring post on beta wrap-up rewards)', href: 'https://steamcommunity.com/app/3282300' },
+    ],
   },
   {
     slug: 'party-size',
@@ -355,6 +359,10 @@ export const zhFaqPages: SeoPage[] = [
       { q: 'Demo 进度会延续吗？', a: '不会——Bellring 已确认公测是完整删档。只有下面这两项具体外观奖励会延续，游戏内进度不会。' },
       { q: '目前确认了哪些测试奖励？', a: 'Bellring 已确认，用测试期账号登录的玩家发售时会获得头像框"Bell of Return"和姿势表情"Finger Heart"。' },
       { q: '需要用同一个账号吗？', a: '是的——Bellring 已确认必须使用测试期同一账号登录才能领取这些奖励。' },
+    ],
+    confidence: 'confirmed',
+    sources: [
+      { label: 'Steam Community 社区中心（Bellring 官方测试结束奖励公告）', href: 'https://steamcommunity.com/app/3282300' },
     ],
   },
   {

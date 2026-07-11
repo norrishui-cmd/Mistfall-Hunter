@@ -1,7 +1,6 @@
 ---
 import type { Lang } from '../i18n';
-import type { SeoPage } from '../data/seoPages';
-import { getSourceLabels, sources as siteSources } from '../data/siteQuality';
+import { getSourceLabels, lastUpdated, sources } from '../data/siteQuality';
 
 interface Props {
   lang: Lang;
@@ -10,67 +9,51 @@ interface Props {
     preview?: string[];
     verify?: string[];
   };
-  page?: SeoPage;
 }
 
-const { lang, status, page } = Astro.props as Props;
+const { lang, status } = Astro.props as Props;
 const labels = getSourceLabels(lang);
 const sourceHref = lang === 'zh' ? '/zh/sources' : '/sources';
 
-const confirmed = page?.evidenceStatus?.confirmed ?? status?.confirmed ?? [];
-const preview = page?.evidenceStatus?.betaObserved ?? status?.preview ?? [];
-const verify = page?.evidenceStatus?.unverified ?? status?.verify ?? [];
-const pageSources = page?.sources ?? [];
-const hasEvidence = Boolean(page?.verifiedAt || page?.updatedAt || confirmed.length || preview.length || verify.length || pageSources.length);
+const confirmed = status?.confirmed ?? [
+  'Mistfall Hunter is a dark fantasy PvPvE extraction action RPG.',
+  'The site separates official information, preview observations, and launch-day verification notes.',
+];
+const preview = status?.preview ?? [
+  'Class, map, extraction, and boss guidance may use preview or demo context before launch.',
+  'Exact routes, drops, values, and balance recommendations should be updated with live-game data.',
+];
+const verify = status?.verify ?? [
+  'Final launch patch notes',
+  'Live map markers',
+  'Exact affix values',
+  'Boss drops and spawn rules',
+];
 ---
 
-{hasEvidence && (
-  <aside class="quality-panel" aria-label={labels.quality}>
-    <div class="quality-head">
-      <span class="eyebrow">{labels.quality}</span>
-      {page?.verifiedAt && <p><strong>{labels.verified}:</strong> {page.verifiedAt}</p>}
-      {page?.updatedAt && <p><strong>{labels.updated}:</strong> {page.updatedAt}</p>}
-      <a href={sourceHref}>{labels.sources} -></a>
-    </div>
+<aside class="quality-panel" aria-label={labels.quality}>
+  <div class="quality-head">
+    <span class="eyebrow">{labels.quality}</span>
+    <p><strong>{labels.updated}:</strong> {lastUpdated}</p>
+    <a href={sourceHref}>{labels.sources} -></a>
+  </div>
 
-    <div class="quality-grid">
-      {confirmed.length > 0 && (
-        <section>
-          <h2>{labels.confirmed}</h2>
-          <ul>{confirmed.map((item) => <li>{item}</li>)}</ul>
-        </section>
-      )}
-      {preview.length > 0 && (
-        <section>
-          <h2>{labels.preview}</h2>
-          <ul>{preview.map((item) => <li>{item}</li>)}</ul>
-        </section>
-      )}
-      {verify.length > 0 && (
-        <section>
-          <h2>{labels.verify}</h2>
-          <ul>{verify.map((item) => <li>{item}</li>)}</ul>
-        </section>
-      )}
-      {pageSources.length > 0 && (
-        <section>
-          <h2>{labels.sources}</h2>
-          <ul>
-            {pageSources.map((source) => (
-              <li>
-                <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a>
-                {source.supports?.length ? ` - ${source.supports.join('; ')}` : ''}
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-    </div>
+  <div class="quality-grid">
+    <section>
+      <h2>{labels.confirmed}</h2>
+      <ul>{confirmed.map((item) => <li>{item}</li>)}</ul>
+    </section>
+    <section>
+      <h2>{labels.preview}</h2>
+      <ul>{preview.map((item) => <li>{item}</li>)}</ul>
+    </section>
+    <section>
+      <h2>{labels.verify}</h2>
+      <ul>{verify.map((item) => <li>{item}</li>)}</ul>
+    </section>
+  </div>
 
-    {pageSources.length === 0 && (
-      <p class="quality-sources">
-        {siteSources.slice(0, 3).map((source) => source.publisher).join(' / ')}
-      </p>
-    )}
-  </aside>
-)}
+  <p class="quality-sources">
+    {sources.slice(0, 3).map((source) => source.publisher).join(' / ')}
+  </p>
+</aside>
