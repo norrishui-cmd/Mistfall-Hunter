@@ -4,6 +4,7 @@ import QualitySignals from '../components/QualitySignals.astro';
 import { getHubLinks } from '../data/siteQuality';
 import { launchWatchLinks, latestNewsLinks } from '../data/seoSprint';
 import { enLaunchAnswerLinks } from '../data/urlLaunchAnswerPages';
+import { enLaunchWeekClusterLinks } from '../data/urlLaunchWeekClusters';
 
 const lang = 'en' as const;
 const hubLinks = getHubLinks(lang);
@@ -136,6 +137,22 @@ const cards = [
       <h2 class="section-title">Launch questions with dedicated pages</h2>
       <div class="cards">
         {enLaunchAnswerLinks.slice(0, 12).map((link) => (
+          <a class="card" href={link.href}>
+            <span class="card-title">{link.title}</span>
+            <span class="card-desc">{link.desc}</span>
+            <span class="card-arrow">Open -></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Launch week clusters</span>
+      <h2 class="section-title">Platform, class, map, and troubleshooting guides</h2>
+      <div class="cards">
+        {enLaunchWeekClusterLinks.slice(0, 16).map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>
