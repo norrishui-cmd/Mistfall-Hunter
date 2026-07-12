@@ -15,7 +15,7 @@ export type HubLink = {
   cluster: 'core' | 'release' | 'guides' | 'maps' | 'builds' | 'bosses' | 'tools';
 };
 
-export const lastUpdated = '2026-07-02';
+export const lastUpdated = '2026-07-12';
 
 export const sources: SourceRef[] = [
   {
@@ -64,6 +64,11 @@ export const sources: SourceRef[] = [
 
 const enHubLinks: HubLink[] = [
   { title: 'Release date', desc: 'Launch timing, platforms, price, and Game Pass status.', href: '/release-date', cluster: 'release' },
+  { title: 'Steam charts tracker', desc: 'Player-count search tracker, Steam interest signals, and launch-week interpretation.', href: '/steam-charts-player-count', cluster: 'release' },
+  { title: 'Steam page guide', desc: 'Steam listing, tags, wishlist intent, and store-page checks before launch.', href: '/steam-page-guide', cluster: 'release' },
+  { title: 'Gameplay overview', desc: 'PvPvE extraction loop, combat expectations, class choice, and loot-risk basics.', href: '/gameplay-overview', cluster: 'guides' },
+  { title: 'Crossplay status', desc: 'PC, Xbox, and PlayStation crossplay questions with confirmed and unconfirmed notes separated.', href: '/crossplay-status', cluster: 'release' },
+  { title: 'Price status', desc: 'Price, edition, Game Pass, and platform purchase watchpoints before launch.', href: '/price-status', cluster: 'release' },
   { title: 'News hub', desc: 'Pre-launch tracker, beta notes, and official update watchlist.', href: '/news', cluster: 'release' },
   { title: 'FAQ', desc: 'Fast answers for launch, platforms, classes, extraction, maps, and beta progress.', href: '/faq', cluster: 'core' },
   { title: 'Beginner guide', desc: 'Core loop, death penalty, Soul of Return, and first-run priorities.', href: '/beginner-guide', cluster: 'guides' },
@@ -75,6 +80,8 @@ const enHubLinks: HubLink[] = [
   { title: 'Boss locations', desc: 'Mist Lord location tracking, boss-route risk, and PvP pressure.', href: '/boss-locations', cluster: 'bosses' },
   { title: 'Bosses & PvE', desc: 'Mist Lords, Corrupted enemies, boss prep, and reward routing.', href: '/bosses', cluster: 'bosses' },
   { title: 'Performance', desc: 'Stutter, crash, low-FPS, and settings checklist.', href: '/performance', cluster: 'tools' },
+  { title: 'Server status', desc: 'Launch-week status hub for login issues, downtime, and maintenance checks.', href: '/server-status', cluster: 'tools' },
+  { title: 'Known issues tracker', desc: 'Structured bug and workaround tracker for crashes, stutter, connection, and launch issues.', href: '/known-issues-tracker', cluster: 'tools' },
   { title: 'Sources', desc: 'Official, store, and preview references used by this site.', href: '/sources', cluster: 'core' },
   { title: 'Updates', desc: 'Editorial update log and launch-day verification plan.', href: '/updates', cluster: 'core' },
   { title: 'HTML sitemap', desc: 'Human-readable discovery page for Google and visitors.', href: '/sitemap', cluster: 'core' },

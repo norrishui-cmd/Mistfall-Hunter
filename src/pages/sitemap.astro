@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getHubLinks } from '../data/siteQuality';
 import { getSeoPages } from '../data/seoPages';
+import { launchWatchLinks, latestNewsLinks } from '../data/seoSprint';
 
 const lang = 'en' as const;
 const hubLinks = getHubLinks(lang);
@@ -40,6 +41,32 @@ const groups = [
         Google Search Console, and use this page as the human-readable discovery hub.
       </p>
 
+      <div class="module-block">
+        <span class="eyebrow">Launch watch</span>
+        <div class="cards">
+          {launchWatchLinks.map((link) => (
+            <a class="card" href={link.href}>
+              <span class="card-title">{link.title}</span>
+              <span class="card-desc">{link.desc}</span>
+              <span class="card-arrow">Open -></span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="module-block">
+        <span class="eyebrow">Latest news briefs</span>
+        <div class="cards">
+          {latestNewsLinks.map((link) => (
+            <a class="card" href={link.href}>
+              <span class="card-title">{link.title}</span>
+              <span class="card-desc">{link.desc}</span>
+              <span class="card-arrow">Read -></span>
+            </a>
+          ))}
+        </div>
+      </div>
+
       {groups.map((group) => {
         const links = hubLinks.filter((link) => link.cluster === group.key);
         return links.length ? (
@@ -61,7 +88,7 @@ const groups = [
       <div class="module-block">
         <span class="eyebrow">Long-tail pages</span>
         <div class="cards">
-          {dynamicLinks.slice(0, 80).map((link) => (
+          {dynamicLinks.slice(0, 300).map((link) => (
             <a class="card" href={link.href}>
               <span class="card-title">{link.title}</span>
               <span class="card-desc">{link.desc}</span>
