@@ -8,6 +8,7 @@ import { enCluster2Pages, zhCluster2Pages } from './urlLongTailCluster2';
 import { enRapidExpansionPages, zhRapidExpansionPages } from './urlRapidExpansion';
 import { enRapidExpansion2Pages, zhRapidExpansion2Pages } from './urlRapidExpansion2';
 import { enTrendExpansionPages, zhTrendExpansionPages } from './urlTrendExpansion';
+import { enDeepLongTailPages, zhDeepLongTailPages } from './urlDeepLongTail';
 
 export type SeoSection = {
   heading: string;
@@ -408,8 +409,8 @@ export const zhPages: SeoPage[] = [
 
 export function getSeoPages(lang: Lang): SeoPage[] {
   return lang === 'zh'
-    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages, ...zhLongTailPages, ...zhCluster2Pages, ...zhRapidExpansionPages, ...zhRapidExpansion2Pages, ...zhTrendExpansionPages]
-    : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages, ...enLongTailPages, ...enCluster2Pages, ...enRapidExpansionPages, ...enRapidExpansion2Pages, ...enTrendExpansionPages];
+    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages, ...zhLongTailPages, ...zhCluster2Pages, ...zhRapidExpansionPages, ...zhRapidExpansion2Pages, ...zhTrendExpansionPages, ...zhDeepLongTailPages]
+    : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages, ...enLongTailPages, ...enCluster2Pages, ...enRapidExpansionPages, ...enRapidExpansion2Pages, ...enTrendExpansionPages, ...enDeepLongTailPages];
 }
 
 export function getSeoPage(lang: Lang, slug: string): SeoPage | undefined {
