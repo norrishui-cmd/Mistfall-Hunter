@@ -8,7 +8,6 @@ interface Props {
   path?: string; // canonical English path, e.g. '/' or '/release-date'
   image?: string; // OG image path under /public
   jsonLd?: object[];
-  noindex?: boolean;
 }
 
 const {
@@ -18,7 +17,6 @@ const {
   path = '/',
   image = '/og-default.png',
   jsonLd = [],
-  noindex = false,
 } = Astro.props;
 
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
@@ -50,9 +48,15 @@ const schemas = [websiteSchema, organizationSchema, ...jsonLd];
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
-<meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="google-adsense-account" content="ca-pub-9505220977121599" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
+<script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9505220977121599"
+  crossorigin="anonymous"
+></script>
 
 <title>{title}</title>
 <meta name="description" content={description} />

@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
+Allow: /ads.txt
+
+User-agent: Googlebot
+Allow: /
+Allow: /ads.txt
+
+User-agent: AdsBot-Google
+Allow: /
+Allow: /ads.txt
+
+User-agent: Mediapartners-Google
+Allow: /
+Allow: /ads.txt
 
 Sitemap: https://mistfallhunter.me/sitemap-index.xml
