@@ -414,3 +414,8 @@ export function getSeoPages(lang: Lang): SeoPage[] {
 export function getSeoPage(lang: Lang, slug: string): SeoPage | undefined {
   return getSeoPages(lang).find((page) => page.slug === slug);
 }
+
+export function isIndexable(pageOrSlug?: SeoPage | string): boolean {
+  if (!pageOrSlug) return true;
+  return true;
+}
