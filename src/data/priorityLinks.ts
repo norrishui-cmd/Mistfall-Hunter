@@ -10,6 +10,7 @@ import { enTrendExpansionLinks, zhTrendExpansionLinks } from './urlTrendExpansio
 import { enDeepLongTailLinks, zhDeepLongTailLinks } from './urlDeepLongTail';
 import { enFaqLongTailLinks, zhFaqLongTailLinks } from './urlFaqLongTail';
 import { enLatestNewsLinks, zhLatestNewsLinks } from './urlLatestNews';
+import { enLaunchAnswerLinks, zhLaunchAnswerLinks } from './urlLaunchAnswerPages';
 
 export type PriorityLink = {
   title: string;
@@ -67,7 +68,7 @@ const zhLinks: PriorityLink[] = [
 export function getPriorityLinks(lang: Lang, groups?: PriorityLink['group'][]): PriorityLink[] {
   const links =
     lang === 'zh'
-      ? [...zhLinks, ...zhExpansionLinks, ...zhFaqLinks, ...zhGrowthLinks, ...zhLongTailLinks, ...zhCluster2Links, ...zhRapidExpansionLinks, ...zhRapidExpansion2Links, ...zhTrendExpansionLinks, ...zhDeepLongTailLinks, ...zhFaqLongTailLinks, ...zhLatestNewsLinks]
-      : [...enLinks, ...enExpansionLinks, ...enFaqLinks, ...enGrowthLinks, ...enLongTailLinks, ...enCluster2Links, ...enRapidExpansionLinks, ...enRapidExpansion2Links, ...enTrendExpansionLinks, ...enDeepLongTailLinks, ...enFaqLongTailLinks, ...enLatestNewsLinks];
+      ? [...zhLinks, ...zhExpansionLinks, ...zhFaqLinks, ...zhGrowthLinks, ...zhLongTailLinks, ...zhCluster2Links, ...zhRapidExpansionLinks, ...zhRapidExpansion2Links, ...zhTrendExpansionLinks, ...zhDeepLongTailLinks, ...zhFaqLongTailLinks, ...zhLatestNewsLinks, ...zhLaunchAnswerLinks]
+      : [...enLinks, ...enExpansionLinks, ...enFaqLinks, ...enGrowthLinks, ...enLongTailLinks, ...enCluster2Links, ...enRapidExpansionLinks, ...enRapidExpansion2Links, ...enTrendExpansionLinks, ...enDeepLongTailLinks, ...enFaqLongTailLinks, ...enLatestNewsLinks, ...enLaunchAnswerLinks];
   return groups ? links.filter((link) => groups.includes(link.group)) : links;
 }

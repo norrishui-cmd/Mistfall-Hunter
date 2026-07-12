@@ -9,27 +9,47 @@ interface Props {
   eyebrow?: string;
   groups?: PriorityLink['group'][];
   limit?: number;
+  currentHref?: string;
+  seedText?: string;
 }
 
-const { lang, groups, limit = 6 } = Astro.props;
-const title = Astro.props.title ?? (lang === 'zh' ? '继续探索' : 'Explore next');
-const eyebrow = Astro.props.eyebrow ?? (lang === 'zh' ? '站内导航' : 'Internal links');
-const links = getPriorityLinks(lang, groups).slice(0, limit);
-const readLabel = lang === 'zh' ? '查看' : 'Open';
+const { lang, groups, limit = 6, currentHref = '', seedText = '' } = Astro.props as Props;
+const title = Astro.props.title ?? (lang === 'zh' ? 'Continue exploring' : 'Explore next');
+const eyebrow = Astro.props.eyebrow ?? (lang === 'zh' ? 'Internal links' : 'Internal links');
+const readLabel = lang === 'zh' ? 'Open' : 'Open';
+
+const seedWords = seedText
+  .toLowerCase()
+  .replace(/[^a-z0-9\s-]/g, ' ')
+  .split(/\s+/)
+  .filter((word) => word.length > 3);
+
+const links = getPriorityLinks(lang, groups)
+  .filter((link) => link.href !== currentHref)
+  .map((link, index) => {
+    const haystack = `${link.title} ${link.desc} ${link.href}`.toLowerCase();
+    const keywordScore = seedWords.reduce((score, word) => score + (haystack.includes(word) ? 2 : 0), 0);
+    return { link, score: keywordScore - index * 0.001 };
+  })
+  .sort((a, b) => b.score - a.score)
+  .slice(0, limit)
+  .map((item) => item.link);
 ---
 
-<section class="section related-section">
-  <div class="container">
-    <span class="eyebrow">{eyebrow}</span>
-    <h2 class="section-title">{title}</h2>
-    <div class="cards related-cards">
-      {links.map((link) => (
-        <a class="card" href={link.href}>
-          <span class="card-title">{link.title}</span>
-          <span class="card-desc">{link.desc}</span>
-          <span class="card-arrow">{readLabel} -></span>
-        </a>
-      ))}
+{links.length > 0 && (
+  <section class="section related-section">
+    <div class="container">
+      <span class="eyebrow">{eyebrow}</span>
+      <h2 class="section-title">{title}</h2>
+      <div class="cards related-cards">
+        {links.map((link) => (
+          <a class="card" href={link.href}>
+            <span class="card-title">{link.title}</span>
+            <span class="card-desc">{link.desc}</span>
+            <span class="card-arrow">{readLabel} -></span>
+          </a>
+        ))}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+)}

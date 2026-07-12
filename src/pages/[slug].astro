@@ -15,14 +15,37 @@ const lang = 'en' as const;
 const { page } = Astro.props as { page: SeoPage };
 const noindex = !isIndexable(page.slug);
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
+const pageUrl = new URL(`/${page.slug}`, site).href;
+const seedText = [
+  page.title,
+  page.h1,
+  page.description,
+  page.lead,
+  page.sections.map((section) => `${section.heading} ${section.body.join(' ')} ${section.bullets?.join(' ') ?? ''}`).join(' '),
+  page.relatedSearches?.join(' ') ?? '',
+].join(' ');
 
 const breadcrumb = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', site).href },
-    { '@type': 'ListItem', position: 2, name: page.h1, item: new URL(`/${page.slug}`, site).href },
+    { '@type': 'ListItem', position: 2, name: page.h1, item: pageUrl },
   ],
+};
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': page.template === 'faq' || page.faqs ? 'Article' : 'TechArticle',
+  headline: page.h1,
+  description: page.description,
+  url: pageUrl,
+  inLanguage: 'en',
+  dateModified: '2026-07-12',
+  datePublished: '2026-07-12',
+  author: { '@type': 'Organization', name: 'Mistfall Hunter Wiki and Hub' },
+  publisher: { '@type': 'Organization', name: 'Mistfall Hunter Wiki and Hub' },
+  mainEntityOfPage: pageUrl,
 };
 
 const faqSchema = page.faqs
@@ -44,7 +67,7 @@ const faqSchema = page.faqs
   title={page.title}
   description={page.description}
   noindex={noindex}
-  jsonLd={faqSchema ? [breadcrumb, faqSchema] : [breadcrumb]}
+  jsonLd={faqSchema ? [breadcrumb, articleSchema, faqSchema] : [breadcrumb, articleSchema]}
 >
   <section class="section">
     <div class="container">
@@ -105,5 +128,11 @@ const faqSchema = page.faqs
     </div>
   </section>
 
-  <PriorityLinks lang={lang} groups={[page.group, 'guides', 'tools']} limit={6} />
+  <PriorityLinks
+    lang={lang}
+    groups={[page.group, 'guides', 'tools']}
+    limit={8}
+    currentHref={`/${page.slug}`}
+    seedText={seedText}
+  />
 </BaseLayout>
