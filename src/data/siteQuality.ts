@@ -15,7 +15,7 @@ export type HubLink = {
   cluster: 'core' | 'release' | 'guides' | 'maps' | 'builds' | 'bosses' | 'tools';
 };
 
-export const lastUpdated = '2026-07-12';
+export const lastUpdated = '2026-07-13';
 
 export const sources: SourceRef[] = [
   {

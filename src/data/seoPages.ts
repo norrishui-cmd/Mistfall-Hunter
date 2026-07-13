@@ -13,6 +13,7 @@ import { enFaqLongTailPages, zhFaqLongTailPages } from './urlFaqLongTail';
 import { enLatestNewsPages, zhLatestNewsPages } from './urlLatestNews';
 import { enLaunchAnswerPages, zhLaunchAnswerPages } from './urlLaunchAnswerPages';
 import { enLaunchWeekClusterPages, zhLaunchWeekClusterPages } from './urlLaunchWeekClusters';
+import { enLaunchDayIntentPages, zhLaunchDayIntentPages } from './urlLaunchDayIntents';
 
 export type SeoSection = {
   heading: string;
@@ -413,8 +414,8 @@ export const zhPages: SeoPage[] = [
 
 export function getSeoPages(lang: Lang): SeoPage[] {
   return lang === 'zh'
-    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages, ...zhLongTailPages, ...zhCluster2Pages, ...zhRapidExpansionPages, ...zhRapidExpansion2Pages, ...zhTrendExpansionPages, ...zhDeepLongTailPages, ...zhFaqLongTailPages, ...zhLatestNewsPages, ...zhLaunchAnswerPages, ...zhLaunchWeekClusterPages]
-    : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages, ...enLongTailPages, ...enCluster2Pages, ...enRapidExpansionPages, ...enRapidExpansion2Pages, ...enTrendExpansionPages, ...enDeepLongTailPages, ...enFaqLongTailPages, ...enLatestNewsPages, ...enLaunchAnswerPages, ...enLaunchWeekClusterPages];
+    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages, ...zhLongTailPages, ...zhCluster2Pages, ...zhRapidExpansionPages, ...zhRapidExpansion2Pages, ...zhTrendExpansionPages, ...zhDeepLongTailPages, ...zhFaqLongTailPages, ...zhLatestNewsPages, ...zhLaunchAnswerPages, ...zhLaunchWeekClusterPages, ...zhLaunchDayIntentPages]
+    : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages, ...enLongTailPages, ...enCluster2Pages, ...enRapidExpansionPages, ...enRapidExpansion2Pages, ...enTrendExpansionPages, ...enDeepLongTailPages, ...enFaqLongTailPages, ...enLatestNewsPages, ...enLaunchAnswerPages, ...enLaunchWeekClusterPages, ...enLaunchDayIntentPages];
 }
 
 export function getSeoPage(lang: Lang, slug: string): SeoPage | undefined {
