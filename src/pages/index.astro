@@ -6,6 +6,7 @@ import { launchWatchLinks, latestNewsLinks } from '../data/seoSprint';
 import { enLaunchAnswerLinks } from '../data/urlLaunchAnswerPages';
 import { enLaunchWeekClusterLinks } from '../data/urlLaunchWeekClusters';
 import { enLaunchDayIntentLinks } from '../data/urlLaunchDayIntents';
+import { enPostLaunchEvergreenLinks } from '../data/urlPostLaunchEvergreen';
 
 const lang = 'en' as const;
 const hubLinks = getHubLinks(lang);
@@ -170,6 +171,22 @@ const cards = [
       <h2 class="section-title">Fast pages for release-day searches</h2>
       <div class="cards">
         {enLaunchDayIntentLinks.slice(0, 18).map((link) => (
+          <a class="card" href={link.href}>
+            <span class="card-title">{link.title}</span>
+            <span class="card-desc">{link.desc}</span>
+            <span class="card-arrow">Open -></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Evergreen wiki</span>
+      <h2 class="section-title">Post-launch pages built to stay useful</h2>
+      <div class="cards">
+        {enPostLaunchEvergreenLinks.slice(0, 18).map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>
