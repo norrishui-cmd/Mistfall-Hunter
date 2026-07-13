@@ -2,11 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import QualitySignals from '../components/QualitySignals.astro';
 import { getHubLinks } from '../data/siteQuality';
-import { launchWatchLinks, latestNewsLinks } from '../data/seoSprint';
+import { latestNewsLinks } from '../data/seoSprint';
 import { enLaunchAnswerLinks } from '../data/urlLaunchAnswerPages';
 import { enLaunchWeekClusterLinks } from '../data/urlLaunchWeekClusters';
 import { enLaunchDayIntentLinks } from '../data/urlLaunchDayIntents';
 import { enPostLaunchEvergreenLinks } from '../data/urlPostLaunchEvergreen';
+import { recoveryFocusLinks } from '../data/seoRecovery';
 
 const lang = 'en' as const;
 const hubLinks = getHubLinks(lang);
@@ -106,7 +107,7 @@ const cards = [
       <span class="eyebrow">Launch watch</span>
       <h2 class="section-title">Trending pages to check before July 30</h2>
       <div class="cards">
-        {launchWatchLinks.map((link) => (
+        {recoveryFocusLinks.map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>
@@ -122,7 +123,7 @@ const cards = [
       <span class="eyebrow">Latest news briefs</span>
       <h2 class="section-title">Pre-launch topics people are searching now</h2>
       <div class="cards">
-        {latestNewsLinks.map((link) => (
+        {latestNewsLinks.slice(0, 6).map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>
@@ -138,7 +139,7 @@ const cards = [
       <span class="eyebrow">Fast answers</span>
       <h2 class="section-title">Launch questions with dedicated pages</h2>
       <div class="cards">
-        {enLaunchAnswerLinks.slice(0, 12).map((link) => (
+        {enLaunchAnswerLinks.slice(0, 6).map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>
@@ -154,7 +155,7 @@ const cards = [
       <span class="eyebrow">Launch week clusters</span>
       <h2 class="section-title">Platform, class, map, and troubleshooting guides</h2>
       <div class="cards">
-        {enLaunchWeekClusterLinks.slice(0, 16).map((link) => (
+        {enLaunchWeekClusterLinks.slice(0, 6).map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>
@@ -170,7 +171,7 @@ const cards = [
       <span class="eyebrow">Launch day intent</span>
       <h2 class="section-title">Fast pages for release-day searches</h2>
       <div class="cards">
-        {enLaunchDayIntentLinks.slice(0, 18).map((link) => (
+        {enLaunchDayIntentLinks.slice(0, 6).map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>
@@ -186,7 +187,7 @@ const cards = [
       <span class="eyebrow">Evergreen wiki</span>
       <h2 class="section-title">Post-launch pages built to stay useful</h2>
       <div class="cards">
-        {enPostLaunchEvergreenLinks.slice(0, 18).map((link) => (
+        {enPostLaunchEvergreenLinks.slice(0, 6).map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>

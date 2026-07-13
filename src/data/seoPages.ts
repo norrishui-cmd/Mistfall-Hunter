@@ -15,6 +15,7 @@ import { enLaunchAnswerPages, zhLaunchAnswerPages } from './urlLaunchAnswerPages
 import { enLaunchWeekClusterPages, zhLaunchWeekClusterPages } from './urlLaunchWeekClusters';
 import { enLaunchDayIntentPages, zhLaunchDayIntentPages } from './urlLaunchDayIntents';
 import { enPostLaunchEvergreenPages, zhPostLaunchEvergreenPages } from './urlPostLaunchEvergreen';
+import { softNoindexSlugs } from './seoRecovery';
 
 export type SeoSection = {
   heading: string;
@@ -425,5 +426,6 @@ export function getSeoPage(lang: Lang, slug: string): SeoPage | undefined {
 
 export function isIndexable(pageOrSlug?: SeoPage | string): boolean {
   if (!pageOrSlug) return true;
-  return true;
+  const slug = typeof pageOrSlug === 'string' ? pageOrSlug : pageOrSlug.slug;
+  return !softNoindexSlugs.has(slug);
 }
