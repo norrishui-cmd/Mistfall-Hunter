@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CoreQualityPanel from '../components/CoreQualityPanel.astro';
 
 const lang = 'en' as const;
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
@@ -99,6 +100,24 @@ const faqSchema = {
         try to get out before you lose it all. Here is the full loop, what death costs you, and how
         to survive your first runs.
       </p>
+
+      <CoreQualityPanel
+        confirmed={[
+          'Mistfall Hunter is built around PvPvE extraction and loot loss.',
+          'Soul of Return and extraction routing are central beginner topics.',
+          'Solo and squad play require different risk habits.',
+        ]}
+        watch={[
+          'Exact launch tuning for death penalty and extraction timing.',
+          'Final beginner class balance after launch patch notes.',
+          'Map-specific first-run routes once live locations are verified.',
+        ]}
+        links={[
+          { title: 'Release date', desc: 'launch timing and platforms', href: '/release-date' },
+          { title: 'Classes', desc: 'choose a forgiving first role', href: '/classes' },
+          { title: 'Fastest way to extract', desc: 'leave with loot safely', href: '/mistfall-hunter-fastest-way-to-extract' },
+        ]}
+      />
 
       <hr class="thread" />
 

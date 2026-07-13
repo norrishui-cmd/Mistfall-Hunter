@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CoreQualityPanel from '../components/CoreQualityPanel.astro';
 
 const lang = 'en' as const;
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
@@ -113,6 +114,24 @@ const faqSchema = {
         easiest to learn, and the <strong>Seer</strong> only shines in a squad. Here is the full
         ranking and a breakdown of each.
       </p>
+
+      <CoreQualityPanel
+        confirmed={[
+          'The page covers six known classes and their role identities.',
+          'Beginner, solo, PvP, and squad contexts are separated.',
+          'Tier claims are labeled as beta/pre-launch context, not final launch meta.',
+        ]}
+        watch={[
+          'Launch patch class tuning.',
+          'Live solo versus squad win-rate signals.',
+          'Skill, rune, and affix values once verified after release.',
+        ]}
+        links={[
+          { title: 'Best beginner class', desc: 'starter role decision', href: '/best-class-for-beginners' },
+          { title: 'Builds', desc: 'class build directions', href: '/builds' },
+          { title: 'Patch balance watch', desc: 'balance changes after launch', href: '/mistfall-hunter-patch-balance-watch' },
+        ]}
+      />
 
       <hr class="thread" />
 

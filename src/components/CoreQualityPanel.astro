@@ -1,0 +1,53 @@
+---
+interface LinkItem {
+  title: string;
+  desc: string;
+  href: string;
+}
+
+interface Props {
+  updated?: string;
+  confirmed: string[];
+  watch: string[];
+  links: LinkItem[];
+}
+
+const {
+  updated = '2026-07-13',
+  confirmed,
+  watch,
+  links,
+} = Astro.props as Props;
+---
+
+<aside class="quality-panel" aria-label="Editorial quality notes">
+  <div class="quality-head">
+    <div>
+      <span class="eyebrow">Quality notes</span>
+      <p>Last checked: {updated}. Confirmed facts are separated from launch-watch items.</p>
+    </div>
+    <a href="/sources">Sources policy</a>
+  </div>
+  <div class="quality-grid">
+    <section>
+      <h2>Confirmed on this page</h2>
+      <ul>
+        {confirmed.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+    <section>
+      <h2>Needs launch verification</h2>
+      <ul>
+        {watch.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+    <section>
+      <h2>Next best pages</h2>
+      <ul>
+        {links.map((link) => (
+          <li><a href={link.href}>{link.title}</a> - {link.desc}</li>
+        ))}
+      </ul>
+    </section>
+  </div>
+</aside>

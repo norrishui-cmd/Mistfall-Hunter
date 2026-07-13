@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CoreQualityPanel from '../components/CoreQualityPanel.astro';
 
 const lang = 'en' as const;
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
@@ -81,6 +82,24 @@ const breadcrumbSchema = {
         PlayStation 5 — day one on Xbox Game Pass. Final pricing hasn't been confirmed yet. Here's
         everything that's locked in, and what still isn't.
       </p>
+
+      <CoreQualityPanel
+        confirmed={[
+          'Global launch anchor: July 30, 2026 at 01:00 UTC.',
+          'Planned platforms: PC, Xbox Series X|S, and PlayStation 5.',
+          'Platform, beta, and pricing notes are separated by confirmation status.',
+        ]}
+        watch={[
+          'Final price or free-to-play wording.',
+          'Preload and download-size details by platform.',
+          'Launch server timing and day-one patch notes.',
+        ]}
+        links={[
+          { title: 'Steam charts tracker', desc: 'trend and player-count intent', href: '/steam-charts-player-count' },
+          { title: 'Price status', desc: 'price, editions, and Game Pass', href: '/price-status' },
+          { title: 'Server status', desc: 'launch-day availability checks', href: '/server-status' },
+        ]}
+      />
 
       <hr class="thread" />
 

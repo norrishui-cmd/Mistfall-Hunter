@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CoreQualityPanel from '../components/CoreQualityPanel.astro';
 import { MAPS, CATEGORIES } from '../data/maps';
 
 const lang = 'en' as const;
@@ -40,6 +41,24 @@ const breadcrumb = {
           launch — check back as it fills in.
         </p>
       </div>
+
+      <CoreQualityPanel
+        confirmed={[
+          'Map categories separate extraction, boss, loot, and landmark intent.',
+          'Current maps are labeled as schematic until live route data is verified.',
+          'The page links players toward beginner extraction and class planning.',
+        ]}
+        watch={[
+          'Verified extraction points after launch.',
+          'Boss spawn and high-value loot locations from live mapping.',
+          'Route-risk changes after patches or map updates.',
+        ]}
+        links={[
+          { title: 'Extraction map', desc: 'exit and Soul of Return routing', href: '/extraction-map' },
+          { title: 'Safe extraction routes', desc: 'low-risk route planning', href: '/mistfall-hunter-safe-extraction-routes' },
+          { title: 'Boss locations', desc: 'Mist Lord route planning', href: '/boss-locations' },
+        ]}
+      />
 
       <div class="maptabs" role="tablist">
         {MAPS.map((m, i) => (

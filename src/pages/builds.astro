@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CoreQualityPanel from '../components/CoreQualityPanel.astro';
 import { BUILDS, CLASS_LIST, AFFIXES } from '../data/builds';
 
 const lang = 'en' as const;
@@ -66,6 +67,24 @@ const faqSchema = {
           community tests the live game.
         </p>
       </div>
+
+      <CoreQualityPanel
+        confirmed={[
+          'Builds are presented as role directions, not final best-in-slot lists.',
+          'Class identity, affix direction, and beginner survivability are separated.',
+          'The page links back to classes, beginner guide, and map planning.',
+        ]}
+        watch={[
+          'Final skill, talent, rune, and affix values.',
+          'Launch patch balance changes that affect class builds.',
+          'Live PvP/PvE split once players test routes and bosses.',
+        ]}
+        links={[
+          { title: 'Classes', desc: 'compare roles before building', href: '/classes' },
+          { title: 'Affix priority', desc: 'which modifiers to keep', href: '/mistfall-hunter-affix-priority' },
+          { title: 'Loot guide', desc: 'gear and resource decisions', href: '/loot' },
+        ]}
+      />
 
       <div class="prose">
         <h2>How gearing works</h2>
