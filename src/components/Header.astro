@@ -1,29 +1,34 @@
----
-import { useTranslations, localizePath, type Lang } from '../i18n';
+﻿---
+import { localizePath, type Lang } from '../i18n';
 
 interface Props {
   lang: Lang;
   path: string;
 }
 
-const { lang, path } = Astro.props;
-const t = useTranslations(lang);
+type NavItem = {
+  label: string;
+  path: string;
+};
 
-const items = [
-  { key: 'nav.home', path: '/', live: true },
-  { key: 'nav.release', path: '/release-date', live: true },
-  { key: 'nav.news', path: '/news', live: true },
-  { key: 'nav.guides', path: '/guides', live: true },
-  { key: 'nav.maps', path: '/map', live: true },
-  { key: 'nav.builds', path: '/builds', live: true },
-  { key: 'nav.bosses', path: '/bosses', live: true },
-  { key: 'nav.tools', path: '/tools', live: true },
-  { key: 'nav.faq', path: '/faq', live: true },
-  { key: 'nav.about', path: '/about', live: true },
+const { lang, path } = Astro.props as Props;
+
+const items: NavItem[] = [
+  { label: 'Home', path: '/' },
+  { label: 'Release', path: '/release-date' },
+  { label: 'Steam', path: '/steam-page-guide' },
+  { label: 'Gameplay', path: '/gameplay-overview' },
+  { label: 'Beginner', path: '/beginner-guide' },
+  { label: 'Classes', path: '/classes' },
+  { label: 'Map', path: '/map' },
+  { label: 'Builds', path: '/builds' },
+  { label: 'Status', path: '/server-status' },
 ];
 
 const other: Lang = lang === 'zh' ? 'en' : 'zh';
-const otherLabel = other === 'zh' ? '中文' : 'English';
+const otherLabel = other === 'zh' ? 'Chinese' : 'English';
+const siteName = 'Mistfall Hunter Wiki and Hub';
+const siteTagline = 'Unofficial guide and database';
 ---
 
 <header class="site-header">
@@ -31,28 +36,21 @@ const otherLabel = other === 'zh' ? '中文' : 'English';
     <a class="brand" href={localizePath('/', lang)}>
       <img src="/favicon.svg" alt="" width="28" height="28" />
       <span>
-        <span class="brand-name">{t('site.name')}</span>
-        <span class="brand-tag">{t('site.tagline')}</span>
+        <span class="brand-name">{siteName}</span>
+        <span class="brand-tag">{siteTagline}</span>
       </span>
     </a>
 
     <div class="header-right">
       <nav class="nav" aria-label="Primary">
-        {items.map((item) =>
-          item.live ? (
-            <a
-              href={localizePath(item.path, lang)}
-              aria-current={item.path === path ? 'page' : undefined}
-            >
-              {t(item.key)}
-            </a>
-          ) : (
-            <span class="navlink">
-              {t(item.key)}
-              <span class="mini-soon">{t('nav.soon')}</span>
-            </span>
-          )
-        )}
+        {items.map((item) => (
+          <a
+            href={localizePath(item.path, lang)}
+            aria-current={item.path === path ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        ))}
       </nav>
 
       <a

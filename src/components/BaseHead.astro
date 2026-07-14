@@ -1,12 +1,12 @@
----
+﻿---
 import { localizePath, ui, type Lang } from '../i18n';
 
 interface Props {
   title: string;
   description: string;
   lang: Lang;
-  path?: string; // canonical English path, e.g. '/' or '/release-date'
-  image?: string; // OG image path under /public
+  path?: string;
+  image?: string;
   jsonLd?: object[];
   noindex?: boolean;
 }
@@ -19,7 +19,7 @@ const {
   image = '/og-default.png',
   jsonLd = [],
   noindex = false,
-} = Astro.props;
+} = Astro.props as Props;
 
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
 const canonical = new URL(localizePath(path, lang), site).href;
@@ -34,6 +34,11 @@ const websiteSchema = {
   name: siteName,
   url: site.href,
   inLanguage: lang === 'zh' ? 'zh-Hans' : 'en',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: new URL('/sitemap?q={search_term_string}', site).href,
+    'query-input': 'required name=search_term_string',
+  },
 };
 
 const organizationSchema = {
@@ -42,6 +47,11 @@ const organizationSchema = {
   name: 'Mistfall Hunter Wiki and Hub',
   url: site.href,
   logo: new URL('/favicon.svg', site).href,
+  sameAs: [
+    'https://www.mistfallhunter.com/',
+    'https://store.steampowered.com/app/2683540/Mistfall_Hunter/',
+    'https://www.xbox.com/games/store/mistfall-hunter/9nq85plc2n6h',
+  ],
 };
 
 const schemas = [websiteSchema, organizationSchema, ...jsonLd];
@@ -63,12 +73,12 @@ const schemas = [websiteSchema, organizationSchema, ...jsonLd];
 <title>{title}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
+<meta name="theme-color" content="#0e1014" />
 
 <link rel="alternate" hreflang="en" href={enHref} />
 <link rel="alternate" hreflang="zh-Hans" href={zhHref} />
 <link rel="alternate" hreflang="x-default" href={enHref} />
 
-<!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content={siteName} />
 <meta property="og:title" content={title} />
@@ -77,13 +87,11 @@ const schemas = [websiteSchema, organizationSchema, ...jsonLd];
 <meta property="og:image" content={ogImage} />
 <meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : 'en_US'} />
 
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
@@ -91,7 +99,6 @@ const schemas = [websiteSchema, organizationSchema, ...jsonLd];
   rel="stylesheet"
 />
 
-<!-- Structured data -->
 {schemas.map((schema) => (
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 ))}
