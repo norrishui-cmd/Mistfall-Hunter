@@ -1,6 +1,7 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import QualitySignals from '../components/QualitySignals.astro';
+import CoreTopicCluster from '../components/CoreTopicCluster.astro';
 import { getHubLinks } from '../data/siteQuality';
 import { latestNewsLinks } from '../data/seoSprint';
 import { enLaunchAnswerLinks } from '../data/urlLaunchAnswerPages';
@@ -11,6 +12,18 @@ import { recoveryFocusLinks } from '../data/seoRecovery';
 
 const lang = 'en' as const;
 const hubLinks = getHubLinks(lang);
+const site = Astro.site ?? new URL('https://mistfallhunter.me');
+const priorityItemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Mistfall Hunter priority guide pages',
+  itemListElement: recoveryFocusLinks.map((link, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: link.title,
+    url: new URL(link.href, site).href,
+  })),
+};
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
@@ -65,7 +78,7 @@ const cards = [
   path="/"
   title="Mistfall Hunter Wiki and Hub - Builds, Maps & Survival Guides"
   description="Unofficial Mistfall Hunter guide and database: release date, class tier list, builds, interactive maps, bosses, FAQ, and beginner help for the dark fantasy PvPvE extraction RPG."
-  jsonLd={[videoGameSchema]}
+  jsonLd={[videoGameSchema, priorityItemListSchema]}
 >
   <section class="hero">
     <div class="container">
@@ -244,3 +257,4 @@ const cards = [
     </div>
   </section>
 </BaseLayout>
+

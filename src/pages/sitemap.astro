@@ -1,8 +1,10 @@
----
+﻿---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CoreTopicCluster from '../components/CoreTopicCluster.astro';
 import { getHubLinks } from '../data/siteQuality';
 import { getSeoPages, isIndexable } from '../data/seoPages';
 import { launchWatchLinks, latestNewsLinks } from '../data/seoSprint';
+import { recoveryFocusLinks } from '../data/seoRecovery';
 
 const lang = 'en' as const;
 const hubLinks = getHubLinks(lang);
@@ -38,7 +40,7 @@ const groups = [
       <span class="eyebrow">Discovery</span>
       <h1 class="page-title">Mistfall Hunter sitemap</h1>
       <p class="lead">
-        A crawl-friendly index of the site’s most important pages. Submit the XML sitemap in
+        A crawl-friendly index of the site鈥檚 most important pages. Submit the XML sitemap in
         Google Search Console, and use this page as the human-readable discovery hub.
       </p>
 
@@ -101,3 +103,4 @@ const groups = [
     </div>
   </section>
 </BaseLayout>
+

@@ -1,0 +1,39 @@
+﻿---
+import type { RecoveryLink } from '../data/seoRecovery';
+
+interface Props {
+  links: RecoveryLink[];
+  title?: string;
+  eyebrow?: string;
+}
+
+const {
+  links,
+  title = 'Priority topic cluster',
+  eyebrow = 'Recovery focus',
+} = Astro.props as Props;
+---
+
+<section class="section" aria-label="Priority topic cluster">
+  <div class="container">
+    <span class="eyebrow">{eyebrow}</span>
+    <h2 class="section-title">{title}</h2>
+    <div class="callout">
+      <span class="eyebrow">Why these pages matter</span>
+      <p>
+        These are the pages this wiki treats as the main search and player-intent spine before launch:
+        release timing, Steam demand, gameplay, beginner help, classes, maps, builds, price, crossplay,
+        and server status. Long-tail pages support this cluster rather than replacing it.
+      </p>
+    </div>
+    <div class="cards">
+      {links.map((link) => (
+        <a class="card" href={link.href}>
+          <span class="card-title">{link.title}</span>
+          <span class="card-desc">{link.desc}</span>
+          <span class="card-arrow">Open -></span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
