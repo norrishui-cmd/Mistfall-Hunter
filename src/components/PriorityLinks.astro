@@ -2,6 +2,7 @@
 import { getPriorityLinks } from '../data/priorityLinks';
 import type { PriorityLink } from '../data/priorityLinks';
 import type { Lang } from '../i18n';
+import { isIndexable } from '../data/seoPages';
 
 interface Props {
   lang: Lang;
@@ -25,6 +26,9 @@ const seedWords = seedText
   .filter((word) => word.length > 3);
 
 const links = getPriorityLinks(lang, groups)
+  // A noindex draft should not receive repeated sitewide links from pages we
+  // are asking Google to rank. It can stay available via its direct URL.
+  .filter((link) => isIndexable(link.href.replace(/^\/zh\//, '').replace(/^\//, '')))
   .filter((link) => link.href !== currentHref)
   .map((link, index) => {
     const haystack = `${link.title} ${link.desc} ${link.href}`.toLowerCase();

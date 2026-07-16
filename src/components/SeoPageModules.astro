@@ -1,67 +1,24 @@
 ---
 import type { SeoPage } from '../data/seoPages';
 
-interface Props {
-  page: SeoPage;
-  labels?: {
-    intent: string;
-    primary: string;
-    secondary: string;
-    freshness: string;
-    checklist: string;
-    steps: string;
-    tables: string;
-    related: string;
-  };
-}
+interface Props { page: SeoPage; labels?: { checklist: string; steps: string; tables: string; }; }
 
 const { page } = Astro.props as Props;
 const labels = Astro.props.labels ?? {
-  intent: 'Search intent',
-  primary: 'Primary',
-  secondary: 'Secondary',
-  freshness: 'Freshness',
   checklist: 'Checklist',
   steps: 'Step plan',
   tables: 'Reference table',
-  related: 'Related searches',
 };
 ---
 
-{(page.intent || page.checklist) && (
+{page.checklist && (
   <div class={`seo-module seo-module--${page.template ?? 'guide'}`}>
-    {page.intent && (
-      <div class="intent-grid">
-        <div>
-          <span class="eyebrow">{labels.intent}</span>
-          <h2>{page.intent.primary}</h2>
-          <p>{page.intent.freshness}</p>
-        </div>
-        <dl class="intent-list">
-          <div>
-            <dt>{labels.primary}</dt>
-            <dd>{page.intent.primary}</dd>
-          </div>
-          <div>
-            <dt>{labels.secondary}</dt>
-            <dd>{page.intent.secondary.join(', ')}</dd>
-          </div>
-          <div>
-            <dt>{labels.freshness}</dt>
-            <dd>{page.intent.freshness}</dd>
-          </div>
-        </dl>
-      </div>
-    )}
-
-    {page.checklist && (
-      <div class="module-block">
-        <h2>{labels.checklist}</h2>
-        <ul class="check-grid">
-          {page.checklist.map((item) => <li>{item}</li>)}
-        </ul>
-      </div>
-    )}
+    <div class="module-block">
+      <h2>{labels.checklist}</h2>
+      <ul class="check-grid">
+        {page.checklist.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
   </div>
 )}
 
@@ -102,14 +59,5 @@ const labels = Astro.props.labels ?? {
         </table>
       </div>
     ))}
-  </div>
-)}
-
-{page.relatedSearches && (
-  <div class="module-block">
-    <span class="eyebrow">{labels.related}</span>
-    <div class="query-chips">
-      {page.relatedSearches.map((query) => <span>{query}</span>)}
-    </div>
   </div>
 )}
