@@ -15,7 +15,7 @@ export type HubLink = {
   cluster: 'core' | 'release' | 'guides' | 'maps' | 'builds' | 'bosses' | 'tools';
 };
 
-export const lastUpdated = '2026-07-15';
+export const lastUpdated = '2026-07-16';
 
 export const sources: SourceRef[] = [
   {
@@ -99,12 +99,12 @@ export function getHubLinks(lang: Lang): HubLink[] {
 export function getSourceLabels(lang: Lang) {
   return lang === 'zh'
     ? {
-        updated: '鏈€鍚庢洿鏂?,
-        quality: '鍐呭鍙俊搴?,
-        confirmed: '宸茬‘璁?,
-        preview: '棰勮瑙傚療',
-        verify: '寰呴獙璇?,
-        sources: '涓昏鏉ユ簮',
+        updated: '最后更新',
+        quality: '内容可信度',
+        confirmed: '已确认',
+        preview: '预览观察',
+        verify: '待验证',
+        sources: '主要来源',
       }
     : {
         updated: 'Last updated',
@@ -115,4 +115,3 @@ export function getSourceLabels(lang: Lang) {
         sources: 'Primary sources',
       };
 }
-

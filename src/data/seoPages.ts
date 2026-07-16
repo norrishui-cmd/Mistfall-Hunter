@@ -427,5 +427,18 @@ export function getSeoPage(lang: Lang, slug: string): SeoPage | undefined {
 export function isIndexable(pageOrSlug?: SeoPage | string): boolean {
   if (!pageOrSlug) return true;
   const slug = typeof pageOrSlug === 'string' ? pageOrSlug : pageOrSlug.slug;
-  return !softNoindexSlugs.has(slug);
+  // This is a deliberately conservative pre-launch index. The project has a
+  // much larger working corpus, but pages whose only honest answer is still
+  // "wait for launch" dilute the topical signal of the confirmed guides.
+  // Keep them published and internally reachable, but do not ask Google to
+  // rank them until they have live facts, screenshots, or patch references.
+  const indexableSlugs = new Set([
+    'news', 'guides', 'tools', 'about', 'weapons', 'bosses', 'loot', 'soul-of-return',
+    'release-date', 'beginner-guide', 'classes', 'builds', 'map', 'performance',
+    'build-planner', 'sources', 'updates', 'sitemap',
+    'steam-charts-player-count', 'steam-page-guide', 'gameplay-overview',
+    'best-class-for-beginners', 'crossplay-status', 'price-status', 'server-status',
+    'best-builds', 'extraction-map', 'boss-locations', 'known-issues-tracker',
+  ]);
+  return indexableSlugs.has(slug) && !softNoindexSlugs.has(slug);
 }

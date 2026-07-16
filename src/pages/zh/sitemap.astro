@@ -28,7 +28,7 @@ const dynamicLinks = getSeoPages(lang)
       <p class="lead">用于用户浏览和搜索引擎发现的重要页面入口。</p>
 
       <div class="cards">
-        {hubLinks.map((link) => (
+        {hubLinks.filter((link) => isIndexable(link.href.replace(/^\/zh\//, ''))).map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>
@@ -40,7 +40,7 @@ const dynamicLinks = getSeoPages(lang)
       <div class="module-block">
         <span class="eyebrow">长尾页面</span>
         <div class="cards">
-          {dynamicLinks.slice(0, 900).map((link) => (
+          {dynamicLinks.slice(0, 120).map((link) => (
             <a class="card" href={link.href}>
               <span class="card-title">{link.title}</span>
               <span class="card-desc">{link.desc}</span>

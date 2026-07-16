@@ -40,14 +40,14 @@ const groups = [
       <span class="eyebrow">Discovery</span>
       <h1 class="page-title">Mistfall Hunter sitemap</h1>
       <p class="lead">
-        A crawl-friendly index of the site鈥檚 most important pages. Submit the XML sitemap in
+        A crawl-friendly index of the site's most important pages. Submit the XML sitemap in
         Google Search Console, and use this page as the human-readable discovery hub.
       </p>
 
       <div class="module-block">
         <span class="eyebrow">Launch watch</span>
         <div class="cards">
-          {launchWatchLinks.map((link) => (
+          {launchWatchLinks.filter((link) => isIndexable(link.href)).map((link) => (
             <a class="card" href={link.href}>
               <span class="card-title">{link.title}</span>
               <span class="card-desc">{link.desc}</span>
@@ -60,7 +60,7 @@ const groups = [
       <div class="module-block">
         <span class="eyebrow">Latest news briefs</span>
         <div class="cards">
-          {latestNewsLinks.map((link) => (
+          {latestNewsLinks.filter((link) => isIndexable(link.href)).map((link) => (
             <a class="card" href={link.href}>
               <span class="card-title">{link.title}</span>
               <span class="card-desc">{link.desc}</span>
@@ -71,7 +71,7 @@ const groups = [
       </div>
 
       {groups.map((group) => {
-        const links = hubLinks.filter((link) => link.cluster === group.key);
+        const links = hubLinks.filter((link) => link.cluster === group.key && isIndexable(link.href));
         return links.length ? (
           <div class="module-block">
             <span class="eyebrow">{group.title}</span>
@@ -91,7 +91,7 @@ const groups = [
       <div class="module-block">
         <span class="eyebrow">Long-tail pages</span>
         <div class="cards">
-          {dynamicLinks.slice(0, 900).map((link) => (
+          {dynamicLinks.slice(0, 120).map((link) => (
             <a class="card" href={link.href}>
               <span class="card-title">{link.title}</span>
               <span class="card-desc">{link.desc}</span>
@@ -103,4 +103,3 @@ const groups = [
     </div>
   </section>
 </BaseLayout>
-

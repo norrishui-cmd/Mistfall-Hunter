@@ -26,7 +26,8 @@ export const INDEXABLE_STATIC_PATHS = new Set([
 ]);
 
 export const INDEXABLE_SLUGS = new Set([
-  // Core hubs with useful pre-launch answers.
+  // Small, evidence-first pre-launch index. Other URLs remain available to
+  // readers but wait for live data or sources before being promoted to Google.
   'news',
   'guides',
   'tools',
@@ -36,24 +37,10 @@ export const INDEXABLE_SLUGS = new Set([
   'loot',
   'soul-of-return',
 
-  // Verified platform/release and evergreen explanation pages.
-  'platforms',
-  'game-pass',
-  'game-pass-pc',
-  'ps5',
-  'steam',
-  'steam-next-fest-demo',
-  'system-requirements',
-  'free-to-play',
-  'controller-settings',
-  'pvp-or-pve',
-  'community',
-  'pay-to-win',
-  'age-rating',
-  'anti-cheat',
-  'glossary',
-  'language-support',
-  'similar-games',
+  'steam-charts-player-count', 'steam-page-guide', 'gameplay-overview',
+  'best-class-for-beginners', 'crossplay-status', 'price-status',
+  'server-status', 'best-builds', 'extraction-map', 'boss-locations',
+  'known-issues-tracker',
 ]);
 
 export const NOINDEX_REVIEW_NOTES = {

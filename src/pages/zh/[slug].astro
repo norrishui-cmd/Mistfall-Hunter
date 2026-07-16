@@ -6,6 +6,7 @@ import SeoPageModules from '../../components/SeoPageModules.astro';
 import QualitySignals from '../../components/QualitySignals.astro';
 import { getSeoPages, isIndexable } from '../../data/seoPages';
 import type { SeoPage } from '../../data/seoPages';
+import { lastUpdated } from '../../data/siteQuality';
 
 export function getStaticPaths() {
   return getSeoPages('zh').map((page) => ({ params: { slug: page.slug }, props: { page } }));
@@ -15,6 +16,7 @@ const lang = 'zh' as const;
 const { page } = Astro.props as { page: SeoPage };
 const noindex = !isIndexable(page.slug);
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
+const pageUrl = new URL(`/zh/${page.slug}`, site).href;
 
 const breadcrumb = {
   '@context': 'https://schema.org',
@@ -23,6 +25,20 @@ const breadcrumb = {
     { '@type': 'ListItem', position: 1, name: '首页', item: new URL('/zh/', site).href },
     { '@type': 'ListItem', position: 2, name: page.h1, item: new URL(`/zh/${page.slug}`, site).href },
   ],
+};
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': page.template === 'faq' || page.faqs ? 'Article' : 'TechArticle',
+  headline: page.h1,
+  description: page.description,
+  url: pageUrl,
+  inLanguage: 'zh-Hans',
+  dateModified: lastUpdated,
+  author: { '@type': 'Organization', name: 'Mistfall Hunter Wiki and Hub' },
+  publisher: { '@type': 'Organization', name: 'Mistfall Hunter Wiki and Hub' },
+  mainEntityOfPage: pageUrl,
+  isAccessibleForFree: true,
 };
 
 const faqSchema = page.faqs
@@ -43,7 +59,7 @@ const faqSchema = page.faqs
   path={`/${page.slug}`}
   title={page.title}
   description={page.description}
-  jsonLd={faqSchema ? [breadcrumb, faqSchema] : [breadcrumb]}
+  jsonLd={faqSchema ? [breadcrumb, articleSchema, faqSchema] : [breadcrumb, articleSchema]}
   noindex={noindex}
 >
   <section class="section">

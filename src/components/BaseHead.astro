@@ -22,9 +22,10 @@ const {
 } = Astro.props as Props;
 
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
-const canonical = new URL(localizePath(path, lang), site).href;
-const enHref = new URL(localizePath(path, 'en'), site).href;
-const zhHref = new URL(localizePath(path, 'zh'), site).href;
+const withTrailingSlash = (value: string) => value === '/' ? '/' : `${value.replace(/\/$/, '')}/`;
+const canonical = new URL(withTrailingSlash(localizePath(path, lang)), site).href;
+const enHref = new URL(withTrailingSlash(localizePath(path, 'en')), site).href;
+const zhHref = new URL(withTrailingSlash(localizePath(path, 'zh')), site).href;
 const ogImage = new URL(image, site).href;
 const siteName = ui[lang]['site.name'];
 
@@ -34,11 +35,6 @@ const websiteSchema = {
   name: siteName,
   url: site.href,
   inLanguage: lang === 'zh' ? 'zh-Hans' : 'en',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: new URL('/sitemap?q={search_term_string}', site).href,
-    'query-input': 'required name=search_term_string',
-  },
 };
 
 const organizationSchema = {
@@ -47,11 +43,6 @@ const organizationSchema = {
   name: 'Mistfall Hunter Wiki and Hub',
   url: site.href,
   logo: new URL('/favicon.svg', site).href,
-  sameAs: [
-    'https://www.mistfallhunter.com/',
-    'https://store.steampowered.com/app/2683540/Mistfall_Hunter/',
-    'https://www.xbox.com/games/store/mistfall-hunter/9nq85plc2n6h',
-  ],
 };
 
 const schemas = [websiteSchema, organizationSchema, ...jsonLd];

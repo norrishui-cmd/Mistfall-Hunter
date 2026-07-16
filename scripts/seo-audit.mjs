@@ -94,7 +94,9 @@ for (const page of pages) {
 
 for (const field of ['title', 'description']) {
   const seen = new Map();
-  for (const page of pages) {
+  // Duplicate metadata matters when two URLs compete in Google's index. The
+  // parked, noindex launch drafts are intentionally excluded until promoted.
+  for (const page of indexablePages) {
     const value = page[field];
     if (!value) continue;
     const list = seen.get(value) ?? [];
@@ -128,7 +130,7 @@ for (const url of sitemapUrls) {
   if (page.canonical !== url) fail(`canonical/sitemap mismatch: ${url} canonical=${page.canonical}`);
 }
 
-for (const page of pages) {
+for (const page of indexablePages) {
   for (const match of allMatches(page.html, /<a\s+[^>]*href=["']([^"']+)["']/gi)) {
     const href = match[1];
     if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) continue;
@@ -175,8 +177,8 @@ for (const [pathname, count] of contextualLinks) {
   if (count < 2) warn(`${pathname}: very few contextual internal links (${count})`);
 }
 
-const duplicateTitles = pages.length - new Set(pages.map((p) => p.title).filter(Boolean)).size;
-const duplicateDescriptions = pages.length - new Set(pages.map((p) => p.description).filter(Boolean)).size;
+const duplicateTitles = indexablePages.length - new Set(indexablePages.map((p) => p.title).filter(Boolean)).size;
+const duplicateDescriptions = indexablePages.length - new Set(indexablePages.map((p) => p.description).filter(Boolean)).size;
 const brokenInternalLinks = errors.filter((error) => error.includes('broken internal link')).length;
 const canonicalMismatches = errors.filter((error) => error.includes('canonical/sitemap mismatch')).length;
 const sitemapNoindex = errors.filter((error) => error.includes('sitemap URL is noindex')).length;
