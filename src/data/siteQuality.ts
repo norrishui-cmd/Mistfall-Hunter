@@ -115,3 +115,12 @@ export function getSourceLabels(lang: Lang) {
         sources: 'Primary sources',
       };
 }
+    : {
+        updated: 'Last updated',
+        quality: 'Editorial quality',
+        confirmed: 'Confirmed',
+        preview: 'Preview-based',
+        verify: 'To verify',
+        sources: 'Primary sources',
+      };
+}
