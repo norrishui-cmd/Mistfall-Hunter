@@ -1,4 +1,6 @@
 ﻿---
+import { sources } from '../data/siteQuality';
+
 interface LinkItem {
   title: string;
   desc: string;
@@ -28,6 +30,11 @@ const {
     </div>
     <a href="/sources">Sources policy</a>
   </div>
+  <p class="quality-sources">
+    {sources.slice(0, 3).map((source, index) => (
+      <Fragment>{index > 0 && ' / '}<a href={source.url} rel="noopener noreferrer" target="_blank">{source.publisher}</a></Fragment>
+    ))}
+  </p>
   <div class="quality-grid">
     <section>
       <h2>Confirmed on this page</h2>
@@ -51,4 +58,3 @@ const {
     </section>
   </div>
 </aside>
-

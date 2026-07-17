@@ -139,6 +139,13 @@ for (const page of indexablePages) {
     const targetPath = normalizePathname(parsed.pathname);
     if (!byPath.has(targetPath) && !fs.existsSync(path.join(dist, targetPath.replace(/^\//, '')))) {
       fail(`${page.pathname}: broken internal link ${href}`);
+      continue;
+    }
+    const target = byPath.get(targetPath);
+    if (target && /noindex/i.test(target.robots)) {
+      // A contextually useful link to a parked draft is allowed, but it must
+      // stay visible in the report so a future promotion decision is deliberate.
+      warn(`${page.pathname}: indexable page links to noindex ${href}`);
     }
   }
   for (const match of allMatches(page.html, /<link\s+rel=["']alternate["'][^>]*>/gi)) {

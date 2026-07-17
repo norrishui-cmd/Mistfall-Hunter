@@ -2,9 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import QualitySignals from '../../components/QualitySignals.astro';
 import { getHubLinks } from '../../data/siteQuality';
+import { isIndexable } from '../../data/seoPages';
 
 const lang = 'zh' as const;
 const hubLinks = getHubLinks(lang);
+const indexableHubLinks = hubLinks.filter((link) => isIndexable(link.href.replace(/^\/zh\//, '')));
 
 const videoGameSchema = {
   '@context': 'https://schema.org',
@@ -89,7 +91,7 @@ const cards = [
       <span class="eyebrow">索引中心</span>
       <h2 class="section-title">核心页面入口</h2>
       <div class="cards">
-        {hubLinks.map((link) => (
+        {indexableHubLinks.map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>

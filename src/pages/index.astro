@@ -9,15 +9,22 @@ import { enLaunchWeekClusterLinks } from '../data/urlLaunchWeekClusters';
 import { enLaunchDayIntentLinks } from '../data/urlLaunchDayIntents';
 import { enPostLaunchEvergreenLinks } from '../data/urlPostLaunchEvergreen';
 import { recoveryFocusLinks } from '../data/seoRecovery';
+import { isIndexable } from '../data/seoPages';
 
 const lang = 'en' as const;
 const hubLinks = getHubLinks(lang);
+const indexableNewsLinks = latestNewsLinks.filter((link) => isIndexable(link.href));
+const indexableAnswerLinks = enLaunchAnswerLinks.filter((link) => isIndexable(link.href));
+const indexableLaunchWeekLinks = enLaunchWeekClusterLinks.filter((link) => isIndexable(link.href));
+const indexableLaunchDayLinks = enLaunchDayIntentLinks.filter((link) => isIndexable(link.href));
+const indexableEvergreenLinks = enPostLaunchEvergreenLinks.filter((link) => isIndexable(link.href));
+const indexableHubLinks = hubLinks.filter((link) => isIndexable(link.href));
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
 const priorityItemListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: 'Mistfall Hunter priority guide pages',
-  itemListElement: recoveryFocusLinks.map((link, index) => ({
+  itemListElement: recoveryFocusLinks.filter((link) => isIndexable(link.href)).map((link, index) => ({
     '@type': 'ListItem',
     position: index + 1,
     name: link.title,
@@ -120,7 +127,7 @@ const cards = [
       <span class="eyebrow">Launch watch</span>
       <h2 class="section-title">Trending pages to check before launch</h2>
       <div class="cards">
-        {recoveryFocusLinks.map((link) => (
+        {recoveryFocusLinks.filter((link) => isIndexable(link.href)).map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>
@@ -131,12 +138,12 @@ const cards = [
     </div>
   </section>
 
-  <section class="section">
+  {indexableNewsLinks.length > 0 && <section class="section">
     <div class="container">
       <span class="eyebrow">Latest news briefs</span>
       <h2 class="section-title">Pre-launch topics people are searching now</h2>
       <div class="cards">
-        {latestNewsLinks.slice(0, 6).map((link) => (
+        {indexableNewsLinks.slice(0, 6).map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>
@@ -145,14 +152,14 @@ const cards = [
         ))}
       </div>
     </div>
-  </section>
+  </section>}
 
-  <section class="section">
+  {indexableAnswerLinks.length > 0 && <section class="section">
     <div class="container">
       <span class="eyebrow">Fast answers</span>
       <h2 class="section-title">Launch questions with dedicated pages</h2>
       <div class="cards">
-        {enLaunchAnswerLinks.slice(0, 6).map((link) => (
+        {indexableAnswerLinks.slice(0, 6).map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>
@@ -161,14 +168,14 @@ const cards = [
         ))}
       </div>
     </div>
-  </section>
+  </section>}
 
-  <section class="section">
+  {indexableLaunchWeekLinks.length > 0 && <section class="section">
     <div class="container">
       <span class="eyebrow">Launch week clusters</span>
       <h2 class="section-title">Platform, class, map, and troubleshooting guides</h2>
       <div class="cards">
-        {enLaunchWeekClusterLinks.slice(0, 6).map((link) => (
+        {indexableLaunchWeekLinks.slice(0, 6).map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>
@@ -177,14 +184,14 @@ const cards = [
         ))}
       </div>
     </div>
-  </section>
+  </section>}
 
-  <section class="section">
+  {indexableLaunchDayLinks.length > 0 && <section class="section">
     <div class="container">
       <span class="eyebrow">Launch day intent</span>
       <h2 class="section-title">Fast pages for release-day searches</h2>
       <div class="cards">
-        {enLaunchDayIntentLinks.slice(0, 6).map((link) => (
+        {indexableLaunchDayLinks.slice(0, 6).map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>
@@ -193,14 +200,14 @@ const cards = [
         ))}
       </div>
     </div>
-  </section>
+  </section>}
 
-  <section class="section">
+  {indexableEvergreenLinks.length > 0 && <section class="section">
     <div class="container">
       <span class="eyebrow">Evergreen wiki</span>
       <h2 class="section-title">Post-launch pages built to stay useful</h2>
       <div class="cards">
-        {enPostLaunchEvergreenLinks.slice(0, 6).map((link) => (
+        {indexableEvergreenLinks.slice(0, 6).map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>
@@ -209,7 +216,7 @@ const cards = [
         ))}
       </div>
     </div>
-  </section>
+  </section>}
 
   <section class="section" id="about">
     <div class="container">
@@ -231,7 +238,7 @@ const cards = [
       <dl class="facts">
         <div class="fact"><dt>Developer</dt><dd>Bellring Games</dd></div>
         <div class="fact"><dt>Genre</dt><dd>Dark fantasy PvPvE extraction ARPG</dd></div>
-        <div class="fact"><dt>Platforms</dt><dd>PC, Xbox Series X|S, PlayStation 5</dd></div>
+        <div class="fact"><dt>Officially listed platforms</dt><dd>PC and Xbox Series X|S</dd></div>
         <div class="fact"><dt>Players</dt><dd>Solo or squads</dd></div>
         <div class="fact"><dt>Storefront release date</dt><dd>July 29, 2026</dd></div>
         <div class="fact"><dt>Status</dt><dd>Pre-launch tracker</dd></div>
@@ -246,7 +253,7 @@ const cards = [
       <span class="eyebrow">Index hub</span>
       <h2 class="section-title">Core pages for Google and players</h2>
       <div class="cards">
-        {hubLinks.map((link) => (
+        {indexableHubLinks.map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>
