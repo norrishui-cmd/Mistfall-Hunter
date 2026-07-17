@@ -45,15 +45,12 @@ export const INDEXABLE_SLUGS = new Set([
 
 export const NOINDEX_REVIEW_NOTES = {
   faq: 'Kept accessible, but not promoted sitewide until it has stronger unique value than focused FAQ pages.',
-  'best-builds': 'Pre-launch build hub is useful for players, but exact values and meta are not verified.',
   'ps5-performance': 'Performance details need live console verification.',
   'steam-deck': 'Steam Deck compatibility depends on Proton and anti-cheat behavior after launch.',
-  'server-status': 'Server status page needs live operational data before indexing.',
   preload: 'Preload timing is not confirmed.',
   editions: 'Edition and package details are not fully confirmed.',
   'hallowgrove-chaos': 'Route and loot details need verified live markers.',
   'brandrgarde-chaos': 'Route and loot details need verified live markers.',
-  'boss-locations': 'Specific boss locations need verified live map data.',
   'loot-locations': 'Specific loot locations need verified live map data.',
   'boss-rewards': 'Reward tables need verified live drops.',
   'extraction-route-planner': 'Route planner needs verified extraction data.',

@@ -71,6 +71,17 @@ const pages = htmlFiles.map((file) => {
 const byPath = new Map(pages.map((page) => [normalizePathname(page.pathname), page]));
 const indexablePages = pages.filter((page) => !/noindex/i.test(page.robots));
 const noindexPages = pages.filter((page) => /noindex/i.test(page.robots));
+const officialSourceHosts = new Set(['store.steampowered.com', 'www.xbox.com']);
+
+function parsedSchemas(page) {
+  return page.jsonLd.flatMap((raw) => {
+    try {
+      return [JSON.parse(raw)];
+    } catch {
+      return [];
+    }
+  });
+}
 
 for (const page of pages) {
   if (!page.title) fail(`${page.pathname}: missing title`);
@@ -89,6 +100,47 @@ for (const page of pages) {
     } catch (error) {
       fail(`${page.pathname}: malformed JSON-LD (${error.message})`);
     }
+  }
+}
+
+// Indexable editorial pages must make their evidence machine-readable as well
+// as visible to readers. This catches a common regression where a template is
+// changed and Article JSON-LD silently loses its citations.
+let citedEditorialPages = 0;
+for (const page of indexablePages) {
+  const articles = parsedSchemas(page).filter((schema) => ['Article', 'TechArticle'].includes(schema['@type']));
+  if (!articles.length) continue;
+  for (const article of articles) {
+    const citations = Array.isArray(article.citation) ? article.citation : [];
+    if (!citations.length) {
+      fail(`${page.pathname}: Article JSON-LD is missing citations`);
+      continue;
+    }
+    const hasOfficialCitation = citations.some((citation) => {
+      try {
+        return officialSourceHosts.has(new URL(citation).hostname);
+      } catch {
+        return false;
+      }
+    });
+    if (!hasOfficialCitation) fail(`${page.pathname}: Article JSON-LD lacks an official store citation`);
+    else citedEditorialPages += 1;
+  }
+}
+
+// Release information is especially sensitive. Its two localized landing
+// pages must retain direct links to the official storefront records.
+for (const pathname of ['/release-date/', '/zh/release-date/']) {
+  const page = byPath.get(pathname);
+  if (!page) {
+    fail(`${pathname}: release page is missing`);
+    continue;
+  }
+  for (const sourceUrl of [
+    'https://store.steampowered.com/app/3282300/Mistfall_Hunter/',
+    'https://www.xbox.com/en-US/games/store/mistfall-hunter/9p8x6tvw9zw8',
+  ]) {
+    if (!page.html.includes(sourceUrl)) fail(`${pathname}: missing official release source ${sourceUrl}`);
   }
 }
 
@@ -199,6 +251,7 @@ console.log(`Duplicate titles: ${duplicateTitles}`);
 console.log(`Duplicate descriptions: ${duplicateDescriptions}`);
 console.log(`Canonical mismatches: ${canonicalMismatches}`);
 console.log(`Sitemap/noindex conflicts: ${sitemapNoindex}`);
+console.log(`Cited editorial pages: ${citedEditorialPages}`);
 
 if (warnings.length) {
   console.warn('\nWarnings:');
