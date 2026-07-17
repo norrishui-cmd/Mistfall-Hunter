@@ -6,7 +6,7 @@ import SeoPageModules from '../../components/SeoPageModules.astro';
 import QualitySignals from '../../components/QualitySignals.astro';
 import { getSeoPages, isIndexable } from '../../data/seoPages';
 import type { SeoPage } from '../../data/seoPages';
-import { lastUpdated } from '../../data/siteQuality';
+import { lastUpdated, sources } from '../../data/siteQuality';
 
 export function getStaticPaths() {
   return getSeoPages('zh').map((page) => ({ params: { slug: page.slug }, props: { page } }));
@@ -39,6 +39,7 @@ const articleSchema = {
   publisher: { '@type': 'Organization', name: 'Mistfall Hunter Wiki and Hub' },
   mainEntityOfPage: pageUrl,
   isAccessibleForFree: true,
+  citation: sources.slice(0, 3).map((source) => source.url),
 };
 
 const faqSchema = page.faqs

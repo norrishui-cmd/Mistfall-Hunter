@@ -15,7 +15,7 @@ export type HubLink = {
   cluster: 'core' | 'release' | 'guides' | 'maps' | 'builds' | 'bosses' | 'tools';
 };
 
-export const lastUpdated = '2026-07-16';
+export const lastUpdated = '2026-07-17';
 
 export const sources: SourceRef[] = [
   {
@@ -28,14 +28,14 @@ export const sources: SourceRef[] = [
   {
     title: 'Mistfall Hunter on Steam',
     publisher: 'Steam',
-    url: 'https://store.steampowered.com/app/2683540/Mistfall_Hunter/',
+    url: 'https://store.steampowered.com/app/3282300/Mistfall_Hunter/',
     type: 'store',
     note: 'Storefront reference for PC availability, tags, screenshots, and release messaging.',
   },
   {
     title: 'Mistfall Hunter Xbox listing',
     publisher: 'Xbox',
-    url: 'https://www.xbox.com/games/store/mistfall-hunter/9nq85plc2n6h',
+    url: 'https://www.xbox.com/en-US/games/store/mistfall-hunter/9p8x6tvw9zw8',
     type: 'store',
     note: 'Storefront reference for Xbox, Game Pass, platform, and availability signals.',
   },
@@ -106,15 +106,6 @@ export function getSourceLabels(lang: Lang) {
         verify: '待验证',
         sources: '主要来源',
       }
-    : {
-        updated: 'Last updated',
-        quality: 'Editorial quality',
-        confirmed: 'Confirmed',
-        preview: 'Preview-based',
-        verify: 'To verify',
-        sources: 'Primary sources',
-      };
-}
     : {
         updated: 'Last updated',
         quality: 'Editorial quality',

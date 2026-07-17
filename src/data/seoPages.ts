@@ -55,16 +55,16 @@ export const enPages: SeoPage[] = [
     slug: 'news',
     group: 'news',
     title: 'Mistfall Hunter News: Launch, Beta, Patches & Updates',
-    description: 'Mistfall Hunter news hub covering the July 30, 2026 launch, beta recap, patch tracking, platform updates, and official announcements.',
+    description: 'Mistfall Hunter news hub covering the July 29, 2026 release listing, beta recap, patch tracking, platform updates, and official announcements.',
     eyebrow: 'News hub',
     h1: 'Mistfall Hunter news, launch tracker & updates',
     lead: 'A clean hub for the updates players actually search for: release timing, beta takeaways, patch watch, platform status, and what is still unconfirmed before launch.',
-    updated: 'Tracking pre-launch information for July 30, 2026.',
+    updated: 'Tracking official storefront information for the July 29, 2026 release listing.',
     sections: [
       {
         heading: 'What is confirmed',
         body: [
-          'Mistfall Hunter is scheduled for a global launch on July 30, 2026 at 01:00 UTC. It is planned for PC, Xbox Series X|S, and PlayStation 5, with day-one Xbox Game Pass availability listed for Xbox and PC.',
+          'Official Steam and Xbox listings currently show July 29, 2026 for PC and Xbox Series X|S. Xbox lists day-one Game Pass availability for Xbox and PC; check regional storefronts for final unlock timing.',
           'The game is a dark fantasy third-person PvPvE extraction action RPG from Bellring Games. Players enter the Gyldenmist, fight monsters and rival hunters, loot what they can, and extract before death wipes the run.',
         ],
       },
@@ -84,7 +84,7 @@ export const enPages: SeoPage[] = [
       { title: 'Beginner prep', desc: 'Learn extraction before launch day chaos starts.', href: '/beginner-guide' },
     ],
     faqs: [
-      { q: 'When is Mistfall Hunter coming out?', a: 'July 30, 2026 at 01:00 UTC is the announced global launch anchor.' },
+      { q: 'When is Mistfall Hunter coming out?', a: 'Official Steam and Xbox listings currently show July 29, 2026. Check your regional storefront for the final unlock time.' },
       { q: 'Will beta progress carry over?', a: 'No. The beta was a wipe test; only listed cosmetic participation rewards should carry over.' },
       { q: 'What news should players watch next?', a: 'Pricing, system requirements, launch patch notes, class balance, and server details are the main remaining items.' },
     ],
@@ -166,8 +166,8 @@ export const enPages: SeoPage[] = [
     facts: [
       { k: 'Developer', v: 'Bellring Games' },
       { k: 'Genre', v: 'Dark fantasy PvPvE extraction ARPG' },
-      { k: 'Platforms', v: 'PC, Xbox Series X|S, PlayStation 5' },
-      { k: 'Launch', v: 'July 30, 2026 at 01:00 UTC' },
+      { k: 'Officially listed platforms', v: 'PC and Xbox Series X|S' },
+      { k: 'Storefront release date', v: 'July 29, 2026' },
     ],
   },
   {
@@ -277,13 +277,13 @@ export const zhPages: SeoPage[] = [
     slug: 'news',
     group: 'news',
     title: 'Mistfall Hunter 新闻：发售、测试、补丁与更新',
-    description: 'Mistfall Hunter 新闻中心，覆盖 2026 年 7 月 30 日发售、测试回顾、补丁追踪、平台信息与官方动态。',
+    description: 'Mistfall Hunter 新闻中心，覆盖官方商店显示的 2026 年 7 月 29 日发售、测试回顾、补丁追踪、平台信息与官方动态。',
     eyebrow: '新闻中心',
     h1: 'Mistfall Hunter 新闻、发售追踪与更新',
     lead: '这里集中整理玩家最常搜索的信息：发售时间、测试结论、补丁观察、平台状态，以及发售前仍未确认的内容。',
-    updated: '持续追踪 2026 年 7 月 30 日发售前信息。',
+    updated: '持续追踪官方商店显示的 2026 年 7 月 29 日发售信息。',
     sections: [
-      { heading: '已确认信息', body: ['Mistfall Hunter 计划在 2026 年 7 月 30 日 01:00 UTC 全球上线，平台包括 PC、Xbox Series X|S 与 PlayStation 5，并列入 Xbox 与 PC Game Pass 首发阵容。', '游戏由 Bellring Games 开发，是一款暗黑奇幻第三人称 PvPvE 撤离动作 RPG。玩家进入 Gyldenmist，与怪物和敌对猎人争夺战利品，并在死亡清空背包前撤离。'] },
+      { heading: '已确认信息', body: ['官方 Steam 与 Xbox 商店目前显示发售日期为 2026 年 7 月 29 日，已确认平台为 PC 与 Xbox Series X|S；Xbox 页面列出 Xbox 和 PC 的首发 Game Pass，具体解锁时刻请以地区商店为准。', '游戏由 Bellring Games 开发，是一款暗黑奇幻第三人称 PvPvE 撤离动作 RPG。玩家进入 Gyldenmist，与怪物和敌对猎人争夺战利品，并在死亡清空背包前撤离。'] },
       { heading: '接下来重点观察', body: ['最重要的未定信息包括最终定价、PC 配置需求、服务器区域、测试反馈后的平衡改动，以及如果采用免费模式，商业化内容会如何呈现。'], bullets: ['最终价格或免费确认', '官方 PC 配置', '首日补丁说明', '职业平衡调整', '主机性能模式'] },
       { heading: '测试回顾', body: ['公开测试属于删档测试，进度不会继承到正式版；参与玩家预计保留头像框、表情等测试奖励。测试期间卡顿和崩溃反馈较多，因此稳定性是发售前最值得关注的事项之一。'] },
     ],
@@ -348,8 +348,8 @@ export const zhPages: SeoPage[] = [
     facts: [
       { k: '开发商', v: 'Bellring Games' },
       { k: '类型', v: '暗黑奇幻 PvPvE 撤离 ARPG' },
-      { k: '平台', v: 'PC、Xbox Series X|S、PlayStation 5' },
-      { k: '发售', v: '2026 年 7 月 30 日 01:00 UTC' },
+      { k: '官方已列平台', v: 'PC、Xbox Series X|S' },
+      { k: '商店显示发售日', v: '2026 年 7 月 29 日' },
     ],
   },
   {

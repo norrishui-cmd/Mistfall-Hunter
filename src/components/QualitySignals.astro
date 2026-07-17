@@ -15,45 +15,22 @@ const { lang, status } = Astro.props as Props;
 const labels = getSourceLabels(lang);
 const sourceHref = lang === 'zh' ? '/zh/sources' : '/sources';
 
-const confirmed = status?.confirmed ?? [
-  'Mistfall Hunter is a dark fantasy PvPvE extraction action RPG.',
-  'The site separates official information, preview observations, and launch-day verification notes.',
-];
-const preview = status?.preview ?? [
-  'Class, map, extraction, and boss guidance may use preview or demo context before launch.',
-  'Exact routes, drops, values, and balance recommendations should be updated with live-game data.',
-];
-const verify = status?.verify ?? [
-  'Final launch patch notes',
-  'Live map markers',
-  'Exact affix values',
-  'Boss drops and spawn rules',
-];
+const heading = lang === 'zh' ? '参考与更新说明' : 'Sources and update policy';
+const copy = lang === 'zh'
+  ? '本页优先引用官方游戏页与商店信息；测试期观察和未确认机制会明确标注，并在官方公告或正式版实测后更新。'
+  : 'This page prioritizes official game and storefront information. Preview observations and unconfirmed mechanics are labeled and revised when official updates or live testing provide better evidence.';
 ---
 
-<aside class="quality-panel" aria-label={labels.quality}>
+<aside class="quality-panel" aria-label={heading}>
   <div class="quality-head">
-    <span class="eyebrow">{labels.quality}</span>
-    <p><strong>{labels.updated}:</strong> {lastUpdated}</p>
+    <span class="eyebrow">{heading}</span>
+    <p><strong>{labels.updated}:</strong> <time datetime={lastUpdated}>{lastUpdated}</time></p>
     <a href={sourceHref}>{labels.sources} -></a>
   </div>
-
-  <div class="quality-grid">
-    <section>
-      <h2>{labels.confirmed}</h2>
-      <ul>{confirmed.map((item) => <li>{item}</li>)}</ul>
-    </section>
-    <section>
-      <h2>{labels.preview}</h2>
-      <ul>{preview.map((item) => <li>{item}</li>)}</ul>
-    </section>
-    <section>
-      <h2>{labels.verify}</h2>
-      <ul>{verify.map((item) => <li>{item}</li>)}</ul>
-    </section>
-  </div>
-
+  <p>{copy}</p>
   <p class="quality-sources">
-    {sources.slice(0, 3).map((source) => source.publisher).join(' / ')}
+    {sources.slice(0, 3).map((source, index) => (
+      <Fragment>{index > 0 && ' / '}<a href={source.url} rel="noopener noreferrer" target="_blank">{source.publisher}</a></Fragment>
+    ))}
   </p>
 </aside>

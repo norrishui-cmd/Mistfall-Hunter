@@ -8,11 +8,11 @@ const site = Astro.site ?? new URL('https://mistfallhunter.me');
 const faqs = [
   {
     q: 'When does Mistfall Hunter come out?',
-    a: 'Mistfall Hunter launches globally on July 30, 2026 at 01:00 UTC.',
+    a: 'Official Steam and Xbox listings show July 29, 2026. Check your storefront for the local unlock time.',
   },
   {
     q: 'What platforms is Mistfall Hunter on?',
-    a: 'PC via Steam and the Xbox app, Xbox Series X|S, and PlayStation 5.',
+    a: 'Official storefronts currently list PC and Xbox Series X|S. Check PlayStation Store directly for any regional PlayStation availability or timing.',
   },
   {
     q: 'Is Mistfall Hunter on Game Pass?',
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: 'Is Mistfall Hunter on PS5?',
-    a: 'Yes, it launches on PlayStation 5.',
+    a: 'This site does not treat PS5 availability as confirmed until a PlayStation Store page or publisher announcement is available to cite.',
   },
   {
     q: 'Does beta progress carry over to the full game?',
@@ -39,11 +39,11 @@ const videoGameSchema = {
   description:
     'A dark fantasy third-person PvPvE extraction action RPG from Bellring Games.',
   genre: ['Action RPG', 'Extraction', 'Dark Fantasy', 'PvPvE'],
-  gamePlatform: ['PC', 'Steam', 'Xbox Series X|S', 'PlayStation 5'],
+  gamePlatform: ['PC', 'Steam', 'Xbox Series X|S'],
   publisher: { '@type': 'Organization', name: 'Bellring Games' },
   applicationCategory: 'Game',
-  operatingSystem: 'Windows, Xbox Series X|S, PlayStation 5',
-  datePublished: '2026-07-30',
+  operatingSystem: 'Windows, Xbox Series X|S',
+  datePublished: '2026-07-29',
 };
 
 const faqSchema = {
@@ -69,8 +69,8 @@ const breadcrumbSchema = {
 <BaseLayout
   lang={lang}
   path="/release-date"
-  title="Mistfall Hunter Release Date, Platforms & Price (2026)"
-  description="Mistfall Hunter launches July 30, 2026 on PC, Xbox, and PS5 — day one on Game Pass. Release time, platforms, beta details, and whether it's free-to-play."
+  title="Mistfall Hunter Release Date, PC & Xbox Platforms (2026)"
+  description="Mistfall Hunter is listed for July 29, 2026 on PC and Xbox, including day-one Game Pass on Xbox and PC. Confirmed platforms, beta details, and pricing status."
   jsonLd={[videoGameSchema, faqSchema, breadcrumbSchema]}
 >
   <section class="section">
@@ -78,15 +78,15 @@ const breadcrumbSchema = {
       <span class="eyebrow">Release date</span>
       <h1 class="page-title">Mistfall Hunter release date, platforms &amp; price</h1>
       <p class="lead">
-        Mistfall Hunter launches on <strong>July 30, 2026 at 01:00 UTC</strong>, on PC, Xbox, and
-        PlayStation 5 — day one on Xbox Game Pass. Final pricing hasn't been confirmed yet. Here's
-        everything that's locked in, and what still isn't.
+        Official Steam and Xbox listings show a <strong>July 29, 2026</strong> release for PC and Xbox,
+        with day-one Xbox Game Pass on Xbox and PC. Storefront timing and final pricing can still vary by
+        region, so this guide separates confirmed listings from open questions.
       </p>
 
       <CoreQualityPanel
         confirmed={[
-          'Global launch anchor: July 30, 2026 at 01:00 UTC.',
-          'Planned platforms: PC, Xbox Series X|S, and PlayStation 5.',
+          'Official Steam and Xbox listings show July 29, 2026.',
+          'Official storefront listings confirm PC and Xbox Series X|S.',
           'Platform, beta, and pricing notes are separated by confirmation status.',
         ]}
         watch={[
@@ -106,10 +106,10 @@ const breadcrumbSchema = {
       <div class="prose">
         <h2>When does Mistfall Hunter release?</h2>
         <p>
-          Bellring Games has set the global launch for <strong>July 30, 2026 at 01:00 UTC</strong>.
-          Some outlets list July 29 — that's the same launch seen from earlier time zones in the
-          Americas, so treat the July 30 UTC time as the anchor and convert it to your local clock.
-          The date follows the open beta that ran during Steam Next Fest and closed on June 22, 2026.
+          The official Steam and Xbox listings currently show <strong>July 29, 2026</strong>. Neither
+          listing provides a universal unlock-time table, so use your local storefront rather than a
+          third-party time conversion for the final release hour. The date follows the open beta that ran
+          during Steam Next Fest and closed on June 22, 2026.
         </p>
 
         <h2>What platforms is it on?</h2>
@@ -118,12 +118,10 @@ const breadcrumbSchema = {
           <li>PC via Steam</li>
           <li>PC via the Xbox app / Microsoft Store</li>
           <li>Xbox Series X|S</li>
-          <li>PlayStation 5</li>
         </ul>
         <p>
-          On Xbox and PC it's available day one through <strong>Xbox Game Pass</strong>. Note that
-          console play needs an online multiplayer subscription (Game Pass Core or Ultimate) for its
-          PvPvE matches.
+          On Xbox and PC it's available day one through <strong>Xbox Game Pass</strong>. Xbox's official
+          store page says console online multiplayer requires Game Pass Core or Ultimate, sold separately.
         </p>
 
         <h2>Is Mistfall Hunter free-to-play?</h2>
@@ -136,9 +134,8 @@ const breadcrumbSchema = {
           </p>
         </div>
         <p>
-          If it does land as free-to-play, expect cosmetics and a battle-pass-style model rather than
-          a box price, which is standard for the extraction genre. This page updates the moment
-          pricing is official.
+          Do not infer its final price model from category conventions. This page will update only when
+          Bellring or a storefront publishes a definitive price or free-to-play label.
         </p>
 
         <h2>Was there a beta? Does my progress carry over?</h2>
