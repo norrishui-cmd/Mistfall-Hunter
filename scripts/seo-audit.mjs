@@ -63,9 +63,10 @@ const pages = htmlFiles.map((file) => {
   const description = attr(html.match(/<meta\s+name=["']description["'][^>]*>/i)?.[0] ?? '', 'content');
   const canonical = attr(html.match(/<link\s+rel=["']canonical["'][^>]*>/i)?.[0] ?? '', 'href');
   const robots = attr(html.match(/<meta\s+name=["']robots["'][^>]*>/i)?.[0] ?? '', 'content');
+  const htmlLang = attr(html.match(/<html\s+[^>]*lang=["'][^"']+["'][^>]*>/i)?.[0] ?? '', 'lang');
   const h1Count = allMatches(html, /<h1\b/gi).length;
   const jsonLd = allMatches(html, /<script\s+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi).map((m) => m[1]);
-  return { file, html, pathname, title, description, canonical, robots, h1Count, jsonLd };
+  return { file, html, pathname, title, description, canonical, robots, htmlLang, h1Count, jsonLd };
 });
 
 const byPath = new Map(pages.map((page) => [normalizePathname(page.pathname), page]));
@@ -91,9 +92,13 @@ for (const page of pages) {
   if (page.h1Count !== 1) fail(`${page.pathname}: expected one H1, found ${page.h1Count}`);
   // Keep the warning queue focused on URLs currently competing in search.
   // Noindex drafts still receive the hard structural checks above.
+  const visibleText = page.html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, ' ').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  const contentUnits = /^(?:zh|ja)/i.test(page.htmlLang)
+    ? visibleText.replace(/\s/g, '').length / 2
+    : visibleText.split(/\s+/).filter(Boolean).length;
   if (!isNoindex && page.title.length > 70) warn(`${page.pathname}: long title (${page.title.length})`);
   if (!isNoindex && page.description.length > 170) warn(`${page.pathname}: long description (${page.description.length})`);
-  if (!isNoindex && page.html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length < 180) warn(`${page.pathname}: unusually short content`);
+  if (!isNoindex && contentUnits < 180) warn(`${page.pathname}: unusually short content`);
   if (!isNoindex && /(to confirm|unconfirmed|watch for updates|check at launch|exact values are unknown)/i.test(page.html)) {
     warn(`${page.pathname}: indexable page contains uncertainty-heavy language`);
   }
@@ -136,7 +141,7 @@ for (const page of indexablePages) {
 
 // Release information is especially sensitive. Its two localized landing
 // pages must retain direct links to the official storefront records.
-for (const pathname of ['/release-date/', '/zh/release-date/']) {
+for (const pathname of ['/release-date/', '/zh/release-date/', '/de/release-date/', '/ja/release-date/']) {
   const page = byPath.get(pathname);
   if (!page) {
     fail(`${pathname}: release page is missing`);
@@ -211,7 +216,13 @@ for (const page of indexablePages) {
     const hreflang = attr(match[0], 'hreflang');
     if (!href || hreflang === 'x-default') continue;
     const targetPath = normalizePathname(new URL(href, site).pathname);
-    if (!byPath.has(targetPath)) fail(`${page.pathname}: hreflang target missing ${href}`);
+    const targetPage = byPath.get(targetPath);
+    if (!targetPage) {
+      fail(`${page.pathname}: hreflang target missing ${href}`);
+      continue;
+    }
+    const reciprocalHrefs = allMatches(targetPage.html, /<link\s+rel=["']alternate["'][^>]*>/gi).map((tag) => attr(tag[0], 'href'));
+    if (!reciprocalHrefs.includes(page.canonical)) fail(`${page.pathname}: hreflang target is not reciprocal ${href}`);
   }
 }
 

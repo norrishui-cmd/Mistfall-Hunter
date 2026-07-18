@@ -1,5 +1,5 @@
 ﻿---
-import { localizePath, type Lang } from '../i18n';
+import { languages, localizePath, useTranslations, type Lang } from '../i18n';
 
 interface Props {
   lang: Lang;
@@ -7,28 +7,25 @@ interface Props {
 }
 
 type NavItem = {
-  label: string;
+  labelKey: string;
   path: string;
 };
 
 const { lang, path } = Astro.props as Props;
+const t = useTranslations(lang);
 
 const items: NavItem[] = [
-  { label: 'Home', path: '/' },
-  { label: 'Release', path: '/release-date' },
-  { label: 'Steam', path: '/steam-page-guide' },
-  { label: 'Gameplay', path: '/gameplay-overview' },
-  { label: 'Beginner', path: '/beginner-guide' },
-  { label: 'Classes', path: '/classes' },
-  { label: 'Map', path: '/map' },
-  { label: 'Builds', path: '/builds' },
-  { label: 'Status', path: '/server-status' },
+  { labelKey: 'nav.home', path: '/' },
+  { labelKey: 'nav.release', path: '/release-date' },
+  { labelKey: 'nav.guides', path: '/guides' },
+  { labelKey: 'nav.builds', path: '/builds' },
+  { labelKey: 'nav.about', path: '/about' },
 ];
 
-const other: Lang = lang === 'zh' ? 'en' : 'zh';
-const otherLabel = other === 'zh' ? 'Chinese' : 'English';
-const siteName = 'Mistfall Hunter Wiki and Hub';
-const siteTagline = 'Unofficial guide and database';
+const localizedCorePaths = new Set(['/', '/release-date', '/beginner-guide', '/classes', '/builds', '/guides', '/performance', '/about']);
+const languageOptions: Lang[] = localizedCorePaths.has(path) ? ['en', 'zh', 'de', 'ja'] : ['en', 'zh'];
+const siteName = t('site.name');
+const siteTagline = t('site.tagline');
 ---
 
 <header class="site-header">
@@ -48,18 +45,16 @@ const siteTagline = 'Unofficial guide and database';
             href={localizePath(item.path, lang)}
             aria-current={item.path === path ? 'page' : undefined}
           >
-            {item.label}
+            {t(item.labelKey)}
           </a>
         ))}
       </nav>
 
-      <a
-        class="lang-switch"
-        href={localizePath(path, other)}
-        hreflang={other === 'zh' ? 'zh-Hans' : 'en'}
-      >
-        {otherLabel}
-      </a>
+      {languageOptions.filter((option) => option !== lang).map((option) => (
+        <a class="lang-switch" href={localizePath(path, option)} hreflang={option === 'zh' ? 'zh-Hans' : option}>
+          {languages[option]}
+        </a>
+      ))}
     </div>
   </div>
 </header>

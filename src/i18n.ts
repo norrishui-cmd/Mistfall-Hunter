@@ -5,6 +5,8 @@
 export const languages = {
   en: 'English',
   zh: '中文',
+  de: 'Deutsch',
+  ja: '日本語',
 } as const;
 
 export const defaultLang = 'en' as const;
@@ -50,13 +52,31 @@ export const ui = {
     'footer.updates': '更新',
     'footer.sitemap': '站点地图',
   },
+  de: {
+    'site.name': 'Mistfall Hunter Wiki & Guides',
+    'site.tagline': 'Inoffizieller Guide und Datenbank',
+    'nav.home': 'Start', 'nav.release': 'Release', 'nav.news': 'News', 'nav.guides': 'Guides',
+    'nav.maps': 'Karten', 'nav.builds': 'Builds', 'nav.bosses': 'Bosse', 'nav.tools': 'Tools',
+    'nav.faq': 'FAQ', 'nav.about': 'Über uns', 'nav.soon': 'Demnächst',
+    'footer.disclaimer': 'Inoffizielle Fan-Ressource. Keine Verbindung zu oder Unterstützung durch Bellring Games. Alle Spielnamen, Inhalte und Marken gehören ihren jeweiligen Eigentümern.',
+    'footer.sources': 'Quellen', 'footer.updates': 'Updates', 'footer.sitemap': 'Sitemap',
+  },
+  ja: {
+    'site.name': 'Mistfall Hunter 攻略Wiki',
+    'site.tagline': '非公式攻略・データベース',
+    'nav.home': 'ホーム', 'nav.release': '発売情報', 'nav.news': 'ニュース', 'nav.guides': '攻略',
+    'nav.maps': 'マップ', 'nav.builds': 'ビルド', 'nav.bosses': 'ボス', 'nav.tools': 'ツール',
+    'nav.faq': 'FAQ', 'nav.about': 'サイト情報', 'nav.soon': '近日公開',
+    'footer.disclaimer': 'ファンによる非公式情報サイトです。Bellring Games との提携・公認・後援関係はありません。ゲーム名、素材、商標は各権利者に帰属します。',
+    'footer.sources': '情報源', 'footer.updates': '更新履歴', 'footer.sitemap': 'サイトマップ',
+  },
 } as const;
 
 export type Lang = keyof typeof ui;
 
 export function getLangFromUrl(url: URL): Lang {
   const [, seg] = url.pathname.split('/');
-  if (seg === 'zh') return 'zh';
+  if (seg === 'zh' || seg === 'de' || seg === 'ja') return seg;
   return 'en';
 }
 
@@ -69,7 +89,8 @@ export function useTranslations(lang: Lang) {
 }
 
 export function localizePath(path: string = '/', lang: Lang = defaultLang): string {
-  const clean = path === '/' ? '' : path;
+  const withoutLocale = path.replace(/^\/(?:zh|de|ja)(?=\/|$)/, '') || '/';
+  const clean = withoutLocale === '/' ? '' : withoutLocale;
   if (lang === defaultLang) return clean || '/';
-  return `/zh${clean || '/'}`;
+  return `/${lang}${clean || '/'}`;
 }

@@ -1,0 +1,9 @@
+---
+import LocalizedCorePage from '../../components/LocalizedCorePage.astro';
+import { localizedCorePages } from '../../data/localizedCorePages';
+export function getStaticPaths() {
+  return localizedCorePages.de.filter((page) => page.slug !== 'home').map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+const { page } = Astro.props;
+---
+<LocalizedCorePage lang="de" page={page} />

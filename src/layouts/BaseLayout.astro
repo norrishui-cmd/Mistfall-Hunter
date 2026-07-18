@@ -16,8 +16,8 @@ interface Props {
 }
 
 const { title, description, lang, path = '/', image, jsonLd, noindex } = Astro.props;
-const htmlLang = lang === 'zh' ? 'zh-Hans' : 'en';
-const skipLabel = lang === 'zh' ? '跳到正文' : 'Skip to content';
+const htmlLang = { en: 'en', zh: 'zh-Hans', de: 'de', ja: 'ja' }[lang];
+const skipLabel = lang === 'zh' ? '跳到正文' : lang === 'de' ? 'Zum Inhalt' : lang === 'ja' ? '本文へ移動' : 'Skip to content';
 ---
 
 <!doctype html>

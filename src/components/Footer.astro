@@ -10,14 +10,23 @@ const { lang } = Astro.props as Props;
 const t = useTranslations(lang);
 const year = new Date().getFullYear();
 
-const trustLinks = [
+const isNewLocale = lang === 'de' || lang === 'ja';
+const trustLinks = isNewLocale ? [
+  { label: t('nav.about'), href: '/about' },
+] : [
   { label: t('footer.sources'), href: '/sources' },
   { label: t('footer.updates'), href: '/updates' },
   { label: t('footer.sitemap'), href: '/sitemap' },
 ];
 
-const coreLinks = recoveryFocusLinks.slice(0, 8);
-const supportLinks = [
+const localizedCoreLinks = [
+  { title: t('nav.release'), href: '/release-date' },
+  { title: t('nav.guides'), href: '/guides' },
+  { title: t('nav.builds'), href: '/builds' },
+  { title: t('nav.about'), href: '/about' },
+];
+const coreLinks = isNewLocale ? localizedCoreLinks : recoveryFocusLinks.slice(0, 8);
+const supportLinks = isNewLocale ? [] : [
   { title: 'News', href: '/news' },
   { title: 'Bosses', href: '/bosses' },
   { title: 'Performance', href: '/performance' },

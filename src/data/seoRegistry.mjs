@@ -23,6 +23,22 @@ export const INDEXABLE_STATIC_PATHS = new Set([
   '/zh/sources/',
   '/zh/updates/',
   '/zh/sitemap/',
+  '/de/',
+  '/de/release-date/',
+  '/de/beginner-guide/',
+  '/de/classes/',
+  '/de/builds/',
+  '/de/guides/',
+  '/de/performance/',
+  '/de/about/',
+  '/ja/',
+  '/ja/release-date/',
+  '/ja/beginner-guide/',
+  '/ja/classes/',
+  '/ja/builds/',
+  '/ja/guides/',
+  '/ja/performance/',
+  '/ja/about/',
 ]);
 
 export const INDEXABLE_SLUGS = new Set([
@@ -69,13 +85,13 @@ export function normalizeSeoPath(path = '/') {
 
 export function slugFromPath(path = '/') {
   const normalized = normalizeSeoPath(path);
-  const withoutLocale = normalized.startsWith('/zh/') ? normalized.slice(3) : normalized;
+  const withoutLocale = normalized.replace(/^\/(?:zh|de|ja)(?=\/)/, '');
   const trimmed = withoutLocale.replace(/^\/|\/$/g, '');
   return trimmed || '';
 }
 
 export function isLocalizedPath(path = '/') {
-  return normalizeSeoPath(path).startsWith('/zh/');
+  return /^\/(?:zh|de|ja)\//.test(normalizeSeoPath(path));
 }
 
 export function isIndexableSlug(slug) {

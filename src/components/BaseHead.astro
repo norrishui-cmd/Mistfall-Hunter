@@ -24,8 +24,12 @@ const {
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
 const withTrailingSlash = (value: string) => value === '/' ? '/' : `${value.replace(/\/$/, '')}/`;
 const canonical = new URL(withTrailingSlash(localizePath(path, lang)), site).href;
+const localizedCorePaths = new Set(['/', '/release-date', '/beginner-guide', '/classes', '/builds', '/guides', '/performance', '/about']);
+const alternateLangs: Lang[] = localizedCorePaths.has(path) ? ['en', 'zh', 'de', 'ja'] : ['en', 'zh'];
+const hreflangByLang: Record<Lang, string> = { en: 'en', zh: 'zh-Hans', de: 'de', ja: 'ja' };
+const languageByLang: Record<Lang, string> = { en: 'en', zh: 'zh-Hans', de: 'de', ja: 'ja' };
+const ogLocaleByLang: Record<Lang, string> = { en: 'en_US', zh: 'zh_CN', de: 'de_DE', ja: 'ja_JP' };
 const enHref = new URL(withTrailingSlash(localizePath(path, 'en')), site).href;
-const zhHref = new URL(withTrailingSlash(localizePath(path, 'zh')), site).href;
 const ogImage = new URL(image, site).href;
 const siteName = ui[lang]['site.name'];
 
@@ -34,7 +38,7 @@ const websiteSchema = {
   '@type': 'WebSite',
   name: siteName,
   url: site.href,
-  inLanguage: lang === 'zh' ? 'zh-Hans' : 'en',
+  inLanguage: languageByLang[lang],
 };
 
 const organizationSchema = {
@@ -66,8 +70,13 @@ const schemas = [websiteSchema, organizationSchema, ...jsonLd];
 <link rel="canonical" href={canonical} />
 <meta name="theme-color" content="#0e1014" />
 
-<link rel="alternate" hreflang="en" href={enHref} />
-<link rel="alternate" hreflang="zh-Hans" href={zhHref} />
+{alternateLangs.map((alternateLang) => (
+  <link
+    rel="alternate"
+    hreflang={hreflangByLang[alternateLang]}
+    href={new URL(withTrailingSlash(localizePath(path, alternateLang)), site).href}
+  />
+))}
 <link rel="alternate" hreflang="x-default" href={enHref} />
 
 <meta property="og:type" content="website" />
@@ -76,7 +85,7 @@ const schemas = [websiteSchema, organizationSchema, ...jsonLd];
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={ogImage} />
-<meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : 'en_US'} />
+<meta property="og:locale" content={ogLocaleByLang[lang]} />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
