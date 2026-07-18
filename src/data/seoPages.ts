@@ -418,8 +418,8 @@ export const zhPages: SeoPage[] = [
 
 export function getSeoPages(lang: Lang): SeoPage[] {
   return lang === 'zh'
-    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages, ...zhGrowthPages, ...zhLongTailPages, ...zhCluster2Pages, ...zhRapidExpansionPages, ...zhRapidExpansion2Pages, ...zhTrendExpansionPages, ...zhDeepLongTailPages, ...zhFaqLongTailPages, ...zhLatestNewsPages, ...zhLaunchAnswerPages, ...zhLaunchWeekClusterPages, ...zhLaunchDayIntentPages, ...zhPostLaunchEvergreenPages]
-    : [...enPages, ...enExpansionPages, ...enFaqPages, ...enGrowthPages, ...enLongTailPages, ...enCluster2Pages, ...enRapidExpansionPages, ...enRapidExpansion2Pages, ...enTrendExpansionPages, ...enDeepLongTailPages, ...enFaqLongTailPages, ...enLatestNewsPages, ...enLaunchAnswerPages, ...enLaunchWeekClusterPages, ...enLaunchDayIntentPages, ...enPostLaunchEvergreenPages];
+    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages.filter((page) => page.slug !== 'faq'), ...zhGrowthPages, ...zhLongTailPages, ...zhCluster2Pages, ...zhRapidExpansionPages, ...zhRapidExpansion2Pages, ...zhTrendExpansionPages, ...zhDeepLongTailPages, ...zhFaqLongTailPages, ...zhLatestNewsPages, ...zhLaunchAnswerPages, ...zhLaunchWeekClusterPages, ...zhLaunchDayIntentPages, ...zhPostLaunchEvergreenPages]
+    : [...enPages, ...enExpansionPages, ...enFaqPages.filter((page) => page.slug !== 'faq'), ...enGrowthPages, ...enLongTailPages, ...enCluster2Pages, ...enRapidExpansionPages, ...enRapidExpansion2Pages, ...enTrendExpansionPages, ...enDeepLongTailPages, ...enFaqLongTailPages, ...enLatestNewsPages, ...enLaunchAnswerPages, ...enLaunchWeekClusterPages, ...enLaunchDayIntentPages, ...enPostLaunchEvergreenPages];
 }
 
 export function getSeoPage(lang: Lang, slug: string): SeoPage | undefined {
@@ -437,7 +437,7 @@ export function isIndexable(pageOrSlug?: SeoPage | string): boolean {
   const indexableSlugs = new Set([
     'news', 'guides', 'tools', 'about', 'weapons', 'bosses', 'loot', 'soul-of-return',
     'release-date', 'beginner-guide', 'classes', 'builds', 'map', 'performance',
-    'build-planner', 'sources', 'updates', 'sitemap',
+    'build-planner', 'sources', 'updates', 'sitemap', 'faq',
     'steam-charts-player-count', 'steam-page-guide', 'gameplay-overview',
     'best-class-for-beginners', 'crossplay-status', 'price-status', 'server-status',
     'best-builds', 'extraction-map', 'boss-locations', 'known-issues-tracker',

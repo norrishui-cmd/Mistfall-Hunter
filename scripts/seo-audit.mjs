@@ -237,6 +237,30 @@ for (const sitemapPath of ['/sitemap/', '/zh/sitemap/']) {
   }
 }
 
+let faqQuestionsPerLanguage = 0;
+for (const pathname of ['/faq/', '/zh/faq/']) {
+  const page = byPath.get(pathname);
+  if (!page) {
+    fail(`${pathname}: missing 100-question FAQ hub`);
+    continue;
+  }
+  const visibleItems = allMatches(page.html, /<article\s+class=["']faq-item["']/gi).length;
+  if (visibleItems !== 100) fail(`${pathname}: expected 100 visible FAQ items, found ${visibleItems}`);
+  for (const sourceUrl of [
+    'https://store.steampowered.com/app/3282300/Mistfall_Hunter/',
+    'https://www.xbox.com/en-US/games/store/mistfall-hunter/9p8x6tvw9zw8',
+  ]) {
+    if (!page.html.includes(sourceUrl)) fail(`${pathname}: missing official FAQ source ${sourceUrl}`);
+  }
+  const faqSchemas = parsedSchemas(page).filter((schema) => schema['@type'] === 'FAQPage');
+  if (faqSchemas.length !== 1) fail(`${pathname}: expected one FAQPage schema, found ${faqSchemas.length}`);
+  const entities = faqSchemas[0]?.mainEntity ?? [];
+  if (entities.length !== 100) fail(`${pathname}: expected 100 FAQPage entities, found ${entities.length}`);
+  const names = entities.map((entity) => entity.name).filter(Boolean);
+  if (new Set(names).size !== names.length) fail(`${pathname}: duplicate FAQ questions found`);
+  faqQuestionsPerLanguage = Math.max(faqQuestionsPerLanguage, visibleItems);
+}
+
 const contextualLinks = new Map(indexablePages.map((page) => [normalizePathname(page.pathname), 0]));
 for (const page of pages) {
   for (const match of allMatches(page.html, /<a\s+[^>]*href=["']([^"']+)["']/gi)) {
@@ -269,6 +293,7 @@ console.log(`Duplicate descriptions: ${duplicateDescriptions}`);
 console.log(`Canonical mismatches: ${canonicalMismatches}`);
 console.log(`Sitemap/noindex conflicts: ${sitemapNoindex}`);
 console.log(`Cited editorial pages: ${citedEditorialPages}`);
+console.log(`FAQ questions per language: ${faqQuestionsPerLanguage}`);
 
 if (warnings.length) {
   console.warn('\nWarnings:');

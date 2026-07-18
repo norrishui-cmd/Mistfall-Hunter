@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { faq100, faqCategories } from '../data/faq100';
+
+interface Props { lang: 'en' | 'zh' }
+const { lang } = Astro.props as Props;
+const zh = lang === 'zh';
+const path = '/faq';
+const title = zh ? 'Mistfall Hunter 常见问题 FAQ：100 个问题完整解答' : 'Mistfall Hunter FAQ: 100 Questions Answered';
+const description = zh
+  ? 'Mistfall Hunter 100 条常见问题：发售日、平台、职业、战斗、地图、战利品、联机、配置和故障排查。基于 Steam 与 Xbox 官方信息持续更新。'
+  : '100 Mistfall Hunter questions answered: release date, platforms, classes, combat, maps, loot, multiplayer, system requirements and troubleshooting.';
+const local = (href: string) => zh ? `/zh${href}` : href;
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: zh ? 'zh-Hans' : 'en',
+  mainEntity: faq100.map((item) => ({
+    '@type': 'Question',
+    name: zh ? item.zh.q : item.en.q,
+    acceptedAnswer: { '@type': 'Answer', text: zh ? item.zh.a : item.en.a },
+  })),
+};
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: zh ? '首页' : 'Home', item: `https://mistfallhunter.me${zh ? '/zh/' : '/'}` },
+    { '@type': 'ListItem', position: 2, name: 'FAQ', item: `https://mistfallhunter.me${zh ? '/zh/faq/' : '/faq/'}` },
+  ],
+};
+---
+
+<BaseLayout title={title} description={description} lang={lang} path={path} jsonLd={[faqSchema, breadcrumbSchema]}>
+  <div class="faq-page container">
+    <nav class="breadcrumbs" aria-label={zh ? '面包屑' : 'Breadcrumb'}>
+      <a href={local('/')}>{zh ? '首页' : 'Home'}</a><span aria-hidden="true">›</span><span>FAQ</span>
+    </nav>
+
+    <header class="faq-hero">
+      <p class="eyebrow">MISTFALL HUNTER FAQ</p>
+      <h1>{title}</h1>
+      <p class="lead">{description}</p>
+      <div class="faq-stats" aria-label={zh ? 'FAQ 概览' : 'FAQ overview'}>
+        <span><strong>100</strong> {zh ? '个问题' : 'questions'}</span>
+        <span><strong>10</strong> {zh ? '大主题' : 'topics'}</span>
+        <span><strong>2</strong> {zh ? '个官方来源' : 'official sources'}</span>
+      </div>
+    </header>
+
+    <aside class="source-note">
+      <strong>{zh ? '信息依据：' : 'Source policy:'}</strong>
+      {zh ? '平台、语言、配置与已公布功能以 ' : 'Platform, language, requirements and announced-feature answers are checked against the '}
+      <a href="https://store.steampowered.com/app/3282300/Mistfall_Hunter/" rel="noopener noreferrer">Steam {zh ? '官方商店' : 'store'}</a>
+      {zh ? '和 ' : ' and '}
+      <a href="https://www.xbox.com/en-US/games/store/mistfall-hunter/9p8x6tvw9zw8" rel="noopener noreferrer">Xbox {zh ? '官方商店' : 'store'}</a>。
+      {zh ? '尚未公布或可能变化的内容会明确标注，不以传言补空白。' : 'Unannounced or changeable details are labeled instead of filled with rumor.'}
+    </aside>
+
+    <nav class="faq-toc" aria-label={zh ? 'FAQ 主题目录' : 'FAQ topics'}>
+      {faqCategories.map((category, index) => (
+        <a href={`#${category.id}`}><span>{String(index + 1).padStart(2, '0')}</span>{zh ? category.zh : category.en}</a>
+      ))}
+    </nav>
+
+    {faqCategories.map((category) => {
+      const items = faq100.filter((item) => item.category === category.id);
+      return (
+        <section class="faq-category" id={category.id}>
+          <div class="category-heading">
+            <div><p>{items[0].id}–{items[items.length - 1].id}</p><h2>{zh ? category.zh : category.en}</h2></div>
+            <a href={local(category.href)}>{zh ? '查看相关攻略 →' : 'Related guide →'}</a>
+          </div>
+          <div class="faq-list">
+            {items.map((item) => (
+              <article class="faq-item" id={`q${item.id}`}>
+                <h3><a href={`#q${item.id}`} aria-label={zh ? `链接到问题 ${item.id}` : `Link to question ${item.id}`}>{item.id}.</a> {zh ? item.zh.q : item.en.q}</h3>
+                <p>{zh ? item.zh.a : item.en.a}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      );
+    })}
+
+    <div class="faq-footer">
+      <h2>{zh ? '没有找到你的问题？' : 'Still have a question?'}</h2>
+      <p>{zh ? '先查看攻略中心和来源页；正式上线后，本站会继续用实测结果更新答案。' : 'Check the guide hub and sources page. Answers will be updated with verified launch testing.'}</p>
+      <a class="button" href={local('/guides')}>{zh ? '浏览全部攻略' : 'Browse all guides'}</a>
+      <a class="button secondary" href={local('/sources')}>{zh ? '查看信息来源' : 'View sources'}</a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .faq-page{padding-block:1.25rem 5rem;max-width:1050px}.breadcrumbs{display:flex;gap:.55rem;align-items:center;margin-bottom:2.5rem;color:var(--ash)}
+  .faq-hero{max-width:850px}.eyebrow,.category-heading p{color:var(--gylden);font-weight:800;letter-spacing:.12em;text-transform:uppercase}.faq-hero h1{font-size:clamp(2.3rem,6vw,4.4rem);line-height:1.04;margin:.5rem 0 1rem}.lead{font-size:1.15rem;line-height:1.75;color:var(--ash)}
+  .faq-stats{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.5rem 0 2rem}.faq-stats span{border:1px solid var(--line);border-radius:999px;padding:.55rem .85rem;background:var(--stone)}.faq-stats strong{color:var(--gylden)}
+  .source-note{border-left:4px solid var(--gylden);background:var(--stone);padding:1rem 1.2rem;line-height:1.7;margin:2rem 0}.faq-toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.7rem;margin:2.5rem 0 4rem}.faq-toc a{display:flex;gap:.75rem;align-items:center;border:1px solid var(--line);border-radius:.6rem;padding:.85rem;text-decoration:none;background:var(--stone)}.faq-toc span{color:var(--gylden);font-weight:800}
+  .faq-category{scroll-margin-top:7rem;margin:0 0 4.5rem}.category-heading{display:flex;justify-content:space-between;align-items:end;gap:1rem;border-bottom:1px solid var(--line);padding-bottom:1rem;margin-bottom:.5rem}.category-heading p{margin:0;font-size:.78rem}.category-heading h2{margin:.25rem 0 0;font-size:clamp(1.65rem,4vw,2.35rem)}.category-heading>a{white-space:nowrap}
+  .faq-item{scroll-margin-top:7rem;padding:1.35rem .25rem;border-bottom:1px solid var(--line)}.faq-item h3{font-size:1.08rem;line-height:1.5;margin:0 0 .55rem}.faq-item h3 a{color:var(--gylden);text-decoration:none}.faq-item p{color:var(--ash);line-height:1.75;margin:0;max-width:880px}.faq-footer{text-align:center;border:1px solid var(--line);border-radius:1rem;padding:2rem;background:var(--stone)}.faq-footer .button{display:inline-block;margin:.5rem .25rem}
+  @media(max-width:640px){.category-heading{align-items:start;flex-direction:column}.faq-toc{grid-template-columns:1fr}.faq-page{padding-top:.75rem}}
+</style>

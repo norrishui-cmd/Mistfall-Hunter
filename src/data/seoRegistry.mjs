@@ -9,6 +9,7 @@ export const INDEXABLE_STATIC_PATHS = new Set([
   '/build-planner/',
   '/map/',
   '/performance/',
+  '/faq/',
   '/sources/',
   '/updates/',
   '/sitemap/',
@@ -20,6 +21,7 @@ export const INDEXABLE_STATIC_PATHS = new Set([
   '/zh/build-planner/',
   '/zh/map/',
   '/zh/performance/',
+  '/zh/faq/',
   '/zh/sources/',
   '/zh/updates/',
   '/zh/sitemap/',
@@ -60,7 +62,6 @@ export const INDEXABLE_SLUGS = new Set([
 ]);
 
 export const NOINDEX_REVIEW_NOTES = {
-  faq: 'Kept accessible, but not promoted sitewide until it has stronger unique value than focused FAQ pages.',
   'ps5-performance': 'Performance details need live console verification.',
   'steam-deck': 'Steam Deck compatibility depends on Proton and anti-cheat behavior after launch.',
   preload: 'Preload timing is not confirmed.',
