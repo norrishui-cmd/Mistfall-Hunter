@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------
 // Mistfall Hunter builds & affixes data.
 //
-// HONESTY NOTE: the game launches July 30, 2026 and there is no settled meta
+// HONESTY NOTE: the game launches July 29, 2026 and there is no settled meta
 // yet. These are ARCHETYPE STARTER DIRECTIONS grounded in each class's known
 // mechanics/paths — not finalized builds with confirmed numbers. Priorities are
 // general stat directions, not specific affix values. Replace with verified

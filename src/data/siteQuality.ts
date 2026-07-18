@@ -75,6 +75,7 @@ const enHubLinks: HubLink[] = [
   { title: 'Classes', desc: 'Class roles and tier-list context for solo, PvP, and beginner players.', href: '/classes', cluster: 'guides' },
   { title: 'Best builds', desc: 'Role-based build hub for pre-launch planning and live updates.', href: '/best-builds', cluster: 'builds' },
   { title: 'Builds hub', desc: 'Class build directions and affix tracking.', href: '/builds', cluster: 'builds' },
+  { title: 'Build planner', desc: 'Interactive class, path, goal, and affix planning tool with shareable links.', href: '/build-planner', cluster: 'builds' },
   { title: 'Interactive map', desc: 'Map filters for extraction, bosses, loot, and landmarks.', href: '/map', cluster: 'maps' },
   { title: 'Extraction map', desc: 'Exit planning, safe routes, and Soul of Return routing.', href: '/extraction-map', cluster: 'maps' },
   { title: 'Boss locations', desc: 'Mist Lord location tracking, boss-route risk, and PvP pressure.', href: '/boss-locations', cluster: 'bosses' },

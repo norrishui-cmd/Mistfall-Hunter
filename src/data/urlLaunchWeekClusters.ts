@@ -318,7 +318,7 @@ export const enLaunchWeekClusterPages: SeoPage[] = specs.map((spec) => ({
   eyebrow: 'Launch week guide',
   h1: spec.h1,
   lead: spec.desc,
-  updated: 'Prepared for the July 30, 2026 launch window. Live values and platform behavior should be rechecked at release.',
+  updated: 'Prepared for the July 29, 2026 launch window. Live values and platform behavior should be rechecked at release.',
   intent: {
     primary: spec.h1,
     secondary: spec.checks,

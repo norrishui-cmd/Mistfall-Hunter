@@ -84,15 +84,21 @@ function parsedSchemas(page) {
 }
 
 for (const page of pages) {
+  const isNoindex = /noindex/i.test(page.robots);
   if (!page.title) fail(`${page.pathname}: missing title`);
   if (!page.description) fail(`${page.pathname}: missing meta description`);
   if (!page.canonical) fail(`${page.pathname}: missing canonical`);
   if (page.h1Count !== 1) fail(`${page.pathname}: expected one H1, found ${page.h1Count}`);
-  if (page.title.length > 70) warn(`${page.pathname}: long title (${page.title.length})`);
-  if (page.description.length > 170) warn(`${page.pathname}: long description (${page.description.length})`);
-  if (page.html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length < 180) warn(`${page.pathname}: unusually short content`);
-  if (/(to confirm|unconfirmed|watch for updates|check at launch|exact values are unknown)/i.test(page.html) && !/noindex/i.test(page.robots)) {
+  // Keep the warning queue focused on URLs currently competing in search.
+  // Noindex drafts still receive the hard structural checks above.
+  if (!isNoindex && page.title.length > 70) warn(`${page.pathname}: long title (${page.title.length})`);
+  if (!isNoindex && page.description.length > 170) warn(`${page.pathname}: long description (${page.description.length})`);
+  if (!isNoindex && page.html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length < 180) warn(`${page.pathname}: unusually short content`);
+  if (!isNoindex && /(to confirm|unconfirmed|watch for updates|check at launch|exact values are unknown)/i.test(page.html)) {
     warn(`${page.pathname}: indexable page contains uncertainty-heavy language`);
+  }
+  if (!isNoindex && /(July 30(?:, 2026)?|7\s*月\s*30\s*日|2026-07-30)/i.test(page.html)) {
+    fail(`${page.pathname}: stale July 30 release date conflicts with official storefront listings`);
   }
   for (const raw of page.jsonLd) {
     try {

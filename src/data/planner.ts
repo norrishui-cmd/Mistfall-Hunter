@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------
 // Mistfall Hunter Build Planner data.
 //
-// HONESTY NOTE: the game launches July 30, 2026 and the meta is not settled.
+// HONESTY NOTE: the game launches July 29, 2026 and the meta is not settled.
 // Class names, paths, and affix NAMES here are from the beta / official
 // material. We do NOT assert exact skill, talent, or affix numbers — the affix
 // grouping below is our best read of the names and is provisional until 1.0.

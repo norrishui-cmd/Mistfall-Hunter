@@ -32,7 +32,7 @@ export const enFaqPages: SeoPage[] = [
       { heading: 'How to use this index', body: ['Each question below has a one-line quick answer, then a link into the full page, which has more detail and gets updated as launch information changes. That keeps any one question from going stale in two places at once.'] },
     ],
     cards: [
-      { title: 'When does it launch?', desc: 'Current listings point to late July 2026; this site uses July 30, 2026 at 01:00 UTC as the main anchor.', href: '/release-date' },
+      { title: 'When does it launch?', desc: 'Official Steam and Xbox listings show July 29, 2026; check your local storefront for the unlock hour.', href: '/release-date' },
       { title: 'What platforms is it on?', desc: 'Planned for PC, PS5, and Xbox Series X|S, with PC expected through Steam and the Xbox app.', href: '/platforms' },
       { title: 'Is it on Game Pass?', desc: 'Yes — Xbox coverage points to Xbox Game Pass and Xbox Play Anywhere support.', href: '/game-pass' },
       { title: 'Is it PvP or PvE?', desc: 'Both. AI monsters and bosses share every zone with rival hunters who can contest your loot.', href: '/pvp-or-pve' },
@@ -249,7 +249,7 @@ export const zhFaqPages: SeoPage[] = [
       { heading: '怎么使用这份索引', body: ['每个问题下面是一句话的快速答案，点击可以进入对应的深度页面——那里内容更完整，并会随发售信息持续更新。这样能避免同一个问题的答案在两个地方各自过时。'] },
     ],
     cards: [
-      { title: '什么时候发售？', desc: '目前公开信息指向 2026 年 7 月下旬，本站以 7 月 30 日 01:00 UTC 作为主要时间锚点。', href: '/zh/release-date' },
+      { title: '什么时候发售？', desc: '官方 Steam 与 Xbox 商店显示 2026 年 7 月 29 日；具体解锁时刻请以当地商店为准。', href: '/zh/release-date' },
       { title: '有哪些平台？', desc: '计划登陆 PC、PS5 与 Xbox Series X|S，PC 预计可通过 Steam 与 Xbox App 游玩。', href: '/zh/platforms' },
       { title: '会上 Game Pass 吗？', desc: '会。Xbox 相关信息显示支持 Xbox Game Pass 与 Xbox Play Anywhere。', href: '/zh/game-pass' },
       { title: '是 PvP 还是 PvE？', desc: '两者都是：地图里既有 AI 怪物与 Boss，也有会争夺战利品的敌对猎人。', href: '/zh/pvp-or-pve' },

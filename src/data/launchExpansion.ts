@@ -3,7 +3,7 @@ import type { PriorityLink } from './priorityLinks';
 
 // ---------------------------------------------------------------------------
 // Launch-window expansion batch — new long-tail pages added ~3 weeks before
-// launch (July 30, 2026). Sourced from the official Steam/Xbox listings and
+// launch (July 29, 2026). Sourced from the official Steam/Xbox listings and
 // multiple independent press outlets (see the delivery notes for this batch).
 //
 // INDEXABLE at add-time: community, pay-to-win, age-rating (stable pre-launch

@@ -8,7 +8,7 @@ export type SprintLink = {
 export const launchWatchLinks: SprintLink[] = [
   {
     title: 'Mistfall Hunter release date',
-    desc: 'Launch timing, platform status, and what to verify as July 30 approaches.',
+    desc: 'Launch timing, platform status, and what to verify as July 29 approaches.',
     href: '/release-date',
     cluster: 'launch',
   },
@@ -131,7 +131,7 @@ export const latestNewsLinks: SprintLink[] = [
   },
   {
     title: 'Release date countdown',
-    desc: 'The launch countdown topic players are checking most often before July 30.',
+    desc: 'The launch countdown topic players are checking most often before July 29.',
     href: '/news-release-date-countdown',
     cluster: 'news',
   },

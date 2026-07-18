@@ -364,7 +364,7 @@ export const enLaunchAnswerPages: SeoPage[] = specs.map((spec) => ({
   intent: {
     primary: spec.query,
     secondary: spec.watch,
-    freshness: 'Updated for the July 30, 2026 launch window. Exact live values will be checked again at release.',
+    freshness: 'Updated for the July 29, 2026 launch window. Exact live values will be checked again at release.',
   },
   sections: [
     {
