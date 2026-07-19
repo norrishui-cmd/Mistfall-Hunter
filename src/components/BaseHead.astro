@@ -24,8 +24,8 @@ const {
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
 const withTrailingSlash = (value: string) => value === '/' ? '/' : `${value.replace(/\/$/, '')}/`;
 const canonical = new URL(withTrailingSlash(localizePath(path, lang)), site).href;
-const localizedCorePaths = new Set(['/', '/release-date', '/beginner-guide', '/classes', '/builds', '/guides', '/performance', '/about']);
-const alternateLangs: Lang[] = localizedCorePaths.has(path) ? ['en', 'zh', 'de', 'ja'] : ['en', 'zh'];
+const localizedCorePaths = new Set(['/', '/release-date', '/beginner-guide', '/classes', '/builds', '/guides', '/performance', '/about', '/game-data']);
+const alternateLangs: Lang[] = localizedCorePaths.has(path) || /^\/game-data\/[^/]+$/.test(path) ? ['en', 'zh', 'de', 'ja'] : ['en', 'zh'];
 const hreflangByLang: Record<Lang, string> = { en: 'en', zh: 'zh-Hans', de: 'de', ja: 'ja' };
 const languageByLang: Record<Lang, string> = { en: 'en', zh: 'zh-Hans', de: 'de', ja: 'ja' };
 const ogLocaleByLang: Record<Lang, string> = { en: 'en_US', zh: 'zh_CN', de: 'de_DE', ja: 'ja_JP' };

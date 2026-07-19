@@ -1,18 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { gameData, gameDataClusters } from '../data/gameData';
-interface Props { lang:'en'|'zh' }
-const { lang } = Astro.props as Props; const zh=lang==='zh'; const prefix=zh?'/zh':'';
-const title=zh?'Mistfall Hunter 最新游戏数据：角色、道具、特别玩法与 Demo':'Mistfall Hunter Game Data: Characters, Items, Special Modes & Demo';
-const description=zh?'基于官方更新整理的 Mistfall Hunter 角色职业、道具装备、特别玩法、地图机制和 Demo 测试数据。':'Officially sourced Mistfall Hunter data for characters, classes, items, equipment, special gameplay, maps and the completed demo playtest.';
+import { gameDataLocales } from '../data/gameDataLocales';
+interface Props { lang:'en'|'zh'|'de'|'ja' }
+const { lang } = Astro.props as Props; const zh=lang==='zh'; const prefix=lang==='en'?'':`/${lang}`;
+const meta={en:{title:'Mistfall Hunter Game Data: Characters, Items, Special Modes & Demo',description:'Officially sourced Mistfall Hunter data for characters, classes, items, equipment, special gameplay, maps and the completed demo playtest.',eyebrow:'Game database',coverage:'Current coverage:',pages:'independent data pages',note:'Facts are checked against official Steam announcements, with test content, launch content and future plans labeled separately.',open:'Open data →'},zh:{title:'Mistfall Hunter 最新游戏数据：角色、道具、特别玩法与 Demo',description:'基于官方更新整理的 Mistfall Hunter 角色职业、道具装备、特别玩法、地图机制和 Demo 测试数据。',eyebrow:'游戏资料库',coverage:'当前规模：',pages:'个独立数据页',note:'信息依据 Steam 官方公告；测试期内容、正式内容与未来计划分别标注。',open:'查看数据 →'},de:{title:'Mistfall Hunter Spieldaten: Klassen, Items, Modi und Beta',description:'Offiziell belegte Mistfall-Hunter-Daten zu Klassen, Ausrüstung, besonderen Spielsystemen und abgeschlossenen Tests.',eyebrow:'Spieldatenbank',coverage:'Aktueller Umfang:',pages:'eigenständige Datenseiten',note:'Fakten werden mit offiziellen Steam-Ankündigungen abgeglichen; Test-, Launch- und geplante Inhalte sind getrennt markiert.',open:'Daten öffnen →'},ja:{title:'Mistfall Hunterゲームデータ：クラス・装備・特殊モード・ベータ',description:'公式情報に基づくMistfall Hunterのクラス、装備、特殊システム、終了済みテストのデータベース。',eyebrow:'ゲームデータベース',coverage:'現在の収録数：',pages:'件の独立データページ',note:'Steam公式発表を基準に、テスト内容、発売時内容、将来予定を分けて掲載します。',open:'データを見る →'}}[lang];
+const title=meta.title; const description=meta.description;
+const clusterCopy={characters:{de:'Charaktere & Klassen',ja:'キャラクター・クラス',deDesc:'Bestätigte Waffen, Rollen und Balance-Richtung.',jaDesc:'確定した武器、役割、調整方針。'},items:{de:'Items & Ausrüstung',ja:'アイテム・装備',deDesc:'Waffen, Schlüssel, Gutscheine und legendäre Sets.',jaDesc:'武器、鍵、装備券、Legendaryセット。'},special:{de:'Besondere Spielsysteme',ja:'特殊ゲームシステム',deDesc:'Saisons, Hochrisiko-Modi und Fortschrittssysteme.',jaDesc:'シーズン、高リスクモード、成長システム。'},demo:{de:'Beta & Spieltests',ja:'ベータ・プレイテスト',deDesc:'Abgeschlossene Tests, Belohnungen und Launch-Übergang.',jaDesc:'終了済みテスト、報酬、正式版への移行。'}};
+const localCopy=(item:any)=>lang==='en'?item.en:lang==='zh'?item.zh:gameDataLocales[lang][item.slug];
 ---
 <BaseLayout lang={lang} path="/game-data" title={title} description={description} jsonLd={[{'@context':'https://schema.org','@type':'CollectionPage',name:title,description,url:`https://mistfallhunter.me${prefix}/game-data/`,numberOfItems:gameData.length}]}>
   <section class="section"><div class="container">
-    <span class="eyebrow">{zh?'游戏资料库':'Game database'}</span><h1 class="page-title">{title}</h1><p class="lead">{description}</p>
-    <div class="callout"><strong>{zh?'当前规模：':'Current coverage: '}{gameData.length} {zh?'个独立数据页':'independent data pages'}</strong><p>{zh?'信息依据 Steam 官方公告；测试期内容、正式内容与未来计划分别标注。':'Facts are checked against official Steam announcements, with test content, launch content and future plans labeled separately.'}</p></div>
+    <span class="eyebrow">{meta.eyebrow}</span><h1 class="page-title">{title}</h1><p class="lead">{description}</p>
+    <div class="callout"><strong>{meta.coverage} {gameData.length} {meta.pages}</strong><p>{meta.note}</p></div>
     {Object.entries(gameDataClusters).map(([id,cluster])=><section class="data-cluster" id={id}>
-      <div class="cluster-head"><div><span class="eyebrow">{id}</span><h2>{zh?cluster.zh:cluster.en}</h2><p>{zh?cluster.descZh:cluster.descEn}</p></div><strong>{gameData.filter(i=>i.cluster===id).length}</strong></div>
-      <div class="data-grid">{gameData.filter(i=>i.cluster===id).map(item=>{const c=zh?item.zh:item.en;return <a class="data-card" href={`${prefix}/game-data/${item.slug}`}><time datetime={item.updated}>{item.updated}</time><h3>{c.title}</h3><p>{c.description}</p><span>{zh?'查看数据 →':'Open data →'}</span></a>})}</div>
+      <div class="cluster-head"><div><span class="eyebrow">{id}</span><h2>{lang==='de'?clusterCopy[id].de:lang==='ja'?clusterCopy[id].ja:zh?cluster.zh:cluster.en}</h2><p>{lang==='de'?clusterCopy[id].deDesc:lang==='ja'?clusterCopy[id].jaDesc:zh?cluster.descZh:cluster.descEn}</p></div><strong>{gameData.filter(i=>i.cluster===id).length}</strong></div>
+      <div class="data-grid">{gameData.filter(i=>i.cluster===id).map(item=>{const c=localCopy(item);return <a class="data-card" href={`${prefix}/game-data/${item.slug}`}><time datetime={item.updated}>{item.updated}</time><h3>{c.title}</h3><p>{c.description}</p><span>{meta.open}</span></a>})}</div>
     </section>)}
   </div></section>
 </BaseLayout>

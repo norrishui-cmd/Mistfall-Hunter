@@ -19,13 +19,14 @@ const items: NavItem[] = [
   { labelKey: 'nav.release', path: '/release-date' },
   { labelKey: 'nav.guides', path: '/guides' },
   { labelKey: 'nav.builds', path: '/builds' },
-  ...(lang === 'en' || lang === 'zh' ? [{ labelKey: 'nav.data', path: '/game-data' }] : []),
+  { labelKey: 'nav.data', path: '/game-data' },
   ...(lang === 'en' || lang === 'zh' ? [{ labelKey: 'nav.faq', path: '/faq' }] : []),
   { labelKey: 'nav.about', path: '/about' },
 ];
 
-const localizedCorePaths = new Set(['/', '/release-date', '/beginner-guide', '/classes', '/builds', '/guides', '/performance', '/about']);
-const languageOptions: Lang[] = localizedCorePaths.has(path) ? ['en', 'zh', 'de', 'ja'] : ['en', 'zh'];
+const localizedCorePaths = new Set(['/', '/release-date', '/beginner-guide', '/classes', '/builds', '/guides', '/performance', '/about', '/game-data']);
+const isGameDataDetail = /^\/game-data\/[^/]+$/.test(path);
+const languageOptions: Lang[] = localizedCorePaths.has(path) || isGameDataDetail ? ['en', 'zh', 'de', 'ja'] : ['en', 'zh'];
 const languageLabel = lang === 'zh' ? '选择语言' : lang === 'de' ? 'Sprache wählen' : lang === 'ja' ? '言語を選択' : 'Choose language';
 const siteName = t('site.name');
 const siteTagline = t('site.tagline');

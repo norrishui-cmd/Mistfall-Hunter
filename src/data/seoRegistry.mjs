@@ -35,6 +35,7 @@ export const INDEXABLE_STATIC_PATHS = new Set([
   '/de/guides/',
   '/de/performance/',
   '/de/about/',
+  '/de/game-data/',
   '/ja/',
   '/ja/release-date/',
   '/ja/beginner-guide/',
@@ -43,6 +44,7 @@ export const INDEXABLE_STATIC_PATHS = new Set([
   '/ja/guides/',
   '/ja/performance/',
   '/ja/about/',
+  '/ja/game-data/',
 ]);
 
 export const INDEXABLE_SLUGS = new Set([
@@ -121,7 +123,7 @@ export function isIndexablePath(path = '/') {
   if (INDEXABLE_STATIC_PATHS.has(normalized)) return true;
   const newsMatch = normalized.match(/^\/(?:zh\/)?news\/([^/]+)\/$/);
   if (newsMatch) return INDEXABLE_TAB_NEWS_SLUGS.has(newsMatch[1]);
-  const dataMatch = normalized.match(/^\/(?:zh\/)?game-data\/([^/]+)\/$/);
+  const dataMatch = normalized.match(/^\/(?:(?:zh|de|ja)\/)?game-data\/([^/]+)\/$/);
   if (dataMatch) return INDEXABLE_GAME_DATA_SLUGS.has(dataMatch[1]);
   const slug = slugFromPath(normalized);
   return Boolean(slug) && isIndexableSlug(slug);
@@ -147,6 +149,8 @@ export function getIndexablePaths() {
   for (const slug of INDEXABLE_GAME_DATA_SLUGS) {
     paths.add(normalizeSeoPath(`/game-data/${slug}/`));
     paths.add(normalizeSeoPath(`/zh/game-data/${slug}/`));
+    paths.add(normalizeSeoPath(`/de/game-data/${slug}/`));
+    paths.add(normalizeSeoPath(`/ja/game-data/${slug}/`));
   }
   return [...paths].sort();
 }

@@ -1,0 +1,7 @@
+---
+import GameDataDetail from '../../../components/GameDataDetail.astro';
+import { gameData, type GameDataItem } from '../../../data/gameData';
+export function getStaticPaths(){return gameData.map(item=>({params:{slug:item.slug},props:{item}}));}
+const {item}=Astro.props as {item:GameDataItem};
+---
+<GameDataDetail lang="ja" item={item} />
