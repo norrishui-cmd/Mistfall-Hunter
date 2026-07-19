@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TabNewsModule from './TabNewsModule.astro';
 import { faq100, faqCategories } from '../data/faq100';
 
 interface Props { lang: 'en' | 'zh' }
@@ -89,6 +90,7 @@ const breadcrumbSchema = {
       <a class="button" href={local('/guides')}>{zh ? '浏览全部攻略' : 'Browse all guides'}</a>
       <a class="button secondary" href={local('/sources')}>{zh ? '查看信息来源' : 'View sources'}</a>
     </div>
+    <TabNewsModule cluster="faq" lang={lang} />
   </div>
 </BaseLayout>
 

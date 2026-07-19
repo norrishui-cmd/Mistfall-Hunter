@@ -1,0 +1,27 @@
+---
+import { getTabNews, newsClusters, type NewsCluster } from '../data/tabNews';
+interface Props { cluster: NewsCluster; lang: 'en' | 'zh' }
+const { cluster, lang } = Astro.props as Props;
+const items = getTabNews(cluster);
+const zh = lang === 'zh';
+---
+<section class="tab-news" aria-labelledby={`news-${cluster}`}>
+  <div class="tab-news__heading">
+    <div><span class="eyebrow">{zh ? '最新更新' : 'Latest updates'}</span><h2 id={`news-${cluster}`}>{zh ? newsClusters[cluster].zh : newsClusters[cluster].en}</h2></div>
+    <a href={zh ? '/zh/news' : '/news'}>{zh ? '全部新闻 →' : 'All news →'}</a>
+  </div>
+  <div class="tab-news__grid">
+    {items.map((item) => {
+      const copy = zh ? item.zh : item.en;
+      return <article class="tab-news__card">
+        <time datetime={item.date}>{item.date}</time>
+        <h3><a href={`${zh ? '/zh' : ''}/news/${item.slug}`}>{copy.title}</a></h3>
+        <p>{copy.description}</p>
+        <a class="tab-news__more" href={`${zh ? '/zh' : ''}/news/${item.slug}`}>{zh ? '阅读全文 →' : 'Read update →'}</a>
+      </article>;
+    })}
+  </div>
+</section>
+<style>
+  .tab-news{margin-top:clamp(3rem,7vw,5rem);padding-top:2rem;border-top:1px solid var(--line)}.tab-news__heading{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1.25rem}.tab-news__heading h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:.35rem 0 0}.tab-news__grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem}.tab-news__card{display:flex;flex-direction:column;padding:1rem;border:1px solid var(--line);background:var(--stone);border-radius:.55rem}.tab-news__card time{font-family:var(--mono);font-size:.7rem;color:var(--ash)}.tab-news__card h3{font-size:1.05rem;line-height:1.25;margin:.7rem 0}.tab-news__card h3 a{text-decoration:none;color:var(--bone)}.tab-news__card p{font-size:.88rem;line-height:1.55;color:var(--ash);margin:0 0 1rem}.tab-news__more{margin-top:auto;font-size:.82rem;font-weight:700;text-decoration:none}@media(max-width:950px){.tab-news__grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.tab-news__grid{grid-template-columns:1fr}.tab-news__heading{align-items:start;flex-direction:column}}
+</style>

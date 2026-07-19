@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TabNewsModule from './TabNewsModule.astro';
+import { newsClusters, tabNewsSources, type TabNewsItem } from '../data/tabNews';
+interface Props { item: TabNewsItem; lang: 'en' | 'zh' }
+const { item, lang } = Astro.props as Props;
+const zh = lang === 'zh';
+const copy = zh ? item.zh : item.en;
+const cluster = newsClusters[item.cluster];
+const source = tabNewsSources[item.source];
+const prefix = zh ? '/zh' : '';
+const path = `/news/${item.slug}`;
+const url = `https://mistfallhunter.me${prefix}${path}/`;
+const schema = {
+  '@context':'https://schema.org','@type':'NewsArticle',headline:copy.title,description:copy.description,url,
+  datePublished:item.date,dateModified:item.date,inLanguage:zh?'zh-Hans':'en',isAccessibleForFree:true,
+  author:{'@type':'Organization',name:'Mistfall Hunter Wiki and Hub'},publisher:{'@type':'Organization',name:'Mistfall Hunter Wiki and Hub'},
+  citation:[source.url],mainEntityOfPage:url,
+};
+const breadcrumb = {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
+  {'@type':'ListItem',position:1,name:zh?'首页':'Home',item:`https://mistfallhunter.me${zh?'/zh/':'/'}`},
+  {'@type':'ListItem',position:2,name:zh?'新闻':'News',item:`https://mistfallhunter.me${prefix}/news/`},
+  {'@type':'ListItem',position:3,name:copy.title,item:url},
+]};
+---
+<BaseLayout lang={lang} path={path} title={copy.title} description={copy.description} jsonLd={[schema,breadcrumb]}>
+  <article class="section news-article">
+    <div class="container">
+      <nav class="breadcrumbs" aria-label={zh?'面包屑':'Breadcrumb'}><a href={`${prefix}/`}>{zh?'首页':'Home'}</a><span>›</span><a href={`${prefix}/news`}>{zh?'新闻':'News'}</a><span>›</span><span>{zh?cluster.zh:cluster.en}</span></nav>
+      <span class="eyebrow">{zh?cluster.zh:cluster.en}</span>
+      <h1 class="page-title">{copy.title}</h1>
+      <p class="lead">{copy.description}</p>
+      <div class="news-meta"><time datetime={item.date}>{zh?'更新于':'Updated'} {item.date}</time><span>·</span><a href={source.url} rel="noopener noreferrer">{zh?'官方来源：':'Official source: '}{source.name}</a></div>
+      <div class="answer-box"><span class="eyebrow">{zh?'直接结论':'Direct answer'}</span><p>{copy.answer}</p></div>
+      <div class="prose">
+        <h2>{zh?'已确认信息':'What is confirmed'}</h2><p>{copy.answer}</p><ul>{copy.details.map((detail)=><li>{detail}</li>)}</ul>
+        <h2>{zh?'为什么值得关注':'Why this matters'}</h2><p>{copy.why}</p>
+        <h2>{zh?'接下来需要关注什么':'What to watch next'}</h2><p>{copy.watch}</p>
+        <h2>{zh?'来源与核实原则':'Source and verification'}</h2><p>{zh?'本文只把官方商店当前可见内容写成已确认事实。地区商店、版本与补丁可能改变具体表现；出现变化时将更新日期和结论。':'This update treats only currently visible official-store information as confirmed. Regional stores, editions and patches can change implementation; the date and conclusion will be revised when that happens.'}</p>
+        <p><a href={source.url} rel="noopener noreferrer">{zh?'查看官方原始页面':'Open the original official listing'}</a> · <a href={`${prefix}${cluster.href}`}>{zh?'返回所属 Tab':'Return to topic hub'}</a></p>
+      </div>
+      <TabNewsModule cluster={item.cluster} lang={lang} />
+    </div>
+  </article>
+</BaseLayout>
+<style>.breadcrumbs,.news-meta{display:flex;flex-wrap:wrap;gap:.55rem;color:var(--ash);margin-bottom:2rem}.news-meta{margin:1rem 0 2rem;font-size:.85rem}.answer-box{background:var(--stone);border-left:4px solid var(--gylden);padding:1.2rem 1.4rem;margin:2rem 0}.answer-box p{font-size:1.15rem;margin:.55rem 0 0}.news-article .prose{max-width:48rem}</style>

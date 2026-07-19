@@ -261,6 +261,25 @@ for (const pathname of ['/faq/', '/zh/faq/']) {
   faqQuestionsPerLanguage = Math.max(faqQuestionsPerLanguage, visibleItems);
 }
 
+const tabHubs = ['/release-date/','/guides/','/builds/','/faq/','/about/','/zh/release-date/','/zh/guides/','/zh/builds/','/zh/faq/','/zh/about/'];
+for (const pathname of tabHubs) {
+  const page = byPath.get(pathname);
+  if (!page) { fail(`${pathname}: missing tab hub for news module`); continue; }
+  const cards = allMatches(page.html, /<article\s+class=["']tab-news__card["']/gi).length;
+  if (cards !== 5) fail(`${pathname}: expected 5 tab news cards, found ${cards}`);
+}
+
+const tabNewsPages = indexablePages.filter((page) => /^\/(?:zh\/)?news\/[^/]+\/$/.test(page.pathname));
+if (tabNewsPages.length !== 50) fail(`expected 50 indexable tab news URLs, found ${tabNewsPages.length}`);
+for (const page of tabNewsPages) {
+  const newsSchemas = parsedSchemas(page).filter((schema) => schema['@type'] === 'NewsArticle');
+  if (newsSchemas.length !== 1) { fail(`${page.pathname}: expected one NewsArticle schema`); continue; }
+  const citation = Array.isArray(newsSchemas[0].citation) ? newsSchemas[0].citation : [];
+  if (!citation.some((url) => { try { return officialSourceHosts.has(new URL(url).hostname); } catch { return false; } })) {
+    fail(`${page.pathname}: NewsArticle lacks an official citation`);
+  }
+}
+
 const contextualLinks = new Map(indexablePages.map((page) => [normalizePathname(page.pathname), 0]));
 for (const page of pages) {
   for (const match of allMatches(page.html, /<a\s+[^>]*href=["']([^"']+)["']/gi)) {
@@ -294,6 +313,7 @@ console.log(`Canonical mismatches: ${canonicalMismatches}`);
 console.log(`Sitemap/noindex conflicts: ${sitemapNoindex}`);
 console.log(`Cited editorial pages: ${citedEditorialPages}`);
 console.log(`FAQ questions per language: ${faqQuestionsPerLanguage}`);
+console.log(`Indexable tab news URLs: ${tabNewsPages.length}`);
 
 if (warnings.length) {
   console.warn('\nWarnings:');

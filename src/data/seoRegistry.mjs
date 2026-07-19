@@ -61,6 +61,14 @@ export const INDEXABLE_SLUGS = new Set([
   'known-issues-tracker',
 ]);
 
+export const INDEXABLE_TAB_NEWS_SLUGS = new Set([
+  'release-date-july-29-confirmed','pc-and-xbox-platforms-confirmed','xbox-play-anywhere-access-update','ten-supported-languages-announced','pc-system-requirements-published',
+  'official-gameplay-loop-explained','solo-and-three-player-squads-confirmed','six-classes-two-weapon-stances','returner-woodling-extraction-role','pvpve-survival-priorities',
+  'build-system-talents-affixes-skills','weapon-stance-build-planning','gem-affix-priority-framework','solo-vs-squad-build-differences','launch-meta-verification-policy',
+  'bellring-anti-cheat-disclosure','xbox-pc-cross-platform-features','online-coop-two-to-three-players','online-match-player-count-listing','official-no-pay-to-win-position',
+  'bellring-games-and-skystone-publishing','dark-fantasy-pvpve-world-overview','xbox-visual-and-audio-features','steam-hdr-family-sharing-features','deluxe-package-cosmetics-fate-coins',
+]);
+
 export const NOINDEX_REVIEW_NOTES = {
   'ps5-performance': 'Performance details need live console verification.',
   'steam-deck': 'Steam Deck compatibility depends on Proton and anti-cheat behavior after launch.',
@@ -102,6 +110,8 @@ export function isIndexableSlug(slug) {
 export function isIndexablePath(path = '/') {
   const normalized = normalizeSeoPath(path);
   if (INDEXABLE_STATIC_PATHS.has(normalized)) return true;
+  const newsMatch = normalized.match(/^\/(?:zh\/)?news\/([^/]+)\/$/);
+  if (newsMatch) return INDEXABLE_TAB_NEWS_SLUGS.has(newsMatch[1]);
   const slug = slugFromPath(normalized);
   return Boolean(slug) && isIndexableSlug(slug);
 }
@@ -118,6 +128,10 @@ export function getIndexablePaths() {
   for (const slug of INDEXABLE_SLUGS) {
     paths.add(normalizeSeoPath(`/${slug}/`));
     paths.add(normalizeSeoPath(`/zh/${slug}/`));
+  }
+  for (const slug of INDEXABLE_TAB_NEWS_SLUGS) {
+    paths.add(normalizeSeoPath(`/news/${slug}/`));
+    paths.add(normalizeSeoPath(`/zh/news/${slug}/`));
   }
   return [...paths].sort();
 }
