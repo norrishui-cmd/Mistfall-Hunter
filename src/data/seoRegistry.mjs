@@ -10,6 +10,7 @@ export const INDEXABLE_STATIC_PATHS = new Set([
   '/map/',
   '/performance/',
   '/faq/',
+  '/game-data/',
   '/sources/',
   '/updates/',
   '/sitemap/',
@@ -22,6 +23,7 @@ export const INDEXABLE_STATIC_PATHS = new Set([
   '/zh/map/',
   '/zh/performance/',
   '/zh/faq/',
+  '/zh/game-data/',
   '/zh/sources/',
   '/zh/updates/',
   '/zh/sitemap/',
@@ -69,6 +71,13 @@ export const INDEXABLE_TAB_NEWS_SLUGS = new Set([
   'bellring-games-and-skystone-publishing','dark-fantasy-pvpve-world-overview','xbox-visual-and-audio-features','steam-hdr-family-sharing-features','deluxe-package-cosmetics-fate-coins',
 ]);
 
+export const INDEXABLE_GAME_DATA_SLUGS = new Set([
+  'withered-knight','mercenary','shadowstrix','sorcerer','blackarrow','seer',
+  'holy-weapons','keys-and-treasure-chambers','legendary-class-sets','equipment-vouchers','friend-equipment-return',
+  'brandrgarde-cataclysm','season-one-soul-hunt','fate-chart','ancestor-tree','pve-soul-revival',
+  'open-beta-ended','beta-rewards','beta-regions-languages-controller','beta-new-content',
+]);
+
 export const NOINDEX_REVIEW_NOTES = {
   'ps5-performance': 'Performance details need live console verification.',
   'steam-deck': 'Steam Deck compatibility depends on Proton and anti-cheat behavior after launch.',
@@ -112,6 +121,8 @@ export function isIndexablePath(path = '/') {
   if (INDEXABLE_STATIC_PATHS.has(normalized)) return true;
   const newsMatch = normalized.match(/^\/(?:zh\/)?news\/([^/]+)\/$/);
   if (newsMatch) return INDEXABLE_TAB_NEWS_SLUGS.has(newsMatch[1]);
+  const dataMatch = normalized.match(/^\/(?:zh\/)?game-data\/([^/]+)\/$/);
+  if (dataMatch) return INDEXABLE_GAME_DATA_SLUGS.has(dataMatch[1]);
   const slug = slugFromPath(normalized);
   return Boolean(slug) && isIndexableSlug(slug);
 }
@@ -132,6 +143,10 @@ export function getIndexablePaths() {
   for (const slug of INDEXABLE_TAB_NEWS_SLUGS) {
     paths.add(normalizeSeoPath(`/news/${slug}/`));
     paths.add(normalizeSeoPath(`/zh/news/${slug}/`));
+  }
+  for (const slug of INDEXABLE_GAME_DATA_SLUGS) {
+    paths.add(normalizeSeoPath(`/game-data/${slug}/`));
+    paths.add(normalizeSeoPath(`/zh/game-data/${slug}/`));
   }
   return [...paths].sort();
 }

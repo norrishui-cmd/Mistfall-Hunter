@@ -19,6 +19,7 @@ const items: NavItem[] = [
   { labelKey: 'nav.release', path: '/release-date' },
   { labelKey: 'nav.guides', path: '/guides' },
   { labelKey: 'nav.builds', path: '/builds' },
+  ...(lang === 'en' || lang === 'zh' ? [{ labelKey: 'nav.data', path: '/game-data' }] : []),
   ...(lang === 'en' || lang === 'zh' ? [{ labelKey: 'nav.faq', path: '/faq' }] : []),
   { labelKey: 'nav.about', path: '/about' },
 ];

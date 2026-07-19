@@ -72,7 +72,7 @@ const pages = htmlFiles.map((file) => {
 const byPath = new Map(pages.map((page) => [normalizePathname(page.pathname), page]));
 const indexablePages = pages.filter((page) => !/noindex/i.test(page.robots));
 const noindexPages = pages.filter((page) => /noindex/i.test(page.robots));
-const officialSourceHosts = new Set(['store.steampowered.com', 'www.xbox.com']);
+const officialSourceHosts = new Set(['store.steampowered.com', 'steamcommunity.com', 'www.xbox.com']);
 
 function parsedSchemas(page) {
   return page.jsonLd.flatMap((raw) => {
@@ -102,8 +102,8 @@ for (const page of pages) {
   if (!isNoindex && /(to confirm|unconfirmed|watch for updates|check at launch|exact values are unknown)/i.test(page.html)) {
     warn(`${page.pathname}: indexable page contains uncertainty-heavy language`);
   }
-  if (!isNoindex && /(July 30(?:, 2026)?|7\s*月\s*30\s*日|2026-07-30)/i.test(page.html)) {
-    fail(`${page.pathname}: stale July 30 release date conflicts with official storefront listings`);
+  if (!isNoindex && /(pricing (?:is|remains) unconfirmed|还没有锁定最终定价|尚未官方确认.*价格)/i.test(page.html)) {
+    fail(`${page.pathname}: stale unconfirmed-pricing language after the July 17 official announcement`);
   }
   for (const raw of page.jsonLd) {
     try {
@@ -287,6 +287,15 @@ for (const page of tabNewsPages) {
   }
 }
 
+const gameDataPages = indexablePages.filter((page) => /^\/(?:zh\/)?game-data\/[^/]+\/$/.test(page.pathname));
+if (gameDataPages.length !== 40) fail(`expected 40 indexable game-data URLs, found ${gameDataPages.length}`);
+for (const pathname of ['/game-data/','/zh/game-data/']) {
+  const page = byPath.get(pathname);
+  if (!page) { fail(`${pathname}: missing game-data hub`); continue; }
+  const cards = allMatches(page.html, /class=["']data-card["']/gi).length;
+  if (cards !== 20) fail(`${pathname}: expected 20 game-data cards, found ${cards}`);
+}
+
 const contextualLinks = new Map(indexablePages.map((page) => [normalizePathname(page.pathname), 0]));
 for (const page of pages) {
   for (const match of allMatches(page.html, /<a\s+[^>]*href=["']([^"']+)["']/gi)) {
@@ -321,6 +330,7 @@ console.log(`Sitemap/noindex conflicts: ${sitemapNoindex}`);
 console.log(`Cited editorial pages: ${citedEditorialPages}`);
 console.log(`FAQ questions per language: ${faqQuestionsPerLanguage}`);
 console.log(`Indexable tab news URLs: ${tabNewsPages.length}`);
+console.log(`Indexable game-data URLs: ${gameDataPages.length}`);
 
 if (warnings.length) {
   console.warn('\nWarnings:');

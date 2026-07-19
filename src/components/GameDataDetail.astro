@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'; import { gameDataClusters, type GameDataItem } from '../data/gameData';
+interface Props{lang:'en'|'zh';item:GameDataItem} const {lang,item}=Astro.props as Props;const zh=lang==='zh';const c=zh?item.zh:item.en;const prefix=zh?'/zh':'';const url=`https://mistfallhunter.me${prefix}/game-data/${item.slug}/`;const cluster=gameDataClusters[item.cluster];
+const schema={'@context':'https://schema.org','@type':'Article',headline:c.title,description:c.description,url,inLanguage:zh?'zh-Hans':'en',dateModified:item.updated,datePublished:item.updated,author:{'@type':'Organization',name:'Mistfall Hunter Wiki and Hub'},publisher:{'@type':'Organization',name:'Mistfall Hunter Wiki and Hub'},citation:[item.source],mainEntityOfPage:url,isAccessibleForFree:true};
+---
+<BaseLayout lang={lang} path={`/game-data/${item.slug}`} title={c.title} description={c.description} jsonLd={[schema]}>
+  <article class="section"><div class="container detail"><nav class="breadcrumbs"><a href={`${prefix}/`}>{zh?'首页':'Home'}</a><span>›</span><a href={`${prefix}/game-data`}>{zh?'游戏数据':'Game data'}</a><span>›</span><span>{zh?cluster.zh:cluster.en}</span></nav>
+    <span class="eyebrow">{zh?cluster.zh:cluster.en}</span><h1 class="page-title">{c.title}</h1><p class="lead">{c.description}</p><p class="meta">{zh?'最后核实':'Last verified'}: <time datetime={item.updated}>{item.updated}</time> · <a href={item.source} rel="noopener noreferrer">{zh?'官方公告来源':'Official announcement source'}</a></p>
+    <div class="answer"><span class="eyebrow">{zh?'直接答案':'Direct answer'}</span><p>{c.answer}</p></div>
+    <div class="prose"><h2>{zh?'已确认数据':'Confirmed data'}</h2><ul>{c.facts.map(f=><li>{f}</li>)}</ul><h2>{zh?'对玩家有什么影响':'What it means for players'}</h2><ul>{c.implications.map(x=><li>{x}</li>)}</ul><h2>{zh?'仍需追踪':'What still needs tracking'}</h2><p>{c.watch}</p><h2>{zh?'数据质量说明':'Data quality note'}</h2><p>{zh?'本站把官方已发布事实、测试期观察和未来开发计划分开处理。尚未公开的数值、坐标与掉率不会被写成已确认。':'This database separates published facts, playtest observations and future development plans. Unreleased values, coordinates and drop rates are not presented as confirmed.'}</p></div>
+    <p class="back"><a href={`${prefix}/game-data#${item.cluster}`}>{zh?'← 返回该数据分类':'← Back to this data cluster'}</a></p>
+  </div></article>
+</BaseLayout>
+<style>.detail{max-width:58rem}.breadcrumbs,.meta{display:flex;flex-wrap:wrap;gap:.55rem;color:var(--ash);margin-bottom:2rem}.meta{font-size:.85rem;margin:1rem 0 2rem}.answer{border-left:4px solid var(--gylden);background:var(--stone);padding:1.2rem 1.4rem;margin:2rem 0}.answer p{font-size:1.15rem;margin:.5rem 0 0}.back{margin-top:3rem}</style>

@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { gameData, gameDataClusters } from '../data/gameData';
+interface Props { lang:'en'|'zh' }
+const { lang } = Astro.props as Props; const zh=lang==='zh'; const prefix=zh?'/zh':'';
+const title=zh?'Mistfall Hunter 最新游戏数据：角色、道具、特别玩法与 Demo':'Mistfall Hunter Game Data: Characters, Items, Special Modes & Demo';
+const description=zh?'基于官方更新整理的 Mistfall Hunter 角色职业、道具装备、特别玩法、地图机制和 Demo 测试数据。':'Officially sourced Mistfall Hunter data for characters, classes, items, equipment, special gameplay, maps and the completed demo playtest.';
+---
+<BaseLayout lang={lang} path="/game-data" title={title} description={description} jsonLd={[{'@context':'https://schema.org','@type':'CollectionPage',name:title,description,url:`https://mistfallhunter.me${prefix}/game-data/`,numberOfItems:gameData.length}]}>
+  <section class="section"><div class="container">
+    <span class="eyebrow">{zh?'游戏资料库':'Game database'}</span><h1 class="page-title">{title}</h1><p class="lead">{description}</p>
+    <div class="callout"><strong>{zh?'当前规模：':'Current coverage: '}{gameData.length} {zh?'个独立数据页':'independent data pages'}</strong><p>{zh?'信息依据 Steam 官方公告；测试期内容、正式内容与未来计划分别标注。':'Facts are checked against official Steam announcements, with test content, launch content and future plans labeled separately.'}</p></div>
+    {Object.entries(gameDataClusters).map(([id,cluster])=><section class="data-cluster" id={id}>
+      <div class="cluster-head"><div><span class="eyebrow">{id}</span><h2>{zh?cluster.zh:cluster.en}</h2><p>{zh?cluster.descZh:cluster.descEn}</p></div><strong>{gameData.filter(i=>i.cluster===id).length}</strong></div>
+      <div class="data-grid">{gameData.filter(i=>i.cluster===id).map(item=>{const c=zh?item.zh:item.en;return <a class="data-card" href={`${prefix}/game-data/${item.slug}`}><time datetime={item.updated}>{item.updated}</time><h3>{c.title}</h3><p>{c.description}</p><span>{zh?'查看数据 →':'Open data →'}</span></a>})}</div>
+    </section>)}
+  </div></section>
+</BaseLayout>
+<style>.data-cluster{margin-top:4rem;scroll-margin-top:7rem}.cluster-head{display:flex;justify-content:space-between;gap:1rem;align-items:end;border-bottom:1px solid var(--line);padding-bottom:1rem}.cluster-head h2{font-size:2.3rem;margin:.3rem 0}.cluster-head p{color:var(--ash);margin:0}.cluster-head>strong{font:2.5rem var(--display);color:var(--gylden)}.data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1rem}.data-card{display:flex;flex-direction:column;padding:1.1rem;background:var(--stone);border:1px solid var(--line);text-decoration:none}.data-card time{font: .7rem var(--mono);color:var(--ash)}.data-card h3{font-size:1.2rem;color:var(--bone);margin:.6rem 0}.data-card p{color:var(--ash);font-size:.9rem;line-height:1.55}.data-card>span{margin-top:auto}@media(max-width:800px){.data-grid{grid-template-columns:1fr}.cluster-head{align-items:start}}</style>
