@@ -1,0 +1,29 @@
+---
+import { faq100 } from '../data/faq100';
+type Cluster = 'release' | 'guides' | 'builds' | 'about';
+interface Props { cluster: Cluster; lang: 'en' | 'zh' }
+const { cluster, lang } = Astro.props as Props;
+const zh = lang === 'zh';
+const ids: Record<Cluster, number[]> = {
+  release: [101, 102, 103, 104, 105],
+  guides: [111, 112, 113, 114, 115],
+  builds: [116, 121, 123, 124, 125],
+  about: [101, 102, 106, 110, 119],
+};
+const items = ids[cluster].map((id) => faq100.find((item) => item.id === id)).filter(Boolean);
+const prefix = zh ? '/zh' : '';
+---
+<section class="related-faq" aria-labelledby={`related-faq-${cluster}`}>
+  <div class="related-faq__heading">
+    <div><span class="eyebrow">{zh ? '快速问答' : 'Quick answers'}</span><h2 id={`related-faq-${cluster}`}>{zh ? '相关 FAQ' : 'Related FAQ'}</h2></div>
+    <a href={`${prefix}/faq`}>{zh ? '查看全部 150 条 →' : 'View all 150 →'}</a>
+  </div>
+  <div class="related-faq__grid">
+    {items.map((item) => item && <a class="related-faq__item" href={`${prefix}/faq#q${item.id}`}>
+      <span>{item.id}</span><strong>{zh ? item.zh.q : item.en.q}</strong><small>{zh ? '查看答案 →' : 'Read answer →'}</small>
+    </a>)}
+  </div>
+</section>
+<style>
+  .related-faq{margin-top:clamp(3rem,7vw,5rem);padding-top:2rem;border-top:1px solid var(--line)}.related-faq__heading{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1.2rem}.related-faq__heading h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:.3rem 0 0}.related-faq__grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.7rem}.related-faq__item{display:flex;flex-direction:column;gap:.65rem;min-height:10rem;padding:1rem;border:1px solid var(--line);background:var(--stone);text-decoration:none}.related-faq__item>span{font-family:var(--mono);font-size:.72rem;color:var(--gylden)}.related-faq__item strong{color:var(--bone);line-height:1.4}.related-faq__item small{margin-top:auto;color:var(--gylden)}@media(max-width:950px){.related-faq__grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.related-faq__grid{grid-template-columns:1fr}.related-faq__heading{align-items:start;flex-direction:column}}
+</style>

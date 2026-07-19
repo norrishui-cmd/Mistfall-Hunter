@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TabNewsModule from '../../components/TabNewsModule.astro';
+import RelatedFaqModule from '../../components/RelatedFaqModule.astro';
 import { BUILDS, CLASS_LIST, AFFIXES, TAG_ZH } from '../../data/builds';
 
 const lang = 'zh' as const;
@@ -136,6 +137,7 @@ const faqSchema = {
         ))}
       </div>
       <TabNewsModule cluster="builds" lang={lang} />
+      <RelatedFaqModule cluster="builds" lang={lang} />
     </div>
   </section>
 </BaseLayout>

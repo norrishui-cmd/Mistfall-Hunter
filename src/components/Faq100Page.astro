@@ -7,10 +7,10 @@ interface Props { lang: 'en' | 'zh' }
 const { lang } = Astro.props as Props;
 const zh = lang === 'zh';
 const path = '/faq';
-const title = zh ? 'Mistfall Hunter 常见问题 FAQ：100 个问题完整解答' : 'Mistfall Hunter FAQ: 100 Questions Answered';
+const title = zh ? 'Mistfall Hunter 常见问题 FAQ：150 个真实问题完整解答' : 'Mistfall Hunter FAQ: 150 Real Questions Answered';
 const description = zh
-  ? 'Mistfall Hunter 100 条常见问题：发售日、平台、职业、战斗、地图、战利品、联机、配置和故障排查。基于 Steam 与 Xbox 官方信息持续更新。'
-  : '100 Mistfall Hunter questions answered: release date, platforms, classes, combat, maps, loot, multiplayer, system requirements and troubleshooting.';
+  ? 'Mistfall Hunter 150 条真实常见问题：发售日、平台、职业、战斗、地图、战利品、联机、配置和故障排查。基于 Steam 与 Xbox 官方信息持续更新。'
+  : '150 real Mistfall Hunter questions answered: release, platforms, classes, combat, maps, loot, multiplayer, requirements and troubleshooting.';
 const local = (href: string) => zh ? `/zh${href}` : href;
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -43,7 +43,7 @@ const breadcrumbSchema = {
       <h1>{title}</h1>
       <p class="lead">{description}</p>
       <div class="faq-stats" aria-label={zh ? 'FAQ 概览' : 'FAQ overview'}>
-        <span><strong>100</strong> {zh ? '个问题' : 'questions'}</span>
+        <span><strong>150</strong> {zh ? '个问题' : 'questions'}</span>
         <span><strong>10</strong> {zh ? '大主题' : 'topics'}</span>
         <span><strong>2</strong> {zh ? '个官方来源' : 'official sources'}</span>
       </div>

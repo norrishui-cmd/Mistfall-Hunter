@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CoreQualityPanel from '../components/CoreQualityPanel.astro';
 import TabNewsModule from '../components/TabNewsModule.astro';
+import RelatedFaqModule from '../components/RelatedFaqModule.astro';
 
 const lang = 'en' as const;
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
@@ -170,6 +171,7 @@ const breadcrumbSchema = {
         ))}
       </div>
       <TabNewsModule cluster="release" lang={lang} />
+      <RelatedFaqModule cluster="release" lang={lang} />
     </div>
   </section>
 </BaseLayout>

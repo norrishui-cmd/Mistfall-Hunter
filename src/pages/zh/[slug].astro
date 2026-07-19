@@ -5,6 +5,7 @@ import FaqBlock from '../../components/FaqBlock.astro';
 import SeoPageModules from '../../components/SeoPageModules.astro';
 import QualitySignals from '../../components/QualitySignals.astro';
 import TabNewsModule from '../../components/TabNewsModule.astro';
+import RelatedFaqModule from '../../components/RelatedFaqModule.astro';
 import { getSeoPages, isIndexable } from '../../data/seoPages';
 import type { SeoPage } from '../../data/seoPages';
 import { lastUpdated, sources } from '../../data/siteQuality';
@@ -128,6 +129,7 @@ const faqSchema = page.faqs
 
       <FaqBlock faqs={page.faqs} title="常见问题" />
       {(page.slug === 'guides' || page.slug === 'about') && <TabNewsModule cluster={page.slug} lang={lang} />}
+      {(page.slug === 'guides' || page.slug === 'about') && <RelatedFaqModule cluster={page.slug} lang={lang} />}
       {page.slug === 'news' && <Fragment>
         <TabNewsModule cluster="release" lang={lang} /><TabNewsModule cluster="guides" lang={lang} />
         <TabNewsModule cluster="builds" lang={lang} /><TabNewsModule cluster="faq" lang={lang} /><TabNewsModule cluster="about" lang={lang} />

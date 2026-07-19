@@ -245,7 +245,7 @@ for (const pathname of ['/faq/', '/zh/faq/']) {
     continue;
   }
   const visibleItems = allMatches(page.html, /<article\s+class=["']faq-item["']/gi).length;
-  if (visibleItems !== 100) fail(`${pathname}: expected 100 visible FAQ items, found ${visibleItems}`);
+  if (visibleItems !== 150) fail(`${pathname}: expected 150 visible FAQ items, found ${visibleItems}`);
   for (const sourceUrl of [
     'https://store.steampowered.com/app/3282300/Mistfall_Hunter/',
     'https://www.xbox.com/en-US/games/store/mistfall-hunter/9p8x6tvw9zw8',
@@ -255,10 +255,17 @@ for (const pathname of ['/faq/', '/zh/faq/']) {
   const faqSchemas = parsedSchemas(page).filter((schema) => schema['@type'] === 'FAQPage');
   if (faqSchemas.length !== 1) fail(`${pathname}: expected one FAQPage schema, found ${faqSchemas.length}`);
   const entities = faqSchemas[0]?.mainEntity ?? [];
-  if (entities.length !== 100) fail(`${pathname}: expected 100 FAQPage entities, found ${entities.length}`);
+  if (entities.length !== 150) fail(`${pathname}: expected 150 FAQPage entities, found ${entities.length}`);
   const names = entities.map((entity) => entity.name).filter(Boolean);
   if (new Set(names).size !== names.length) fail(`${pathname}: duplicate FAQ questions found`);
   faqQuestionsPerLanguage = Math.max(faqQuestionsPerLanguage, visibleItems);
+}
+
+for (const pathname of ['/release-date/','/guides/','/builds/','/about/','/zh/release-date/','/zh/guides/','/zh/builds/','/zh/about/']) {
+  const page = byPath.get(pathname);
+  if (!page) continue;
+  const relatedFaqLinks = allMatches(page.html, /class=["']related-faq__item["']/gi).length;
+  if (relatedFaqLinks !== 5) fail(`${pathname}: expected 5 related FAQ entry links, found ${relatedFaqLinks}`);
 }
 
 const tabHubs = ['/release-date/','/guides/','/builds/','/faq/','/about/','/zh/release-date/','/zh/guides/','/zh/builds/','/zh/faq/','/zh/about/'];
