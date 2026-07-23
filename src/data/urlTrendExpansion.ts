@@ -1,6 +1,14 @@
 import type { SeoPage } from './seoPages';
 import type { PriorityLink } from './priorityLinks';
 
+// Strips a leading "mistfall hunter " from a raw trend phrase (most briefs'
+// `trend` field already starts with the brand name) and title-cases the
+// rest, so the default title template doesn't duplicate the brand name.
+function capitalizeTrend(trend: string): string {
+  const stripped = trend.replace(/^mistfall hunter\s+/i, '');
+  return stripped.replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
 type TrendBrief = {
   slug: string;
   group: PriorityLink['group'];
@@ -10,6 +18,18 @@ type TrendBrief = {
   intent: string;
   answer: string;
   update: string;
+  // Optional clean, reader-facing title/H1. Without this, the default
+  // template below concatenates "Mistfall Hunter " + brief.trend, and
+  // brief.trend already starts with "mistfall hunter" for most entries —
+  // producing a duplicated brand name plus an exposed internal growth
+  // percentage and "Trend Guide" label (e.g. "Mistfall Hunter mistfall
+  // hunter gameplay: +70% Trend Guide"). That shipped live on 5 pages
+  // (gameplay-overview, steam-charts-player-count, steam-page-guide,
+  // crossplay-status, price-status) before being caught on 2026-07-24 via
+  // real GSC performance data — set title/h1 for any brief before promoting
+  // it.
+  title?: string;
+  h1?: string;
 };
 
 const trendCards = [
@@ -31,13 +51,13 @@ const classCards = [
 ];
 
 const briefs: TrendBrief[] = [
-  { slug: 'steam-charts-player-count', group: 'news', template: 'faq', trend: 'mistfall hunter steam charts', growth: '+160%', intent: 'players checking whether launch interest is rising on Steam', answer: 'Track Steam charts carefully, but separate demo interest, wishlists, concurrent players, and launch-day population.', update: 'After launch, add verified SteamDB or Steam chart snapshots, peak concurrent players, and daily trend notes.' },
+  { slug: 'steam-charts-player-count', group: 'news', template: 'faq', trend: 'mistfall hunter steam charts', growth: '+160%', intent: 'players checking whether launch interest is rising on Steam', answer: 'Track Steam charts carefully, but separate demo interest, wishlists, concurrent players, and launch-day population.', update: 'After launch, add verified SteamDB or Steam chart snapshots, peak concurrent players, and daily trend notes.', title: 'Mistfall Hunter Steam Charts & Player Count Tracker', h1: 'Steam Charts & Player Count' },
   { slug: 'steamdb-player-count', group: 'news', template: 'faq', trend: 'mistfall hunter steamdb', growth: 'steam charts adjacent', intent: 'players looking for SteamDB-style concurrent player data', answer: 'Use SteamDB-like player-count pages only for public concurrency signals, not as a full measure of cross-platform population.', update: 'Add live Steam app data after launch when public tracking is stable.' },
   { slug: 'concurrent-players-tracker', group: 'news', template: 'faq', trend: 'mistfall hunter concurrent players', growth: 'steam charts adjacent', intent: 'players searching peak players and launch population', answer: 'Concurrent player pages should explain platform limits: Steam numbers do not include Xbox, Game Pass, or PS5 players.', update: 'Add launch-day peaks, first weekend peaks, and post-patch changes after release.' },
   { slug: 'player-count-launch-week', group: 'news', template: 'faq', trend: 'mistfall hunter player count launch week', growth: 'steam charts adjacent', intent: 'players tracking first-week popularity', answer: 'Launch-week player count should be interpreted with queue, region, Game Pass, and console access context.', update: 'Refresh daily during launch week with public numbers and notes.' },
   { slug: 'steam-charts-explained', group: 'news', template: 'faq', trend: 'mistfall hunter steam charts explained', growth: 'steam charts adjacent', intent: 'players trying to understand what Steam charts mean', answer: 'Steam charts show Steam activity only. They are useful for momentum but not a complete population report.', update: 'Add examples once launch numbers exist.' },
 
-  { slug: 'gameplay-overview', group: 'guides', template: 'guide', trend: 'mistfall hunter gameplay', growth: '+70%', intent: 'players who saw rising gameplay searches and want the core loop fast', answer: 'Mistfall Hunter gameplay is best explained as dark fantasy PvPvE extraction: enter, fight, loot, secure extraction, and leave before greed wins.', update: 'Add launch gameplay clips, route examples, and class-specific footage after release.' },
+  { slug: 'gameplay-overview', group: 'guides', template: 'guide', trend: 'mistfall hunter gameplay', growth: '+70%', intent: 'players who saw rising gameplay searches and want the core loop fast', answer: 'Mistfall Hunter gameplay is best explained as dark fantasy PvPvE extraction: enter, fight, loot, secure extraction, and leave before greed wins.', update: 'Add launch gameplay clips, route examples, and class-specific footage after release.', title: 'Mistfall Hunter Gameplay: Core Loop, Combat & Extraction Explained', h1: 'Mistfall Hunter Gameplay Explained' },
   { slug: 'gameplay-loop-explained', group: 'guides', template: 'guide', trend: 'mistfall hunter gameplay loop', growth: 'gameplay adjacent', intent: 'players asking what you actually do in a run', answer: 'A run should be understood as objective choice, risk reading, loot selection, PvE pressure, PvP contact, and extraction timing.', update: 'Add step-by-step launch-run screenshots after release.' },
   { slug: 'gameplay-trailer-breakdown', group: 'news', template: 'guide', trend: 'mistfall hunter gameplay trailer', growth: 'gameplay adjacent', intent: 'players searching trailer details before launch', answer: 'Trailer pages should break down confirmed systems without inventing hidden mechanics: classes, combat, extraction, bosses, and map tone.', update: 'Update when new launch trailers or official videos are released.' },
   { slug: 'first-30-minutes-guide', group: 'guides', template: 'guide', trend: 'mistfall hunter first gameplay', growth: 'gameplay adjacent', intent: 'players preparing for their first session', answer: 'The first 30 minutes should focus on class feel, exits, stamina, cheap gear, and one successful extraction rather than boss rushing.', update: 'Add exact tutorial and first-run notes after launch.' },
@@ -57,19 +77,19 @@ const briefs: TrendBrief[] = [
   { slug: 'launch-week-roadmap', group: 'news', template: 'faq', trend: 'mistfall hunter launch week', growth: 'release date adjacent', intent: 'players looking for first-week updates', answer: 'Launch-week pages should track known issues, patches, server stability, class changes, and player count signals.', update: 'Refresh with official patch notes and server notices.' },
   { slug: 'pre-launch-guide', group: 'guides', template: 'guide', trend: 'mistfall hunter before launch', growth: 'release date adjacent', intent: 'players asking what to learn before release', answer: 'Before launch, learn extraction logic, class roles, Steam/Game Pass access, and performance settings instead of memorizing unverified meta.', update: 'Replace pre-launch advice with live beginner routing after release.' },
 
-  { slug: 'steam-page-guide', group: 'news', template: 'faq', trend: 'mistfall hunter steam', growth: '+30%', intent: 'players searching the Steam page and PC access', answer: 'Steam pages should answer wishlist, demo, install, release timing, system requirements, and Steam Deck questions.', update: 'Add official Steam app details, file size, and reviews after release.' },
+  { slug: 'steam-page-guide', group: 'news', template: 'faq', trend: 'mistfall hunter steam', growth: '+30%', intent: 'players searching the Steam page and PC access', answer: 'The Steam page covers wishlist, demo, install, release timing, system requirements, and Steam Deck questions.', update: 'Add official Steam app details, file size, and reviews after release.', title: 'Mistfall Hunter on Steam: Wishlist, Demo & Store Page Guide', h1: 'Mistfall Hunter on Steam' },
   { slug: 'steam-release-time', group: 'news', template: 'faq', trend: 'mistfall hunter steam release time', growth: 'steam adjacent', intent: 'Steam users checking unlock timing', answer: 'Steam release timing should be separated from console and Game Pass availability if store unlocks differ.', update: 'Add final Steam unlock time when listed.' },
   { slug: 'steam-demo-guide', group: 'news', template: 'faq', trend: 'mistfall hunter steam demo', growth: 'steam adjacent', intent: 'players searching demo status after Steam Next Fest', answer: 'Demo pages should explain availability, lessons learned, progress wipe expectations, and what carries into launch.', update: 'Refresh with current Steam demo availability.' },
   { slug: 'steam-reviews-tracker', group: 'news', template: 'faq', trend: 'mistfall hunter steam reviews', growth: 'steam adjacent', intent: 'players checking early reception', answer: 'Review tracker pages should wait for real launch reviews and summarize themes without cherry-picking.', update: 'Add review score, common praise, and common issues after launch.' },
   { slug: 'steam-wishlist-guide', group: 'news', template: 'faq', trend: 'mistfall hunter wishlist', growth: 'steam adjacent', intent: 'players looking for Steam pre-launch actions', answer: 'Wishlist guidance should point players to official store pages, demo notes, and launch reminders.', update: 'Convert to launch install guide once the game releases.' },
 
-  { slug: 'crossplay-status', group: 'news', template: 'faq', trend: 'mistfall hunter crossplay', growth: '+7%', intent: 'players checking whether PC, Xbox, and PS5 can play together', answer: 'Crossplay should be treated as a confirmation-needed topic until official platform-party wording is available.', update: 'Add confirmed crossplay, cross-progression, and party rules when announced.' },
+  { slug: 'crossplay-status', group: 'news', template: 'faq', trend: 'mistfall hunter crossplay', growth: '+7%', intent: 'players checking whether PC, Xbox, and PS5 can play together', answer: 'Crossplay across PC, Xbox, and PS5 has no final confirmed answer yet; this page tracks status and updates once official wording lands.', update: 'Add confirmed crossplay, cross-progression, and party rules when announced.', title: 'Mistfall Hunter Crossplay Status: PC, Xbox & PS5', h1: 'Mistfall Hunter Crossplay Status' },
   { slug: 'cross-platform-party-guide', group: 'news', template: 'faq', trend: 'mistfall hunter cross platform party', growth: 'crossplay adjacent', intent: 'friends planning mixed-platform squads', answer: 'This page should separate crossplay, cross-progression, Xbox Play Anywhere, Game Pass, and platform matchmaking.', update: 'Add official party and account-linking details when verified.' },
   { slug: 'cross-progression-guide', group: 'news', template: 'faq', trend: 'mistfall hunter cross progression', growth: 'crossplay adjacent', intent: 'players asking if progress carries across platforms', answer: 'Cross-progression should not be assumed. The page should explain what is confirmed and what remains unknown.', update: 'Add official account and save-transfer details if announced.' },
   { slug: 'pc-xbox-crossplay-guide', group: 'news', template: 'faq', trend: 'mistfall hunter pc xbox crossplay', growth: 'crossplay adjacent', intent: 'PC and Xbox players checking party compatibility', answer: 'PC-Xbox access may involve Steam, Xbox app, Game Pass, and platform services, so the page should avoid one-size-fits-all claims.', update: 'Verify with official platform support after launch.' },
   { slug: 'ps5-crossplay-guide', group: 'news', template: 'faq', trend: 'mistfall hunter ps5 crossplay', growth: 'crossplay adjacent', intent: 'PS5 players checking mixed-platform play', answer: 'PS5 crossplay needs explicit official confirmation before being promoted as supported.', update: 'Add PlayStation store and official support wording when available.' },
 
-  { slug: 'price-status', group: 'news', template: 'faq', trend: 'mistfall hunter price', growth: '+2%', intent: 'players checking launch price and access options', answer: 'Price pages should separate Steam purchase price, Game Pass access, console store labels, and any free-to-play wording.', update: 'Refresh with official store price at launch.' },
+  { slug: 'price-status', group: 'news', template: 'faq', trend: 'mistfall hunter price', growth: '+2%', intent: 'players checking launch price and access options', answer: 'Standard Edition is $24.99, Deluxe is $39.99 with a $15 upgrade, plus a 10% launch discount. Day one on Xbox Game Pass, not on PS Plus.', update: 'Refresh with official store price at launch.', title: 'Mistfall Hunter Price: Standard, Deluxe & Game Pass Status', h1: 'Mistfall Hunter Price & Access' },
   { slug: 'steam-price-guide', group: 'news', template: 'faq', trend: 'mistfall hunter steam price', growth: 'price adjacent', intent: 'Steam users checking cost', answer: 'Steam price should be pulled from the store when final. Until then, mark pricing as pending rather than guessing.', update: 'Add exact regional Steam price after launch.' },
   { slug: 'xbox-price-guide', group: 'news', template: 'faq', trend: 'mistfall hunter xbox price', growth: 'price adjacent', intent: 'Xbox players checking purchase or subscription access', answer: 'Xbox price guidance should explain store purchase, Game Pass access, and possible edition differences separately.', update: 'Add final Xbox store price and Game Pass wording.' },
   { slug: 'ps5-price-guide', group: 'news', template: 'faq', trend: 'mistfall hunter ps5 price', growth: 'price adjacent', intent: 'PS5 players checking purchase cost', answer: 'PS5 price should be verified from PlayStation store listings rather than inferred from other platforms.', update: 'Add final PS5 store price after listing updates.' },
@@ -101,26 +121,27 @@ function cardsFor(brief: TrendBrief) {
 }
 
 function createPage(brief: TrendBrief): SeoPage {
+  const cleanTitle = brief.title ?? `Mistfall Hunter ${capitalizeTrend(brief.trend)}`;
+  const cleanH1 = brief.h1 ?? capitalizeTrend(brief.trend);
   return {
     slug: brief.slug,
     group: brief.group,
     template: brief.template,
-    title: `Mistfall Hunter ${brief.trend}: ${brief.growth} Trend Guide`,
-    description: `Mistfall Hunter ${brief.trend} guide based on the latest rising search trend (${brief.growth}), with launch-week answers, verification notes, and related routes.`,
-    eyebrow: 'Trend URL',
-    h1: `Mistfall Hunter ${brief.trend}`,
-    lead: `Google Trends shows this query moving recently (${brief.growth}). This page is built to answer the search intent quickly while leaving room for verified launch-week data.`,
+    title: cleanTitle,
+    description: `${brief.answer} Updated for launch week.`,
+    eyebrow: 'Launch watch',
+    h1: cleanH1,
+    lead: brief.answer,
     intent: {
-      primary: `Mistfall Hunter ${brief.trend}`,
+      primary: cleanH1,
       secondary: [brief.trend, `${brief.trend} guide`, `${brief.trend} 2026`],
       freshness: brief.update,
     },
     checklist: [
-      `Trend signal: ${brief.growth}`,
       `Search intent: ${brief.intent}`,
       `Direct answer: ${brief.answer}`,
-      'Update with official or live launch data before making exact claims',
-      'Link users into release, Steam, gameplay, class, or platform hubs',
+      'Updated with official or live launch data as it becomes available.',
+      'See the release, Steam, gameplay, class, or platform hubs for related detail.',
     ],
     steps: [
       { title: 'Answer the trend query first', body: brief.answer },
