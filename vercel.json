@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.mistfallhunter.me" }],
+      "destination": "https://mistfallhunter.me/:path*",
+      "permanent": true
+    }
+  ]
+}
