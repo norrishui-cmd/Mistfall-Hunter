@@ -17,8 +17,8 @@ type RapidBrief = {
 
 const classHub = [
   { title: 'Classes', desc: 'Compare all confirmed class roles.', href: '/classes' },
-  { title: 'Class skill trees', desc: 'Plan upgrades by role before exact nodes are verified.', href: '/class-skill-trees' },
-  { title: 'Best solo class', desc: 'Solo picks by safety and fight control.', href: '/best-solo-class' },
+  { title: 'Builds', desc: 'Plan upgrades and gear direction by role.', href: '/builds' },
+  { title: 'Best class for beginners', desc: 'Safe first picks by learning curve and risk.', href: '/best-class-for-beginners' },
 ];
 
 const mapHub = [

@@ -14,14 +14,14 @@ type TrendBrief = {
 
 const trendCards = [
   { title: 'Release date', desc: 'Launch timing, platforms, Game Pass, and pricing status.', href: '/release-date' },
-  { title: 'Steam launch guide', desc: 'Steam page, demo lessons, install prep, and first runs.', href: '/steam-launch-guide' },
+  { title: 'Steam page guide', desc: 'Steam page, demo lessons, install prep, and first runs.', href: '/steam-page-guide' },
   { title: 'Gameplay guide', desc: 'Combat, extraction, loot, PvP, and class basics.', href: '/gameplay-overview' },
 ];
 
 const platformCards = [
-  { title: 'Xbox Game Pass guide', desc: 'Access, install, and launch checklist.', href: '/xbox-game-pass-guide' },
-  { title: 'Crossplay guide', desc: 'PC, Xbox, PS5, party, and account questions.', href: '/crossplay-guide' },
-  { title: 'Price guide', desc: 'Free-to-play status, store labels, and Game Pass access.', href: '/free-to-play-price-guide' },
+  { title: 'Price & access status', desc: 'Free-to-play status, store labels, and Game Pass access.', href: '/price-status' },
+  { title: 'Crossplay status', desc: 'PC, Xbox, PS5, party, and account questions.', href: '/crossplay-status' },
+  { title: 'Release date', desc: 'Launch timing, platforms, and price status.', href: '/release-date' },
 ];
 
 const classCards = [

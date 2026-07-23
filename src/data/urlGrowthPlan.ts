@@ -15,7 +15,7 @@ const buildCards = [
 
 const bossCards = [
   { title: 'Bosses & PvE', desc: 'Mist Lords, Corroded enemies, and reward routing.', href: '/bosses' },
-  { title: 'PvP guide', desc: 'Avoid third parties around boss fights.', href: '/pvp-guide' },
+  { title: 'Loot & affixes', desc: 'Gear value and banking priorities near boss fights.', href: '/loot' },
   { title: 'Map', desc: 'Plan exits before pulling high-value PvE targets.', href: '/map' },
 ];
 
