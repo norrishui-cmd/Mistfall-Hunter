@@ -105,6 +105,7 @@ export const INDEXABLE_GAME_DATA_SLUGS = new Set([
   'holy-weapons','keys-and-treasure-chambers','legendary-class-sets','equipment-vouchers','friend-equipment-return',
   'brandrgarde-cataclysm','season-one-soul-hunt','fate-chart','ancestor-tree','pve-soul-revival',
   'open-beta-ended','beta-rewards','beta-regions-languages-controller','beta-new-content',
+  'solemn-needles','hallowgrove','mist-lord','cursed-moonwane',
 ]);
 
 export const NOINDEX_REVIEW_NOTES = {

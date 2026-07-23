@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { INDEXABLE_GAME_DATA_SLUGS } from '../src/data/seoRegistry.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
@@ -330,12 +331,13 @@ for (const page of tabNewsPages) {
 }
 
 const gameDataPages = indexablePages.filter((page) => /^\/(?:zh\/)?game-data\/[^/]+\/$/.test(page.pathname));
-if (gameDataPages.length !== 40) fail(`expected 40 indexable game-data URLs, found ${gameDataPages.length}`);
+const expectedGameDataPages = INDEXABLE_GAME_DATA_SLUGS.size * 2; // en + zh
+if (gameDataPages.length !== expectedGameDataPages) fail(`expected ${expectedGameDataPages} indexable game-data URLs, found ${gameDataPages.length}`);
 for (const pathname of ['/game-data/','/zh/game-data/']) {
   const page = byPath.get(pathname);
   if (!page) { fail(`${pathname}: missing game-data hub`); continue; }
   const cards = allMatches(page.html, /class=["']data-card["']/gi).length;
-  if (cards !== 20) fail(`${pathname}: expected 20 game-data cards, found ${cards}`);
+  if (cards !== INDEXABLE_GAME_DATA_SLUGS.size) fail(`${pathname}: expected ${INDEXABLE_GAME_DATA_SLUGS.size} game-data cards, found ${cards}`);
 }
 
 const contextualLinks = new Map(indexablePages.map((page) => [normalizePathname(page.pathname), 0]));
