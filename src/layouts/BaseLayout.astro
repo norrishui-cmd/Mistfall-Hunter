@@ -13,15 +13,16 @@ interface Props {
   image?: string;
   jsonLd?: object[];
   noindex?: boolean;
+  preloadImage?: string;
 }
 
-const { title, description, lang, path = '/', image, jsonLd, noindex } = Astro.props;
+const { title, description, lang, path = '/', image, jsonLd, noindex, preloadImage } = Astro.props;
 const htmlLang = { en: 'en', zh: 'zh-Hans', de: 'de', ja: 'ja' }[lang];
 const skipLabel = lang === 'zh' ? '跳到正文' : lang === 'de' ? 'Zum Inhalt' : lang === 'ja' ? '本文へ移動' : 'Skip to content';
 ---
 
 <!doctype html>
-<html lang={htmlLang}>
+<html lang={htmlLang} data-pagefind-ignore={noindex ? 'all' : undefined}>
   <head>
     <BaseHead
       title={title}
@@ -31,12 +32,13 @@ const skipLabel = lang === 'zh' ? '跳到正文' : lang === 'de' ? 'Zum Inhalt' 
       image={image}
       jsonLd={jsonLd}
       noindex={noindex}
+      preloadImage={preloadImage}
     />
   </head>
   <body>
     <a class="skip-link" href="#main">{skipLabel}</a>
     <Header lang={lang} path={path} />
-    <main id="main">
+    <main id="main" data-pagefind-body>
       <slot />
     </main>
     <Footer lang={lang} />

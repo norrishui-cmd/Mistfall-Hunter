@@ -1,6 +1,7 @@
 ﻿---
 import { languages, localizePath, useTranslations, type Lang } from '../i18n';
 import { isIndexableHref } from '../data/seoPages';
+import SearchModal from './SearchModal.astro';
 
 interface Props {
   lang: Lang;
@@ -56,6 +57,8 @@ const siteTagline = t('site.tagline');
           </a>
         ))}
       </nav>
+
+      <SearchModal lang={lang} />
 
       <div class="language-select">
         <label for="lang-switch" class="sr-only">{languageLabel}</label>
