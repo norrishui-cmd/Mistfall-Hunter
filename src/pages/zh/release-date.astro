@@ -3,6 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CoreQualityPanel from '../../components/CoreQualityPanel.astro';
 import TabNewsModule from '../../components/TabNewsModule.astro';
 import RelatedFaqModule from '../../components/RelatedFaqModule.astro';
+import { launchFacts } from '../../data/launchFacts';
+
+const lf = launchFacts.zh;
 
 const lang = 'zh' as const;
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
@@ -10,7 +13,7 @@ const site = Astro.site ?? new URL('https://mistfallhunter.me');
 const faqs = [
   {
     q: 'Mistfall Hunter 什么时候发售？',
-    a: '7 月 17 日官方公告确认于 2026 年 7 月 30 日 01:00（UTC-7）上线；部分地区商店会因时区显示 7 月 29 日。',
+    a: `Mistfall Hunter 于 ${lf.dateTimeLine} 在 ${lf.platformsLine} 同步发售。${lf.whyDatesDifferLine}`,
   },
   {
     q: 'Mistfall Hunter 有哪些平台？',
@@ -18,11 +21,19 @@ const faqs = [
   },
   {
     q: 'Mistfall Hunter 进 Game Pass 吗？',
-    a: '会——首发当天即可通过 Xbox Game Pass 在 Xbox 与 PC 上游玩。',
+    a: `会——${lf.gamePassLine}`,
+  },
+  {
+    q: 'Mistfall Hunter 进 PS Plus 吗？',
+    a: `不会——${lf.psPlusLine}`,
   },
   {
     q: 'Mistfall Hunter 多少钱？',
-    a: '7 月 17 日公告确认标准版 24.99 美元、豪华版 39.99 美元，升级包 15 美元，首发约 14 天九折。',
+    a: `7 月 17 日公告确认标准版 ${lf.priceStandard}、豪华版 ${lf.priceDeluxe}，升级包 15 美元。${lf.discountLine}`,
+  },
+  {
+    q: '可以预下载吗？',
+    a: lf.preloadLine,
   },
   {
     q: 'Mistfall Hunter 登陆 PS5 吗？',
@@ -42,9 +53,14 @@ const videoGameSchema = {
   genre: ['Action RPG', 'Extraction', 'Dark Fantasy', 'PvPvE'],
   gamePlatform: ['PC', 'Steam', 'Xbox Series X|S', 'PlayStation 5'],
   publisher: { '@type': 'Organization', name: 'Skystone Games' },
+  author: { '@type': 'Organization', name: 'Bellring Games' },
   applicationCategory: 'Game',
   operatingSystem: 'Windows, Xbox Series X|S, PlayStation 5',
-  datePublished: '2026-07-30',
+  datePublished: '2026-07-29',
+  offers: [
+    { '@type': 'Offer', name: 'Standard Edition', price: '24.99', priceCurrency: 'USD', availabilityStarts: '2026-07-30T01:00:00Z' },
+    { '@type': 'Offer', name: 'Deluxe Edition', price: '39.99', priceCurrency: 'USD', availabilityStarts: '2026-07-30T01:00:00Z' },
+  ],
 };
 
 const faqSchema = {
@@ -72,7 +88,7 @@ const breadcrumbSchema = {
   lang={lang}
   path="/release-date"
   title="Mistfall Hunter 发售日期、平台与价格（2026）"
-  description="Mistfall Hunter 于 2026 年 7 月 30 日 01:00（UTC-7）发售，标准版 24.99 美元、豪华版 39.99 美元，确认登陆 PC、Xbox 与 PS5。"
+  description={`Mistfall Hunter 于 ${lf.dateTimeLine} 发售，标准版 ${lf.priceStandard}、豪华版 ${lf.priceDeluxe}，确认登陆 PC、Xbox 与 PS5。`}
   jsonLd={[videoGameSchema, faqSchema, breadcrumbSchema]}
 >
   <section class="section">
@@ -80,19 +96,22 @@ const breadcrumbSchema = {
       <span class="eyebrow">发售日期</span>
       <h1 class="page-title">Mistfall Hunter 发售日期、平台与价格</h1>
       <p class="lead">
-        7 月 17 日官方公告确认 Mistfall Hunter 于 <strong>2026 年 7 月 30 日 01:00（UTC-7）</strong> 发售，登陆 PC、Xbox Series X|S 与 PS5。标准版 24.99 美元，豪华版 39.99 美元。
+        7 月 17 日官方公告确认 Mistfall Hunter 于 <strong>{lf.dateTimeLine}</strong> 发售，登陆 {lf.platformsLine}。标准版 {lf.priceStandard}，豪华版 {lf.priceDeluxe}。
       </p>
 
       <CoreQualityPanel
         confirmed={[
-          '官方首发时间为 2026 年 7 月 30 日 01:00（UTC-7）。',
+          `官方首发时间为 ${lf.dateTimeLine}。`,
           'PC、Xbox Series X|S 与 PS5 同步首发。',
-          '标准版 24.99 美元、豪华版 39.99 美元，首发约 14 天九折。',
+          `标准版 ${lf.priceStandard}、豪华版 ${lf.priceDeluxe}，升级包 15 美元。${lf.discountLine}`,
+          lf.gamePassLine,
+          lf.psPlusLine,
+          lf.preloadLine,
         ]}
         watch={[
           '各地区商店价格与当地日期显示。',
-          '各平台的预载与下载容量。',
           '开服时刻与首日补丁说明。',
+          '发售周服务器稳定性与排队时间。',
         ]}
         links={[
           { title: '更新与补丁追踪', desc: '发售周补丁与平衡性追踪', href: '/zh/updates' },
@@ -106,8 +125,8 @@ const breadcrumbSchema = {
       <div class="prose">
         <h2>Mistfall Hunter 什么时候发售？</h2>
         <p>
-          7 月 17 日官方首发公告确认 <strong>2026 年 7 月 30 日 01:00（UTC-7）</strong> 上线。
-          部分地区商店可能因时区显示 7 月 29 日，应同时参考官方时间戳与本地商店倒计时。
+          7 月 17 日官方首发公告确认 <strong>{lf.dateTimeLine}</strong> 上线。
+          {lf.whyDatesDifferLine}
         </p>
 
         <h2>有哪些平台？</h2>
@@ -120,11 +139,11 @@ const breadcrumbSchema = {
         </ul>
         <p>
           在 Xbox 与 PC 上，首发当天即可通过 <strong>Xbox Game Pass</strong> 游玩。注意：主机端进行
-          PvPvE 对战需要在线多人订阅（Game Pass Core 或 Ultimate；需另购）。
+          PvPvE 对战需要在线多人订阅（Game Pass Core 或 Ultimate；需另购）。首发<strong>不会</strong>进入 PS Plus。
         </p>
 
         <h2>Mistfall Hunter 多少钱？</h2>
-        <p><strong>标准版 24.99 美元</strong>，<strong>豪华版 39.99 美元</strong>，豪华升级包 15 美元。官方公告还确认首发约 14 天九折；各地区定价与税费可能不同。</p>
+        <p><strong>标准版 {lf.priceStandard}</strong>，<strong>豪华版 {lf.priceDeluxe}</strong>，豪华升级包 15 美元。{lf.discountLine} 各地区定价与税费可能不同。</p>
 
         <h2>有过测试吗？进度会保留吗？</h2>
         <p>
@@ -141,6 +160,7 @@ const breadcrumbSchema = {
         <ul>
           <li>在 Steam 加入愿望单，或在 Xbox 与 PlayStation 商店关注，以便发售时收到通知。</li>
           <li>如果你有 Game Pass，它会在首发当天出现在库里。</li>
+          <li>{lf.preloadLine}</li>
           <li>在所在地区商店核对当地价格与首发倒计时。</li>
         </ul>
       </div>

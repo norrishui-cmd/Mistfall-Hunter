@@ -15,11 +15,16 @@ const videoGameSchema = {
   description:
     'Mistfall Hunter 是 Bellring Games 开发的暗黑奇幻 PvPvE 撤离动作 RPG。',
   genre: ['动作 RPG', '撤离', '暗黑奇幻', 'PvPvE'],
-  gamePlatform: ['PC', 'Steam', 'Xbox Series X|S'],
-  publisher: { '@type': 'Organization', name: 'Bellring Games' },
+  gamePlatform: ['PC', 'Steam', 'Xbox Series X|S', 'PlayStation 5'],
+  publisher: { '@type': 'Organization', name: 'Skystone Games' },
+  author: { '@type': 'Organization', name: 'Bellring Games' },
   applicationCategory: 'Game',
-  operatingSystem: 'Windows, Xbox Series X|S',
+  operatingSystem: 'Windows, Xbox Series X|S, PlayStation 5',
   datePublished: '2026-07-29',
+  offers: [
+    { '@type': 'Offer', name: 'Standard Edition', price: '24.99', priceCurrency: 'USD', availabilityStarts: '2026-07-30T01:00:00Z' },
+    { '@type': 'Offer', name: 'Deluxe Edition', price: '39.99', priceCurrency: 'USD', availabilityStarts: '2026-07-30T01:00:00Z' },
+  ],
 };
 
 const cards = [

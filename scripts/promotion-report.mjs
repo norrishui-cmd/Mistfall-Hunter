@@ -4,7 +4,7 @@
 // This site deliberately keeps most programmatically-generated pages
 // noindex until they have real evidence behind them (see NOINDEX_REVIEW_NOTES
 // and ZH_DRAFT_SLUGS in seoRegistry.mjs, and passesQualityGate() in
-// qualityGate.ts). As launch (Aug 27, 2026) approaches and more official
+// qualityGate.ts). As launch (July 29, 2026) approaches and more official
 // data lands, some of those noindex pages will legitimately earn indexing.
 // This script is the repeatable way to find out WHICH ones, instead of
 // eyeballing 1000+ pages by hand.

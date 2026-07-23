@@ -3,6 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CoreQualityPanel from '../components/CoreQualityPanel.astro';
 import TabNewsModule from '../components/TabNewsModule.astro';
 import RelatedFaqModule from '../components/RelatedFaqModule.astro';
+import { launchFacts } from '../data/launchFacts';
+
+const lf = launchFacts.en;
 
 const lang = 'en' as const;
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
@@ -10,7 +13,7 @@ const site = Astro.site ?? new URL('https://mistfallhunter.me');
 const faqs = [
   {
     q: 'When does Mistfall Hunter come out?',
-    a: 'The July 17 official launch announcement sets launch for July 30, 2026 at 01:00 UTC-7. Regional storefronts may display July 29 because of time zones.',
+    a: `Mistfall Hunter launches ${lf.dateTimeLine} on ${lf.platformsLine}. ${lf.whyDatesDifferLine}`,
   },
   {
     q: 'What platforms is Mistfall Hunter on?',
@@ -18,11 +21,19 @@ const faqs = [
   },
   {
     q: 'Is Mistfall Hunter on Game Pass?',
-    a: 'Yes — it is available day one on Xbox Game Pass for Xbox and PC.',
+    a: `Yes — ${lf.gamePassLine}`,
+  },
+  {
+    q: 'Is Mistfall Hunter on PS Plus?',
+    a: `No — ${lf.psPlusLine}`,
   },
   {
     q: 'How much does Mistfall Hunter cost?',
-    a: 'The July 17 announcement sets the Standard Edition at $24.99 and Deluxe Edition at $39.99, with a $15 upgrade and a 10% launch discount for about 14 days.',
+    a: `The July 17 announcement sets the Standard Edition at ${lf.priceStandard} and Deluxe Edition at ${lf.priceDeluxe}, with a $15 upgrade. ${lf.discountLine}`,
+  },
+  {
+    q: 'Can I pre-download Mistfall Hunter?',
+    a: lf.preloadLine,
   },
   {
     q: 'Is Mistfall Hunter on PS5?',
@@ -43,9 +54,14 @@ const videoGameSchema = {
   genre: ['Action RPG', 'Extraction', 'Dark Fantasy', 'PvPvE'],
   gamePlatform: ['PC', 'Steam', 'Xbox Series X|S', 'PlayStation 5'],
   publisher: { '@type': 'Organization', name: 'Skystone Games' },
+  author: { '@type': 'Organization', name: 'Bellring Games' },
   applicationCategory: 'Game',
   operatingSystem: 'Windows, Xbox Series X|S, PlayStation 5',
-  datePublished: '2026-07-30',
+  datePublished: '2026-07-29',
+  offers: [
+    { '@type': 'Offer', name: 'Standard Edition', price: '24.99', priceCurrency: 'USD', availabilityStarts: '2026-07-30T01:00:00Z' },
+    { '@type': 'Offer', name: 'Deluxe Edition', price: '39.99', priceCurrency: 'USD', availabilityStarts: '2026-07-30T01:00:00Z' },
+  ],
 };
 
 const faqSchema = {
@@ -72,7 +88,7 @@ const breadcrumbSchema = {
   lang={lang}
   path="/release-date"
   title="Mistfall Hunter Release Date, PC & Xbox Platforms (2026)"
-  description="Mistfall Hunter launches July 30, 2026 at 01:00 UTC-7. Standard costs $24.99, Deluxe $39.99, with PC, Xbox Series X|S and PS5 confirmed."
+  description={`Mistfall Hunter launches ${lf.dateTimeLine}. Standard costs ${lf.priceStandard}, Deluxe ${lf.priceDeluxe}, with PC, Xbox Series X|S and PS5 confirmed.`}
   jsonLd={[videoGameSchema, faqSchema, breadcrumbSchema]}
 >
   <section class="section">
@@ -80,20 +96,23 @@ const breadcrumbSchema = {
       <span class="eyebrow">Release date</span>
       <h1 class="page-title">Mistfall Hunter release date, platforms &amp; price</h1>
       <p class="lead">
-        The official July 17 announcement sets launch for <strong>July 30, 2026 at 01:00 UTC-7</strong> on PC,
-        Xbox Series X|S and PS5. Standard Edition is $24.99 and Deluxe is $39.99; regional storefront dates and prices can vary.
+        The official July 17 announcement confirms launch for <strong>{lf.dateTimeLine}</strong> on {lf.platformsLine}.
+        Standard Edition is {lf.priceStandard} and Deluxe is {lf.priceDeluxe}; regional storefront prices can vary.
       </p>
 
       <CoreQualityPanel
         confirmed={[
-          'Official launch time: July 30, 2026 at 01:00 UTC-7.',
+          `Official launch time: ${lf.dateTimeLine}.`,
           'PC, Xbox Series X|S and PS5 are confirmed for simultaneous launch.',
-          'Standard $24.99; Deluxe $39.99; $15 upgrade; 10% introductory discount.',
+          `Standard ${lf.priceStandard}; Deluxe ${lf.priceDeluxe}; $15 upgrade. ${lf.discountLine}`,
+          lf.gamePassLine,
+          lf.psPlusLine,
+          lf.preloadLine,
         ]}
         watch={[
           'Regional storefront prices and local calendar display.',
-          'Preload and download-size details by platform.',
           'Launch server timing and day-one patch notes.',
+          'Launch-week stability and queue times once servers go live.',
         ]}
         links={[
           { title: 'Steam charts tracker', desc: 'trend and player-count intent', href: '/steam-charts-player-count' },
@@ -107,8 +126,8 @@ const breadcrumbSchema = {
       <div class="prose">
         <h2>When does Mistfall Hunter release?</h2>
         <p>
-          The official July 17 launch announcement gives <strong>July 30, 2026 at 01:00 UTC-7</strong>.
-          Some regional storefronts display July 29 because local calendar dates depend on time zone; use the announcement timestamp and your store countdown together.
+          The official July 17 launch announcement confirms <strong>{lf.dateTimeLine}</strong>.
+          {lf.whyDatesDifferLine}
         </p>
 
         <h2>What platforms is it on?</h2>
@@ -122,10 +141,11 @@ const breadcrumbSchema = {
         <p>
           On Xbox and PC it's available day one through <strong>Xbox Game Pass</strong>. Xbox's official
           store page says console online multiplayer requires Game Pass Core or Ultimate, sold separately.
+          It is <strong>not included with PS Plus</strong> at launch.
         </p>
 
         <h2>How much does Mistfall Hunter cost?</h2>
-        <p><strong>Standard Edition costs $24.99</strong> and <strong>Deluxe Edition costs $39.99</strong>. The Deluxe upgrade is $15.00, and the official announcement promises a 10% introductory discount for about 14 days. Regional pricing and taxes may differ.</p>
+        <p><strong>Standard Edition costs {lf.priceStandard}</strong> and <strong>Deluxe Edition costs {lf.priceDeluxe}</strong>. The Deluxe upgrade is $15.00. {lf.discountLine} Regional pricing and taxes may differ.</p>
 
         <h2>Was there a beta? Does my progress carry over?</h2>
         <p>
@@ -144,6 +164,7 @@ const breadcrumbSchema = {
         <ul>
           <li>Wishlist it on Steam, or add it on the Xbox and PlayStation stores, to get a launch notification.</li>
           <li>If you have Game Pass, it'll appear in your library on day one.</li>
+          <li>{lf.preloadLine}</li>
           <li>Check your regional storefront for the local price and launch countdown.</li>
         </ul>
       </div>

@@ -39,11 +39,16 @@ const videoGameSchema = {
   description:
     'A dark fantasy third-person PvPvE extraction action RPG from Bellring Games. Drop into the Gyldenmist, fight monsters and rival players for loot, and extract before you lose everything.',
   genre: ['Action RPG', 'Extraction', 'Dark Fantasy', 'PvPvE'],
-  gamePlatform: ['PC', 'Steam', 'Xbox Series X|S'],
-  publisher: { '@type': 'Organization', name: 'Bellring Games' },
+  gamePlatform: ['PC', 'Steam', 'Xbox Series X|S', 'PlayStation 5'],
+  publisher: { '@type': 'Organization', name: 'Skystone Games' },
+  author: { '@type': 'Organization', name: 'Bellring Games' },
   applicationCategory: 'Game',
-  operatingSystem: 'Windows, Xbox Series X|S',
+  operatingSystem: 'Windows, Xbox Series X|S, PlayStation 5',
   datePublished: '2026-07-29',
+  offers: [
+    { '@type': 'Offer', name: 'Standard Edition', price: '24.99', priceCurrency: 'USD', availabilityStarts: '2026-07-30T01:00:00Z' },
+    { '@type': 'Offer', name: 'Deluxe Edition', price: '39.99', priceCurrency: 'USD', availabilityStarts: '2026-07-30T01:00:00Z' },
+  ],
 };
 
 const cards = [
