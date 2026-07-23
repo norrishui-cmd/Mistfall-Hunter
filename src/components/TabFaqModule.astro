@@ -1,0 +1,54 @@
+---
+import { getTabFaqs, type TabFaqCluster } from '../data/tabFaqs';
+
+interface Props {
+  cluster: TabFaqCluster;
+  lang: 'en' | 'zh';
+}
+
+const { cluster, lang } = Astro.props as Props;
+const zh = lang === 'zh';
+const items = getTabFaqs(cluster);
+
+const clusterLabel: Record<TabFaqCluster, string> = {
+  release: 'release',
+  guides: 'guides',
+  builds: 'builds',
+  faq: 'site & sources',
+  about: 'the game',
+};
+---
+
+<section class="tab-faq" aria-labelledby={`tab-faq-${cluster}`}>
+  <div class="tab-faq__heading">
+    <div>
+      <span class="eyebrow">{zh ? '常见问题' : '50 questions'}</span>
+      <h2 id={`tab-faq-${cluster}`}>{zh ? '相关常见问题' : `FAQ about ${clusterLabel[cluster]}`}</h2>
+    </div>
+    <p>{zh ? '' : `${items.length} short answers pulled from official sources and this site\u2019s own guides.`}</p>
+  </div>
+  <div class="tab-faq__list">
+    {items.map((item, index) => (
+      <details class="tab-faq__item">
+        <summary><span>{index + 1}</span>{item.q}</summary>
+        <p>{item.a}</p>
+      </details>
+    ))}
+  </div>
+</section>
+
+<style>
+  .tab-faq { margin-top: clamp(3rem, 7vw, 5rem); padding-top: 2rem; border-top: 1px solid var(--line); }
+  .tab-faq__heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+  .tab-faq__heading h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0.35rem 0 0; }
+  .tab-faq__heading p { color: var(--ash); font-size: 0.85rem; max-width: 26rem; margin: 0; }
+  .tab-faq__list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .tab-faq__item { border: 1px solid var(--line); background: var(--stone); border-radius: 0.5rem; padding: 0.85rem 1rem; }
+  .tab-faq__item summary { cursor: pointer; list-style: none; display: flex; gap: 0.6rem; font-weight: 600; color: var(--bone); line-height: 1.4; }
+  .tab-faq__item summary::-webkit-details-marker { display: none; }
+  .tab-faq__item summary span { font-family: var(--mono); font-size: 0.72rem; color: var(--gylden); flex: none; }
+  .tab-faq__item p { margin: 0.6rem 0 0; color: var(--ash); font-size: 0.9rem; line-height: 1.55; }
+  @media (max-width: 800px) {
+    .tab-faq__list { grid-template-columns: 1fr; }
+  }
+</style>

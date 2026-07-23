@@ -5,10 +5,25 @@ import FaqBlock from '../components/FaqBlock.astro';
 import SeoPageModules from '../components/SeoPageModules.astro';
 import QualitySignals from '../components/QualitySignals.astro';
 import TabNewsModule from '../components/TabNewsModule.astro';
-import RelatedFaqModule from '../components/RelatedFaqModule.astro';
+import TabFaqModule from '../components/TabFaqModule.astro';
+import type { TabFaqCluster } from '../data/tabFaqs';
 import { getSeoPages, isIndexable } from '../data/seoPages';
 import type { SeoPage } from '../data/seoPages';
 import { lastUpdated, sources } from '../data/siteQuality';
+
+// Every long-tail detail page belongs to a PriorityLink['group']
+// ('news' | 'guides' | 'tools' | 'database' | 'about'), but the site's main
+// nav / news / FAQ system is organized around a different 5-way split
+// ('release' | 'guides' | 'builds' | 'faq' | 'about' \u2014 see tabNews.ts and
+// tabFaqs.ts). This maps one onto the other so every detail page can show
+// the news + FAQ module for the tab it actually belongs to.
+const GROUP_TO_TAB_CLUSTER: Record<SeoPage['group'], TabFaqCluster> = {
+  news: 'release',
+  guides: 'guides',
+  tools: 'faq',
+  database: 'builds',
+  about: 'about',
+};
 
 export function getStaticPaths() {
   return getSeoPages('en').map((page) => ({ params: { slug: page.slug }, props: { page } }));
@@ -17,6 +32,7 @@ export function getStaticPaths() {
 const lang = 'en' as const;
 const { page } = Astro.props as { page: SeoPage };
 const noindex = !isIndexable(page);
+const tabCluster = GROUP_TO_TAB_CLUSTER[page.group];
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
 const pageUrl = new URL(`/${page.slug}`, site).href;
 const seedText = [
@@ -129,8 +145,8 @@ const faqSchema = page.faqs
       </div>
 
       <FaqBlock faqs={page.faqs} title="FAQ" />
-      {(page.slug === 'guides' || page.slug === 'about') && <TabNewsModule cluster={page.slug} lang={lang} />}
-      {(page.slug === 'guides' || page.slug === 'about') && <RelatedFaqModule cluster={page.slug} lang={lang} />}
+      <TabNewsModule cluster={tabCluster} lang={lang} />
+      <TabFaqModule cluster={tabCluster} lang={lang} />
       {page.slug === 'news' && <Fragment>
         <TabNewsModule cluster="release" lang={lang} /><TabNewsModule cluster="guides" lang={lang} />
         <TabNewsModule cluster="builds" lang={lang} /><TabNewsModule cluster="faq" lang={lang} /><TabNewsModule cluster="about" lang={lang} />
