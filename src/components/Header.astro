@@ -1,5 +1,6 @@
 ﻿---
 import { languages, localizePath, useTranslations, type Lang } from '../i18n';
+import { isIndexableHref } from '../data/seoPages';
 
 interface Props {
   lang: Lang;
@@ -55,17 +56,22 @@ const siteTagline = t('site.tagline');
       </nav>
 
       <nav class="language-tabs" aria-label={languageLabel}>
-        {languageOptions.map((option) => (
-          <a
-            class="language-tab"
-            href={localizePath(path, option)}
-            hreflang={option === 'zh' ? 'zh-Hans' : option}
-            lang={option === 'zh' ? 'zh-Hans' : option}
-            aria-current={option === lang ? 'true' : undefined}
-          >
-            {languages[option]}
-          </a>
-        ))}
+        {languageOptions.map((option) => {
+          const targetHref = localizePath(path, option);
+          const targetIsDraft = !isIndexableHref(targetHref);
+          return (
+            <a
+              class="language-tab"
+              href={targetHref}
+              hreflang={option === 'zh' ? 'zh-Hans' : option}
+              lang={option === 'zh' ? 'zh-Hans' : option}
+              aria-current={option === lang ? 'true' : undefined}
+              rel={targetIsDraft ? 'nofollow' : undefined}
+            >
+              {languages[option]}
+            </a>
+          );
+        })}
       </nav>
     </div>
   </div>

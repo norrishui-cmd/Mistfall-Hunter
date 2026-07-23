@@ -15,7 +15,7 @@ const buildCards = [
 
 const platformCards = [
   { title: 'Release date', desc: 'Launch timing, platforms, and price status.', href: '/release-date' },
-  { title: 'Crossplay status', desc: 'PC, Steam, Xbox, Game Pass, and PS5 tracking.', href: '/crossplay-status' },
+  { title: 'News hub', desc: 'Release tracking, beta recap, and platform updates.', href: '/news' },
   { title: 'Performance', desc: 'Stutter, FPS, crashes, and settings checklist.', href: '/performance' },
 ];
 

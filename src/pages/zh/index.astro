@@ -2,11 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import QualitySignals from '../../components/QualitySignals.astro';
 import { getHubLinks } from '../../data/siteQuality';
-import { isIndexable } from '../../data/seoPages';
+import { isIndexableHref } from '../../data/seoPages';
 
 const lang = 'zh' as const;
 const hubLinks = getHubLinks(lang);
-const indexableHubLinks = hubLinks.filter((link) => isIndexable(link.href.replace(/^\/zh\//, '')));
+const indexableHubLinks = hubLinks.filter((link) => isIndexableHref(link.href));
 
 const videoGameSchema = {
   '@context': 'https://schema.org',

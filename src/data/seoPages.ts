@@ -48,6 +48,11 @@ export type SeoPage = {
   tables?: SeoTable[];
   relatedSearches?: string[];
   faqs?: { q: string; a: string }[];
+  // Set on machine-generated locale placeholders (see localizeDraft() in the
+  // url*.ts files) that reserve a URL slot with English filler content and a
+  // "Chinese Draft" label. These must never be indexable, regardless of
+  // whether the slug is otherwise on the indexable whitelist.
+  draft?: boolean;
 };
 
 export const enPages: SeoPage[] = [
@@ -58,7 +63,7 @@ export const enPages: SeoPage[] = [
     description: 'Mistfall Hunter news hub covering the July 29, 2026 release listing, beta recap, patch tracking, platform updates, and official announcements.',
     eyebrow: 'News hub',
     h1: 'Mistfall Hunter news, launch tracker & updates',
-    lead: 'A clean hub for the updates players actually search for: release timing, beta takeaways, patch watch, platform status, and what is still unconfirmed before launch.',
+    lead: 'A clean hub for the updates players actually search for: release timing, beta takeaways, patch watch, platform status, and which details are still pending official confirmation.',
     updated: 'Tracking official storefront information for the July 29, 2026 release listing.',
     sections: [
       {
@@ -426,8 +431,22 @@ export function getSeoPage(lang: Lang, slug: string): SeoPage | undefined {
   return getSeoPages(lang).find((page) => page.slug === slug);
 }
 
+// Slug-only or bare-string indexability checks can't see per-locale `draft`
+// flags (e.g. a Chinese "reserve the URL" placeholder built from an English
+// page). Use this whenever you have an href like '/zh/crossplay-status' and
+// want the check to resolve the *actual* localized page object first.
+export function isIndexableHref(href: string): boolean {
+  const clean = href.replace(/^\//, '');
+  const zhMatch = clean.match(/^zh\/(.+)$/);
+  const lang: Lang = zhMatch ? 'zh' : 'en';
+  const slug = zhMatch ? zhMatch[1] : clean;
+  const page = getSeoPage(lang, slug);
+  return isIndexable(page ?? slug);
+}
+
 export function isIndexable(pageOrSlug?: SeoPage | string): boolean {
   if (!pageOrSlug) return true;
+  if (typeof pageOrSlug !== 'string' && pageOrSlug.draft) return false;
   const slug = typeof pageOrSlug === 'string' ? pageOrSlug : pageOrSlug.slug;
   // This is a deliberately conservative pre-launch index. The project has a
   // much larger working corpus, but pages whose only honest answer is still

@@ -7,15 +7,15 @@ export type Faq100Item = {
 
 export const faqCategories = [
   { id: 'release', en: 'Release, price and editions', zh: '发售、价格与版本', href: '/release-date' },
-  { id: 'platforms', en: 'Platforms, languages and access', zh: '平台、语言与游玩权限', href: '/steam-page-guide' },
+  { id: 'platforms', en: 'Platforms, languages and access', zh: '平台、语言与游玩权限', href: '/about' },
   { id: 'gameplay', en: 'Core gameplay and extraction', zh: '核心玩法与撤离', href: '/beginner-guide' },
   { id: 'classes', en: 'Classes and roles', zh: '职业与定位', href: '/classes' },
   { id: 'combat', en: 'Combat, skills and builds', zh: '战斗、技能与配装', href: '/builds' },
   { id: 'maps', en: 'Maps, bosses and routes', zh: '地图、Boss 与路线', href: '/map' },
   { id: 'loot', en: 'Loot, gear and progression', zh: '战利品、装备与成长', href: '/loot' },
-  { id: 'multiplayer', en: 'Solo, squads and online play', zh: '单人、小队与在线玩法', href: '/crossplay-status' },
+  { id: 'multiplayer', en: 'Solo, squads and online play', zh: '单人、小队与在线玩法', href: '/server-status' },
   { id: 'technical', en: 'PC requirements and performance', zh: 'PC 配置与性能', href: '/performance' },
-  { id: 'support', en: 'Accounts, updates and troubleshooting', zh: '账号、更新与故障排查', href: '/known-issues-tracker' },
+  { id: 'support', en: 'Accounts, updates and troubleshooting', zh: '账号、更新与故障排查', href: '/updates' },
 ] as const;
 
 export const faq100: Faq100Item[] = [

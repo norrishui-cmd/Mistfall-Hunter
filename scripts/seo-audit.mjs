@@ -27,12 +27,22 @@ function walk(dir) {
 
 function attr(tag, name) {
   const match = tag.match(new RegExp(`${name}=["']([^"']+)["']`, 'i'));
-  return match?.[1] ?? '';
+  return decodeEntities(match?.[1] ?? '');
+}
+
+function decodeEntities(str) {
+  return str
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#0?39;/g, "'")
+    .replace(/&nbsp;/g, ' ');
 }
 
 function textOf(html, tag) {
   const match = html.match(new RegExp(`<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`, 'i'));
-  return match?.[1]?.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() ?? '';
+  return decodeEntities(match?.[1]?.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() ?? '');
 }
 
 function allMatches(html, re) {
@@ -194,7 +204,7 @@ for (const url of sitemapUrls) {
 }
 
 for (const page of indexablePages) {
-  for (const match of allMatches(page.html, /<a\s+[^>]*href=["']([^"']+)["']/gi)) {
+  for (const match of allMatches(page.html, /<a\s+[^>]*href=["']([^"']+)["'][^>]*>/gi)) {
     const href = match[1];
     if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) continue;
     const parsed = new URL(href, site);
@@ -205,9 +215,12 @@ for (const page of indexablePages) {
       continue;
     }
     const target = byPath.get(targetPath);
-    if (target && /noindex/i.test(target.robots)) {
+    const isNofollow = /rel=["'][^"']*nofollow[^"']*["']/i.test(match[0]);
+    if (target && /noindex/i.test(target.robots) && !isNofollow) {
       // A contextually useful link to a parked draft is allowed, but it must
       // stay visible in the report so a future promotion decision is deliberate.
+      // rel="nofollow" (e.g. a language switcher pointing at an untranslated
+      // draft) is treated as a deliberate, already-mitigated exception.
       warn(`${page.pathname}: indexable page links to noindex ${href}`);
     }
   }

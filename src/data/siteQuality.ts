@@ -67,7 +67,7 @@ const enHubLinks: HubLink[] = [
   { title: 'Steam charts tracker', desc: 'Player-count search tracker, Steam interest signals, and launch-week interpretation.', href: '/steam-charts-player-count', cluster: 'release' },
   { title: 'Steam page guide', desc: 'Steam listing, tags, wishlist intent, and store-page checks before launch.', href: '/steam-page-guide', cluster: 'release' },
   { title: 'Gameplay overview', desc: 'PvPvE extraction loop, combat expectations, class choice, and loot-risk basics.', href: '/gameplay-overview', cluster: 'guides' },
-  { title: 'Crossplay status', desc: 'PC, Xbox, and PlayStation crossplay questions with confirmed and unconfirmed notes separated.', href: '/crossplay-status', cluster: 'release' },
+  { title: 'Crossplay status', desc: 'PC, Xbox, and PlayStation crossplay questions, with verified and pending notes kept separate.', href: '/crossplay-status', cluster: 'release' },
   { title: 'Price status', desc: 'Price, edition, Game Pass, and platform purchase watchpoints before launch.', href: '/price-status', cluster: 'release' },
   { title: 'News hub', desc: 'Pre-launch tracker, beta notes, and official update watchlist.', href: '/news', cluster: 'release' },
   { title: 'FAQ', desc: 'Fast answers for launch, platforms, classes, extraction, maps, and beta progress.', href: '/faq', cluster: 'core' },

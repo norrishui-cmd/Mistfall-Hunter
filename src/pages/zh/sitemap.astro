@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getHubLinks } from '../../data/siteQuality';
-import { getSeoPages, isIndexable } from '../../data/seoPages';
+import { getSeoPages, isIndexable, isIndexableHref } from '../../data/seoPages';
 
 const lang = 'zh' as const;
 const hubLinks = getHubLinks(lang);
@@ -28,7 +28,7 @@ const dynamicLinks = getSeoPages(lang)
       <p class="lead">用于用户浏览和搜索引擎发现的重要页面入口。</p>
 
       <div class="cards">
-        {hubLinks.filter((link) => isIndexable(link.href.replace(/^\/zh\//, ''))).map((link) => (
+        {hubLinks.filter((link) => isIndexableHref(link.href)).map((link) => (
           <a class="card" href={link.href}>
             <span class="card-title">{link.title}</span>
             <span class="card-desc">{link.desc}</span>

@@ -158,7 +158,7 @@ function makePage(brief: RapidBrief): SeoPage {
         ['First time learning', `Use cheap gear and test ${brief.topic} in low-risk routes`, 'Information is more valuable than one lucky run'],
         ['You already have useful loot', 'Move toward extraction instead of adding another objective', 'Banked value is the real win condition'],
         ['A fight gets loud or long', 'Reset, listen, and assume another player heard it', 'Third parties punish slow decisions'],
-        ['A detail is unconfirmed', 'Mark it as pending and update after launch verification', 'Trust matters more than fake precision'],
+        ['A detail is not yet verified', 'Mark it as pending and update after launch verification', 'Trust matters more than fake precision'],
       ],
     }],
     sections: [
@@ -179,6 +179,7 @@ function makePage(brief: RapidBrief): SeoPage {
 function localizeDraft(page: SeoPage): SeoPage {
   return {
     ...page,
+    draft: true,
     title: `${page.title} | Chinese Draft`,
     description: `${page.description} Chinese draft URL reserved for later localization with verified launch data.`,
     eyebrow: `ZH ${page.eyebrow}`,

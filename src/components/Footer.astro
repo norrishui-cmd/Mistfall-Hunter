@@ -1,6 +1,7 @@
 ﻿---
 import { localizePath, useTranslations, type Lang } from '../i18n';
 import { recoveryFocusLinks } from '../data/seoRecovery';
+import { isIndexableHref } from '../data/seoPages';
 
 interface Props {
   lang: Lang;
@@ -25,7 +26,9 @@ const localizedCoreLinks = [
   { title: t('nav.builds'), href: '/builds' },
   { title: t('nav.about'), href: '/about' },
 ];
-const coreLinks = isNewLocale ? localizedCoreLinks : recoveryFocusLinks.slice(0, 8);
+const coreLinks = isNewLocale
+  ? localizedCoreLinks
+  : recoveryFocusLinks.filter((link) => isIndexableHref(localizePath(link.href, lang))).slice(0, 8);
 const supportLinks = isNewLocale ? [] : [
   { title: 'News', href: '/news' },
   { title: 'Bosses', href: '/bosses' },

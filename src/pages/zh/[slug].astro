@@ -16,7 +16,7 @@ export function getStaticPaths() {
 
 const lang = 'zh' as const;
 const { page } = Astro.props as { page: SeoPage };
-const noindex = !isIndexable(page.slug);
+const noindex = !isIndexable(page);
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
 const pageUrl = new URL(`/zh/${page.slug}`, site).href;
 

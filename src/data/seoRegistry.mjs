@@ -93,6 +93,23 @@ export const NOINDEX_REVIEW_NOTES = {
   'solo-extraction-routes': 'Solo routes need verified launch data.',
 };
 
+// These slugs are on the language-agnostic INDEXABLE_SLUGS whitelist because
+// the English page is real, launch-ready content. Their /zh/ counterpart is
+// currently a machine-generated "Chinese Draft" placeholder (see
+// localizeDraft() in the url*.ts data files) that reserves the URL with
+// English filler text. Keep those specific locale paths out of the sitemap
+// until real Chinese copy replaces the draft — see src/data/seoPages.ts's
+// `draft` flag and isIndexable(), which this list must stay in sync with.
+export const ZH_DRAFT_SLUGS = new Set([
+  'best-class-for-beginners',
+  'crossplay-status',
+  'gameplay-overview',
+  'known-issues-tracker',
+  'price-status',
+  'steam-charts-player-count',
+  'steam-page-guide',
+]);
+
 export function normalizeSeoPath(path = '/') {
   let raw = String(path || '/').trim();
   if (!raw) raw = '/';
@@ -126,6 +143,7 @@ export function isIndexablePath(path = '/') {
   const dataMatch = normalized.match(/^\/(?:(?:zh|de|ja)\/)?game-data\/([^/]+)\/$/);
   if (dataMatch) return INDEXABLE_GAME_DATA_SLUGS.has(dataMatch[1]);
   const slug = slugFromPath(normalized);
+  if (isLocalizedPath(normalized) && normalized.startsWith('/zh/') && ZH_DRAFT_SLUGS.has(slug)) return false;
   return Boolean(slug) && isIndexableSlug(slug);
 }
 
@@ -140,7 +158,7 @@ export function getIndexablePaths() {
   const paths = new Set(INDEXABLE_STATIC_PATHS);
   for (const slug of INDEXABLE_SLUGS) {
     paths.add(normalizeSeoPath(`/${slug}/`));
-    paths.add(normalizeSeoPath(`/zh/${slug}/`));
+    if (!ZH_DRAFT_SLUGS.has(slug)) paths.add(normalizeSeoPath(`/zh/${slug}/`));
   }
   for (const slug of INDEXABLE_TAB_NEWS_SLUGS) {
     paths.add(normalizeSeoPath(`/news/${slug}/`));
