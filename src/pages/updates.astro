@@ -3,19 +3,43 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { lastUpdated } from '../data/siteQuality';
 
 const lang = 'en' as const;
+const site = 'https://mistfallhunter.me';
+const title = 'Mistfall Hunter Updates: Editorial Log & Launch Verification Plan';
+const description = 'Mistfall Hunter update log and launch verification plan for maps, builds, bosses, FAQ, sources, and guide accuracy.';
 
 const roadmap = [
   ['Now', 'Pre-launch structure', 'Release, platform, class, build, map, boss, FAQ, and tool pages are organized for crawl discovery.'],
   ['Launch week', 'Live verification', 'Update map markers, class values, affixes, boss routes, drops, and performance notes with live data.'],
   ['After patches', 'Refresh rankings', 'Re-check builds, tier lists, performance guidance, and boss reward value after balance updates.'],
 ];
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: `${site}/updates/`,
+  inLanguage: 'en',
+  dateModified: lastUpdated,
+  isPartOf: { '@type': 'WebSite', name: 'Mistfall Hunter Wiki and Hub', url: `${site}/` },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${site}/` },
+    { '@type': 'ListItem', position: 2, name: 'Updates', item: `${site}/updates/` },
+  ],
+};
 ---
 
 <BaseLayout
   lang={lang}
   path="/updates"
-  title="Mistfall Hunter Updates: Editorial Log & Launch Verification Plan"
-  description="Mistfall Hunter update log and launch verification plan for maps, builds, bosses, FAQ, sources, and guide accuracy."
+  title={title}
+  description={description}
+  jsonLd={[pageSchema, breadcrumbSchema]}
 >
   <section class="section">
     <div class="container">

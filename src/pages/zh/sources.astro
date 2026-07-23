@@ -3,13 +3,37 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { lastUpdated, sources } from '../../data/siteQuality';
 
 const lang = 'zh' as const;
+const site = 'https://mistfallhunter.me';
+const title = 'Mistfall Hunter 来源与编辑政策';
+const description = 'Mistfall Hunter Wiki 攻略站来源与编辑政策，说明官方、商店、试玩报道和上线后实测信息的使用方式。';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: `${site}/zh/sources/`,
+  inLanguage: 'zh-Hans',
+  dateModified: lastUpdated,
+  isPartOf: { '@type': 'WebSite', name: 'Mistfall Hunter Wiki and Hub', url: `${site}/` },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '首页', item: `${site}/zh/` },
+    { '@type': 'ListItem', position: 2, name: '来源', item: `${site}/zh/sources/` },
+  ],
+};
 ---
 
 <BaseLayout
   lang={lang}
   path="/sources"
-  title="Mistfall Hunter 来源与编辑政策"
-  description="Mistfall Hunter Wiki 攻略站来源与编辑政策，说明官方、商店、试玩报道和上线后实测信息的使用方式。"
+  title={title}
+  description={description}
+  jsonLd={[pageSchema, breadcrumbSchema]}
 >
   <section class="section">
     <div class="container">

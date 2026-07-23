@@ -3,13 +3,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { lastUpdated, sources } from '../data/siteQuality';
 
 const lang = 'en' as const;
+const site = 'https://mistfallhunter.me';
+const title = 'Mistfall Hunter Sources, References & Editorial Policy';
+const description = 'Sources and editorial policy for Mistfall Hunter Wiki and Hub, including official, storefront, preview, and launch verification references.';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: `${site}/sources/`,
+  inLanguage: 'en',
+  dateModified: lastUpdated,
+  isPartOf: { '@type': 'WebSite', name: 'Mistfall Hunter Wiki and Hub', url: `${site}/` },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${site}/` },
+    { '@type': 'ListItem', position: 2, name: 'Sources', item: `${site}/sources/` },
+  ],
+};
 ---
 
 <BaseLayout
   lang={lang}
   path="/sources"
-  title="Mistfall Hunter Sources, References & Editorial Policy"
-  description="Sources and editorial policy for Mistfall Hunter Wiki and Hub, including official, storefront, preview, and launch verification references."
+  title={title}
+  description={description}
+  jsonLd={[pageSchema, breadcrumbSchema]}
 >
   <section class="section">
     <div class="container">

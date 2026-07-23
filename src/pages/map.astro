@@ -15,6 +15,18 @@ const breadcrumb = {
     { '@type': 'ListItem', position: 2, name: 'Maps', item: new URL('/map', site).href },
   ],
 };
+
+const webAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Mistfall Hunter Interactive Map',
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'Web',
+  url: new URL('/map', site).href,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description:
+    'Free interactive Mistfall Hunter map: toggle extraction points, Mist Lord bosses, high-value loot, and landmarks with pan, zoom, and filters.',
+};
 ---
 
 <BaseLayout
@@ -22,7 +34,7 @@ const breadcrumb = {
   path="/map"
   title="Mistfall Hunter Interactive Map: Extraction, Bosses & Loot"
   description="Interactive Mistfall Hunter map for Solemn Needles and Hallowgrove — toggle extraction points, Mist Lord bosses, high-value loot, and landmarks. Pan, zoom, and filter."
-  jsonLd={[breadcrumb]}
+  jsonLd={[webAppSchema, breadcrumb]}
 >
   <section class="section">
     <div class="container">

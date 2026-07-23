@@ -3,19 +3,43 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { lastUpdated } from '../../data/siteQuality';
 
 const lang = 'zh' as const;
+const site = 'https://mistfallhunter.me';
+const title = 'Mistfall Hunter 更新记录与上线验证计划';
+const description = 'Mistfall Hunter 更新记录与上线验证计划，覆盖地图、配装、Boss、FAQ、来源和攻略准确性。';
 
 const roadmap = [
   ['当前', '发售前结构', '整理发售、平台、职业、配装、地图、Boss、FAQ 和工具页面，提升抓取发现。'],
   ['发售周', '实测验证', '补充地图点位、职业数值、词缀、Boss 路线、掉落和性能表现。'],
   ['补丁后', '刷新排名', '根据平衡补丁更新配装、职业强度、性能建议和 Boss 奖励价值。'],
 ];
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: `${site}/zh/updates/`,
+  inLanguage: 'zh-Hans',
+  dateModified: lastUpdated,
+  isPartOf: { '@type': 'WebSite', name: 'Mistfall Hunter Wiki and Hub', url: `${site}/` },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '首页', item: `${site}/zh/` },
+    { '@type': 'ListItem', position: 2, name: '更新', item: `${site}/zh/updates/` },
+  ],
+};
 ---
 
 <BaseLayout
   lang={lang}
   path="/updates"
-  title="Mistfall Hunter 更新记录与上线验证计划"
-  description="Mistfall Hunter 更新记录与上线验证计划，覆盖地图、配装、Boss、FAQ、来源和攻略准确性。"
+  title={title}
+  description={description}
+  jsonLd={[pageSchema, breadcrumbSchema]}
 >
   <section class="section">
     <div class="container">

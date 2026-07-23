@@ -13,13 +13,35 @@ const dynamicLinks = getSeoPages(lang)
     desc: page.description,
     href: `/zh/${page.slug}`,
   }));
+const site = 'https://mistfallhunter.me';
+const sitemapTitle = 'Mistfall Hunter 中文站点地图';
+const sitemapDescription = 'Mistfall Hunter 中文 HTML 站点地图，收录核心攻略、地图、配装、Boss、工具、来源和更新页面。';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: sitemapTitle,
+  description: sitemapDescription,
+  url: `${site}/zh/sitemap/`,
+  inLanguage: 'zh-Hans',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: '首页', item: `${site}/zh/` },
+    { '@type': 'ListItem', position: 2, name: '站点地图', item: `${site}/zh/sitemap/` },
+  ],
+};
 ---
 
 <BaseLayout
   lang={lang}
   path="/sitemap"
-  title="Mistfall Hunter 中文站点地图"
-  description="Mistfall Hunter 中文 HTML 站点地图，收录核心攻略、地图、配装、Boss、工具、来源和更新页面。"
+  title={sitemapTitle}
+  description={sitemapDescription}
+  jsonLd={[pageSchema, breadcrumbSchema]}
 >
   <section class="section">
     <div class="container">

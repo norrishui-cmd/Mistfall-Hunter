@@ -14,6 +14,18 @@ const breadcrumb = {
     { '@type': 'ListItem', position: 2, name: '地图', item: new URL('/zh/map', site).href },
   ],
 };
+
+const webAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Mistfall Hunter 交互式地图',
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'Web',
+  url: new URL('/zh/map', site).href,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description:
+    'Mistfall Hunter 免费交互式地图：可切换撤离点、Mist Lord Boss、高价值搜刮与地标，支持平移、缩放与过滤。',
+};
 ---
 
 <BaseLayout
@@ -21,7 +33,7 @@ const breadcrumb = {
   path="/map"
   title="Mistfall Hunter 交互式地图：撤离点、Boss 与搜刮"
   description="Mistfall Hunter 交互式地图，覆盖 Solemn Needles 与 Hallowgrove——可切换撤离点、Mist Lord Boss、高价值搜刮与地标，支持平移、缩放与过滤。"
-  jsonLd={[breadcrumb]}
+  jsonLd={[webAppSchema, breadcrumb]}
 >
   <section class="section">
     <div class="container">

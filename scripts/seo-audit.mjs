@@ -109,6 +109,17 @@ for (const page of pages) {
   if (!isNoindex && page.title.length > 70) warn(`${page.pathname}: long title (${page.title.length})`);
   if (!isNoindex && page.description.length > 170) warn(`${page.pathname}: long description (${page.description.length})`);
   if (!isNoindex && contentUnits < 180) warn(`${page.pathname}: unusually short content`);
+  if (!isNoindex) {
+    const schemaTypes = parsedSchemas(page).map((schema) => schema['@type']);
+    const isHomepage = page.pathname === '/' || /^\/(?:zh|de|ja)\/$/.test(page.pathname);
+    if (!isHomepage && !schemaTypes.includes('BreadcrumbList')) {
+      warn(`${page.pathname}: indexable page is missing BreadcrumbList structured data`);
+    }
+    const contentSchemaTypes = ['Article', 'TechArticle', 'NewsArticle', 'FAQPage', 'CollectionPage', 'WebApplication', 'WebPage', 'ItemList', 'VideoGame'];
+    if (!schemaTypes.some((type) => contentSchemaTypes.includes(type))) {
+      warn(`${page.pathname}: indexable page has no content-describing structured data (only sitewide WebSite/Organization)`);
+    }
+  }
   if (!isNoindex && /(to confirm|unconfirmed|watch for updates|check at launch|exact values are unknown)/i.test(page.html)) {
     warn(`${page.pathname}: indexable page contains uncertainty-heavy language`);
   }
