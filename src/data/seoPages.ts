@@ -16,6 +16,7 @@ import { enLaunchWeekClusterPages, zhLaunchWeekClusterPages } from './urlLaunchW
 import { enLaunchDayIntentPages, zhLaunchDayIntentPages } from './urlLaunchDayIntents';
 import { enPostLaunchEvergreenPages, zhPostLaunchEvergreenPages } from './urlPostLaunchEvergreen';
 import { softNoindexSlugs } from './seoRecovery';
+import { isIndexablePath } from './seoRegistry.mjs';
 
 export type SeoSection = {
   heading: string;
@@ -460,13 +461,14 @@ export function isIndexable(pageOrSlug?: SeoPage | string): boolean {
   // "wait for launch" dilute the topical signal of the confirmed guides.
   // Keep them published and internally reachable, but do not ask Google to
   // rank them until they have live facts, screenshots, or patch references.
-  const indexableSlugs = new Set([
-    'news', 'guides', 'tools', 'about', 'weapons', 'bosses', 'loot', 'soul-of-return',
-    'release-date', 'beginner-guide', 'classes', 'builds', 'map', 'performance',
-    'build-planner', 'sources', 'updates', 'sitemap', 'faq',
-    'steam-charts-player-count', 'steam-page-guide', 'gameplay-overview',
-    'best-class-for-beginners', 'crossplay-status', 'price-status', 'server-status',
-    'best-builds', 'extraction-map', 'boss-locations', 'known-issues-tracker',
-  ]);
-  return indexableSlugs.has(slug) && !softNoindexSlugs.has(slug);
+  //
+  // isIndexablePath (seoRegistry.mjs) is the single source of truth here —
+  // it already covers both the static core pages (INDEXABLE_STATIC_PATHS)
+  // and the long-tail slug whitelist (INDEXABLE_SLUGS). A second,
+  // hand-maintained copy used to live inline in this function and silently
+  // drifted out of sync with seoRegistry.mjs (2026-07-23) — a slug added to
+  // one without the other produced a sitemap/noindex conflict. Edit
+  // INDEXABLE_SLUGS or INDEXABLE_STATIC_PATHS in seoRegistry.mjs; this
+  // function and the sitemap both read from that one place now.
+  return isIndexablePath(`/${slug}/`) && !softNoindexSlugs.has(slug);
 }

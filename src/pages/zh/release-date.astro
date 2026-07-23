@@ -4,8 +4,10 @@ import CoreQualityPanel from '../../components/CoreQualityPanel.astro';
 import TabNewsModule from '../../components/TabNewsModule.astro';
 import RelatedFaqModule from '../../components/RelatedFaqModule.astro';
 import { launchFacts } from '../../data/launchFacts';
+import { hasLaunched } from '../../data/launchTiming';
 
 const lf = launchFacts.zh;
+const launched = hasLaunched();
 
 const lang = 'zh' as const;
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
@@ -156,13 +158,27 @@ const breadcrumbSchema = {
           如果你遇到性能问题，那多半是当前版本的已知问题，而不是你的设备。
         </p>
 
-        <h2>如何为发售做准备</h2>
-        <ul>
-          <li>在 Steam 加入愿望单，或在 Xbox 与 PlayStation 商店关注，以便发售时收到通知。</li>
-          <li>如果你有 Game Pass，它会在首发当天出现在库里。</li>
-          <li>{lf.preloadLine}</li>
-          <li>在所在地区商店核对当地价格与首发倒计时。</li>
-        </ul>
+        {launched ? (
+          <>
+            <h2>Mistfall Hunter 已经上线——上手前先做这些</h2>
+            <ul>
+              <li>首次游玩前先更新到首日补丁。</li>
+              <li>如果你有 Game Pass，Xbox 与 PC 库里已经能看到了。</li>
+              <li>登录或排队遇到问题，先查看<a href="/zh/server-status">服务器状态</a>。</li>
+              <li>如果当地定价和美区不同，以所在地区商店为准。</li>
+            </ul>
+          </>
+        ) : (
+          <>
+            <h2>如何为发售做准备</h2>
+            <ul>
+              <li>在 Steam 加入愿望单，或在 Xbox 与 PlayStation 商店关注，以便发售时收到通知。</li>
+              <li>如果你有 Game Pass，它会在首发当天出现在库里。</li>
+              <li>{lf.preloadLine}</li>
+              <li>在所在地区商店核对当地价格与首发倒计时。</li>
+            </ul>
+          </>
+        )}
       </div>
 
       <h2 class="section-title" style="margin-top:2.5rem">常见问题</h2>

@@ -1,5 +1,6 @@
 ﻿---
 import { sources } from '../data/siteQuality';
+import { hasLaunched } from '../data/launchTiming';
 
 interface LinkItem {
   title: string;
@@ -20,13 +21,19 @@ const {
   watch,
   links,
 } = Astro.props as Props;
+
+const launched = hasLaunched();
+const watchHeading = launched ? 'Still being verified' : 'Needs launch verification';
+const summaryLine = launched
+  ? `Last checked: ${updated}. Confirmed facts are separated from items still being verified against the live game.`
+  : `Last checked: ${updated}. Confirmed facts are separated from launch-watch items.`;
 ---
 
 <aside class="quality-panel" aria-label="Editorial quality notes">
   <div class="quality-head">
     <div>
       <span class="eyebrow">Quality notes</span>
-      <p>Last checked: {updated}. Confirmed facts are separated from launch-watch items.</p>
+      <p>{summaryLine}</p>
     </div>
     <a href="/sources">Sources policy</a>
   </div>
@@ -43,7 +50,7 @@ const {
       </ul>
     </section>
     <section>
-      <h2>Needs launch verification</h2>
+      <h2>{watchHeading}</h2>
       <ul>
         {watch.map((item) => <li>{item}</li>)}
       </ul>

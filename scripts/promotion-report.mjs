@@ -65,7 +65,7 @@ try {
     const original = fs.readFileSync(file, 'utf8');
     const rewritten = original.replace(
       /(from\s+')(\.[^']+)(')/g,
-      (_match, pre, spec, post) => `${pre}${spec.endsWith('.ts') ? spec : `${spec}.ts`}${post}`,
+      (_match, pre, spec, post) => `${pre}${/\.(ts|mjs|js|json)$/.test(spec) ? spec : `${spec}.ts`}${post}`,
     );
     if (rewritten !== original) fs.writeFileSync(file, rewritten);
   }
@@ -79,6 +79,13 @@ import { auditAll, CORE_HUB_SLUGS } from ${JSON.stringify(path.join(scratchData,
 
 function bucketFor(page, passed) {
   const live = isIndexable(page);
+  // The quality gate (qualityGate.ts) doesn't know about the \`draft\` flag —
+  // it can score a machine-generated "Chinese Draft" English-filler page as
+  // passing purely on structural grounds (enough sections/faqs/cards), even
+  // though the content itself is a placeholder, not real translated copy.
+  // Never let those show up as promotable; they need real translation
+  // first, not just a gate score.
+  if (page?.draft) return 'draftPlaceholder';
   if (live && passed) return 'liveClean';
   if (live && !passed) return 'regressionRisk';
   if (!live && passed) return 'readyToPromote';
@@ -88,7 +95,7 @@ function bucketFor(page, passed) {
 function report(lang) {
   const pages = getSeoPages(lang);
   const results = auditAll(pages);
-  const buckets = { liveClean: [], regressionRisk: [], readyToPromote: [], notReady: [] };
+  const buckets = { liveClean: [], regressionRisk: [], readyToPromote: [], notReady: [], draftPlaceholder: [] };
   for (const r of results) {
     const page = pages.find((p) => p.slug === r.slug);
     buckets[bucketFor(page, r.passed)].push(r);
@@ -99,6 +106,7 @@ function report(lang) {
   console.log(\`  regression risk:   \${buckets.regressionRisk.length}\`);
   console.log(\`  ready to promote:  \${buckets.readyToPromote.length}\`);
   console.log(\`  not ready:         \${buckets.notReady.length}\`);
+  console.log(\`  draft placeholder: \${buckets.draftPlaceholder.length} (excluded from promotion \u2014 needs real translation, not just a gate pass)\`);
 
   if (buckets.readyToPromote.length) {
     console.log(\`\\n  READY TO PROMOTE (noindex today, passes the gate now):\`);

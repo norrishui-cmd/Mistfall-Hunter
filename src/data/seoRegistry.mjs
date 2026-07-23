@@ -63,6 +63,33 @@ export const INDEXABLE_SLUGS = new Set([
   'best-class-for-beginners', 'crossplay-status', 'price-status',
   'server-status', 'best-builds', 'extraction-map', 'boss-locations',
   'known-issues-tracker',
+
+  // 2026-07-23 launch-week batch: promoted after passing the quality gate
+  // (see scripts/promotion-report.mjs) and selected for direct launch-week
+  // search intent — timing, platform access, price, crossplay, and
+  // launch-night trackers. EN only for this batch: the zh version of every
+  // one of these slugs is still a machine-generated "Chinese Draft"
+  // placeholder (see ZH_DRAFT_SLUGS below and draft flag in seoPages.ts),
+  // so promoting the slug name doesn't promote the zh page — that's
+  // intentional, not an oversight. Translate zh first, then add here.
+  //
+  // NOTE: an earlier version of this batch also included ~23 slugs from
+  // urlTrendExpansion.ts's createPage() template (release-time-time-zones,
+  // steam-charts-explained, xbox-series-x-settings, etc.). Those were
+  // reverted the same day: that template concatenates
+  // `Mistfall Hunter ${brief.trend}` where brief.trend already starts with
+  // "mistfall hunter", producing titles with the brand name duplicated
+  // twice plus a literal "Trend Guide" suffix, and its body copy is written
+  // as an internal content-planning brief ("this page is built to
+  // answer...") rather than reader-facing content. Passing the structural
+  // quality gate (enough sections/FAQs/cards) is necessary but not
+  // sufficient — it doesn't catch a page that is about itself. Fix the
+  // template's title/description generation and content voice before
+  // promoting anything from that file again.
+  'ps5-launch-guide', 'controller-vs-keyboard-guide', 'free-to-play-price-guide',
+  'xbox-game-pass-guide', 'crossplay-guide', 'preload-guide',
+  'error-code-guide', 'queue-times-guide', 'patch-notes-tracker',
+  'steam-launch-guide', 'steam-deck-settings-guide',
 ]);
 
 export const INDEXABLE_TAB_NEWS_SLUGS = new Set([
@@ -108,6 +135,15 @@ export const ZH_DRAFT_SLUGS = new Set([
   'price-status',
   'steam-charts-player-count',
   'steam-page-guide',
+
+  // 2026-07-23 launch-week batch (see INDEXABLE_SLUGS above) — every one of
+  // these is drafted via localizeDraft() in urlRapidExpansion.ts, so the zh
+  // page is English filler labeled "Chinese Draft" until someone translates
+  // it for real.
+  'ps5-launch-guide', 'controller-vs-keyboard-guide', 'free-to-play-price-guide',
+  'xbox-game-pass-guide', 'crossplay-guide', 'preload-guide',
+  'error-code-guide', 'queue-times-guide', 'patch-notes-tracker',
+  'steam-launch-guide', 'steam-deck-settings-guide',
 ]);
 
 export function normalizeSeoPath(path = '/') {

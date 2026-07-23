@@ -4,8 +4,10 @@ import CoreQualityPanel from '../components/CoreQualityPanel.astro';
 import TabNewsModule from '../components/TabNewsModule.astro';
 import RelatedFaqModule from '../components/RelatedFaqModule.astro';
 import { launchFacts } from '../data/launchFacts';
+import { hasLaunched } from '../data/launchTiming';
 
 const lf = launchFacts.en;
+const launched = hasLaunched();
 
 const lang = 'en' as const;
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
@@ -160,13 +162,27 @@ const breadcrumbSchema = {
           they're known build problems rather than something on your end.
         </p>
 
-        <h2>How to get ready for launch</h2>
-        <ul>
-          <li>Wishlist it on Steam, or add it on the Xbox and PlayStation stores, to get a launch notification.</li>
-          <li>If you have Game Pass, it'll appear in your library on day one.</li>
-          <li>{lf.preloadLine}</li>
-          <li>Check your regional storefront for the local price and launch countdown.</li>
-        </ul>
+        {launched ? (
+          <>
+            <h2>Mistfall Hunter is out now — what to do first</h2>
+            <ul>
+              <li>Update to the day-one patch before your first run.</li>
+              <li>If you have Game Pass, it's already in your library on Xbox and PC.</li>
+              <li>Check <a href="/server-status">server status</a> if you hit login or queue issues on launch day.</li>
+              <li>Check your regional storefront for the local price if it differs from the US listing.</li>
+            </ul>
+          </>
+        ) : (
+          <>
+            <h2>How to get ready for launch</h2>
+            <ul>
+              <li>Wishlist it on Steam, or add it on the Xbox and PlayStation stores, to get a launch notification.</li>
+              <li>If you have Game Pass, it'll appear in your library on day one.</li>
+              <li>{lf.preloadLine}</li>
+              <li>Check your regional storefront for the local price and launch countdown.</li>
+            </ul>
+          </>
+        )}
       </div>
 
       <h2 class="section-title" style="margin-top:2.5rem">FAQ</h2>
