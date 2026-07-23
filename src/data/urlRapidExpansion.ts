@@ -173,6 +173,11 @@ function makePage(brief: RapidBrief): SeoPage {
       { q: `Who should use this ${brief.topic} guide?`, a: `It is designed for ${brief.audience}.` },
       { q: 'Why not list exact numbers now?', a: 'Publishing invented numbers creates low-quality pages. This URL is structured so exact data can be added quickly once it is verified.' },
     ],
+    sources: [
+      { href: 'https://www.mistfallhunter.com/', label: 'Mistfall Hunter official site' },
+      { href: 'https://store.steampowered.com/app/3282300/Mistfall_Hunter/', label: 'Mistfall Hunter on Steam' },
+    ],
+    confidence: 'reported',
   };
 }
 

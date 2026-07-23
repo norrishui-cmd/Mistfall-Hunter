@@ -48,6 +48,13 @@ export type SeoPage = {
   tables?: SeoTable[];
   relatedSearches?: string[];
   faqs?: { q: string; a: string }[];
+  // Referenced by qualityGate.ts's passesQualityGate() but, until now, never
+  // actually declared here or populated on any page — meaning the quality
+  // gate silently failed every single non-hub page in the corpus regardless
+  // of real content quality. See scripts/promotion-report.mjs.
+  sources?: { href: string; label?: string }[];
+  confidence?: 'confirmed' | 'reported' | 'datamined' | 'unconfirmed';
+  strictSections?: boolean;
   // Set on machine-generated locale placeholders (see localizeDraft() in the
   // url*.ts files) that reserve a URL slot with English filler content and a
   // "Chinese Draft" label. These must never be indexable, regardless of

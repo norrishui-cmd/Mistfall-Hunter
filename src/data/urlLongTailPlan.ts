@@ -546,6 +546,11 @@ export const enLongTailPages: SeoPage[] = [
       { q: 'Are Mistfall Hunter servers down?', a: 'Check official channels and platform status first; this page should be updated with known incidents after launch.' },
       { q: 'Is a disconnect a performance issue?', a: 'Not always. Disconnects may be server, platform, network, or client stability problems.' },
     ],
+    sources: [
+      { href: 'https://www.mistfallhunter.com/', label: 'Mistfall Hunter official site' },
+      { href: 'https://store.steampowered.com/app/3282300/Mistfall_Hunter/', label: 'Mistfall Hunter on Steam' },
+    ],
+    confidence: 'reported',
   },
 ];
 

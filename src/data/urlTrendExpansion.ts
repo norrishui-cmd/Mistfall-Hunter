@@ -149,12 +149,18 @@ function createPage(brief: TrendBrief): SeoPage {
       { q: 'Is the information final?', a: 'No. This is a pre-launch trend page designed to be updated with verified launch-week data.' },
       { q: 'What should be checked after launch?', a: brief.update },
     ],
+    sources: [
+      { href: 'https://www.mistfallhunter.com/', label: 'Mistfall Hunter official site' },
+      { href: 'https://store.steampowered.com/app/3282300/Mistfall_Hunter/', label: 'Mistfall Hunter on Steam' },
+    ],
+    confidence: 'reported',
   };
 }
 
 function localizeDraft(page: SeoPage): SeoPage {
   return {
     ...page,
+    draft: true,
     title: `${page.title} | Chinese Draft`,
     description: `${page.description} Chinese trend draft reserved for localization and live launch data.`,
     eyebrow: 'ZH Trend URL',

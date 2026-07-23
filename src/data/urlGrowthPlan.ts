@@ -76,6 +76,11 @@ export const enGrowthPages: SeoPage[] = [
       { q: 'Where are the extraction points?', a: 'The interactive map should track exact points once live markers are verified.' },
       { q: 'What is the safest extraction route?', a: 'The safest route is the one you scout before looting, with enough stamina and healing reserved for escape.' },
     ],
+    sources: [
+      { href: 'https://www.mistfallhunter.com/', label: 'Mistfall Hunter official site' },
+      { href: 'https://store.steampowered.com/app/3282300/Mistfall_Hunter/', label: 'Mistfall Hunter on Steam' },
+    ],
+    confidence: 'reported',
   },
   {
     slug: 'boss-locations',
@@ -95,6 +100,11 @@ export const enGrowthPages: SeoPage[] = [
       { q: 'Are boss locations fixed?', a: 'Exact spawn rules should be confirmed after launch. This page is structured to track fixed and rotating locations.' },
       { q: 'Should solo players fight bosses?', a: 'Only with a clean exit plan and a low-risk kit while learning.' },
     ],
+    sources: [
+      { href: 'https://www.mistfallhunter.com/', label: 'Mistfall Hunter official site' },
+      { href: 'https://store.steampowered.com/app/3282300/Mistfall_Hunter/', label: 'Mistfall Hunter on Steam' },
+    ],
+    confidence: 'reported',
   },
   {
     slug: 'loot-locations',
@@ -133,6 +143,11 @@ export const enGrowthPages: SeoPage[] = [
       { q: 'What is the best build?', a: 'Before launch, the best answer is role-based: choose the build that matches solo, squad, PvP, or boss farming goals.' },
       { q: 'Are exact affixes final?', a: 'No. Exact affix values should be verified after launch.' },
     ],
+    sources: [
+      { href: 'https://www.mistfallhunter.com/', label: 'Mistfall Hunter official site' },
+      { href: 'https://store.steampowered.com/app/3282300/Mistfall_Hunter/', label: 'Mistfall Hunter on Steam' },
+    ],
+    confidence: 'reported',
   },
   {
     slug: 'mercenary-build',
