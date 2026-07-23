@@ -129,6 +129,11 @@ export const enExpansionPages: SeoPage[] = [
     eyebrow: 'PvP guide',
     h1: 'Mistfall Hunter PvP guide',
     lead: 'PvP in an extraction game is less about fair duels and more about timing, sound, stamina, and knowing when another hunter is walking into your trap.',
+    sources: [
+      { href: 'https://www.mistfallhunter.com/', label: 'Mistfall Hunter official site' },
+      { href: 'https://store.steampowered.com/app/3282300/Mistfall_Hunter/', label: 'Mistfall Hunter on Steam' },
+    ],
+    confidence: 'reported',
     sections: [
       { heading: 'Do not take fair fights by default', body: ['A fair fight is expensive. It costs health, cooldowns, stamina, sound discipline, and time. The best PvP starts with advantage: better position, surprise, range, numbers, or an escape route.'] },
       { heading: 'Third parties are the real boss', body: ['Long fights attract other players. If you hear a boss fight or extended PvP, ask whether you should engage, wait for the winner to loot, or leave before the whole area collapses into chaos.'] },
@@ -189,6 +194,32 @@ export const enExpansionPages: SeoPage[] = [
       { heading: 'Role', body: ['Seer is the support and team multiplier. Healing, shields, buffs, and crowd control can turn close fights, but solo Seer has lower kill pressure than damage-focused classes.'] },
       { heading: 'When Seer is strong', body: ['In a coordinated trio, Seer can be one of the most valuable picks because it extends fights, saves teammates, and makes risky bosses safer. Its value rises with communication.'] },
       { heading: 'How to play Seer well', body: ['Stay alive first. A dead support contributes nothing. Position behind the frontline, track teammate cooldowns, and use control to create exits, not only engages.'], bullets: ['Play with a squad', 'Position behind frontline', 'Save tools for emergencies', 'Do not wander alone', 'Turn boss fights safer'] },
+    ],
+  },
+  {
+    slug: 'review',
+    group: 'guides',
+    title: 'Mistfall Hunter Review: Early Impressions Before Launch',
+    description: 'Mistfall Hunter has no launch review yet. Here is what beta and demo hands-on impressions, official positioning, and confirmed features say before July 29.',
+    eyebrow: 'Preview',
+    h1: 'Mistfall Hunter review: what we know before launch',
+    lead: 'There is no official review yet. Mistfall Hunter launches July 29, 2026, so this page tracks what hands-on beta and demo impressions, and Bellring\u2019s own claims, actually confirm so far.',
+    sources: [
+      { href: 'https://www.mistfallhunter.com/', label: 'Mistfall Hunter official site' },
+      { href: 'https://store.steampowered.com/app/3282300/Mistfall_Hunter/', label: 'Mistfall Hunter on Steam' },
+    ],
+    confidence: 'reported',
+    sections: [
+      { heading: 'Why there is no real review yet', body: ['A review needs a finished, live game. Mistfall Hunter releases July 29, 2026, so anything published before that date is a preview based on the Steam Next Fest demo and the June 15\u201322 open beta, not the launch build. This page gets replaced with a real verdict after launch, not just a re-badged preview.'] },
+      { heading: 'What beta and demo players said', body: ['Coverage of the demo and beta describes deliberate, Souls-like combat pacing paired with extraction-genre tension: fights matter because losing a run costs you everything you carried in. The PvPvE structure means monsters and rival players share the same map, so a fight against the environment can turn into a fight against another hunter without warning.'], bullets: ['Combat reads as deliberate, not fast-twitch', 'Extraction stakes are the core hook, not combat alone', 'Six classes with two weapon stances each gave real build variety in testing', 'Beta feedback fed directly into launch tuning, including the Crow Storm and Mace Shapeshift changes'] },
+      { heading: 'The no-pay-to-win promise', body: ['Bellring\u2019s own Steam and Xbox store copy states there are no pay-to-win mechanics and no paid stat boosts, positioning victory as skill-based rather than spend-based. That specific claim has stayed consistent across official materials. What is not yet confirmed is the full shape of the shop beyond cosmetics \u2014 see the pay-to-win tracker for the detailed breakdown.'] },
+      { heading: 'What is still unknown going into launch', body: ['The things a real review needs \u2014 final class balance, live server stability, actual matchmaking population, and whether the extraction economy holds up past the first week \u2014 cannot be judged from a beta. Treat any pre-launch score you see elsewhere with that in mind.'], bullets: ['Live class balance and matchups', 'Server stability and queue times in the first days', 'Long-term extraction economy and progression pacing', 'Crossplay and cross-progression final status'] },
+    ],
+    cards: [
+      { title: 'PvP guide', desc: 'Fights, third parties, and extraction duels.', href: '/pvp-guide' },
+      { title: 'Pay-to-win check', desc: 'What Bellring has confirmed about monetization.', href: '/pay-to-win' },
+      { title: 'Gameplay explained', desc: 'The core loop, combat, and extraction basics.', href: '/gameplay-overview' },
+      { title: 'Beginner guide', desc: 'First-run priorities and early mistakes to avoid.', href: '/beginner-guide' },
     ],
   },
 ];
@@ -300,7 +331,7 @@ export const zhExpansionPages: SeoPage[] = [
     sections: [
       { heading: '单人心态', body: ['单人玩家没有队友复活、掩护或侦查，因此每个声音、路线和耐力失误都更致命。学习期把活着撤离当作胜利，先把小收益带出去。'] },
       { heading: '最佳单人职业', body: ['Shadowstrix 是天然单人选择，因为潜行能控制开战时机。Blackarrow 适合远程侦查和消耗。Mercenary 较慢，但格挡和护甲能降低新手单人失误成本。'] },
-      { heading: '单人路线原则', body: ['不熟地图前少碰热门 Boss 路线，尽早处理 Soul of Return，包里有一两个关键升级就可以考虑离开。贪心比机制失误更容易杀死单人玩家。'], bullets: ['早点 확보撤离条件', '避免长时间吵闹战斗', '不要追小队', '始终记住出口方向', '先把升级带出图'] },
+      { heading: '单人路线原则', body: ['不熟地图前少碰热门 Boss 路线，尽早处理 Soul of Return，包里有一两个关键升级就可以考虑离开。贪心比机制失误更容易杀死单人玩家。'], bullets: ['早点确保撤离条件', '避免长时间吵闹战斗', '不要追小队', '始终记住出口方向', '先把升级带出图'] },
     ],
   },
   {
@@ -311,6 +342,11 @@ export const zhExpansionPages: SeoPage[] = [
     eyebrow: 'PvP 指南',
     h1: 'Mistfall Hunter PvP 指南',
     lead: '撤离游戏里的 PvP 不只是公平决斗，更是时机、声音、耐力，以及判断另一个猎人是否正走进你的陷阱。',
+    sources: [
+      { href: 'https://www.mistfallhunter.com/', label: 'Mistfall Hunter official site' },
+      { href: 'https://store.steampowered.com/app/3282300/Mistfall_Hunter/', label: 'Mistfall Hunter on Steam' },
+    ],
+    confidence: 'reported',
     sections: [
       { heading: '不要默认接公平架', body: ['公平战斗很贵：它消耗生命、冷却、耐力、声音控制和时间。最好的 PvP 来自优势：位置、先手、射程、人数或撤退路线。'] },
       { heading: '劝架才是真 Boss', body: ['长时间战斗会吸引其他玩家。听到 Boss 战或持续 PvP 时，先判断应该进场、等胜者舔包，还是在整个区域失控前离开。'] },
@@ -371,6 +407,32 @@ export const zhExpansionPages: SeoPage[] = [
       { heading: '定位', body: ['Seer 是支援和团队放大器。治疗、护盾、增益和控制能改变接近失败的战斗，但单人 Seer 的击杀压力低于输出职业。'] },
       { heading: '什么时候强', body: ['在有沟通的三人队里，Seer 可以是最有价值的选择之一，因为它能拉长战斗、救队友，并让高风险 Boss 更安全。沟通越好，价值越高。'] },
       { heading: '如何玩好 Seer', body: ['先保证自己活着。死掉的支援没有价值。站在前排后方，关注队友冷却，并把控制用于制造出口，而不只是开战。'], bullets: ['尽量组队游玩', '站在前排后方', '把技能留给紧急情况', '不要独自乱走', '让 Boss 战更安全'] },
+    ],
+  },
+  {
+    slug: 'review',
+    group: 'guides',
+    title: 'Mistfall Hunter 测评：发售前的早期印象',
+    description: 'Mistfall Hunter 还没有正式测评。这里整理了 7 月 29 日发售前，测试期实机体验、官方立场和已确认功能真正说了什么。',
+    eyebrow: '预览',
+    h1: 'Mistfall Hunter 测评：发售前我们已经知道什么',
+    lead: '目前还没有官方测评。Mistfall Hunter 于 2026 年 7 月 29 日发售，本页整理测试期实机体验和 Bellring 官方说法目前能确认的内容。',
+    sources: [
+      { href: 'https://www.mistfallhunter.com/', label: 'Mistfall Hunter official site' },
+      { href: 'https://store.steampowered.com/app/3282300/Mistfall_Hunter/', label: 'Mistfall Hunter on Steam' },
+    ],
+    confidence: 'reported',
+    sections: [
+      { heading: '为什么现在还没有真正的测评', body: ['测评需要一款完成、正式上线的游戏。Mistfall Hunter 于 2026 年 7 月 29 日发售，因此在这之前发布的任何内容，都只是基于 Steam Next Fest 试玩和 6 月 15-22 日公测的预览，而不是正式版。正式上线后，本页会替换成真正的结论，而不只是把预览重新包装一下。'] },
+      { heading: '测试期玩家怎么说', body: ['关于试玩和公测的报道，普遍描述战斗节奏沉稳、偏 Souls-like，同时叠加撤离类游戏特有的紧张感：战斗之所以重要，是因为输掉一局会失去带进去的全部物资。PvPvE 结构意味着怪物和敌对玩家共享同一张地图，一场对抗环境的战斗随时可能变成对抗另一名猎人的战斗。'], bullets: ['战斗手感偏沉稳，不是快节奏割草', '撤离带来的压力是核心卖点，不只是战斗本身', '六个职业、每个两种武器姿态，测试期就展现出真实的构筑多样性', '测试反馈直接影响了发售前的调整，例如 Crow Storm 和 Mace Shapeshift 的改动'] },
+      { heading: '"无付费致胜"承诺', body: ['Bellring 官方在 Steam 和 Xbox 商店文案中明确表示没有 pay-to-win 机制、没有付费属性加成，把胜负定位为看实力而非看氪金。这个具体说法在官方材料中保持一致。目前还不确定的是商店除了外观之外的完整内容——详见 pay-to-win 追踪页。'] },
+      { heading: '发售前仍然未知的部分', body: ['一份真正的测评需要的东西——最终职业平衡、正式服务器稳定性、真实匹配人口，以及撤离经济系统在第一周之后是否还站得住——都无法从测试期判断。看到其他地方发布的发售前评分时，请把这一点考虑进去。'], bullets: ['正式版的职业平衡与对位', '发售初期的服务器稳定性与排队时间', '长期的撤离经济与成长节奏', 'Crossplay 与跨平台进度的最终状态'] },
+    ],
+    cards: [
+      { title: 'PvP 指南', desc: '交战、劝架与撤离点决斗。', href: '/pvp-guide' },
+      { title: 'Pay-to-win 核查', desc: 'Bellring 已确认的商业化信息。', href: '/pay-to-win' },
+      { title: '玩法解析', desc: '核心循环、战斗与撤离基础。', href: '/gameplay-overview' },
+      { title: '新手指南', desc: '首局优先事项与常见新手错误。', href: '/beginner-guide' },
     ],
   },
 ];

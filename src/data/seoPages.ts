@@ -5,6 +5,7 @@ import { enFaqPages, zhFaqPages } from './faqExpansion';
 import { enGrowthPages, zhGrowthPages } from './urlGrowthPlan';
 import { enLongTailPages, zhLongTailPages } from './urlLongTailPlan';
 import { enCluster2Pages, zhCluster2Pages } from './urlLongTailCluster2';
+import { enCluster3Pages, zhCluster3Pages } from './urlLongTailCluster3';
 import { enRapidExpansionPages, zhRapidExpansionPages } from './urlRapidExpansion';
 import { enRapidExpansion2Pages, zhRapidExpansion2Pages } from './urlRapidExpansion2';
 import { enTrendExpansionPages, zhTrendExpansionPages } from './urlTrendExpansion';
@@ -15,6 +16,15 @@ import { enLaunchAnswerPages, zhLaunchAnswerPages } from './urlLaunchAnswerPages
 import { enLaunchWeekClusterPages, zhLaunchWeekClusterPages } from './urlLaunchWeekClusters';
 import { enLaunchDayIntentPages, zhLaunchDayIntentPages } from './urlLaunchDayIntents';
 import { enPostLaunchEvergreenPages, zhPostLaunchEvergreenPages } from './urlPostLaunchEvergreen';
+// enLaunchPages/zhLaunchPages (launchExpansion.ts — pay-to-win, age-rating,
+// editions, anti-cheat, community) was written but never wired into
+// getSeoPages() until 2026-07-24. Its URLs (e.g. /age-rating, /pay-to-win)
+// were 404ing in production despite showing real impressions and even a
+// #4 average position in GSC for /age-rating — Google had these indexed
+// from whenever this file WAS connected, or from a stale crawl, and kept
+// serving them into 404s. Caught while wiring a new page that linked to
+// /pay-to-win and got a "broken internal link" failure from seo-audit.mjs.
+import { enLaunchPages, zhLaunchPages } from './launchExpansion';
 import { softNoindexSlugs } from './seoRecovery';
 import { isIndexablePath } from './seoRegistry.mjs';
 
@@ -431,8 +441,8 @@ export const zhPages: SeoPage[] = [
 
 export function getSeoPages(lang: Lang): SeoPage[] {
   return lang === 'zh'
-    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages.filter((page) => page.slug !== 'faq'), ...zhGrowthPages, ...zhLongTailPages, ...zhCluster2Pages, ...zhRapidExpansionPages, ...zhRapidExpansion2Pages, ...zhTrendExpansionPages, ...zhDeepLongTailPages, ...zhFaqLongTailPages, ...zhLatestNewsPages, ...zhLaunchAnswerPages, ...zhLaunchWeekClusterPages, ...zhLaunchDayIntentPages, ...zhPostLaunchEvergreenPages]
-    : [...enPages, ...enExpansionPages, ...enFaqPages.filter((page) => page.slug !== 'faq'), ...enGrowthPages, ...enLongTailPages, ...enCluster2Pages, ...enRapidExpansionPages, ...enRapidExpansion2Pages, ...enTrendExpansionPages, ...enDeepLongTailPages, ...enFaqLongTailPages, ...enLatestNewsPages, ...enLaunchAnswerPages, ...enLaunchWeekClusterPages, ...enLaunchDayIntentPages, ...enPostLaunchEvergreenPages];
+    ? [...zhPages, ...zhExpansionPages, ...zhFaqPages.filter((page) => page.slug !== 'faq'), ...zhGrowthPages, ...zhLongTailPages, ...zhCluster2Pages, ...zhCluster3Pages, ...zhRapidExpansionPages, ...zhRapidExpansion2Pages, ...zhTrendExpansionPages, ...zhDeepLongTailPages, ...zhFaqLongTailPages, ...zhLatestNewsPages, ...zhLaunchAnswerPages, ...zhLaunchWeekClusterPages, ...zhLaunchDayIntentPages, ...zhPostLaunchEvergreenPages, ...zhLaunchPages]
+    : [...enPages, ...enExpansionPages, ...enFaqPages.filter((page) => page.slug !== 'faq'), ...enGrowthPages, ...enLongTailPages, ...enCluster2Pages, ...enCluster3Pages, ...enRapidExpansionPages, ...enRapidExpansion2Pages, ...enTrendExpansionPages, ...enDeepLongTailPages, ...enFaqLongTailPages, ...enLatestNewsPages, ...enLaunchAnswerPages, ...enLaunchWeekClusterPages, ...enLaunchDayIntentPages, ...enPostLaunchEvergreenPages, ...enLaunchPages];
 }
 
 export function getSeoPage(lang: Lang, slug: string): SeoPage | undefined {

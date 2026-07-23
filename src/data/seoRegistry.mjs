@@ -90,6 +90,14 @@ export const INDEXABLE_SLUGS = new Set([
   'xbox-game-pass-guide', 'crossplay-guide', 'preload-guide',
   'error-code-guide', 'queue-times-guide', 'patch-notes-tracker',
   'steam-launch-guide', 'steam-deck-settings-guide',
+
+  // 2026-07-24: pvp-guide already had real, substantive en+zh content
+  // (not a stub) sitting noindex — promoted directly, both locales.
+  // 'review' is new content written the same day to capture the rising
+  // "mistfall hunter review" search trend (GSC + Trends data). 'pay-to-win'
+  // was already-good existing content promoted alongside it because the
+  // new review page links to it.
+  'pvp-guide', 'review', 'pay-to-win',
 ]);
 
 export const INDEXABLE_TAB_NEWS_SLUGS = new Set([

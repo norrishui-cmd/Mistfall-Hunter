@@ -51,12 +51,12 @@ export const enLaunchPages: SeoPage[] = [
     lead: "Bellring's own marketing is unusually direct on this point: no pay-to-win, no paid stat boosts. Here's what's confirmed and what still needs watching.",
     sections: [
       { heading: 'What Bellring has said', body: ['Both the official Steam listing and the open beta\'s own marketing repeat the same line: there are no pay-to-win mechanics and no paid stat boosts, and victory is meant to come down to skill and preparation rather than spending. That framing has shown up consistently across the game\'s own store copy and press materials, not just a one-off marketing line.'] },
-      { heading: 'What is still unconfirmed', body: ['"No stat boosts" doesn\'t automatically tell you what IS for sale. Cosmetics are near-certain given the beta\'s avatar frames, poses, and emotes, and the beta\'s Golden Cipher event also pointed to Deluxe and Standard edition tiers existing. None of that confirms final pricing, whether there\'s a battle pass, or how convenience items will be sold. Treat the no-P2W promise as solid and the rest of the shop as unconfirmed until launch.'], bullets: ['Cosmetic-only rewards are the confirmed pattern so far', 'Deluxe and Standard editions exist in some form (beta event context)', 'No confirmed battle pass or season pass structure yet', 'Final price is still not announced'] },
+      { heading: 'What is still pending confirmation', body: ['"No stat boosts" doesn\'t automatically tell you what IS for sale. Cosmetics are near-certain given the beta\'s avatar frames, poses, and emotes, and the beta\'s Golden Cipher event also pointed to Deluxe and Standard edition tiers existing. None of that confirms final pricing, whether there\'s a battle pass, or how convenience items will be sold. Treat the no-P2W promise as solid and the rest of the shop as still pending confirmation until launch.'], bullets: ['Cosmetic-only rewards are the confirmed pattern so far', 'Deluxe and Standard editions exist in some form (beta event context)', 'No confirmed battle pass or season pass structure yet', 'Final price is still not announced'] },
     ],
     cards: [
-      { title: 'Editions tracker', desc: 'What we know about Deluxe vs Standard so far.', href: '/editions' },
-      { title: 'Is it free to play?', desc: 'Price and Game Pass status tracker.', href: '/free-to-play' },
-      { title: 'Beta rewards', desc: 'What beta cosmetics carry into launch.', href: '/beta-rewards' },
+      { title: 'Release date & price', desc: 'Standard vs Deluxe pricing and launch discount.', href: '/release-date' },
+      { title: 'Price & access status', desc: 'Free-to-play status and Game Pass access tracker.', href: '/price-status' },
+      { title: 'Beta rewards', desc: 'What beta cosmetics carry into launch.', href: '/game-data/beta-rewards' },
     ],
     faqs: [
       { q: 'Has Bellring confirmed no pay-to-win?', a: 'Yes — the official Steam listing and beta marketing both state there are no pay-to-win mechanics and no paid stat boosts.' },
@@ -188,9 +188,9 @@ export const zhLaunchPages: SeoPage[] = [
       { heading: '还没确认的部分', body: ['"不卖属性加成"不代表商城里会卖什么都清楚了。从测试期的头像框、姿势和表情来看，外观类内容几乎是肯定会卖的；测试期的 Golden Cipher 活动也说明豪华版和标准版这类版本分级是存在的。但这些都不能确认最终定价、是否有战令或赛季通行证，也不能确认便利类道具会怎么卖。"不数值付费"这一条可以放心，商城其余部分请等发售后再看。'], bullets: ['目前确认的模式是纯外观奖励', '豪华版与标准版这类版本存在（来自测试期活动信息）', '尚未确认是否有战令/赛季通行证', '最终价格仍未公布'] },
     ],
     cards: [
-      { title: '版本追踪', desc: '目前已知的豪华版与标准版信息。', href: '/zh/editions' },
-      { title: '是否免费？', desc: '价格与 Game Pass 状态追踪。', href: '/zh/free-to-play' },
-      { title: '测试奖励', desc: '哪些测试外观会带进正式版。', href: '/zh/beta-rewards' },
+      { title: '发售日期与价格', desc: '标准版与豪华版定价、首发折扣。', href: '/zh/release-date' },
+      { title: '新闻与更新', desc: '发售动态与官方公告追踪。', href: '/zh/news' },
+      { title: '测试奖励', desc: '哪些测试外观会带进正式版。', href: '/zh/game-data/beta-rewards' },
     ],
     faqs: [
       { q: 'Bellring 确认过不数值付费吗？', a: '确认过——官方 Steam 页面和测试期宣传都表示没有数值付费机制、不卖属性加成。' },
