@@ -97,6 +97,8 @@ export const localizedCorePaths = new Set([
   '/', '/release-date', '/beginner-guide', '/classes', '/builds', '/guides',
   '/performance', '/about', '/weapons', '/bosses', '/loot', '/soul-of-return',
   '/sources', '/updates', '/game-data',
+  '/server-status', '/known-issues-tracker', '/error-code-guide',
+  '/queue-times-guide', '/patch-notes-tracker', '/pvp-guide',
 ]);
 
 export function getLangFromUrl(url: URL): Lang {

@@ -136,6 +136,72 @@ const de: LocalizedCorePage[] = [
       { heading: 'Häufige Extraktionsfehler', paragraphs: ['Die meisten schlechten Tode passieren, wenn Spieler zu lange bleiben, nahe Ausgänge vergessen, einem weiteren Kampf hinterherjagen oder die Ausdauer vor der letzten Flucht aufbrauchen. Extraktion ist eine Fähigkeit, keine Formsache.'], bullets: ['Warte nicht, bis die Tasche voll ist, um ans Gehen zu denken', 'Finde Ausgänge, bevor du einen Boss beginnst', 'Vermeide laute Kämpfe nahe der Extraktion, wenn möglich', 'Spare Ausdauer für den letzten Rückzug'] },
     ], related: [],
   },
+  {
+    slug: 'server-status', title: 'Mistfall Hunter Serverstatus, Wartung & Verbindungsprobleme',
+    description: 'Serverstatus-Tracker für Mistfall Hunter: Wartungsarbeiten zum Launch, Verbindungsfehler, Warteschlangen, Trennungen und wo du Updates findest.',
+    eyebrow: 'Server-Tracker', h1: 'Serverstatus und Verbindungsprobleme',
+    lead: 'Die Launch-Woche eines Extraction-Spiels kann chaotisch sein. Diese Seite gibt dir einen klaren Ort, um zu prüfen, was bekannt ist, bevor du dein Build oder deine Einstellungen verdächtigst.',
+    sections: [
+      { heading: 'Vor dem Launch', paragraphs: ['Offizielle Serverstatus-Kanäle sind vor dem Launch möglicherweise noch nicht vollständig aktiv. Diese Seite wird aktualisiert, sobald Bellring oder die Plattform-Stores Wartungsinformationen veröffentlichen.'] },
+      { heading: 'Wie du das Problem eingrenzt', paragraphs: ['Prüfe zuerst offizielle Kanäle und den Dienststatus der jeweiligen Plattform, bevor du lokal etwas änderst.'], bullets: ['Offizielle Kanäle zuerst prüfen', 'Plattform-Dienststatus bestätigen (Steam, Xbox, PlayStation, Game Pass)', 'Nicht wiederholt riskant neu verbinden', 'Fehlermeldungen notieren', 'Server-Probleme von PC-Performance-Problemen trennen'] },
+      { heading: 'Warteschlange, Absturz oder lokales Netzwerk?', paragraphs: ['Eine Login-Warteschlange deutet meist auf Serverlast hin \u2013 prüfe offizielle Updates. Ein Installationsproblem im Store liegt oft am Plattformdienst \u2013 prüfe den Steam-, Xbox- oder PSN-Status. Abstürze während eines Runs deuten eher auf Client-Stabilität hin \u2013 siehe die Performance-Seite. Trennungen nur in einem bestimmten Netzwerk liegen meist an Router oder Firewall.'] },
+    ], related: [],
+  },
+  {
+    slug: 'known-issues-tracker', title: 'Mistfall Hunter Bekannte Probleme: Abstürze, Ruckler, Server & Bugs',
+    description: 'Mistfall Hunter Tracker für bekannte Probleme: Abstürze, Ruckler, Login-Probleme, Serverwarteschlangen, Bug-Reports und praktische Fehlersuche.',
+    eyebrow: 'Problem-Tracker', h1: 'Mistfall Hunter bekannte Probleme',
+    lead: 'Bevor du an deinem PC herumschraubst, lohnt sich ein Blick hierher \u2014 viele Probleme in der Launch-Woche liegen am Server, nicht an deiner Einstellung.',
+    sections: [
+      { heading: 'Serverstatus vor dem eigenen PC prüfen', paragraphs: ['Bestätige auf der Serverstatus-Seite, ob bereits eine Störung oder ein Wartungsfenster bekannt ist, bevor du lokale Einstellungen änderst.'] },
+      { heading: 'Symptom einem bekannten Problem zuordnen', paragraphs: ['Abstürze, Ruckler, Login-Fehler und Warteschlangen-Probleme haben meist unterschiedliche Ursachen; diese Seite gruppiert sie, damit du den richtigen Fix statt Raten anwendest.'] },
+      { heading: 'Plattform und Build beim Melden angeben', paragraphs: ['Jeder Eintrag sollte Plattform, Patch-Version und Reproduktionsschritte nennen, da ein Fix auf einer Plattform nicht automatisch für eine andere gilt.'], bullets: ['Plattform und Patch-Version notieren', 'Reproduktionsschritte dokumentieren', 'Fixes nicht ungeprüft auf andere Plattformen übertragen'] },
+    ], related: [],
+  },
+  {
+    slug: 'error-code-guide', title: 'Mistfall Hunter Fehlercode-Guide: Login, Verbindung & Installation',
+    description: 'Mistfall Hunter Fehlercode-Guide für Login-Fehler, Verbindungsprobleme, Installationsprobleme, Plattformdienst-Checks und Launch-Fehlersuche.',
+    eyebrow: 'Fehlercode-Guide', h1: 'Mistfall Hunter Fehlercode-Guide',
+    lead: 'Nicht jeder Fehler hat dieselbe Ursache. Grenze zuerst nach Plattform, Serverstatus und lokaler Einrichtung ein, bevor du etwas änderst.',
+    sections: [
+      { heading: 'Genauen Fehlertext oder -code lesen', paragraphs: ['Mach einen Screenshot oder notiere die genaue Meldung \u2014 Login-, Verbindungs- und Installationsfehler sehen oft ähnlich aus, haben aber unterschiedliche Lösungen.'] },
+      { heading: 'Plattformweite Ausfälle ausschließen', paragraphs: ['Prüfe zuerst den Dienststatus von Steam, Xbox Live oder PSN, bevor du lokal suchst; ein plattformweiter Ausfall lässt sich nicht durch Neuinstallation beheben.'] },
+      { heading: 'Die üblichen lokalen Lösungen versuchen', paragraphs: ['Wenn der Plattformstatus in Ordnung ist, hilft oft ein Neustart des Clients, das Überprüfen der Spieldateien oder ein ausstehendes Treiber-Update.'], bullets: ['Client neu starten', 'Spieldateien überprüfen', 'Auf ausstehende Plattform- oder Treiber-Updates prüfen'] },
+    ], related: [],
+  },
+  {
+    slug: 'queue-times-guide', title: 'Mistfall Hunter Wartezeiten-Guide: Matchmaking, Server & Region',
+    description: 'Mistfall Hunter Wartezeiten-Guide zu Matchmaking-Wartezeiten, Serverlast, Region-Checks, Gruppengröße und Verhalten bei Launch-Spitzen.',
+    eyebrow: 'Warteschlangen-Guide', h1: 'Mistfall Hunter Wartezeiten-Guide',
+    lead: 'Lange Warteschlangen in der ersten Woche sind meist kein Zeichen für ein kaputtes Spiel, sondern für hohe Serverlast.',
+    sections: [
+      { heading: 'Ist es eine bekannte Launch-Spitze?', paragraphs: ['Lange Warteschlangen in den ersten Tagen nach dem Launch sind üblich und lösen sich meist auf, sobald die Serverkapazität skaliert; prüfe den Serverstatus, bevor du von einem Fehler ausgehst.'] },
+      { heading: 'Eine ruhigere Region oder Zeit versuchen', paragraphs: ['Wenn deine Region es erlaubt, sind Warteschlangen außerhalb der regionalen Abend-Stoßzeiten meist kürzer.'] },
+      { heading: 'Nicht wiederholt während eines Ausfalls neu starten', paragraphs: ['Wiederholtes Neustarten verkürzt die Warteschlange nicht und kann sogar deinen Platz darin kosten. Bei bekannten Server-Problemen lohnt sich Geduld mehr als Neustarts.'] },
+    ], related: [],
+  },
+  {
+    slug: 'patch-notes-tracker', title: 'Mistfall Hunter Patch-Notes-Tracker: Balance, Performance & Server-Updates',
+    description: 'Mistfall Hunter Patch-Notes-Tracker für Balance-Änderungen, Performance-Fixes, Server-Updates, Klassen-Tuning und geprüfte Update-Zusammenfassungen.',
+    eyebrow: 'Patch-Tracker', h1: 'Mistfall Hunter Patch-Notes-Tracker',
+    lead: 'Diese Seite bündelt Patch-Informationen an einem Ort, damit du nicht mehrere Quellen durchsuchen musst, um zu wissen, was sich zuletzt geändert hat.',
+    sections: [
+      { heading: 'Zuerst den neuesten Patch prüfen', paragraphs: ['Schau zuerst nach den aktuellsten Day-One- oder Hotfix-Notizen, bevor du ein Build oder eine Einstellung für das Problem verantwortlich machst.'] },
+      { heading: 'Balance-Änderungen von Bugfixes trennen', paragraphs: ['Balance-Änderungen betreffen die Strategie (Klassen-Tuning, Affix-Werte); Bugfixes betreffen die Stabilität. Beide werden getrennt verfolgt, damit ein Build-Guide nicht wegen eines reinen Stabilitäts-Patches veraltet wirkt.'] },
+      { heading: 'Quelle und Datum für jeden Eintrag', paragraphs: ['Jeder Patch-Hinweis verlinkt die offizielle Quelle und nennt das genaue Patch-Datum, damit erkennbar bleibt, was aktuell ist und was überholt wurde.'], bullets: ['Offizielle Quelle je Eintrag verlinkt', 'Genaues Patch-Datum angegeben', 'Aktuelles klar von Überholtem getrennt'] },
+    ], related: [],
+  },
+  {
+    slug: 'pvp-guide', title: 'Mistfall Hunter PvP-Guide: Kämpfe, Third-Partys & Extraktions-Duelle',
+    description: 'Mistfall Hunter PvP-Guide auf Deutsch: Kämpfe wählen, Third-Partys vermeiden, auf Geräusche achten, Ausdauer nutzen, Klassen-Matchups und Extraktions-Duelle überleben.',
+    eyebrow: 'PvP-Guide', h1: 'Mistfall Hunter PvP-Guide',
+    lead: 'PvP in einem Extraction-Spiel dreht sich weniger um faire Duelle als um Timing, Geräusche, Ausdauer und das Erkennen, wann ein anderer Hunter in deine Falle läuft.',
+    sections: [
+      { heading: 'Nimm nicht automatisch einen fairen Kampf an', paragraphs: ['Ein fairer Kampf ist teuer: er kostet Leben, Cooldowns, Ausdauer, Geräuschkontrolle und Zeit. Der beste PvP-Erfolg kommt aus einem Vorteil: Position, Initiative, Reichweite, Zahl oder Fluchtweg.'] },
+      { heading: 'Third-Partys sind der eigentliche Boss', paragraphs: ['Lange Kämpfe ziehen andere Spieler an. Wenn du einen Bosskampf oder anhaltendes PvP hörst, entscheide, ob du eingreifen, auf den Sieger warten oder gehen solltest, bevor die ganze Zone außer Kontrolle gerät.'] },
+      { heading: 'PvP-Grundlagen', paragraphs: ['Behalte Fluchtwege und Ausdauer im Blick, statt jeden Kampf bis zum Ende auszureizen.'], bullets: ['Reserviere Ausdauer für ein zweites Ausweichen', 'Loote nach einem Kill nicht sofort mit gesenktem Kopf', 'Höre vor dem Looten genau hin', 'Behalte Fluchtwege bei der Extraktion im Blick', 'Setze den Kampf bei ungünstigem Tausch zurück'] },
+    ], related: [],
+  },
 ];
 
 const ja: LocalizedCorePage[] = [
@@ -261,6 +327,72 @@ const ja: LocalizedCorePage[] = [
       { heading: 'Soul of Returnの役割', paragraphs: ['既知の脱出ループでは、Returner Woodlingを狩ってSoul of Returnを入手します。これは帰還ルートを開く、あるいは可能にする鍵となるアイテムです。早めに入手することで、ランが必死の探索から制御された判断へと変わります。'] },
       { heading: 'いつ確保すべきか', paragraphs: ['初心者は思っているより早く脱出手段を確保すべきです。十分な戦利品、出口ルート、Soul of Returnが揃った時点で、あとは「もう一戦がバッグ全体を賭ける価値があるか」という判断だけになります。'] },
       { heading: 'よくある脱出の失敗', paragraphs: ['多くの無駄死には、長居しすぎる、近くの出口を忘れる、もう一戦を追いかける、最後の離脱前にスタミナを使い切る、といった状況で起こります。脱出は形式ではなく技術です。'], bullets: ['バッグが満杯になってから離脱を考えない', 'ボスに挑む前に出口を見つけておく', '可能な限り脱出地点付近での騒がしい戦闘を避ける', '最後の離脱用にスタミナを残す'] },
+    ], related: [],
+  },
+  {
+    slug: 'server-status', title: 'Mistfall Hunter サーバー状況・メンテナンス・接続問題',
+    description: 'Mistfall Hunterのサーバー状況を追跡。発売時のメンテナンス、接続エラー、待機列問題、切断、地域の問題と最新情報の確認場所。',
+    eyebrow: 'サーバー追跡', h1: 'サーバー状況と接続問題',
+    lead: '脱出ゲームの発売週は混乱しがちです。このページは、自分のビルドや設定を疑う前に、何が分かっているかを確認できる場所です。',
+    sections: [
+      { heading: '発売前の状況', paragraphs: ['発売前は公式のサーバー状況チャンネルがまだ完全には稼働していない可能性があります。Bellringやプラットフォームストアがメンテナンス情報を公開次第、このページを更新します。'] },
+      { heading: '問題を切り分ける方法', paragraphs: ['ローカルで何かを変更する前に、まず公式チャンネルと各プラットフォームのサービス状況を確認してください。'], bullets: ['まず公式チャンネルを確認する', 'プラットフォームのサービス状況を確認する（Steam、Xbox、PlayStation、Game Pass）', '何度もリスクを取って再接続しない', 'エラーメッセージを記録する', 'サーバーの問題とPCのパフォーマンス問題を区別する'] },
+      { heading: '待機列・クラッシュ・ローカルネットワークのどれか', paragraphs: ['ログイン待機列は主にサーバー負荷を示します——公式の最新情報を確認してください。ストアでのインストール問題は多くの場合プラットフォームサービスが原因です——Steam、Xbox、PSNの状況を確認してください。ラン中のクラッシュはクライアントの安定性の問題である可能性が高いです——パフォーマンスページを参照してください。特定のネットワークでのみ切断される場合は、ルーターやファイアウォールが原因であることがほとんどです。'] },
+    ], related: [],
+  },
+  {
+    slug: 'known-issues-tracker', title: 'Mistfall Hunter 既知の不具合：クラッシュ・カクつき・サーバー・バグ',
+    description: 'Mistfall Hunterの既知の不具合を追跡。クラッシュ、カクつき、ログイン問題、サーバー待機列、バグ報告と実践的な切り分け方法。',
+    eyebrow: '不具合追跡', h1: 'Mistfall Hunter 既知の不具合',
+    lead: 'PC側をあれこれ触る前に確認してください——発売週の問題の多くは設定ではなくサーバー側が原因です。',
+    sections: [
+      { heading: '自分のPCより先にサーバー状況を確認', paragraphs: ['ローカル設定を変更する前に、サーバー状況ページで障害やメンテナンスがすでに報告されていないか確認してください。'] },
+      { heading: '症状を既知の問題に照合', paragraphs: ['クラッシュ、カクつき、ログイン失敗、待機列の問題はそれぞれ原因が異なることが多いため、このページでは分類して、当てずっぽうではなく正しい対処法を確認できるようにしています。'] },
+      { heading: '報告時にプラットフォームとビルドを記載', paragraphs: ['各項目にはプラットフォームとパッチバージョンを記録すべきです。あるプラットフォームでの修正が別のプラットフォームに当てはまるとは限りません。'], bullets: ['プラットフォームとパッチバージョンを記録', '再現手順を明記', '修正内容を他プラットフォームに安易に適用しない'] },
+    ], related: [],
+  },
+  {
+    slug: 'error-code-guide', title: 'Mistfall Hunter エラーコードガイド：ログイン・接続・インストール',
+    description: 'Mistfall Hunterのエラーコードガイド。ログインエラー、接続問題、インストール問題、プラットフォームサービス確認、発売週のトラブル対処法。',
+    eyebrow: 'エラーコード', h1: 'Mistfall Hunter エラーコードガイド',
+    lead: 'すべてのエラーが同じ原因とは限りません。何かを変更する前に、まずプラットフォーム、サーバー状況、ローカル環境の順に切り分けましょう。',
+    sections: [
+      { heading: '正確なエラー文言・コードを確認', paragraphs: ['スクリーンショットを撮るか正確なメッセージを書き留めてください——ログイン、接続、インストールのエラーは似て見えても対処法が異なります。'] },
+      { heading: 'プラットフォーム全体の障害を除外', paragraphs: ['ローカルで対処する前に、まずSteam、Xbox Live、PSNのサービス状況を確認してください。プラットフォーム全体の障害は再インストールでは解決しません。'] },
+      { heading: '標準的なローカル対処を試す', paragraphs: ['プラットフォーム状況に問題がなければ、クライアントの再起動やゲームファイルの検証、保留中のドライバー更新の確認を試してください。'], bullets: ['クライアントを再起動する', 'ゲームファイルを検証する', '保留中のプラットフォームやドライバーの更新を確認する'] },
+    ], related: [],
+  },
+  {
+    slug: 'queue-times-guide', title: 'Mistfall Hunter 待機時間ガイド：マッチメイキング・サーバー・地域',
+    description: 'Mistfall Hunterの待機時間ガイド。マッチメイキングの待ち時間、サーバー負荷、地域確認、パーティ人数、発売直後の混雑時の対処法。',
+    eyebrow: '待機列ガイド', h1: 'Mistfall Hunter 待機時間ガイド',
+    lead: '発売週の長い待機列は、ゲームが壊れているサインではなく、サーバー負荷が高いサインであることがほとんどです。',
+    sections: [
+      { heading: '既知の発売週の混雑かどうか確認', paragraphs: ['発売直後の数日間に待機列が長くなるのはよくあることで、サーバー容量が拡張されるにつれ通常は解消します。何か壊れていると決めつける前にサーバー状況を確認してください。'] },
+      { heading: '混雑の少ない地域・時間帯を試す', paragraphs: ['地域設定が許す場合、地域のピーク時間帯を避けると待機列は短くなる傾向があります。'] },
+      { heading: '障害中に何度も再起動しない', paragraphs: ['繰り返しの再起動は待機列を短縮せず、むしろ順番待ちの位置を失う可能性があります。既知のサーバー問題の場合は再起動より待つ方が得策です。'] },
+    ], related: [],
+  },
+  {
+    slug: 'patch-notes-tracker', title: 'Mistfall Hunter パッチノート追跡：バランス・パフォーマンス・サーバー更新',
+    description: 'Mistfall Hunterのパッチノートを追跡。バランス調整、パフォーマンス修正、サーバー更新、クラス調整、検証済みの更新まとめ。',
+    eyebrow: 'パッチ追跡', h1: 'Mistfall Hunter パッチノート追跡',
+    lead: 'このページはパッチ情報を一箇所にまとめ、最新の変更点を確認するために複数の情報源を探し回らなくて済むようにします。',
+    sections: [
+      { heading: '最新パッチをまず確認', paragraphs: ['ビルドや設定が原因だと決めつける前に、まず最新のDay 1パッチやホットフィックスの内容を確認してください。'] },
+      { heading: 'バランス調整とバグ修正を区別', paragraphs: ['バランス調整は戦略（クラス調整、Affix数値）に影響し、バグ修正は安定性に影響します。安定性だけのパッチでビルド攻略が古くなったと誤解しないよう、別々に記録します。'] },
+      { heading: '各項目に情報源と日付を記載', paragraphs: ['各パッチ情報には公式情報源をリンクし、正確なパッチ日を明記します。これにより、どれが最新でどれが上書きされたかが分かります。'], bullets: ['各パッチ情報に公式情報源をリンク', '正確なパッチ日を明記', '最新情報と古い情報を明確に区別'] },
+    ], related: [],
+  },
+  {
+    slug: 'pvp-guide', title: 'Mistfall Hunter PvPガイド：交戦・横取り・脱出地点デュエル',
+    description: 'Mistfall HunterのPvPガイド。戦闘の選び方、横取り回避、音を聞く、スタミナ管理、クラス相性、脱出地点での生き残り方。',
+    eyebrow: 'PvPガイド', h1: 'Mistfall Hunter PvPガイド',
+    lead: '脱出ゲームにおけるPvPは公平な一騎打ちではなく、タイミング、音、スタミナ、そして相手が罠にはまろうとしているかどうかの判断です。',
+    sections: [
+      { heading: '公平な戦いを前提にしない', paragraphs: ['公平な戦いはコストが高いです。体力、クールダウン、スタミナ、音の管理、時間を消費します。最良のPvPは有利な状況——position、先手、射程、人数、退路——から生まれます。'] },
+      { heading: '横取りこそ本当のボス', paragraphs: ['長引く戦闘は他プレイヤーを引き寄せます。ボス戦や長引くPvPの音が聞こえたら、参戦するか、勝者を待つか、ゾーン全体が制御不能になる前に離脱するかを判断してください。'] },
+      { heading: 'PvPの基本', paragraphs: ['一戦ごとに退路とスタミナを意識し、最後まで無理に戦い続けないようにしましょう。'], bullets: ['2回目の回避のためにスタミナを残す', 'キル後すぐにうつむいて漁らない', '漁る前によく音を聞く', '脱出地点の入口を把握しておく', '不利な打ち合いになったら仕切り直す'] },
     ], related: [],
   },
 ];
