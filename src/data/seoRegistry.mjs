@@ -122,6 +122,32 @@ export const INDEXABLE_SLUGS = new Set([
   // was already-good existing content promoted alongside it because the
   // new review page links to it.
   'pvp-guide', 'review', 'pay-to-win', 'codes',
+
+  // 2026-07-24 "expand to 1000 pages before launch" plan, step 1: promoted
+  // every noindex page that (a) passes the automated quality gate (see
+  // scripts/promotion-report.mjs) AND (b) comes from urlRapidExpansion.ts —
+  // the template already verified clean (used for known-issues-tracker,
+  // error-code-guide, etc.). Deliberately excluded from this batch: the 47
+  // gate-passing candidates from urlTrendExpansion.ts, whose `answer` field
+  // is written as an internal content brief ("explain that X...") rather
+  // than reader-facing copy — same defect class caught and reverted on
+  // 2026-07-23. Those need a content-voice pass before promotion, not just
+  // a gate pass. Also excluded: release-date-july-30 (misleading slug with
+  // the wrong date baked into the URL, flagged 2026-07-23, needs a rename
+  // + redirect before it should ever go live).
+  'mercenary-beginner-build', 'mercenary-solo-build', 'mercenary-pvp-build', 'mercenary-boss-build', 'mercenary-affix-priority',
+  'sorcerer-beginner-build', 'sorcerer-solo-build', 'sorcerer-pvp-build', 'sorcerer-boss-build', 'sorcerer-affix-priority',
+  'blackarrow-solo-build', 'blackarrow-pvp-build', 'blackarrow-boss-build', 'blackarrow-affix-priority', 'blackarrow-controller-settings',
+  'shadowstrix-pvp-build', 'shadowstrix-boss-build', 'shadowstrix-affix-priority', 'shadowstrix-beginner-build', 'shadowstrix-map-routes',
+  'seer-beginner-build', 'seer-solo-build', 'seer-pvp-build', 'seer-boss-build', 'seer-affix-priority',
+  'withered-knight-beginner-build', 'withered-knight-solo-build', 'withered-knight-boss-build', 'withered-knight-affix-priority', 'withered-knight-matchups',
+  'hallowgrove-solo-route', 'hallowgrove-loot-route', 'hallowgrove-boss-route', 'hallowgrove-chaos-route', 'hallowgrove-extraction-points',
+  'brandrgarde-solo-route', 'brandrgarde-loot-route', 'brandrgarde-boss-route', 'brandrgarde-chaos-route', 'brandrgarde-extraction-points',
+  'gyldenmist-timer-guide', 'shrine-extraction-guide', 'bell-creature-guide', 'loot-loss-guide', 'stash-management-guide',
+  'gear-score-guide', 'perfect-block-guide', 'no-lock-on-combat-guide', 'weapon-swap-guide', 'co-op-team-guide',
+  'solo-vs-squad-guide', 'third-party-guide', 'sound-cues-guide', 'beginner-loadout-guide', 'best-settings-low-end-pc',
+  'best-class-for-pvp', 'best-class-for-bosses', 'best-class-for-solo', 'class-counters-guide', 'class-roles-guide',
+  'community',
 ]);
 
 export const INDEXABLE_TAB_NEWS_SLUGS = new Set([
@@ -177,6 +203,24 @@ export const ZH_DRAFT_SLUGS = new Set([
   'xbox-game-pass-guide', 'crossplay-guide', 'preload-guide',
   'error-code-guide', 'queue-times-guide', 'patch-notes-tracker',
   'steam-launch-guide', 'steam-deck-settings-guide',
+
+  // 2026-07-24 batch (see INDEXABLE_SLUGS) — all from urlRapidExpansion.ts,
+  // so the zh version of every one of these is still English filler
+  // labeled "Chinese Draft" until someone translates it for real.
+  // 'community' is NOT in this list: it comes from launchExpansion.ts,
+  // which has a real, separately hand-written zh array (not draft).
+  'mercenary-beginner-build', 'mercenary-solo-build', 'mercenary-pvp-build', 'mercenary-boss-build', 'mercenary-affix-priority',
+  'sorcerer-beginner-build', 'sorcerer-solo-build', 'sorcerer-pvp-build', 'sorcerer-boss-build', 'sorcerer-affix-priority',
+  'blackarrow-solo-build', 'blackarrow-pvp-build', 'blackarrow-boss-build', 'blackarrow-affix-priority', 'blackarrow-controller-settings',
+  'shadowstrix-pvp-build', 'shadowstrix-boss-build', 'shadowstrix-affix-priority', 'shadowstrix-beginner-build', 'shadowstrix-map-routes',
+  'seer-beginner-build', 'seer-solo-build', 'seer-pvp-build', 'seer-boss-build', 'seer-affix-priority',
+  'withered-knight-beginner-build', 'withered-knight-solo-build', 'withered-knight-boss-build', 'withered-knight-affix-priority', 'withered-knight-matchups',
+  'hallowgrove-solo-route', 'hallowgrove-loot-route', 'hallowgrove-boss-route', 'hallowgrove-chaos-route', 'hallowgrove-extraction-points',
+  'brandrgarde-solo-route', 'brandrgarde-loot-route', 'brandrgarde-boss-route', 'brandrgarde-chaos-route', 'brandrgarde-extraction-points',
+  'gyldenmist-timer-guide', 'shrine-extraction-guide', 'bell-creature-guide', 'loot-loss-guide', 'stash-management-guide',
+  'gear-score-guide', 'perfect-block-guide', 'no-lock-on-combat-guide', 'weapon-swap-guide', 'co-op-team-guide',
+  'solo-vs-squad-guide', 'third-party-guide', 'sound-cues-guide', 'beginner-loadout-guide', 'best-settings-low-end-pc',
+  'best-class-for-pvp', 'best-class-for-bosses', 'best-class-for-solo', 'class-counters-guide', 'class-roles-guide',
 ]);
 
 export function normalizeSeoPath(path = '/') {
