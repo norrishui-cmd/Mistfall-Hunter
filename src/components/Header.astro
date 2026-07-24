@@ -1,5 +1,5 @@
 ﻿---
-import { languages, localizePath, useTranslations, type Lang } from '../i18n';
+import { languages, localizePath, localizedCorePaths, useTranslations, type Lang } from '../i18n';
 import { isIndexableHref } from '../data/seoPages';
 import SearchModal from './SearchModal.astro';
 
@@ -28,7 +28,6 @@ const items: NavItem[] = [
   { labelKey: 'nav.about', path: '/about' },
 ];
 
-const localizedCorePaths = new Set(['/', '/release-date', '/beginner-guide', '/classes', '/builds', '/guides', '/performance', '/about', '/game-data']);
 const isGameDataDetail = /^\/game-data\/[^/]+$/.test(path);
 const languageOptions: Lang[] = localizedCorePaths.has(path) || isGameDataDetail ? ['en', 'zh', 'de', 'ja'] : ['en', 'zh'];
 const languageLabel = lang === 'zh' ? '选择语言' : lang === 'de' ? 'Sprache wählen' : lang === 'ja' ? '言語を選択' : 'Choose language';

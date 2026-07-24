@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { lastUpdated } from '../../data/siteQuality';
+
+const lang = 'de' as const;
+const site = 'https://mistfallhunter.me';
+const title = 'Mistfall Hunter Updates und Launch-Verifizierungsplan';
+const description = 'Mistfall Hunter Editorial-Log und Launch-Verifizierungsplan für Karten, Builds, Bosse, FAQ, Quellen und die Genauigkeit der Guides.';
+
+const roadmap = [
+  ['Jetzt', 'Struktur vor dem Launch', 'Release-, Plattform-, Klassen-, Build-, Karten-, Boss-, FAQ- und Tool-Seiten für bessere Auffindbarkeit organisiert.'],
+  ['Launch-Woche', 'Live-Verifizierung', 'Kartenpunkte, Klassenwerte, Affixe, Boss-Routen, Beute und Performance-Hinweise mit Live-Daten aktualisieren.'],
+  ['Nach Patches', 'Ranglisten aktualisieren', 'Builds, Klassenstärke, Performance-Empfehlungen und Boss-Belohnungswert nach Balance-Updates neu bewerten.'],
+];
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: `${site}/de/updates/`,
+  inLanguage: 'de',
+  dateModified: lastUpdated,
+  isPartOf: { '@type': 'WebSite', name: 'Mistfall Hunter Wiki and Hub', url: `${site}/` },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Start', item: `${site}/de/` },
+    { '@type': 'ListItem', position: 2, name: 'Updates', item: `${site}/de/updates/` },
+  ],
+};
+---
+
+<BaseLayout
+  lang={lang}
+  path="/updates"
+  title={title}
+  description={description}
+  jsonLd={[pageSchema, breadcrumbSchema]}
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Updates</span>
+      <h1 class="page-title">Updates und Launch-Verifizierungsplan</h1>
+      <p class="lead">Aktueller Redaktionsstand: {lastUpdated}. Nach dem Launch werden Platzhalter durch live getestete Inhalte ersetzt.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Zeitpunkt</th><th>Fokus</th><th>Was aktualisiert wird</th></tr>
+          </thead>
+          <tbody>
+            {roadmap.map((row) => (
+              <tr>{row.map((cell) => <td>{cell}</td>)}</tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="prose">
+        <h2>Warum das für die Einordnung wichtig ist</h2>
+        <p>
+          Mistfall Hunter befindet sich noch vor dem Launch, daher brauchen viele Suchanfragen einen
+          Tracker statt einer vorgetäuschten endgültigen Antwort. Die Seiten sind so geschrieben, dass
+          sie schon jetzt nützlich sind, und werden dann mit getesteten Daten aktualisiert, sobald das
+          Spiel spielbar ist.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

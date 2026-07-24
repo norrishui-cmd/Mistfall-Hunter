@@ -92,6 +92,50 @@ const de: LocalizedCorePage[] = [
       { heading: 'Qualitätsregel', paragraphs: ['Eine Seite soll eine konkrete Spielerfrage beantworten. Spekulation, Platzhalter und automatisch vervielfachte Texte gehören nicht in den Index. Fehler können korrigiert werden, wenn offizielle Angaben oder überprüfbare Live-Daten eine frühere Aussage ersetzen.'] },
     ], related: [],
   },
+  {
+    slug: 'weapons', title: 'Mistfall Hunter Waffen & Kampfsystem',
+    description: 'Mistfall Hunter Waffen- und Kampfguide auf Deutsch: Nahkampf, Fernkampf, Magie, Ausdauer, Blocken, Paraden und die Wahl der richtigen Waffenrolle.',
+    eyebrow: 'Kampf-Datenbank', h1: 'Mistfall Hunter Waffen & Kampf',
+    lead: 'Kampf bedeutet Rollenklarheit: Weißt du, ob dein Kit tauschen, kiten, Burst fahren, unterstützen oder zurücksetzen will, bevor der andere Hunter es für dich entscheidet.',
+    sections: [
+      { heading: 'Waffenrollen', paragraphs: ['Die bekannten Klassen-Kits zeigen klare Waffenidentitäten: Mercenary setzt auf Schwert, Schild, Hammer und Konterfenster; Blackarrow spielt Fernkampfdruck mit dem Bogen; Shadowstrix nutzt Dolche und Stealth-Burst; Sorcerer kämpft auf Zauberreichweite; Seer unterstützt mit Heilung und Kontrolle; Withered Knight setzt auf schwere Nahkampf-Aggression.'] },
+      { heading: 'Ausdauer, Blocken und Parieren', paragraphs: ['Behandle Ausdauer als deine zweite Lebensleiste. Blocken und Parieren lohnen sich nur, wenn genug Ausdauer für den Rückzug bleibt. Rote oder unblockbare Angriffe solltest du ausweichen statt blocken.'] },
+      { heading: 'Wie du einen Waffenplan wählst', paragraphs: ['Einsteiger sollten verzeihende Werkzeuge wählen, die Fehler überstehen. Solo-Spieler brauchen Fluchtmöglichkeiten oder Reichweite. Gruppen können stärker spezialisieren, weil Teamkollegen Schwächen abdecken.'], bullets: ['Einsteiger: defensiver Nahkampf mit einfachen Konterfenstern', 'Solo: Stealth, Reichweite oder Fluchtwerkzeuge', 'Gruppe: Support, Kontrolle oder hoher Burst', 'Boss-Fokus: nachhaltiger sicherer Schaden und Erholung'] },
+    ], related: [],
+  },
+  {
+    slug: 'bosses', title: 'Mistfall Hunter Bosse & PvE-Guide',
+    description: 'Mistfall Hunter Boss- und PvE-Guide auf Deutsch zu Mist Lords, Corroded-Gegnern, Boss-Vorbereitung, Beute-Routing und Team-Rollen.',
+    eyebrow: 'PvE-Datenbank', h1: 'Mistfall Hunter Bosse & PvE',
+    lead: 'Bosse sind keine reinen Beute-Piñatas. In einem Extraction-Spiel verrät jeder lange PvE-Kampf auch deine Position und lädt andere Hunter zum Third-Party ein.',
+    sections: [
+      { heading: 'Mist Lords', paragraphs: ['Mist Lords sind die hochwertigen PvE-Anker einer Zone. Erwarte bessere Belohnungen, schwerere Mechaniken und höheren PvP-Druck in ihrer Nähe. Kämpfe nur mit Fluchtplan, genug Vorräten und einem guten Grund, deine mitgebrachte Ausrüstung zu riskieren.'] },
+      { heading: 'Die Corroded', paragraphs: ['Die Corroded sind die umherziehenden, vom Mist verzerrten Gegner, die Zeit, Leben und Ressourcen kosten. Sie sind auch Geräuschfallen: zu langes Kämpfen kann gegnerische Spieler anlocken, bevor der Boss überhaupt beginnt.'] },
+      { heading: 'Regeln für Boss-Routen', paragraphs: ['Eine gute Boss-Route beginnt mit Aufklärung, nicht mit Schaden. Prüfe nahe Extraktionsmöglichkeiten, achte auf PvP-Geräusche, räume nur das Nötige und entscheide vorab, ob du den Boss beendest oder gehst, wenn ein anderes Team auftaucht.'], bullets: ['Kenne deine nächste Extraktionsroute', 'Spare Ausdauer und Heilung für die Flucht', 'Verliere dich nicht in Beute, wenn andere Spieler in der Nähe sind', 'Sichere früh kleinere Gewinne, solange du lernst'] },
+    ], related: [],
+  },
+  {
+    slug: 'loot', title: 'Mistfall Hunter Beute, Ausrüstung & Affixe',
+    description: 'Mistfall Hunter Beute-Guide auf Deutsch: Ausrüstung, Affixe, Ressourcen, Banking-Prioritäten und Extraktionswert richtig einschätzen.',
+    eyebrow: 'Beute-Datenbank', h1: 'Mistfall Hunter Beute, Ausrüstung & Affixe',
+    lead: 'Beute zählt nur, wenn sie mit dir aus dem Mist kommt. Die beste Inventar-Entscheidung ist oft die, die gesichert wird, nicht die mit dem größten theoretischen Wert.',
+    sections: [
+      { heading: 'Wie du den Wert von Beute einschätzt', paragraphs: ['Jeder Gegenstand hat zwei Werte: Stärke im Einsatz und Wert bei Extraktion. Einsteiger sollten verlässliche Upgrades, build-relevante Affixe und Fortschrittsressourcen priorisieren statt riskanter Gier-Häufchen.'] },
+      { heading: 'Affixe machen aus Ausrüstung Builds', paragraphs: ['Affixe sind die Modifikatoren, die eine Klasse in Richtung Burst, Überleben, Cooldown-Erholung, Kontrolle oder Support schieben. Die Live-Werte müssen noch bestätigt werden, daher verfolgt die Build-Seite Richtungen statt endgültiger Bestenlisten.'] },
+      { heading: 'Was du zuerst sichern solltest', paragraphs: ['Bevor sich die Meta setzt, gelten praktische Regeln: behalte Ausrüstung, die deine aktuelle Klasse verbessert, extrahiere seltene Ressourcen früh und trage kein Extragewicht, wenn es dich den Kampf oder den Ausgang kostet.'], bullets: ['Klassen-Upgrades', 'Seltene Ressourcen', 'Build-definierende Affixe', 'Quest- oder Freischalt-Items, sobald bestätigt', 'Reserve-Kits für spätere risikoarme Runs'] },
+    ], related: [],
+  },
+  {
+    slug: 'soul-of-return', title: 'Mistfall Hunter Soul of Return: So funktioniert die Extraktion',
+    description: 'Mistfall Hunter Soul of Return Guide auf Deutsch: Returner Woodlings, Extraktionsschlüssel, Ausgänge, Timing und wie du einen ganzen Run nicht verlierst.',
+    eyebrow: 'Extraction-Guide', h1: 'Soul of Return: lebend rauskommen',
+    lead: 'Der Soul of Return ist das runbestimmende Ziel: ohne einen Weg raus ist deine beste Beute nur Köder für jemand anderen.',
+    sections: [
+      { heading: 'Was der Soul of Return bewirkt', paragraphs: ['Im bekannten Extraction-Loop jagst du einen Returner Woodling, um den Soul of Return zu erhalten \u2014 das Schlüsselitem, das einen Weg nach Hause öffnet oder ermöglicht. Ihn früh zu holen, macht aus verzweifelter Suche kontrollierte Entscheidungen.'] },
+      { heading: 'Wann du ihn sichern solltest', paragraphs: ['Einsteiger sollten die Extraktion früher sichern, als sie denken. Sobald du brauchbare Beute, eine Route raus und den Soul of Return hast, stellt sich nur noch die Frage, ob ein weiterer Kampf die ganze Tasche wert ist.'] },
+      { heading: 'Häufige Extraktionsfehler', paragraphs: ['Die meisten schlechten Tode passieren, wenn Spieler zu lange bleiben, nahe Ausgänge vergessen, einem weiteren Kampf hinterherjagen oder die Ausdauer vor der letzten Flucht aufbrauchen. Extraktion ist eine Fähigkeit, keine Formsache.'], bullets: ['Warte nicht, bis die Tasche voll ist, um ans Gehen zu denken', 'Finde Ausgänge, bevor du einen Boss beginnst', 'Vermeide laute Kämpfe nahe der Extraktion, wenn möglich', 'Spare Ausdauer für den letzten Rückzug'] },
+    ], related: [],
+  },
 ];
 
 const ja: LocalizedCorePage[] = [
@@ -173,6 +217,50 @@ const ja: LocalizedCorePage[] = [
     sections: [
       { heading: '情報源と訂正', paragraphs: ['発売日、対応機種、言語はSteamとXboxの公式ストアを優先します。メディアの試遊内容は観察情報として明記します。正式版の数値、マップ地点、ドロップ率は、再現可能な確認ができるまで確定情報として掲載しません。'] },
       { heading: 'インデックス品質ルール', paragraphs: ['各ページは一つの具体的な質問へ答える必要があります。推測、準備中の文章、自動生成しただけの重複ページは検索対象にしません。公式発表や検証可能なデータによって内容が変わった場合は、更新日と根拠を確認して訂正します。'] },
+    ], related: [],
+  },
+  {
+    slug: 'weapons', title: 'Mistfall Hunter 武器・戦闘ガイド',
+    description: 'Mistfall Hunterの武器と戦闘を日本語で解説。近接、遠距離、魔法、スタミナ、ブロック、パリィ、回避不可攻撃、武器選びの考え方。',
+    eyebrow: '戦闘データベース', h1: 'Mistfall Hunter 武器と戦闘',
+    lead: '戦闘で重要なのは役割の明確さです。自分のキットが打ち合い、キャイティング、瞬間火力、支援、リセットのどれを狙うのかを、相手より先に理解しましょう。',
+    sections: [
+      { heading: '武器ごとの役割', paragraphs: ['既知のクラス構成には明確な武器の個性があります。Mercenaryは剣、盾、ハンマーと確定反撃を軸にし、Blackarrowは弓による遠距離圧力、Shadowstrixは短剣とステルス奇襲、Sorcererは魔法の射程で戦い、Seerは回復と制御で支援し、Withered Knightは重量近接での圧力を担います。'] },
+      { heading: 'スタミナ・ブロック・パリィ', paragraphs: ['スタミナは第二の体力ゲージだと考えてください。ブロックとパリィは、離脱に十分なスタミナを残せる時だけ強力です。回避不可・赤色表示の攻撃はブロックせず回避しましょう。'] },
+      { heading: '武器プランの選び方', paragraphs: ['初心者はミスを許容できる扱いやすい武器を選ぶべきです。ソロプレイヤーには離脱手段か射程が必要です。チームなら仲間が弱点を補えるため、より尖った特化が可能です。'], bullets: ['初心者：防御的な近接と単純な確定反撃', 'ソロ：ステルス、射程、離脱手段', 'チーム：支援、制御、高瞬間火力', 'ボス対策：持続的で安全なダメージと回復'] },
+    ], related: [],
+  },
+  {
+    slug: 'bosses', title: 'Mistfall Hunter ボス・PvE攻略',
+    description: 'Mistfall HunterのボスとPvEを日本語で解説。Mist Lord、Corroded、ボス前準備、報酬の持ち帰り方、チームの役割分担。',
+    eyebrow: 'PvEデータベース', h1: 'Mistfall Hunter ボスとPvE',
+    lead: 'ボスは単なる戦利品袋ではありません。脱出ゲームでは、長いPvE戦闘は自分の位置を周囲に知らせてしまい、他の猎人に横取りされる隙を生みます。',
+    sections: [
+      { heading: 'Mist Lord', paragraphs: ['Mist Lordは各ゾーンの高価値なPvE対象です。より良い報酬、より難しいメカニクス、周辺でのPvPリスク増加を想定してください。脱出計画と十分な物資、持ち込んだ装備をリスクにする理由がある時だけ挑みましょう。'] },
+      { heading: 'Corroded', paragraphs: ['Corrodedは霧に歪められた徘徊型の敵で、時間・体力・資源を消耗させます。また音のトラップでもあり、戦闘が長引くとボス戦が始まる前に他プレイヤーを引き寄せてしまいます。'] },
+      { heading: 'ボス攻略のルーティング', paragraphs: ['良いボス攻略はダメージではなく偵察から始まります。近くの脱出手段を確認し、PvPの気配に注意し、必要な分だけ処理し、他チームが来た場合に続行するか離脱するかを事前に決めておきましょう。'], bullets: ['最寄りの脱出ルートを把握する', '離脱用にスタミナと回復を残す', '周囲にプレイヤーがいる時は戦利品に固執しない', '学習中は小さな成果を早めに確保する'] },
+    ], related: [],
+  },
+  {
+    slug: 'loot', title: 'Mistfall Hunter 戦利品・装備・Affix',
+    description: 'Mistfall Hunterの戦利品を日本語で解説。装備、Affix、資源、持ち帰り優先度、脱出価値の考え方。',
+    eyebrow: '戦利品データベース', h1: 'Mistfall Hunter 戦利品・装備・Affix',
+    lead: '戦利品は霧の外に持ち帰って初めて意味を持ちます。最良のインベントリ判断は、理論値が最大のものではなく、確実に持ち帰れるものであることが多いです。',
+    sections: [
+      { heading: '戦利品の価値の考え方', paragraphs: ['すべてのアイテムには2つの価値があります。使用時の強さと、脱出できた時の価値です。初心者は、リスクの高い欲張った拾い方より、確実なアップグレード、ビルドに関わるAffix、成長に必要な資源を優先すべきです。'] },
+      { heading: 'Affixが装備をビルドに変える', paragraphs: ['Affixはクラスを瞬間火力、生存、クールダウン回復、制御、支援のいずれかに寄せる補正です。実際の数値はまだ確認が必要なため、ビルドページは最終的な最強装備リストではなく方向性を追っています。'] },
+      { heading: '最初に持ち帰るべきもの', paragraphs: ['メタが定まる前は実践的なルールを使いましょう。今のクラスを強化する装備を残し、希少資源は早めに持ち帰り、戦闘や脱出を犠牲にしてまで余分な荷物を持たないことです。'], bullets: ['クラスのアップグレード', '希少資源', 'ビルドを決定づけるAffix', '確認され次第、クエストや解放アイテム', '今後のローリスクラン用の予備装備'] },
+    ], related: [],
+  },
+  {
+    slug: 'soul-of-return', title: 'Mistfall Hunter Soul of Return：脱出の仕組み',
+    description: 'Mistfall HunterのSoul of Returnを日本語で解説。Returner Woodling、脱出の鍵、出口、タイミング、ラン全体を失わない方法。',
+    eyebrow: '脱出ガイド', h1: 'Soul of Return：生きて脱出する方法',
+    lead: 'Soul of Returnはランを左右する目的地です。帰る手段がなければ、どれだけ良い戦利品も他人へのおとりに過ぎません。',
+    sections: [
+      { heading: 'Soul of Returnの役割', paragraphs: ['既知の脱出ループでは、Returner Woodlingを狩ってSoul of Returnを入手します。これは帰還ルートを開く、あるいは可能にする鍵となるアイテムです。早めに入手することで、ランが必死の探索から制御された判断へと変わります。'] },
+      { heading: 'いつ確保すべきか', paragraphs: ['初心者は思っているより早く脱出手段を確保すべきです。十分な戦利品、出口ルート、Soul of Returnが揃った時点で、あとは「もう一戦がバッグ全体を賭ける価値があるか」という判断だけになります。'] },
+      { heading: 'よくある脱出の失敗', paragraphs: ['多くの無駄死には、長居しすぎる、近くの出口を忘れる、もう一戦を追いかける、最後の離脱前にスタミナを使い切る、といった状況で起こります。脱出は形式ではなく技術です。'], bullets: ['バッグが満杯になってから離脱を考えない', 'ボスに挑む前に出口を見つけておく', '可能な限り脱出地点付近での騒がしい戦闘を避ける', '最後の離脱用にスタミナを残す'] },
     ], related: [],
   },
 ];

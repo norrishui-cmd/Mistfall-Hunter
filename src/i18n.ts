@@ -86,6 +86,19 @@ export const ui = {
 
 export type Lang = keyof typeof ui;
 
+// Paths that exist in all 4 languages (en/zh/de/ja) rather than just en/zh.
+// Single source of truth for both the header's language switcher and
+// BaseHead's hreflang alternate tags — these used to be two separately
+// hardcoded copies that drifted apart (2026-07-24: adding new de/ja pages
+// without updating BaseHead's copy produced non-reciprocal hreflang tags,
+// caught by seo-audit.mjs). Update this one set when a page gains de/ja
+// coverage; both consumers pick it up automatically.
+export const localizedCorePaths = new Set([
+  '/', '/release-date', '/beginner-guide', '/classes', '/builds', '/guides',
+  '/performance', '/about', '/weapons', '/bosses', '/loot', '/soul-of-return',
+  '/sources', '/updates', '/game-data',
+]);
+
 export function getLangFromUrl(url: URL): Lang {
   const [, seg] = url.pathname.split('/');
   if (seg === 'zh' || seg === 'de' || seg === 'ja') return seg;

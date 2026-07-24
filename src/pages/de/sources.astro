@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { lastUpdated, sources } from '../../data/siteQuality';
+
+const lang = 'de' as const;
+const site = 'https://mistfallhunter.me';
+const title = 'Mistfall Hunter Quellen und redaktionelle Richtlinien';
+const description = 'Quellen und redaktionelle Richtlinien für Mistfall Hunter Wiki and Hub, einschließlich offizieller, Store-, Preview- und Launch-Verifizierungsquellen.';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  description,
+  url: `${site}/de/sources/`,
+  inLanguage: 'de',
+  dateModified: lastUpdated,
+  isPartOf: { '@type': 'WebSite', name: 'Mistfall Hunter Wiki and Hub', url: `${site}/` },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Start', item: `${site}/de/` },
+    { '@type': 'ListItem', position: 2, name: 'Quellen', item: `${site}/de/sources/` },
+  ],
+};
+---
+
+<BaseLayout
+  lang={lang}
+  path="/sources"
+  title={title}
+  description={description}
+  jsonLd={[pageSchema, breadcrumbSchema]}
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Quellen</span>
+      <h1 class="page-title">Quellen und redaktionelle Richtlinien</h1>
+      <p class="lead">
+        Diese Seite trennt bestätigte Informationen von Preview-Beobachtungen und Hinweisen zur
+        Verifizierung am Launch-Tag. Zuletzt aktualisiert: {lastUpdated}.
+      </p>
+
+      <div class="prose">
+        <h2>Wie Informationen behandelt werden</h2>
+        <p>
+          Bestätigte Fakten stammen von offiziellen Seiten, Stores und Publisher-/Entwickler-Mitteilungen.
+          Preview-Beobachtungen stammen aus Hands-on-Berichten und können sich vor oder nach dem Launch ändern.
+          Genaue Werte, Drop-Tabellen, Kartenpunkte und Build-Ranglisten sollten erst nach Live-Daten
+          als endgültig behandelt werden.
+        </p>
+      </div>
+
+      <div class="cards">
+        {sources.map((source) => (
+          <a class="card" href={source.url} rel="noopener noreferrer" target="_blank">
+            <span class="soon-badge">{source.type}</span>
+            <span class="card-title">{source.title}</span>
+            <span class="card-desc">{source.publisher}: {source.note}</span>
+            <span class="card-arrow">Quelle öffnen -></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
