@@ -210,6 +210,12 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.0
   text-decoration: none; color: inherit;
   transition: background 0.18s ease;
 }
+.card-image {
+  display: block; width: calc(100% + 3rem); height: auto; aspect-ratio: 16 / 9;
+  object-fit: cover; margin: -1.7rem -1.5rem 0.4rem; filter: saturate(0.92) brightness(0.92);
+  transition: filter 0.18s ease;
+}
+a.card:hover .card-image { filter: saturate(1) brightness(1); }
 a.card:hover { background: var(--stone); }
 a.card:hover .card-title { color: var(--gylden-glow); }
 .card-title {

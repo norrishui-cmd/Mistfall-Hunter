@@ -56,31 +56,37 @@ const cards = [
     title: 'Release date, platforms & price',
     desc: "When it launches, where to play, and whether it's free. Updated as Bellring confirms details.",
     href: '/release-date',
+    image: '/card-release-date.webp',
   },
   {
     title: 'How extraction works',
     desc: 'The core loop, the Soul of Return, and why dying costs you everything.',
     href: '/beginner-guide',
+    image: '/card-extraction-works.webp',
   },
   {
     title: 'Class tier list',
     desc: 'All six classes ranked for solo, PvP, and beginner play.',
     href: '/classes',
+    image: '/card-class-tier-list.webp',
   },
   {
     title: 'Interactive map',
     desc: 'Extraction points, boss spawns, and high-value loot, layered for every zone in the mist.',
     href: '/map',
+    image: '/card-interactive-map.webp',
   },
   {
     title: 'Builds & affixes',
     desc: 'Starter loadout directions for every class, plus how the affix system fits in.',
     href: '/builds',
+    image: '/card-builds-affixes.webp',
   },
   {
     title: 'Fix stuttering & boost FPS',
     desc: 'A clean performance checklist for stutter, low FPS, crashes, and settings.',
     href: '/performance',
+    image: '/card-fix-stuttering.webp',
   },
 ];
 ---
@@ -91,6 +97,7 @@ const cards = [
   title="Mistfall Hunter Wiki and Hub - Builds, Maps & Survival Guides"
   description="Unofficial Mistfall Hunter guide: release date, class tiers, builds, interactive maps, bosses, and FAQ for the dark fantasy PvPvE extraction RPG."
   jsonLd={[videoGameSchema, priorityItemListSchema]}
+  preloadImage="/hero-mistfall-bg.webp"
 >
   <section class="hero">
     <div class="container">
@@ -118,6 +125,7 @@ const cards = [
       <div class="cards">
         {cards.map((card) => (
           <a class="card" href={card.href}>
+            {card.image && <img class="card-image" src={card.image} alt={card.title} width="840" height="472" loading="lazy" />}
             <span class="card-title">{card.title}</span>
             <span class="card-desc">{card.desc}</span>
             <span class="card-arrow">Read -></span>

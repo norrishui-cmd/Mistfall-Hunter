@@ -28,12 +28,12 @@ const videoGameSchema = {
 };
 
 const cards = [
-  { title: '发售日、平台与价格', desc: '上线时间、平台、Game Pass 与定价状态。', href: '/zh/release-date' },
-  { title: '撤离机制', desc: '核心循环、Soul of Return 与死亡惩罚。', href: '/zh/beginner-guide' },
-  { title: '职业强度榜', desc: '六大职业的单人、PvP 与新手上手定位。', href: '/zh/classes' },
-  { title: '互动地图', desc: '撤离点、Boss、战利品和地标筛选。', href: '/zh/map' },
-  { title: '配装与词缀', desc: '职业构筑方向与词缀追踪。', href: '/zh/builds' },
-  { title: '性能优化', desc: '卡顿、低帧、崩溃和设置建议。', href: '/zh/performance' },
+  { title: '发售日、平台与价格', desc: '上线时间、平台、Game Pass 与定价状态。', href: '/zh/release-date', image: '/card-release-date.webp' },
+  { title: '撤离机制', desc: '核心循环、Soul of Return 与死亡惩罚。', href: '/zh/beginner-guide', image: '/card-extraction-works.webp' },
+  { title: '职业强度榜', desc: '六大职业的单人、PvP 与新手上手定位。', href: '/zh/classes', image: '/card-class-tier-list.webp' },
+  { title: '互动地图', desc: '撤离点、Boss、战利品和地标筛选。', href: '/zh/map', image: '/card-interactive-map.webp' },
+  { title: '配装与词缀', desc: '职业构筑方向与词缀追踪。', href: '/zh/builds', image: '/card-builds-affixes.webp' },
+  { title: '性能优化', desc: '卡顿、低帧、崩溃和设置建议。', href: '/zh/performance', image: '/card-fix-stuttering.webp' },
 ];
 ---
 
@@ -43,6 +43,7 @@ const cards = [
   title="Mistfall Hunter Wiki 攻略站 - 配装、地图与生存指南"
   description="Mistfall Hunter 非官方攻略与数据库：发售日、职业强度榜、配装、互动地图、Boss、FAQ 和新手指南。"
   jsonLd={[videoGameSchema]}
+  preloadImage="/hero-mistfall-bg.webp"
 >
   <section class="hero">
     <div class="container">
@@ -67,6 +68,7 @@ const cards = [
       <div class="cards">
         {cards.map((card) => (
           <a class="card" href={card.href}>
+            {card.image && <img class="card-image" src={card.image} alt={card.title} width="840" height="472" loading="lazy" />}
             <span class="card-title">{card.title}</span>
             <span class="card-desc">{card.desc}</span>
             <span class="card-arrow">查看 -></span>
