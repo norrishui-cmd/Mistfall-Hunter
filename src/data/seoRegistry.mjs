@@ -148,6 +148,28 @@ export const INDEXABLE_SLUGS = new Set([
   'solo-vs-squad-guide', 'third-party-guide', 'sound-cues-guide', 'beginner-loadout-guide', 'best-settings-low-end-pc',
   'best-class-for-pvp', 'best-class-for-bosses', 'best-class-for-solo', 'class-counters-guide', 'class-roles-guide',
   'community',
+
+  // 2026-07-24 "expand to 1000" plan, step 2: the 46 remaining
+  // urlTrendExpansion.ts candidates, promoted after rewriting every
+  // `answer` field from internal-planning voice ("Use this page to
+  // explain...") into genuine reader-facing copy, and giving each a clean
+  // title/h1 (removing the duplicated-brand-name + "Trend Guide" default).
+  // release-date-july-30 stays excluded (misleading slug, needs a rename).
+  'steamdb-player-count', 'concurrent-players-tracker', 'player-count-launch-week',
+  'steam-charts-explained', 'gameplay-loop-explained', 'gameplay-trailer-breakdown',
+  'first-30-minutes-guide', 'combat-gameplay-guide', 'pvp-gameplay-guide', 'pve-gameplay-guide',
+  'solo-gameplay-guide', 'co-op-gameplay-guide', 'mistfall-hunters-spelling',
+  'mistfall-hunter-vs-mistfall-hunters', 'mistfall-hunter-name-guide', 'release-time-time-zones',
+  'launch-day-checklist', 'launch-week-roadmap', 'pre-launch-guide', 'steam-release-time',
+  'steam-demo-guide', 'steam-reviews-tracker', 'steam-wishlist-guide', 'cross-platform-party-guide',
+  'cross-progression-guide', 'pc-xbox-crossplay-guide', 'ps5-crossplay-guide', 'steam-price-guide',
+  'xbox-price-guide', 'ps5-price-guide', 'game-pass-or-buy-guide', 'classes-overview-2026',
+  'classes-ranked-for-launch', 'classes-for-solo-players', 'classes-for-squads',
+  'classes-for-beginners-2026', 'xbox-launch-guide', 'xbox-series-x-settings',
+  'xbox-series-s-settings', 'xbox-play-anywhere-guide', 'xbox-cloud-guide',
+  'mound-omen-of-cthulhu-comparison', 'lovecraftian-dark-fantasy-games',
+  'cthulhu-fans-mistfall-hunter-guide', 'dark-fantasy-extraction-games-2026',
+  'horror-fans-guide-to-mistfall-hunter',
 ]);
 
 export const INDEXABLE_TAB_NEWS_SLUGS = new Set([
@@ -221,6 +243,25 @@ export const ZH_DRAFT_SLUGS = new Set([
   'gear-score-guide', 'perfect-block-guide', 'no-lock-on-combat-guide', 'weapon-swap-guide', 'co-op-team-guide',
   'solo-vs-squad-guide', 'third-party-guide', 'sound-cues-guide', 'beginner-loadout-guide', 'best-settings-low-end-pc',
   'best-class-for-pvp', 'best-class-for-bosses', 'best-class-for-solo', 'class-counters-guide', 'class-roles-guide',
+
+  // 2026-07-24 step 2 batch (see INDEXABLE_SLUGS) — all from
+  // urlTrendExpansion.ts, so the zh version of every one of these is still
+  // English filler labeled "Chinese Draft" until someone translates it.
+  'steamdb-player-count', 'concurrent-players-tracker', 'player-count-launch-week',
+  'steam-charts-explained', 'gameplay-loop-explained', 'gameplay-trailer-breakdown',
+  'first-30-minutes-guide', 'combat-gameplay-guide', 'pvp-gameplay-guide', 'pve-gameplay-guide',
+  'solo-gameplay-guide', 'co-op-gameplay-guide', 'mistfall-hunters-spelling',
+  'mistfall-hunter-vs-mistfall-hunters', 'mistfall-hunter-name-guide', 'release-time-time-zones',
+  'launch-day-checklist', 'launch-week-roadmap', 'pre-launch-guide', 'steam-release-time',
+  'steam-demo-guide', 'steam-reviews-tracker', 'steam-wishlist-guide', 'cross-platform-party-guide',
+  'cross-progression-guide', 'pc-xbox-crossplay-guide', 'ps5-crossplay-guide', 'steam-price-guide',
+  'xbox-price-guide', 'ps5-price-guide', 'game-pass-or-buy-guide', 'classes-overview-2026',
+  'classes-ranked-for-launch', 'classes-for-solo-players', 'classes-for-squads',
+  'classes-for-beginners-2026', 'xbox-launch-guide', 'xbox-series-x-settings',
+  'xbox-series-s-settings', 'xbox-play-anywhere-guide', 'xbox-cloud-guide',
+  'mound-omen-of-cthulhu-comparison', 'lovecraftian-dark-fantasy-games',
+  'cthulhu-fans-mistfall-hunter-guide', 'dark-fantasy-extraction-games-2026',
+  'horror-fans-guide-to-mistfall-hunter',
 ]);
 
 export function normalizeSeoPath(path = '/') {

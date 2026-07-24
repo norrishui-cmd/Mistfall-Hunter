@@ -27,8 +27,13 @@ function walk(dir) {
 }
 
 function attr(tag, name) {
-  const match = tag.match(new RegExp(`${name}=["']([^"']+)["']`, 'i'));
-  return decodeEntities(match?.[1] ?? '');
+  // Was `[^"']+`, which excludes BOTH quote characters from the captured
+  // value — so a literal apostrophe inside a double-quoted attribute (e.g.
+  // content="If you're...") truncated the match right before the
+  // apostrophe. HTML attributes are quoted with one style at a time; match
+  // up to the SAME quote character reappearing instead of excluding both.
+  const match = tag.match(new RegExp(`${name}=(["'])(.*?)\\1`, 'i'));
+  return decodeEntities(match?.[2] ?? '');
 }
 
 function decodeEntities(str) {
