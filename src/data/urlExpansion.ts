@@ -222,6 +222,32 @@ export const enExpansionPages: SeoPage[] = [
       { title: 'Beginner guide', desc: 'First-run priorities and early mistakes to avoid.', href: '/beginner-guide' },
     ],
   },
+  {
+    slug: 'codes',
+    group: 'tools',
+    title: 'Mistfall Hunter Codes: Active Redemption Codes Tracker',
+    description: 'Mistfall Hunter codes tracker. No active redemption codes exist before launch; this page is updated the moment Bellring Games announces any.',
+    eyebrow: 'Codes tracker',
+    h1: 'Mistfall Hunter codes',
+    lead: 'There are no active Mistfall Hunter redemption codes right now. This page exists so there is one honest, up-to-date answer instead of recycled placeholder codes.',
+    sources: [
+      { href: 'https://www.mistfallhunter.com/', label: 'Mistfall Hunter official site' },
+      { href: 'https://store.steampowered.com/app/3282300/Mistfall_Hunter/', label: 'Mistfall Hunter on Steam' },
+    ],
+    confidence: 'reported',
+    sections: [
+      { heading: 'Are there any active codes right now?', body: ['No. As of this writing, Bellring Games has not published a redemption-code system for Mistfall Hunter. Any code you see listed elsewhere claiming to give in-game rewards before launch should be treated as unverified until an official source confirms it.'] },
+      { heading: 'What did open beta participants get instead?', body: ['Rather than redemption codes, the confirmed mechanism was direct account linkage: special-event cosmetics earned during the June 2026 open beta can carry over to the same account at launch. Regular gameplay progression from the beta was deleted, and this carry-over is not a code you type in \u2014 it is tied automatically to the account that played the beta.'] },
+      { heading: 'Will there be codes after launch?', body: ['Not officially confirmed either way. Many live-service games introduce redemption codes tied to social channels, esports events, or anniversaries after launch; if Mistfall Hunter does the same, this page will be updated with the exact code, reward, and expiry.'] },
+      { heading: 'How to avoid code scams', body: ['Be skeptical of any site or video promising "free Gyldenblood codes" or similar before launch \u2014 there is no official mechanism for that right now. Only trust codes posted directly by Bellring Games\u2019 own channels or reputable storefronts (Steam, Xbox, PlayStation).'] },
+    ],
+    cards: [
+      { title: 'Beta rewards', desc: 'What beta cosmetics carry into launch.', href: '/game-data/beta-rewards' },
+      { title: 'Release date & price', desc: 'Launch timing, editions, and discount window.', href: '/release-date' },
+      { title: 'Patch notes tracker', desc: 'Official updates after every patch.', href: '/patch-notes-tracker' },
+      { title: 'Known issues tracker', desc: 'Crashes, stutter, and reported bugs.', href: '/known-issues-tracker' },
+    ],
+  },
 ];
 
 export const zhExpansionPages: SeoPage[] = [
@@ -433,6 +459,32 @@ export const zhExpansionPages: SeoPage[] = [
       { title: 'Pay-to-win 核查', desc: 'Bellring 已确认的商业化信息。', href: '/pay-to-win' },
       { title: '玩法解析', desc: '核心循环、战斗与撤离基础。', href: '/gameplay-overview' },
       { title: '新手指南', desc: '首局优先事项与常见新手错误。', href: '/beginner-guide' },
+    ],
+  },
+  {
+    slug: 'codes',
+    group: 'tools',
+    title: 'Mistfall Hunter 兑换码：当前有效兑换码追踪',
+    description: 'Mistfall Hunter 兑换码追踪页。发售前没有任何有效兑换码；一旦 Bellring Games 公布，本页会立即更新。',
+    eyebrow: '兑换码追踪',
+    h1: 'Mistfall Hunter 兑换码',
+    lead: '目前没有任何有效的 Mistfall Hunter 兑换码。这个页面存在的意义，是给出一个诚实、实时更新的答案，而不是循环转发一堆过期占位兑换码。',
+    sources: [
+      { href: 'https://www.mistfallhunter.com/', label: 'Mistfall Hunter official site' },
+      { href: 'https://store.steampowered.com/app/3282300/Mistfall_Hunter/', label: 'Mistfall Hunter on Steam' },
+    ],
+    confidence: 'reported',
+    sections: [
+      { heading: '现在有有效兑换码吗？', body: ['没有。截至目前，Bellring Games 尚未为 Mistfall Hunter 公布兑换码系统。任何声称发售前能兑换游戏内奖励的"兑换码"，在得到官方信源确认前都应视为未经证实。'] },
+      { heading: '公测参与者拿到的是什么？', body: ['已确认的机制不是兑换码，而是直接的账号绑定：2026 年 6 月公测期间获得的特殊活动外观，可以带到正式版的同一账号上。公测的常规游戏进度已被清空，这个"带入"不是需要手动输入的兑换码，而是自动绑定在参与过公测的账号上。'] },
+      { heading: '正式版之后会有兑换码吗？', body: ['官方尚未就此给出确认或否认。不少长线运营游戏会在发售后推出与社交媒体、电竞赛事或周年活动挂钩的兑换码；如果 Mistfall Hunter 也这样做，本页会更新具体的兑换码、奖励内容和有效期。'] },
+      { heading: '如何避开兑换码骗局', body: ['对任何在发售前宣称"免费获取 Gyldenblood 兑换码"的网站或视频保持警惕——目前没有官方机制支持这一点。只信任 Bellring Games 官方渠道或正规商店（Steam、Xbox、PlayStation）直接发布的兑换码。'] },
+    ],
+    cards: [
+      { title: '测试奖励', desc: '哪些测试外观会带进正式版。', href: '/game-data/beta-rewards' },
+      { title: '发售日期与价格', desc: '发售时间、版本与折扣窗口。', href: '/release-date' },
+      { title: '补丁追踪', desc: '每次更新后的官方补丁说明。', href: '/patch-notes-tracker' },
+      { title: '已知问题追踪', desc: '崩溃、卡顿与已上报的bug。', href: '/known-issues-tracker' },
     ],
   },
 ];

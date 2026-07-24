@@ -97,7 +97,7 @@ export const INDEXABLE_SLUGS = new Set([
   // "mistfall hunter review" search trend (GSC + Trends data). 'pay-to-win'
   // was already-good existing content promoted alongside it because the
   // new review page links to it.
-  'pvp-guide', 'review', 'pay-to-win',
+  'pvp-guide', 'review', 'pay-to-win', 'codes',
 ]);
 
 export const INDEXABLE_TAB_NEWS_SLUGS = new Set([
@@ -113,7 +113,7 @@ export const INDEXABLE_GAME_DATA_SLUGS = new Set([
   'holy-weapons','keys-and-treasure-chambers','legendary-class-sets','equipment-vouchers','friend-equipment-return',
   'brandrgarde-cataclysm','season-one-soul-hunt','fate-chart','ancestor-tree','pve-soul-revival',
   'open-beta-ended','beta-rewards','beta-regions-languages-controller','beta-new-content',
-  'solemn-needles','hallowgrove','mist-lord','cursed-moonwane',
+  'solemn-needles','hallowgrove','mist-lord','cursed-moonwane','general-harald',
 ]);
 
 export const NOINDEX_REVIEW_NOTES = {
