@@ -6,6 +6,8 @@ import SeoPageModules from '../components/SeoPageModules.astro';
 import QualitySignals from '../components/QualitySignals.astro';
 import TabNewsModule from '../components/TabNewsModule.astro';
 import TabFaqModule from '../components/TabFaqModule.astro';
+import VideoEmbed from '../components/VideoEmbed.astro';
+import { tabVideos } from '../data/tabVideos';
 import type { TabFaqCluster } from '../data/tabFaqs';
 import { getSeoPages, isIndexable } from '../data/seoPages';
 import type { SeoPage } from '../data/seoPages';
@@ -93,6 +95,7 @@ const faqSchema = page.faqs
     <div class="container">
       <span class="eyebrow">{page.eyebrow}</span>
       <h1 class="page-title">{page.h1}</h1>
+      <VideoEmbed id={tabVideos[tabCluster].id} title={tabVideos[tabCluster].title} />
       <p class="lead">{page.lead}</p>
 
       {page.updated && (

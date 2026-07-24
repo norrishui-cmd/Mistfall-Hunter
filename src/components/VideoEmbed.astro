@@ -1,0 +1,106 @@
+---
+// Lazy "facade" YouTube embed: shows a static thumbnail + play button first,
+// only injects the real <iframe> once the user clicks. This keeps the
+// ~238 pages that use this from all loading a YouTube iframe (and its JS)
+// on first paint, and gives us a spot to intercept the click instead of
+// linking straight to youtube.com like a normal thumbnail would.
+//
+// NOTE ON "can't navigate to YouTube": modestbranding + rel=0 minimize
+// YouTube's own on-player links (no end-of-video suggestions grid, smaller
+// logo), but there is no officially supported embed parameter that removes
+// 100% of ways to reach youtube.com from inside an embedded player — a
+// determined user can still get there (e.g. via the small logo in the
+// control bar). What's implemented here removes every *easy, accidental*
+// path off-site; it is not a hard technical guarantee, and no embed
+// technique can make one.
+interface Props {
+  id: string;
+  title: string;
+}
+
+const { id, title } = Astro.props as Props;
+const thumbnail = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+const embedSrc = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1`;
+---
+
+<div class="tab-video">
+  <button
+    type="button"
+    class="tab-video__facade"
+    data-video-facade
+    data-embed-src={embedSrc}
+    aria-label={title}
+    style={`background-image:url(${thumbnail})`}
+  >
+    <span class="tab-video__play" aria-hidden="true">
+      <svg viewBox="0 0 68 48" width="52" height="37"><path d="M66.5 7.7c-.8-2.9-2.5-5.2-5.4-6C55.8 0 34 0 34 0S12.2 0 6.9 1.7c-2.9.8-4.6 3.1-5.4 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 2.5 5.2 5.4 6C12.2 48 34 48 34 48s21.8 0 27.1-1.7c2.9-.8 4.6-3.1 5.4-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="#c6a25b"/><path d="M45 24 27 14v20z" fill="#0e1014"/></svg>
+    </span>
+    <span class="tab-video__title">{title}</span>
+  </button>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('[data-video-facade]').forEach((facade) => {
+    facade.addEventListener('click', () => {
+      const src = facade.dataset.embedSrc;
+      if (!src) return;
+      const iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.title = facade.getAttribute('aria-label') ?? 'Video';
+      iframe.allow = 'accelerated-video; encrypted-media; picture-in-picture';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.loading = 'lazy';
+      facade.replaceWith(iframe);
+    }, { once: true });
+  });
+</script>
+
+<style>
+  .tab-video {
+    margin: clamp(1.5rem, 4vw, 2.25rem) 0;
+  }
+  .tab-video__facade, .tab-video iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+  }
+  .tab-video__facade {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    padding: 0;
+    overflow: hidden;
+  }
+  .tab-video__facade::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(6,7,9,0.05) 55%, rgba(6,7,9,0.75) 100%);
+  }
+  .tab-video__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+    transition: transform 0.15s ease;
+  }
+  .tab-video__facade:hover .tab-video__play,
+  .tab-video__facade:focus-visible .tab-video__play {
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+  .tab-video__title {
+    position: absolute;
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: 0.7rem;
+    color: var(--bone);
+    font-size: 0.85rem;
+    text-align: left;
+    line-height: 1.35;
+  }
+</style>

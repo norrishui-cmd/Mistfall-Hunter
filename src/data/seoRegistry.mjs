@@ -101,7 +101,7 @@ export const INDEXABLE_SLUGS = new Set([
 ]);
 
 export const INDEXABLE_TAB_NEWS_SLUGS = new Set([
-  'release-date-july-29-confirmed','pc-and-xbox-platforms-confirmed','xbox-play-anywhere-access-update','ten-supported-languages-announced','pc-system-requirements-published',
+  'release-date-july-29-confirmed','pc-xbox-ps5-platforms-confirmed','xbox-play-anywhere-access-update','ten-supported-languages-announced','pc-system-requirements-published',
   'official-gameplay-loop-explained','solo-and-three-player-squads-confirmed','six-classes-two-weapon-stances','returner-woodling-extraction-role','pvpve-survival-priorities',
   'build-system-talents-affixes-skills','weapon-stance-build-planning','gem-affix-priority-framework','solo-vs-squad-build-differences','launch-meta-verification-policy',
   'bellring-anti-cheat-disclosure','xbox-pc-cross-platform-features','online-coop-two-to-three-players','online-match-player-count-listing','official-no-pay-to-win-position',
