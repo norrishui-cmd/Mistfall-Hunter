@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TabNewsModule from '../../components/TabNewsModule.astro';
 import RelatedFaqModule from '../../components/RelatedFaqModule.astro';
+import VideoEmbed from '../../components/VideoEmbed.astro';
+import { tabVideos } from '../../data/tabVideos';
 import { BUILDS, CLASS_LIST, AFFIXES, TAG_ZH } from '../../data/builds';
 
 const lang = 'zh' as const;
@@ -55,6 +57,7 @@ const faqSchema = {
     <div class="container">
       <span class="eyebrow">配装 &amp; 词缀</span>
       <h1 class="page-title">Mistfall Hunter 配装 &amp; 词缀</h1>
+      <VideoEmbed id={tabVideos.builds.id} title={tabVideos.builds.titleZh} />
       <p class="lead">
         每个职业的起手配装方向，以及词缀系统如何融入其中。按职业筛选，找到与你打法相符的方向，再细调。
       </p>

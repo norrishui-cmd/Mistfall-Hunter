@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CoreQualityPanel from '../components/CoreQualityPanel.astro';
+import VideoEmbed from '../components/VideoEmbed.astro';
+import { tabVideos } from '../data/tabVideos';
 import { MAPS, CATEGORIES } from '../data/maps';
 
 const lang = 'en' as const;
@@ -40,6 +42,7 @@ const webAppSchema = {
     <div class="container">
       <span class="eyebrow">Interactive map</span>
       <h1 class="page-title">Mistfall Hunter interactive map</h1>
+      <VideoEmbed id={tabVideos.maps.id} title={tabVideos.maps.title} />
       <p class="lead">
         Pan, zoom, and filter each zone by extraction points, bosses, loot, and landmarks. Switch
         maps with the tabs; tap any marker for details.

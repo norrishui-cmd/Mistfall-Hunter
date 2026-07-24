@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CoreQualityPanel from '../components/CoreQualityPanel.astro';
 import TabNewsModule from '../components/TabNewsModule.astro';
 import RelatedFaqModule from '../components/RelatedFaqModule.astro';
+import VideoEmbed from '../components/VideoEmbed.astro';
+import { tabVideos } from '../data/tabVideos';
 import { launchFacts } from '../data/launchFacts';
 import { hasLaunched } from '../data/launchTiming';
 
@@ -97,6 +99,7 @@ const breadcrumbSchema = {
     <div class="container">
       <span class="eyebrow">Release date</span>
       <h1 class="page-title">Mistfall Hunter release date, platforms &amp; price</h1>
+      <VideoEmbed id={tabVideos.release.id} title={tabVideos.release.title} />
       <p class="lead">
         The official July 17 announcement confirms launch for <strong>{lf.dateTimeLine}</strong> on {lf.platformsLine}.
         Standard Edition is {lf.priceStandard} and Deluxe is {lf.priceDeluxe}; regional storefront prices can vary.

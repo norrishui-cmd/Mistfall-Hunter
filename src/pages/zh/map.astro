@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import VideoEmbed from '../../components/VideoEmbed.astro';
+import { tabVideos } from '../../data/tabVideos';
 import { MAPS, CATEGORIES } from '../../data/maps';
 
 const lang = 'zh' as const;
@@ -39,6 +41,7 @@ const webAppSchema = {
     <div class="container">
       <span class="eyebrow">交互式地图</span>
       <h1 class="page-title">Mistfall Hunter 交互式地图</h1>
+      <VideoEmbed id={tabVideos.maps.id} title={tabVideos.maps.titleZh} />
       <p class="lead">
         平移、缩放，并按撤离点、Boss、搜刮和地标过滤每个区域。用标签切换地图；点任意标记看详情。
       </p>

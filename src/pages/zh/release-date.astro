@@ -3,6 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CoreQualityPanel from '../../components/CoreQualityPanel.astro';
 import TabNewsModule from '../../components/TabNewsModule.astro';
 import RelatedFaqModule from '../../components/RelatedFaqModule.astro';
+import VideoEmbed from '../../components/VideoEmbed.astro';
+import { tabVideos } from '../../data/tabVideos';
 import { launchFacts } from '../../data/launchFacts';
 import { hasLaunched } from '../../data/launchTiming';
 
@@ -97,6 +99,7 @@ const breadcrumbSchema = {
     <div class="container">
       <span class="eyebrow">发售日期</span>
       <h1 class="page-title">Mistfall Hunter 发售日期、平台与价格</h1>
+      <VideoEmbed id={tabVideos.release.id} title={tabVideos.release.titleZh} />
       <p class="lead">
         7 月 17 日官方公告确认 Mistfall Hunter 于 <strong>{lf.dateTimeLine}</strong> 发售，登陆 {lf.platformsLine}。标准版 {lf.priceStandard}，豪华版 {lf.priceDeluxe}。
       </p>
