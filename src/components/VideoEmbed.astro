@@ -50,6 +50,15 @@ const embedSrc = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&modest
       iframe.allow = 'accelerated-video; encrypted-media; picture-in-picture';
       iframe.referrerPolicy = 'strict-origin-when-cross-origin';
       iframe.loading = 'lazy';
+      // Astro's scoped CSS only reaches elements written directly in this
+      // component's template (it stamps them with a data-astro-cid-* attr
+      // at build time). An iframe created here via document.createElement
+      // never gets that attribute, so the .tab-video iframe {...} rule
+      // below silently never matched it and it fell back to the browser's
+      // tiny default iframe size. Set sizing inline instead so it isn't
+      // dependent on Astro's style scoping reaching a JS-created element.
+      iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border-radius:6px;border:1px solid var(--line);';
+      iframe.setAttribute('allowfullscreen', '');
       facade.replaceWith(iframe);
     }, { once: true });
   });
@@ -59,14 +68,12 @@ const embedSrc = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&modest
   .tab-video {
     margin: clamp(1.5rem, 4vw, 2.25rem) 0;
   }
-  .tab-video__facade, .tab-video iframe {
+  .tab-video__facade {
     display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
     border-radius: 6px;
     border: 1px solid var(--line);
-  }
-  .tab-video__facade {
     position: relative;
     background-size: cover;
     background-position: center;
