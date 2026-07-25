@@ -1,0 +1,5 @@
+---
+import GameDataDetail from '../../../components/GameDataDetail.astro'; import { gameData } from '../../../data/gameData'; import { secondEditionGameDataSlugs } from '../../../data/gameDataSecondLocales';
+export function getStaticPaths(){return gameData.filter(x=>secondEditionGameDataSlugs.includes(x.slug as any)).map(item=>({params:{slug:item.slug},props:{item}}));} const {item}=Astro.props;
+---
+<GameDataDetail lang="ru" item={item} />

@@ -70,7 +70,7 @@ export const INDEXABLE_STATIC_PATHS = new Set([
   '/ja/pvp-guide/',
   '/ja/game-data/',
   ...['zh-hant','es','ru','ko','fr','pt-br'].flatMap((lang) =>
-    ['', 'release-date', 'beginner-guide', 'classes', 'builds', 'guides', 'performance', 'about']
+    ['', 'release-date', 'beginner-guide', 'classes', 'builds', 'guides', 'performance', 'about', 'game-data']
       .map((slug) => `/${lang}/${slug ? `${slug}/` : ''}`)
   ),
 ]);
@@ -225,6 +225,12 @@ export const INDEXABLE_GAME_DATA_SLUGS = new Set([
   'solemn-needles','hallowgrove','mist-lord','cursed-moonwane','general-harald',
 ]);
 
+export const SECOND_EDITION_GAME_DATA_SLUGS = new Set([
+  'withered-knight','mercenary','shadowstrix','holy-weapons','equipment-vouchers',
+  'brandrgarde-cataclysm','pve-soul-revival','hallowgrove','cursed-moonwane',
+  'beta-regions-languages-controller',
+]);
+
 export const NOINDEX_REVIEW_NOTES = {
   'ps5-performance': 'Performance details need live console verification.',
   'steam-deck': 'Steam Deck compatibility depends on Proton and anti-cheat behavior after launch.',
@@ -356,8 +362,12 @@ export function isIndexablePath(path = '/') {
   if (INDEXABLE_STATIC_PATHS.has(normalized)) return true;
   const newsMatch = normalized.match(/^\/(?:zh\/)?news\/([^/]+)\/$/);
   if (newsMatch) return INDEXABLE_TAB_NEWS_SLUGS.has(newsMatch[1]);
-  const dataMatch = normalized.match(/^\/(?:(?:zh|de|ja)\/)?game-data\/([^/]+)\/$/);
-  if (dataMatch) return INDEXABLE_GAME_DATA_SLUGS.has(dataMatch[1]);
+  const dataMatch = normalized.match(/^\/(?:(zh|de|ja|zh-hant|es|ru|ko|fr|pt-br)\/)?game-data\/([^/]+)\/$/);
+  if (dataMatch) {
+    const [, locale, slug] = dataMatch;
+    if (locale && !['zh','de','ja'].includes(locale)) return SECOND_EDITION_GAME_DATA_SLUGS.has(slug);
+    return INDEXABLE_GAME_DATA_SLUGS.has(slug);
+  }
   const slug = slugFromPath(normalized);
   if (isLocalizedPath(normalized) && normalized.startsWith('/zh/') && ZH_DRAFT_SLUGS.has(slug)) return false;
   return Boolean(slug) && isIndexableSlug(slug);

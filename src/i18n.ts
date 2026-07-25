@@ -153,10 +153,19 @@ export const firstEditionPaths = new Set([
   '/', '/release-date', '/beginner-guide', '/classes', '/builds', '/guides', '/performance', '/about',
 ]);
 
+export const secondEditionGameDataPaths = new Set([
+  '/game-data',
+  '/game-data/withered-knight', '/game-data/mercenary', '/game-data/shadowstrix',
+  '/game-data/holy-weapons', '/game-data/equipment-vouchers',
+  '/game-data/brandrgarde-cataclysm', '/game-data/pve-soul-revival',
+  '/game-data/hallowgrove', '/game-data/cursed-moonwane',
+  '/game-data/beta-regions-languages-controller',
+]);
+
 export const allLanguages = Object.keys(languages) as Lang[];
 
 export function languagesForPath(path: string): Lang[] {
-  if (firstEditionPaths.has(path)) return allLanguages;
+  if (firstEditionPaths.has(path) || secondEditionGameDataPaths.has(path)) return allLanguages;
   if (localizedCorePaths.has(path) || /^\/game-data\/[^/]+$/.test(path)) return ['en', 'zh', 'de', 'ja'];
   return ['en', 'zh'];
 }

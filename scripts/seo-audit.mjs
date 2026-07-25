@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { INDEXABLE_GAME_DATA_SLUGS } from '../src/data/seoRegistry.mjs';
+import { INDEXABLE_GAME_DATA_SLUGS, SECOND_EDITION_GAME_DATA_SLUGS } from '../src/data/seoRegistry.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
@@ -335,14 +335,21 @@ for (const page of tabNewsPages) {
   }
 }
 
-const gameDataPages = indexablePages.filter((page) => /^\/(?:zh\/)?game-data\/[^/]+\/$/.test(page.pathname));
-const expectedGameDataPages = INDEXABLE_GAME_DATA_SLUGS.size * 2; // en + zh
+const gameDataPages = indexablePages.filter((page) => /^\/(?:(?:zh|de|ja|zh-hant|es|ru|ko|fr|pt-br)\/)?game-data\/[^/]+\/$/.test(page.pathname));
+const expectedGameDataPages = INDEXABLE_GAME_DATA_SLUGS.size * 4 + SECOND_EDITION_GAME_DATA_SLUGS.size * 6;
 if (gameDataPages.length !== expectedGameDataPages) fail(`expected ${expectedGameDataPages} indexable game-data URLs, found ${gameDataPages.length}`);
-for (const pathname of ['/game-data/','/zh/game-data/']) {
+for (const pathname of ['/game-data/','/zh/game-data/','/de/game-data/','/ja/game-data/']) {
   const page = byPath.get(pathname);
   if (!page) { fail(`${pathname}: missing game-data hub`); continue; }
   const cards = allMatches(page.html, /class=["']data-card["']/gi).length;
   if (cards !== INDEXABLE_GAME_DATA_SLUGS.size) fail(`${pathname}: expected ${INDEXABLE_GAME_DATA_SLUGS.size} game-data cards, found ${cards}`);
+}
+for (const lang of ['zh-hant','es','ru','ko','fr','pt-br']) {
+  const pathname=`/${lang}/game-data/`;
+  const page=byPath.get(pathname);
+  if (!page) { fail(`${pathname}: missing second-edition game-data hub`); continue; }
+  const cards=allMatches(page.html,/class=["']data-card["']/gi).length;
+  if (cards !== SECOND_EDITION_GAME_DATA_SLUGS.size) fail(`${pathname}: expected ${SECOND_EDITION_GAME_DATA_SLUGS.size} second-edition cards, found ${cards}`);
 }
 
 const contextualLinks = new Map(indexablePages.map((page) => [normalizePathname(page.pathname), 0]));
