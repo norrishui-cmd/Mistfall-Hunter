@@ -69,6 +69,10 @@ export const INDEXABLE_STATIC_PATHS = new Set([
   '/ja/patch-notes-tracker/',
   '/ja/pvp-guide/',
   '/ja/game-data/',
+  ...['zh-hant','es','ru','ko','fr','pt-br'].flatMap((lang) =>
+    ['', 'release-date', 'beginner-guide', 'classes', 'builds', 'guides', 'performance', 'about']
+      .map((slug) => `/${lang}/${slug ? `${slug}/` : ''}`)
+  ),
 ]);
 
 export const INDEXABLE_SLUGS = new Set([

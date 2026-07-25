@@ -3,16 +3,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { localizedCorePages, localizedCorePath, type LocalizedCorePage } from '../data/localizedCorePages';
 
 interface Props {
-  lang: 'de' | 'ja';
+  lang: import('../i18n').Lang;
   page: LocalizedCorePage;
 }
 
 const { lang, page } = Astro.props as Props;
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
 const path = page.slug === 'home' ? '/' : `/${page.slug}`;
-const labels = lang === 'de'
-  ? { verified: 'Geprüfte Grundlagen', sources: 'Offizielle Quellen', related: 'Weitere deutsche Guides', open: 'Öffnen', updated: 'Aktualisiert: 18. Juli 2026' }
-  : { verified: '確認済みの基本情報', sources: '公式情報源', related: '関連する日本語攻略', open: '開く', updated: '更新日：2026年7月18日' };
+const labelsByLang = {
+  de:{verified:'Geprüfte Grundlagen',sources:'Offizielle Quellen',related:'Weitere deutsche Guides',open:'Öffnen',updated:'Aktualisiert: 25. Juli 2026',home:'Start'},
+  ja:{verified:'確認済みの基本情報',sources:'公式情報源',related:'関連する日本語攻略',open:'開く',updated:'更新日：2026年7月25日',home:'ホーム'},
+  'zh-hant':{verified:'已核實的基本資訊',sources:'官方來源',related:'相關繁體中文攻略',open:'查看',updated:'更新：2026年7月25日',home:'首頁'},
+  es:{verified:'Información verificada',sources:'Fuentes oficiales',related:'Más guías en español',open:'Abrir',updated:'Actualizado: 25 de julio de 2026',home:'Inicio'},
+  ru:{verified:'Проверенные сведения',sources:'Официальные источники',related:'Другие русские гайды',open:'Открыть',updated:'Обновлено: 25 июля 2026',home:'Главная'},
+  ko:{verified:'검증된 기본 정보',sources:'공식 출처',related:'관련 한국어 가이드',open:'열기',updated:'업데이트: 2026년 7월 25일',home:'홈'},
+  fr:{verified:'Informations vérifiées',sources:'Sources officielles',related:'Autres guides en français',open:'Ouvrir',updated:'Mis à jour : 25 juillet 2026',home:'Accueil'},
+  'pt-br':{verified:'Informações verificadas',sources:'Fontes oficiais',related:'Mais guias em português',open:'Abrir',updated:'Atualizado: 25 de julho de 2026',home:'Início'},
+} as const;
+const labels = labelsByLang[lang as keyof typeof labelsByLang];
 const allPages = localizedCorePages[lang];
 const related = allPages.filter((item) => item.slug !== page.slug).slice(0, 4);
 const sourceUrls = [
@@ -26,7 +34,7 @@ const articleSchema = {
   headline: page.h1,
   description: page.description,
   inLanguage: lang,
-  dateModified: '2026-07-18',
+  dateModified: '2026-07-25',
   mainEntityOfPage: new URL(localizedCorePath(lang, page.slug), site).href,
   author: { '@type': 'Organization', name: 'Mistfall Hunter Wiki and Hub' },
   publisher: { '@type': 'Organization', name: 'Mistfall Hunter Wiki and Hub' },
@@ -39,7 +47,7 @@ const breadcrumbSchema = {
   itemListElement: page.slug === 'home' ? [
     { '@type': 'ListItem', position: 1, name: page.h1, item: new URL(localizedCorePath(lang, 'home'), site).href },
   ] : [
-    { '@type': 'ListItem', position: 1, name: lang === 'de' ? 'Start' : 'ホーム', item: new URL(localizedCorePath(lang, 'home'), site).href },
+    { '@type': 'ListItem', position: 1, name: labels.home, item: new URL(localizedCorePath(lang, 'home'), site).href },
     { '@type': 'ListItem', position: 2, name: page.h1, item: new URL(localizedCorePath(lang, page.slug), site).href },
   ],
 };

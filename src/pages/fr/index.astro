@@ -1,0 +1,5 @@
+---
+import LocalizedCorePage from '../../components/LocalizedCorePage.astro'; import { getLocalizedCorePage } from '../../data/localizedCorePages';
+const page = getLocalizedCorePage('fr','home')!;
+---
+<LocalizedCorePage lang="fr" page={page} />

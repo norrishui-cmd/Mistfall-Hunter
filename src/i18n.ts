@@ -7,6 +7,12 @@ export const languages = {
   zh: '中文',
   de: 'Deutsch',
   ja: '日本語',
+  'zh-hant': '繁體中文',
+  es: 'Español',
+  ru: 'Русский',
+  ko: '한국어',
+  fr: 'Français',
+  'pt-br': 'Português (Brasil)',
 } as const;
 
 export const defaultLang = 'en' as const;
@@ -82,6 +88,48 @@ export const ui = {
     'footer.disclaimer': 'ファンによる非公式情報サイトです。Bellring Games との提携・公認・後援関係はありません。ゲーム名、素材、商標は各権利者に帰属します。',
     'footer.sources': '情報源', 'footer.updates': '更新履歴', 'footer.sitemap': 'サイトマップ',
   },
+  'zh-hant': {
+    'site.name': 'Mistfall Hunter Wiki 攻略站', 'site.tagline': '非官方攻略與資料庫',
+    'nav.home': '首頁', 'nav.release': '發售', 'nav.news': '新聞', 'nav.guides': '攻略', 'nav.maps': '地圖', 'nav.builds': '配裝', 'nav.data': '遊戲資料', 'nav.bosses': 'Boss', 'nav.tools': '工具', 'nav.faq': 'FAQ', 'nav.about': '關於', 'nav.soon': '即將推出',
+    'nav.search': '搜尋', 'search.placeholder': '搜尋全站內容...', 'search.close': '關閉搜尋', 'search.hint': '搜尋職業、配裝、地圖、Boss 與 FAQ。',
+    'footer.disclaimer': '非官方玩家資源，與 Bellring Games 無隸屬、背書或贊助關係。遊戲名稱、素材與商標歸各自所有者。',
+    'footer.sources': '來源', 'footer.updates': '更新', 'footer.sitemap': '網站地圖',
+  },
+  es: {
+    'site.name': 'Mistfall Hunter Wiki y Guías', 'site.tagline': 'Guía y base de datos no oficial',
+    'nav.home': 'Inicio', 'nav.release': 'Lanzamiento', 'nav.news': 'Noticias', 'nav.guides': 'Guías', 'nav.maps': 'Mapas', 'nav.builds': 'Builds', 'nav.data': 'Datos', 'nav.bosses': 'Jefes', 'nav.tools': 'Herramientas', 'nav.faq': 'FAQ', 'nav.about': 'Acerca de', 'nav.soon': 'Próximamente',
+    'nav.search': 'Buscar', 'search.placeholder': 'Buscar en la wiki...', 'search.close': 'Cerrar búsqueda', 'search.hint': 'Busca clases, builds, mapas, jefes y FAQ.',
+    'footer.disclaimer': 'Recurso no oficial creado por fans. Sin afiliación, respaldo ni patrocinio de Bellring Games. Los nombres, recursos y marcas pertenecen a sus propietarios.',
+    'footer.sources': 'Fuentes', 'footer.updates': 'Actualizaciones', 'footer.sitemap': 'Mapa del sitio',
+  },
+  ru: {
+    'site.name': 'Mistfall Hunter Вики и гайды', 'site.tagline': 'Неофициальные гайды и база данных',
+    'nav.home': 'Главная', 'nav.release': 'Релиз', 'nav.news': 'Новости', 'nav.guides': 'Гайды', 'nav.maps': 'Карты', 'nav.builds': 'Билды', 'nav.data': 'Данные', 'nav.bosses': 'Боссы', 'nav.tools': 'Инструменты', 'nav.faq': 'FAQ', 'nav.about': 'О сайте', 'nav.soon': 'Скоро',
+    'nav.search': 'Поиск', 'search.placeholder': 'Поиск по вики...', 'search.close': 'Закрыть поиск', 'search.hint': 'Классы, билды, карты, боссы и FAQ.',
+    'footer.disclaimer': 'Неофициальный фанатский ресурс, не связанный с Bellring Games. Названия, материалы и товарные знаки принадлежат их владельцам.',
+    'footer.sources': 'Источники', 'footer.updates': 'Обновления', 'footer.sitemap': 'Карта сайта',
+  },
+  ko: {
+    'site.name': 'Mistfall Hunter 공략 위키', 'site.tagline': '비공식 가이드 및 데이터베이스',
+    'nav.home': '홈', 'nav.release': '출시 정보', 'nav.news': '뉴스', 'nav.guides': '가이드', 'nav.maps': '지도', 'nav.builds': '빌드', 'nav.data': '게임 데이터', 'nav.bosses': '보스', 'nav.tools': '도구', 'nav.faq': 'FAQ', 'nav.about': '사이트 소개', 'nav.soon': '준비 중',
+    'nav.search': '검색', 'search.placeholder': '위키 검색...', 'search.close': '검색 닫기', 'search.hint': '클래스, 빌드, 지도, 보스, FAQ를 검색하세요.',
+    'footer.disclaimer': '팬이 만든 비공식 자료이며 Bellring Games와 제휴·승인·후원 관계가 없습니다. 게임명, 자료 및 상표의 권리는 각 소유자에게 있습니다.',
+    'footer.sources': '출처', 'footer.updates': '업데이트', 'footer.sitemap': '사이트맵',
+  },
+  fr: {
+    'site.name': 'Mistfall Hunter Wiki et Guides', 'site.tagline': 'Guide et base de données non officiels',
+    'nav.home': 'Accueil', 'nav.release': 'Sortie', 'nav.news': 'Actualités', 'nav.guides': 'Guides', 'nav.maps': 'Cartes', 'nav.builds': 'Builds', 'nav.data': 'Données', 'nav.bosses': 'Boss', 'nav.tools': 'Outils', 'nav.faq': 'FAQ', 'nav.about': 'À propos', 'nav.soon': 'Bientôt',
+    'nav.search': 'Rechercher', 'search.placeholder': 'Rechercher dans le wiki...', 'search.close': 'Fermer la recherche', 'search.hint': 'Recherchez classes, builds, cartes, boss et FAQ.',
+    'footer.disclaimer': 'Ressource non officielle créée par des fans, sans affiliation, approbation ni parrainage de Bellring Games. Les noms, contenus et marques appartiennent à leurs propriétaires.',
+    'footer.sources': 'Sources', 'footer.updates': 'Mises à jour', 'footer.sitemap': 'Plan du site',
+  },
+  'pt-br': {
+    'site.name': 'Mistfall Hunter Wiki e Guias', 'site.tagline': 'Guia e banco de dados não oficial',
+    'nav.home': 'Início', 'nav.release': 'Lançamento', 'nav.news': 'Notícias', 'nav.guides': 'Guias', 'nav.maps': 'Mapas', 'nav.builds': 'Builds', 'nav.data': 'Dados', 'nav.bosses': 'Chefes', 'nav.tools': 'Ferramentas', 'nav.faq': 'FAQ', 'nav.about': 'Sobre', 'nav.soon': 'Em breve',
+    'nav.search': 'Buscar', 'search.placeholder': 'Buscar na wiki...', 'search.close': 'Fechar busca', 'search.hint': 'Busque classes, builds, mapas, chefes e FAQ.',
+    'footer.disclaimer': 'Recurso não oficial feito por fãs, sem afiliação, endosso ou patrocínio da Bellring Games. Nomes, recursos e marcas pertencem aos seus proprietários.',
+    'footer.sources': 'Fontes', 'footer.updates': 'Atualizações', 'footer.sitemap': 'Mapa do site',
+  },
 } as const;
 
 export type Lang = keyof typeof ui;
@@ -101,9 +149,21 @@ export const localizedCorePaths = new Set([
   '/queue-times-guide', '/patch-notes-tracker', '/pvp-guide',
 ]);
 
+export const firstEditionPaths = new Set([
+  '/', '/release-date', '/beginner-guide', '/classes', '/builds', '/guides', '/performance', '/about',
+]);
+
+export const allLanguages = Object.keys(languages) as Lang[];
+
+export function languagesForPath(path: string): Lang[] {
+  if (firstEditionPaths.has(path)) return allLanguages;
+  if (localizedCorePaths.has(path) || /^\/game-data\/[^/]+$/.test(path)) return ['en', 'zh', 'de', 'ja'];
+  return ['en', 'zh'];
+}
+
 export function getLangFromUrl(url: URL): Lang {
   const [, seg] = url.pathname.split('/');
-  if (seg === 'zh' || seg === 'de' || seg === 'ja') return seg;
+  if (seg in languages && seg !== 'en') return seg as Lang;
   return 'en';
 }
 
@@ -116,7 +176,7 @@ export function useTranslations(lang: Lang) {
 }
 
 export function localizePath(path: string = '/', lang: Lang = defaultLang): string {
-  const withoutLocale = path.replace(/^\/(?:zh|de|ja)(?=\/|$)/, '') || '/';
+  const withoutLocale = path.replace(/^\/(?:zh|de|ja|zh-hant|es|ru|ko|fr|pt-br)(?=\/|$)/, '') || '/';
   const clean = withoutLocale === '/' ? '' : withoutLocale;
   if (lang === defaultLang) return clean || '/';
   return `/${lang}${clean || '/'}`;

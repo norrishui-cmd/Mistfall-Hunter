@@ -1,5 +1,5 @@
 ﻿---
-import { languages, localizePath, localizedCorePaths, useTranslations, type Lang } from '../i18n';
+import { languages, localizePath, languagesForPath, useTranslations, type Lang } from '../i18n';
 import { isIndexableHref } from '../data/seoPages';
 import SearchModal from './SearchModal.astro';
 
@@ -23,14 +23,13 @@ const items: NavItem[] = [
   ...(lang === 'en' || lang === 'zh' ? [{ labelKey: 'nav.maps', path: '/map' }] : []),
   ...(lang === 'en' || lang === 'zh' ? [{ labelKey: 'nav.bosses', path: '/bosses' }] : []),
   { labelKey: 'nav.builds', path: '/builds' },
-  { labelKey: 'nav.data', path: '/game-data' },
+  ...(lang === 'en' || lang === 'zh' || lang === 'de' || lang === 'ja' ? [{ labelKey: 'nav.data', path: '/game-data' }] : []),
   ...(lang === 'en' || lang === 'zh' ? [{ labelKey: 'nav.faq', path: '/faq' }] : []),
   { labelKey: 'nav.about', path: '/about' },
 ];
 
-const isGameDataDetail = /^\/game-data\/[^/]+$/.test(path);
-const languageOptions: Lang[] = localizedCorePaths.has(path) || isGameDataDetail ? ['en', 'zh', 'de', 'ja'] : ['en', 'zh'];
-const languageLabel = lang === 'zh' ? '选择语言' : lang === 'de' ? 'Sprache wählen' : lang === 'ja' ? '言語を選択' : 'Choose language';
+const languageOptions = languagesForPath(path);
+const languageLabel = ({zh:'选择语言',de:'Sprache wählen',ja:'言語を選択','zh-hant':'選擇語言',es:'Elegir idioma',ru:'Выбрать язык',ko:'언어 선택',fr:'Choisir la langue','pt-br':'Escolher idioma'} as Partial<Record<Lang,string>>)[lang] ?? 'Choose language';
 const siteName = t('site.name');
 const siteTagline = t('site.tagline');
 ---
@@ -84,8 +83,8 @@ const siteTagline = t('site.tagline');
                 <a
                   class="language-tab"
                   href={targetHref}
-                  hreflang={option === 'zh' ? 'zh-Hans' : option}
-                  lang={option === 'zh' ? 'zh-Hans' : option}
+                  hreflang={option === 'zh' ? 'zh-Hans' : option === 'zh-hant' ? 'zh-Hant' : option === 'es' ? 'es-ES' : option === 'pt-br' ? 'pt-BR' : option}
+                  lang={option === 'zh' ? 'zh-Hans' : option === 'zh-hant' ? 'zh-Hant' : option}
                   aria-current={option === lang ? 'true' : undefined}
                   rel={targetIsDraft ? 'nofollow' : undefined}
                 >

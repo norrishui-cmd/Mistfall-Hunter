@@ -1,4 +1,5 @@
 import type { Lang } from '../i18n';
+import { officialLanguageCorePages, type FirstEditionLang } from './officialLanguageCorePages';
 
 export type LocalizedCorePage = {
   slug: string;
@@ -397,9 +398,9 @@ const ja: LocalizedCorePage[] = [
   },
 ];
 
-export const localizedCorePages: Record<'de' | 'ja', LocalizedCorePage[]> = { de, ja };
+export const localizedCorePages: Record<'de' | 'ja' | FirstEditionLang, LocalizedCorePage[]> = { de, ja, ...officialLanguageCorePages };
 
-export function getLocalizedCorePage(lang: 'de' | 'ja', slug: string) {
+export function getLocalizedCorePage(lang: 'de' | 'ja' | FirstEditionLang, slug: string) {
   return localizedCorePages[lang].find((page) => page.slug === slug);
 }
 

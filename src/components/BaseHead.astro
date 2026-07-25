@@ -1,5 +1,5 @@
 ﻿---
-import { localizePath, localizedCorePaths, ui, type Lang } from '../i18n';
+import { localizePath, languagesForPath, ui, type Lang } from '../i18n';
 
 interface Props {
   title: string;
@@ -26,10 +26,10 @@ const {
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
 const withTrailingSlash = (value: string) => value === '/' ? '/' : `${value.replace(/\/$/, '')}/`;
 const canonical = new URL(withTrailingSlash(localizePath(path, lang)), site).href;
-const alternateLangs: Lang[] = localizedCorePaths.has(path) || /^\/game-data\/[^/]+$/.test(path) ? ['en', 'zh', 'de', 'ja'] : ['en', 'zh'];
-const hreflangByLang: Record<Lang, string> = { en: 'en', zh: 'zh-Hans', de: 'de', ja: 'ja' };
-const languageByLang: Record<Lang, string> = { en: 'en', zh: 'zh-Hans', de: 'de', ja: 'ja' };
-const ogLocaleByLang: Record<Lang, string> = { en: 'en_US', zh: 'zh_CN', de: 'de_DE', ja: 'ja_JP' };
+const alternateLangs = languagesForPath(path);
+const hreflangByLang: Record<Lang, string> = { en: 'en', zh: 'zh-Hans', de: 'de', ja: 'ja', 'zh-hant': 'zh-Hant', es: 'es-ES', ru: 'ru', ko: 'ko', fr: 'fr', 'pt-br': 'pt-BR' };
+const languageByLang = hreflangByLang;
+const ogLocaleByLang: Record<Lang, string> = { en: 'en_US', zh: 'zh_CN', de: 'de_DE', ja: 'ja_JP', 'zh-hant': 'zh_TW', es: 'es_ES', ru: 'ru_RU', ko: 'ko_KR', fr: 'fr_FR', 'pt-br': 'pt_BR' };
 const enHref = new URL(withTrailingSlash(localizePath(path, 'en')), site).href;
 const ogImage = new URL(image, site).href;
 const siteName = ui[lang]['site.name'];

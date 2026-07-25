@@ -11,7 +11,7 @@ const { lang } = Astro.props as Props;
 const t = useTranslations(lang);
 const year = new Date().getFullYear();
 
-const isNewLocale = lang === 'de' || lang === 'ja';
+const isNewLocale = lang !== 'en' && lang !== 'zh';
 const trustLinks = isNewLocale ? [
   { label: t('nav.about'), href: '/about' },
 ] : [
