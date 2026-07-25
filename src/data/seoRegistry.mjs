@@ -188,14 +188,29 @@ export const INDEXABLE_SLUGS = new Set([
   'crash-fix-guide', 'low-fps-fix-guide', 'best-controller-sensitivity',
   'best-keyboard-mouse-settings', 'ultrawide-support-guide', 'cloud-gaming-guide',
   'family-sharing-guide',
+
+  // 2026-07-24 "expand to 1000" plan, step 5: the remaining 40 (of 62)
+  // urlRapidExpansion2.ts candidates — routes, gear/database, PvE
+  // objectives, and release-adjacent news/misc. Same content-voice fix and
+  // sources/confidence fields as step 4's batch of 20.
+  'best-route-for-beginners', 'safe-loot-route-guide', 'high-risk-high-reward-route', 'duo-route-guide', 'trio-route-guide',
+  'rat-route-guide', 'boss-rush-route-guide', 'extraction-camping-counter-guide', 'ambush-guide', 'escape-after-kill-guide',
+  'best-affixes-for-solo', 'best-affixes-for-pvp', 'best-affixes-for-pve', 'best-affixes-for-bosses', 'gear-rarity-guide',
+  'weapon-tier-list', 'armor-guide', 'consumables-guide', 'crafting-guide', 'vendor-guide',
+  'returner-woodling-guide', 'soul-of-return-farming', 'gyldenblood-farming-route', 'corroded-enemies-guide', 'mist-lord-guide',
+  'boss-rewards-guide', 'boss-mechanics-guide', 'pve-enemy-drops-guide', 'rare-loot-guide', 'loot-priority-list',
+  'release-time-countdown', 'is-mistfall-hunter-free', 'mistfall-hunter-system-requirements', 'mistfall-hunter-file-size', 'mistfall-hunter-preorder-guide',
+  'mistfall-hunter-editions-guide', 'mistfall-hunter-beta-rewards', 'mistfall-hunter-demo-ended', 'mistfall-hunter-roadmap-tracker', 'mistfall-hunter-discord-guide',
 ]);
 
 export const INDEXABLE_TAB_NEWS_SLUGS = new Set([
-  'release-date-july-29-confirmed','pc-xbox-ps5-platforms-confirmed','xbox-play-anywhere-access-update','ten-supported-languages-announced','pc-system-requirements-published',
+  'release-date-july-29-confirmed','pc-xbox-ps5-platforms-confirmed','open-beta-430k-players-milestone','launch-day-content-lineup-confirmed','pc-system-requirements-published',
   'official-gameplay-loop-explained','solo-and-three-player-squads-confirmed','six-classes-two-weapon-stances','returner-woodling-extraction-role','pvpve-survival-priorities',
   'build-system-talents-affixes-skills','weapon-stance-build-planning','gem-affix-priority-framework','solo-vs-squad-build-differences','launch-meta-verification-policy',
   'bellring-anti-cheat-disclosure','xbox-pc-cross-platform-features','online-coop-two-to-three-players','online-match-player-count-listing','official-no-pay-to-win-position',
   'bellring-games-and-skystone-publishing','dark-fantasy-pvpve-world-overview','xbox-visual-and-audio-features','steam-hdr-family-sharing-features','deluxe-package-cosmetics-fate-coins',
+  'hallowgrove-bleached-forest-map-confirmed','hallowgrove-three-regions-named','solemn-needles-original-zone','map-details-may-shift-before-launch','crossplay-confirmed-shared-maps',
+  'salmar-cursed-moonwane-origin-revealed','fallen-general-harald-named','mist-lord-normal-chaos-difficulty','holy-weapons-exclusive-boss-drops','cataclysm-best-gear-source',
 ]);
 
 export const INDEXABLE_GAME_DATA_SLUGS = new Set([
@@ -293,6 +308,18 @@ export const ZH_DRAFT_SLUGS = new Set([
   'crash-fix-guide', 'low-fps-fix-guide', 'best-controller-sensitivity',
   'best-keyboard-mouse-settings', 'ultrawide-support-guide', 'cloud-gaming-guide',
   'family-sharing-guide',
+
+  // 2026-07-24 step 5 batch (see INDEXABLE_SLUGS) — all from
+  // urlRapidExpansion2.ts, so the zh version of every one of these is still
+  // English filler labeled "Chinese Draft" until someone translates it.
+  'best-route-for-beginners', 'safe-loot-route-guide', 'high-risk-high-reward-route', 'duo-route-guide', 'trio-route-guide',
+  'rat-route-guide', 'boss-rush-route-guide', 'extraction-camping-counter-guide', 'ambush-guide', 'escape-after-kill-guide',
+  'best-affixes-for-solo', 'best-affixes-for-pvp', 'best-affixes-for-pve', 'best-affixes-for-bosses', 'gear-rarity-guide',
+  'weapon-tier-list', 'armor-guide', 'consumables-guide', 'crafting-guide', 'vendor-guide',
+  'returner-woodling-guide', 'soul-of-return-farming', 'gyldenblood-farming-route', 'corroded-enemies-guide', 'mist-lord-guide',
+  'boss-rewards-guide', 'boss-mechanics-guide', 'pve-enemy-drops-guide', 'rare-loot-guide', 'loot-priority-list',
+  'release-time-countdown', 'is-mistfall-hunter-free', 'mistfall-hunter-system-requirements', 'mistfall-hunter-file-size', 'mistfall-hunter-preorder-guide',
+  'mistfall-hunter-editions-guide', 'mistfall-hunter-beta-rewards', 'mistfall-hunter-demo-ended', 'mistfall-hunter-roadmap-tracker', 'mistfall-hunter-discord-guide',
 ]);
 
 export function normalizeSeoPath(path = '/') {
