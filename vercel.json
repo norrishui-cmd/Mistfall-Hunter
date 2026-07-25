@@ -5,6 +5,16 @@
       "has": [{ "type": "host", "value": "www.mistfallhunter.me" }],
       "destination": "https://mistfallhunter.me/:path*",
       "permanent": true
+    },
+    {
+      "source": "/release-date-july-30",
+      "destination": "/release-date",
+      "permanent": true
+    },
+    {
+      "source": "/zh/release-date-july-30",
+      "destination": "/zh/release-date",
+      "permanent": true
     }
   ]
 }

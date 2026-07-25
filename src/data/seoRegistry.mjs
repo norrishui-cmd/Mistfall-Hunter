@@ -170,6 +170,24 @@ export const INDEXABLE_SLUGS = new Set([
   'mound-omen-of-cthulhu-comparison', 'lovecraftian-dark-fantasy-games',
   'cthulhu-fans-mistfall-hunter-guide', 'dark-fantasy-extraction-games-2026',
   'horror-fans-guide-to-mistfall-hunter',
+
+  // 2026-07-24 "expand to 1000" plan, step 4: 20 of urlRapidExpansion2.ts's
+  // 62 candidates, promoted after the same content-voice fix as step 2 (see
+  // the 2026-07-24 rewrite of createPage() in that file for the worst
+  // example found all session: an FAQ literally asking "Is this page safe
+  // for SEO indexing?"). These 20 are the comparison and PC-settings
+  // entries; the remaining ~40 (routes, gear/database, objectives, news
+  // misc) still use the fixed generic template but haven't had individual
+  // answer overrides written yet, so they stay noindex for now.
+  'dark-and-darker-vs-mistfall-hunter', 'dungeonborne-vs-mistfall-hunter',
+  'elden-ring-nightreign-vs-mistfall-hunter', 'escape-from-tarkov-vs-mistfall-hunter',
+  'hunt-showdown-vs-mistfall-hunter', 'dark-souls-fans-guide',
+  'extraction-shooter-players-guide', 'soulslike-extraction-guide',
+  'is-mistfall-hunter-like-dark-souls', 'is-mistfall-hunter-like-dark-and-darker',
+  'best-graphics-settings', 'best-visibility-settings', 'stutter-fix-guide',
+  'crash-fix-guide', 'low-fps-fix-guide', 'best-controller-sensitivity',
+  'best-keyboard-mouse-settings', 'ultrawide-support-guide', 'cloud-gaming-guide',
+  'family-sharing-guide',
 ]);
 
 export const INDEXABLE_TAB_NEWS_SLUGS = new Set([
@@ -262,6 +280,19 @@ export const ZH_DRAFT_SLUGS = new Set([
   'mound-omen-of-cthulhu-comparison', 'lovecraftian-dark-fantasy-games',
   'cthulhu-fans-mistfall-hunter-guide', 'dark-fantasy-extraction-games-2026',
   'horror-fans-guide-to-mistfall-hunter',
+
+  // 2026-07-24 step 4 batch (see INDEXABLE_SLUGS) — all from
+  // urlRapidExpansion2.ts, so the zh version of every one of these is still
+  // English filler labeled "Chinese Draft" until someone translates it.
+  'dark-and-darker-vs-mistfall-hunter', 'dungeonborne-vs-mistfall-hunter',
+  'elden-ring-nightreign-vs-mistfall-hunter', 'escape-from-tarkov-vs-mistfall-hunter',
+  'hunt-showdown-vs-mistfall-hunter', 'dark-souls-fans-guide',
+  'extraction-shooter-players-guide', 'soulslike-extraction-guide',
+  'is-mistfall-hunter-like-dark-souls', 'is-mistfall-hunter-like-dark-and-darker',
+  'best-graphics-settings', 'best-visibility-settings', 'stutter-fix-guide',
+  'crash-fix-guide', 'low-fps-fix-guide', 'best-controller-sensitivity',
+  'best-keyboard-mouse-settings', 'ultrawide-support-guide', 'cloud-gaming-guide',
+  'family-sharing-guide',
 ]);
 
 export function normalizeSeoPath(path = '/') {

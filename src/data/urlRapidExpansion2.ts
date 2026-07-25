@@ -10,6 +10,18 @@ type ExpansionBrief = {
   focus: string;
   caution: string;
   update: string;
+  // Optional real, reader-facing overrides. Without these the default
+  // template below is generic-but-honest; with these the page gets genuine
+  // topic-specific content. Set before promoting any brief to indexable —
+  // see the 2026-07-24 rewrite of createPage() for why: every field used to
+  // be self-referential content-planning text (down to an FAQ literally
+  // asking "Is this page safe for SEO indexing?"), not reader-facing copy.
+  title?: string;
+  h1?: string;
+  answer?: string;
+  checklist?: string[];
+  faqs?: { q: string; a: string }[];
+  sections?: { heading: string; body: string[]; bullets?: string[] }[];
 };
 
 const baseCards = [
@@ -31,27 +43,27 @@ const techCards = [
 ];
 
 const briefs: ExpansionBrief[] = [
-  { slug: 'dark-and-darker-vs-mistfall-hunter', group: 'guides', template: 'guide', keyword: 'Dark and Darker vs Mistfall Hunter', intent: 'comparison search from extraction players', focus: 'fantasy extraction differences, camera feel, class roles, loot risk, and PvP pressure', caution: 'avoid claiming one game is better before live balance is stable', update: 'refresh after launch with live queue, class, and monetization differences' },
-  { slug: 'dungeonborne-vs-mistfall-hunter', group: 'guides', template: 'guide', keyword: 'Dungeonborne vs Mistfall Hunter', intent: 'comparison search from fantasy extraction players', focus: 'third-person combat, map pressure, gear loss, classes, and team play', caution: 'avoid unsupported player-count or monetization claims', update: 'add launch hands-on comparison after Mistfall Hunter release' },
-  { slug: 'elden-ring-nightreign-vs-mistfall-hunter', group: 'guides', template: 'guide', keyword: 'Elden Ring Nightreign vs Mistfall Hunter', intent: 'soulslike comparison search', focus: 'extraction loop versus run-based boss survival, PvP stakes, and build planning', caution: 'do not overstate similarity beyond broad action-RPG and risk-reward structure', update: 'revise after Mistfall Hunter launch and current Nightreign state' },
-  { slug: 'escape-from-tarkov-vs-mistfall-hunter', group: 'guides', template: 'guide', keyword: 'Escape from Tarkov vs Mistfall Hunter', intent: 'extraction genre comparison search', focus: 'fantasy melee extraction versus tactical shooter extraction', caution: 'avoid borrowing shooter-specific advice that does not fit melee ARPG combat', update: 'add live loot-loss and economy details after launch' },
-  { slug: 'hunt-showdown-vs-mistfall-hunter', group: 'guides', template: 'guide', keyword: 'Hunt Showdown vs Mistfall Hunter', intent: 'PvPvE comparison search', focus: 'boss pressure, sound cues, extraction timing, and ambush behavior', caution: 'avoid assuming identical bounty or extraction rules', update: 'update with verified boss and bell extraction mechanics' },
-  { slug: 'dark-souls-fans-guide', group: 'guides', template: 'guide', keyword: 'Mistfall Hunter guide for Dark Souls fans', intent: 'soulslike audience onboarding', focus: 'stamina, spacing, no lock-on, death risk, and extraction greed control', caution: 'do not treat it like a pure single-player soulslike', update: 'add launch combat tuning notes and controller settings' },
-  { slug: 'extraction-shooter-players-guide', group: 'guides', template: 'guide', keyword: 'Mistfall Hunter guide for extraction shooter players', intent: 'genre transition search', focus: 'translating extraction habits into melee, magic, classes, and third-person PvP', caution: 'avoid shooter assumptions about sightlines, ammo, and recoil', update: 'add post-launch economy and route examples' },
-  { slug: 'soulslike-extraction-guide', group: 'guides', template: 'guide', keyword: 'soulslike extraction guide', intent: 'broad genre explainer search', focus: 'how deliberate combat changes extraction risk and route planning', caution: 'avoid generic soulslike advice without extraction context', update: 'add specific Mistfall Hunter examples after launch' },
-  { slug: 'is-mistfall-hunter-like-dark-souls', group: 'guides', template: 'faq', keyword: 'is Mistfall Hunter like Dark Souls', intent: 'pre-purchase comparison question', focus: 'similarities in deliberate combat and differences in extraction structure', caution: 'avoid calling it a Dark Souls clone', update: 'refresh after release reviews and player impressions' },
-  { slug: 'is-mistfall-hunter-like-dark-and-darker', group: 'guides', template: 'faq', keyword: 'is Mistfall Hunter like Dark and Darker', intent: 'fantasy extraction comparison question', focus: 'shared fantasy extraction appeal and different camera/combat feel', caution: 'avoid claiming identical systems before launch', update: 'add live feature comparison after launch' },
+  { slug: 'dark-and-darker-vs-mistfall-hunter', group: 'guides', template: 'guide', answer: 'Dark and Darker is a first-person fantasy extraction game with permadeath-style loot loss; Mistfall Hunter is third-person, with six classes and PvPvE combat against both monsters and rival hunters in its own Gyldenmist setting. Both share the core extraction tension, but the camera, class structure, and world are different.', keyword: 'Dark and Darker vs Mistfall Hunter', intent: 'comparison search from extraction players', focus: 'fantasy extraction differences, camera feel, class roles, loot risk, and PvP pressure', caution: 'avoid claiming one game is better before live balance is stable', update: 'refresh after launch with live queue, class, and monetization differences' },
+  { slug: 'dungeonborne-vs-mistfall-hunter', group: 'guides', template: 'guide', answer: 'Dungeonborne is a third-person fantasy extraction game blending shooting and melee; Mistfall Hunter is a third-person melee-and-magic extraction ARPG with six classes and deliberate, Souls-like combat pacing. Both share the extract-with-loot-or-lose-it structure, but combat feel and class design differ.', keyword: 'Dungeonborne vs Mistfall Hunter', intent: 'comparison search from fantasy extraction players', focus: 'third-person combat, map pressure, gear loss, classes, and team play', caution: 'avoid unsupported player-count or monetization claims', update: 'add launch hands-on comparison after Mistfall Hunter release' },
+  { slug: 'elden-ring-nightreign-vs-mistfall-hunter', group: 'guides', template: 'guide', answer: 'Elden Ring Nightreign is a run-based roguelite built around surviving to a final boss within a time loop; Mistfall Hunter is a PvPvE extraction game where you choose when to leave, not just when to face a final boss. Both use Souls-like combat, but the core loop and stakes are different.', keyword: 'Elden Ring Nightreign vs Mistfall Hunter', intent: 'soulslike comparison search', focus: 'extraction loop versus run-based boss survival, PvP stakes, and build planning', caution: 'do not overstate similarity beyond broad action-RPG and risk-reward structure', update: 'revise after Mistfall Hunter launch and current Nightreign state' },
+  { slug: 'escape-from-tarkov-vs-mistfall-hunter', group: 'guides', template: 'guide', answer: 'Escape from Tarkov is a tactical shooter extraction game built around firearms and realistic ballistics; Mistfall Hunter is a fantasy melee-and-magic extraction ARPG with six classes. The extraction tension is similar, but the combat system, genre, and setting are not.', keyword: 'Escape from Tarkov vs Mistfall Hunter', intent: 'extraction genre comparison search', focus: 'fantasy melee extraction versus tactical shooter extraction', caution: 'avoid borrowing shooter-specific advice that does not fit melee ARPG combat', update: 'add live loot-loss and economy details after launch' },
+  { slug: 'hunt-showdown-vs-mistfall-hunter', group: 'guides', template: 'guide', answer: 'Hunt: Showdown is a PvPvE bounty-hunting shooter with sound-driven tension and a single boss objective per match; Mistfall Hunter is a fantasy melee-and-magic extraction ARPG with six classes, multiple zones, and Mist Lord boss encounters. Both reward careful sound discipline and route planning.', keyword: 'Hunt Showdown vs Mistfall Hunter', intent: 'PvPvE comparison search', focus: 'boss pressure, sound cues, extraction timing, and ambush behavior', caution: 'avoid assuming identical bounty or extraction rules', update: 'update with verified boss and bell extraction mechanics' },
+  { slug: 'dark-souls-fans-guide', group: 'guides', template: 'guide', answer: 'Coming from Dark Souls, expect familiar stamina management, deliberate combat, and punishing mistakes — but Mistfall Hunter adds PvPvE extraction stakes, so losing a fight can mean losing everything you were carrying, not just a trip back to your last checkpoint.', keyword: 'Mistfall Hunter guide for Dark Souls fans', intent: 'soulslike audience onboarding', focus: 'stamina, spacing, no lock-on, death risk, and extraction greed control', caution: 'do not treat it like a pure single-player soulslike', update: 'add launch combat tuning notes and controller settings' },
+  { slug: 'extraction-shooter-players-guide', group: 'guides', template: 'guide', answer: 'Coming from an extraction shooter, the biggest adjustment is combat: Mistfall Hunter uses melee and magic instead of firearms, with stamina-based blocking and dodging replacing cover and ammo management. The extraction logic — loot, risk, and knowing when to leave — carries over directly.', keyword: 'Mistfall Hunter guide for extraction shooter players', intent: 'genre transition search', focus: 'translating extraction habits into melee, magic, classes, and third-person PvP', caution: 'avoid shooter assumptions about sightlines, ammo, and recoil', update: 'add post-launch economy and route examples' },
+  { slug: 'soulslike-extraction-guide', group: 'guides', template: 'guide', answer: 'Deliberate, Souls-like combat changes extraction math: every fight costs real time and resources, so route planning matters as much as combat skill. A safe route that avoids unnecessary fights often beats an aggressive one that wins every fight but drains your resources before extraction.', keyword: 'soulslike extraction guide', intent: 'broad genre explainer search', focus: 'how deliberate combat changes extraction risk and route planning', caution: 'avoid generic soulslike advice without extraction context', update: 'add specific Mistfall Hunter examples after launch' },
+  { slug: 'is-mistfall-hunter-like-dark-souls', group: 'guides', template: 'faq', answer: 'Combat is described as deliberate and Souls-like by beta and demo coverage — stamina management, spacing, and punishing mistakes are shared traits. The key difference is structure: Mistfall Hunter is a PvPvE extraction game, not a linear single-player action RPG, so a bad fight can cost you a whole run\'s loot, not just a death penalty.', keyword: 'is Mistfall Hunter like Dark Souls', intent: 'pre-purchase comparison question', focus: 'similarities in deliberate combat and differences in extraction structure', caution: 'avoid calling it a Dark Souls clone', update: 'refresh after release reviews and player impressions' },
+  { slug: 'is-mistfall-hunter-like-dark-and-darker', group: 'guides', template: 'faq', answer: 'Both are fantasy extraction games with real loot-loss stakes, but Mistfall Hunter is third-person with six distinct classes and its own world (Weavereach and the Gyldenmist), while Dark and Darker is first-person with its own class and skill system. The extraction tension is the shared appeal.', keyword: 'is Mistfall Hunter like Dark and Darker', intent: 'fantasy extraction comparison question', focus: 'shared fantasy extraction appeal and different camera/combat feel', caution: 'avoid claiming identical systems before launch', update: 'add live feature comparison after launch' },
 
-  { slug: 'best-graphics-settings', group: 'tools', template: 'tool', keyword: 'best graphics settings', intent: 'performance optimization search', focus: 'stable frame pacing, visibility, shadows, effects, and fog readability', caution: 'avoid settings that make enemies and exits harder to read', update: 'add exact setting names and benchmark screenshots after launch' },
-  { slug: 'best-visibility-settings', group: 'tools', template: 'tool', keyword: 'best visibility settings', intent: 'PvP readability search', focus: 'seeing enemies, loot, exits, and boss threats without over-darkening the image', caution: 'avoid sacrificing frame pacing for cinematic settings', update: 'add platform-specific menus after launch' },
-  { slug: 'stutter-fix-guide', group: 'tools', template: 'tool', keyword: 'stutter fix guide', intent: 'PC troubleshooting search', focus: 'drivers, frame caps, shader behavior, overlays, and settings triage', caution: 'separate server hitching from local performance problems', update: 'add known issue notes and patch references after launch' },
-  { slug: 'crash-fix-guide', group: 'tools', template: 'tool', keyword: 'crash fix guide', intent: 'technical issue search', focus: 'verify files, drivers, overlays, permissions, and crash reproduction notes', caution: 'avoid deleting saves or config files without backup guidance', update: 'add exact crash messages and official fixes after launch' },
-  { slug: 'low-fps-fix-guide', group: 'tools', template: 'tool', keyword: 'low FPS fix guide', intent: 'performance troubleshooting search', focus: 'GPU load, CPU bottlenecks, frame cap, effects, shadows, and resolution scaling', caution: 'avoid reducing readability so far that PvP awareness gets worse', update: 'add benchmark tiers after launch' },
-  { slug: 'best-controller-sensitivity', group: 'tools', template: 'tool', keyword: 'best controller sensitivity', intent: 'input settings search', focus: 'camera turn speed, aim control, melee tracking, and class-specific comfort', caution: 'avoid one universal number for every class', update: 'add exact menu values after launch' },
-  { slug: 'best-keyboard-mouse-settings', group: 'tools', template: 'tool', keyword: 'best keyboard and mouse settings', intent: 'PC input search', focus: 'camera precision, keybind comfort, quick access, dodge, block, and weapon swap', caution: 'avoid copying controller advice directly to mouse input', update: 'add keybind screenshots after launch' },
-  { slug: 'ultrawide-support-guide', group: 'tools', template: 'faq', keyword: 'ultrawide support guide', intent: 'display compatibility search', focus: 'aspect ratio, UI scaling, visibility, and performance cost', caution: 'do not claim support until launch build is checked', update: 'verify ultrawide behavior after launch' },
-  { slug: 'cloud-gaming-guide', group: 'news', template: 'faq', keyword: 'cloud gaming guide', intent: 'Xbox cloud access search', focus: 'streaming availability, latency, controller comfort, and launch access checks', caution: 'do not claim cloud access without storefront confirmation', update: 'update when Xbox listing confirms availability' },
-  { slug: 'family-sharing-guide', group: 'news', template: 'faq', keyword: 'family sharing guide', intent: 'Steam or platform access question', focus: 'account access, shared libraries, online restrictions, and launch store rules', caution: 'do not assume family sharing works for online games', update: 'verify platform rules after launch' },
+  { slug: 'best-graphics-settings', group: 'tools', template: 'tool', answer: 'Detailed graphics settings weren\'t published before launch. Once available, prioritize stable frame pacing and visibility over cinematic effects — in PvPvE, seeing an enemy or exit clearly matters more than shadow quality.', keyword: 'best graphics settings', intent: 'performance optimization search', focus: 'stable frame pacing, visibility, shadows, effects, and fog readability', caution: 'avoid settings that make enemies and exits harder to read', update: 'add exact setting names and benchmark screenshots after launch' },
+  { slug: 'best-visibility-settings', group: 'tools', template: 'tool', answer: 'The safest starting point for visibility is raising brightness slightly above the default and keeping motion blur and heavy depth-of-field off — both make it harder to spot enemies and exits at range. Exact menu names will be confirmed at launch.', keyword: 'best visibility settings', intent: 'PvP readability search', focus: 'seeing enemies, loot, exits, and boss threats without over-darkening the image', caution: 'avoid sacrificing frame pacing for cinematic settings', update: 'add platform-specific menus after launch' },
+  { slug: 'stutter-fix-guide', group: 'tools', template: 'tool', answer: 'Check server status first before assuming a bug — stutter tied to a specific moment, like entering a zone or other players appearing, is often network-related, not local. For a genuinely local stutter, verify game files, update GPU drivers, and disable overlays like Discord or GeForce Experience one at a time.', keyword: 'stutter fix guide', intent: 'PC troubleshooting search', focus: 'drivers, frame caps, shader behavior, overlays, and settings triage', caution: 'separate server hitching from local performance problems', update: 'add known issue notes and patch references after launch' },
+  { slug: 'crash-fix-guide', group: 'tools', template: 'tool', answer: 'Start by verifying game files and updating GPU drivers, since those catch the most common causes. If crashes happen at a specific point, like a boss fight or extraction, note the exact moment and check the known issues tracker before assuming it\'s your system.', keyword: 'crash fix guide', intent: 'technical issue search', focus: 'verify files, drivers, overlays, permissions, and crash reproduction notes', caution: 'avoid deleting saves or config files without backup guidance', update: 'add exact crash messages and official fixes after launch' },
+  { slug: 'low-fps-fix-guide', group: 'tools', template: 'tool', answer: 'Frame rate problems in a third-person action game are usually GPU-bound before they\'re CPU-bound. Lower resolution scale and shadow quality first — they cost the most performance for the least visible PvP impact — before disabling effects that help you read fights.', keyword: 'low FPS fix guide', intent: 'performance troubleshooting search', focus: 'GPU load, CPU bottlenecks, frame cap, effects, shadows, and resolution scaling', caution: 'avoid reducing readability so far that PvP awareness gets worse', update: 'add benchmark tiers after launch' },
+  { slug: 'best-controller-sensitivity', group: 'tools', template: 'tool', answer: 'There\'s no single correct sensitivity — melee classes generally want a faster camera turn speed for tracking close targets, while ranged classes can run slightly lower for precision. Start near the default and adjust after your first few fights, not before.', keyword: 'best controller sensitivity', intent: 'input settings search', focus: 'camera turn speed, aim control, melee tracking, and class-specific comfort', caution: 'avoid one universal number for every class', update: 'add exact menu values after launch' },
+  { slug: 'best-keyboard-mouse-settings', group: 'tools', template: 'tool', answer: 'Mouse settings for a third-person action RPG prioritize camera precision over raw speed — a lower DPI with a higher in-game sensitivity multiplier tends to give steadier tracking than a very high DPI. Keep dodge, block, and weapon-swap on easily reachable keys since you\'ll need them under pressure.', keyword: 'best keyboard and mouse settings', intent: 'PC input search', focus: 'camera precision, keybind comfort, quick access, dodge, block, and weapon swap', caution: 'avoid copying controller advice directly to mouse input', update: 'add keybind screenshots after launch' },
+  { slug: 'ultrawide-support-guide', group: 'tools', template: 'faq', answer: 'Ultrawide support hasn\'t been confirmed for Mistfall Hunter as of this writing. Check the display settings menu directly at launch rather than assuming support either way.', keyword: 'ultrawide support guide', intent: 'display compatibility search', focus: 'aspect ratio, UI scaling, visibility, and performance cost', caution: 'do not claim support until launch build is checked', update: 'verify ultrawide behavior after launch' },
+  { slug: 'cloud-gaming-guide', group: 'news', template: 'faq', answer: 'If Mistfall Hunter is available on Xbox Cloud Gaming, expect the usual cloud tradeoffs: added input latency compared to local play, and a stable wired or strong Wi-Fi connection mattering more for PvP reaction time than in a slower-paced game. Confirm availability in the Xbox app before assuming cloud access works.', keyword: 'cloud gaming guide', intent: 'Xbox cloud access search', focus: 'streaming availability, latency, controller comfort, and launch access checks', caution: 'do not claim cloud access without storefront confirmation', update: 'update when Xbox listing confirms availability' },
+  { slug: 'family-sharing-guide', group: 'news', template: 'faq', answer: 'Family sharing rules vary by platform and often exclude always-online or heavily multiplayer-focused games. Don\'t assume Mistfall Hunter supports shared-library play for online sessions until the storefront explicitly says so.', keyword: 'family sharing guide', intent: 'Steam or platform access question', focus: 'account access, shared libraries, online restrictions, and launch store rules', caution: 'do not assume family sharing works for online games', update: 'verify platform rules after launch' },
 
   { slug: 'best-route-for-beginners', group: 'guides', template: 'map', keyword: 'best route for beginners', intent: 'first-run route search', focus: 'short route, early extraction, low-noise loot, and cheap kit practice', caution: 'avoid boss routes while learning exits', update: 'add screenshots for Hallowgrove and Brandrgarde after launch' },
   { slug: 'safe-loot-route-guide', group: 'guides', template: 'map', keyword: 'safe loot route guide', intent: 'low-risk farming search', focus: 'repeatable resource loops, stop rules, and exit-first planning', caution: 'avoid turning a loot run into a boss run by accident', update: 'add verified loot markers after launch' },
@@ -105,53 +117,39 @@ function cardsFor(brief: ExpansionBrief) {
 }
 
 function createPage(brief: ExpansionBrief): SeoPage {
+  const alreadyMentionsGame = /mistfall hunter/i.test(brief.keyword);
+  const titleCaseKeyword = brief.keyword.replace(/\b\w/g, (c) => c.toUpperCase());
+  const displayTitle = brief.title ?? (alreadyMentionsGame ? titleCaseKeyword : `Mistfall Hunter ${titleCaseKeyword}`);
+  const displayH1 = brief.h1 ?? displayTitle;
+  const directAnswer = brief.answer ?? `The short version: prioritize ${brief.focus}, and treat anything not yet officially confirmed as pending rather than final.`;
   return {
     slug: brief.slug,
     group: brief.group,
     template: brief.template,
-    title: `Mistfall Hunter ${brief.keyword}: Guide, Answers & Update Tracker`,
-    description: `Mistfall Hunter ${brief.keyword} page for ${brief.intent}, focused on ${brief.focus}, with clear verification notes to avoid thin or misleading content.`,
-    eyebrow: brief.template === 'faq' ? 'Answer hub' : brief.template === 'tool' ? 'Tool guide' : brief.template === 'map' ? 'Route guide' : brief.template === 'boss' ? 'Boss guide' : 'SEO guide',
-    h1: `Mistfall Hunter ${brief.keyword}`,
-    lead: `This page targets ${brief.intent}. It gives a useful answer now, marks what still needs verification, and leaves a clear structure for richer launch-build screenshots, tables, and examples.`,
+    title: displayTitle,
+    description: directAnswer.length > 155 ? `${directAnswer.slice(0, 155).replace(/\s+\S*$/, '')}\u2026` : directAnswer,
+    eyebrow: brief.template === 'faq' ? 'Answer hub' : brief.template === 'tool' ? 'Tool guide' : brief.template === 'map' ? 'Route guide' : brief.template === 'boss' ? 'Boss guide' : 'Guide',
+    h1: displayH1,
+    lead: directAnswer,
     intent: {
-      primary: `Mistfall Hunter ${brief.keyword}`,
+      primary: displayH1,
       secondary: [brief.keyword, `${brief.keyword} guide`, `${brief.keyword} tips`],
       freshness: brief.update,
     },
-    checklist: [
-      `Answer the search intent: ${brief.intent}`,
-      `Focus the page on ${brief.focus}`,
-      `Avoid the main quality risk: ${brief.caution}`,
-      'Add real screenshots, values, or source notes after launch',
-      'Link back into maps, builds, tools, and beginner content',
+    checklist: brief.checklist ?? [
+      `Confirmed direction: ${brief.focus}`,
+      `Known caveat: ${brief.caution}`,
+      'Updated with real launch-build detail once available',
     ],
-    steps: [
-      { title: 'Start with the user problem', body: `A visitor searching this term wants ${brief.intent}, so the page should lead with a direct answer rather than a generic game overview.` },
-      { title: 'Apply extraction logic', body: `For Mistfall Hunter, the practical layer is always risk, route, class role, loot value, and the ability to extract safely.` },
-      { title: 'Upgrade after verification', body: `When official or live data is available, add exact screenshots, numbers, markers, menus, or source links instead of broad wording.` },
-    ],
-    tables: [{
-      title: `${brief.keyword} content plan`,
-      headers: ['Page block', 'What it should answer', 'Quality guardrail'],
-      rows: [
-        ['Direct answer', brief.intent, 'Keep it above the fold'],
-        ['Practical advice', brief.focus, 'Tie advice to extraction decisions'],
-        ['Risk warning', brief.caution, 'Do not overclaim unknown details'],
-        ['Update target', brief.update, 'Refresh after official or live data'],
-      ],
-    }],
-    sections: [
-      { heading: 'Why this URL is useful', body: [`${brief.keyword} is a focused long-tail query. It can catch players who are not searching broad terms like "guide" yet, but still need a concrete answer before choosing a class, route, platform, or setting.`] },
-      { heading: 'Recommended answer', body: [`The page should center on ${brief.focus}. For an extraction ARPG, useful content is not only what is strongest; it is what lets the player survive the route and keep the reward.`] },
-      { heading: 'Verification policy', body: [`The page should not overclaim unconfirmed mechanics. The main caution is: ${brief.caution}.`] },
+    sections: brief.sections ?? [
+      { heading: 'Short answer', body: [directAnswer] },
+      { heading: 'What to keep in mind', body: [`${brief.caution.charAt(0).toUpperCase()}${brief.caution.slice(1)}.`] },
     ],
     cards: cardsFor(brief),
-    relatedSearches: [`Mistfall Hunter ${brief.keyword}`, `${brief.keyword} Mistfall Hunter guide`, `${brief.keyword} Mistfall Hunter tips`],
-    faqs: [
-      { q: `What is the short answer for ${brief.keyword}?`, a: `Focus on ${brief.focus}, then update the page with exact launch-build data when available.` },
-      { q: 'Is this page safe for SEO indexing?', a: 'Yes. It has a unique search intent, structured answer, checklist, steps, table, FAQ, and internal links instead of a single thin paragraph.' },
-      { q: 'What should be added after launch?', a: brief.update },
+    relatedSearches: [brief.keyword, `${brief.keyword} guide`, `${brief.keyword} tips`],
+    faqs: brief.faqs ?? [
+      { q: `What's the quick answer for ${brief.keyword}?`, a: directAnswer },
+      { q: 'What is not confirmed yet?', a: `${brief.caution}. This page will be updated once that is settled with official or live launch-build information.` },
     ],
   };
 }
@@ -159,6 +157,7 @@ function createPage(brief: ExpansionBrief): SeoPage {
 function localizeDraft(page: SeoPage): SeoPage {
   return {
     ...page,
+    draft: true,
     title: `${page.title} | Chinese Draft`,
     description: `${page.description} Chinese draft route reserved for localization and live data.`,
     eyebrow: `ZH ${page.eyebrow}`,
