@@ -1,6 +1,9 @@
 export const SITE_URL = 'https://mistfallhunter.me';
 
 export const INDEXABLE_STATIC_PATHS = new Set([
+  '/community-questions/',
+  '/de/community-questions/',
+  '/ja/community-questions/',
   '/',
   '/release-date/',
   '/beginner-guide/',
@@ -365,6 +368,7 @@ export function isIndexableSlug(slug) {
 export function isIndexablePath(path = '/') {
   const normalized = normalizeSeoPath(path);
   if (INDEXABLE_STATIC_PATHS.has(normalized)) return true;
+  if (/^\/(?:(?:de|ja)\/)?community-questions\/[^/]+\/$/.test(normalized)) return true;
   const newsMatch = normalized.match(/^\/(?:(?:zh|de|ja)\/)?news\/([^/]+)\/$/);
   if (newsMatch) return INDEXABLE_TAB_NEWS_SLUGS.has(newsMatch[1]);
   const dataMatch = normalized.match(/^\/(?:(zh|de|ja|zh-hant|es|ru|ko|fr|pt-br)\/)?game-data\/([^/]+)\/$/);

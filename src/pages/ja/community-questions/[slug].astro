@@ -1,0 +1,5 @@
+---
+import CommunityDetail from '../../../components/CommunityDetail.astro'; import {communityTopics} from '../../../data/communityLongTail';
+export function getStaticPaths(){return communityTopics.map(item=>({params:{slug:item.slug},props:{item}}));} const {item}=Astro.props;
+---
+<CommunityDetail lang="ja" item={item}/>

@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { communityLabels, communityTopics, type CommunityLang, type CommunityTopic } from '../data/communityLongTail';
+const {lang,item}=Astro.props as {lang:CommunityLang;item:CommunityTopic}; const l=communityLabels[lang]; const c=item.copy[lang]; const prefix=lang==='en'?'':`/${lang}`; const path=`/community-questions/${item.slug}`;
+const schema={'@context':'https://schema.org','@type':'Article',headline:c.h1,description:c.description,inLanguage:lang,dateModified:item.updated,mainEntityOfPage:`https://mistfallhunter.me${prefix}${path}/`,citation:[...item.official,...item.community].map(x=>x.url)};
+const breadcrumb={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
+  {'@type':'ListItem',position:1,name:'Home',item:`https://mistfallhunter.me${prefix}/`},
+  {'@type':'ListItem',position:2,name:l.back,item:`https://mistfallhunter.me${prefix}/community-questions/`},
+  {'@type':'ListItem',position:3,name:c.h1,item:`https://mistfallhunter.me${prefix}${path}/`}
+]};
+---
+<BaseLayout lang={lang} path={path} title={c.title} description={c.description} jsonLd={[schema,breadcrumb]}>
+  <article class="section"><div class="container narrow">
+    <nav class="crumb"><a href={`${prefix}/`}>Home</a><span>›</span><a href={`${prefix}/community-questions`}>{l.back}</a></nav>
+    <span class="eyebrow">{item.intent} · {item.updated}</span><h1>{c.h1}</h1>
+    <section class="answer"><h2>{l.answer}</h2><p>{c.answer}</p></section>
+    <section><h2>{l.confirmed}</h2><ul>{c.confirmed.map(x=><li>{x}</li>)}</ul></section>
+    <section><h2>{l.signal}</h2><ul>{c.signal.map(x=><li>{x}</li>)}</ul></section>
+    <section><h2>{l.actions}</h2><ol>{c.actions.map(x=><li>{x}</li>)}</ol></section>
+    <aside><strong>{l.watch}:</strong> {c.watch}</aside>
+    <section><h2>{l.sources}</h2><h3>{l.official}</h3><ul>{item.official.map(x=><li><a href={x.url} rel="nofollow external">{x.label}</a></li>)}</ul><h3>{l.community}</h3><ul>{item.community.map(x=><li><a href={x.url} rel="nofollow external">{x.label}</a></li>)}</ul></section>
+  </div></article>
+</BaseLayout>
+<style>.narrow{max-width:900px}.crumb{display:flex;gap:.6rem;margin-bottom:2rem}.answer,aside{padding:1.25rem 1.4rem;border-left:4px solid var(--gylden);background:var(--stone);margin:2rem 0}.answer h2{margin-top:0}.answer p{font-size:1.12rem;line-height:1.75}.narrow section:not(.answer){margin-top:2.5rem}.narrow li{margin:.65rem 0;line-height:1.65;color:var(--ash)}aside{line-height:1.7}</style>

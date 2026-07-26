@@ -32,6 +32,7 @@ export const ui = {
     'nav.tools': 'Tools',
     'nav.faq': 'FAQ',
     'nav.about': 'About',
+    'nav.community': 'Community',
     'nav.soon': 'Soon',
     'nav.search': 'Search',
     'search.placeholder': 'Search the wiki...',
@@ -74,6 +75,7 @@ export const ui = {
     'nav.home': 'Start', 'nav.release': 'Release', 'nav.news': 'News', 'nav.guides': 'Guides',
     'nav.maps': 'Karten', 'nav.builds': 'Builds', 'nav.data': 'Spieldaten', 'nav.bosses': 'Bosse', 'nav.tools': 'Tools',
     'nav.faq': 'FAQ', 'nav.about': 'Über uns', 'nav.soon': 'Demnächst',
+    'nav.community': 'Community',
     'nav.search': 'Suche', 'search.placeholder': 'Wiki durchsuchen...', 'search.close': 'Suche schließen', 'search.hint': 'Klassen, Builds, Karten, Bosse, FAQ und mehr durchsuchen.',
     'footer.disclaimer': 'Inoffizielle Fan-Ressource. Keine Verbindung zu oder Unterstützung durch Bellring Games. Alle Spielnamen, Inhalte und Marken gehören ihren jeweiligen Eigentümern.',
     'footer.sources': 'Quellen', 'footer.updates': 'Updates', 'footer.sitemap': 'Sitemap',
@@ -84,6 +86,7 @@ export const ui = {
     'nav.home': 'ホーム', 'nav.release': '発売情報', 'nav.news': 'ニュース', 'nav.guides': '攻略',
     'nav.maps': 'マップ', 'nav.builds': 'ビルド', 'nav.data': 'ゲームデータ', 'nav.bosses': 'ボス', 'nav.tools': 'ツール',
     'nav.faq': 'FAQ', 'nav.about': 'サイト情報', 'nav.soon': '近日公開',
+    'nav.community': 'コミュニティ',
     'nav.search': '検索', 'search.placeholder': 'サイト内を検索...', 'search.close': '検索を閉じる', 'search.hint': 'クラス、ビルド、マップ、ボス、FAQなどを検索できます。',
     'footer.disclaimer': 'ファンによる非公式情報サイトです。Bellring Games との提携・公認・後援関係はありません。ゲーム名、素材、商標は各権利者に帰属します。',
     'footer.sources': '情報源', 'footer.updates': '更新履歴', 'footer.sitemap': 'サイトマップ',
@@ -148,6 +151,7 @@ export const localizedCorePaths = new Set([
   '/faq',
   '/server-status', '/known-issues-tracker', '/error-code-guide',
   '/queue-times-guide', '/patch-notes-tracker', '/pvp-guide',
+  '/community-questions',
 ]);
 
 export const firstEditionPaths = new Set([
@@ -166,6 +170,7 @@ export const secondEditionGameDataPaths = new Set([
 export const allLanguages = Object.keys(languages) as Lang[];
 
 export function languagesForPath(path: string): Lang[] {
+  if (path === '/community-questions' || /^\/community-questions\/[^/]+$/.test(path)) return ['en', 'de', 'ja'];
   if (firstEditionPaths.has(path) || secondEditionGameDataPaths.has(path)) return allLanguages;
   if (path === '/news' || /^\/news\/[^/]+$/.test(path)) return ['en', 'zh', 'de', 'ja'];
   if (localizedCorePaths.has(path) || /^\/game-data\/[^/]+$/.test(path)) return ['en', 'zh', 'de', 'ja'];

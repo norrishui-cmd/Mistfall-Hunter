@@ -16,7 +16,7 @@
 import { gameData } from './gameData.ts';
 
 // Bump this when a broad content/copy pass lands (not on every commit).
-export const SITE_LAST_CONTENT_PASS = '2026-07-23';
+export const SITE_LAST_CONTENT_PASS = '2026-07-26';
 
 const gameDataLastmod = new Map(gameData.map((item) => [item.slug, item.updated]));
 

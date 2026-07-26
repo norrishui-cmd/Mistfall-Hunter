@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { communityLabels, communityTopics, type CommunityLang } from '../data/communityLongTail';
+const {lang}=Astro.props as {lang:CommunityLang}; const l=communityLabels[lang]; const prefix=lang==='en'?'':`/${lang}`;
+const schema={'@context':'https://schema.org','@type':'CollectionPage',name:l.hubTitle,description:l.hubDescription,inLanguage:lang,url:`https://mistfallhunter.me${prefix}/community-questions/`,dateModified:'2026-07-26'};
+const breadcrumb={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
+  {'@type':'ListItem',position:1,name:'Home',item:`https://mistfallhunter.me${prefix}/`},
+  {'@type':'ListItem',position:2,name:l.hubH1,item:`https://mistfallhunter.me${prefix}/community-questions/`}
+]};
+---
+<BaseLayout lang={lang} path="/community-questions" title={l.hubTitle} description={l.hubDescription} jsonLd={[schema,breadcrumb]}>
+  <section class="section"><div class="container">
+    <span class="eyebrow">Steam · Reddit · Facebook · Wiki gap research</span><h1>{l.hubH1}</h1><p class="lead">{l.lead}</p>
+    <div class="grid">{communityTopics.map(item=>{const c=item.copy[lang];return <article><span>{item.intent}</span><h2><a href={`${prefix}/community-questions/${item.slug}`}>{c.h1}</a></h2><p>{c.answer}</p><a href={`${prefix}/community-questions/${item.slug}`}>{l.answer} →</a></article>})}</div>
+  </div></section>
+</BaseLayout>
+<style>.lead{max-width:850px;color:var(--ash);font-size:1.1rem;line-height:1.75}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}.grid article{padding:1.3rem;border:1px solid var(--line);background:var(--stone);border-radius:.7rem}.grid article>span{color:var(--gylden);font-family:var(--mono);text-transform:uppercase;font-size:.7rem}.grid h2{font-size:1.25rem;line-height:1.25}.grid h2 a{text-decoration:none}.grid p{color:var(--ash);line-height:1.6}@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.grid{grid-template-columns:1fr}}</style>
