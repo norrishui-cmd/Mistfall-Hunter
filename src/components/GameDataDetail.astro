@@ -20,7 +20,7 @@ const breadcrumbSchema={'@context':'https://schema.org','@type':'BreadcrumbList'
     <div class="answer"><span class="eyebrow">{labels.answer}</span><p>{c.answer}</p></div>
     <div class="prose"><h2>{labels.facts}</h2><ul>{c.facts.map(f=><li>{f}</li>)}</ul><h2>{labels.impact}</h2><ul>{c.implications.map(x=><li>{x}</li>)}</ul><h2>{labels.watch}</h2><p>{c.watch}</p><h2>{labels.quality}</h2><p>{labels.qualityText}</p></div>
     <p class="back"><a href={`${prefix}/game-data#${item.cluster}`}>{labels.back}</a></p>
-    {(lang==='en'||lang==='zh') && <RelatedFaqModule cluster="gameData" lang={lang} />}
+      {(lang==='en'||lang==='zh'||lang==='de'||lang==='ja') && <RelatedFaqModule cluster="gameData" lang={lang} />}
   </div></article>
 </BaseLayout>
 <style>.detail{max-width:58rem}.breadcrumbs,.meta{display:flex;flex-wrap:wrap;gap:.55rem;color:var(--ash);margin-bottom:2rem}.meta{font-size:.85rem;margin:1rem 0 2rem}.answer{border-left:4px solid var(--gylden);background:var(--stone);padding:1.2rem 1.4rem;margin:2rem 0}.answer p{font-size:1.15rem;margin:.5rem 0 0}.back{margin-top:3rem}</style>

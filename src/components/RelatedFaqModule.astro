@@ -1,9 +1,12 @@
 ---
 import { faq100 } from '../data/faq100';
+import { deepFaqLocales } from '../data/faqLatestLocales';
 type Cluster = 'release' | 'guides' | 'builds' | 'gameData' | 'news' | 'about';
-interface Props { cluster: Cluster; lang: 'en' | 'zh' }
+interface Props { cluster: Cluster; lang: 'en' | 'zh' | 'de' | 'ja' }
 const { cluster, lang } = Astro.props as Props;
 const zh = lang === 'zh';
+const de = lang === 'de';
+const ja = lang === 'ja';
 const ids: Record<Cluster, number[]> = {
   release: [151, 152, 153, 154, 155],
   guides: [161, 164, 176, 181, 187],
@@ -13,16 +16,24 @@ const ids: Record<Cluster, number[]> = {
   about: [157, 158, 160, 191, 192],
 };
 const items = ids[cluster].map((id) => faq100.find((item) => item.id === id)).filter(Boolean);
-const prefix = zh ? '/zh' : '';
+const prefix = lang === 'en' ? '' : `/${lang}`;
+const question = (item:any) => de || ja ? deepFaqLocales[lang][item.id].q : zh ? item.zh.q : item.en.q;
+const copy = de
+  ? { eyebrow:'Schnelle Antworten', title:'Passende FAQ', all:'Alle 50 aktuellen Fragen →', read:'Antwort lesen →' }
+  : ja
+  ? { eyebrow:'クイック回答', title:'関連FAQ', all:'最新50問をすべて見る →', read:'回答を見る →' }
+  : zh
+  ? { eyebrow:'快速问答', title:'相关 FAQ', all:'查看全部 200 条 →', read:'查看答案 →' }
+  : { eyebrow:'Quick answers', title:'Related FAQ', all:'View all 200 →', read:'Read answer →' };
 ---
 <section class="related-faq" aria-labelledby={`related-faq-${cluster}`}>
   <div class="related-faq__heading">
-    <div><span class="eyebrow">{zh ? '快速问答' : 'Quick answers'}</span><h2 id={`related-faq-${cluster}`}>{zh ? '相关 FAQ' : 'Related FAQ'}</h2></div>
-    <a href={`${prefix}/faq`}>{zh ? '查看全部 200 条 →' : 'View all 200 →'}</a>
+    <div><span class="eyebrow">{copy.eyebrow}</span><h2 id={`related-faq-${cluster}`}>{copy.title}</h2></div>
+    <a href={`${prefix}/faq`}>{copy.all}</a>
   </div>
   <div class="related-faq__grid">
     {items.map((item) => item && <a class="related-faq__item" href={`${prefix}/faq#q${item.id}`}>
-      <span>{item.id}</span><strong>{zh ? item.zh.q : item.en.q}</strong><small>{zh ? '查看答案 →' : 'Read answer →'}</small>
+      <span>{item.id}</span><strong>{question(item)}</strong><small>{copy.read}</small>
     </a>)}
   </div>
 </section>

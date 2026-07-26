@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { faqCategories } from '../data/faq100';
+import { getDeepFaqs, type DeepFaqLang } from '../data/faqLatestLocales';
+
+interface Props { lang: DeepFaqLang }
+const { lang } = Astro.props as Props;
+const ja = lang === 'ja';
+const items = getDeepFaqs(lang);
+const prefix = `/${lang}`;
+const title = ja
+  ? 'Mistfall Hunter FAQ 日本語：発売・クロスプレイ・ランク・PC設定50問'
+  : 'Mistfall Hunter FAQ Deutsch: 50 Fragen zu Launch & Crossplay';
+const description = ja
+  ? '公式Launch FAQとDevNote #7に基づく日本語FAQ 50問。発売割引、クロスプレイ、サーバー、Path of Glory、クラス調整、マップ、PC要件を解説。'
+  : '50 aktuelle Mistfall-Hunter-FAQs auf Deutsch zu Rabatt, Crossplay, Servern, Path of Glory, Klassen, Karten, PC-Anforderungen und Launch-Fixes.';
+const labels = ja ? {
+  home:'ホーム', lead:'公式情報に基づく最新FAQ', questions:'問', topics:'テーマ', source:'情報源の方針',
+  sourceText:'発売、サーバー、ランク、性能、修正内容は公式ストア、Launch FAQ、DevNote #7と照合しています。未確認情報は事実として掲載しません。',
+  related:'関連攻略を見る →', all:'攻略一覧へ', back:'ページ上部へ', range:'最新50問',
+} : {
+  home:'Start', lead:'Aktuelle FAQ aus offiziellen Quellen', questions:'Fragen', topics:'Themen', source:'Quellenrichtlinie',
+  sourceText:'Launch, Server, Rangsystem, Performance und Fixes wurden mit den offiziellen Stores, der Launch-FAQ und DevNote #7 abgeglichen. Unbestätigte Angaben werden nicht als Fakten veröffentlicht.',
+  related:'Passenden Guide öffnen →', all:'Alle Guides', back:'Nach oben', range:'50 aktuelle Fragen',
+};
+const categoryCopy: Record<string,{de:string;ja:string;href:string}> = {
+  release:{de:'Release, Preis und Editionen',ja:'発売・価格・エディション',href:'/release-date'},
+  platforms:{de:'Plattformen, Server und Zugang',ja:'対応機種・サーバー・アクセス',href:'/about'},
+  gameplay:{de:'Rangsystem und Spielablauf',ja:'ランクとゲームプレイ',href:'/guides'},
+  classes:{de:'Klassen und Waffen',ja:'クラスと武器',href:'/classes'},
+  combat:{de:'Kampf und Balance',ja:'戦闘とバランス',href:'/builds'},
+  maps:{de:'Karten und Ränge',ja:'マップとランク',href:'/game-data'},
+  loot:{de:'Beute und Belohnungen',ja:'戦利品と報酬',href:'/loot'},
+  multiplayer:{de:'Teamspiel und Season 1',ja:'マルチプレイとシーズン1',href:'/guides'},
+  technical:{de:'PC-Anforderungen und Performance',ja:'PC要件とパフォーマンス',href:'/performance'},
+  support:{de:'Fehlerbehebungen und Support',ja:'修正内容とサポート',href:'/updates'},
+};
+const schema = {'@context':'https://schema.org','@type':'FAQPage',inLanguage:ja?'ja':'de',
+  mainEntity:items.map((item)=>({'@type':'Question',name:item.q,acceptedAnswer:{'@type':'Answer',text:item.a}}))};
+const breadcrumb = {'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
+  {'@type':'ListItem',position:1,name:labels.home,item:`https://mistfallhunter.me${prefix}/`},
+  {'@type':'ListItem',position:2,name:'FAQ',item:`https://mistfallhunter.me${prefix}/faq/`},
+]};
+---
+<BaseLayout lang={lang} path="/faq" title={title} description={description} jsonLd={[schema,breadcrumb]}>
+  <main class="faq-page container" id="top">
+    <nav class="breadcrumbs"><a href={`${prefix}/`}>{labels.home}</a><span>›</span><span>FAQ</span></nav>
+    <header>
+      <p class="eyebrow">MISTFALL HUNTER FAQ · {labels.range}</p>
+      <h1>{title}</h1>
+      <p class="lead">{description}</p>
+      <div class="stats"><span><strong>50</strong> {labels.questions}</span><span><strong>10</strong> {labels.topics}</span></div>
+    </header>
+    <aside class="source-note"><strong>{labels.source}:</strong> {labels.sourceText}
+      <div><a href="https://steamcommunity.com/app/3282300/announcements/" rel="noopener noreferrer">Steam News</a> · <a href="https://store.steampowered.com/app/3282300/Mistfall_Hunter/" rel="noopener noreferrer">Steam Store</a> · <a href="https://www.xbox.com/en-US/games/store/mistfall-hunter/9p8x6tvw9zw8" rel="noopener noreferrer">Xbox</a></div>
+    </aside>
+    <nav class="toc">
+      {faqCategories.map((category,index)=><a href={`#${category.id}`}><span>{String(index+1).padStart(2,'0')}</span>{ja?categoryCopy[category.id].ja:categoryCopy[category.id].de}</a>)}
+    </nav>
+    {faqCategories.map((category)=>{
+      const group=items.filter((item)=>item.category===category.id);
+      const local=categoryCopy[category.id];
+      return <section class="category" id={category.id}>
+        <div class="category-head"><div><p>{group[0].id}–{group[group.length-1].id}</p><h2>{ja?local.ja:local.de}</h2></div><a href={`${prefix}${local.href}`}>{labels.related}</a></div>
+        {group.map((item)=><article class="item" id={`q${item.id}`}><h3><a href={`#q${item.id}`}>{item.id}.</a> {item.q}</h3><p>{item.a}</p></article>)}
+      </section>;
+    })}
+    <footer class="faq-footer"><a class="button" href={`${prefix}/guides`}>{labels.all}</a><a class="button secondary" href="#top">{labels.back}</a></footer>
+  </main>
+</BaseLayout>
+<style>
+  .faq-page{padding-block:1.25rem 5rem;max-width:1050px}.breadcrumbs{display:flex;gap:.55rem;margin-bottom:2.5rem;color:var(--ash)}header{max-width:900px}h1{font-size:clamp(2.2rem,6vw,4.1rem);line-height:1.06;margin:.5rem 0 1rem}.lead{font-size:1.12rem;line-height:1.7;color:var(--ash)}.stats{display:flex;gap:.75rem;margin:1.5rem 0}.stats span{border:1px solid var(--line);background:var(--stone);border-radius:99px;padding:.55rem .85rem}.stats strong{color:var(--gylden)}.source-note{border-left:4px solid var(--gylden);background:var(--stone);padding:1.1rem 1.3rem;line-height:1.7;margin:2rem 0}.source-note div{margin-top:.5rem}.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.7rem;margin:2.5rem 0 4rem}.toc a{display:flex;gap:.75rem;border:1px solid var(--line);background:var(--stone);padding:.85rem;text-decoration:none}.toc span,.category-head p,.item h3 a{color:var(--gylden)}.category{scroll-margin-top:7rem;margin-bottom:4rem}.category-head{display:flex;justify-content:space-between;align-items:end;gap:1rem;border-bottom:1px solid var(--line);padding-bottom:1rem}.category-head p{font-family:var(--mono);margin:0}.category-head h2{margin:.3rem 0 0}.item{scroll-margin-top:7rem;padding:1.3rem .2rem;border-bottom:1px solid var(--line)}.item h3{font-size:1.08rem;line-height:1.5;margin:0 0 .55rem}.item h3 a{text-decoration:none}.item p{color:var(--ash);line-height:1.75;margin:0;max-width:880px}.faq-footer{text-align:center;padding:2rem;border:1px solid var(--line);background:var(--stone)}.faq-footer .button{margin:.3rem}@media(max-width:640px){.category-head{align-items:start;flex-direction:column}.toc{grid-template-columns:1fr}}
+</style>

@@ -24,7 +24,7 @@ const items: NavItem[] = [
   ...(lang === 'en' || lang === 'zh' ? [{ labelKey: 'nav.bosses', path: '/bosses' }] : []),
   { labelKey: 'nav.builds', path: '/builds' },
   ...(lang === 'en' || lang === 'zh' || lang === 'de' || lang === 'ja' ? [{ labelKey: 'nav.data', path: '/game-data' }] : []),
-  ...(lang === 'en' || lang === 'zh' ? [{ labelKey: 'nav.faq', path: '/faq' }] : []),
+  ...(lang === 'en' || lang === 'zh' || lang === 'de' || lang === 'ja' ? [{ labelKey: 'nav.faq', path: '/faq' }] : []),
   { labelKey: 'nav.about', path: '/about' },
 ];
 

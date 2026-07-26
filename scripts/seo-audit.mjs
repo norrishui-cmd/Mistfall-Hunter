@@ -90,6 +90,20 @@ const indexablePages = pages.filter((page) => !/noindex/i.test(page.robots));
 const noindexPages = pages.filter((page) => /noindex/i.test(page.robots));
 const officialSourceHosts = new Set(['store.steampowered.com', 'steamcommunity.com', 'www.xbox.com']);
 
+for (const [pathname, expectedLang] of [['/de/faq/','de'], ['/ja/faq/','ja']]) {
+  const page = byPath.get(pathname);
+  if (!page) {
+    fail(`${pathname}: missing localized FAQ page`);
+    continue;
+  }
+  const visibleItems = allMatches(page.html, /class=["']item["']/gi).length;
+  if (visibleItems !== 50) fail(`${pathname}: expected 50 visible FAQ items, found ${visibleItems}`);
+  const faqSchema = parsedSchemas(page).find((schema) => schema['@type'] === 'FAQPage');
+  if (!faqSchema || faqSchema.inLanguage !== expectedLang || faqSchema.mainEntity?.length !== 50) {
+    fail(`${pathname}: expected localized FAQPage schema with 50 questions`);
+  }
+}
+
 function parsedSchemas(page) {
   return page.jsonLd.flatMap((raw) => {
     try {

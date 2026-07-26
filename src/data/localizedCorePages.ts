@@ -20,16 +20,16 @@ const de: LocalizedCorePage[] = [
     lead: 'Ein kompakter, inoffizieller Guide für den PvPvE-Extraction-ARPG: bestätigte Release-Informationen, verständliche Grundlagen und praktische Entscheidungen vor dem ersten Run.',
     sections: [
       { heading: 'Was ist Mistfall Hunter?', paragraphs: ['Mistfall Hunter verbindet Third-Person-Action, Dark Fantasy und Extraction. Du betrittst als Gyldhunter den gefährlichen Gyldenmist, kämpfst gegen korrumpierte Gegner und rivalisierende Spieler, sammelst Beute und musst rechtzeitig extrahieren. Ein Tod kann die Beute des aktuellen Runs kosten.', 'Die Guides trennen bestätigte Angaben aus offiziellen Store-Seiten von Beta-Beobachtungen. Exakte Balancewerte, Fundorte und die spätere Meta werden erst nach überprüfbaren Live-Daten als Fakten behandelt.'] },
-      { heading: 'Der beste Einstieg', paragraphs: ['Beginne mit Release und Plattformen, lerne danach den Extraction-Loop und vergleiche die Klassen. Builds sind vor dem Launch Richtungen statt endgültige Best-in-Slot-Listen.'], bullets: ['Release: 29. Juli 2026 laut Steam und Xbox', 'Bestätigte Plattformen: PC und Xbox Series X|S', 'Solo oder Dreiergruppe', 'Englische Sprachausgabe; deutsche Oberfläche und Untertitel'] },
+      { heading: 'Der beste Einstieg', paragraphs: ['Beginne mit Release, Preis und Plattformen, lerne danach den Extraction-Loop und vergleiche die Klassen. Frühe Builds sind Richtungen statt endgültige Best-in-Slot-Listen.'], bullets: ['Globaler Launch: 29. Juli 2026, 18:00 PT / 30. Juli, 01:00 UTC', 'Plattformen: PC, Xbox Series X|S und PlayStation 5', 'Standard: 24,99 US-Dollar; Deluxe: 39,99 US-Dollar', 'Cross-Platform-Matchmaking offiziell bestätigt', 'Deutsche Oberfläche und Untertitel'] },
     ], related: [],
   },
   {
     slug: 'release-date', title: 'Mistfall Hunter Release: Datum, Plattformen & Sprachen',
     description: 'Mistfall Hunter erscheint laut Steam und Xbox am 29. Juli 2026. Alle bestätigten Plattformen, Game-Pass- und Sprachinformationen auf Deutsch.',
     eyebrow: 'Release', h1: 'Mistfall Hunter: Release-Datum und Plattformen',
-    lead: 'Die offiziellen Steam- und Xbox-Einträge nennen den 29. Juli 2026. Bestätigt sind PC und Xbox Series X|S; die konkrete Freischaltzeit kann regional abweichen.',
+    lead: 'Der offizielle globale Launch ist am 29. Juli 2026 um 18:00 PT, entsprechend 30. Juli um 01:00 UTC. PC, Xbox Series X|S und PlayStation 5 starten gleichzeitig.',
     sections: [
-      { heading: 'Was ist offiziell bestätigt?', paragraphs: ['Steam führt Mistfall Hunter für Windows, während der Xbox Store PC und Xbox Series X|S sowie Xbox Play Anywhere nennt. Der Xbox-Eintrag bestätigt außerdem die Verfügbarkeit über Game Pass für PC und Xbox. Für Online-Multiplayer auf Konsole ist eine passende Game-Pass-Stufe erforderlich.', 'Eine PlayStation-Version wird hier nicht als bestätigt bezeichnet, solange keine zitierbare PlayStation-Store-Seite oder Publisher-Ankündigung vorliegt.'] },
+      { heading: 'Was ist offiziell bestätigt?', paragraphs: ['Steam führt Windows PC, der Xbox Store Xbox Series X|S und Xbox Play Anywhere. Bellring Games hat außerdem PlayStation 5 für den gleichzeitigen Launch bestätigt. Cross-Platform-Matchmaking ist laut offizieller Launch-FAQ verfügbar.', 'Die Standard Edition kostet offiziell 24,99 US-Dollar, Deluxe 39,99 US-Dollar. Standard-Besitzer können später für 15 US-Dollar upgraden. Regionale Preise und Steuern werden im jeweiligen Store angezeigt.'] },
       { heading: 'Sprachen', paragraphs: ['Steam nennt zehn unterstützte Sprachen. Englisch bietet Oberfläche, vollständige Sprachausgabe und Untertitel. Deutsch sowie Chinesisch, Spanisch, Russisch, Japanisch, Koreanisch, Französisch und brasilianisches Portugiesisch unterstützen Oberfläche und Untertitel.'], bullets: ['Release-Datum: 29. Juli 2026', 'Lokale Uhrzeit im jeweiligen Store prüfen', 'Deutsche Texte und Untertitel angekündigt', 'Keine deutsche Vollvertonung angegeben'] },
     ], related: [],
   },
@@ -213,17 +213,17 @@ const ja: LocalizedCorePage[] = [
     lead: 'ダークファンタジーとPvPvE脱出要素を組み合わせたアクションRPGについて、公式情報とベータ版の観察を分けながら、プレイヤーが必要とする答えを簡潔にまとめます。',
     sections: [
       { heading: 'Mistfall Hunterとは', paragraphs: ['プレイヤーはGyldhunterとなり、危険なGyldenmistへ入り、腐敗した敵や他プレイヤーと戦いながら戦利品を集めます。重要なのは倒した数ではなく、価値ある装備を持って無事に脱出することです。死亡すると、そのランで得た戦利品を失う可能性があります。', '当サイトでは、発売日や対応機種はSteamとXboxの公式ストアを優先します。クラス調整、マップ地点、ドロップ率などは、正式版で確認できるまで確定情報として扱いません。'] },
-      { heading: '最初に確認すること', paragraphs: ['まず発売情報を確認し、次に初心者ガイドで脱出の基本を学び、自分に合うクラスを選びます。ビルドは正式版の数値が揃うまで、完成形ではなく方向性として利用してください。'], bullets: ['公式ストア上の発売日：2026年7月29日', '確認済み機種：PC、Xbox Series X|S', 'ソロまたは3人チーム', '日本語インターフェースと字幕に対応予定'] },
+      { heading: '最初に確認すること', paragraphs: ['まず発売時刻、価格、対応機種を確認し、次に初心者ガイドで脱出の基本を学び、自分に合うクラスを選びます。初期ビルドは完成形ではなく、検証可能な方向性として利用してください。'], bullets: ['世界同時発売：2026年7月29日18:00 PT／7月30日01:00 UTC', '対応機種：PC、Xbox Series X|S、PlayStation 5', '通常版24.99米ドル、デラックス版39.99米ドル', 'クロスプラットフォームマッチング対応', '日本語インターフェース・字幕対応'] },
     ], related: [],
   },
   {
     slug: 'release-date', title: 'Mistfall Hunter 発売日・対応機種・日本語対応',
-    description: 'Mistfall Hunterの発売日は2026年7月29日。PC・Xbox対応、Game Pass、日本語字幕、価格など公式ストアで確認できる情報を整理。',
+    description: 'Mistfall Hunterは2026年7月29日18:00 PT発売。PC、Xbox Series X|S、PS5、価格、クロスプレイ、日本語対応を公式情報で整理。',
     eyebrow: '発売情報', h1: 'Mistfall Hunterの発売日と対応機種',
-    lead: 'SteamとXboxの公式ストアは、発売日を2026年7月29日と表示しています。地域ごとの解禁時刻は異なる可能性があるため、利用するストアで最終確認してください。',
+    lead: '世界同時発売は2026年7月29日18:00 PT（7月30日01:00 UTC）。PC、Xbox Series X|S、PlayStation 5が同時に開始します。',
     sections: [
-      { heading: '確認されているプラットフォーム', paragraphs: ['Steam版はWindows PC向けです。XboxストアではPCとXbox Series X|S、Xbox Play Anywhere、PCおよびXbox向けGame Pass対応が案内されています。コンソールでオンラインマルチプレイを利用する場合は、対応するGame Passプランが別途必要です。', 'PlayStation版については、PlayStation Storeの製品ページまたはパブリッシャーの発表を確認できるまで、当サイトでは発売確定として扱いません。'] },
-      { heading: '日本語と対応言語', paragraphs: ['Steamでは10言語が掲載され、日本語はインターフェースと字幕に対応しています。フル音声が表示されているのは英語です。日本語フルボイスの表記は現在ありません。'], bullets: ['発売日：2026年7月29日', 'PC、Xbox Series X|S', '日本語UI・字幕対応', '日本語フル音声は未掲載'] },
+      { heading: '確認されているプラットフォームと価格', paragraphs: ['Steam版はWindows PC向け、Xbox版はSeries X|SとXbox Play Anywhereに対応します。Bellring GamesはPlayStation 5版の同時発売も正式発表しています。公式Launch FAQではクロスプラットフォームマッチングも確認済みです。', '通常版は24.99米ドル、デラックス版は39.99米ドルです。通常版からデラックス版への後日アップグレードは15米ドル。地域価格と税は各ストアで確認してください。'] },
+      { heading: '日本語と対応言語', paragraphs: ['Steamでは10言語が掲載され、日本語はインターフェースと字幕に対応しています。フル音声が表示されているのは英語です。日本語フルボイスの表記は現在ありません。'], bullets: ['発売：7月29日18:00 PT／7月30日01:00 UTC', 'PC、Xbox Series X|S、PS5', '日本語UI・字幕対応', '日本語フル音声は未掲載'] },
     ], related: [],
   },
   {
