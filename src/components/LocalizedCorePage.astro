@@ -59,6 +59,21 @@ const faqCluster = page.slug === 'release-date' ? 'release'
   : page.slug === 'updates' || page.slug.includes('issue') || page.slug.includes('patch') ? 'news'
   : page.slug === 'game-data' || page.slug === 'loot' || page.slug === 'bosses' ? 'gameData'
   : 'guides';
+const deepening = {
+  de: {
+    classes:{title:'Klasse vor dem ersten Run prüfen',intro:'Wähle nicht nur nach vermutetem Schaden. Prüfe, ob die Klasse deinen häufigsten Fehler abfedert und zur Gruppengröße passt.',items:['Solo: eigener Rückzug oder sichere Reichweite','Trio: klarer Nutzen neben reinem Schaden','Waffenhaltung vor Affixen festlegen','Nach Balance-Patches erneut bewerten']},
+    builds:{title:'Build in drei Runs testen',intro:'Ein Build ist erst brauchbar, wenn er unter echtem Extraktionsdruck funktioniert. Ändere pro Test nur eine Variable.',items:['Run 1: Überleben und Ressourcenverbrauch','Run 2: Zeit bis zum sicheren Kill','Run 3: Rückzug mit wertvoller Beute','Patchdatum und geänderte Affixe notieren']},
+    guides:{title:'Empfohlene Lernreihenfolge',intro:'Arbeite vom Überleben zur Optimierung. So verlierst du weniger Ausrüstung, während du Karte und Matchups lernst.',items:['Ausgang und Soul of Return verstehen','Eine Klasse und beide Waffenhaltungen lernen','Erst danach Boss- und High-Loot-Routen','Builds nur mit aktuellem Patchstand übernehmen']},
+    performance:{title:'Fehler sauber eingrenzen',intro:'Ändere nicht gleichzeitig Treiber, Grafik und Netzwerk. Ein kontrollierter Test zeigt, ob Client, Server oder Plattform die Ursache ist.',items:['Offiziellen Serverstatus prüfen','Fehlertext und Zeitpunkt notieren','Spieldateien prüfen und einmal neu starten','Grafikoptionen einzeln testen']},
+  },
+  ja: {
+    classes:{title:'初回出撃前のクラス確認',intro:'想定火力だけで選ばず、自分が起こしやすい失敗を補えるか、人数構成に合うかを確認します。',items:['ソロ：自力離脱または安全な射程','3人：火力以外の明確な役割','Affixより先に武器スタンスを決める','調整パッチ後に再評価する']},
+    builds:{title:'3回の出撃でビルドを検証',intro:'実際の脱出圧力で機能して初めて実用ビルドです。1回の検証で変える要素は1つにします。',items:['1回目：生存力と消耗品使用量','2回目：安全な撃破までの時間','3回目：高価値戦利品を持つ撤退','パッチ日と変更Affixを記録']},
+    guides:{title:'おすすめ学習順序',intro:'生還から最適化へ進むと、装備損失を抑えながらマップと相性を覚えられます。',items:['出口とSoul of Returnを理解','1クラスと両武器スタンスを習得','次にBossと高価値ルート','現行パッチ対応ビルドだけ参照']},
+    performance:{title:'原因を一つずつ切り分ける',intro:'ドライバー、画質、ネットワークを同時に変えないでください。段階的な検証でクライアント、サーバー、プラットフォームを判別します。',items:['公式サーバー状態を確認','エラー文と発生時刻を記録','ファイル検証後に一度再起動','画質設定を一項目ずつ試す']},
+  },
+} as const;
+const deepBlock = (lang === 'de' || lang === 'ja') ? deepening[lang][page.slug as keyof typeof deepening.de] : undefined;
 ---
 
 <BaseLayout lang={lang} path={path} title={page.title} description={page.description} jsonLd={[articleSchema, breadcrumbSchema]}>
@@ -87,6 +102,11 @@ const faqCluster = page.slug === 'release-date' ? 'release'
           </Fragment>
         ))}
       </div>
+      {deepBlock && <aside class="quality-panel action-panel">
+        <h2>{deepBlock.title}</h2>
+        <p>{deepBlock.intro}</p>
+        <ol>{deepBlock.items.map((item) => <li>{item}</li>)}</ol>
+      </aside>}
       {(lang === 'de' || lang === 'ja') && <RelatedFaqModule cluster={faqCluster} lang={lang} />}
       {(lang === 'de' || lang === 'ja') && <TabNewsModule cluster={faqCluster === 'gameData' ? 'guides' : faqCluster === 'news' ? 'about' : faqCluster} lang={lang} />}
     </div>

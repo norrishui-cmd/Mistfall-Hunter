@@ -9,19 +9,19 @@ const ja = lang === 'ja';
 const items = getDeepFaqs(lang);
 const prefix = `/${lang}`;
 const title = ja
-  ? 'Mistfall Hunter FAQ 日本語：発売・クロスプレイ・ランク・PC設定50問'
-  : 'Mistfall Hunter FAQ Deutsch: 50 Fragen zu Launch & Crossplay';
+  ? 'Mistfall Hunter FAQ 日本語：クラス・脱出・装備・発売情報100問'
+  : 'Mistfall Hunter FAQ Deutsch: 100 Fragen zu Klassen, Loot & Launch';
 const description = ja
-  ? '公式Launch FAQとDevNote #7に基づく日本語FAQ 50問。発売割引、クロスプレイ、サーバー、Path of Glory、クラス調整、マップ、PC要件を解説。'
-  : '50 aktuelle Mistfall-Hunter-FAQs auf Deutsch zu Rabatt, Crossplay, Servern, Path of Glory, Klassen, Karten, PC-Anforderungen und Launch-Fixes.';
+  ? '公式ストア、Launch FAQ、DevNote #7に基づく日本語FAQ 100問。クラス、脱出、戦利品、クロスプレイ、ランク、PC設定を解説。'
+  : '100 belegte Mistfall-Hunter-FAQs auf Deutsch zu Klassen, Extraktion, Loot, Crossplay, Rangsystem, PC-Anforderungen und Launch-Fixes.';
 const labels = ja ? {
   home:'ホーム', lead:'公式情報に基づく最新FAQ', questions:'問', topics:'テーマ', source:'情報源の方針',
   sourceText:'発売、サーバー、ランク、性能、修正内容は公式ストア、Launch FAQ、DevNote #7と照合しています。未確認情報は事実として掲載しません。',
-  related:'関連攻略を見る →', all:'攻略一覧へ', back:'ページ上部へ', range:'最新50問',
+  related:'関連攻略を見る →', all:'攻略一覧へ', back:'ページ上部へ', range:'公式情報100問',
 } : {
   home:'Start', lead:'Aktuelle FAQ aus offiziellen Quellen', questions:'Fragen', topics:'Themen', source:'Quellenrichtlinie',
   sourceText:'Launch, Server, Rangsystem, Performance und Fixes wurden mit den offiziellen Stores, der Launch-FAQ und DevNote #7 abgeglichen. Unbestätigte Angaben werden nicht als Fakten veröffentlicht.',
-  related:'Passenden Guide öffnen →', all:'Alle Guides', back:'Nach oben', range:'50 aktuelle Fragen',
+  related:'Passenden Guide öffnen →', all:'Alle Guides', back:'Nach oben', range:'100 belegte Fragen',
 };
 const categoryCopy: Record<string,{de:string;ja:string;href:string}> = {
   release:{de:'Release, Preis und Editionen',ja:'発売・価格・エディション',href:'/release-date'},
@@ -49,7 +49,7 @@ const breadcrumb = {'@context':'https://schema.org','@type':'BreadcrumbList',ite
       <p class="eyebrow">MISTFALL HUNTER FAQ · {labels.range}</p>
       <h1>{title}</h1>
       <p class="lead">{description}</p>
-      <div class="stats"><span><strong>50</strong> {labels.questions}</span><span><strong>10</strong> {labels.topics}</span></div>
+      <div class="stats"><span><strong>100</strong> {labels.questions}</span><span><strong>10</strong> {labels.topics}</span></div>
     </header>
     <aside class="source-note"><strong>{labels.source}:</strong> {labels.sourceText}
       <div><a href="https://steamcommunity.com/app/3282300/announcements/" rel="noopener noreferrer">Steam News</a> · <a href="https://store.steampowered.com/app/3282300/Mistfall_Hunter/" rel="noopener noreferrer">Steam Store</a> · <a href="https://www.xbox.com/en-US/games/store/mistfall-hunter/9p8x6tvw9zw8" rel="noopener noreferrer">Xbox</a></div>

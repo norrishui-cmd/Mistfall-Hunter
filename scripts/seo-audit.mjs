@@ -97,10 +97,10 @@ for (const [pathname, expectedLang] of [['/de/faq/','de'], ['/ja/faq/','ja']]) {
     continue;
   }
   const visibleItems = allMatches(page.html, /class=["']item["']/gi).length;
-  if (visibleItems !== 50) fail(`${pathname}: expected 50 visible FAQ items, found ${visibleItems}`);
+  if (visibleItems !== 100) fail(`${pathname}: expected 100 visible FAQ items, found ${visibleItems}`);
   const faqSchema = parsedSchemas(page).find((schema) => schema['@type'] === 'FAQPage');
-  if (!faqSchema || faqSchema.inLanguage !== expectedLang || faqSchema.mainEntity?.length !== 50) {
-    fail(`${pathname}: expected localized FAQPage schema with 50 questions`);
+  if (!faqSchema || faqSchema.inLanguage !== expectedLang || faqSchema.mainEntity?.length !== 100) {
+    fail(`${pathname}: expected localized FAQPage schema with 100 questions`);
   }
 }
 
