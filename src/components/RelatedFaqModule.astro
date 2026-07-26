@@ -1,14 +1,16 @@
 ---
 import { faq100 } from '../data/faq100';
-type Cluster = 'release' | 'guides' | 'builds' | 'about';
+type Cluster = 'release' | 'guides' | 'builds' | 'gameData' | 'news' | 'about';
 interface Props { cluster: Cluster; lang: 'en' | 'zh' }
 const { cluster, lang } = Astro.props as Props;
 const zh = lang === 'zh';
 const ids: Record<Cluster, number[]> = {
-  release: [101, 102, 103, 104, 105],
-  guides: [111, 112, 113, 114, 115],
-  builds: [116, 121, 123, 124, 125],
-  about: [101, 102, 106, 110, 119],
+  release: [151, 152, 153, 154, 155],
+  guides: [161, 164, 176, 181, 187],
+  builds: [166, 171, 173, 174, 175],
+  gameData: [162, 168, 180, 182, 188],
+  news: [156, 159, 189, 194, 195],
+  about: [157, 158, 160, 191, 192],
 };
 const items = ids[cluster].map((id) => faq100.find((item) => item.id === id)).filter(Boolean);
 const prefix = zh ? '/zh' : '';
@@ -16,7 +18,7 @@ const prefix = zh ? '/zh' : '';
 <section class="related-faq" aria-labelledby={`related-faq-${cluster}`}>
   <div class="related-faq__heading">
     <div><span class="eyebrow">{zh ? '快速问答' : 'Quick answers'}</span><h2 id={`related-faq-${cluster}`}>{zh ? '相关 FAQ' : 'Related FAQ'}</h2></div>
-    <a href={`${prefix}/faq`}>{zh ? '查看全部 150 条 →' : 'View all 150 →'}</a>
+    <a href={`${prefix}/faq`}>{zh ? '查看全部 200 条 →' : 'View all 200 →'}</a>
   </div>
   <div class="related-faq__grid">
     {items.map((item) => item && <a class="related-faq__item" href={`${prefix}/faq#q${item.id}`}>

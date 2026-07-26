@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TabNewsModule from './TabNewsModule.astro';
+import RelatedFaqModule from './RelatedFaqModule.astro';
 import { newsClusters, tabNewsSources, type TabNewsItem } from '../data/tabNews';
 interface Props { item: TabNewsItem; lang: 'en' | 'zh' }
 const { item, lang } = Astro.props as Props;
@@ -40,6 +41,7 @@ const breadcrumb = {'@context':'https://schema.org','@type':'BreadcrumbList',ite
         <p><a href={source.url} rel="noopener noreferrer">{zh?'查看官方原始页面':'Open the original official listing'}</a> · <a href={`${prefix}${cluster.href}`}>{zh?'返回所属 Tab':'Return to topic hub'}</a></p>
       </div>
       <TabNewsModule cluster={item.cluster} lang={lang} />
+      <RelatedFaqModule cluster="news" lang={lang} />
     </div>
   </article>
 </BaseLayout>

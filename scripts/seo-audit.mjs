@@ -278,27 +278,32 @@ let faqQuestionsPerLanguage = 0;
 for (const pathname of ['/faq/', '/zh/faq/']) {
   const page = byPath.get(pathname);
   if (!page) {
-    fail(`${pathname}: missing 100-question FAQ hub`);
+    fail(`${pathname}: missing 200-question FAQ hub`);
     continue;
   }
   const visibleItems = allMatches(page.html, /<article\s+class=["']faq-item["']/gi).length;
-  if (visibleItems !== 150) fail(`${pathname}: expected 150 visible FAQ items, found ${visibleItems}`);
+  if (visibleItems !== 200) fail(`${pathname}: expected 200 visible FAQ items, found ${visibleItems}`);
   for (const sourceUrl of [
     'https://store.steampowered.com/app/3282300/Mistfall_Hunter/',
     'https://www.xbox.com/en-US/games/store/mistfall-hunter/9p8x6tvw9zw8',
+    'https://steamcommunity.com/app/3282300/announcements/',
   ]) {
     if (!page.html.includes(sourceUrl)) fail(`${pathname}: missing official FAQ source ${sourceUrl}`);
   }
   const faqSchemas = parsedSchemas(page).filter((schema) => schema['@type'] === 'FAQPage');
   if (faqSchemas.length !== 1) fail(`${pathname}: expected one FAQPage schema, found ${faqSchemas.length}`);
   const entities = faqSchemas[0]?.mainEntity ?? [];
-  if (entities.length !== 150) fail(`${pathname}: expected 150 FAQPage entities, found ${entities.length}`);
+  if (entities.length !== 200) fail(`${pathname}: expected 200 FAQPage entities, found ${entities.length}`);
   const names = entities.map((entity) => entity.name).filter(Boolean);
   if (new Set(names).size !== names.length) fail(`${pathname}: duplicate FAQ questions found`);
   faqQuestionsPerLanguage = Math.max(faqQuestionsPerLanguage, visibleItems);
 }
 
-for (const pathname of ['/release-date/','/builds/','/zh/release-date/','/zh/builds/']) {
+for (const pathname of [
+  '/release-date/','/builds/','/game-data/','/zh/release-date/','/zh/builds/','/zh/game-data/',
+  '/game-data/withered-knight/','/zh/game-data/withered-knight/',
+  '/news/xbox-pc-cross-platform-features/','/zh/news/xbox-pc-cross-platform-features/',
+]) {
   const page = byPath.get(pathname);
   if (!page) continue;
   const relatedFaqLinks = allMatches(page.html, /class=["']related-faq__item["']/gi).length;

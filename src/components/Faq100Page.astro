@@ -7,10 +7,10 @@ interface Props { lang: 'en' | 'zh' }
 const { lang } = Astro.props as Props;
 const zh = lang === 'zh';
 const path = '/faq';
-const title = zh ? 'Mistfall Hunter 常见问题 FAQ：150 个真实问题完整解答' : 'Mistfall Hunter FAQ: 150 Real Questions Answered';
+const title = zh ? 'Mistfall Hunter 常见问题 FAQ：200 个真实问题完整解答' : 'Mistfall Hunter FAQ: 200 Real Questions Answered';
 const description = zh
-  ? 'Mistfall Hunter 150 条真实常见问题：发售日、平台、职业、战斗、地图、战利品、联机、配置和故障排查。基于 Steam 与 Xbox 官方信息持续更新。'
-  : '150 real Mistfall Hunter questions answered: release, platforms, classes, combat, maps, loot, multiplayer, requirements and troubleshooting.';
+  ? 'Mistfall Hunter 200 条真实常见问题：发售、跨平台、职业、排位、赛季、地图、战利品、配置与首发修复，基于官方信息更新。'
+  : '200 sourced Mistfall Hunter answers covering launch, crossplay, classes, ranked play, seasons, maps, loot, PC requirements and launch fixes.';
 const local = (href: string) => zh ? `/zh${href}` : href;
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -43,7 +43,7 @@ const breadcrumbSchema = {
       <h1>{title}</h1>
       <p class="lead">{description}</p>
       <div class="faq-stats" aria-label={zh ? 'FAQ 概览' : 'FAQ overview'}>
-        <span><strong>150</strong> {zh ? '个问题' : 'questions'}</span>
+        <span><strong>200</strong> {zh ? '个问题' : 'questions'}</span>
         <span><strong>10</strong> {zh ? '大主题' : 'topics'}</span>
         <span><strong>2</strong> {zh ? '个官方来源' : 'official sources'}</span>
       </div>
@@ -55,6 +55,8 @@ const breadcrumbSchema = {
       <a href="https://store.steampowered.com/app/3282300/Mistfall_Hunter/" rel="noopener noreferrer">Steam {zh ? '官方商店' : 'store'}</a>
       {zh ? '和 ' : ' and '}
       <a href="https://www.xbox.com/en-US/games/store/mistfall-hunter/9p8x6tvw9zw8" rel="noopener noreferrer">Xbox {zh ? '官方商店' : 'store'}</a>。
+      {zh ? '首发折扣、预下载、服务器、排位、赛季与职业调整还会核对 ' : 'Launch discount, pre-download, servers, ranked play, season and class-balance answers also use the '}
+      <a href="https://steamcommunity.com/app/3282300/announcements/" rel="noopener noreferrer">Steam {zh ? '官方公告' : 'official announcements'}</a>。
       {zh ? '尚未公布或可能变化的内容会明确标注，不以传言补空白。' : 'Unannounced or changeable details are labeled instead of filled with rumor.'}
     </aside>
 
