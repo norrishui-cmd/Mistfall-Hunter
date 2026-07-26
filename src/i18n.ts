@@ -167,6 +167,7 @@ export const allLanguages = Object.keys(languages) as Lang[];
 
 export function languagesForPath(path: string): Lang[] {
   if (firstEditionPaths.has(path) || secondEditionGameDataPaths.has(path)) return allLanguages;
+  if (path === '/news' || /^\/news\/[^/]+$/.test(path)) return ['en', 'zh', 'de', 'ja'];
   if (localizedCorePaths.has(path) || /^\/game-data\/[^/]+$/.test(path)) return ['en', 'zh', 'de', 'ja'];
   return ['en', 'zh'];
 }

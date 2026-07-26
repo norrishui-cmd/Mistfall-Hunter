@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import RelatedFaqModule from './RelatedFaqModule.astro';
+import TabNewsModule from './TabNewsModule.astro';
 import { localizedCorePages, localizedCorePath, type LocalizedCorePage } from '../data/localizedCorePages';
 
 interface Props {
@@ -87,6 +88,7 @@ const faqCluster = page.slug === 'release-date' ? 'release'
         ))}
       </div>
       {(lang === 'de' || lang === 'ja') && <RelatedFaqModule cluster={faqCluster} lang={lang} />}
+      {(lang === 'de' || lang === 'ja') && <TabNewsModule cluster={faqCluster === 'gameData' ? 'guides' : faqCluster === 'news' ? 'about' : faqCluster} lang={lang} />}
     </div>
   </section>
 

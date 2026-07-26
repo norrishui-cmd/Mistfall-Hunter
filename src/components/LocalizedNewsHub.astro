@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TabNewsModule from './TabNewsModule.astro';
+const { lang } = Astro.props as { lang:'de'|'ja' };
+const ja = lang === 'ja';
+const title = ja ? 'Mistfall Hunter ニュース：発売・攻略・ビルド最新情報' : 'Mistfall Hunter News Deutsch: Release, Guides & Builds';
+const description = ja ? '公式Steam・Xbox情報に基づく発売、攻略、ビルド、FAQ、ゲーム情報25件。' : '25 deutsche Meldungen zu Release, Guides, Builds, FAQ und Spielinformationen aus offiziellen Steam- und Xbox-Quellen.';
+const lead = ja ? '公式ストアと開発元の情報を、プレイヤーが判断に使える短い回答へ整理しています。' : 'Offizielle Store- und Entwicklerangaben werden in kurze, spielerorientierte Antworten übersetzt und nach Themen geordnet.';
+const labels = ja ? {eye:'公式情報トラッカー',home:'ホーム',h1:'ニュース・アップデート',policy:'編集方針',policyText:'確認済み情報と未検証の発売後要素を分け、変更があれば更新します。'} : {eye:'OFFIZIELLER INFO-TRACKER',home:'Start',h1:'News und Updates',policy:'Redaktionsrichtlinie',policyText:'Bestätigte Angaben und noch zu testende Live-Details werden getrennt und bei Änderungen aktualisiert.'};
+const schema={'@context':'https://schema.org','@type':'CollectionPage',name:title,description,inLanguage:lang,url:`https://mistfallhunter.me/${lang}/news/`,dateModified:'2026-07-26'};
+const breadcrumb={'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[
+  {'@type':'ListItem',position:1,name:labels.home,item:`https://mistfallhunter.me/${lang}/`},
+  {'@type':'ListItem',position:2,name:labels.h1,item:`https://mistfallhunter.me/${lang}/news/`},
+]};
+---
+<BaseLayout lang={lang} path="/news" title={title} description={description} jsonLd={[schema,breadcrumb]}>
+  <section class="section"><div class="container">
+    <nav class="breadcrumbs"><a href={`/${lang}/`}>{labels.home}</a><span>›</span><span>News</span></nav>
+    <span class="eyebrow">{labels.eye}</span><h1 class="page-title">{labels.h1}</h1><p class="lead">{lead}</p>
+    <aside class="quality-panel"><strong>{labels.policy}:</strong> {labels.policyText}</aside>
+    <TabNewsModule cluster="release" lang={lang}/><TabNewsModule cluster="guides" lang={lang}/><TabNewsModule cluster="builds" lang={lang}/><TabNewsModule cluster="faq" lang={lang}/><TabNewsModule cluster="about" lang={lang}/>
+  </div></section>
+</BaseLayout>

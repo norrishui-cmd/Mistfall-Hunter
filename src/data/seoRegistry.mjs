@@ -49,6 +49,7 @@ export const INDEXABLE_STATIC_PATHS = new Set([
   '/de/pvp-guide/',
   '/de/game-data/',
   '/de/faq/',
+  '/de/news/',
   '/ja/',
   '/ja/release-date/',
   '/ja/beginner-guide/',
@@ -71,6 +72,7 @@ export const INDEXABLE_STATIC_PATHS = new Set([
   '/ja/pvp-guide/',
   '/ja/game-data/',
   '/ja/faq/',
+  '/ja/news/',
   ...['zh-hant','es','ru','ko','fr','pt-br'].flatMap((lang) =>
     ['', 'release-date', 'beginner-guide', 'classes', 'builds', 'guides', 'performance', 'about', 'game-data']
       .map((slug) => `/${lang}/${slug ? `${slug}/` : ''}`)
@@ -210,6 +212,7 @@ export const INDEXABLE_SLUGS = new Set([
 ]);
 
 export const INDEXABLE_TAB_NEWS_SLUGS = new Set([
+  'xbox-play-anywhere-access-update','ten-supported-languages-announced',
   'release-date-july-29-confirmed','pc-xbox-ps5-platforms-confirmed','open-beta-430k-players-milestone','launch-day-content-lineup-confirmed','pc-system-requirements-published',
   'official-gameplay-loop-explained','solo-and-three-player-squads-confirmed','six-classes-two-weapon-stances','returner-woodling-extraction-role','pvpve-survival-priorities',
   'build-system-talents-affixes-skills','weapon-stance-build-planning','gem-affix-priority-framework','solo-vs-squad-build-differences','launch-meta-verification-policy',
@@ -362,7 +365,7 @@ export function isIndexableSlug(slug) {
 export function isIndexablePath(path = '/') {
   const normalized = normalizeSeoPath(path);
   if (INDEXABLE_STATIC_PATHS.has(normalized)) return true;
-  const newsMatch = normalized.match(/^\/(?:zh\/)?news\/([^/]+)\/$/);
+  const newsMatch = normalized.match(/^\/(?:(?:zh|de|ja)\/)?news\/([^/]+)\/$/);
   if (newsMatch) return INDEXABLE_TAB_NEWS_SLUGS.has(newsMatch[1]);
   const dataMatch = normalized.match(/^\/(?:(zh|de|ja|zh-hant|es|ru|ko|fr|pt-br)\/)?game-data\/([^/]+)\/$/);
   if (dataMatch) {
@@ -391,6 +394,8 @@ export function getIndexablePaths() {
   for (const slug of INDEXABLE_TAB_NEWS_SLUGS) {
     paths.add(normalizeSeoPath(`/news/${slug}/`));
     paths.add(normalizeSeoPath(`/zh/news/${slug}/`));
+    paths.add(normalizeSeoPath(`/de/news/${slug}/`));
+    paths.add(normalizeSeoPath(`/ja/news/${slug}/`));
   }
   for (const slug of INDEXABLE_GAME_DATA_SLUGS) {
     paths.add(normalizeSeoPath(`/game-data/${slug}/`));

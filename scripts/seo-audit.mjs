@@ -133,7 +133,7 @@ for (const page of pages) {
     const tabFaqCount = allMatches(page.html, /class=["']tab-faq__item["']/gi).length;
     if (tabFaqCount > 0 && tabFaqCount !== 50) fail(`${page.pathname}: tab FAQ module rendered ${tabFaqCount} entries, expected 50`);
     const tabNewsCount = allMatches(page.html, /class=["']tab-news__card["']/gi).length;
-    const isNewsAggregator = page.pathname === '/news/' || page.pathname === '/zh/news/';
+    const isNewsAggregator = /^\/(?:(?:zh|de|ja)\/)?news\/$/.test(page.pathname);
     if (!isNewsAggregator && tabNewsCount > 0 && tabNewsCount !== 5) fail(`${page.pathname}: tab news module rendered ${tabNewsCount} entries, expected 5`);
   }
   if (!isNoindex) {

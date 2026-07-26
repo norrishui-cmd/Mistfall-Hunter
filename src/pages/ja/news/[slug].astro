@@ -1,0 +1,7 @@
+---
+import TabNewsArticle from '../../../components/TabNewsArticle.astro';
+import { tabNews } from '../../../data/tabNews';
+export function getStaticPaths(){return tabNews.map(item=>({params:{slug:item.slug},props:{item}}));}
+const {item}=Astro.props;
+---
+<TabNewsArticle item={item} lang="ja"/>

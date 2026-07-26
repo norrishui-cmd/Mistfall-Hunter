@@ -1,23 +1,30 @@
 ---
 import { getTabNews, newsClusters, type NewsCluster } from '../data/tabNews';
-interface Props { cluster: NewsCluster; lang: 'en' | 'zh' }
+import { getDeepNewsLocale } from '../data/tabNewsDeepLocales';
+interface Props { cluster: NewsCluster; lang: 'en' | 'zh' | 'de' | 'ja' }
 const { cluster, lang } = Astro.props as Props;
 const items = getTabNews(cluster);
 const zh = lang === 'zh';
+const prefix = lang === 'en' ? '' : `/${lang}`;
+const labels = lang === 'de'
+  ? { eyebrow:'Aktuelle Meldungen', all:'Alle Meldungen →', read:'Meldung lesen →', clusters:{release:'Release-News',guides:'Guide-Updates',builds:'Build-News',faq:'FAQ-Updates',about:'Spiel-News'} }
+  : lang === 'ja'
+  ? { eyebrow:'最新情報', all:'ニュース一覧 →', read:'詳しく読む →', clusters:{release:'発売情報',guides:'攻略更新',builds:'ビルド情報',faq:'FAQ更新',about:'ゲームニュース'} }
+  : null;
 ---
 <section class="tab-news" aria-labelledby={`news-${cluster}`}>
   <div class="tab-news__heading">
-    <div><span class="eyebrow">{zh ? '最新更新' : 'Latest updates'}</span><h2 id={`news-${cluster}`}>{zh ? newsClusters[cluster].zh : newsClusters[cluster].en}</h2></div>
-    <a href={zh ? '/zh/news' : '/news'}>{zh ? '全部新闻 →' : 'All news →'}</a>
+    <div><span class="eyebrow">{labels?.eyebrow ?? (zh ? '最新更新' : 'Latest updates')}</span><h2 id={`news-${cluster}`}>{labels?.clusters[cluster] ?? (zh ? newsClusters[cluster].zh : newsClusters[cluster].en)}</h2></div>
+    <a href={`${prefix}/news`}>{labels?.all ?? (zh ? '全部新闻 →' : 'All news →')}</a>
   </div>
   <div class="tab-news__grid">
     {items.map((item) => {
-      const copy = zh ? item.zh : item.en;
+      const copy = lang === 'de' || lang === 'ja' ? getDeepNewsLocale(item.slug,item.cluster,lang) : zh ? item.zh : item.en;
       return <article class="tab-news__card">
         <time datetime={item.date}>{item.date}</time>
-        <h3><a href={`${zh ? '/zh' : ''}/news/${item.slug}`}>{copy.title}</a></h3>
+        <h3><a href={`${prefix}/news/${item.slug}`}>{copy.title}</a></h3>
         <p>{copy.description}</p>
-        <a class="tab-news__more" href={`${zh ? '/zh' : ''}/news/${item.slug}`}>{zh ? '阅读全文 →' : 'Read update →'}</a>
+        <a class="tab-news__more" href={`${prefix}/news/${item.slug}`}>{labels?.read ?? (zh ? '阅读全文 →' : 'Read update →')}</a>
       </article>;
     })}
   </div>
