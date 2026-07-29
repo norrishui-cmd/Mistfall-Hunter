@@ -297,7 +297,7 @@ export const INDEXABLE_SLUGS = new Set([
 export const INDEXABLE_TAB_NEWS_SLUGS = new Set([
   'release-date-july-29-confirmed','pc-xbox-ps5-platforms-confirmed','open-beta-430k-players-milestone','launch-day-content-lineup-confirmed','pc-system-requirements-published',
   'official-gameplay-loop-explained','solo-and-three-player-squads-confirmed','six-classes-two-weapon-stances','returner-woodling-extraction-role','pvpve-survival-priorities',
-  'build-system-talents-affixes-skills','weapon-stance-build-planning','gem-affix-priority-framework','solo-vs-squad-build-differences','launch-meta-verification-policy',
+  'build-system-talents-affixes-skills','weapon-stance-build-planning','gem-affix-priority-framework','solo-vs-squad-build-differences','mace-seer-nerfed-for-launch',
   'bellring-anti-cheat-disclosure','xbox-pc-cross-platform-features','online-coop-two-to-three-players','online-match-player-count-listing','official-no-pay-to-win-position',
   'hallowgrove-bleached-forest-map-confirmed','hallowgrove-three-regions-named','solemn-needles-original-zone','crossplay-confirmed-shared-maps','map-details-may-shift-before-launch',
   'salmar-cursed-moonwane-origin-revealed','fallen-general-harald-named','mist-lord-normal-chaos-difficulty','holy-weapons-exclusive-boss-drops','cataclysm-best-gear-source',

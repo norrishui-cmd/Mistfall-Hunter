@@ -19,13 +19,13 @@ const supportCards = [
 const guideCards = [
   { title: 'Beginner guide', desc: 'First extraction, death risk, and core loop.', href: '/beginner-guide' },
   { title: 'Gameplay overview', desc: 'Combat, loot, PvP, PvE, and extraction.', href: '/gameplay-overview' },
-  { title: 'How to extract', desc: 'Bell, shrine, Soul of Return, and exit safety.', href: '/how-to-extract' },
+  { title: 'Soul of Return', desc: 'The extraction objective and safe exit timing.', href: '/soul-of-return' },
 ];
 
 const classCards = [
   { title: 'Classes', desc: 'All confirmed class roles and beginner fit.', href: '/classes' },
-  { title: 'Best class for beginners', desc: 'Safe first picks by learning curve.', href: '/best-class-for-beginners' },
-  { title: 'Class skill trees', desc: 'Upgrade planning by role and route.', href: '/class-skill-trees' },
+  { title: 'Builds', desc: 'Upgrade planning and gear direction by role.', href: '/builds' },
+  { title: 'PvP guide', desc: 'Fights, third parties, and extraction duels.', href: '/pvp-guide' },
 ];
 
 const briefs: FaqBrief[] = [
@@ -162,6 +162,13 @@ function createPage(brief: FaqBrief): SeoPage {
 function localizeDraft(page: SeoPage): SeoPage {
   return {
     ...page,
+    // Every other file's localizeDraft() sets this explicitly — this one
+    // didn't, which meant isIndexable(page) (seoPages.ts) never saw the
+    // draft flag and fell through to treating every zh page from this file
+    // as indexable, regardless of ZH_DRAFT_SLUGS membership (that set only
+    // gates the sitemap's URL-based check, not this meta-tag path). Found
+    // 2026-07-29 while auditing two just-promoted EN slugs from this file.
+    draft: true,
     title: `${page.title} | Chinese Draft`,
     description: `${page.description} Chinese FAQ draft reserved for localization and launch data.`,
     eyebrow: 'ZH FAQ long-tail',

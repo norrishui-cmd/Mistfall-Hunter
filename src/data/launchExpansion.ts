@@ -45,13 +45,13 @@ export const enLaunchPages: SeoPage[] = [
     slug: 'pay-to-win',
     group: 'news',
     title: 'Is Mistfall Hunter Pay-to-Win? What Bellring Has Confirmed',
-    description: "Bellring Games has repeatedly stated Mistfall Hunter has no pay-to-win mechanics and no paid stat boosts. Here's exactly what that does and doesn't tell you.",
+    description: "Bellring Games states Mistfall Hunter has no pay-to-win mechanics and no paid stat boosts. Here's what's confirmed at launch and what's still open.",
     eyebrow: 'Monetization',
     h1: 'Is Mistfall Hunter pay-to-win?',
-    lead: "Bellring's own marketing is unusually direct on this point: no pay-to-win, no paid stat boosts. Here's what's confirmed and what still needs watching.",
+    lead: "Bellring's own marketing is unusually direct on this point: no pay-to-win, no paid stat boosts. Here's what's confirmed now that the game has launched.",
     sections: [
       { heading: 'What Bellring has said', body: ['Both the official Steam listing and the open beta\'s own marketing repeat the same line: there are no pay-to-win mechanics and no paid stat boosts, and victory is meant to come down to skill and preparation rather than spending. That framing has shown up consistently across the game\'s own store copy and press materials, not just a one-off marketing line.'] },
-      { heading: 'What is still pending confirmation', body: ['"No stat boosts" doesn\'t automatically tell you what IS for sale. Cosmetics are near-certain given the beta\'s avatar frames, poses, and emotes, and the beta\'s Golden Cipher event also pointed to Deluxe and Standard edition tiers existing. None of that confirms final pricing, whether there\'s a battle pass, or how convenience items will be sold. Treat the no-P2W promise as solid and the rest of the shop as still pending confirmation until launch.'], bullets: ['Cosmetic-only rewards are the confirmed pattern so far', 'Deluxe and Standard editions exist in some form (beta event context)', 'No confirmed battle pass or season pass structure yet', 'Final price is still not announced'] },
+      { heading: 'What is confirmed at launch', body: ['Pricing is now confirmed: Standard Edition is $24.99 and Deluxe Edition is $39.99 (or a $15 upgrade from Standard), with a 10% launch discount through August 12, 2026. Season 1 (Soul Hunt) ships with a completely free Battle Pass \u2014 no paid season pass at launch. Cosmetics, matching the beta\'s avatar frames, poses, and emotes, remain the confirmed shop pattern so far.'], bullets: ['Standard $24.99 / Deluxe $39.99, confirmed', 'Season 1 Battle Pass is free, not paid', 'Cosmetic-only rewards are the confirmed shop pattern', 'Exact convenience-item pricing beyond cosmetics is not yet detailed'] },
     ],
     cards: [
       { title: 'Release date & price', desc: 'Standard vs Deluxe pricing and launch discount.', href: '/release-date' },
@@ -179,13 +179,13 @@ export const zhLaunchPages: SeoPage[] = [
     slug: 'pay-to-win',
     group: 'news',
     title: 'Mistfall Hunter 是数值付费游戏吗？Bellring 官方怎么说',
-    description: 'Bellring Games 多次表示 Mistfall Hunter 没有数值付费机制、不卖属性加成。这里讲清楚这句话到底确认了什么、还没确认什么。',
+    description: 'Bellring Games 表示 Mistfall Hunter 没有数值付费机制、不卖属性加成。这里是发售时已确认的信息，以及仍然待观察的部分。',
     eyebrow: '氪金机制',
     h1: 'Mistfall Hunter 是数值付费游戏吗？',
-    lead: 'Bellring 自己的宣传在这一点上说得很直接：不数值付费、不卖属性加成。这里讲清楚哪些已确认、哪些还要观察。',
+    lead: 'Bellring 自己的宣传在这一点上说得很直接：不数值付费、不卖属性加成。游戏已经上线，这里是目前已确认的信息。',
     sections: [
       { heading: 'Bellring 说了什么', body: ['官方 Steam 商店页面和公开测试期的宣传口径一致：没有数值付费机制、不出售属性加成，胜负取决于技术和准备，而不是花钱多少。这个说法在官方商店文案和媒体通稿里反复出现，不是一次性的营销话术。'] },
-      { heading: '还没确认的部分', body: ['"不卖属性加成"不代表商城里会卖什么都清楚了。从测试期的头像框、姿势和表情来看，外观类内容几乎是肯定会卖的；测试期的 Golden Cipher 活动也说明豪华版和标准版这类版本分级是存在的。但这些都不能确认最终定价、是否有战令或赛季通行证，也不能确认便利类道具会怎么卖。"不数值付费"这一条可以放心，商城其余部分请等发售后再看。'], bullets: ['目前确认的模式是纯外观奖励', '豪华版与标准版这类版本存在（来自测试期活动信息）', '尚未确认是否有战令/赛季通行证', '最终价格仍未公布'] },
+      { heading: '发售时已确认的信息', body: ['价格现已确认：标准版 24.99 美元，豪华版 39.99 美元（或从标准版加价 15 美元升级），发售有 10% 折扣，持续到 2026 年 8 月 12 日。第一赛季（Soul Hunt）的战斗通行证完全免费——发售时没有付费赛季通行证。外观类内容延续测试期头像框、姿势和表情的模式，是目前确认的商城形态。'], bullets: ['标准版 24.99 美元 / 豪华版 39.99 美元，已确认', '第一赛季通行证免费，不是付费制', '目前确认的商城模式是纯外观奖励', '外观之外的便利类道具具体定价尚未详细公布'] },
     ],
     cards: [
       { title: '发售日期与价格', desc: '标准版与豪华版定价、首发折扣。', href: '/zh/release-date' },
