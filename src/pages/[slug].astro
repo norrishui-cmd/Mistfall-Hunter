@@ -34,7 +34,14 @@ export function getStaticPaths() {
 const lang = 'en' as const;
 const { page } = Astro.props as { page: SeoPage };
 const noindex = !isIndexable(page);
-const tabCluster = GROUP_TO_TAB_CLUSTER[page.group];
+// A handful of slugs get their own dedicated tab cluster (bosses) instead
+// of inheriting whatever their SeoPage['group'] maps to — 'bosses' has
+// group:'database' (which normally maps to 'builds'), but now that Bosses
+// is its own main-nav item, it should show the dedicated bosses news/FAQ.
+const SLUG_CLUSTER_OVERRIDE: Partial<Record<string, TabFaqCluster>> = {
+  bosses: 'bosses',
+};
+const tabCluster = SLUG_CLUSTER_OVERRIDE[page.slug] ?? GROUP_TO_TAB_CLUSTER[page.group];
 const site = Astro.site ?? new URL('https://mistfallhunter.me');
 const pageUrl = new URL(`/${page.slug}`, site).href;
 const seedText = [

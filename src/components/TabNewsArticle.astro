@@ -9,6 +9,12 @@ const { item, lang } = Astro.props as Props;
 const zh = lang === 'zh';
 const copy = lang === 'de' || lang === 'ja' ? getDeepNewsLocale(item.slug,item.cluster,lang) : zh ? item.zh : item.en;
 const cluster = newsClusters[item.cluster];
+// Maps and Bosses only have a hub page (/map, /bosses) in en/zh — the nav
+// item itself is gated to those two locales. For de/ja, which do have a
+// /news system but not those hub pages, falling back to /news avoids a
+// dead "back to hub" link instead of localizing a page that doesn't exist.
+const clusterHrefSupportedInLang = lang === 'en' || lang === 'zh' || (item.cluster !== 'maps' && item.cluster !== 'bosses');
+const backHref = clusterHrefSupportedInLang ? cluster.href : '/news';
 const source = tabNewsSources[item.source];
 const prefix = lang === 'en' ? '' : `/${lang}`;
 const path = `/news/${item.slug}`;
@@ -36,7 +42,7 @@ const breadcrumb = {'@context':'https://schema.org','@type':'BreadcrumbList',ite
       <h2>{labels?.why ?? (zh?'为什么值得关注':'Why this matters')}</h2><p>{copy.why}</p>
       <h2>{labels?.watch ?? (zh?'接下来需要关注什么':'What to watch next')}</h2><p>{copy.watch}</p>
       <h2>{labels?.verify ?? (zh?'来源与核实原则':'Source and verification')}</h2><p>{labels?.verifyText ?? (zh?'本文只把官方商店当前可见内容写成已确认事实。':'This update treats only currently visible official-store information as confirmed.')}</p>
-      <p><a href={source.url} rel="noopener noreferrer">{labels?.original ?? (zh?'查看官方原始页面':'Open the original official listing')}</a> · <a href={`${prefix}${cluster.href}`}>{labels?.back ?? (zh?'返回所属 Tab':'Return to topic hub')}</a></p>
+      <p><a href={source.url} rel="noopener noreferrer">{labels?.original ?? (zh?'查看官方原始页面':'Open the original official listing')}</a> · <a href={`${prefix}${backHref}`}>{labels?.back ?? (zh?'返回所属 Tab':'Return to topic hub')}</a></p>
     </div>
     <TabNewsModule cluster={item.cluster} lang={lang} /><RelatedFaqModule cluster="news" lang={lang} />
   </div></article>

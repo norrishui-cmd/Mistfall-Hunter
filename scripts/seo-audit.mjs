@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { INDEXABLE_GAME_DATA_SLUGS, SECOND_EDITION_GAME_DATA_SLUGS } from '../src/data/seoRegistry.mjs';
+import { INDEXABLE_GAME_DATA_SLUGS, SECOND_EDITION_GAME_DATA_SLUGS, INDEXABLE_TAB_NEWS_SLUGS } from '../src/data/seoRegistry.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
@@ -344,7 +344,8 @@ for (const pathname of tabHubs) {
 }
 
 const tabNewsPages = indexablePages.filter((page) => /^\/(?:zh\/)?news\/[^/]+\/$/.test(page.pathname));
-if (tabNewsPages.length !== 50) fail(`expected 50 indexable tab news URLs, found ${tabNewsPages.length}`);
+const expectedTabNewsPages = INDEXABLE_TAB_NEWS_SLUGS.size * 2; // en + zh
+if (tabNewsPages.length !== expectedTabNewsPages) fail(`expected ${expectedTabNewsPages} indexable tab news URLs, found ${tabNewsPages.length}`);
 for (const page of tabNewsPages) {
   const newsSchemas = parsedSchemas(page).filter((schema) => schema['@type'] === 'NewsArticle');
   if (newsSchemas.length !== 1) { fail(`${page.pathname}: expected one NewsArticle schema`); continue; }
