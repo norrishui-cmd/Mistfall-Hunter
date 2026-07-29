@@ -568,6 +568,306 @@ const de: LocalizedCorePage[] = [
       { heading: "Worauf du achten musst", paragraphs: ["Von Blackarrow-Sichtlinien oder Shadowstrix-Resets geködert zu werden, ist ein häufiges Risiko."] },
     ], related: [],
   },
+  {
+    slug: 'hallowgrove-solo-route', title: "Mistfall Hunter Hallowgrove Solo-Route: Leises Loot, Ausgänge & Reset-Punkte",
+    description: "Für Solospieler, die Hallowgrove lernen: kurze, leise Routen, die zur Extraktion zurückführen.",
+    eyebrow: 'Guide', h1: "Hallowgrove Solo-Route",
+    lead: "Für Solospieler, die Hallowgrove lernen: kurze, leise Routen, die zur Extraktion zurückführen.",
+    sections: [
+      { heading: "Kurze, leise Routen", paragraphs: ["Bevorzuge kurze, leise Routen, die dich zur Extraktion zurückbringen, statt die Karte zu weit zu erkunden."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Zu lange nach dem ersten brauchbaren Fund zu bleiben, ist das Hauptrisiko."] },
+    ], related: [],
+  },
+  {
+    slug: 'hallowgrove-loot-route', title: "Mistfall Hunter Hallowgrove Loot-Route: Sichere Ressourcen & Banking-Regeln",
+    description: "Für Spieler, die frühe Hallowgrove-Ressourcen farmen: wiederholbare Routen mit klaren Stopp-Regeln.",
+    eyebrow: 'Guide', h1: "Hallowgrove Loot-Route",
+    lead: "Für Spieler, die frühe Hallowgrove-Ressourcen farmen: wiederholbare Routen mit klaren Stopp-Regeln.",
+    sections: [
+      { heading: "Wiederholbare Routen mit Stopp-Regel", paragraphs: ["Nutze wiederholbare Ressourcenrouten mit einer klaren Regel, wann du aufhörst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Einen guten Loot-Lauf in ein Boss- oder PvP-Risiko zu verwandeln, ist der häufigste Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'hallowgrove-boss-route', title: "Mistfall Hunter Hallowgrove Boss-Route: PvE-Vorbereitung, PvP-Risiko & Extraktion",
+    description: "Für Spieler, die Hallowgrove-Bossziele planen: Bosskämpfe nur mit Rückzugs- und Beuteplan angehen.",
+    eyebrow: 'Guide', h1: "Hallowgrove Boss-Route",
+    lead: "Für Spieler, die Hallowgrove-Bossziele planen: Bosskämpfe nur mit Rückzugs- und Beuteplan angehen.",
+    sections: [
+      { heading: "Nur mit Plan angehen", paragraphs: ["Gehe Bosskämpfe nur mit einem klaren Rückzugs- und Beuteplan an."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Einen lauten Kampf ohne Fluchtweg zu beginnen, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'hallowgrove-chaos-route', title: "Mistfall Hunter Hallowgrove Chaos-Route: Varianten-Risiko & sicheres Scouting",
+    description: "Für Spieler, die Hallowgrove-Chaos-Varianten betreten: Varianten zuerst als Informationsläufe behandeln.",
+    eyebrow: 'Guide', h1: "Hallowgrove Chaos-Route",
+    lead: "Für Spieler, die Hallowgrove-Chaos-Varianten betreten: Varianten zuerst als Informationsläufe behandeln.",
+    sections: [
+      { heading: "Erst erkunden, dann farmen", paragraphs: ["Behandle Varianten zuerst als Informationsläufe, bevor du sie als Farmroute nutzt."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Basiskarten-Routen blind unter veränderten Bedingungen zu nutzen, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'hallowgrove-extraction-points', title: "Mistfall Hunter Hallowgrove Extraktionspunkte: Ausgangsplanung & Hinterhaltsicherheit",
+    description: "Für Spieler, die Hallowgrove-Ausgänge suchen: Ausgänge vor den Zielen planen.",
+    eyebrow: 'Guide', h1: "Hallowgrove Extraktionspunkte",
+    lead: "Für Spieler, die Hallowgrove-Ausgänge suchen: Ausgänge vor den Zielen planen.",
+    sections: [
+      { heading: "Ausgänge zuerst planen", paragraphs: ["Plane deine Ausgänge, bevor du dich auf ein Ziel festlegst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Verletzt, laut und ohne Ausdauer bei der Extraktion anzukommen, ist gefährlich."] },
+    ], related: [],
+  },
+  {
+    slug: 'brandrgarde-solo-route', title: "Mistfall Hunter Brandrgarde Solo-Route: Sicherere Pfade durch Hochrisikogebiete",
+    description: "Für Solospieler in Brandrgarde: die Gefährdung auf einer risikoreicheren Kartenroute reduzieren.",
+    eyebrow: 'Guide', h1: "Brandrgarde Solo-Route",
+    lead: "Für Solospieler in Brandrgarde: die Gefährdung auf einer risikoreicheren Kartenroute reduzieren.",
+    sections: [
+      { heading: "Gefährdung reduzieren", paragraphs: ["Reduziere deine Gefährdung, indem du sicherere Pfade statt zentraler Kämpfe wählst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Zentrale Kämpfe ohne Unterstützung oder Reset-Tools anzunehmen, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'brandrgarde-loot-route', title: "Mistfall Hunter Brandrgarde Loot-Route: Hochwertige Stopps & Ausgangsregeln",
+    description: "Für Spieler, die Brandrgarde-Belohnungen farmen: hochwertige Stopps nutzen, ohne zu lange zu bleiben.",
+    eyebrow: 'Guide', h1: "Brandrgarde Loot-Route",
+    lead: "Für Spieler, die Brandrgarde-Belohnungen farmen: hochwertige Stopps nutzen, ohne zu lange zu bleiben.",
+    sections: [
+      { heading: "Hochwertige Stopps nutzen", paragraphs: ["Nutze hochwertige Stopps, ohne die Karte zu lange zu beanspruchen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Gier nach seltenen Ressourcen oder bossnaher Beute ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'brandrgarde-boss-route', title: "Mistfall Hunter Brandrgarde Boss-Route: Mist-Lord-Vorbereitung & PvP-Druck",
+    description: "Für Spieler, die Brandrgarde-Bossläufe planen: Boss-Belohnungen und PvP-Druck als ein Routenproblem behandeln.",
+    eyebrow: 'Guide', h1: "Brandrgarde Boss-Route",
+    lead: "Für Spieler, die Brandrgarde-Bossläufe planen: Boss-Belohnungen und PvP-Druck als ein Routenproblem behandeln.",
+    sections: [
+      { heading: "Belohnung und PvP zusammen denken", paragraphs: ["Behandle Boss-Belohnungen und PvP-Druck als ein gemeinsames Routenproblem, nicht getrennt."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Den Boss zu gewinnen, aber den Extraktionskampf zu verlieren, ist ein häufiges Risiko."] },
+    ], related: [],
+  },
+  {
+    slug: 'brandrgarde-chaos-route', title: "Mistfall Hunter Brandrgarde Chaos-Route: Varianten-Scouting & Belohnungsrisiko",
+    description: "Für Spieler, die Brandrgarde-Chaos-Varianten testen: Varianten erkunden, bevor du sie als Farm behandelst.",
+    eyebrow: 'Guide', h1: "Brandrgarde Chaos-Route",
+    lead: "Für Spieler, die Brandrgarde-Chaos-Varianten testen: Varianten erkunden, bevor du sie als Farm behandelst.",
+    sections: [
+      { heading: "Erst erkunden", paragraphs: ["Erkunde Varianten zuerst, bevor du sie als wiederholbare Farmroute behandelst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Anzunehmen, dass jede gefährliche Variante die Belohnung wert ist, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'brandrgarde-extraction-points', title: "Mistfall Hunter Brandrgarde Extraktionspunkte: Ausgangsrouten & Endkämpfe",
+    description: "Für Spieler, die Brandrgarde-Ausgänge suchen: Ausgänge als Kampfzonen verstehen, nicht nur als Markierungen.",
+    eyebrow: 'Guide', h1: "Brandrgarde Extraktionspunkte",
+    lead: "Für Spieler, die Brandrgarde-Ausgänge suchen: Ausgänge als Kampfzonen verstehen, nicht nur als Markierungen.",
+    sections: [
+      { heading: "Ausgänge als Kampfzonen sehen", paragraphs: ["Verstehe Ausgänge als eigene Kampfzonen, nicht nur als Punkte auf der Karte."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Bei der Extraktion anzukommen, nachdem alle Cooldowns und Heilungen verbraucht sind, ist gefährlich."] },
+    ], related: [],
+  },
+  {
+    slug: 'gyldenmist-timer-guide', title: "Mistfall Hunter Gyldenmist-Timer-Guide: Korruption, Lauflänge & Extraktion",
+    description: "Für Spieler, die den Kampfdruck verstehen wollen: den Timer als Stopp-Regel statt als Panikauslöser nutzen.",
+    eyebrow: 'Guide', h1: "Gyldenmist-Timer-Guide",
+    lead: "Für Spieler, die den Kampfdruck verstehen wollen: den Timer als Stopp-Regel statt als Panikauslöser nutzen.",
+    sections: [
+      { heading: "Timer als Stopp-Regel", paragraphs: ["Nutze den Timer als klare Stopp-Regel, nicht als Grund zur Panik."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Zu warten, bis der Korruptionsdruck sichere Entscheidungen unmöglich macht, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'shrine-extraction-guide', title: "Mistfall Hunter Schrein-Extraktions-Guide: Aktivieren, Glockenkreatur jagen & Gehen",
+    description: "Für Spieler, die wissen wollen, wie Extraktion funktioniert: den Fluchtprozess in sichere Entscheidungen aufteilen.",
+    eyebrow: 'Guide', h1: "Schrein-Extraktions-Guide",
+    lead: "Für Spieler, die wissen wollen, wie Extraktion funktioniert: den Fluchtprozess in sichere Entscheidungen aufteilen.",
+    sections: [
+      { heading: "Fluchtprozess aufteilen", paragraphs: ["Teile den Fluchtprozess in klare, sichere Einzelentscheidungen auf."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Die Flucht ungeheilt oder exponiert zu aktivieren, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'bell-creature-guide', title: "Mistfall Hunter Glockenkreatur-Guide: Aufspüren, Töten & Extraktions-Timing",
+    description: "Für neue Spieler, die das Extraktionsziel lernen: die Glockenkreatur als geplantes Ziel behandeln, nicht als panische Jagd.",
+    eyebrow: 'Guide', h1: "Glockenkreatur-Guide",
+    lead: "Für neue Spieler, die das Extraktionsziel lernen: die Glockenkreatur als geplantes Ziel behandeln, nicht als panische Jagd.",
+    sections: [
+      { heading: "Geplantes Ziel, keine Panikjagd", paragraphs: ["Behandle die Glockenkreatur als geplantes Ziel statt als panische Verfolgung."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Das Ziel in gegnerische Spieler oder PvE-Gruppen zu jagen, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'loot-loss-guide', title: "Mistfall Hunter Beuteverlust-Guide: Was passiert, wenn du stirbst?",
+    description: "Für Spieler, die sich Sorgen um verlorene Ausrüstung machen: das Todesrisiko verständlich und handhabbar machen.",
+    eyebrow: 'Guide', h1: "Beuteverlust-Guide",
+    lead: "Für Spieler, die sich Sorgen um verlorene Ausrüstung machen: das Todesrisiko verständlich und handhabbar machen.",
+    sections: [
+      { heading: "Todesrisiko verständlich machen", paragraphs: ["Mache dir das Todesrisiko bewusst, statt es zu ignorieren oder zu überschätzen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Ausrüstung mitzubringen, die du dir beim Lernen nicht leisten kannst zu verlieren, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'stash-management-guide', title: "Mistfall Hunter Lager-Guide: Was behalten, verkaufen & riskieren?",
+    description: "Für Spieler, die extrahierte Beute organisieren: extrahierte Beute in zukünftige Laufoptionen verwandeln.",
+    eyebrow: 'Guide', h1: "Lager-Guide",
+    lead: "Für Spieler, die extrahierte Beute organisieren: extrahierte Beute in zukünftige Laufoptionen verwandeln.",
+    sections: [
+      { heading: "Beute in Optionen verwandeln", paragraphs: ["Verwandle extrahierte Beute in Optionen für zukünftige Läufe, statt sie nur zu horten."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Geringwertige Items zu horten, während nützliche Ausrüstung in schlechten Routen riskiert wird, ist ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'gear-score-guide', title: "Mistfall Hunter Ausrüstungswert-Guide: Waffen, Rüstung & Affixe bewerten",
+    description: "Für Spieler, die entscheiden, ob sich Ausrüstung lohnt: Ausrüstung nach Rolle und Extraktionswert bewerten.",
+    eyebrow: 'Guide', h1: "Ausrüstungswert-Guide",
+    lead: "Für Spieler, die entscheiden, ob sich Ausrüstung lohnt: Ausrüstung nach Rolle und Extraktionswert bewerten.",
+    sections: [
+      { heading: "Nach Rolle und Wert bewerten", paragraphs: ["Bewerte Ausrüstung danach, wie gut sie zu deiner Rolle passt und was sie bei Extraktion wert ist."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Seltene Items zu behalten, die nicht zu deinem Klassenplan passen, ist ein häufiger Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'perfect-block-guide', title: "Mistfall Hunter Perfect-Block-Guide: Timing, Ausdauer & Konterfenster",
+    description: "Für Spieler, die defensiven Kampf lernen: defensives Timing nutzen, um sichere Konterfenster zu schaffen.",
+    eyebrow: 'Guide', h1: "Perfect-Block-Guide",
+    lead: "Für Spieler, die defensiven Kampf lernen: defensives Timing nutzen, um sichere Konterfenster zu schaffen.",
+    sections: [
+      { heading: "Sichere Konterfenster schaffen", paragraphs: ["Nutze präzises Timing, um sichere Konterfenster zu schaffen, statt wahllos zu blocken."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Perfect Blocks zu versuchen, wenn Ausweichen die sicherere Antwort ist, ist ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'no-lock-on-combat-guide', title: "Mistfall Hunter Kampf ohne Lock-On: Kamera, Positionierung & PvP-Zielen",
+    description: "Für Spieler, die von Soulslike-Lock-On-Kämpfen umsteigen: Kamerakontrolle als Kampffähigkeit behandeln.",
+    eyebrow: 'Guide', h1: "Kampf ohne Lock-On",
+    lead: "Für Spieler, die von Soulslike-Lock-On-Kämpfen umsteigen: Kamerakontrolle als Kampffähigkeit behandeln.",
+    sections: [
+      { heading: "Kamerakontrolle als Fähigkeit", paragraphs: ["Behandle Kamerakontrolle als eigene Kampffähigkeit, die geübt werden muss."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Angriffe zu verfehlen, weil Bewegung und Zielen nicht abgestimmt sind, ist ein häufiges Problem."] },
+    ], related: [],
+  },
+  {
+    slug: 'weapon-swap-guide', title: "Mistfall Hunter Waffenwechsel-Guide: Fähigkeitswechsel, Cooldowns & Kampfpläne",
+    description: "Für Spieler, die die Waffenflexibilität ihrer Klasse lernen: Waffenwechsel nutzen, um mitten im Kampf die Rolle zu ändern.",
+    eyebrow: 'Guide', h1: "Waffenwechsel-Guide",
+    lead: "Für Spieler, die die Waffenflexibilität ihrer Klasse lernen: Waffenwechsel nutzen, um mitten im Kampf die Rolle zu ändern.",
+    sections: [
+      { heading: "Rolle mitten im Kampf ändern", paragraphs: ["Nutze Waffenwechsel, um deine Rolle im Kampf zu ändern, ohne die Disziplin zu verlieren."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Zu wechseln, ohne zu wissen, welches Fähigkeitsfenster gebraucht wird, ist ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'co-op-team-guide', title: "Mistfall Hunter Koop-Team-Guide: Rollen, Calls & Extraktionsdisziplin",
+    description: "Für Spieler, die mit Freunden spielen: aus drei Spielern einen Plan machen, statt drei getrennte Duelle.",
+    eyebrow: 'Guide', h1: "Koop-Team-Guide",
+    lead: "Für Spieler, die mit Freunden spielen: aus drei Spielern einen Plan machen, statt drei getrennte Duelle.",
+    sections: [
+      { heading: "Einen Plan statt drei Duelle", paragraphs: ["Baue einen gemeinsamen Plan statt drei getrennter Duelle auf."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Sich zu weit aufzuteilen, doppelt zu looten oder Ausgänge zu ignorieren, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'solo-vs-squad-guide', title: "Mistfall Hunter Solo vs. Squad: Routenwahl, Risiko & beste Klassen",
+    description: "Für Spieler, die entscheiden, wie sie spielen: unterschiedliche Teamgrößen brauchen unterschiedliche Stopp-Regeln.",
+    eyebrow: 'Guide', h1: "Solo vs. Squad",
+    lead: "Für Spieler, die entscheiden, wie sie spielen: unterschiedliche Teamgrößen brauchen unterschiedliche Stopp-Regeln.",
+    sections: [
+      { heading: "Unterschiedliche Stopp-Regeln", paragraphs: ["Passe deine Stopp-Regeln an die jeweilige Teamgröße an."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Squad-Gewohnheiten solo oder Solo-Gewohnheiten im Team anzuwenden, ist ein häufiger Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'third-party-guide', title: "Mistfall Hunter Third-Party-Guide: Vermeiden, Bestrafen & PvP-Kollaps entkommen",
+    description: "Für Spieler, die nach gewonnenen Kämpfen sterben: der nächste Kampf ist oft gefährlicher als der erste.",
+    eyebrow: 'Guide', h1: "Third-Party-Guide",
+    lead: "Für Spieler, die nach gewonnenen Kämpfen sterben: der nächste Kampf ist oft gefährlicher als der erste.",
+    sections: [
+      { heading: "Der nächste Kampf ist gefährlicher", paragraphs: ["Denk daran, dass der nächste Kampf oft gefährlicher ist als der, den du gerade gewonnen hast."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Sofort nach einem Kill oder Bossloot zu looten, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'sound-cues-guide', title: "Mistfall Hunter Sound-Guide: Schritte, Kämpfe, Bossgeräusche & Extraktion",
+    description: "Für Spieler, die Gefahr hören wollen, bevor sie sie sehen: Sound ist Routeninformation, kein Hintergrundgeräusch.",
+    eyebrow: 'Guide', h1: "Sound-Guide",
+    lead: "Für Spieler, die Gefahr hören wollen, bevor sie sie sehen: Sound ist Routeninformation, kein Hintergrundgeräusch.",
+    sections: [
+      { heading: "Sound als Information", paragraphs: ["Behandle Geräusche als wichtige Routeninformation, nicht als Hintergrund."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Lange Kämpfe zu ignorieren und in stärkere Teams zu laufen, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'beginner-loadout-guide', title: "Mistfall Hunter Anfänger-Loadout-Guide: Günstige Kits, sichere Waffen & erste Extraktionen",
+    description: "Für neue Spieler, die ihre ersten Läufe vorbereiten: nur riskieren, was dir beim Lernen hilft.",
+    eyebrow: 'Guide', h1: "Anfänger-Loadout-Guide",
+    lead: "Für neue Spieler, die ihre ersten Läufe vorbereiten: nur riskieren, was dir beim Lernen hilft.",
+    sections: [
+      { heading: "Nur riskieren, was hilft", paragraphs: ["Riskiere nur Ausrüstung, die dir tatsächlich beim Lernen hilft."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Teure Ausrüstung mitzubringen, bevor du Ausgänge verstehst, ist ein häufiger Anfängerfehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-settings-low-end-pc', title: "Mistfall Hunter beste Einstellungen für schwache PCs: FPS, Ruckler & Sichtbarkeit",
+    description: "Für PC-Spieler, die stabile Leistung priorisieren: Framestabilität vor visuellem Luxus.",
+    eyebrow: 'Guide', h1: "Beste Einstellungen für schwache PCs",
+    lead: "Für PC-Spieler, die stabile Leistung priorisieren: Framestabilität vor visuellem Luxus.",
+    sections: [
+      { heading: "Stabilität vor Optik", paragraphs: ["Priorisiere Framestabilität vor visuellem Luxus."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Die Lesbarkeit so weit zu senken, dass PvP-Bewusstsein leidet, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-class-for-pvp', title: "Mistfall Hunter beste Klasse für PvP: Druck, Picks, Support & Konter",
+    description: "Für Spieler, die einen PvP-Main wählen: Klassen nach Kampfkontrolle und Extraktionssicherheit einordnen.",
+    eyebrow: 'Guide', h1: "Beste Klasse für PvP",
+    lead: "Für Spieler, die einen PvP-Main wählen: Klassen nach Kampfkontrolle und Extraktionssicherheit einordnen.",
+    sections: [
+      { heading: "Kontrolle vor Duellstärke", paragraphs: ["Ordne Klassen nach Kampfkontrolle und Extraktionssicherheit ein, nicht nur nach Duellstärke."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Duellstärke mit echtem Extraktions-PvP-Wert zu verwechseln, ist ein häufiger Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-class-for-bosses', title: "Mistfall Hunter beste Klasse für Bosse: PvE-Schaden, Support & Extraktionssicherheit",
+    description: "Für Spieler, die für PvE-Ziele bauen: Boss-Wert schließt die Fähigkeit ein, mit der Belohnung zu entkommen.",
+    eyebrow: 'Guide', h1: "Beste Klasse für Bosse",
+    lead: "Für Spieler, die für PvE-Ziele bauen: Boss-Wert schließt die Fähigkeit ein, mit der Belohnung zu entkommen.",
+    sections: [
+      { heading: "Entkommen zählt mit", paragraphs: ["Der wahre Wert einer Klasse gegen Bosse schließt ein, ob du mit der Belohnung entkommst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Nur nach Schaden zu ranken und Third-Party-Druck zu ignorieren, ist ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-class-for-solo', title: "Mistfall Hunter beste Klasse für Solo-Extraktion: Sicherheit, Reset-Tools & Routen",
+    description: "Für Spieler, die Solo-Läufe planen: Solo-Stärke bedeutet Kontrolle darüber, wann Kämpfe stattfinden.",
+    eyebrow: 'Guide', h1: "Beste Klasse für Solo-Extraktion",
+    lead: "Für Spieler, die Solo-Läufe planen: Solo-Stärke bedeutet Kontrolle darüber, wann Kämpfe stattfinden.",
+    sections: [
+      { heading: "Kontrolle über Kampfbeginn", paragraphs: ["Solo-Stärke bedeutet, selbst zu entscheiden, wann ein Kampf beginnt."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Eine squad-fokussierte Klasse ohne genug Solo-Druck zu wählen, ist ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'class-counters-guide', title: "Mistfall Hunter Klassen-Konter-Guide: Matchups, Abstand & Team-Antworten",
+    description: "Für Spieler, die PvP-Matchups lernen: Konterspiel beginnt mit Abstand und Routenwahl.",
+    eyebrow: 'Guide', h1: "Klassen-Konter-Guide",
+    lead: "Für Spieler, die PvP-Matchups lernen: Konterspiel beginnt mit Abstand und Routenwahl.",
+    sections: [
+      { heading: "Konterspiel beginnt mit Abstand", paragraphs: ["Konterspiel beginnt mit gutem Abstand und der richtigen Routenwahl, nicht nur mit Skills."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Harte Konter anzunehmen, bevor Live-Balance bestätigt ist, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'class-roles-guide', title: "Mistfall Hunter Klassenrollen-Guide: Frontline, Fernkampf, Stealth, Magie & Support",
+    description: "Für Spieler, die Teams bauen oder einen Main wählen: erst die Rolle wählen, dann den Build.",
+    eyebrow: 'Guide', h1: "Klassenrollen-Guide",
+    lead: "Für Spieler, die Teams bauen oder einen Main wählen: erst die Rolle wählen, dann den Build.",
+    sections: [
+      { heading: "Rolle vor Build", paragraphs: ["Wähle zuerst deine Rolle im Team, dann erst den konkreten Build."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Drei Spieler auf derselben Rolle ohne Support-Plan zu stapeln, ist ein häufiger Fehler."] },
+    ], related: [],
+  },
 ];
 
 const ja: LocalizedCorePage[] = [
@@ -1124,6 +1424,306 @@ const ja: LocalizedCorePage[] = [
     sections: [
       { heading: "追う・打ち合う・リセット", paragraphs: ["いつ追い、いつ打ち合い、いつリセットすべきかを見極めましょう。"] },
       { heading: "注意点", paragraphs: ["Blackarrowの見通しやShadowstrixのリセットに釣られるのはよくある危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'hallowgrove-solo-route', title: "Mistfall Hunter Hallowgrove ソロルート：静かな戦利品・出口・リセット地点",
+    description: "Hallowgroveを学ぶソロプレイヤー向け。脱出に戻る短く静かなルートを重視します。",
+    eyebrow: 'ガイド', h1: "Hallowgrove ソロルート",
+    lead: "Hallowgroveを学ぶソロプレイヤー向け。脱出に戻る短く静かなルートを重視します。",
+    sections: [
+      { heading: "短く静かなルート", paragraphs: ["マップを広く探索するより、脱出に戻れる短く静かなルートを優先しましょう。"] },
+      { heading: "注意点", paragraphs: ["最初の有用な拾い物の後に長居しすぎるのが主なリスクです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'hallowgrove-loot-route', title: "Mistfall Hunter Hallowgrove 戦利品ルート：安全な資源とバンキングルール",
+    description: "Hallowgroveの序盤資源を集めるプレイヤー向け。明確な停止ルールを持つ反復可能なルートを重視します。",
+    eyebrow: 'ガイド', h1: "Hallowgrove 戦利品ルート",
+    lead: "Hallowgroveの序盤資源を集めるプレイヤー向け。明確な停止ルールを持つ反復可能なルートを重視します。",
+    sections: [
+      { heading: "停止ルール付きの反復ルート", paragraphs: ["明確な停止ルールを持つ、繰り返し使える資源ルートを活用しましょう。"] },
+      { heading: "注意点", paragraphs: ["良い戦利品ランをボスやPvPの賭けに変えてしまうのがよくある失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'hallowgrove-boss-route', title: "Mistfall Hunter Hallowgrove ボスルート：PvE準備・PvPリスク・脱出",
+    description: "Hallowgroveのボス目標を計画するプレイヤー向け。撤退と戦利品の計画を持ってボス戦に臨むことを重視します。",
+    eyebrow: 'ガイド', h1: "Hallowgrove ボスルート",
+    lead: "Hallowgroveのボス目標を計画するプレイヤー向け。撤退と戦利品の計画を持ってボス戦に臨むことを重視します。",
+    sections: [
+      { heading: "計画を持って挑む", paragraphs: ["明確な撤退と戦利品の計画を持ってのみボス戦に挑みましょう。"] },
+      { heading: "注意点", paragraphs: ["退路のないまま騒がしい戦闘を始めるのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'hallowgrove-chaos-route', title: "Mistfall Hunter Hallowgrove カオスルート：バリアントリスクと安全な偵察",
+    description: "Hallowgroveのカオスバリアントに入るプレイヤー向け。まず情報収集ランとして扱うことを重視します。",
+    eyebrow: 'ガイド', h1: "Hallowgrove カオスルート",
+    lead: "Hallowgroveのカオスバリアントに入るプレイヤー向け。まず情報収集ランとして扱うことを重視します。",
+    sections: [
+      { heading: "まず偵察してから farmする", paragraphs: ["バリアントはまず情報収集ランとして扱い、その後farmルートにしましょう。"] },
+      { heading: "注意点", paragraphs: ["変化した条件下で通常マップのルートを何も考えずに使うのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'hallowgrove-extraction-points', title: "Mistfall Hunter Hallowgrove 脱出地点：出口計画と待ち伏せ対策",
+    description: "Hallowgroveの出口を探すプレイヤー向け。目標より先に出口を計画することを重視します。",
+    eyebrow: 'ガイド', h1: "Hallowgrove 脱出地点",
+    lead: "Hallowgroveの出口を探すプレイヤー向け。目標より先に出口を計画することを重視します。",
+    sections: [
+      { heading: "出口を先に計画する", paragraphs: ["目的に取り組む前に、出口を計画しておきましょう。"] },
+      { heading: "注意点", paragraphs: ["負傷し、音を立て、スタミナ切れの状態で脱出地点に到着するのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'brandrgarde-solo-route', title: "Mistfall Hunter Brandrgarde ソロルート：高リスクエリアを安全に進む道",
+    description: "Brandrgardeに入るソロプレイヤー向け。よりリスクの高いマップでの被曝を減らすことを重視します。",
+    eyebrow: 'ガイド', h1: "Brandrgarde ソロルート",
+    lead: "Brandrgardeに入るソロプレイヤー向け。よりリスクの高いマップでの被曝を減らすことを重視します。",
+    sections: [
+      { heading: "被曝を減らす", paragraphs: ["中央での戦闘より安全な経路を選び、被曝を減らしましょう。"] },
+      { heading: "注意点", paragraphs: ["サポートやリセット手段なしで中央の戦闘を受けるのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'brandrgarde-loot-route', title: "Mistfall Hunter Brandrgarde 戦利品ルート：高価値ポイントと撤退ルール",
+    description: "Brandrgardeの報酬を稼ぐプレイヤー向け。長居せずに高価値ポイントを取ることを重視します。",
+    eyebrow: 'ガイド', h1: "Brandrgarde 戦利品ルート",
+    lead: "Brandrgardeの報酬を稼ぐプレイヤー向け。長居せずに高価値ポイントを取ることを重視します。",
+    sections: [
+      { heading: "高価値ポイントを活用", paragraphs: ["マップに長居しすぎず、高価値なポイントだけを取りましょう。"] },
+      { heading: "注意点", paragraphs: ["希少資源やボス周辺の戦利品への欲張りは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'brandrgarde-boss-route', title: "Mistfall Hunter Brandrgarde ボスルート：Mist Lord準備とPvP圧力",
+    description: "Brandrgardeのボスランを計画するプレイヤー向け。報酬とPvP圧力を一つの課題として扱うことを重視します。",
+    eyebrow: 'ガイド', h1: "Brandrgarde ボスルート",
+    lead: "Brandrgardeのボスランを計画するプレイヤー向け。報酬とPvP圧力を一つの課題として扱うことを重視します。",
+    sections: [
+      { heading: "報酬とPvPを一体で考える", paragraphs: ["ボス報酬とPvP圧力を別々ではなく、一つのルートの課題として考えましょう。"] },
+      { heading: "注意点", paragraphs: ["ボス戦に勝っても脱出戦に負けるのはよくあるリスクです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'brandrgarde-chaos-route', title: "Mistfall Hunter Brandrgarde カオスルート：バリアント偵察と報酬リスク",
+    description: "Brandrgardeのカオスバリアントを試すプレイヤー向け。farmとして扱う前にまず偵察することを重視します。",
+    eyebrow: 'ガイド', h1: "Brandrgarde カオスルート",
+    lead: "Brandrgardeのカオスバリアントを試すプレイヤー向け。farmとして扱う前にまず偵察することを重視します。",
+    sections: [
+      { heading: "まず偵察する", paragraphs: ["繰り返しfarmする前に、まずバリアントを偵察しましょう。"] },
+      { heading: "注意点", paragraphs: ["どんな危険なバリアント戦でも報酬に見合うと思い込むのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'brandrgarde-extraction-points', title: "Mistfall Hunter Brandrgarde 脱出地点：出口ルートと最終決戦",
+    description: "Brandrgardeの出口を探すプレイヤー向け。出口を単なるマーカーではなく戦闘エリアとして理解することを重視します。",
+    eyebrow: 'ガイド', h1: "Brandrgarde 脱出地点",
+    lead: "Brandrgardeの出口を探すプレイヤー向け。出口を単なるマーカーではなく戦闘エリアとして理解することを重視します。",
+    sections: [
+      { heading: "出口を戦闘エリアとして見る", paragraphs: ["出口を単なるマップのマーカーではなく、独立した戦闘エリアとして理解しましょう。"] },
+      { heading: "注意点", paragraphs: ["クールダウンと回復をすべて使い切った状態で脱出地点に到着するのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'gyldenmist-timer-guide', title: "Mistfall Hunter Gyldenmist タイマーガイド：汚染・ラン時間・脱出",
+    description: "対局のプレッシャーを理解したいプレイヤー向け。タイマーをパニックの引き金ではなく停止ルールとして使うことを重視します。",
+    eyebrow: 'ガイド', h1: "Gyldenmist タイマーガイド",
+    lead: "対局のプレッシャーを理解したいプレイヤー向け。タイマーをパニックの引き金ではなく停止ルールとして使うことを重視します。",
+    sections: [
+      { heading: "タイマーを停止ルールに", paragraphs: ["タイマーをパニックの引き金ではなく、明確な停止ルールとして使いましょう。"] },
+      { heading: "注意点", paragraphs: ["汚染の圧力が安全な選択肢を奪うまで待つのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'shrine-extraction-guide', title: "Mistfall Hunter 祠脱出ガイド：起動・ベルクリーチャー討伐・離脱",
+    description: "脱出の仕組みを知りたいプレイヤー向け。離脱プロセスを安全な判断に分解することを重視します。",
+    eyebrow: 'ガイド', h1: "祠脱出ガイド",
+    lead: "脱出の仕組みを知りたいプレイヤー向け。離脱プロセスを安全な判断に分解することを重視します。",
+    sections: [
+      { heading: "離脱プロセスを分解する", paragraphs: ["離脱プロセスを、安全な個々の判断に分解して考えましょう。"] },
+      { heading: "注意点", paragraphs: ["回復していない、または無防備な状態で離脱を起動するのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'bell-creature-guide', title: "Mistfall Hunter ベルクリーチャーガイド：追跡・討伐・脱出タイミング",
+    description: "脱出目標を学ぶ新規プレイヤー向け。ベルクリーチャーを計画的な目標として扱い、パニックの追跡にしないことを重視します。",
+    eyebrow: 'ガイド', h1: "ベルクリーチャーガイド",
+    lead: "脱出目標を学ぶ新規プレイヤー向け。ベルクリーチャーを計画的な目標として扱い、パニックの追跡にしないことを重視します。",
+    sections: [
+      { heading: "計画的な目標として扱う", paragraphs: ["ベルクリーチャーはパニックで追いかけるのではなく、計画的な目標として扱いましょう。"] },
+      { heading: "注意点", paragraphs: ["目標を追って敵プレイヤーやPvE集団に突っ込むのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'loot-loss-guide', title: "Mistfall Hunter 戦利品喪失ガイド：死亡時に何が起こるか",
+    description: "装備を失うことを心配するプレイヤー向け。死亡リスクを理解し、管理できるようにすることを重視します。",
+    eyebrow: 'ガイド', h1: "戦利品喪失ガイド",
+    lead: "装備を失うことを心配するプレイヤー向け。死亡リスクを理解し、管理できるようにすることを重視します。",
+    sections: [
+      { heading: "死亡リスクを理解する", paragraphs: ["死亡リスクを無視したり過大評価したりせず、正しく理解しましょう。"] },
+      { heading: "注意点", paragraphs: ["学習中に失うと困る装備を持ち込むのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'stash-management-guide', title: "Mistfall Hunter 保管庫管理ガイド：何を残し・売り・リスクにするか",
+    description: "脱出した戦利品を整理するプレイヤー向け。戦利品を将来のランの選択肢に変えることを重視します。",
+    eyebrow: 'ガイド', h1: "保管庫管理ガイド",
+    lead: "脱出した戦利品を整理するプレイヤー向け。戦利品を将来のランの選択肢に変えることを重視します。",
+    sections: [
+      { heading: "戦利品を選択肢に変える", paragraphs: ["ただ貯め込むのではなく、脱出した戦利品を将来のランの選択肢に変えましょう。"] },
+      { heading: "注意点", paragraphs: ["低価値なアイテムを貯め込みつつ、有用な装備を悪いルートで危険にさらすのは失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'gear-score-guide', title: "Mistfall Hunter 装備価値ガイド：武器・防具・Affixの見極め方",
+    description: "装備を保管する価値があるか判断するプレイヤー向け。役割適性と脱出価値で装備を評価することを重視します。",
+    eyebrow: 'ガイド', h1: "装備価値ガイド",
+    lead: "装備を保管する価値があるか判断するプレイヤー向け。役割適性と脱出価値で装備を評価することを重視します。",
+    sections: [
+      { heading: "役割適性と価値で評価", paragraphs: ["役割にどれだけ合っているか、脱出時の価値がどれだけあるかで装備を評価しましょう。"] },
+      { heading: "注意点", paragraphs: ["クラスプランに合わないレア装備を残してしまうのはよくある失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'perfect-block-guide', title: "Mistfall Hunter 完璧なブロックガイド：タイミング・スタミナ・反撃の隙",
+    description: "防御的な戦闘を学ぶプレイヤー向け。防御のタイミングを使って安全な反撃の隙を作ることを重視します。",
+    eyebrow: 'ガイド', h1: "完璧なブロックガイド",
+    lead: "防御的な戦闘を学ぶプレイヤー向け。防御のタイミングを使って安全な反撃の隙を作ることを重視します。",
+    sections: [
+      { heading: "安全な反撃の隙を作る", paragraphs: ["正確なタイミングを使って、安全な反撃の隙を作りましょう。"] },
+      { heading: "注意点", paragraphs: ["回避の方が安全な場面で完璧ブロックを狙うのは失敗のもとです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'no-lock-on-combat-guide', title: "Mistfall Hunter ロックオンなし戦闘：カメラ・位置取り・PvPエイム",
+    description: "Souls的なロックオン戦闘から移行するプレイヤー向け。カメラ操作を戦闘スキルとして扱うことを重視します。",
+    eyebrow: 'ガイド', h1: "ロックオンなし戦闘",
+    lead: "Souls的なロックオン戦闘から移行するプレイヤー向け。カメラ操作を戦闘スキルとして扱うことを重視します。",
+    sections: [
+      { heading: "カメラ操作を技術として扱う", paragraphs: ["カメラ操作を、練習が必要な独立した戦闘スキルとして扱いましょう。"] },
+      { heading: "注意点", paragraphs: ["移動とエイムが噛み合わず攻撃を外してしまうのはよくある問題です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'weapon-swap-guide', title: "Mistfall Hunter 武器切り替えガイド：スキル変化・クールダウン・戦術",
+    description: "クラスの武器の柔軟性を学ぶプレイヤー向け。戦闘中に役割を変えるための武器切り替えを重視します。",
+    eyebrow: 'ガイド', h1: "武器切り替えガイド",
+    lead: "クラスの武器の柔軟性を学ぶプレイヤー向け。戦闘中に役割を変えるための武器切り替えを重視します。",
+    sections: [
+      { heading: "戦闘中に役割を変える", paragraphs: ["規律を失わずに、武器切り替えで戦闘中の役割を変えましょう。"] },
+      { heading: "注意点", paragraphs: ["必要なスキルの隙を理解せずに切り替えるのは失敗のもとです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'co-op-team-guide', title: "Mistfall Hunter 協力プレイガイド：役割・連携・脱出規律",
+    description: "友達と一緒にプレイするプレイヤー向け。3人を3つの別々の戦いにせず、一つの計画にまとめることを重視します。",
+    eyebrow: 'ガイド', h1: "協力プレイガイド",
+    lead: "友達と一緒にプレイするプレイヤー向け。3人を3つの別々の戦いにせず、一つの計画にまとめることを重視します。",
+    sections: [
+      { heading: "別々の戦いを一つの計画に", paragraphs: ["3人がバラバラに戦うのではなく、一つの計画としてまとめましょう。"] },
+      { heading: "注意点", paragraphs: ["離れすぎたり、二重に漁ったり、出口を無視したりするのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'solo-vs-squad-guide', title: "Mistfall Hunter ソロ vs スクワッド：ルート選択・リスク・最適クラス",
+    description: "どうプレイするか決めるプレイヤー向け。チーム人数ごとに異なる停止ルールが必要なことを重視します。",
+    eyebrow: 'ガイド', h1: "ソロ vs スクワッド",
+    lead: "どうプレイするか決めるプレイヤー向け。チーム人数ごとに異なる停止ルールが必要なことを重視します。",
+    sections: [
+      { heading: "人数に応じた停止ルール", paragraphs: ["チーム人数に合わせて停止ルールを調整しましょう。"] },
+      { heading: "注意点", paragraphs: ["スクワッドの習慣をソロで、あるいはソロの習慣をチームで使うのはよくある失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'third-party-guide', title: "Mistfall Hunter 横取り対策ガイド：回避・反撃・PvP崩壊からの脱出",
+    description: "勝った戦闘の後に死ぬプレイヤー向け。次の戦闘は最初の戦闘より危険なことが多いという意識を重視します。",
+    eyebrow: 'ガイド', h1: "横取り対策ガイド",
+    lead: "勝った戦闘の後に死ぬプレイヤー向け。次の戦闘は最初の戦闘より危険なことが多いという意識を重視します。",
+    sections: [
+      { heading: "次の戦闘の方が危険", paragraphs: ["今勝った戦闘より、次の戦闘の方が危険なことが多いと意識しましょう。"] },
+      { heading: "注意点", paragraphs: ["キル直後やボス報酬直後にすぐ漁るのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'sound-cues-guide', title: "Mistfall Hunter 音の手がかりガイド：足音・戦闘・ボス音・脱出",
+    description: "見る前に危険を察知したいプレイヤー向け。音は背景ノイズではなくルート情報だと意識することを重視します。",
+    eyebrow: 'ガイド', h1: "音の手がかりガイド",
+    lead: "見る前に危険を察知したいプレイヤー向け。音は背景ノイズではなくルート情報だと意識することを重視します。",
+    sections: [
+      { heading: "音を情報として扱う", paragraphs: ["音を単なる背景ではなく、重要なルート情報として扱いましょう。"] },
+      { heading: "注意点", paragraphs: ["長引く戦闘の音を無視して強いチームに突っ込むのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'beginner-loadout-guide', title: "Mistfall Hunter 初心者装備ガイド：安価なキット・安全な武器・初脱出",
+    description: "最初のランを準備する新規プレイヤー向け。学習に役立つものだけをリスクにすることを重視します。",
+    eyebrow: 'ガイド', h1: "初心者装備ガイド",
+    lead: "最初のランを準備する新規プレイヤー向け。学習に役立つものだけをリスクにすることを重視します。",
+    sections: [
+      { heading: "学習に役立つものだけをリスクに", paragraphs: ["実際に学習の助けになる装備だけをリスクにしましょう。"] },
+      { heading: "注意点", paragraphs: ["出口を理解する前に高価な装備を持ち込むのはよくある初心者の失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-settings-low-end-pc', title: "Mistfall Hunter 低スペックPC向け最適設定：FPS・カクつき・視認性",
+    description: "安定した性能を優先するPCプレイヤー向け。見た目の豪華さよりフレーム安定性を重視します。",
+    eyebrow: 'ガイド', h1: "低スペックPC向け最適設定",
+    lead: "安定した性能を優先するPCプレイヤー向け。見た目の豪華さよりフレーム安定性を重視します。",
+    sections: [
+      { heading: "安定性を優先", paragraphs: ["見た目の豪華さより、フレームレートの安定性を優先しましょう。"] },
+      { heading: "注意点", paragraphs: ["視認性を下げすぎてPvPでの状況把握に支障が出るのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-class-for-pvp', title: "Mistfall Hunter PvP最強クラス：圧力・選択・サポート・カウンター",
+    description: "PvPメインを選ぶプレイヤー向け。純粋な決闘の強さより、戦闘制御と脱出の安全性でクラスを評価することを重視します。",
+    eyebrow: 'ガイド', h1: "PvP最強クラス",
+    lead: "PvPメインを選ぶプレイヤー向け。純粋な決闘の強さより、戦闘制御と脱出の安全性でクラスを評価することを重視します。",
+    sections: [
+      { heading: "決闘の強さより制御力", paragraphs: ["決闘の強さだけでなく、戦闘制御と脱出の安全性でクラスを評価しましょう。"] },
+      { heading: "注意点", paragraphs: ["決闘の強さと実際の脱出PvP価値を混同するのはよくある失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-class-for-bosses', title: "Mistfall Hunter ボス最強クラス：PvEダメージ・サポート・脱出の安全性",
+    description: "PvE目標のためにビルドするプレイヤー向け。報酬を持ち帰る能力もボスでの価値に含めることを重視します。",
+    eyebrow: 'ガイド', h1: "ボス最強クラス",
+    lead: "PvE目標のためにビルドするプレイヤー向け。報酬を持ち帰る能力もボスでの価値に含めることを重視します。",
+    sections: [
+      { heading: "持ち帰る力も価値に含める", paragraphs: ["ダメージだけでなく、報酬を持ち帰る力もクラスの価値として考えましょう。"] },
+      { heading: "注意点", paragraphs: ["横取りの圧力を無視してダメージだけでランク付けするのは失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-class-for-solo', title: "Mistfall Hunter ソロ脱出最強クラス：安全性・リセット手段・ルート",
+    description: "ソロランを計画するプレイヤー向け。ソロの強さとは戦闘開始のタイミングを自分で決められることだと重視します。",
+    eyebrow: 'ガイド', h1: "ソロ脱出最強クラス",
+    lead: "ソロランを計画するプレイヤー向け。ソロの強さとは戦闘開始のタイミングを自分で決められることだと重視します。",
+    sections: [
+      { heading: "戦闘開始を自分で決める", paragraphs: ["ソロの強さとは、いつ戦闘が始まるかを自分でコントロールできることです。"] },
+      { heading: "注意点", paragraphs: ["ソロ火力が足りないスクワッド向けクラスを選ぶのは失敗のもとです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'class-counters-guide', title: "Mistfall Hunter クラス相性ガイド：対面・間合い・チームでの対処",
+    description: "PvPの対面を学ぶプレイヤー向け。対処は間合いとルート選択から始まることを重視します。",
+    eyebrow: 'ガイド', h1: "クラス相性ガイド",
+    lead: "PvPの対面を学ぶプレイヤー向け。対処は間合いとルート選択から始まることを重視します。",
+    sections: [
+      { heading: "対処は間合いから始まる", paragraphs: ["スキルだけでなく、間合いとルート選択から対処を始めましょう。"] },
+      { heading: "注意点", paragraphs: ["実際のバランスが確認される前に、絶対的な相性を決めつけるのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'class-roles-guide', title: "Mistfall Hunter クラス役割ガイド：前衛・遠距離・ステルス・魔法・サポート",
+    description: "チームを組む、またはメインを選ぶプレイヤー向け。ビルドより先に役割を選ぶことを重視します。",
+    eyebrow: 'ガイド', h1: "クラス役割ガイド",
+    lead: "チームを組む、またはメインを選ぶプレイヤー向け。ビルドより先に役割を選ぶことを重視します。",
+    sections: [
+      { heading: "ビルドより先に役割を", paragraphs: ["具体的なビルドを決める前に、まずチーム内での役割を選びましょう。"] },
+      { heading: "注意点", paragraphs: ["サポート計画なしに3人が同じ役割を重ねてしまうのはよくある失敗です。"] },
     ], related: [],
   },
 ];
