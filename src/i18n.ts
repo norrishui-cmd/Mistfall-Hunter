@@ -152,6 +152,7 @@ export const localizedCorePaths = new Set([
   '/server-status', '/known-issues-tracker', '/error-code-guide',
   '/queue-times-guide', '/patch-notes-tracker', '/pvp-guide',
   '/community-questions',
+  '/review', '/pay-to-win', '/codes', '/crossplay-status', '/price-status', '/gameplay-overview',
 ]);
 
 export const firstEditionPaths = new Set([

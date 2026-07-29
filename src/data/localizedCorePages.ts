@@ -203,6 +203,70 @@ const de: LocalizedCorePage[] = [
       { heading: 'PvP-Grundlagen', paragraphs: ['Behalte Fluchtwege und Ausdauer im Blick, statt jeden Kampf bis zum Ende auszureizen.'], bullets: ['Reserviere Ausdauer für ein zweites Ausweichen', 'Loote nach einem Kill nicht sofort mit gesenktem Kopf', 'Höre vor dem Looten genau hin', 'Behalte Fluchtwege bei der Extraktion im Blick', 'Setze den Kampf bei ungünstigem Tausch zurück'] },
     ], related: [],
   },
+  {
+    slug: 'review', title: 'Mistfall Hunter Test: Frühe Eindrücke vor dem Launch',
+    description: 'Mistfall Hunter hat noch keinen Launch-Test. So lauten Beta- und Demo-Eindrücke, offizielle Positionierung und bestätigte Funktionen kurz vor dem Launch.',
+    eyebrow: 'Vorschau', h1: 'Mistfall Hunter Test: Was wir vor dem Launch wissen',
+    lead: 'Es gibt noch keinen offiziellen Test. Diese Seite fasst zusammen, was Beta- und Demo-Eindrücke sowie Bellrings eigene Aussagen bisher wirklich bestätigen.',
+    sections: [
+      { heading: 'Warum es noch keinen echten Test gibt', paragraphs: ['Ein Test braucht ein fertiges, laufendes Spiel. Alles, was vor dem Launch veröffentlicht wird, ist eine Vorschau auf Basis der Steam-Next-Fest-Demo und der offenen Beta vom 15.\u201322. Juni \u2014 nicht der finalen Version. Diese Seite wird nach dem Launch durch ein echtes Urteil ersetzt.'] },
+      { heading: 'Was Beta- und Demo-Spieler sagten', paragraphs: ['Berichte zu Demo und Beta beschreiben bewusstes, Souls-artiges Kampftempo gepaart mit typischer Extraction-Spannung: Kämpfe zählen, weil ein verlorener Lauf alles kostet, was man mitgebracht hat.'], bullets: ['Kampf wirkt bewusst, nicht hektisch', 'Extraktionsrisiko ist der zentrale Reiz, nicht nur der Kampf', 'Sechs Klassen mit je zwei Waffenhaltungen boten echte Build-Vielfalt im Test', 'Beta-Feedback floss direkt in Launch-Anpassungen ein, etwa bei Crow Storm und Mace Shapeshift'] },
+      { heading: 'Das Versprechen gegen Pay-to-Win', paragraphs: ['Bellrings eigene Store-Texte auf Steam und Xbox betonen, dass es keine Pay-to-Win-Mechaniken und keine käuflichen Statuswerte gibt. Was über Kosmetik hinausgeht, ist noch nicht final geklärt \u2014 siehe die Pay-to-Win-Seite für Details.'] },
+      { heading: 'Was zum Launch noch offen ist', paragraphs: ['Finales Klassen-Balancing, Serverstabilität, echte Matchmaking-Population und ob die Extraktionswirtschaft nach der ersten Woche trägt, lassen sich nicht aus einer Beta ablesen.'], bullets: ['Live-Klassenbalance und Matchups', 'Serverstabilität und Wartezeiten in den ersten Tagen', 'Langfristige Extraktionswirtschaft und Fortschrittstempo', 'Endgültiger Stand zu Crossplay und Cross-Progression'] },
+    ], related: [],
+  },
+  {
+    slug: 'pay-to-win', title: 'Ist Mistfall Hunter Pay-to-Win? Was Bellring bestätigt hat',
+    description: 'Bellring Games hat wiederholt erklärt, dass Mistfall Hunter keine Pay-to-Win-Mechaniken und keine käuflichen Statuswerte hat. Was das genau bedeutet.',
+    eyebrow: 'Monetarisierung', h1: 'Ist Mistfall Hunter Pay-to-Win?',
+    lead: 'Bellrings eigenes Marketing ist an diesem Punkt ungewöhnlich direkt: kein Pay-to-Win, keine käuflichen Statuswerte. Das ist bestätigt, das braucht noch Beobachtung.',
+    sections: [
+      { heading: 'Was Bellring gesagt hat', paragraphs: ['Sowohl die offizielle Steam-Seite als auch das Marketing der offenen Beta wiederholen dieselbe Aussage: keine Pay-to-Win-Mechaniken, keine käuflichen Statuswerte \u2014 der Sieg soll von Können und Vorbereitung abhängen, nicht vom Geldbeutel.'] },
+      { heading: 'Was noch offen ist', paragraphs: ['"Keine Statuswerte" sagt nicht automatisch, was verkauft WIRD. Kosmetik gilt als so gut wie sicher, basierend auf Avatar-Rahmen, Posen und Emotes aus der Beta. Ein Battle Pass oder die genaue Preisgestaltung sind noch nicht bestätigt.'], bullets: ['Rein kosmetische Belohnungen sind das bisher bestätigte Muster', 'Deluxe- und Standard-Editionen existieren in irgendeiner Form (aus Beta-Event-Kontext)', 'Noch kein bestätigtes Battle-Pass- oder Season-Pass-System', 'Endpreis noch nicht angekündigt'] },
+    ], related: [],
+  },
+  {
+    slug: 'codes', title: 'Mistfall Hunter Codes: Tracker für aktive Gutscheincodes',
+    description: 'Mistfall Hunter Codes-Tracker. Vor dem Launch gibt es keine aktiven Gutscheincodes; diese Seite wird sofort aktualisiert, sobald Bellring Games welche ankündigt.',
+    eyebrow: 'Code-Tracker', h1: 'Mistfall Hunter Codes',
+    lead: 'Derzeit gibt es keine aktiven Mistfall-Hunter-Gutscheincodes. Diese Seite soll eine ehrliche, aktuelle Antwort geben statt wiederholter Fake-Codes.',
+    sections: [
+      { heading: 'Gibt es gerade aktive Codes?', paragraphs: ['Nein. Bellring Games hat bisher kein Gutscheincode-System für Mistfall Hunter veröffentlicht. Jeder anderswo gelistete Code, der Belohnungen vor dem Launch verspricht, sollte als unbestätigt gelten, bis eine offizielle Quelle ihn bestätigt.'] },
+      { heading: 'Was bekamen Beta-Teilnehmer stattdessen?', paragraphs: ['Statt Gutscheincodes gab es eine direkte Kontoverknüpfung: Kosmetik aus Sonder-Events der offenen Beta im Juni 2026 kann auf dasselbe Konto zum Launch übertragen werden \u2014 automatisch, ohne Code-Eingabe.'] },
+      { heading: 'Wird es nach dem Launch Codes geben?', paragraphs: ['Offiziell weder bestätigt noch dementiert. Falls Mistfall Hunter dem üblichen Muster folgt, wird diese Seite mit genauem Code, Belohnung und Ablaufdatum aktualisiert.'] },
+      { heading: 'Wie man Code-Betrug vermeidet', paragraphs: ['Sei skeptisch bei Seiten oder Videos, die vor dem Launch "kostenlose Gyldenblood-Codes" versprechen \u2014 dafür gibt es aktuell keinen offiziellen Mechanismus. Vertraue nur Codes von Bellrings eigenen Kanälen oder seriösen Stores.'] },
+    ], related: [],
+  },
+  {
+    slug: 'crossplay-status', title: 'Ist Mistfall Hunter Crossplay? Ja \u2014 PC, Xbox & PS5',
+    description: 'Volles Cross-Play über PC, PS5 und Xbox Series X|S ist bestätigt. Mitspieler auf unterschiedlichen Plattformen können gemeinsam spielen, sobald die Server öffnen.',
+    eyebrow: 'Crossplay-Status', h1: 'Ist Mistfall Hunter Crossplay?',
+    lead: 'Ja \u2014 volles Cross-Play über PC, PS5 und Xbox Series X|S ist bestätigt. Trupps auf unterschiedlichen Plattformen können zusammenspielen, sobald die Server öffnen.',
+    sections: [
+      { heading: 'Was bestätigt ist', paragraphs: ['Cross-Play über PC, PlayStation 5 und Xbox Series X|S ist bestätigt \u2014 Mitspieler unterschiedlicher Plattformen können gemeinsam in denselben Zonen jagen.'] },
+      { heading: 'Was noch offen ist', paragraphs: ['Cross-Progression \u2014 also ein gemeinsames Konto mit geteilten Freischaltungen über Plattformen hinweg \u2014 ist ein separates Feature und bisher nicht in gleicher Form bestätigt.'] },
+    ], related: [],
+  },
+  {
+    slug: 'price-status', title: 'Mistfall Hunter Preis: Standard, Deluxe & Game-Pass-Status',
+    description: 'Standard Edition kostet 24,99 $, Deluxe 39,99 $ mit einem Upgrade für 15 $, plus 10 % Launch-Rabatt. Ab Tag eins im Xbox Game Pass, nicht in PS Plus enthalten.',
+    eyebrow: 'Preis & Zugang', h1: 'Mistfall Hunter Preis & Zugang',
+    lead: 'Standard Edition kostet 24,99 $, Deluxe 39,99 $ mit einem Upgrade für 15 $, dazu ein Launch-Rabatt von 10 %. Ab Tag eins im Xbox Game Pass, nicht in PS Plus.',
+    sections: [
+      { heading: 'Bestätigter Preis', paragraphs: ['Standard Edition: 24,99 $. Deluxe Edition: 39,99 $, mit einem separaten Upgrade-Pfad für 15 $ von Standard auf Deluxe.'] },
+      { heading: 'Game Pass und PS Plus', paragraphs: ['Ab Tag eins im Xbox Game Pass für Xbox und PC enthalten. Nicht Teil von PS Plus \u2014 PS5-Spieler müssen das Spiel separat kaufen.'] },
+    ], related: [],
+  },
+  {
+    slug: 'gameplay-overview', title: 'Mistfall Hunter Gameplay: Kernschleife, Kampf & Extraktion erklärt',
+    description: 'Mistfall Hunter Gameplay auf Deutsch erklärt: dunkles Fantasy-PvPvE-Extraction-Spiel \u2014 betreten, kämpfen, looten, extrahieren und rechtzeitig gehen.',
+    eyebrow: 'Gameplay', h1: 'Mistfall Hunter Gameplay erklärt',
+    lead: 'Mistfall Hunter lässt sich am besten als dunkles Fantasy-PvPvE-Extraction-Spiel beschreiben: betreten, kämpfen, looten, Extraktion sichern und gehen, bevor Gier alles kostet.',
+    sections: [
+      { heading: 'Die Kernschleife', paragraphs: ['Jeder Lauf läuft auf dieselben Kernentscheidungen hinaus: was bekämpft wird, was gelootet wird, wann ein Kampf sicher ist, und ob man weiter drängt oder rechtzeitig zum Soul of Return zurückkehrt, bevor es ein anderer Hunter tut.'] },
+      { heading: 'PvPvE-Struktur', paragraphs: ['Monster und rivalisierende Hunter teilen sich dieselbe Karte, sodass ein PvE-Kampf jederzeit in einen PvP-Kampf umschlagen kann. Sechs Klassen mit jeweils mehreren Waffenhaltungen sorgen für unterschiedliche Spielweisen statt eines einzigen festen Kits.'] },
+    ], related: [],
+  },
 ];
 
 const ja: LocalizedCorePage[] = [
@@ -394,6 +458,70 @@ const ja: LocalizedCorePage[] = [
       { heading: '公平な戦いを前提にしない', paragraphs: ['公平な戦いはコストが高いです。体力、クールダウン、スタミナ、音の管理、時間を消費します。最良のPvPは有利な状況——position、先手、射程、人数、退路——から生まれます。'] },
       { heading: '横取りこそ本当のボス', paragraphs: ['長引く戦闘は他プレイヤーを引き寄せます。ボス戦や長引くPvPの音が聞こえたら、参戦するか、勝者を待つか、ゾーン全体が制御不能になる前に離脱するかを判断してください。'] },
       { heading: 'PvPの基本', paragraphs: ['一戦ごとに退路とスタミナを意識し、最後まで無理に戦い続けないようにしましょう。'], bullets: ['2回目の回避のためにスタミナを残す', 'キル後すぐにうつむいて漁らない', '漁る前によく音を聞く', '脱出地点の入口を把握しておく', '不利な打ち合いになったら仕切り直す'] },
+    ], related: [],
+  },
+  {
+    slug: 'review', title: 'Mistfall Hunter レビュー：発売前の早期インプレッション',
+    description: 'Mistfall Hunterにはまだ発売レビューがありません。ベータとデモの実機インプレッション、公式の立場、確認済み機能を発売直前にまとめました。',
+    eyebrow: 'プレビュー', h1: 'Mistfall Hunter レビュー：発売前に分かっていること',
+    lead: 'まだ公式レビューはありません。このページはベータ・デモの実機インプレッションと、Bellring自身の発言が現時点で実際に確認している内容をまとめています。',
+    sections: [
+      { heading: 'まだ本当のレビューがない理由', paragraphs: ['レビューには完成した稼働中のゲームが必要です。発売前に公開される内容は、Steam Next Festのデモと6月15〜22日のオープンベータに基づくプレビューであり、発売版そのものではありません。発売後、このページは単なるプレビューの焼き直しではなく、本当の評価に置き換わります。'] },
+      { heading: 'ベータ・デモプレイヤーの声', paragraphs: ['デモとベータの報道は、意図的でSouls的な戦闘テンポと、脱出ジャンル特有の緊張感を組み合わせていると描写しています。ランを失えば持ち込んだものすべてを失うため、戦闘には重みがあります。'], bullets: ['戦闘は俊敏というより意図的な印象', '脱出のリスクこそが核であり、戦闘だけが魅力ではない', '各2種類の武器スタンスを持つ6クラスがテストで実際のビルドの幅を示した', 'ベータのフィードバックはCrow StormやMace Shapeshiftの調整など、発売時の調整に直接反映された'] },
+      { heading: '「Pay-to-Winではない」という約束', paragraphs: ['BellringはSteamとXboxの公式ストア文言で、Pay-to-Winメカニクスや課金によるステータス強化はないと明言しています。コスメティックを超える部分についてはまだ最終確定していません——詳細はPay-to-Winページを参照してください。'] },
+      { heading: '発売時点でまだ分からないこと', paragraphs: ['本当のレビューに必要なもの——最終的なクラスバランス、実際のサーバー安定性、実際のマッチメイキング人口、脱出経済が最初の週を超えて成立するか——はベータからは判断できません。'], bullets: ['実機でのクラスバランスとマッチアップ', '発売初期のサーバー安定性と待機時間', '長期的な脱出経済と成長ペース', 'クロスプレイとクロスプログレッションの最終的な状態'] },
+    ], related: [],
+  },
+  {
+    slug: 'pay-to-win', title: 'Mistfall HunterはPay-to-Winか？Bellringが確認していること',
+    description: 'Bellring Gamesは、Mistfall HunterにPay-to-Winメカニクスや課金によるステータス強化がないと繰り返し表明しています。その正確な意味を解説します。',
+    eyebrow: 'マネタイズ', h1: 'Mistfall HunterはPay-to-Winか？',
+    lead: 'Bellring自身のマーケティングはこの点について異例なほど明確です：Pay-to-Winなし、課金ステータス強化なし。確認済みの部分と、まだ注視が必要な部分を整理します。',
+    sections: [
+      { heading: 'Bellringが表明していること', paragraphs: ['公式Steamページとオープンベータのマーケティングはどちらも同じ内容を繰り返しています：Pay-to-Winメカニクスはなく、課金によるステータス強化もない。勝敗は課金ではなく腕前と準備によって決まるという方針です。'] },
+      { heading: 'まだ確定していないこと', paragraphs: ['「ステータス強化なし」は、何が販売されるかまでは示していません。ベータの報酬傾向から見て、コスメティックはほぼ確実視されていますが、バトルパスや正確な価格設定はまだ確定していません。'], bullets: ['これまで確認されているのはコスメティック限定の報酬パターン', 'デラックス版・スタンダード版は何らかの形で存在（ベータイベントの文脈より）', 'バトルパスやシーズンパス制度はまだ未確認', '最終価格はまだ発表されていない'] },
+    ], related: [],
+  },
+  {
+    slug: 'codes', title: 'Mistfall Hunter コード：有効な引き換えコード追跡',
+    description: 'Mistfall Hunterのコード追跡ページ。発売前は有効な引き換えコードは存在しません。Bellring Gamesが発表次第、即座に更新します。',
+    eyebrow: 'コード追跡', h1: 'Mistfall Hunter コード',
+    lead: '現在、有効なMistfall Hunterの引き換えコードはありません。このページは、使い古された偽コードではなく、正直で最新の答えを提供するために存在します。',
+    sections: [
+      { heading: '今、有効なコードはありますか？', paragraphs: ['いいえ。Bellring Gamesはこれまでのところ、Mistfall Hunter向けの引き換えコードシステムを発表していません。発売前に報酬がもらえると謳う他サイトのコードは、公式ソースが確認するまで未確認情報として扱ってください。'] },
+      { heading: 'オープンベータ参加者は代わりに何を得ましたか？', paragraphs: ['引き換えコードの代わりに、直接的なアカウント連携という仕組みが確認されています。2026年6月のオープンベータ中の特別イベントで獲得したコスメティックは、発売時に同じアカウントへ自動的に引き継がれます——入力するコードはありません。'] },
+      { heading: '発売後にコードは登場しますか？', paragraphs: ['公式にはまだどちらとも確認されていません。他の多くのライブサービスゲームと同様の展開になれば、正確なコード、報酬、有効期限とともにこのページを更新します。'] },
+      { heading: 'コード詐欺を避ける方法', paragraphs: ['発売前に「無料のGyldenbloodコード」などを謳うサイトや動画には注意してください——現時点でそのような公式の仕組みはありません。Bellring Games自身の公式チャンネルや正規のストアが直接発表したコードのみを信頼してください。'] },
+    ], related: [],
+  },
+  {
+    slug: 'crossplay-status', title: 'Mistfall Hunterはクロスプレイ対応？はい——PC・Xbox・PS5',
+    description: 'PC、PS5、Xbox Series X|S間の完全クロスプレイが確認されています。サーバーが開いた時点で、異なるプラットフォームのプレイヤーが一緒にプレイできます。',
+    eyebrow: 'クロスプレイ状況', h1: 'Mistfall Hunterはクロスプレイ対応？',
+    lead: 'はい——PC、PS5、Xbox Series X|S間の完全クロスプレイが確認されています。サーバーが開けば、異なるプラットフォームのパーティが一緒にプレイできます。',
+    sections: [
+      { heading: '確認されていること', paragraphs: ['PC、PlayStation 5、Xbox Series X|S間のクロスプレイが確認されています——異なるプラットフォームのプレイヤーが同じゾーンで一緒に狩りができます。'] },
+      { heading: 'まだ確認されていないこと', paragraphs: ['クロスプログレッション——プラットフォームをまたいで同じアカウントと解放要素を共有すること——は別の機能であり、クロスプレイと同じようにはまだ確認されていません。'] },
+    ], related: [],
+  },
+  {
+    slug: 'price-status', title: 'Mistfall Hunter 価格：スタンダード・デラックス・Game Pass状況',
+    description: 'スタンダード版は24.99ドル、デラックス版は39.99ドル（アップグレードは15ドル）、さらに発売時10%割引。Xbox Game Passには発売初日から対応、PS Plusは対象外。',
+    eyebrow: '価格・入手方法', h1: 'Mistfall Hunter 価格・入手方法',
+    lead: 'スタンダード版は24.99ドル、デラックス版は39.99ドル（アップグレードは15ドル）、さらに発売時10%割引があります。Xbox Game Passは発売初日から対応、PS Plusは対象外です。',
+    sections: [
+      { heading: '確認済みの価格', paragraphs: ['スタンダード版：24.99ドル。デラックス版：39.99ドル。スタンダードからデラックスへの個別アップグレードは15ドルです。'] },
+      { heading: 'Game PassとPS Plus', paragraphs: ['XboxとPC向けのXbox Game Passには発売初日から含まれます。PS Plusには含まれず、PS5プレイヤーは別途購入が必要です。'] },
+    ], related: [],
+  },
+  {
+    slug: 'gameplay-overview', title: 'Mistfall Hunter ゲームプレイ：コアループ・戦闘・脱出を解説',
+    description: 'Mistfall Hunterのゲームプレイを日本語で解説。ダークファンタジーPvPvE脱出型ゲーム——侵入、戦闘、略奪、脱出確保、そして欲張りすぎる前に離脱する。',
+    eyebrow: 'ゲームプレイ', h1: 'Mistfall Hunter ゲームプレイ解説',
+    lead: 'Mistfall Hunterのゲームプレイは、ダークファンタジーPvPvE脱出型ゲームとして説明するのが最も分かりやすいです：侵入、戦闘、略奪、脱出の確保、そして欲張りが勝つ前に離脱すること。',
+    sections: [
+      { heading: 'コアループ', paragraphs: ['どのランも同じ核心的な判断に帰結します：何と戦うか、何を拾うか、いつ戦闘が安全か、そしてもう一押しするか、他のハンターより先にSoul of Returnへ向かうか。'] },
+      { heading: 'PvPvE構造', paragraphs: ['モンスターと敵対ハンターが同じマップを共有するため、PvEの戦闘がいつでもPvPの戦闘に変わり得ます。それぞれ2つの武器スタンスを持つ6つのクラスが、単一の固定キットではなく多様なプレイスタイルを生み出します。'] },
     ], related: [],
   },
 ];
