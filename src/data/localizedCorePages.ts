@@ -267,6 +267,306 @@ const de: LocalizedCorePage[] = [
       { heading: 'PvPvE-Struktur', paragraphs: ['Monster und rivalisierende Hunter teilen sich dieselbe Karte, sodass ein PvE-Kampf jederzeit in einen PvP-Kampf umschlagen kann. Sechs Klassen mit jeweils mehreren Waffenhaltungen sorgen für unterschiedliche Spielweisen statt eines einzigen festen Kits.'] },
     ], related: [],
   },
+  {
+    slug: 'mercenary-beginner-build', title: "Mistfall Hunter Mercenary Anfänger-Build: Schild, Hammer & sichere Trades",
+    description: "Für neue Spieler, die eine verzeihende Nahkampfklasse wollen: defensives Lernen und einfache Konterfenster stehen im Vordergrund.",
+    eyebrow: 'Build-Guide', h1: "Mercenary Anfänger-Build",
+    lead: "Für neue Spieler, die eine verzeihende Nahkampfklasse wollen: defensives Lernen und einfache Konterfenster stehen im Vordergrund.",
+    sections: [
+      { heading: "Verteidigung zuerst", paragraphs: ["Baue auf Blocken und einfache Konterfenster statt auf riskante Offensive — so lernst du Mercenary, ohne ständig zu sterben."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Zu viel Blocken kostet Ausdauer, und ein Ausdauer-Kollaps mitten im Kampf ist gefährlich. Verfolge Gegner nicht in unbekannte PvP-Bereiche."] },
+    ], related: [],
+  },
+  {
+    slug: 'mercenary-solo-build', title: "Mistfall Hunter Mercenary Solo-Build: Defensive Routen & Extraktionssicherheit",
+    description: "Für Solospieler, die Widerstandsfähigkeit statt Stealth bevorzugen: sichere Trades, Routendisziplin und frühe Extraktion.",
+    eyebrow: 'Build-Guide', h1: "Mercenary Solo-Build",
+    lead: "Für Solospieler, die Widerstandsfähigkeit statt Stealth bevorzugen: sichere Trades, Routendisziplin und frühe Extraktion.",
+    sections: [
+      { heading: "Sichere Trades und Routendisziplin", paragraphs: ["Gehe Kämpfe nur ein, wenn du sie kontrollierst, und extrahiere lieber früh als spät."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Langsame Rotationen können dazu führen, dass du nach langen Kämpfen umzingelt wirst."] },
+    ], related: [],
+  },
+  {
+    slug: 'mercenary-pvp-build', title: "Mistfall Hunter Mercenary PvP-Build: Schilddruck, Paraden & Punish-Timing",
+    description: "Für PvP-Spieler, die eine stabile Frontline wollen: Blocken, perfektes Guard-Timing und kontrollierter Druck.",
+    eyebrow: 'Build-Guide', h1: "Mercenary PvP-Build",
+    lead: "Für PvP-Spieler, die eine stabile Frontline wollen: Blocken, perfektes Guard-Timing und kontrollierter Druck.",
+    sections: [
+      { heading: "Blocken und kontrollierter Druck", paragraphs: ["Nutze perfektes Guard-Timing, um Fenster für Konter zu schaffen, statt wahllos anzugreifen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Jeder Trade zu einem langen Kampf zu machen zieht Third-Partys an."] },
+    ], related: [],
+  },
+  {
+    slug: 'mercenary-boss-build', title: "Mistfall Hunter Mercenary Boss-Build: Sicheres Melee, Blocken & Beute-Extraktion",
+    description: "Für Spieler, die Mercenary gegen Bosse einsetzen: sichere Nahkampf-Fenster, Routenplanung und Beute-Extraktion.",
+    eyebrow: 'Build-Guide', h1: "Mercenary Boss-Build",
+    lead: "Für Spieler, die Mercenary gegen Bosse einsetzen: sichere Nahkampf-Fenster, Routenplanung und Beute-Extraktion.",
+    sections: [
+      { heading: "Mechaniken überleben", paragraphs: ["Behalte deine Ausdauer im Blick und verlasse den Kampf mit der Belohnung, statt nur auf Schaden zu fokussieren."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Zu sehr auf Bossschaden zu fixieren, während sich andere Hunter nähern, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'mercenary-affix-priority', title: "Mistfall Hunter Mercenary Affix-Priorität: Verteidigung, Ausdauer & Melee-Wert",
+    description: "Für Spieler, die Mercenary-Ausrüstung vergleichen: defensive Werte, Ausdauerkomfort und verlässlicher Nahkampfschaden.",
+    eyebrow: 'Build-Guide', h1: "Mercenary Affix-Priorität",
+    lead: "Für Spieler, die Mercenary-Ausrüstung vergleichen: defensive Werte, Ausdauerkomfort und verlässlicher Nahkampfschaden.",
+    sections: [
+      { heading: "Konsistente Verteidigung zuerst", paragraphs: ["Behalte Werte, die defensives Melee stabil machen, bevor du auf reinen Schaden setzt."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Schadenswerte überzubewerten, bevor das Überleben stabil ist, ist ein häufiger Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'sorcerer-beginner-build', title: "Mistfall Hunter Sorcerer Anfänger-Build: Magie-Sicherheit & frühes PvE-Clearing",
+    description: "Für neue Spieler, die eine Magie-Schadensklasse wollen: PvE schnell klären, ohne ein leichtes PvP-Ziel zu werden.",
+    eyebrow: 'Build-Guide', h1: "Sorcerer Anfänger-Build",
+    lead: "Für neue Spieler, die eine Magie-Schadensklasse wollen: PvE schnell klären, ohne ein leichtes PvP-Ziel zu werden.",
+    sections: [
+      { heading: "PvE klären, ohne Ziel zu werden", paragraphs: ["Räume PvE-Gegner zügig weg, aber bleib in Bewegung, um nicht zum leichten Ziel zu werden."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Zerbrechlichkeit, zu langes Kanalisieren und schlechte Rückzugsplanung sind die größten Risiken."] },
+    ], related: [],
+  },
+  {
+    slug: 'sorcerer-solo-build', title: "Mistfall Hunter Sorcerer Solo-Build: Burst-Fenster, Kiting & Extraktion",
+    description: "Für Solospieler, die magischen Druck bevorzugen: Burst-Fenster, Kiting-Routen und rechtzeitige Extraktion.",
+    eyebrow: 'Build-Guide', h1: "Sorcerer Solo-Build",
+    lead: "Für Solospieler, die magischen Druck bevorzugen: Burst-Fenster, Kiting-Routen und rechtzeitige Extraktion.",
+    sections: [
+      { heading: "Burst und Reset vor der Verfolgung", paragraphs: ["Setze Burst-Schaden ein und ziehe dich zurück, bevor aus dem Kampf eine Verfolgungsjagd wird."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Nach lauten, zauberlastigen Kämpfen wirst du leicht überrannt."] },
+    ], related: [],
+  },
+  {
+    slug: 'sorcerer-pvp-build', title: "Mistfall Hunter Sorcerer PvP-Build: Zauberdruck, Positionierung & Reset-Timing",
+    description: "Für Spieler, die Magie in PvP-Routen einsetzen: Druck aus der Distanz, ohne Fluchtfenster zu verschwenden.",
+    eyebrow: 'Build-Guide', h1: "Sorcerer PvP-Build",
+    lead: "Für Spieler, die Magie in PvP-Routen einsetzen: Druck aus der Distanz, ohne Fluchtfenster zu verschwenden.",
+    sections: [
+      { heading: "Druck aus der Distanz", paragraphs: ["Übe Druck von Reichweite aus, ohne wichtige Fluchtfenster zu verschwenden."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Zaubern in exponierten Lanes kann dich den Reset kosten."] },
+    ], related: [],
+  },
+  {
+    slug: 'sorcerer-boss-build', title: "Mistfall Hunter Sorcerer Boss-Build: Magie-DPS, Adds & Fluchtplanung",
+    description: "Für Spieler, die Sorcerer für PvE und Bosse einsetzen: laute Bosskämpfe verkürzen und dabei eine Rückzugsoption behalten.",
+    eyebrow: 'Build-Guide', h1: "Sorcerer Boss-Build",
+    lead: "Für Spieler, die Sorcerer für PvE und Bosse einsetzen: laute Bosskämpfe verkürzen und dabei eine Rückzugsoption behalten.",
+    sections: [
+      { heading: "Kämpfe verkürzen, Rückzug behalten", paragraphs: ["Verkürze laute Bosskämpfe, ohne alle Cooldowns zu verbrauchen, bevor andere Spieler eintreffen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Alle Cooldowns zu verbrauchen, bevor Spieler ankommen, ist ein häufiger Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'sorcerer-affix-priority', title: "Mistfall Hunter Sorcerer Affix-Priorität: Zauberschaden, Cooldowns & Überleben",
+    description: "Für Spieler, die Sorcerer-Ausrüstung vergleichen: Zauberschaden, Cooldown-Komfort und genug Sicherheit zum Extrahieren.",
+    eyebrow: 'Build-Guide', h1: "Sorcerer Affix-Priorität",
+    lead: "Für Spieler, die Sorcerer-Ausrüstung vergleichen: Zauberschaden, Cooldown-Komfort und genug Sicherheit zum Extrahieren.",
+    sections: [
+      { heading: "Schaden und Sicherheit ausbalancieren", paragraphs: ["Balanciere Schaden-Uptime mit genug Sicherheit, um tatsächlich extrahieren zu können."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Reine Glaskanonen-Werte versagen oft in echten Routen."] },
+    ], related: [],
+  },
+  {
+    slug: 'blackarrow-solo-build', title: "Mistfall Hunter Blackarrow Solo-Build: Scouting, Bogendruck & sichere Ausgänge",
+    description: "Für Solospieler, die Reichweite und Informationskontrolle wollen: Bedrohungen früh erkennen und rechtzeitig verlassen.",
+    eyebrow: 'Build-Guide', h1: "Blackarrow Solo-Build",
+    lead: "Für Solospieler, die Reichweite und Informationskontrolle wollen: Bedrohungen früh erkennen und rechtzeitig verlassen.",
+    sections: [
+      { heading: "Bedrohungen früh erkennen", paragraphs: ["Erkenne Gefahren früh und verlasse die Situation, bevor der Abstand zusammenbricht."] },
+      { heading: "Worauf du achten musst", paragraphs: ["In engen Räumen verliert Reichweite ihren Wert und wird zur Falle."] },
+    ], related: [],
+  },
+  {
+    slug: 'blackarrow-pvp-build', title: "Mistfall Hunter Blackarrow PvP-Build: Bogendruck, Winkel & Third-Party-Kontrolle",
+    description: "Für PvP-Spieler, die Fernkampfdruck bevorzugen: Sichtlinien in sicheren Schaden und Informationen verwandeln.",
+    eyebrow: 'Build-Guide', h1: "Blackarrow PvP-Build",
+    lead: "Für PvP-Spieler, die Fernkampfdruck bevorzugen: Sichtlinien in sicheren Schaden und Informationen verwandeln.",
+    sections: [
+      { heading: "Sichtlinien nutzen", paragraphs: ["Verwandle Kartensichtlinien in sicheren Schaden und Informationsvorteil."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Tunnelblick beim Zielen kostet dir die Fluchtroute."] },
+    ], related: [],
+  },
+  {
+    slug: 'blackarrow-boss-build', title: "Mistfall Hunter Blackarrow Boss-Build: Fernkampf-DPS, Adds & Extraktionsrouten",
+    description: "Für Spieler, die Blackarrow für PvE-Ziele einsetzen: Schaden aus sichereren Lanes ohne Aufmerksamkeitsverlust.",
+    eyebrow: 'Build-Guide', h1: "Blackarrow Boss-Build",
+    lead: "Für Spieler, die Blackarrow für PvE-Ziele einsetzen: Schaden aus sichereren Lanes ohne Aufmerksamkeitsverlust.",
+    sections: [
+      { heading: "Aus sicheren Lanes Schaden austeilen", paragraphs: ["Teile Schaden aus sichereren Positionen aus, ohne die Umgebung aus den Augen zu verlieren."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Zu lange stillzustehen macht dich anfällig für Flankenangriffe."] },
+    ], related: [],
+  },
+  {
+    slug: 'blackarrow-affix-priority', title: "Mistfall Hunter Blackarrow Affix-Priorität: Reichweite, Krit-Fenster & Mobilität",
+    description: "Für Spieler, die Blackarrow-Ausrüstung vergleichen: Werte, die Abstand und verlässlichen Druck schützen.",
+    eyebrow: 'Build-Guide', h1: "Blackarrow Affix-Priorität",
+    lead: "Für Spieler, die Blackarrow-Ausrüstung vergleichen: Werte, die Abstand und verlässlichen Druck schützen.",
+    sections: [
+      { heading: "Abstand schützen", paragraphs: ["Behalte Werte, die Abstand und verlässlichen Druck schützen, statt nur auf reinen Schaden zu setzen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Reinen Schaden überzubewerten, während die Routensicherheit schwach ist, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'blackarrow-controller-settings', title: "Mistfall Hunter Blackarrow Controller-Einstellungen: Zielen, Kamera & Bogenkomfort",
+    description: "Für Controller-Spieler mit der Fernkampfklasse: Kamera und Zielen vor teuren PvP-Routen einstellen.",
+    eyebrow: 'Build-Guide', h1: "Blackarrow Controller-Einstellungen",
+    lead: "Für Controller-Spieler mit der Fernkampfklasse: Kamera und Zielen vor teuren PvP-Routen einstellen.",
+    sections: [
+      { heading: "Vor dem Kampf einstellen", paragraphs: ["Stelle Kamera- und Zielgeschwindigkeit ein, bevor du in riskante PvP-Routen gehst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Allgemeine Controller-Einstellungen sind oft nicht auf Fernkampf abgestimmt und kosten dich Treffer."] },
+    ], related: [],
+  },
+  {
+    slug: 'shadowstrix-pvp-build', title: "Mistfall Hunter Shadowstrix PvP-Build: Stealth-Picks, Burst & Reset-Routen",
+    description: "Für Spieler, die Stealth-PvP-Druck wollen: unfaire Kämpfe wählen und zurücksetzen, bevor die Karte reagiert.",
+    eyebrow: 'Build-Guide', h1: "Shadowstrix PvP-Build",
+    lead: "Für Spieler, die Stealth-PvP-Druck wollen: unfaire Kämpfe wählen und zurücksetzen, bevor die Karte reagiert.",
+    sections: [
+      { heading: "Unfaire Kämpfe wählen", paragraphs: ["Wähle Kämpfe, die du gewinnen kannst, und setze zurück, bevor andere Spieler reagieren."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Stealth in ein faires Duell ohne Fluchtplan zu verwandeln, ist der häufigste Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'shadowstrix-boss-build', title: "Mistfall Hunter Shadowstrix Boss-Build: Burst-Fenster & Beutesicherheit",
+    description: "Für Shadowstrix-Spieler, die auch PvE-Wert wollen: Burst gezielt einsetzen, ohne in langen PvE-Kämpfen festzustecken.",
+    eyebrow: 'Build-Guide', h1: "Shadowstrix Boss-Build",
+    lead: "Für Shadowstrix-Spieler, die auch PvE-Wert wollen: Burst gezielt einsetzen, ohne in langen PvE-Kämpfen festzustecken.",
+    sections: [
+      { heading: "Burst gezielt einsetzen", paragraphs: ["Setze Burst gezielt ein, statt in langen PvE-Kämpfen festzuhängen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Schwache Dauerkämpfe und schlechte Boss-Routen-Entscheidungen sind das Hauptrisiko."] },
+    ], related: [],
+  },
+  {
+    slug: 'shadowstrix-affix-priority', title: "Mistfall Hunter Shadowstrix Affix-Priorität: Burst, Mobilität & Überleben",
+    description: "Für Spieler, die Shadowstrix-Ausrüstung vergleichen: Werte, die saubere Picks und sichere Resets verbessern.",
+    eyebrow: 'Build-Guide', h1: "Shadowstrix Affix-Priorität",
+    lead: "Für Spieler, die Shadowstrix-Ausrüstung vergleichen: Werte, die saubere Picks und sichere Resets verbessern.",
+    sections: [
+      { heading: "Saubere Picks bevorzugen", paragraphs: ["Bevorzuge Werte, die saubere Kills und sichere Resets ermöglichen, statt reinen Schaden."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Schadenswerte zu jagen, die nicht beim Entkommen helfen, ist ein häufiger Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'shadowstrix-beginner-build', title: "Mistfall Hunter Shadowstrix Anfänger-Build: Stealth ohne Gier",
+    description: "Für neue Spieler, die von der Stealth-Klasse angezogen werden: Stealth für Informationen nutzen, nicht für riskante Kämpfe.",
+    eyebrow: 'Build-Guide', h1: "Shadowstrix Anfänger-Build",
+    lead: "Für neue Spieler, die von der Stealth-Klasse angezogen werden: Stealth für Informationen nutzen, nicht für riskante Kämpfe.",
+    sections: [
+      { heading: "Stealth für Informationen nutzen", paragraphs: ["Nutze Stealth, um Informationen zu sammeln, statt jeden Kampf zu suchen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Jeden Kampf zu eröffnen und nach verbrauchten Cooldowns zu sterben, ist der häufigste Anfängerfehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'shadowstrix-map-routes', title: "Mistfall Hunter Shadowstrix Kartenrouten: Flanken, Hinterhalt-Lanes & Ausgänge",
+    description: "Für Stealth-Spieler, die Kartenbewegung planen: Routen wählen, die Überraschung und Rückzugsoptionen bewahren.",
+    eyebrow: 'Build-Guide', h1: "Shadowstrix Kartenrouten",
+    lead: "Für Stealth-Spieler, die Kartenbewegung planen: Routen wählen, die Überraschung und Rückzugsoptionen bewahren.",
+    sections: [
+      { heading: "Überraschung bewahren", paragraphs: ["Wähle Routen, die deine Überraschung und Rückzugsoptionen bewahren."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Zu weit von Extraktions- oder Reset-Lanes entfernt einen Hinterhalt zu legen, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'seer-beginner-build', title: "Mistfall Hunter Seer Anfänger-Build: Heilen, Kontrolle & Team-Grundlagen",
+    description: "Für neue Support-Spieler: zuerst am Leben bleiben, damit das Squad von den Support-Tools profitieren kann.",
+    eyebrow: 'Build-Guide', h1: "Seer Anfänger-Build",
+    lead: "Für neue Support-Spieler: zuerst am Leben bleiben, damit das Squad von den Support-Tools profitieren kann.",
+    sections: [
+      { heading: "Zuerst überleben", paragraphs: ["Bleib am Leben, damit dein Squad von deinen Support-Tools profitieren kann — ein toter Support hilft niemandem."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Zu weit vorne zu stehen kostet dich sofort deine Support-Rolle."] },
+    ], related: [],
+  },
+  {
+    slug: 'seer-solo-build', title: "Mistfall Hunter Seer Solo-Build: Überleben, Kontrolle & risikoarme Routen",
+    description: "Für Spieler, die Seer außerhalb von Squads testen: Support-Tools nicht in aggressive Solo-Duelle zwingen.",
+    eyebrow: 'Build-Guide', h1: "Seer Solo-Build",
+    lead: "Für Spieler, die Seer außerhalb von Squads testen: Support-Tools nicht in aggressive Solo-Duelle zwingen.",
+    sections: [
+      { heading: "Support-Tools nicht erzwingen", paragraphs: ["Setze Support-Tools nicht in aggressive Solo-Duelle ein, für die sie nicht gedacht sind."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Geringer Kill-Druck und langsamer Routenfortschritt sind normal für diese Klasse solo."] },
+    ], related: [],
+  },
+  {
+    slug: 'seer-pvp-build', title: "Mistfall Hunter Seer PvP-Build: Kontrolle, Heilfenster & Squad-Kämpfe",
+    description: "Für Support-Spieler in PvP-Gruppen: Erholung und Kontrolle in gewinnende Resets verwandeln.",
+    eyebrow: 'Build-Guide', h1: "Seer PvP-Build",
+    lead: "Für Support-Spieler in PvP-Gruppen: Erholung und Kontrolle in gewinnende Resets verwandeln.",
+    sections: [
+      { heading: "Erholung in Siege verwandeln", paragraphs: ["Nutze Heilung und Kontrolle gezielt, um Kämpfe zu deinen Gunsten zurückzusetzen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Zu früh in Panik zu heilen oder isoliert zu werden, sind die Hauptrisiken."] },
+    ], related: [],
+  },
+  {
+    slug: 'seer-boss-build', title: "Mistfall Hunter Seer Boss-Build: Support-Sicherheit, Heilung & Beute-Extraktion",
+    description: "Für Squads, die Seer in PvE-Ziele mitnehmen: das Team durch Boss- und Post-Boss-PvP-Druck stabil halten.",
+    eyebrow: 'Build-Guide', h1: "Seer Boss-Build",
+    lead: "Für Squads, die Seer in PvE-Ziele mitnehmen: das Team durch Boss- und Post-Boss-PvP-Druck stabil halten.",
+    sections: [
+      { heading: "Team stabil halten", paragraphs: ["Halte das Team durch den Bosskampf und den PvP-Druck danach stabil."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Support-Cooldowns zu verbrauchen, bevor die Third-Party eintrifft, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'seer-affix-priority', title: "Mistfall Hunter Seer Affix-Priorität: Heilung, Cooldowns & Überleben",
+    description: "Für Spieler, die entscheiden, welche Seer-Ausrüstung sie behalten: Support-Konsistenz vor Schadensgier.",
+    eyebrow: 'Build-Guide', h1: "Seer Affix-Priorität",
+    lead: "Für Spieler, die entscheiden, welche Seer-Ausrüstung sie behalten: Support-Konsistenz vor Schadensgier.",
+    sections: [
+      { heading: "Support-Konsistenz zuerst", paragraphs: ["Priorisiere Werte, die deinen Support zuverlässig machen, statt nach Schaden zu greifen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Zu fragil zu bauen, um Fokusfeuer zu überleben, ist ein häufiger Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'withered-knight-beginner-build', title: "Mistfall Hunter Withered Knight Anfänger-Build: Druck ohne Übercommitment",
+    description: "Für neue Spieler, die aggressiven Nahkampf wollen: Druck mit einer klaren Stopp-Regel statt endloser Verfolgung.",
+    eyebrow: 'Build-Guide', h1: "Withered Knight Anfänger-Build",
+    lead: "Für neue Spieler, die aggressiven Nahkampf wollen: Druck mit einer klaren Stopp-Regel statt endloser Verfolgung.",
+    sections: [
+      { heading: "Druck mit Stopp-Regel", paragraphs: ["Übe Druck aus, aber setze dir eine klare Regel, wann du aufhörst zu verfolgen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Sich in Fallen, Squads oder Monster zu verrennen, ist das Hauptrisiko."] },
+    ], related: [],
+  },
+  {
+    slug: 'withered-knight-solo-build', title: "Mistfall Hunter Withered Knight Solo-Build: Druck, Sustain & Fluchtregeln",
+    description: "Für Solospieler, die aggressiven Nahkampfdruck wollen: Trades gewinnen, ohne die Fluchtroute aufzugeben.",
+    eyebrow: 'Build-Guide', h1: "Withered Knight Solo-Build",
+    lead: "Für Solospieler, die aggressiven Nahkampfdruck wollen: Trades gewinnen, ohne die Fluchtroute aufzugeben.",
+    sections: [
+      { heading: "Trades gewinnen, Fluchtroute behalten", paragraphs: ["Gewinne Trades, ohne dabei deine Fluchtroute aufzugeben."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Gekitet oder in Third-Party-Routen gelockt zu werden, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'withered-knight-boss-build', title: "Mistfall Hunter Withered Knight Boss-Build: Melee-Druck & Beute-Sicherheit",
+    description: "Für Spieler, die Withered Knight für PvE-Ziele einsetzen: Druck ausüben und genug Budget zum Verlassen behalten.",
+    eyebrow: 'Build-Guide', h1: "Withered Knight Boss-Build",
+    lead: "Für Spieler, die Withered Knight für PvE-Ziele einsetzen: Druck ausüben und genug Budget zum Verlassen behalten.",
+    sections: [
+      { heading: "Druck mit Budget", paragraphs: ["Übe Druck aus, aber behalte genug Ressourcen, um den Kampf sicher zu verlassen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Alle Cooldowns zu verbrauchen, bevor der Extraktionsdruck beginnt, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'withered-knight-affix-priority', title: "Mistfall Hunter Withered Knight Affix-Priorität: Druck, Sustain & Ausdauer",
+    description: "Für Spieler, die Withered-Knight-Ausrüstung vergleichen: Werte, die kontrollierte Aggression unterstützen.",
+    eyebrow: 'Build-Guide', h1: "Withered Knight Affix-Priorität",
+    lead: "Für Spieler, die Withered-Knight-Ausrüstung vergleichen: Werte, die kontrollierte Aggression unterstützen.",
+    sections: [
+      { heading: "Kontrollierte Aggression", paragraphs: ["Behalte Werte, die kontrollierte Aggression statt wahlloses Draufhalten unterstützen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Schaden ohne genug Erholung zu bauen, gefährdet dich bei Extraktionskämpfen."] },
+    ], related: [],
+  },
+  {
+    slug: 'withered-knight-matchups', title: "Mistfall Hunter Withered Knight Matchups: Fernkampf, Stealth & Support-Kämpfe",
+    description: "Für PvP-Spieler, die Nahkampf-Matchups lernen: wissen, wann man verfolgt, tauscht oder zurücksetzt.",
+    eyebrow: 'Build-Guide', h1: "Withered Knight Matchups",
+    lead: "Für PvP-Spieler, die Nahkampf-Matchups lernen: wissen, wann man verfolgt, tauscht oder zurücksetzt.",
+    sections: [
+      { heading: "Verfolgen, Tauschen oder Zurücksetzen", paragraphs: ["Lerne, wann du verfolgen, einen Trade eingehen oder zurücksetzen solltest."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Von Blackarrow-Sichtlinien oder Shadowstrix-Resets geködert zu werden, ist ein häufiges Risiko."] },
+    ], related: [],
+  },
 ];
 
 const ja: LocalizedCorePage[] = [
@@ -522,6 +822,306 @@ const ja: LocalizedCorePage[] = [
     sections: [
       { heading: 'コアループ', paragraphs: ['どのランも同じ核心的な判断に帰結します：何と戦うか、何を拾うか、いつ戦闘が安全か、そしてもう一押しするか、他のハンターより先にSoul of Returnへ向かうか。'] },
       { heading: 'PvPvE構造', paragraphs: ['モンスターと敵対ハンターが同じマップを共有するため、PvEの戦闘がいつでもPvPの戦闘に変わり得ます。それぞれ2つの武器スタンスを持つ6つのクラスが、単一の固定キットではなく多様なプレイスタイルを生み出します。'] },
+    ], related: [],
+  },
+  {
+    slug: 'mercenary-beginner-build', title: "Mistfall Hunter Mercenary 初心者ビルド：盾・ハンマー・安全な打ち合い",
+    description: "扱いやすい近接クラスを求める新規プレイヤー向け。防御重視の学習とシンプルな反撃の隙を軸にします。",
+    eyebrow: 'ビルドガイド', h1: "Mercenary 初心者ビルド",
+    lead: "扱いやすい近接クラスを求める新規プレイヤー向け。防御重視の学習とシンプルな反撃の隙を軸にします。",
+    sections: [
+      { heading: "まず防御から", paragraphs: ["リスクの高い攻めよりもブロックとシンプルな反撃の隙を軸に組み立てましょう。それがMercenaryを死なずに覚える近道です。"] },
+      { heading: "注意点", paragraphs: ["ブロックのしすぎはスタミナを消費し、戦闘中のスタミナ切れは危険です。知らないPvPエリアまで追いかけないようにしましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'mercenary-solo-build', title: "Mistfall Hunter Mercenary ソロビルド：防御的ルートと脱出の安全性",
+    description: "スティルスより耐久力を好むソロプレイヤー向け。安全な打ち合い、ルート規律、早めの脱出を重視します。",
+    eyebrow: 'ビルドガイド', h1: "Mercenary ソロビルド",
+    lead: "スティルスより耐久力を好むソロプレイヤー向け。安全な打ち合い、ルート規律、早めの脱出を重視します。",
+    sections: [
+      { heading: "安全な打ち合いとルート規律", paragraphs: ["自分が制御できる戦闘だけを受け、遅めより早めの脱出を選びましょう。"] },
+      { heading: "注意点", paragraphs: ["ローテーションが遅いと、長引く戦闘の後に囲まれる危険があります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'mercenary-pvp-build', title: "Mistfall Hunter Mercenary PvPビルド：盾の圧力・パリィ・反撃タイミング",
+    description: "安定した前衛を求めるPvPプレイヤー向け。ブロック、完璧なガードタイミング、制御された圧力を重視します。",
+    eyebrow: 'ビルドガイド', h1: "Mercenary PvPビルド",
+    lead: "安定した前衛を求めるPvPプレイヤー向け。ブロック、完璧なガードタイミング、制御された圧力を重視します。",
+    sections: [
+      { heading: "ブロックと制御された圧力", paragraphs: ["やみくもに攻めるのではなく、完璧なガードタイミングで反撃の隙を作りましょう。"] },
+      { heading: "注意点", paragraphs: ["すべての打ち合いを長期戦にしてしまうと、横取りを呼び込みます。"] },
+    ], related: [],
+  },
+  {
+    slug: 'mercenary-boss-build', title: "Mistfall Hunter Mercenary ボスビルド：安全な近接・ブロック・報酬回収",
+    description: "ボス戦でMercenaryを使うプレイヤー向け。安全な近接の隙、ルート計画、報酬回収を重視します。",
+    eyebrow: 'ビルドガイド', h1: "Mercenary ボスビルド",
+    lead: "ボス戦でMercenaryを使うプレイヤー向け。安全な近接の隙、ルート計画、報酬回収を重視します。",
+    sections: [
+      { heading: "メカニクスを生き延びる", paragraphs: ["スタミナを管理し、ダメージだけでなく報酬を持ち帰ることを意識しましょう。"] },
+      { heading: "注意点", paragraphs: ["他のハンターが近づいているのにボスダメージにこだわりすぎるのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'mercenary-affix-priority', title: "Mistfall Hunter Mercenary Affix優先度：防御・スタミナ・近接火力",
+    description: "Mercenaryの装備を比較するプレイヤー向け。防御値、スタミナの快適さ、安定した近接ダメージを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Mercenary Affix優先度",
+    lead: "Mercenaryの装備を比較するプレイヤー向け。防御値、スタミナの快適さ、安定した近接ダメージを重視します。",
+    sections: [
+      { heading: "まず安定した防御を", paragraphs: ["純粋なダメージより先に、防御的な近接戦を安定させる数値を優先しましょう。"] },
+      { heading: "注意点", paragraphs: ["生存が安定する前にダメージ値を過大評価するのはよくある失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'sorcerer-beginner-build', title: "Mistfall Hunter Sorcerer 初心者ビルド：魔法の安全性と序盤のPvE処理",
+    description: "魔法ダメージクラスを求める新規プレイヤー向け。PvEを素早く処理しつつ、簡単なPvP標的にならないことを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Sorcerer 初心者ビルド",
+    lead: "魔法ダメージクラスを求める新規プレイヤー向け。PvEを素早く処理しつつ、簡単なPvP標的にならないことを重視します。",
+    sections: [
+      { heading: "狙われずにPvEを処理する", paragraphs: ["PvEの敵は素早く片付けつつ、動き続けて狙われにくくしましょう。"] },
+      { heading: "注意点", paragraphs: ["脆さ、詠唱のしすぎ、退路計画の甘さが最大のリスクです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'sorcerer-solo-build', title: "Mistfall Hunter Sorcerer ソロビルド：バーストの隙・キャイティング・脱出",
+    description: "魔法での圧力を好むソロプレイヤー向け。バーストの隙、キャイティングのルート、脱出タイミングを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Sorcerer ソロビルド",
+    lead: "魔法での圧力を好むソロプレイヤー向け。バーストの隙、キャイティングのルート、脱出タイミングを重視します。",
+    sections: [
+      { heading: "追われる前にバーストしてリセット", paragraphs: ["バーストダメージを与えたら、戦闘が追跡戦になる前に距離を取りましょう。"] },
+      { heading: "注意点", paragraphs: ["派手な魔法戦の後は、囲まれやすくなります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'sorcerer-pvp-build', title: "Mistfall Hunter Sorcerer PvPビルド：詠唱圧力・位置取り・リセットタイミング",
+    description: "PvPルートで魔法を試すプレイヤー向け。逃走の隙を無駄にせず、遠距離から圧力をかけることを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Sorcerer PvPビルド",
+    lead: "PvPルートで魔法を試すプレイヤー向け。逃走の隙を無駄にせず、遠距離から圧力をかけることを重視します。",
+    sections: [
+      { heading: "逃走の隙を無駄にしない圧力", paragraphs: ["遠距離からの圧力をかけつつ、大事な逃走の隙を無駄にしないようにしましょう。"] },
+      { heading: "注意点", paragraphs: ["無防備なレーンで詠唱すると、リセットの機会を失います。"] },
+    ], related: [],
+  },
+  {
+    slug: 'sorcerer-boss-build', title: "Mistfall Hunter Sorcerer ボスビルド：魔法DPS・雑魚処理・撤退計画",
+    description: "PvEとボス戦でSorcererを使うプレイヤー向け。長引くボス戦を短縮しつつ退路を確保することを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Sorcerer ボスビルド",
+    lead: "PvEとボス戦でSorcererを使うプレイヤー向け。長引くボス戦を短縮しつつ退路を確保することを重視します。",
+    sections: [
+      { heading: "戦闘を短縮しつつ退路を確保", paragraphs: ["他プレイヤーが到着する前にクールダウンを使い切らないよう、ボス戦を短縮しましょう。"] },
+      { heading: "注意点", paragraphs: ["プレイヤーが到着する前にクールダウンをすべて使い切るのはよくある失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'sorcerer-affix-priority', title: "Mistfall Hunter Sorcerer Affix優先度：詠唱ダメージ・クールダウン・生存",
+    description: "Sorcererの装備を比較するプレイヤー向け。詠唱ダメージ、クールダウンの快適さ、脱出に十分な安全性を重視します。",
+    eyebrow: 'ビルドガイド', h1: "Sorcerer Affix優先度",
+    lead: "Sorcererの装備を比較するプレイヤー向け。詠唱ダメージ、クールダウンの快適さ、脱出に十分な安全性を重視します。",
+    sections: [
+      { heading: "ダメージと安全性のバランス", paragraphs: ["実際に脱出できるだけの安全性を保ちながら、ダメージの継続性を確保しましょう。"] },
+      { heading: "注意点", paragraphs: ["純粋な紙耐久型の数値は、実際のルートでは失敗しがちです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'blackarrow-solo-build', title: "Mistfall Hunter Blackarrow ソロビルド：偵察・弓の圧力・安全な離脱",
+    description: "射程と情報コントロールを求めるソロプレイヤー向け。早めに脅威を察知し、間合いが崩れる前に離脱することを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Blackarrow ソロビルド",
+    lead: "射程と情報コントロールを求めるソロプレイヤー向け。早めに脅威を察知し、間合いが崩れる前に離脱することを重視します。",
+    sections: [
+      { heading: "早めに脅威を察知する", paragraphs: ["早めに脅威を察知し、間合いが崩れる前にその場を離れましょう。"] },
+      { heading: "注意点", paragraphs: ["狭い場所では射程の価値が失われ、罠になりかねません。"] },
+    ], related: [],
+  },
+  {
+    slug: 'blackarrow-pvp-build', title: "Mistfall Hunter Blackarrow PvPビルド：弓の圧力・角度・横取り対策",
+    description: "遠距離での圧力を好むPvPプレイヤー向け。マップの見通しを安全なダメージと情報に変えることを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Blackarrow PvPビルド",
+    lead: "遠距離での圧力を好むPvPプレイヤー向け。マップの見通しを安全なダメージと情報に変えることを重視します。",
+    sections: [
+      { heading: "見通しを活用する", paragraphs: ["マップの見通しを安全なダメージと情報優位に変えましょう。"] },
+      { heading: "注意点", paragraphs: ["狙いに集中しすぎると、逃走ルートを見失います。"] },
+    ], related: [],
+  },
+  {
+    slug: 'blackarrow-boss-build', title: "Mistfall Hunter Blackarrow ボスビルド：遠距離DPS・雑魚処理・脱出ルート",
+    description: "PvE目的でBlackarrowを使うプレイヤー向け。周囲への警戒を保ちながら、より安全なレーンからダメージを与えることを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Blackarrow ボスビルド",
+    lead: "PvE目的でBlackarrowを使うプレイヤー向け。周囲への警戒を保ちながら、より安全なレーンからダメージを与えることを重視します。",
+    sections: [
+      { heading: "安全なレーンからダメージを", paragraphs: ["周囲への警戒を保ちながら、より安全な位置からダメージを与えましょう。"] },
+      { heading: "注意点", paragraphs: ["長時間動かないでいると、他プレイヤーに側面を突かれやすくなります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'blackarrow-affix-priority', title: "Mistfall Hunter Blackarrow Affix優先度：射程・クリティカルの隙・機動力",
+    description: "Blackarrowの装備を比較するプレイヤー向け。間合いと安定した圧力を守る数値を重視します。",
+    eyebrow: 'ビルドガイド', h1: "Blackarrow Affix優先度",
+    lead: "Blackarrowの装備を比較するプレイヤー向け。間合いと安定した圧力を守る数値を重視します。",
+    sections: [
+      { heading: "間合いを守る", paragraphs: ["純粋なダメージよりも、間合いと安定した圧力を守る数値を優先しましょう。"] },
+      { heading: "注意点", paragraphs: ["ルートの安全性が弱いのに純粋なダメージを過大評価するのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'blackarrow-controller-settings', title: "Mistfall Hunter Blackarrow コントローラー設定：エイム・カメラ・弓の操作性",
+    description: "遠距離クラスをコントローラーで使うプレイヤー向け。リスクの高いPvPルートに入る前にカメラとエイムを調整することを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Blackarrow コントローラー設定",
+    lead: "遠距離クラスをコントローラーで使うプレイヤー向け。リスクの高いPvPルートに入る前にカメラとエイムを調整することを重視します。",
+    sections: [
+      { heading: "戦闘前に調整する", paragraphs: ["コストの高いPvPルートに入る前に、カメラ速度とエイムを調整しておきましょう。"] },
+      { heading: "注意点", paragraphs: ["一般的なコントローラー設定は遠距離プレイに最適化されておらず、命中を逃す原因になります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'shadowstrix-pvp-build', title: "Mistfall Hunter Shadowstrix PvPビルド：ステルスの選択・バースト・リセットルート",
+    description: "ステルスによるPvP圧力を求めるプレイヤー向け。有利な戦いだけを選び、マップが反応する前にリセットすることを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Shadowstrix PvPビルド",
+    lead: "ステルスによるPvP圧力を求めるプレイヤー向け。有利な戦いだけを選び、マップが反応する前にリセットすることを重視します。",
+    sections: [
+      { heading: "有利な戦いだけを選ぶ", paragraphs: ["勝てる戦いだけを選び、他プレイヤーが反応する前にリセットしましょう。"] },
+      { heading: "注意点", paragraphs: ["逃走計画なしでステルスを公平な一騎打ちに変えてしまうのが最もよくある失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'shadowstrix-boss-build', title: "Mistfall Hunter Shadowstrix ボスビルド：バーストの隙と戦利品の安全",
+    description: "PvEでも価値を発揮したいShadowstrixプレイヤー向け。長引くPvE戦に固執せず、バーストを慎重に使うことを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Shadowstrix ボスビルド",
+    lead: "PvEでも価値を発揮したいShadowstrixプレイヤー向け。長引くPvE戦に固執せず、バーストを慎重に使うことを重視します。",
+    sections: [
+      { heading: "バーストを慎重に使う", paragraphs: ["長引くPvE戦に固執せず、バーストダメージを慎重なタイミングで使いましょう。"] },
+      { heading: "注意点", paragraphs: ["持続火力の弱さとボスルートへの中途半端な関わり方が主なリスクです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'shadowstrix-affix-priority', title: "Mistfall Hunter Shadowstrix Affix優先度：バースト・機動力・生存",
+    description: "Shadowstrixの装備を比較するプレイヤー向け。確実な一撃と安全なリセットを高める数値を重視します。",
+    eyebrow: 'ビルドガイド', h1: "Shadowstrix Affix優先度",
+    lead: "Shadowstrixの装備を比較するプレイヤー向け。確実な一撃と安全なリセットを高める数値を重視します。",
+    sections: [
+      { heading: "確実な一撃を優先", paragraphs: ["純粋なダメージより、確実な一撃と安全なリセットを可能にする数値を優先しましょう。"] },
+      { heading: "注意点", paragraphs: ["逃走に役立たないダメージ数値を追い求めるのはよくある失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'shadowstrix-beginner-build', title: "Mistfall Hunter Shadowstrix 初心者ビルド：欲張らないステルス",
+    description: "ステルスクラスに惹かれる新規プレイヤー向け。無謀な戦闘ではなく情報収集にステルスを使うことを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Shadowstrix 初心者ビルド",
+    lead: "ステルスクラスに惹かれる新規プレイヤー向け。無謀な戦闘ではなく情報収集にステルスを使うことを重視します。",
+    sections: [
+      { heading: "情報収集にステルスを使う", paragraphs: ["すべての戦闘を仕掛けるのではなく、情報収集のためにステルスを活用しましょう。"] },
+      { heading: "注意点", paragraphs: ["すべての戦闘を仕掛け、クールダウンを使い切った後に死ぬのが最もよくある初心者の失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'shadowstrix-map-routes', title: "Mistfall Hunter Shadowstrix マップルート：側面・待ち伏せレーン・出口",
+    description: "マップ移動を計画するステルスプレイヤー向け。奇襲性と退路を維持できるルートの選び方を重視します。",
+    eyebrow: 'ビルドガイド', h1: "Shadowstrix マップルート",
+    lead: "マップ移動を計画するステルスプレイヤー向け。奇襲性と退路を維持できるルートの選び方を重視します。",
+    sections: [
+      { heading: "奇襲性を維持する", paragraphs: ["奇襲性と退路を両方維持できるルートを選びましょう。"] },
+      { heading: "注意点", paragraphs: ["脱出やリセットのレーンから離れすぎた場所で待ち伏せするのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'seer-beginner-build', title: "Mistfall Hunter Seer 初心者ビルド：回復・コントロール・チームの基本",
+    description: "サポート初心者向け。まず自分が生き残ることで、チームがサポートツールの恩恵を受けられるようにすることを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Seer 初心者ビルド",
+    lead: "サポート初心者向け。まず自分が生き残ることで、チームがサポートツールの恩恵を受けられるようにすることを重視します。",
+    sections: [
+      { heading: "まず生き残る", paragraphs: ["死んだサポートは何の価値もありません。まず自分が生き残ることを優先しましょう。"] },
+      { heading: "注意点", paragraphs: ["前に出すぎると、サポートとしての役割を即座に失います。"] },
+    ], related: [],
+  },
+  {
+    slug: 'seer-solo-build', title: "Mistfall Hunter Seer ソロビルド：生存・コントロール・低リスクルート",
+    description: "スクワッド外でSeerを試すプレイヤー向け。サポートツールを無理に攻撃的なソロ対人戦に使わないことを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Seer ソロビルド",
+    lead: "スクワッド外でSeerを試すプレイヤー向け。サポートツールを無理に攻撃的なソロ対人戦に使わないことを重視します。",
+    sections: [
+      { heading: "サポートツールを無理に使わない", paragraphs: ["サポートツールを、向いていない攻撃的なソロ対人戦に無理に使わないようにしましょう。"] },
+      { heading: "注意点", paragraphs: ["キル圧力の低さとルート進行の遅さは、このクラスのソロプレイでは普通のことです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'seer-pvp-build', title: "Mistfall Hunter Seer PvPビルド：コントロール・回復の隙・スクワッド戦",
+    description: "PvPグループのサポートプレイヤー向け。回復とコントロールを勝利につながるリセットに変えることを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Seer PvPビルド",
+    lead: "PvPグループのサポートプレイヤー向け。回復とコントロールを勝利につながるリセットに変えることを重視します。",
+    sections: [
+      { heading: "回復を勝利に変える", paragraphs: ["回復とコントロールを的確なタイミングで使い、戦況を有利にリセットしましょう。"] },
+      { heading: "注意点", paragraphs: ["慌てて早すぎる回復をしたり、単独で孤立させられたりするのが主なリスクです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'seer-boss-build', title: "Mistfall Hunter Seer ボスビルド：サポートの安全・回復・報酬回収",
+    description: "PvE目的でSeerを連れて行くスクワッド向け。ボス戦とその後のPvP圧力を通してチームを安定させることを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Seer ボスビルド",
+    lead: "PvE目的でSeerを連れて行くスクワッド向け。ボス戦とその後のPvP圧力を通してチームを安定させることを重視します。",
+    sections: [
+      { heading: "チームを安定させる", paragraphs: ["ボス戦とその後のPvP圧力の間、チームを安定させ続けましょう。"] },
+      { heading: "注意点", paragraphs: ["横取りが来る前にサポートのクールダウンを使い切るのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'seer-affix-priority', title: "Mistfall Hunter Seer Affix優先度：回復・クールダウン・生存",
+    description: "どのSeer装備を残すか決めるプレイヤー向け。ダメージ欲より、サポートの安定性を優先することを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Seer Affix優先度",
+    lead: "どのSeer装備を残すか決めるプレイヤー向け。ダメージ欲より、サポートの安定性を優先することを重視します。",
+    sections: [
+      { heading: "サポートの安定性を優先", paragraphs: ["ダメージを追い求める前に、サポートを安定させる数値を優先しましょう。"] },
+      { heading: "注意点", paragraphs: ["集中砲火に耐えられないほど脆く組んでしまうのはよくある失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'withered-knight-beginner-build', title: "Mistfall Hunter Withered Knight 初心者ビルド：過度な深追いをしない圧力",
+    description: "攻撃的な近接戦を求める新規プレイヤー向け。際限のない追撃ではなく、止め時を決めた圧力を重視します。",
+    eyebrow: 'ビルドガイド', h1: "Withered Knight 初心者ビルド",
+    lead: "攻撃的な近接戦を求める新規プレイヤー向け。際限のない追撃ではなく、止め時を決めた圧力を重視します。",
+    sections: [
+      { heading: "止め時を決めた圧力", paragraphs: ["圧力をかけつつも、いつ追撃をやめるかのルールを決めておきましょう。"] },
+      { heading: "注意点", paragraphs: ["罠、スクワッド、モンスターに深追いしすぎるのが主なリスクです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'withered-knight-solo-build', title: "Mistfall Hunter Withered Knight ソロビルド：圧力・継戦力・撤退ルール",
+    description: "攻撃的な近接圧力を求めるソロプレイヤー向け。退路を手放さずに打ち合いに勝つことを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Withered Knight ソロビルド",
+    lead: "攻撃的な近接圧力を求めるソロプレイヤー向け。退路を手放さずに打ち合いに勝つことを重視します。",
+    sections: [
+      { heading: "退路を保ちつつ打ち合いに勝つ", paragraphs: ["退路を手放さずに、打ち合いに勝つことを心がけましょう。"] },
+      { heading: "注意点", paragraphs: ["キャイティングされたり、横取りルートに誘い込まれたりするのが危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'withered-knight-boss-build', title: "Mistfall Hunter Withered Knight ボスビルド：近接圧力・報酬の安全性",
+    description: "PvE目的でWithered Knightを使うプレイヤー向け。圧力をかけつつ離脱に十分な余力を残すことを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Withered Knight ボスビルド",
+    lead: "PvE目的でWithered Knightを使うプレイヤー向け。圧力をかけつつ離脱に十分な余力を残すことを重視します。",
+    sections: [
+      { heading: "余力を残した圧力", paragraphs: ["圧力をかけつつ、安全に離脱できるだけの余力を残しましょう。"] },
+      { heading: "注意点", paragraphs: ["脱出の圧力が始まる前にクールダウンを使い切るのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'withered-knight-affix-priority', title: "Mistfall Hunter Withered Knight Affix優先度：圧力・継戦力・スタミナ",
+    description: "Withered Knightの装備を比較するプレイヤー向け。制御された積極性を支える数値を重視します。",
+    eyebrow: 'ビルドガイド', h1: "Withered Knight Affix優先度",
+    lead: "Withered Knightの装備を比較するプレイヤー向け。制御された積極性を支える数値を重視します。",
+    sections: [
+      { heading: "制御された積極性", paragraphs: ["無闇な攻めではなく、制御された積極性を支える数値を優先しましょう。"] },
+      { heading: "注意点", paragraphs: ["回復力を確保せずダメージだけを伸ばすと、脱出戦で危険にさらされます。"] },
+    ], related: [],
+  },
+  {
+    slug: 'withered-knight-matchups', title: "Mistfall Hunter Withered Knight 対面相性：遠距離・ステルス・サポート戦",
+    description: "近接の対面相性を学ぶPvPプレイヤー向け。追う・打ち合う・リセットするタイミングの見極めを重視します。",
+    eyebrow: 'ビルドガイド', h1: "Withered Knight 対面相性",
+    lead: "近接の対面相性を学ぶPvPプレイヤー向け。追う・打ち合う・リセットするタイミングの見極めを重視します。",
+    sections: [
+      { heading: "追う・打ち合う・リセット", paragraphs: ["いつ追い、いつ打ち合い、いつリセットすべきかを見極めましょう。"] },
+      { heading: "注意点", paragraphs: ["Blackarrowの見通しやShadowstrixのリセットに釣られるのはよくある危険です。"] },
     ], related: [],
   },
 ];

@@ -153,6 +153,7 @@ export const localizedCorePaths = new Set([
   '/queue-times-guide', '/patch-notes-tracker', '/pvp-guide',
   '/community-questions',
   '/review', '/pay-to-win', '/codes', '/crossplay-status', '/price-status', '/gameplay-overview',
+  '/mercenary-beginner-build', '/mercenary-solo-build', '/mercenary-pvp-build', '/mercenary-boss-build', '/mercenary-affix-priority', '/sorcerer-beginner-build', '/sorcerer-solo-build', '/sorcerer-pvp-build', '/sorcerer-boss-build', '/sorcerer-affix-priority', '/blackarrow-solo-build', '/blackarrow-pvp-build', '/blackarrow-boss-build', '/blackarrow-affix-priority', '/blackarrow-controller-settings', '/shadowstrix-pvp-build', '/shadowstrix-boss-build', '/shadowstrix-affix-priority', '/shadowstrix-beginner-build', '/shadowstrix-map-routes', '/seer-beginner-build', '/seer-solo-build', '/seer-pvp-build', '/seer-boss-build', '/seer-affix-priority', '/withered-knight-beginner-build', '/withered-knight-solo-build', '/withered-knight-boss-build', '/withered-knight-affix-priority', '/withered-knight-matchups',
 ]);
 
 export const firstEditionPaths = new Set([
