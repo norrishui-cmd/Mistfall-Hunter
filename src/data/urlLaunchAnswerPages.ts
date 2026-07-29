@@ -15,14 +15,14 @@ type LaunchAnswerSpec = {
 const specs: LaunchAnswerSpec[] = [
   {
     slug: 'can-you-play-mistfall-hunter-solo',
-    query: 'Can you play Mistfall Hunter solo?',
-    short: 'Solo play is part of the expected PvPvE extraction loop, but solo players need lower-risk routing and earlier extraction decisions.',
-    status: 'Solo and squad play are both important search intents before launch. Exact solo balance will need live verification once servers open.',
+    query: 'Can You Play Mistfall Hunter Solo?',
+    short: 'Yes. Solo play is a supported playstyle in the PvPvE extraction loop, but solo players need lower-risk routing and earlier extraction decisions than a squad.',
+    status: 'Solo queuing is expected to work the same as squad queuing at launch \u2014 you are not forced into a group. Exact solo matchmaking pool sizes need live verification once servers open.',
     decision: 'If you plan to play alone, focus on escape tools, information, stamina discipline, and routes that do not force long boss fights.',
     watch: ['Solo matchmaking rules', 'Class win rates after launch', 'Boss tuning for solo players', 'Extraction pressure around high-value routes'],
     links: [
       { title: 'Best class for solo', desc: 'Class choices for players without a squad.', href: '/best-class-for-solo' },
-      { title: 'How to extract', desc: 'How to leave with loot before a bad fight starts.', href: '/how-to-extract' },
+      { title: 'Soul of Return', desc: 'How to leave with loot before a bad fight starts.', href: '/soul-of-return' },
       { title: 'Beginner guide', desc: 'Core loop and first-run priorities.', href: '/beginner-guide' },
     ],
     group: 'guides',
@@ -183,13 +183,13 @@ const specs: LaunchAnswerSpec[] = [
   },
   {
     slug: 'mistfall-hunter-squad-size',
-    query: 'What is the Mistfall Hunter squad size?',
-    short: 'Squad-size searches are important because team size changes class value, route risk, and extraction decisions.',
-    status: 'Exact matchmaking and party-size rules should be verified at launch through in-game menus and official notes.',
-    decision: 'Until then, plan around flexible roles: one stable frontliner, one damage or control pick, and one support or information tool if your squad allows it.',
-    watch: ['Party size limit', 'Solo queue options', 'Matchmaking pools', 'Crossplay squad rules'],
+    query: 'What Is the Mistfall Hunter Squad Size?',
+    short: 'Confirmed: Mistfall Hunter supports solo play or three-player co-op squads. There is no confirmed option larger than three.',
+    status: 'Official beta and launch materials describe solo or three-player squads as the supported party sizes; exact solo/duo/trio matchmaking pool behavior should still be checked in-game at launch.',
+    decision: 'Plan around a three-player squad with flexible roles: one stable frontliner, one damage or control pick, and one support or information tool.',
+    watch: ['Duo queuing within a 3-player system', 'Solo queue options', 'Matchmaking pools', 'Crossplay squad rules'],
     links: [
-      { title: 'Squad build guide', desc: 'Team-oriented class planning.', href: '/squad-builds' },
+      { title: 'Best classes for squads', desc: 'Team-oriented class planning.', href: '/classes-for-squads' },
       { title: 'Classes', desc: 'Role overview for every class.', href: '/classes' },
       { title: 'Crossplay status', desc: 'Platform party questions.', href: '/crossplay-status' },
     ],
@@ -355,7 +355,12 @@ export const enLaunchAnswerPages: SeoPage[] = specs.map((spec) => ({
   slug: spec.slug,
   group: spec.group,
   template: 'faq',
-  title: `${spec.query} - Mistfall Hunter Launch Answer`,
+  sources: [
+    { href: 'https://www.mistfallhunter.com/', label: 'Mistfall Hunter official site' },
+    { href: 'https://store.steampowered.com/app/3282300/Mistfall_Hunter/', label: 'Mistfall Hunter on Steam' },
+  ],
+  confidence: 'reported',
+  title: /mistfall hunter/i.test(spec.query) ? spec.query : `${spec.query} - Mistfall Hunter`,
   description: `${spec.query} Clear pre-launch answer, confirmed status, what to verify, and related Mistfall Hunter guides.`,
   eyebrow: 'Launch answer',
   h1: spec.query,
@@ -403,6 +408,13 @@ export const zhLaunchAnswerPages: SeoPage[] = enLaunchAnswerPages.map((page) => 
   slug: page.slug,
   title: `${page.h1} - Mistfall Hunter FAQ`,
   description: page.description,
+  // This is English content reused under a /zh/ path, not a real Chinese
+  // translation — flagged as draft so it's excluded from promotion/sitemap
+  // the same way localizeDraft() marks other files' zh placeholders.
+  // Caught 2026-07-29 while promoting two EN slugs from this file; without
+  // this, doing so would have also silently made English-only "Chinese"
+  // pages indexable.
+  draft: true,
 }));
 
 export const zhLaunchAnswerLinks: PriorityLink[] = enLaunchAnswerLinks.map((link) => ({

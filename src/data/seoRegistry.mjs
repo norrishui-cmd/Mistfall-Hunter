@@ -212,6 +212,14 @@ export const INDEXABLE_SLUGS = new Set([
   'boss-rewards-guide', 'boss-mechanics-guide', 'pve-enemy-drops-guide', 'rare-loot-guide', 'loot-priority-list',
   'release-time-countdown', 'is-mistfall-hunter-free', 'mistfall-hunter-system-requirements', 'mistfall-hunter-file-size', 'mistfall-hunter-preorder-guide',
   'mistfall-hunter-editions-guide', 'mistfall-hunter-beta-rewards', 'mistfall-hunter-demo-ended', 'mistfall-hunter-roadmap-tracker', 'mistfall-hunter-discord-guide',
+
+  // 2026-07-29 launch-week GSC data: these matched real, high-impression
+  // queries ("can you play mistfall hunter solo" 16 impr, "mistfall hunter
+  // squad size"/"party size" 10+ impr, "mistfall hunter solo mode" 13 impr,
+  // "mistfall hunter pve only" — a Trends breakout query) but were sitting
+  // noindex despite already having real, direct-answer content written.
+  'can-you-play-mistfall-hunter-solo', 'mistfall-hunter-squad-size',
+  'faq-is-there-solo-mode', 'faq-can-you-farm-pve-only',
 ]);
 
 export const INDEXABLE_TAB_NEWS_SLUGS = new Set([
@@ -339,6 +347,15 @@ export const ZH_DRAFT_SLUGS = new Set([
   'boss-rewards-guide', 'boss-mechanics-guide', 'pve-enemy-drops-guide', 'rare-loot-guide', 'loot-priority-list',
   'release-time-countdown', 'is-mistfall-hunter-free', 'mistfall-hunter-system-requirements', 'mistfall-hunter-file-size', 'mistfall-hunter-preorder-guide',
   'mistfall-hunter-editions-guide', 'mistfall-hunter-beta-rewards', 'mistfall-hunter-demo-ended', 'mistfall-hunter-roadmap-tracker', 'mistfall-hunter-discord-guide',
+
+  // 2026-07-29 batch (see INDEXABLE_SLUGS) — from urlFaqLongTail.ts, so the
+  // zh version is still English filler labeled "Chinese Draft".
+  'faq-is-there-solo-mode', 'faq-can-you-farm-pve-only',
+  // Also 2026-07-29: urlLaunchAnswerPages.ts's zh output was English
+  // content reused under /zh/, now flagged draft:true at the source — these
+  // need to be in this set too so the sitemap filter (which checks this
+  // set, not page.draft) agrees with the noindex meta tag.
+  'can-you-play-mistfall-hunter-solo', 'mistfall-hunter-squad-size',
 ]);
 
 export function normalizeSeoPath(path = '/') {
