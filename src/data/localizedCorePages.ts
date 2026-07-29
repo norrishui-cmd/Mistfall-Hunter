@@ -240,9 +240,9 @@ const de: LocalizedCorePage[] = [
   },
   {
     slug: 'crossplay-status', title: 'Ist Mistfall Hunter Crossplay? Ja \u2014 PC, Xbox & PS5',
-    description: 'Volles Cross-Play über PC, PS5 und Xbox Series X|S ist bestätigt. Mitspieler auf unterschiedlichen Plattformen können gemeinsam spielen, sobald die Server öffnen.',
+    description: 'Volles Cross-Play über PC, PS5 und Xbox Series X|S ist bestätigt und live. Mitspieler auf unterschiedlichen Plattformen können jetzt gemeinsam spielen.',
     eyebrow: 'Crossplay-Status', h1: 'Ist Mistfall Hunter Crossplay?',
-    lead: 'Ja \u2014 volles Cross-Play über PC, PS5 und Xbox Series X|S ist bestätigt. Trupps auf unterschiedlichen Plattformen können zusammenspielen, sobald die Server öffnen.',
+    lead: 'Ja \u2014 volles Cross-Play über PC, PS5 und Xbox Series X|S ist bestätigt und live. Trupps auf unterschiedlichen Plattformen können jetzt zusammenspielen.',
     sections: [
       { heading: 'Was bestätigt ist', paragraphs: ['Cross-Play über PC, PlayStation 5 und Xbox Series X|S ist bestätigt \u2014 Mitspieler unterschiedlicher Plattformen können gemeinsam in denselben Zonen jagen.'] },
       { heading: 'Was noch offen ist', paragraphs: ['Cross-Progression \u2014 also ein gemeinsames Konto mit geteilten Freischaltungen über Plattformen hinweg \u2014 ist ein separates Feature und bisher nicht in gleicher Form bestätigt.'] },
@@ -798,9 +798,9 @@ const ja: LocalizedCorePage[] = [
   },
   {
     slug: 'crossplay-status', title: 'Mistfall Hunterはクロスプレイ対応？はい——PC・Xbox・PS5',
-    description: 'PC、PS5、Xbox Series X|S間の完全クロスプレイが確認されています。サーバーが開いた時点で、異なるプラットフォームのプレイヤーが一緒にプレイできます。',
+    description: 'PC、PS5、Xbox Series X|S間の完全クロスプレイが確認されており、既に稼働中です。異なるプラットフォームのプレイヤーが今すぐ一緒にプレイできます。',
     eyebrow: 'クロスプレイ状況', h1: 'Mistfall Hunterはクロスプレイ対応？',
-    lead: 'はい——PC、PS5、Xbox Series X|S間の完全クロスプレイが確認されています。サーバーが開けば、異なるプラットフォームのパーティが一緒にプレイできます。',
+    lead: 'はい——PC、PS5、Xbox Series X|S間の完全クロスプレイが確認されており、既に稼働中です。異なるプラットフォームのパーティが今すぐ一緒にプレイできます。',
     sections: [
       { heading: '確認されていること', paragraphs: ['PC、PlayStation 5、Xbox Series X|S間のクロスプレイが確認されています——異なるプラットフォームのプレイヤーが同じゾーンで一緒に狩りができます。'] },
       { heading: 'まだ確認されていないこと', paragraphs: ['クロスプログレッション——プラットフォームをまたいで同じアカウントと解放要素を共有すること——は別の機能であり、クロスプレイと同じようにはまだ確認されていません。'] },
