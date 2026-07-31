@@ -537,14 +537,14 @@ export const enLongTailPages: SeoPage[] = [
       ],
     }],
     sections: [
-      { heading: 'Pre-launch status', body: ['Official server-status channels may not be fully active before launch. This page should be updated once Bellring or platform stores publish maintenance information.'] },
+      { heading: 'Launch-day status', body: ['Mistfall Hunter went live at 01:00 UTC on July 30 (6:00 PM PT on July 29). Servers stayed online \u2014 the launch-day issues reported so far are client-side bugs and performance problems (stuttering, FPS drops, desync), not outages, and no dedicated Oceania servers, which has drawn complaints from Australian and New Zealand players over high ping.'] },
       { heading: 'Why connection pages rank', body: ['During launch windows, players search server and error terms rapidly. A clean tracker helps them find practical next steps and keeps those queries inside the site.'] },
     ],
     cards: platformCards,
     relatedSearches: ['Mistfall Hunter server status', 'Mistfall Hunter servers down', 'Mistfall Hunter connection error'],
     faqs: [
-      { q: 'Are Mistfall Hunter servers down?', a: 'Check official channels and platform status first; this page should be updated with known incidents after launch.' },
-      { q: 'Is a disconnect a performance issue?', a: 'Not always. Disconnects may be server, platform, network, or client stability problems.' },
+      { q: 'Are Mistfall Hunter servers down?', a: 'No widespread outages have been reported since launch on July 29 \u2014 reported issues are client-side performance problems (stuttering, desync) rather than the servers being down.' },
+      { q: 'Does Mistfall Hunter have Oceania servers?', a: 'No dedicated OCE servers have been announced. Players in Australia and New Zealand have reported high ping and asked Bellring Games for dedicated regional servers.' },
     ],
     sources: [
       { href: 'https://www.mistfallhunter.com/', label: 'Mistfall Hunter official site' },

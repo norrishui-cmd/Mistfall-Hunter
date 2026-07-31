@@ -79,6 +79,7 @@ const breadcrumbSchema = {
               <article class="faq-item" id={`q${item.id}`}>
                 <h3><a href={`#q${item.id}`} aria-label={zh ? `链接到问题 ${item.id}` : `Link to question ${item.id}`}>{item.id}.</a> {zh ? item.zh.q : item.en.q}</h3>
                 <p>{zh ? item.zh.a : item.en.a}</p>
+                {item.slug && <p><a href={local(`/faq/${item.slug}`)} class="faq-item-permalink">{zh ? '查看该问题独立页面 →' : 'Open this question\u2019s own page →'}</a></p>}
               </article>
             ))}
           </div>

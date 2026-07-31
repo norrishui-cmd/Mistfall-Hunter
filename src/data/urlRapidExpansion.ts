@@ -19,6 +19,11 @@ type RapidBrief = {
   // codes or queue times — set this when the topic isn't about an in-game
   // run.
   steps?: { title: string; body: string }[];
+  // Optional override for the default lead, which is a generic
+  // "this page targets players searching for X" template line — fine as a
+  // placeholder, but real answers (like this one, once real launch-day
+  // data exists) should say something a reader can actually use.
+  lead?: string;
 };
 
 const classHub = [
@@ -173,10 +178,11 @@ const briefs: RapidBrief[] = [
     ],
   },
   { slug: 'known-issues-tracker', group: 'tools', template: 'faq', topic: 'Known issues tracker', title: 'Mistfall Hunter Known Issues Tracker: Crashes, Stutter, Servers & Bugs', description: 'Mistfall Hunter known issues tracker covering crashes, stutter, login problems, server queues, bug reports, and practical triage steps.', audience: 'players troubleshooting launch issues', angle: 'separate local fixes from server or patch problems', risk: 'telling players to change settings when the issue is server-side', update: 'add official known-issue notes and community-tested fixes after launch', related: ['known issues', 'crash fix', 'server queue'],
+    lead: 'Bellring Games published an official list of 12 known issues within 30 minutes of servers opening on July 29 \u2014 all client or controller bugs, not server outages, with a fix already submitted for expedited store review. The most important one: repeatedly entering and exiting the area around the Soul Tree while summoning an Extraction Point can incorrectly consume an extra Soul of Return.',
     steps: [
-      { title: 'Check server status before your PC', body: 'Confirm on the server status page whether an outage or maintenance window is already known before changing any local settings.' },
-      { title: 'Match your symptom to a known issue', body: 'Crashes, stutter, login failures, and queue problems usually have different causes; this page groups them so you check the right fix instead of guessing.' },
-      { title: 'Note build and platform when reporting', body: 'Every entry here should record which platform, patch version, and reproduction steps it applies to, since a fix on one platform may not apply to another.' },
+      { title: 'The one bug that actually costs you something', body: 'Avoid repeatedly entering and exiting the area around the Soul Tree while summoning an Extraction Point \u2014 Bellring confirmed this can incorrectly consume an extra Soul of Return. A fix has been submitted for expedited store review.' },
+      { title: 'Widely reported launch-day performance issues', body: 'Player reports and press coverage describe stuttering, FPS drops, and desync at launch, including on high-end PCs. The likely cause is a mix of Unreal Engine 5 shader compilation stutter and server congestion, which can feel identical in a busy fight.' },
+      { title: 'No dedicated Oceania servers', body: 'Players in Australia and New Zealand have reported high ping and asked for dedicated OCE servers; this has not been announced as a planned fix as of this writing.' },
     ],
   },
   { slug: 'error-code-guide', group: 'tools', template: 'faq', topic: 'Error code guide', title: 'Mistfall Hunter Error Code Guide: Login, Connection & Install Problems', description: 'Mistfall Hunter error code guide for login errors, connection problems, install issues, platform service checks, and launch troubleshooting.', audience: 'players seeing errors during launch week', angle: 'triage by platform, server status, and local setup', risk: 'assuming every error has the same cause', update: 'add exact error codes and fixes once live messages are known', related: ['error code', 'connection error', 'login problem'],
@@ -217,7 +223,7 @@ function makePage(brief: RapidBrief): SeoPage {
     description: brief.description,
     eyebrow: brief.template === 'map' ? 'Map route' : brief.template === 'build' ? 'Build guide' : brief.template === 'faq' ? 'Tracker' : 'Long-tail guide',
     h1: brief.topic,
-    lead: `This page targets players searching for ${brief.topic}. It focuses on ${brief.angle} while clearly marking what still needs launch-build verification.`,
+    lead: brief.lead ?? `This page targets players searching for ${brief.topic}. It focuses on ${brief.angle} while clearly marking what still needs launch-build verification.`,
     intent: {
       primary: `Mistfall Hunter ${brief.topic}`,
       secondary: brief.related,

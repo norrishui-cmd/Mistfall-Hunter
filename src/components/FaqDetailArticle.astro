@@ -17,14 +17,12 @@ const description = copy.a.length > 155 ? `${copy.a.slice(0, 155).replace(/\s+\S
 
 const schema = {
   '@context': 'https://schema.org',
-  '@type': 'QAPage',
-  mainEntity: {
+  '@type': 'FAQPage',
+  mainEntity: [{
     '@type': 'Question',
     name: copy.q,
-    text: copy.q,
-    answerCount: 1,
     acceptedAnswer: { '@type': 'Answer', text: copy.a },
-  },
+  }],
 };
 const breadcrumb = {
   '@context': 'https://schema.org',
@@ -52,6 +50,10 @@ const breadcrumb = {
         <a href={`${prefix}${category.href}`}>{zh ? `查看${category.zh}相关内容 ->` : `See more on ${category.en} ->`}</a>
         {' · '}
         <a href={`${prefix}/faq`}>{zh ? '返回完整 FAQ ->' : 'Back to the full FAQ ->'}</a>
+        {' · '}
+        <a href={`${prefix}/beginner-guide`}>{zh ? '新手指南 ->' : 'Beginner guide ->'}</a>
+        {' · '}
+        <a href={`${prefix}/release-date`}>{zh ? '发售信息 ->' : 'Release info ->'}</a>
       </p>
     </div>
     <TabFaqModule cluster="faq" lang={lang} />
