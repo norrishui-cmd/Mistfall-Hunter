@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TabFaqModule from './TabFaqModule.astro';
+import { faqCategories, type Faq100Item } from '../data/faq100';
+
+interface Props { item: Faq100Item; lang: 'en' | 'zh' }
+const { item, lang } = Astro.props as Props;
+const zh = lang === 'zh';
+const copy = zh ? item.zh : item.en;
+const category = faqCategories.find((c) => c.id === item.category)!;
+const prefix = zh ? '/zh' : '';
+const path = `/faq/${item.slug}`;
+const url = `https://mistfallhunter.me${prefix}${path}/`;
+
+const title = zh ? `${copy.q} | Mistfall Hunter FAQ` : `${copy.q} | Mistfall Hunter FAQ`;
+const description = copy.a.length > 155 ? `${copy.a.slice(0, 155).replace(/\s+\S*$/, '')}\u2026` : copy.a;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'QAPage',
+  mainEntity: {
+    '@type': 'Question',
+    name: copy.q,
+    text: copy.q,
+    answerCount: 1,
+    acceptedAnswer: { '@type': 'Answer', text: copy.a },
+  },
+};
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: zh ? '首页' : 'Home', item: `https://mistfallhunter.me${prefix}/` },
+    { '@type': 'ListItem', position: 2, name: zh ? 'FAQ' : 'FAQ', item: `https://mistfallhunter.me${prefix}/faq/` },
+    { '@type': 'ListItem', position: 3, name: copy.q, item: url },
+  ],
+};
+---
+
+<BaseLayout lang={lang} path={path} title={title} description={description} jsonLd={[schema, breadcrumb]}>
+  <article class="section faq-article"><div class="container">
+    <nav class="breadcrumbs">
+      <a href={`${prefix}/`}>{zh ? '首页' : 'Home'}</a><span>›</span>
+      <a href={`${prefix}/faq`}>{zh ? 'FAQ' : 'FAQ'}</a><span>›</span>
+      <span>{copy.q}</span>
+    </nav>
+    <span class="eyebrow">{zh ? (category.zh) : (category.en)}</span>
+    <h1 class="page-title">{copy.q}</h1>
+    <div class="answer-box"><p>{copy.a}</p></div>
+    <div class="prose">
+      <p>
+        <a href={`${prefix}${category.href}`}>{zh ? `查看${category.zh}相关内容 ->` : `See more on ${category.en} ->`}</a>
+        {' · '}
+        <a href={`${prefix}/faq`}>{zh ? '返回完整 FAQ ->' : 'Back to the full FAQ ->'}</a>
+      </p>
+    </div>
+    <TabFaqModule cluster="faq" lang={lang} />
+  </div></article>
+</BaseLayout>
+<style>
+  .breadcrumbs{display:flex;flex-wrap:wrap;gap:.55rem;color:var(--ash);margin-bottom:2rem}
+  .answer-box{background:var(--stone);border-left:4px solid var(--gylden);padding:1.2rem 1.4rem;margin:2rem 0}
+  .answer-box p{font-size:1.15rem;margin:0}
+  .faq-article .prose{max-width:48rem}
+</style>

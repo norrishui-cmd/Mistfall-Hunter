@@ -1,0 +1,14 @@
+---
+import FaqDetailArticle from '../../components/FaqDetailArticle.astro';
+import { faq100 } from '../../data/faq100';
+
+export function getStaticPaths() {
+  return faq100
+    .filter((item) => item.slug)
+    .map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+
+const { item } = Astro.props;
+---
+
+<FaqDetailArticle item={item} lang="en" />

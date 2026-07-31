@@ -116,6 +116,37 @@ export const INDEXABLE_STATIC_PATHS = new Set([
   '/de/best-class-for-solo/',
   '/de/class-counters-guide/',
   '/de/class-roles-guide/',
+  '/de/gameplay-loop-explained/',
+  '/de/gameplay-trailer-breakdown/',
+  '/de/first-30-minutes-guide/',
+  '/de/combat-gameplay-guide/',
+  '/de/pvp-gameplay-guide/',
+  '/de/pve-gameplay-guide/',
+  '/de/solo-gameplay-guide/',
+  '/de/co-op-gameplay-guide/',
+  '/de/mistfall-hunters-spelling/',
+  '/de/mistfall-hunter-vs-mistfall-hunters/',
+  '/de/mistfall-hunter-name-guide/',
+  '/de/release-time-time-zones/',
+  '/de/launch-day-checklist/',
+  '/de/launch-week-roadmap/',
+  '/de/pre-launch-guide/',
+  '/de/steam-release-time/',
+  '/de/steam-demo-guide/',
+  '/de/steam-reviews-tracker/',
+  '/de/steam-wishlist-guide/',
+  '/de/cross-platform-party-guide/',
+  '/de/cross-progression-guide/',
+  '/de/pc-xbox-crossplay-guide/',
+  '/de/ps5-crossplay-guide/',
+  '/de/steam-price-guide/',
+  '/de/xbox-price-guide/',
+  '/de/ps5-price-guide/',
+  '/de/game-pass-or-buy-guide/',
+  '/de/classes-overview-2026/',
+  '/de/classes-ranked-for-launch/',
+  '/de/classes-for-squads/',
+  '/de/classes-for-beginners-2026/',
   '/de/game-data/',
   '/de/faq/',
   '/de/news/',
@@ -205,6 +236,37 @@ export const INDEXABLE_STATIC_PATHS = new Set([
   '/ja/best-class-for-solo/',
   '/ja/class-counters-guide/',
   '/ja/class-roles-guide/',
+  '/ja/gameplay-loop-explained/',
+  '/ja/gameplay-trailer-breakdown/',
+  '/ja/first-30-minutes-guide/',
+  '/ja/combat-gameplay-guide/',
+  '/ja/pvp-gameplay-guide/',
+  '/ja/pve-gameplay-guide/',
+  '/ja/solo-gameplay-guide/',
+  '/ja/co-op-gameplay-guide/',
+  '/ja/mistfall-hunters-spelling/',
+  '/ja/mistfall-hunter-vs-mistfall-hunters/',
+  '/ja/mistfall-hunter-name-guide/',
+  '/ja/release-time-time-zones/',
+  '/ja/launch-day-checklist/',
+  '/ja/launch-week-roadmap/',
+  '/ja/pre-launch-guide/',
+  '/ja/steam-release-time/',
+  '/ja/steam-demo-guide/',
+  '/ja/steam-reviews-tracker/',
+  '/ja/steam-wishlist-guide/',
+  '/ja/cross-platform-party-guide/',
+  '/ja/cross-progression-guide/',
+  '/ja/pc-xbox-crossplay-guide/',
+  '/ja/ps5-crossplay-guide/',
+  '/ja/steam-price-guide/',
+  '/ja/xbox-price-guide/',
+  '/ja/ps5-price-guide/',
+  '/ja/game-pass-or-buy-guide/',
+  '/ja/classes-overview-2026/',
+  '/ja/classes-ranked-for-launch/',
+  '/ja/classes-for-squads/',
+  '/ja/classes-for-beginners-2026/',
   '/ja/game-data/',
   '/ja/faq/',
   '/ja/news/',
@@ -366,6 +428,14 @@ export const INDEXABLE_TAB_NEWS_SLUGS = new Set([
   'salmar-cursed-moonwane-origin-revealed','fallen-general-harald-named','mist-lord-normal-chaos-difficulty','holy-weapons-exclusive-boss-drops','cataclysm-best-gear-source',
 ]);
 
+// The 50 highest-value entries (id 1-50) from faq100.ts, each promoted to
+// its own indexable /faq/[slug] URL for direct long-tail landing (see
+// FaqDetailArticle.astro, src/pages/faq/[slug].astro). Both en and zh are
+// real content from faq100.ts, not machine-translated drafts.
+export const INDEXABLE_FAQ_DETAIL_SLUGS = new Set([
+  'faq-when-does-mistfall-hunter-release', 'faq-why-do-some-pages-show-july-30-instead-of-july-29', 'faq-what-time-does-mistfall-hunter-unlock', 'faq-is-there-early-access', 'faq-is-there-a-digital-deluxe-edition', 'faq-what-is-included-in-the-deluxe-edition', 'faq-is-mistfall-hunter-free-to-play', 'faq-does-mistfall-hunter-have-in-game-purchases', 'faq-is-mistfall-hunter-pay-to-win', 'faq-can-i-wishlist-mistfall-hunter', 'faq-what-platforms-is-mistfall-hunter-on', 'faq-is-mistfall-hunter-on-steam', 'faq-is-mistfall-hunter-on-xbox-series-xs', 'faq-is-mistfall-hunter-on-xbox-one', 'faq-is-mistfall-hunter-on-ps5', 'faq-is-mistfall-hunter-on-game-pass', 'faq-does-it-support-xbox-play-anywhere', 'faq-is-there-a-native-mac-version', 'faq-is-mistfall-hunter-on-nintendo-switch', 'faq-what-languages-does-mistfall-hunter-support', 'faq-what-kind-of-game-is-mistfall-hunter', 'faq-what-does-pvpve-mean-here', 'faq-what-is-the-main-gameplay-loop', 'faq-what-happens-when-you-die', 'faq-how-do-you-extract', 'faq-what-is-a-returner-woodling', 'faq-what-is-the-soul-of-return', 'faq-is-the-game-first-person-or-third-person', 'faq-is-combat-souls-like', 'faq-does-mistfall-hunter-have-free-aiming', 'faq-how-many-classes-are-in-mistfall-hunter', 'faq-what-are-the-six-known-classes', 'faq-which-class-is-best-for-beginners', 'faq-what-is-the-mercenary-role', 'faq-what-is-the-sorcerer-role', 'faq-what-is-the-blackarrow-role', 'faq-what-is-the-shadowstrix-role', 'faq-what-is-the-seer-role', 'faq-what-is-the-withered-knight-role', 'faq-can-a-class-use-more-than-one-weapon-style', 'faq-does-combat-use-combos', 'faq-can-you-target-weak-points', 'faq-are-there-active-skills', 'faq-are-there-talent-trees', 'faq-what-are-gem-affixes', 'faq-how-should-i-make-a-beginner-build', 'faq-are-pre-launch-tier-lists-reliable', 'faq-should-i-build-for-pve-or-pvp', 'faq-is-defense-useful-in-an-extraction-game', 'faq-can-you-change-fighting-style-mid-battle',
+]);
+
 export const INDEXABLE_GAME_DATA_SLUGS = new Set([
   'withered-knight','mercenary','shadowstrix','sorcerer','blackarrow','seer',
   'holy-weapons','keys-and-treasure-chambers','legendary-class-sets','equipment-vouchers','friend-equipment-return',
@@ -521,6 +591,8 @@ export function isIndexablePath(path = '/') {
   if (/^\/(?:(?:de|ja)\/)?community-questions\/[^/]+\/$/.test(normalized)) return true;
   const newsMatch = normalized.match(/^\/(?:(?:zh|de|ja)\/)?news\/([^/]+)\/$/);
   if (newsMatch) return INDEXABLE_TAB_NEWS_SLUGS.has(newsMatch[1]);
+  const faqDetailMatch = normalized.match(/^\/(?:zh\/)?faq\/([^/]+)\/$/);
+  if (faqDetailMatch) return INDEXABLE_FAQ_DETAIL_SLUGS.has(faqDetailMatch[1]);
   const dataMatch = normalized.match(/^\/(?:(zh|de|ja|zh-hant|es|ru|ko|fr|pt-br)\/)?game-data\/([^/]+)\/$/);
   if (dataMatch) {
     const [, locale, slug] = dataMatch;
