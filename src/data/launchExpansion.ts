@@ -52,6 +52,7 @@ export const enLaunchPages: SeoPage[] = [
     sections: [
       { heading: 'What Bellring has said', body: ['Both the official Steam listing and the open beta\'s own marketing repeat the same line: there are no pay-to-win mechanics and no paid stat boosts, and victory is meant to come down to skill and preparation rather than spending. That framing has shown up consistently across the game\'s own store copy and press materials, not just a one-off marketing line.'] },
       { heading: 'What is confirmed at launch', body: ['Pricing is now confirmed: Standard Edition is $24.99 and Deluxe Edition is $39.99 (or a $15 upgrade from Standard), with a 10% launch discount through August 12, 2026. Season 1 (Soul Hunt) ships with a completely free Battle Pass \u2014 no paid season pass at launch. Cosmetics, matching the beta\'s avatar frames, poses, and emotes, remain the confirmed shop pattern so far.'], bullets: ['Standard $24.99 / Deluxe $39.99, confirmed', 'Season 1 Battle Pass is free, not paid', 'Cosmetic-only rewards are the confirmed shop pattern', 'Exact convenience-item pricing beyond cosmetics is not yet detailed'] },
+      { heading: 'What players are saying about pricing', body: ['Some launch-day Steam reviews have criticized the cash shop\'s gem-pack pricing as steep for an already-paid game \u2014 for example, complaints that a smaller gem pack lands just short of a full weapon skin\'s cost, pushing players toward a larger pack. This is a pricing complaint about cosmetic items, distinct from the pay-to-win claim itself: no player reports reviewed so far dispute that shop items affect stats.'] },
     ],
     cards: [
       { title: 'Release date & price', desc: 'Standard vs Deluxe pricing and launch discount.', href: '/release-date' },
@@ -186,6 +187,7 @@ export const zhLaunchPages: SeoPage[] = [
     sections: [
       { heading: 'Bellring 说了什么', body: ['官方 Steam 商店页面和公开测试期的宣传口径一致：没有数值付费机制、不出售属性加成，胜负取决于技术和准备，而不是花钱多少。这个说法在官方商店文案和媒体通稿里反复出现，不是一次性的营销话术。'] },
       { heading: '发售时已确认的信息', body: ['价格现已确认：标准版 24.99 美元，豪华版 39.99 美元（或从标准版加价 15 美元升级），发售有 10% 折扣，持续到 2026 年 8 月 12 日。第一赛季（Soul Hunt）的战斗通行证完全免费——发售时没有付费赛季通行证。外观类内容延续测试期头像框、姿势和表情的模式，是目前确认的商城形态。'], bullets: ['标准版 24.99 美元 / 豪华版 39.99 美元，已确认', '第一赛季通行证免费，不是付费制', '目前确认的商城模式是纯外观奖励', '外观之外的便利类道具具体定价尚未详细公布'] },
+      { heading: '玩家对定价的反馈', body: ['部分发售当天的 Steam 评价批评宝石礼包定价偏高——例如有玩家反映较小的宝石礼包金额刚好不够买一整套武器皮肤，变相引导玩家去买更大的礼包。这是针对外观类商品定价的意见，和"付费致胜"本身是两回事：目前查阅到的玩家反馈里，没有人质疑商城道具会影响数值。'] },
     ],
     cards: [
       { title: '发售日期与价格', desc: '标准版与豪华版定价、首发折扣。', href: '/zh/release-date' },
