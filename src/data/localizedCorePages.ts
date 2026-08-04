@@ -868,6 +868,916 @@ const de: LocalizedCorePage[] = [
       { heading: "Worauf du achten musst", paragraphs: ["Drei Spieler auf derselben Rolle ohne Support-Plan zu stapeln, ist ein häufiger Fehler."] },
     ], related: [],
   },
+  {
+    slug: 'gameplay-loop-explained', title: "Mistfall Hunter Gameplay-Loop erklärt",
+    description: "Jeder Lauf läuft auf dieselben Kernentscheidungen hinaus: was bekämpft wird, was gelootet wird, wann ein Kampf sicher ist, und ob man weiter drängt oder rechtzeitig zum Soul of Return zurückkehrt, bevor es ein anderer Hunter tut.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Gameplay-Loop erklärt",
+    lead: "Jeder Lauf läuft auf dieselben Kernentscheidungen hinaus: was bekämpft wird, was gelootet wird, wann ein Kampf sicher ist, und ob man weiter drängt oder rechtzeitig zum Soul of Return zurückkehrt, bevor es ein anderer Hunter tut.",
+    sections: [
+      { heading: "Die Kernschleife", paragraphs: ["Betreten, kämpfen, looten, Extraktion sichern, gehen — das ist der wiederkehrende Kern jedes Laufs."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Die Entscheidung, wann genug Loot genug ist, ist oft wichtiger als reine Kampfstärke."] },
+    ], related: [],
+  },
+  {
+    slug: 'gameplay-trailer-breakdown', title: "Mistfall Hunter Gameplay-Trailer-Analyse",
+    description: "Offizielle Trailer bestätigen sechs Klassen, PvPvE-Kampf gegen Monster und rivalisierende Hunter, einen extraktionsbasierten Loot-Loop und Mist-Lord-Bosskämpfe. Alles, was nicht tatsächlich gezeigt wurde, gilt als noch nicht offiziell bestätigt, nicht als versteckte Mechanik.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Gameplay-Trailer-Analyse",
+    lead: "Offizielle Trailer bestätigen sechs Klassen, PvPvE-Kampf gegen Monster und rivalisierende Hunter, einen extraktionsbasierten Loot-Loop und Mist-Lord-Bosskämpfe. Alles, was nicht tatsächlich gezeigt wurde, gilt als noch nicht offiziell bestätigt, nicht als versteckte Mechanik.",
+    sections: [
+      { heading: "Was bestätigt ist", paragraphs: ["Sechs Klassen, PvPvE-Kampf und ein extraktionsbasierter Loot-Loop sind durch offizielle Trailer bestätigt."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Nicht gezeigte Details sollten nicht als bestätigte Mechaniken angenommen werden."] },
+    ], related: [],
+  },
+  {
+    slug: 'first-30-minutes-guide', title: "Mistfall Hunter: deine ersten 30 Minuten",
+    description: "Verbringe deine ersten dreißig Minuten damit, das grundlegende Kampfgefühl deiner Klasse zu lernen, einen nahen Ausgang zu finden und eine komplette Extraktion mit günstiger Ausrüstung abzuschließen — das zählt mehr, als einen Bosskampf zu suchen, bevor du die Steuerung kennst.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter: deine ersten 30 Minuten",
+    lead: "Verbringe deine ersten dreißig Minuten damit, das grundlegende Kampfgefühl deiner Klasse zu lernen, einen nahen Ausgang zu finden und eine komplette Extraktion mit günstiger Ausrüstung abzuschließen — das zählt mehr, als einen Bosskampf zu suchen, bevor du die Steuerung kennst.",
+    sections: [
+      { heading: "Erst die Grundlagen", paragraphs: ["Lerne das Kampfgefühl deiner Klasse und schließe eine einfache Extraktion ab, bevor du Größeres wagst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Einen Bosskampf zu suchen, bevor du die Steuerung kennst, ist ein häufiger Anfängerfehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'combat-gameplay-guide', title: "Mistfall Hunter Kampf-Gameplay-Guide",
+    description: "Der Kampf dreht sich um Ausdauer-Management, Zielen ohne festes Lock-On, Blocken und Ausweichen sowie die spezifischen Werkzeuge deiner Klasse. Spieler, die am längsten überleben, behandeln Ausdauer wie eine zweite Lebensleiste.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Kampf-Gameplay-Guide",
+    lead: "Der Kampf dreht sich um Ausdauer-Management, Zielen ohne festes Lock-On, Blocken und Ausweichen sowie die spezifischen Werkzeuge deiner Klasse. Spieler, die am längsten überleben, behandeln Ausdauer wie eine zweite Lebensleiste.",
+    sections: [
+      { heading: "Ausdauer als zweite Lebensleiste", paragraphs: ["Behandle deine Ausdauer wie eine zweite Lebensleiste, nicht nur als Ressource für Angriffe."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Ausdauer bis zum letzten Rest zu verbrauchen, lässt dich ohne Fluchtoption zurück."] },
+    ], related: [],
+  },
+  {
+    slug: 'pvp-gameplay-guide', title: "Mistfall Hunter PvP-Gameplay-Guide",
+    description: "PvP ist nicht nur Duellieren — Geräusche, Routenkontrolle und Extraktions-Timing entscheiden die meisten Kämpfe, bevor überhaupt ein Treffer landet. Die sichersten Siege kommen davon, einen abgelenkten Hunter zu erwischen, nicht einen vollständig gesunden herauszufordern.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter PvP-Gameplay-Guide",
+    lead: "PvP ist nicht nur Duellieren — Geräusche, Routenkontrolle und Extraktions-Timing entscheiden die meisten Kämpfe, bevor überhaupt ein Treffer landet. Die sichersten Siege kommen davon, einen abgelenkten Hunter zu erwischen, nicht einen vollständig gesunden herauszufordern.",
+    sections: [
+      { heading: "Sieg beginnt vor dem Kampf", paragraphs: ["Geräusche und Routenkontrolle entscheiden die meisten Kämpfe schon vor dem ersten Treffer."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Einen vollständig gesunden Gegner direkt herauszufordern, ist riskanter als einen abgelenkten zu erwischen."] },
+    ], related: [],
+  },
+  {
+    slug: 'pve-gameplay-guide', title: "Mistfall Hunter PvE-Gameplay-Guide",
+    description: "PvE-Bedrohungen kosten Zeit, Geräusch und Ressourcen, selbst wenn du gewinnst. Jeder Kampf gegen ein Monster sollte gegen die Frage abgewogen werden, ob die Belohnung die Aufmerksamkeit wert ist, die er von anderen Huntern anzieht.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter PvE-Gameplay-Guide",
+    lead: "PvE-Bedrohungen kosten Zeit, Geräusch und Ressourcen, selbst wenn du gewinnst. Jeder Kampf gegen ein Monster sollte gegen die Frage abgewogen werden, ob die Belohnung die Aufmerksamkeit wert ist, die er von anderen Huntern anzieht.",
+    sections: [
+      { heading: "Jeder Kampf hat einen Preis", paragraphs: ["Wäge jeden PvE-Kampf gegen die Aufmerksamkeit ab, die er von anderen Spielern anziehen könnte."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Lange, laute Kämpfe gegen Monster können gefährlicher werden als die Monster selbst."] },
+    ], related: [],
+  },
+  {
+    slug: 'solo-gameplay-guide', title: "Mistfall Hunter Solo-Gameplay-Guide",
+    description: "Solo-Spiel belohnt kurze, leise Routen und Klassen mit einem Fluchttool. Du kannst die Aufmerksamkeit nicht mit Teamkollegen teilen, daher zählen Routendisziplin und frühe Ausgänge mehr als reine Klassenstärke.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Solo-Gameplay-Guide",
+    lead: "Solo-Spiel belohnt kurze, leise Routen und Klassen mit einem Fluchttool. Du kannst die Aufmerksamkeit nicht mit Teamkollegen teilen, daher zählen Routendisziplin und frühe Ausgänge mehr als reine Klassenstärke.",
+    sections: [
+      { heading: "Routendisziplin zählt mehr als Stärke", paragraphs: ["Kurze, leise Routen und ein verlässliches Fluchttool sind solo wichtiger als reine Klassenstärke."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Ohne Teamkollegen musst du Aufmerksamkeit und Risiko allein tragen."] },
+    ], related: [],
+  },
+  {
+    slug: 'co-op-gameplay-guide', title: "Mistfall Hunter Koop-Gameplay-Guide",
+    description: "Koop-Läufe funktionieren am besten, wenn das Squad die Aufgaben klar aufteilt — ein Hunter macht Druck, einer supportet, einer beobachtet die Umgebung — statt dass alle dasselbe Ziel angreifen.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Koop-Gameplay-Guide",
+    lead: "Koop-Läufe funktionieren am besten, wenn das Squad die Aufgaben klar aufteilt — ein Hunter macht Druck, einer supportet, einer beobachtet die Umgebung — statt dass alle dasselbe Ziel angreifen.",
+    sections: [
+      { heading: "Klare Rollenverteilung", paragraphs: ["Teile die Aufgaben im Team klar auf, statt dass alle dasselbe Ziel angreifen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Ohne klare Rollen wird ein Team leicht zu drei separaten, ungeschützten Spielern."] },
+    ], related: [],
+  },
+  {
+    slug: 'mistfall-hunters-spelling', title: "Mistfall Hunter oder Mistfall Hunters? Richtige Schreibweise",
+    description: "Der offizielle Titel ist Mistfall Hunter, Singular — Bellrings eigene Seite, Steam und Xbox-Listings verwenden alle die Singularform. \"Mistfall Hunters\" ist einfach eine übliche Suchvariante für dasselbe Spiel.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter oder Mistfall Hunters?",
+    lead: "Der offizielle Titel ist Mistfall Hunter, Singular — Bellrings eigene Seite, Steam und Xbox-Listings verwenden alle die Singularform. \"Mistfall Hunters\" ist einfach eine übliche Suchvariante für dasselbe Spiel.",
+    sections: [
+      { heading: "Die offizielle Schreibweise", paragraphs: ["Mistfall Hunter (Singular) ist die offizielle Schreibweise auf allen offiziellen Kanälen."] },
+      { heading: "Warum die Variante existiert", paragraphs: ["\"Mistfall Hunters\" ist eine natürliche Suchgewohnheit, kein alternativer Titel."] },
+    ], related: [],
+  },
+  {
+    slug: 'mistfall-hunter-vs-mistfall-hunters', title: "Mistfall Hunter vs Mistfall Hunters: dasselbe Spiel",
+    description: "Es gibt kein separates Spiel namens Mistfall Hunters — es ist derselbe Titel, Mistfall Hunter, nur anders geschrieben in der Suche. Nutze die Singularform für offizielle Seiten, Stores oder News.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter vs Mistfall Hunters",
+    lead: "Es gibt kein separates Spiel namens Mistfall Hunters — es ist derselbe Titel, Mistfall Hunter, nur anders geschrieben in der Suche. Nutze die Singularform für offizielle Seiten, Stores oder News.",
+    sections: [
+      { heading: "Dasselbe Spiel", paragraphs: ["Beide Schreibweisen beziehen sich auf dasselbe Spiel, Mistfall Hunter."] },
+      { heading: "Welche Schreibweise nutzen", paragraphs: ["Nutze die Singularform, um offizielle Quellen zuverlässig zu finden."] },
+    ], related: [],
+  },
+  {
+    slug: 'mistfall-hunter-name-guide', title: "Mistfall Hunter Namens- & Schreibweisen-Guide",
+    description: "Wenn du den Namen als Mistfall Hunters, Mist Fall Hunter oder ähnlich gesehen hast, beziehen sich alle auf dasselbe Spiel. Der offizielle Name auf Steam, Xbox und Bellrings eigener Seite ist Mistfall Hunter.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Namens- und Schreibweisen-Guide",
+    lead: "Wenn du den Namen als Mistfall Hunters, Mist Fall Hunter oder ähnlich gesehen hast, beziehen sich alle auf dasselbe Spiel. Der offizielle Name auf Steam, Xbox und Bellrings eigener Seite ist Mistfall Hunter.",
+    sections: [
+      { heading: "Alle Varianten meinen dasselbe Spiel", paragraphs: ["Verschiedene Schreibweisen wie Mist Fall Hunter beziehen sich alle auf denselben Titel."] },
+      { heading: "Der offizielle Name", paragraphs: ["Mistfall Hunter ist der einzige offizielle Name auf Steam, Xbox und der eigenen Seite."] },
+    ], related: [],
+  },
+  {
+    slug: 'release-time-time-zones', title: "Mistfall Hunter Release-Zeit in deiner Zeitzone",
+    description: "Mistfall Hunter startet am 29. Juli 2026 um 18:00 PT, was dem 30. Juli 2026, 01:00 UTC entspricht — derselbe Zeitpunkt. In Mitteleuropäischer Zeit ist das etwa 3:00 Uhr am 30. Juli; in japanischer Standardzeit etwa 11:00 Uhr am 30. Juli.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Release-Zeit nach Zeitzone",
+    lead: "Mistfall Hunter startet am 29. Juli 2026 um 18:00 PT, was dem 30. Juli 2026, 01:00 UTC entspricht — derselbe Zeitpunkt. In Mitteleuropäischer Zeit ist das etwa 3:00 Uhr am 30. Juli; in japanischer Standardzeit etwa 11:00 Uhr am 30. Juli.",
+    sections: [
+      { heading: "Die Umrechnung", paragraphs: ["18:00 PT am 29. Juli entspricht 01:00 UTC am 30. Juli — demselben Moment weltweit."] },
+      { heading: "Regionale Zeiten", paragraphs: ["Prüfe deinen lokalen Store für den genauen Countdown in deiner Zeitzone."] },
+    ], related: [],
+  },
+  {
+    slug: 'launch-day-checklist', title: "Mistfall Hunter Launch-Day-Checkliste",
+    description: "Vor dem Launch-Tag: Bestätige, dass dein Plattform-Konto verknüpft ist, setze das Spiel auf die Wunschliste oder folge der Store-Seite, entscheide dich zwischen Standard und Deluxe, und wähle eine Klasse, die du gerne lernst.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Launch-Day-Checkliste",
+    lead: "Vor dem Launch-Tag: Bestätige, dass dein Plattform-Konto verknüpft ist, setze das Spiel auf die Wunschliste oder folge der Store-Seite, entscheide dich zwischen Standard und Deluxe, und wähle eine Klasse, die du gerne lernst.",
+    sections: [
+      { heading: "Vor dem Start prüfen", paragraphs: ["Konto verknüpft, Wunschliste gesetzt, Edition entschieden — das gehört zur Vorbereitung."] },
+      { heading: "Kein Preload", paragraphs: ["Es gibt keinen Preload, das Spiel wird erst zum offiziellen Startzeitpunkt spielbar."] },
+    ], related: [],
+  },
+  {
+    slug: 'launch-week-roadmap', title: "Mistfall Hunter Launch-Woche Roadmap",
+    description: "Die Launch-Woche ist das Fenster für Day-One-Patches, Serverstabilitätsberichte und die ersten echten Balance-Diskussionen, sobald Spieler Live-Daten statt Beta-Eindrücke haben. Diese Seite verfolgt das, sobald es offiziell bestätigt wird.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Launch-Woche Roadmap",
+    lead: "Die Launch-Woche ist das Fenster für Day-One-Patches, Serverstabilitätsberichte und die ersten echten Balance-Diskussionen, sobald Spieler Live-Daten statt Beta-Eindrücke haben. Diese Seite verfolgt das, sobald es offiziell bestätigt wird.",
+    sections: [
+      { heading: "Was zu beobachten ist", paragraphs: ["Day-One-Patches und Serverstabilität sind die wichtigsten Themen der ersten Woche."] },
+      { heading: "Balance-Diskussionen", paragraphs: ["Erste echte Balance-Diskussionen entstehen erst mit Live-Daten, nicht mit Beta-Eindrücken."] },
+    ], related: [],
+  },
+  {
+    slug: 'pre-launch-guide', title: "Mistfall Hunter Vor-dem-Launch-Guide",
+    description: "Vor dem Launch ist die nützlichste Vorbereitung, den Extraktions-Loop zu lernen, Klassenrollen zu vergleichen und Plattform und Preis zu bestätigen — nicht, Tierlisten basierend auf Beta-Daten auswendig zu lernen, die möglicherweise nicht in den Launch-Build übernommen werden.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Vor-dem-Launch-Guide",
+    lead: "Vor dem Launch ist die nützlichste Vorbereitung, den Extraktions-Loop zu lernen, Klassenrollen zu vergleichen und Plattform und Preis zu bestätigen — nicht, Tierlisten basierend auf Beta-Daten auswendig zu lernen, die möglicherweise nicht in den Launch-Build übernommen werden.",
+    sections: [
+      { heading: "Was wirklich hilft", paragraphs: ["Den Extraktions-Loop verstehen und Klassenrollen vergleichen ist nützlicher als Beta-Tierlisten auswendig zu lernen."] },
+      { heading: "Was zu vermeiden ist", paragraphs: ["Beta-basierte Tierlisten müssen nach dem Launch nicht mehr gelten."] },
+    ], related: [],
+  },
+  {
+    slug: 'steam-release-time', title: "Mistfall Hunter Steam-Release-Zeit",
+    description: "Steams eigenes Listing zeigt den 29. Juli 2026 als Release. Der genaue Freischaltmoment ist 18:00 PT (30. Juli, 01:00 UTC) laut offizieller Ankündigung; Steam schaltet normalerweise überall zum selben Zeitpunkt frei, angepasst an die lokale Zeit jeder Region.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Steam-Release-Zeit",
+    lead: "Steams eigenes Listing zeigt den 29. Juli 2026 als Release. Der genaue Freischaltmoment ist 18:00 PT (30. Juli, 01:00 UTC) laut offizieller Ankündigung; Steam schaltet normalerweise überall zum selben Zeitpunkt frei, angepasst an die lokale Zeit jeder Region.",
+    sections: [
+      { heading: "Der bestätigte Zeitpunkt", paragraphs: ["Steam zeigt den 29. Juli 2026, mit Freischaltung um 18:00 PT weltweit zum gleichen Moment."] },
+      { heading: "Regionale Anpassung", paragraphs: ["Die Uhrzeit wird an die lokale Zeit jeder Region angepasst, der Moment bleibt aber derselbe."] },
+    ], related: [],
+  },
+  {
+    slug: 'steam-demo-guide', title: "Mistfall Hunter Steam-Demo-Guide",
+    description: "Die Mistfall-Hunter-Demo war während des Steam Next Fest im Juni 2026 verfügbar, getrennt von der offenen Beta vom 15.–22. Juni. Der Demo-Fortschritt wird nicht in die Vollversion übernommen; behandle sie als Vorgeschmack auf Kampf und Extraktions-Loop, nicht als finalen Build.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Steam-Demo-Guide",
+    lead: "Die Mistfall-Hunter-Demo war während des Steam Next Fest im Juni 2026 verfügbar, getrennt von der offenen Beta vom 15.–22. Juni. Der Demo-Fortschritt wird nicht in die Vollversion übernommen; behandle sie als Vorgeschmack auf Kampf und Extraktions-Loop, nicht als finalen Build.",
+    sections: [
+      { heading: "Wann die Demo lief", paragraphs: ["Die Demo lief während des Steam Next Fest im Juni 2026, getrennt von der offenen Beta."] },
+      { heading: "Fortschritt zählt nicht", paragraphs: ["Demo-Fortschritt wird nicht in die Vollversion übernommen."] },
+    ], related: [],
+  },
+  {
+    slug: 'steam-reviews-tracker', title: "Mistfall Hunter Steam-Bewertungs-Tracker",
+    description: "Mistfall Hunter hat nun echte Spieler, die es bewerten können, da es am 29. Juli gestartet ist. Diese Seite verfolgt Bewertungstrends sowie häufiges Lob und häufige Kritik, sobald genug Daten vorliegen.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Steam-Bewertungs-Tracker",
+    lead: "Mistfall Hunter hat nun echte Spieler, die es bewerten können, da es am 29. Juli gestartet ist. Diese Seite verfolgt Bewertungstrends sowie häufiges Lob und häufige Kritik, sobald genug Daten vorliegen.",
+    sections: [
+      { heading: "Frühe Bewertungen", paragraphs: ["Echte Spielerbewertungen entstehen erst jetzt, da das Spiel live ist."] },
+      { heading: "Was zu beobachten ist", paragraphs: ["Häufige Kritikpunkte und Lob werden sich in den ersten Tagen nach Launch herauskristallisieren."] },
+    ], related: [],
+  },
+  {
+    slug: 'steam-wishlist-guide', title: "Mistfall Hunter Steam-Wunschliste-Guide",
+    description: "Mistfall Hunter auf Steam auf die Wunschliste zu setzen (oder auf Xbox oder PlayStation zu folgen) gibt dir eine Benachrichtigung, sobald es freigeschaltet wird. Es gibt keine bestätigte wunschlisten-spezifische Belohnung darüber hinaus.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Steam-Wunschliste-Guide",
+    lead: "Mistfall Hunter auf Steam auf die Wunschliste zu setzen (oder auf Xbox oder PlayStation zu folgen) gibt dir eine Benachrichtigung, sobald es freigeschaltet wird. Es gibt keine bestätigte wunschlisten-spezifische Belohnung darüber hinaus.",
+    sections: [
+      { heading: "Der praktische Nutzen", paragraphs: ["Die Wunschliste sorgt vor allem dafür, dass du den genauen Startzeitpunkt nicht verpasst."] },
+      { heading: "Keine spezielle Belohnung", paragraphs: ["Es gibt keine bestätigte, exklusive Belohnung nur für die Wunschliste."] },
+    ], related: [],
+  },
+  {
+    slug: 'cross-platform-party-guide', title: "Mistfall Hunter Cross-Plattform-Party-Guide",
+    description: "Volles Cross-Play über PC, Xbox und PS5 ist bestätigt und live — Spieler auf unterschiedlichen Plattformen können sich jetzt zusammenschließen und gemeinsam jagen. Cross-Progression ist ein separates Feature und noch nicht in gleicher Form bestätigt.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Cross-Plattform-Party-Guide",
+    lead: "Volles Cross-Play über PC, Xbox und PS5 ist bestätigt und live — Spieler auf unterschiedlichen Plattformen können sich jetzt zusammenschließen und gemeinsam jagen. Cross-Progression ist ein separates Feature und noch nicht in gleicher Form bestätigt.",
+    sections: [
+      { heading: "Live und bestätigt", paragraphs: ["Cross-Play über alle drei Plattformen ist jetzt live und funktioniert."] },
+      { heading: "Cross-Progression separat", paragraphs: ["Ein gemeinsames Konto über Plattformen hinweg ist ein anderes, noch nicht bestätigtes Feature."] },
+    ], related: [],
+  },
+  {
+    slug: 'cross-progression-guide', title: "Mistfall Hunter Cross-Progression-Guide",
+    description: "Cross-Progression — dasselbe Konto und dieselben Freischaltungen über Plattformen hinweg — ist bisher nicht offiziell bestätigt. Die offene Beta bestätigte Cross-Play (Zusammenspielen), was ein verwandtes, aber separates Feature von Cross-Progression (geteilte Spielstände) ist.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Cross-Progression-Guide",
+    lead: "Cross-Progression — dasselbe Konto und dieselben Freischaltungen über Plattformen hinweg — ist bisher nicht offiziell bestätigt. Die offene Beta bestätigte Cross-Play (Zusammenspielen), was ein verwandtes, aber separates Feature von Cross-Progression (geteilte Spielstände) ist.",
+    sections: [
+      { heading: "Was Cross-Progression bedeutet", paragraphs: ["Dasselbe Konto mit geteilten Freischaltungen über Plattformen hinweg zu nutzen, ist noch nicht bestätigt."] },
+      { heading: "Nicht zu verwechseln mit Cross-Play", paragraphs: ["Cross-Play (Zusammenspielen) ist bestätigt, Cross-Progression (geteilte Spielstände) ist ein separates Thema."] },
+    ], related: [],
+  },
+  {
+    slug: 'pc-xbox-crossplay-guide', title: "Mistfall Hunter PC & Xbox Crossplay-Guide",
+    description: "Ja — PC- und Xbox-Spieler können zusammen spielen, da volles Cross-Play über PC, Xbox und PS5 bestätigt und live ist. Konsolen-Online-Multiplayer auf Xbox benötigt Game Pass Core oder Ultimate.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter PC und Xbox Crossplay",
+    lead: "Ja — PC- und Xbox-Spieler können zusammen spielen, da volles Cross-Play über PC, Xbox und PS5 bestätigt und live ist. Konsolen-Online-Multiplayer auf Xbox benötigt Game Pass Core oder Ultimate.",
+    sections: [
+      { heading: "Bestätigt und live", paragraphs: ["PC- und Xbox-Spieler können jetzt zusammen spielen, das Cross-Play ist live."] },
+      { heading: "Was Xbox-Spieler brauchen", paragraphs: ["Für Online-Multiplayer auf Xbox wird Game Pass Core oder Ultimate benötigt."] },
+    ], related: [],
+  },
+  {
+    slug: 'ps5-crossplay-guide', title: "Mistfall Hunter PS5-Crossplay-Guide",
+    description: "Ja — PS5 ist im bestätigten vollen Cross-Play über PC, Xbox und PS5 zum Launch enthalten, sodass PS5-Spieler mit PC- und Xbox-Huntern zusammen spielen können.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter PS5-Crossplay-Guide",
+    lead: "Ja — PS5 ist im bestätigten vollen Cross-Play über PC, Xbox und PS5 zum Launch enthalten, sodass PS5-Spieler mit PC- und Xbox-Huntern zusammen spielen können.",
+    sections: [
+      { heading: "PS5 ist eingeschlossen", paragraphs: ["PS5 ist Teil des bestätigten Cross-Play-Verbunds mit PC und Xbox."] },
+      { heading: "Was das bedeutet", paragraphs: ["PS5-Spieler können ohne Einschränkung mit PC- und Xbox-Spielern zusammenspielen."] },
+    ], related: [],
+  },
+  {
+    slug: 'steam-price-guide', title: "Mistfall Hunter Steam-Preis-Guide",
+    description: "Auf Steam kostet die Standard Edition 24,99 $ und die Deluxe Edition 39,99 $, mit einem Upgrade-Pfad für 15 $. Ein 10 % Launch-Rabatt gilt vom Moment der Freischaltung bis zum 12. August 2026.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Steam-Preis-Guide",
+    lead: "Auf Steam kostet die Standard Edition 24,99 $ und die Deluxe Edition 39,99 $, mit einem Upgrade-Pfad für 15 $. Ein 10 % Launch-Rabatt gilt vom Moment der Freischaltung bis zum 12. August 2026.",
+    sections: [
+      { heading: "Bestätigter Preis", paragraphs: ["Standard 24,99 $, Deluxe 39,99 $, mit 15 $ Upgrade-Option."] },
+      { heading: "Der Launch-Rabatt", paragraphs: ["10 % Rabatt gilt von der Freischaltung bis zum 12. August 2026."] },
+    ], related: [],
+  },
+  {
+    slug: 'xbox-price-guide', title: "Mistfall Hunter Xbox-Preis-Guide",
+    description: "Die Xbox-Preise entsprechen Steam: 24,99 $ Standard, 39,99 $ Deluxe. Es ist außerdem ab Tag eins im Xbox Game Pass für Xbox und PC, sodass Game-Pass-Abonnenten spielen können, ohne es separat zu kaufen.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Xbox-Preis-Guide",
+    lead: "Die Xbox-Preise entsprechen Steam: 24,99 $ Standard, 39,99 $ Deluxe. Es ist außerdem ab Tag eins im Xbox Game Pass für Xbox und PC, sodass Game-Pass-Abonnenten spielen können, ohne es separat zu kaufen.",
+    sections: [
+      { heading: "Preis wie auf Steam", paragraphs: ["Xbox-Preise entsprechen genau den Steam-Preisen."] },
+      { heading: "Game Pass Vorteil", paragraphs: ["Game-Pass-Abonnenten erhalten das Spiel ab Tag eins ohne zusätzlichen Kauf."] },
+    ], related: [],
+  },
+  {
+    slug: 'ps5-price-guide', title: "Mistfall Hunter PS5-Preis-Guide",
+    description: "Die PS5-Preise folgen derselben Struktur wie überall: 24,99 $ Standard / 39,99 $ Deluxe. Anders als bei Xbox ist es zum Launch nicht in PS Plus enthalten, PS5-Spieler müssen es direkt kaufen.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter PS5-Preis-Guide",
+    lead: "Die PS5-Preise folgen derselben Struktur wie überall: 24,99 $ Standard / 39,99 $ Deluxe. Anders als bei Xbox ist es zum Launch nicht in PS Plus enthalten, PS5-Spieler müssen es direkt kaufen.",
+    sections: [
+      { heading: "Preis wie überall", paragraphs: ["PS5-Preise folgen der gleichen 24,99 $ / 39,99 $ Struktur wie auf allen Plattformen."] },
+      { heading: "Nicht in PS Plus enthalten", paragraphs: ["Anders als Xbox Game Pass ist das Spiel nicht in PS Plus enthalten."] },
+    ], related: [],
+  },
+  {
+    slug: 'game-pass-or-buy-guide', title: "Mistfall Hunter: Game Pass oder Kaufen?",
+    description: "Wenn du auf Xbox oder PC bist, bekommst du Mistfall Hunter ab Tag eins über Game Pass ohne zusätzliche Kosten außer dem Abo. Ein Kauf lohnt sich mehr, wenn du über ein mögliches Game-Pass-Ende hinaus weiterspielen willst, oder auf PS5, wo Game Pass nicht gilt.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter: Game Pass oder kaufen?",
+    lead: "Wenn du auf Xbox oder PC bist, bekommst du Mistfall Hunter ab Tag eins über Game Pass ohne zusätzliche Kosten außer dem Abo. Ein Kauf lohnt sich mehr, wenn du über ein mögliches Game-Pass-Ende hinaus weiterspielen willst, oder auf PS5, wo Game Pass nicht gilt.",
+    sections: [
+      { heading: "Game Pass für Xbox/PC", paragraphs: ["Game Pass gibt dir Zugang ab Tag eins ohne zusätzlichen Kauf."] },
+      { heading: "Wann Kaufen sinnvoll ist", paragraphs: ["Kaufen lohnt sich für langfristiges Spielen oder auf PS5, wo Game Pass nicht verfügbar ist."] },
+    ], related: [],
+  },
+  {
+    slug: 'classes-overview-2026', title: "Mistfall Hunter Klassenübersicht (2026)",
+    description: "Mistfall Hunter startet mit sechs Klassen: Mercenary (Nahkampf-Bruiser), Sorcerer (Fernkampf-Magie), Blackarrow (Fernkampf-Präzision), Shadowstrix (Stealth und Burst), Seer (Support) und Withered Knight (schwerer Nahkampf mit Paraden). Jede hat mehrere Waffenhaltungen statt eines festen Kits.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Klassenübersicht",
+    lead: "Mistfall Hunter startet mit sechs Klassen: Mercenary (Nahkampf-Bruiser), Sorcerer (Fernkampf-Magie), Blackarrow (Fernkampf-Präzision), Shadowstrix (Stealth und Burst), Seer (Support) und Withered Knight (schwerer Nahkampf mit Paraden). Jede hat mehrere Waffenhaltungen statt eines festen Kits.",
+    sections: [
+      { heading: "Sechs Klassen im Überblick", paragraphs: ["Mercenary, Sorcerer, Blackarrow, Shadowstrix, Seer und Withered Knight — jede mit mehreren Waffenhaltungen."] },
+      { heading: "Keine feste Rolle", paragraphs: ["Jede Klasse bietet mehrere Waffenhaltungen statt eines einzigen festen Spielstils."] },
+    ], related: [],
+  },
+  {
+    slug: 'classes-ranked-for-launch', title: "Mistfall Hunter Klassen für den Launch bewertet",
+    description: "Ohne Live-Balance-Daten ist das sicherste Bewertungskriterium für den Launch Rollenklarheit und Anfängerfreundlichkeit statt reinem Schaden. Siehe den Best-Class-for-Beginners-Guide für eine Aufschlüsselung nach Rolle; echte Tierlisten werden sich mit Launch-Daten verschieben.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter Klassen für den Launch bewertet",
+    lead: "Ohne Live-Balance-Daten ist das sicherste Bewertungskriterium für den Launch Rollenklarheit und Anfängerfreundlichkeit statt reinem Schaden. Siehe den Best-Class-for-Beginners-Guide für eine Aufschlüsselung nach Rolle; echte Tierlisten werden sich mit Launch-Daten verschieben.",
+    sections: [
+      { heading: "Klarheit statt reinem Schaden", paragraphs: ["Rollenklarheit und Anfängerfreundlichkeit sind sicherere Kriterien als reine Schadenszahlen."] },
+      { heading: "Tierlisten werden sich ändern", paragraphs: ["Echte Tierlisten verschieben sich, sobald Live-Daten aus dem Launch vorliegen."] },
+    ], related: [],
+  },
+  {
+    slug: 'classes-for-squads', title: "Beste Mistfall Hunter Klassen für Squads",
+    description: "Im Squad können sich Klassen stärker spezialisieren, da Teamkollegen Schwächen abdecken. Eine Mischung aus Frontline-Druck, Fernkampf-Kontrolle und Support übertrifft meist drei Kopien derselben Rolle.",
+    eyebrow: 'Guide', h1: "Beste Klassen für Squads",
+    lead: "Im Squad können sich Klassen stärker spezialisieren, da Teamkollegen Schwächen abdecken. Eine Mischung aus Frontline-Druck, Fernkampf-Kontrolle und Support übertrifft meist drei Kopien derselben Rolle.",
+    sections: [
+      { heading: "Stärker spezialisieren", paragraphs: ["Im Team können Klassen sich stärker spezialisieren, weil Teamkollegen Schwächen ausgleichen."] },
+      { heading: "Der richtige Mix", paragraphs: ["Frontline, Fernkampf-Kontrolle und Support zusammen schlagen meist drei gleiche Rollen."] },
+    ], related: [],
+  },
+  {
+    slug: 'classes-for-beginners-2026', title: "Beste Mistfall Hunter Klassen für Anfänger (2026)",
+    description: "Neue Spieler kommen am besten mit einer Klasse zurecht, die Fehler mild bestraft — klare defensive Werkzeuge und eine einfache Siegbedingung schlagen ein komplexes Kit, das du noch nicht gelernt hast.",
+    eyebrow: 'Guide', h1: "Beste Klassen für Anfänger",
+    lead: "Neue Spieler kommen am besten mit einer Klasse zurecht, die Fehler mild bestraft — klare defensive Werkzeuge und eine einfache Siegbedingung schlagen ein komplexes Kit, das du noch nicht gelernt hast.",
+    sections: [
+      { heading: "Fehler mild bestrafen", paragraphs: ["Wähle eine Klasse, die Fehler mild bestraft, statt ein komplexes Kit mit hohem Skill-Ceiling."] },
+      { heading: "Einfachheit zuerst", paragraphs: ["Klare Verteidigungswerkzeuge sind für den Einstieg wichtiger als hohes Schadenspotenzial."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-route-for-beginners', title: "Mistfall Hunter beste Route für Anfänger",
+    description: "Die sicherste Anfängerroute bleibt in den Außenbereichen der Karte, meidet die Mist-Lord-Arena und priorisiert das Finden des Soul of Return vor zusätzlichem Loot.",
+    eyebrow: 'Guide', h1: "Beste Route für Anfänger",
+    lead: "Die sicherste Anfängerroute bleibt in den Außenbereichen der Karte, meidet die Mist-Lord-Arena und priorisiert das Finden des Soul of Return vor zusätzlichem Loot.",
+    sections: [
+      { heading: "Kurze Route, frühe Extraktion", paragraphs: ["Halte dich an eine kurze, leise Route und übe mit günstiger Ausrüstung, bevor du dich weiter wagst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Boss-Routen zu meiden, bis du die Ausgänge kennst, ist der sicherste Ansatz für den Einstieg."] },
+    ], related: [],
+  },
+  {
+    slug: 'safe-loot-route-guide', title: "Mistfall Hunter sichere Loot-Route",
+    description: "Eine sichere Loot-Route wiederholt eine kurze, leise Schleife, stoppt sobald die Tasche riskant wertvoll ist, und priorisiert einen klaren Ausgang vor einem weiteren Container.",
+    eyebrow: 'Guide', h1: "Sichere Loot-Route",
+    lead: "Eine sichere Loot-Route wiederholt eine kurze, leise Schleife, stoppt sobald die Tasche riskant wertvoll ist, und priorisiert einen klaren Ausgang vor einem weiteren Container.",
+    sections: [
+      { heading: "Wiederholbare Schleife mit Stopp-Regel", paragraphs: ["Nutze eine kurze, wiederholbare Route mit einer klaren Regel, wann du aufhörst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Aus einem Loot-Lauf unabsichtlich einen Boss-Lauf zu machen, ist der häufigste Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'high-risk-high-reward-route', title: "Mistfall Hunter Hochrisiko-Hochbelohnungs-Route",
+    description: "Hochrisiko-Routen führen durch bossnahe Gebiete wie den Divine Anchor oder eine Mist-Lord-Arena, wo die Beute besser, aber PvP-Verkehr und Elite-Gegner viel gefährlicher sind — nicht empfohlen, bis du mit der Basis-Extraktionsschleife vertraut bist.",
+    eyebrow: 'Guide', h1: "Hochrisiko-Hochbelohnungs-Route",
+    lead: "Hochrisiko-Routen führen durch bossnahe Gebiete wie den Divine Anchor oder eine Mist-Lord-Arena, wo die Beute besser, aber PvP-Verkehr und Elite-Gegner viel gefährlicher sind — nicht empfohlen, bis du mit der Basis-Extraktionsschleife vertraut bist.",
+    sections: [
+      { heading: "Bessere Beute, höheres Risiko", paragraphs: ["Bossnahe Gebiete bieten bessere Beute, aber deutlich höheres PvP- und Elite-Gegner-Risiko."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Diese Routen sind nichts für blutige Anfänger — erst die Basis-Schleife beherrschen."] },
+    ], related: [],
+  },
+  {
+    slug: 'duo-route-guide', title: "Mistfall Hunter Duo-Routen-Guide",
+    description: "Eine Zweier-Route funktioniert am besten, wenn ein Spieler Druck und Loot übernimmt, während der andere Winkel beobachtet und die Extraktion absichert — getrennte Aufgaben schlagen doppeltes Looten am selben Ort.",
+    eyebrow: 'Guide', h1: "Duo-Routen-Guide",
+    lead: "Eine Zweier-Route funktioniert am besten, wenn ein Spieler Druck und Loot übernimmt, während der andere Winkel beobachtet und die Extraktion absichert — getrennte Aufgaben schlagen doppeltes Looten am selben Ort.",
+    sections: [
+      { heading: "Aufgaben aufteilen", paragraphs: ["Ein Spieler übernimmt Druck und Loot, der andere beobachtet Winkel und sichert die Extraktion."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Sich so weit aufzuteilen, dass Trades verloren gehen, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'trio-route-guide', title: "Mistfall Hunter Trio-Routen-Guide",
+    description: "Eine Dreier-Route profitiert von klaren Rollen: ein Frontliner, ein Fernkämpfer oder Kontrolle, und ein Support oder Späher, die nach jedem Kampf gemeinsam zurücksetzen statt sich zu verstreuen.",
+    eyebrow: 'Guide', h1: "Trio-Routen-Guide",
+    lead: "Eine Dreier-Route profitiert von klaren Rollen: ein Frontliner, ein Fernkämpfer oder Kontrolle, und ein Support oder Späher, die nach jedem Kampf gemeinsam zurücksetzen statt sich zu verstreuen.",
+    sections: [
+      { heading: "Klare Rollen", paragraphs: ["Frontline, Fernkampf-Kontrolle und Support — jede Rolle klar zugeteilt statt improvisiert."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Wenn alle drei looten und niemand die Winkel beobachtet, wird es gefährlich."] },
+    ], related: [],
+  },
+  {
+    slug: 'rat-route-guide', title: "Mistfall Hunter Stealth-Routen-Guide",
+    description: "Eine stealth-fokussierte Route meidet Kämpfe komplett, bleibt bei leiser Bewegung und wenig frequentiertem Loot, und extrahiert früh, statt auf eine größere Tasche zu drängen.",
+    eyebrow: 'Guide', h1: "Stealth-Routen-Guide",
+    lead: "Eine stealth-fokussierte Route meidet Kämpfe komplett, bleibt bei leiser Bewegung und wenig frequentiertem Loot, und extrahiert früh, statt auf eine größere Tasche zu drängen.",
+    sections: [
+      { heading: "Leise Bewegung, frühe Extraktion", paragraphs: ["Meide Kämpfe komplett und bleib bei leiser Bewegung und wenig frequentiertem Loot."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Stealth-Routen nicht als Ausrede nutzen, um zu lange zu bleiben."] },
+    ], related: [],
+  },
+  {
+    slug: 'boss-rush-route-guide', title: "Mistfall Hunter Boss-Rush-Routen-Guide",
+    description: "Eine bossfokussierte Route behandelt den Kampf als einziges Ziel: erkunde die Arena zuerst, bring genug Vorräte mit und plane die Extraktionsroute vor dem Kampf, nicht danach.",
+    eyebrow: 'Guide', h1: "Boss-Rush-Routen-Guide",
+    lead: "Eine bossfokussierte Route behandelt den Kampf als einziges Ziel: erkunde die Arena zuerst, bring genug Vorräte mit und plane die Extraktionsroute vor dem Kampf, nicht danach.",
+    sections: [
+      { heading: "Ein Ziel, ein Plan", paragraphs: ["Erkunde die Arena zuerst und plane die Extraktion, bevor du in den Kampf gehst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Ohne genug Vorräte oder Ausgangskenntnis in einen Boss-Rush zu gehen, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'extraction-camping-counter-guide', title: "Mistfall Hunter Gegenmaßnahmen bei Extraktions-Camping",
+    description: "Wenn ein Extraktionspunkt bewacht wird, versuche es aus einem anderen Winkel, höre auf die Position des Campers, oder warte ihn aus der Deckung aus, statt direkt hineinzurennen.",
+    eyebrow: 'Guide', h1: "Gegenmaßnahmen bei Extraktions-Camping",
+    lead: "Wenn ein Extraktionspunkt bewacht wird, versuche es aus einem anderen Winkel, höre auf die Position des Campers, oder warte ihn aus der Deckung aus, statt direkt hineinzurennen.",
+    sections: [
+      { heading: "Winkel wechseln, warten, zuhören", paragraphs: ["Nähere dich aus einem anderen Winkel oder warte den Camper aus der Deckung aus."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Direkt in eine finale Extraktion zu rennen, ist besonders riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'ambush-guide', title: "Mistfall Hunter Hinterhalt-Guide",
+    description: "Ein guter Hinterhalt setzt auf Geräuschdisziplin und einen klaren Winkel — bleib leise, lass das Ziel sich auf Looten oder einen anderen Kampf festlegen, dann schlage mit bereiten Cooldowns und einem schnellen Folgeplan zu.",
+    eyebrow: 'Guide', h1: "Hinterhalt-Guide",
+    lead: "Ein guter Hinterhalt setzt auf Geräuschdisziplin und einen klaren Winkel — bleib leise, lass das Ziel sich auf Looten oder einen anderen Kampf festlegen, dann schlage mit bereiten Cooldowns und einem schnellen Folgeplan zu.",
+    sections: [
+      { heading: "Geräusch und Winkel", paragraphs: ["Bleib leise und warte den richtigen Moment ab, bevor du zuschlägst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Hinterhalte, die zu weit von der Extraktion wegziehen, sind riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'escape-after-kill-guide', title: "Mistfall Hunter Flucht nach einem Kill",
+    description: "Nach einem Kill widerstehe dem Drang, sofort zu looten — höre zuerst zu, loote dann schnell, setze deine Cooldowns zurück und verlasse das Gebiet, bevor eine Third-Party durch den Lärm angelockt wird.",
+    eyebrow: 'Guide', h1: "Flucht nach einem Kill",
+    lead: "Nach einem Kill widerstehe dem Drang, sofort zu looten — höre zuerst zu, loote dann schnell, setze deine Cooldowns zurück und verlasse das Gebiet, bevor eine Third-Party durch den Lärm angelockt wird.",
+    sections: [
+      { heading: "Zuhören, schnell looten, gehen", paragraphs: ["Höre zuerst zu, loote schnell und verlasse das Gebiet vor der nächsten Bedrohung."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Sofort ohne Deckung oder Cooldowns zu looten, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-solo', title: "Mistfall Hunter beste Affixe für Solo",
+    description: "Solo-Builds profitieren am meisten von Überlebens- und Mobilitäts-Affixen — Sustain und Fluchttools zählen mehr als reiner Schaden, da kein Teamkollege eine schlechte Position abdeckt.",
+    eyebrow: 'Guide', h1: "Beste Affixe für Solo",
+    lead: "Solo-Builds profitieren am meisten von Überlebens- und Mobilitäts-Affixen — Sustain und Fluchttools zählen mehr als reiner Schaden, da kein Teamkollege eine schlechte Position abdeckt.",
+    sections: [
+      { heading: "Überleben vor Schaden", paragraphs: ["Sustain und Fluchttools sind solo wichtiger als reiner Schaden."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Reine Schadenswerte, die keinen Reset ermöglichen, sind ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-pvp', title: "Mistfall Hunter beste Affixe für PvP",
+    description: "PvP-fokussierte Affixe priorisieren Burst-Schaden, Ausdauereffizienz und defensive Schwellenwerte; genaue Werte brauchen noch Launch-Build-Verifizierung, bevor ein bestimmter Roll als optimal gilt.",
+    eyebrow: 'Guide', h1: "Beste Affixe für PvP",
+    lead: "PvP-fokussierte Affixe priorisieren Burst-Schaden, Ausdauereffizienz und defensive Schwellenwerte; genaue Werte brauchen noch Launch-Build-Verifizierung, bevor ein bestimmter Roll als optimal gilt.",
+    sections: [
+      { heading: "Burst und Ausdauer", paragraphs: ["Burst-Schaden, Ausdauereffizienz und defensive Schwellenwerte stehen im Vordergrund."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Werte vor bestätigter Live-Balance zu ranken, ist verfrüht."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-pve', title: "Mistfall Hunter beste Affixe für PvE",
+    description: "PvE-fokussierte Affixe bevorzugen nachhaltigen Schaden und Erholung statt Burst, da Bosskämpfe Durchhaltevermögen mehr belohnen als ein einzelner großer Treffer.",
+    eyebrow: 'Guide', h1: "Beste Affixe für PvE",
+    lead: "PvE-fokussierte Affixe bevorzugen nachhaltigen Schaden und Erholung statt Burst, da Bosskämpfe Durchhaltevermögen mehr belohnen als ein einzelner großer Treffer.",
+    sections: [
+      { heading: "Nachhaltiger Schaden vor Burst", paragraphs: ["Bosskämpfe belohnen Durchhaltevermögen mehr als einen einzelnen großen Treffer."] },
+      { heading: "Worauf du achten musst", paragraphs: ["PvE-Gier ohne Fluchtplan ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-bosses', title: "Mistfall Hunter beste Affixe für Bosse",
+    description: "Boss-fokussierte Ausrüstung sollte sicheren, nachhaltigen Schaden mit genug Überlebensfähigkeit balancieren, um auch den Extraktionskampf zu gewinnen, der oft auf einen Bosskill folgt.",
+    eyebrow: 'Guide', h1: "Beste Affixe für Bosse",
+    lead: "Boss-fokussierte Ausrüstung sollte sicheren, nachhaltigen Schaden mit genug Überlebensfähigkeit balancieren, um auch den Extraktionskampf zu gewinnen, der oft auf einen Bosskill folgt.",
+    sections: [
+      { heading: "Schaden und Überleben balancieren", paragraphs: ["Balanciere sicheren Schaden mit genug Überlebensfähigkeit für den Kampf nach dem Boss."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Ausrüstung, die den Boss gewinnt, aber die Extraktion verliert, ist ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'gear-rarity-guide', title: "Mistfall Hunter Ausrüstungs-Seltenheits-Guide",
+    description: "Ausrüstungsseltenheit spiegelt sowohl rohe Stärke als auch Affix-Qualität wider; ein Item niedrigerer Seltenheit mit einem build-definierenden Affix kann ein selteneres Item mit generischen Rolls übertreffen.",
+    eyebrow: 'Guide', h1: "Ausrüstungs-Seltenheits-Guide",
+    lead: "Ausrüstungsseltenheit spiegelt sowohl rohe Stärke als auch Affix-Qualität wider; ein Item niedrigerer Seltenheit mit einem build-definierenden Affix kann ein selteneres Item mit generischen Rolls übertreffen.",
+    sections: [
+      { heading: "Seltenheit ist nicht alles", paragraphs: ["Ein build-definierender Affix kann wichtiger sein als reine Seltenheitsstufe."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Finale Seltenheitsstufen ohne Verifizierung zu erfinden, ist ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'weapon-tier-list', title: "Mistfall Hunter Waffen-Tierliste",
+    description: "Ohne Live-Balance-Daten ist ein sicheres Kriterium für die Launch-Woche Rollenpassung und Sicherheit statt reinem Schaden — behandle jede Vor-Launch-Waffen-Tierliste als vorläufig, bis sie getestet ist.",
+    eyebrow: 'Guide', h1: "Waffen-Tierliste",
+    lead: "Ohne Live-Balance-Daten ist ein sicheres Kriterium für die Launch-Woche Rollenpassung und Sicherheit statt reinem Schaden — behandle jede Vor-Launch-Waffen-Tierliste als vorläufig, bis sie getestet ist.",
+    sections: [
+      { heading: "Rollenpassung vor reinem Schaden", paragraphs: ["Rollenpassung und Sicherheit sind sicherere Kriterien als reine Schadenszahlen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Finale Tier-Aussagen vor der Launch-Balance sind verfrüht."] },
+    ], related: [],
+  },
+  {
+    slug: 'armor-guide', title: "Mistfall Hunter Rüstungs-Guide",
+    description: "Rüstungswahl tauscht Überlebensfähigkeit gegen Mobilität; schwerer ist nicht automatisch besser, wenn es dich die Ausdauer kostet, die du zum Lösen eines schlechten Kampfes brauchst.",
+    eyebrow: 'Guide', h1: "Rüstungs-Guide",
+    lead: "Rüstungswahl tauscht Überlebensfähigkeit gegen Mobilität; schwerer ist nicht automatisch besser, wenn es dich die Ausdauer kostet, die du zum Lösen eines schlechten Kampfes brauchst.",
+    sections: [
+      { heading: "Überleben gegen Mobilität", paragraphs: ["Schwerere Rüstung ist nicht automatisch besser, wenn sie Mobilität kostet."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Anzunehmen, dass schwerer immer besser ist, ist ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'consumables-guide', title: "Mistfall Hunter Verbrauchsgegenstände-Guide",
+    description: "Nützliche Verbrauchsgegenstände decken Heilung, Sustain während einer langen Route und Notfallerholung ab — genaue Namen und Effekte brauchen noch Launch-Build-Verifizierung, bevor eine konkrete Liste veröffentlicht wird.",
+    eyebrow: 'Guide', h1: "Verbrauchsgegenstände-Guide",
+    lead: "Nützliche Verbrauchsgegenstände decken Heilung, Sustain während einer langen Route und Notfallerholung ab — genaue Namen und Effekte brauchen noch Launch-Build-Verifizierung, bevor eine konkrete Liste veröffentlicht wird.",
+    sections: [
+      { heading: "Heilung, Sustain, Notfall", paragraphs: ["Verbrauchsgegenstände sollten Heilung, Sustain und Notfallerholung abdecken."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Konkrete Items ohne Verifizierung zu listen, ist verfrüht."] },
+    ], related: [],
+  },
+  {
+    slug: 'crafting-guide', title: "Mistfall Hunter Crafting-Guide",
+    description: "Crafting dürfte das Banken von Ressourcen und das Befolgen verifizierter Rezepte beinhalten; genaue Rezepte und Ressourcenkosten sind noch nicht veröffentlicht und sollten nicht erraten werden.",
+    eyebrow: 'Guide', h1: "Crafting-Guide",
+    lead: "Crafting dürfte das Banken von Ressourcen und das Befolgen verifizierter Rezepte beinhalten; genaue Rezepte und Ressourcenkosten sind noch nicht veröffentlicht und sollten nicht erraten werden.",
+    sections: [
+      { heading: "Ressourcen banken, Rezepte verifizieren", paragraphs: ["Crafting basiert auf gebankten Ressourcen und verifizierten Rezepten, nicht auf Vermutungen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Erfundene Rezepte oder Quellentabellen sind irreführend."] },
+    ], related: [],
+  },
+  {
+    slug: 'vendor-guide', title: "Mistfall Hunter Händler-Guide",
+    description: "Händler dürften Kaufen, Verkaufen und das Banken von Fortschrittswert unterstützen; genaues Inventar und Preise brauchen noch Launch-Build-Bestätigung, bevor Details veröffentlicht werden.",
+    eyebrow: 'Guide', h1: "Händler-Guide",
+    lead: "Händler dürften Kaufen, Verkaufen und das Banken von Fortschrittswert unterstützen; genaues Inventar und Preise brauchen noch Launch-Build-Bestätigung, bevor Details veröffentlicht werden.",
+    sections: [
+      { heading: "Kaufen, Verkaufen, Banken", paragraphs: ["Händler unterstützen voraussichtlich Kaufen, Verkaufen und das Banken von Fortschrittswert."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Händlerinventar vor Launch-Daten zu behaupten, ist verfrüht."] },
+    ], related: [],
+  },
+  {
+    slug: 'returner-woodling-guide', title: "Mistfall Hunter Returner-Woodling-Guide",
+    description: "Der Returner Woodling ist das Ziel, das mit dem Soul of Return verbunden ist — ihn früh zu finden und zu sichern, macht aus einem Glücksspiel eine kontrollierte Entscheidung darüber, wann man geht.",
+    eyebrow: 'Guide', h1: "Returner-Woodling-Guide",
+    lead: "Der Returner Woodling ist das Ziel, das mit dem Soul of Return verbunden ist — ihn früh zu finden und zu sichern, macht aus einem Glücksspiel eine kontrollierte Entscheidung darüber, wann man geht.",
+    sections: [
+      { heading: "Früh finden und sichern", paragraphs: ["Den Returner Woodling früh zu sichern, macht deinen Lauf kontrollierbar statt riskant."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Das Ziel nicht als harmlos zu behandeln, wenn es Geräusch oder Verkehr erzeugt."] },
+    ], related: [],
+  },
+  {
+    slug: 'soul-of-return-farming', title: "Mistfall Hunter Soul-of-Return-Farming",
+    description: "Priorisiere den Soul of Return, bevor die Tasche zu wertvoll zum Riskieren wird — ihn erst zu farmen, wenn du schon beladen bist, fügt nur unnötige Risikozeit hinzu.",
+    eyebrow: 'Guide', h1: "Soul-of-Return-Farming",
+    lead: "Priorisiere den Soul of Return, bevor die Tasche zu wertvoll zum Riskieren wird — ihn erst zu farmen, wenn du schon beladen bist, fügt nur unnötige Risikozeit hinzu.",
+    sections: [
+      { heading: "Zuerst sichern, dann looten", paragraphs: ["Sichere den Soul of Return, bevor die Tasche zu wertvoll zum Riskieren wird."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Das Ziel erst zu farmen, wenn die Tasche schon wertvoll ist, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'gyldenblood-farming-route', title: "Mistfall Hunter Gyldenblood-Farmroute",
+    description: "Gyldenblood ist eine Ressource, die mit dem Fortschritt verbunden ist; eine sichere Farmroute bankt sie konsistent, statt in stark frequentierten Gebieten für marginale Extragewinne zu verweilen.",
+    eyebrow: 'Guide', h1: "Gyldenblood-Farmroute",
+    lead: "Gyldenblood ist eine Ressource, die mit dem Fortschritt verbunden ist; eine sichere Farmroute bankt sie konsistent, statt in stark frequentierten Gebieten für marginale Extragewinne zu verweilen.",
+    sections: [
+      { heading: "Konsistent banken", paragraphs: ["Banke Gyldenblood konsistent, statt in gefährlichen Gebieten für marginale Gewinne zu verweilen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Erfundene Drop-Quellen oder Raten sind irreführend."] },
+    ], related: [],
+  },
+  {
+    slug: 'corroded-enemies-guide', title: "Mistfall Hunter Corroded-Gegner-Guide",
+    description: "Corroded-Gegner sind die häufigen, vom Mist verzerrten Bedrohungen in jeder Zone — sie zu bekämpfen kostet Zeit und Geräusch, also wäge jeden Kampf danach ab, ob die Belohnung die Aufmerksamkeit wert ist, die er anzieht.",
+    eyebrow: 'Guide', h1: "Corroded-Gegner-Guide",
+    lead: "Corroded-Gegner sind die häufigen, vom Mist verzerrten Bedrohungen in jeder Zone — sie zu bekämpfen kostet Zeit und Geräusch, also wäge jeden Kampf danach ab, ob die Belohnung die Aufmerksamkeit wert ist, die er anzieht.",
+    sections: [
+      { heading: "Jeder Kampf hat einen Preis", paragraphs: ["Wäge jeden Kampf gegen Corroded-Gegner gegen die Aufmerksamkeit ab, die er anzieht."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Zu viel Zeit in geringwertigen PvE-Kämpfen zu verbringen, ist ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'mist-lord-guide', title: "Mistfall Hunter Mist-Lord-Guide",
+    description: "Siehe die dedizierte Mist-Lord-Boss-Seite für die vollständige Aufschlüsselung bekannter Begegnungen, Schwierigkeitsstufen und Belohnungsinformationen.",
+    eyebrow: 'Guide', h1: "Mist-Lord-Guide",
+    lead: "Siehe die dedizierte Mist-Lord-Boss-Seite für die vollständige Aufschlüsselung bekannter Begegnungen, Schwierigkeitsstufen und Belohnungsinformationen.",
+    sections: [
+      { heading: "Vorbereitung zählt", paragraphs: ["Erkunde und plane deine Route, bevor du einen Mist Lord herausforderst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Boss-Pulls ohne Rückzugs- oder Support-Plan sind riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'boss-rewards-guide', title: "Mistfall Hunter Boss-Belohnungs-Guide",
+    description: "Bestätigte Boss-Belohnungen zentrieren sich um Holy-Waffen, jede an einen bestimmten Kartenboss mit einzigartigen Gameplay-Affixen gebunden; genaue vollständige Belohnungstabellen brauchen noch Launch-Build-Verifizierung.",
+    eyebrow: 'Guide', h1: "Boss-Belohnungs-Guide",
+    lead: "Bestätigte Boss-Belohnungen zentrieren sich um Holy-Waffen, jede an einen bestimmten Kartenboss mit einzigartigen Gameplay-Affixen gebunden; genaue vollständige Belohnungstabellen brauchen noch Launch-Build-Verifizierung.",
+    sections: [
+      { heading: "Holy-Waffen im Zentrum", paragraphs: ["Jeder Boss trägt eine einzigartige Holy-Waffe mit besonderen Affixen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Belohnungstabellen vor verifizierten Drops zu veröffentlichen, ist verfrüht."] },
+    ], related: [],
+  },
+  {
+    slug: 'boss-mechanics-guide', title: "Mistfall Hunter Boss-Mechaniken-Guide",
+    description: "Boss-Mechaniken sollten durch Erkundung und sichere erste Versuche gelernt werden, statt aus Beta-Aufnahmen angenommen zu werden, da sich genaue Muster vor dem Launch noch ändern können.",
+    eyebrow: 'Guide', h1: "Boss-Mechaniken-Guide",
+    lead: "Boss-Mechaniken sollten durch Erkundung und sichere erste Versuche gelernt werden, statt aus Beta-Aufnahmen angenommen zu werden, da sich genaue Muster vor dem Launch noch ändern können.",
+    sections: [
+      { heading: "Durch Erkundung lernen", paragraphs: ["Lerne Boss-Mechaniken durch vorsichtige erste Versuche statt durch Beta-Annahmen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Exakte Mechaniken vor Live-Tests aufzulisten, ist verfrüht."] },
+    ], related: [],
+  },
+  {
+    slug: 'pve-enemy-drops-guide', title: "Mistfall Hunter PvE-Gegner-Drops-Guide",
+    description: "Drop-Quellen für PvE-Gegner sind noch nicht vollständig aufgelistet; behandle konkrete Drop-Raten-Behauptungen als unbestätigt, bis sie auf dem Launch-Build bestätigt werden.",
+    eyebrow: 'Guide', h1: "PvE-Gegner-Drops-Guide",
+    lead: "Drop-Quellen für PvE-Gegner sind noch nicht vollständig aufgelistet; behandle konkrete Drop-Raten-Behauptungen als unbestätigt, bis sie auf dem Launch-Build bestätigt werden.",
+    sections: [
+      { heading: "Noch nicht vollständig bekannt", paragraphs: ["Drop-Quellen für PvE-Gegner sind noch nicht vollständig verifiziert."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Erfundene Drop-Raten sind irreführend."] },
+    ], related: [],
+  },
+  {
+    slug: 'rare-loot-guide', title: "Mistfall Hunter seltene-Beute-Guide",
+    description: "Seltene Beute ist es wert, extrahiert zu werden, nicht wert, dafür zu sterben — sobald du etwas Wertvolles identifiziert hast, priorisiere einen sicheren Ausgang, statt noch mehr aus demselben Lauf herauszupressen.",
+    eyebrow: 'Guide', h1: "Seltene-Beute-Guide",
+    lead: "Seltene Beute ist es wert, extrahiert zu werden, nicht wert, dafür zu sterben — sobald du etwas Wertvolles identifiziert hast, priorisiere einen sicheren Ausgang, statt noch mehr aus demselben Lauf herauszupressen.",
+    sections: [
+      { heading: "Extrahieren, nicht sterben", paragraphs: ["Priorisiere einen sicheren Ausgang, sobald du etwas Wertvolles gefunden hast."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Nach seltener Beute zu bleiben, wenn die Route schon gewonnen ist, ist ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'loot-priority-list', title: "Mistfall Hunter Loot-Prioritätsliste",
+    description: "Eine praktische Loot-Priorität bevorzugt klassenrelevante Upgrades und Fortschrittsressourcen vor generischen, hochseltenen Items, die du noch nicht nutzen kannst.",
+    eyebrow: 'Guide', h1: "Loot-Prioritätsliste",
+    lead: "Eine praktische Loot-Priorität bevorzugt klassenrelevante Upgrades und Fortschrittsressourcen vor generischen, hochseltenen Items, die du noch nicht nutzen kannst.",
+    sections: [
+      { heading: "Klassenrelevanz vor Seltenheit", paragraphs: ["Bevorzuge klassenrelevante Upgrades und Fortschrittsressourcen vor generischen seltenen Items."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Universelle Listen vor verifizierter Wirtschaft zu erstellen, ist verfrüht."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-route-for-beginners', title: "Mistfall Hunter beste Route für Anfänger",
+    description: "Die sicherste Anfängerroute bleibt in den Außenbereichen der Karte, meidet die Mist-Lord-Arena und priorisiert das Finden des Soul of Return vor zusätzlichem Loot.",
+    eyebrow: 'Guide', h1: "Beste Route für Anfänger",
+    lead: "Die sicherste Anfängerroute bleibt in den Außenbereichen der Karte, meidet die Mist-Lord-Arena und priorisiert das Finden des Soul of Return vor zusätzlichem Loot.",
+    sections: [
+      { heading: "Kurze Route, frühe Extraktion", paragraphs: ["Halte dich an eine kurze, leise Route und übe mit günstiger Ausrüstung, bevor du dich weiter wagst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Boss-Routen zu meiden, bis du die Ausgänge kennst, ist der sicherste Ansatz für den Einstieg."] },
+    ], related: [],
+  },
+  {
+    slug: 'safe-loot-route-guide', title: "Mistfall Hunter sichere Loot-Route",
+    description: "Eine sichere Loot-Route wiederholt eine kurze, leise Schleife, stoppt sobald die Tasche riskant wertvoll ist, und priorisiert einen klaren Ausgang vor einem weiteren Container.",
+    eyebrow: 'Guide', h1: "Sichere Loot-Route",
+    lead: "Eine sichere Loot-Route wiederholt eine kurze, leise Schleife, stoppt sobald die Tasche riskant wertvoll ist, und priorisiert einen klaren Ausgang vor einem weiteren Container.",
+    sections: [
+      { heading: "Wiederholbare Schleife mit Stopp-Regel", paragraphs: ["Nutze eine kurze, wiederholbare Route mit einer klaren Regel, wann du aufhörst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Aus einem Loot-Lauf unabsichtlich einen Boss-Lauf zu machen, ist der häufigste Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'high-risk-high-reward-route', title: "Mistfall Hunter Hochrisiko-Hochbelohnungs-Route",
+    description: "Hochrisiko-Routen führen durch bossnahe Gebiete wie den Divine Anchor oder eine Mist-Lord-Arena, wo die Beute besser, aber PvP-Verkehr und Elite-Gegner viel gefährlicher sind — nicht empfohlen, bis du mit der Basis-Extraktionsschleife vertraut bist.",
+    eyebrow: 'Guide', h1: "Hochrisiko-Hochbelohnungs-Route",
+    lead: "Hochrisiko-Routen führen durch bossnahe Gebiete wie den Divine Anchor oder eine Mist-Lord-Arena, wo die Beute besser, aber PvP-Verkehr und Elite-Gegner viel gefährlicher sind — nicht empfohlen, bis du mit der Basis-Extraktionsschleife vertraut bist.",
+    sections: [
+      { heading: "Bessere Beute, höheres Risiko", paragraphs: ["Bossnahe Gebiete bieten bessere Beute, aber deutlich höheres PvP- und Elite-Gegner-Risiko."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Diese Routen sind nichts für blutige Anfänger — erst die Basis-Schleife beherrschen."] },
+    ], related: [],
+  },
+  {
+    slug: 'duo-route-guide', title: "Mistfall Hunter Duo-Routen-Guide",
+    description: "Eine Zweier-Route funktioniert am besten, wenn ein Spieler Druck und Loot übernimmt, während der andere Winkel beobachtet und die Extraktion absichert — getrennte Aufgaben schlagen doppeltes Looten am selben Ort.",
+    eyebrow: 'Guide', h1: "Duo-Routen-Guide",
+    lead: "Eine Zweier-Route funktioniert am besten, wenn ein Spieler Druck und Loot übernimmt, während der andere Winkel beobachtet und die Extraktion absichert — getrennte Aufgaben schlagen doppeltes Looten am selben Ort.",
+    sections: [
+      { heading: "Aufgaben aufteilen", paragraphs: ["Ein Spieler übernimmt Druck und Loot, der andere beobachtet Winkel und sichert die Extraktion."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Sich so weit aufzuteilen, dass Trades verloren gehen, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'trio-route-guide', title: "Mistfall Hunter Trio-Routen-Guide",
+    description: "Eine Dreier-Route profitiert von klaren Rollen: ein Frontliner, ein Fernkämpfer oder Kontrolle, und ein Support oder Späher, die nach jedem Kampf gemeinsam zurücksetzen statt sich zu verstreuen.",
+    eyebrow: 'Guide', h1: "Trio-Routen-Guide",
+    lead: "Eine Dreier-Route profitiert von klaren Rollen: ein Frontliner, ein Fernkämpfer oder Kontrolle, und ein Support oder Späher, die nach jedem Kampf gemeinsam zurücksetzen statt sich zu verstreuen.",
+    sections: [
+      { heading: "Klare Rollen", paragraphs: ["Frontline, Fernkampf-Kontrolle und Support — jede Rolle klar zugeteilt statt improvisiert."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Wenn alle drei looten und niemand die Winkel beobachtet, wird es gefährlich."] },
+    ], related: [],
+  },
+  {
+    slug: 'rat-route-guide', title: "Mistfall Hunter Stealth-Routen-Guide",
+    description: "Eine stealth-fokussierte Route meidet Kämpfe komplett, bleibt bei leiser Bewegung und wenig frequentiertem Loot, und extrahiert früh, statt auf eine größere Tasche zu drängen.",
+    eyebrow: 'Guide', h1: "Stealth-Routen-Guide",
+    lead: "Eine stealth-fokussierte Route meidet Kämpfe komplett, bleibt bei leiser Bewegung und wenig frequentiertem Loot, und extrahiert früh, statt auf eine größere Tasche zu drängen.",
+    sections: [
+      { heading: "Leise Bewegung, frühe Extraktion", paragraphs: ["Meide Kämpfe komplett und bleib bei leiser Bewegung und wenig frequentiertem Loot."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Stealth-Routen nicht als Ausrede nutzen, um zu lange zu bleiben."] },
+    ], related: [],
+  },
+  {
+    slug: 'boss-rush-route-guide', title: "Mistfall Hunter Boss-Rush-Routen-Guide",
+    description: "Eine bossfokussierte Route behandelt den Kampf als einziges Ziel: erkunde die Arena zuerst, bring genug Vorräte mit und plane die Extraktionsroute vor dem Kampf, nicht danach.",
+    eyebrow: 'Guide', h1: "Boss-Rush-Routen-Guide",
+    lead: "Eine bossfokussierte Route behandelt den Kampf als einziges Ziel: erkunde die Arena zuerst, bring genug Vorräte mit und plane die Extraktionsroute vor dem Kampf, nicht danach.",
+    sections: [
+      { heading: "Ein Ziel, ein Plan", paragraphs: ["Erkunde die Arena zuerst und plane die Extraktion, bevor du in den Kampf gehst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Ohne genug Vorräte oder Ausgangskenntnis in einen Boss-Rush zu gehen, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'extraction-camping-counter-guide', title: "Mistfall Hunter Gegenmaßnahmen bei Extraktions-Camping",
+    description: "Wenn ein Extraktionspunkt bewacht wird, versuche es aus einem anderen Winkel, höre auf die Position des Campers, oder warte ihn aus der Deckung aus, statt direkt hineinzurennen.",
+    eyebrow: 'Guide', h1: "Gegenmaßnahmen bei Extraktions-Camping",
+    lead: "Wenn ein Extraktionspunkt bewacht wird, versuche es aus einem anderen Winkel, höre auf die Position des Campers, oder warte ihn aus der Deckung aus, statt direkt hineinzurennen.",
+    sections: [
+      { heading: "Winkel wechseln, warten, zuhören", paragraphs: ["Nähere dich aus einem anderen Winkel oder warte den Camper aus der Deckung aus."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Direkt in eine finale Extraktion zu rennen, ist besonders riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'ambush-guide', title: "Mistfall Hunter Hinterhalt-Guide",
+    description: "Ein guter Hinterhalt setzt auf Geräuschdisziplin und einen klaren Winkel — bleib leise, lass das Ziel sich auf Looten oder einen anderen Kampf festlegen, dann schlage mit bereiten Cooldowns und einem schnellen Folgeplan zu.",
+    eyebrow: 'Guide', h1: "Hinterhalt-Guide",
+    lead: "Ein guter Hinterhalt setzt auf Geräuschdisziplin und einen klaren Winkel — bleib leise, lass das Ziel sich auf Looten oder einen anderen Kampf festlegen, dann schlage mit bereiten Cooldowns und einem schnellen Folgeplan zu.",
+    sections: [
+      { heading: "Geräusch und Winkel", paragraphs: ["Bleib leise und warte den richtigen Moment ab, bevor du zuschlägst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Hinterhalte, die zu weit von der Extraktion wegziehen, sind riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'escape-after-kill-guide', title: "Mistfall Hunter Flucht nach einem Kill",
+    description: "Nach einem Kill widerstehe dem Drang, sofort zu looten — höre zuerst zu, loote dann schnell, setze deine Cooldowns zurück und verlasse das Gebiet, bevor eine Third-Party durch den Lärm angelockt wird.",
+    eyebrow: 'Guide', h1: "Flucht nach einem Kill",
+    lead: "Nach einem Kill widerstehe dem Drang, sofort zu looten — höre zuerst zu, loote dann schnell, setze deine Cooldowns zurück und verlasse das Gebiet, bevor eine Third-Party durch den Lärm angelockt wird.",
+    sections: [
+      { heading: "Zuhören, schnell looten, gehen", paragraphs: ["Höre zuerst zu, loote schnell und verlasse das Gebiet vor der nächsten Bedrohung."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Sofort ohne Deckung oder Cooldowns zu looten, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-solo', title: "Mistfall Hunter beste Affixe für Solo",
+    description: "Solo-Builds profitieren am meisten von Überlebens- und Mobilitäts-Affixen — Sustain und Fluchttools zählen mehr als reiner Schaden, da kein Teamkollege eine schlechte Position abdeckt.",
+    eyebrow: 'Guide', h1: "Beste Affixe für Solo",
+    lead: "Solo-Builds profitieren am meisten von Überlebens- und Mobilitäts-Affixen — Sustain und Fluchttools zählen mehr als reiner Schaden, da kein Teamkollege eine schlechte Position abdeckt.",
+    sections: [
+      { heading: "Überleben vor Schaden", paragraphs: ["Sustain und Fluchttools sind solo wichtiger als reiner Schaden."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Reine Schadenswerte, die keinen Reset ermöglichen, sind ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-pvp', title: "Mistfall Hunter beste Affixe für PvP",
+    description: "PvP-fokussierte Affixe priorisieren Burst-Schaden, Ausdauereffizienz und defensive Schwellenwerte; genaue Werte brauchen noch Launch-Build-Verifizierung, bevor ein bestimmter Roll als optimal gilt.",
+    eyebrow: 'Guide', h1: "Beste Affixe für PvP",
+    lead: "PvP-fokussierte Affixe priorisieren Burst-Schaden, Ausdauereffizienz und defensive Schwellenwerte; genaue Werte brauchen noch Launch-Build-Verifizierung, bevor ein bestimmter Roll als optimal gilt.",
+    sections: [
+      { heading: "Burst und Ausdauer", paragraphs: ["Burst-Schaden, Ausdauereffizienz und defensive Schwellenwerte stehen im Vordergrund."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Werte vor bestätigter Live-Balance zu ranken, ist verfrüht."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-pve', title: "Mistfall Hunter beste Affixe für PvE",
+    description: "PvE-fokussierte Affixe bevorzugen nachhaltigen Schaden und Erholung statt Burst, da Bosskämpfe Durchhaltevermögen mehr belohnen als ein einzelner großer Treffer.",
+    eyebrow: 'Guide', h1: "Beste Affixe für PvE",
+    lead: "PvE-fokussierte Affixe bevorzugen nachhaltigen Schaden und Erholung statt Burst, da Bosskämpfe Durchhaltevermögen mehr belohnen als ein einzelner großer Treffer.",
+    sections: [
+      { heading: "Nachhaltiger Schaden vor Burst", paragraphs: ["Bosskämpfe belohnen Durchhaltevermögen mehr als einen einzelnen großen Treffer."] },
+      { heading: "Worauf du achten musst", paragraphs: ["PvE-Gier ohne Fluchtplan ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-bosses', title: "Mistfall Hunter beste Affixe für Bosse",
+    description: "Boss-fokussierte Ausrüstung sollte sicheren, nachhaltigen Schaden mit genug Überlebensfähigkeit balancieren, um auch den Extraktionskampf zu gewinnen, der oft auf einen Bosskill folgt.",
+    eyebrow: 'Guide', h1: "Beste Affixe für Bosse",
+    lead: "Boss-fokussierte Ausrüstung sollte sicheren, nachhaltigen Schaden mit genug Überlebensfähigkeit balancieren, um auch den Extraktionskampf zu gewinnen, der oft auf einen Bosskill folgt.",
+    sections: [
+      { heading: "Schaden und Überleben balancieren", paragraphs: ["Balanciere sicheren Schaden mit genug Überlebensfähigkeit für den Kampf nach dem Boss."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Ausrüstung, die den Boss gewinnt, aber die Extraktion verliert, ist ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'gear-rarity-guide', title: "Mistfall Hunter Ausrüstungs-Seltenheits-Guide",
+    description: "Ausrüstungsseltenheit spiegelt sowohl rohe Stärke als auch Affix-Qualität wider; ein Item niedrigerer Seltenheit mit einem build-definierenden Affix kann ein selteneres Item mit generischen Rolls übertreffen.",
+    eyebrow: 'Guide', h1: "Ausrüstungs-Seltenheits-Guide",
+    lead: "Ausrüstungsseltenheit spiegelt sowohl rohe Stärke als auch Affix-Qualität wider; ein Item niedrigerer Seltenheit mit einem build-definierenden Affix kann ein selteneres Item mit generischen Rolls übertreffen.",
+    sections: [
+      { heading: "Seltenheit ist nicht alles", paragraphs: ["Ein build-definierender Affix kann wichtiger sein als reine Seltenheitsstufe."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Finale Seltenheitsstufen ohne Verifizierung zu erfinden, ist ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'weapon-tier-list', title: "Mistfall Hunter Waffen-Tierliste",
+    description: "Ohne Live-Balance-Daten ist ein sicheres Kriterium für die Launch-Woche Rollenpassung und Sicherheit statt reinem Schaden — behandle jede Vor-Launch-Waffen-Tierliste als vorläufig, bis sie getestet ist.",
+    eyebrow: 'Guide', h1: "Waffen-Tierliste",
+    lead: "Ohne Live-Balance-Daten ist ein sicheres Kriterium für die Launch-Woche Rollenpassung und Sicherheit statt reinem Schaden — behandle jede Vor-Launch-Waffen-Tierliste als vorläufig, bis sie getestet ist.",
+    sections: [
+      { heading: "Rollenpassung vor reinem Schaden", paragraphs: ["Rollenpassung und Sicherheit sind sicherere Kriterien als reine Schadenszahlen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Finale Tier-Aussagen vor der Launch-Balance sind verfrüht."] },
+    ], related: [],
+  },
+  {
+    slug: 'armor-guide', title: "Mistfall Hunter Rüstungs-Guide",
+    description: "Rüstungswahl tauscht Überlebensfähigkeit gegen Mobilität; schwerer ist nicht automatisch besser, wenn es dich die Ausdauer kostet, die du zum Lösen eines schlechten Kampfes brauchst.",
+    eyebrow: 'Guide', h1: "Rüstungs-Guide",
+    lead: "Rüstungswahl tauscht Überlebensfähigkeit gegen Mobilität; schwerer ist nicht automatisch besser, wenn es dich die Ausdauer kostet, die du zum Lösen eines schlechten Kampfes brauchst.",
+    sections: [
+      { heading: "Überleben gegen Mobilität", paragraphs: ["Schwerere Rüstung ist nicht automatisch besser, wenn sie Mobilität kostet."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Anzunehmen, dass schwerer immer besser ist, ist ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'consumables-guide', title: "Mistfall Hunter Verbrauchsgegenstände-Guide",
+    description: "Nützliche Verbrauchsgegenstände decken Heilung, Sustain während einer langen Route und Notfallerholung ab — genaue Namen und Effekte brauchen noch Launch-Build-Verifizierung, bevor eine konkrete Liste veröffentlicht wird.",
+    eyebrow: 'Guide', h1: "Verbrauchsgegenstände-Guide",
+    lead: "Nützliche Verbrauchsgegenstände decken Heilung, Sustain während einer langen Route und Notfallerholung ab — genaue Namen und Effekte brauchen noch Launch-Build-Verifizierung, bevor eine konkrete Liste veröffentlicht wird.",
+    sections: [
+      { heading: "Heilung, Sustain, Notfall", paragraphs: ["Verbrauchsgegenstände sollten Heilung, Sustain und Notfallerholung abdecken."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Konkrete Items ohne Verifizierung zu listen, ist verfrüht."] },
+    ], related: [],
+  },
+  {
+    slug: 'crafting-guide', title: "Mistfall Hunter Crafting-Guide",
+    description: "Crafting dürfte das Banken von Ressourcen und das Befolgen verifizierter Rezepte beinhalten; genaue Rezepte und Ressourcenkosten sind noch nicht veröffentlicht und sollten nicht erraten werden.",
+    eyebrow: 'Guide', h1: "Crafting-Guide",
+    lead: "Crafting dürfte das Banken von Ressourcen und das Befolgen verifizierter Rezepte beinhalten; genaue Rezepte und Ressourcenkosten sind noch nicht veröffentlicht und sollten nicht erraten werden.",
+    sections: [
+      { heading: "Ressourcen banken, Rezepte verifizieren", paragraphs: ["Crafting basiert auf gebankten Ressourcen und verifizierten Rezepten, nicht auf Vermutungen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Erfundene Rezepte oder Quellentabellen sind irreführend."] },
+    ], related: [],
+  },
+  {
+    slug: 'vendor-guide', title: "Mistfall Hunter Händler-Guide",
+    description: "Händler dürften Kaufen, Verkaufen und das Banken von Fortschrittswert unterstützen; genaues Inventar und Preise brauchen noch Launch-Build-Bestätigung, bevor Details veröffentlicht werden.",
+    eyebrow: 'Guide', h1: "Händler-Guide",
+    lead: "Händler dürften Kaufen, Verkaufen und das Banken von Fortschrittswert unterstützen; genaues Inventar und Preise brauchen noch Launch-Build-Bestätigung, bevor Details veröffentlicht werden.",
+    sections: [
+      { heading: "Kaufen, Verkaufen, Banken", paragraphs: ["Händler unterstützen voraussichtlich Kaufen, Verkaufen und das Banken von Fortschrittswert."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Händlerinventar vor Launch-Daten zu behaupten, ist verfrüht."] },
+    ], related: [],
+  },
+  {
+    slug: 'returner-woodling-guide', title: "Mistfall Hunter Returner-Woodling-Guide",
+    description: "Der Returner Woodling ist das Ziel, das mit dem Soul of Return verbunden ist — ihn früh zu finden und zu sichern, macht aus einem Glücksspiel eine kontrollierte Entscheidung darüber, wann man geht.",
+    eyebrow: 'Guide', h1: "Returner-Woodling-Guide",
+    lead: "Der Returner Woodling ist das Ziel, das mit dem Soul of Return verbunden ist — ihn früh zu finden und zu sichern, macht aus einem Glücksspiel eine kontrollierte Entscheidung darüber, wann man geht.",
+    sections: [
+      { heading: "Früh finden und sichern", paragraphs: ["Den Returner Woodling früh zu sichern, macht deinen Lauf kontrollierbar statt riskant."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Das Ziel nicht als harmlos zu behandeln, wenn es Geräusch oder Verkehr erzeugt."] },
+    ], related: [],
+  },
+  {
+    slug: 'soul-of-return-farming', title: "Mistfall Hunter Soul-of-Return-Farming",
+    description: "Priorisiere den Soul of Return, bevor die Tasche zu wertvoll zum Riskieren wird — ihn erst zu farmen, wenn du schon beladen bist, fügt nur unnötige Risikozeit hinzu.",
+    eyebrow: 'Guide', h1: "Soul-of-Return-Farming",
+    lead: "Priorisiere den Soul of Return, bevor die Tasche zu wertvoll zum Riskieren wird — ihn erst zu farmen, wenn du schon beladen bist, fügt nur unnötige Risikozeit hinzu.",
+    sections: [
+      { heading: "Zuerst sichern, dann looten", paragraphs: ["Sichere den Soul of Return, bevor die Tasche zu wertvoll zum Riskieren wird."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Das Ziel erst zu farmen, wenn die Tasche schon wertvoll ist, ist riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'gyldenblood-farming-route', title: "Mistfall Hunter Gyldenblood-Farmroute",
+    description: "Gyldenblood ist eine Ressource, die mit dem Fortschritt verbunden ist; eine sichere Farmroute bankt sie konsistent, statt in stark frequentierten Gebieten für marginale Extragewinne zu verweilen.",
+    eyebrow: 'Guide', h1: "Gyldenblood-Farmroute",
+    lead: "Gyldenblood ist eine Ressource, die mit dem Fortschritt verbunden ist; eine sichere Farmroute bankt sie konsistent, statt in stark frequentierten Gebieten für marginale Extragewinne zu verweilen.",
+    sections: [
+      { heading: "Konsistent banken", paragraphs: ["Banke Gyldenblood konsistent, statt in gefährlichen Gebieten für marginale Gewinne zu verweilen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Erfundene Drop-Quellen oder Raten sind irreführend."] },
+    ], related: [],
+  },
+  {
+    slug: 'corroded-enemies-guide', title: "Mistfall Hunter Corroded-Gegner-Guide",
+    description: "Corroded-Gegner sind die häufigen, vom Mist verzerrten Bedrohungen in jeder Zone — sie zu bekämpfen kostet Zeit und Geräusch, also wäge jeden Kampf danach ab, ob die Belohnung die Aufmerksamkeit wert ist, die er anzieht.",
+    eyebrow: 'Guide', h1: "Corroded-Gegner-Guide",
+    lead: "Corroded-Gegner sind die häufigen, vom Mist verzerrten Bedrohungen in jeder Zone — sie zu bekämpfen kostet Zeit und Geräusch, also wäge jeden Kampf danach ab, ob die Belohnung die Aufmerksamkeit wert ist, die er anzieht.",
+    sections: [
+      { heading: "Jeder Kampf hat einen Preis", paragraphs: ["Wäge jeden Kampf gegen Corroded-Gegner gegen die Aufmerksamkeit ab, die er anzieht."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Zu viel Zeit in geringwertigen PvE-Kämpfen zu verbringen, ist ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'mist-lord-guide', title: "Mistfall Hunter Mist-Lord-Guide",
+    description: "Siehe die dedizierte Mist-Lord-Boss-Seite für die vollständige Aufschlüsselung bekannter Begegnungen, Schwierigkeitsstufen und Belohnungsinformationen.",
+    eyebrow: 'Guide', h1: "Mist-Lord-Guide",
+    lead: "Siehe die dedizierte Mist-Lord-Boss-Seite für die vollständige Aufschlüsselung bekannter Begegnungen, Schwierigkeitsstufen und Belohnungsinformationen.",
+    sections: [
+      { heading: "Vorbereitung zählt", paragraphs: ["Erkunde und plane deine Route, bevor du einen Mist Lord herausforderst."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Boss-Pulls ohne Rückzugs- oder Support-Plan sind riskant."] },
+    ], related: [],
+  },
+  {
+    slug: 'boss-rewards-guide', title: "Mistfall Hunter Boss-Belohnungs-Guide",
+    description: "Bestätigte Boss-Belohnungen zentrieren sich um Holy-Waffen, jede an einen bestimmten Kartenboss mit einzigartigen Gameplay-Affixen gebunden; genaue vollständige Belohnungstabellen brauchen noch Launch-Build-Verifizierung.",
+    eyebrow: 'Guide', h1: "Boss-Belohnungs-Guide",
+    lead: "Bestätigte Boss-Belohnungen zentrieren sich um Holy-Waffen, jede an einen bestimmten Kartenboss mit einzigartigen Gameplay-Affixen gebunden; genaue vollständige Belohnungstabellen brauchen noch Launch-Build-Verifizierung.",
+    sections: [
+      { heading: "Holy-Waffen im Zentrum", paragraphs: ["Jeder Boss trägt eine einzigartige Holy-Waffe mit besonderen Affixen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Belohnungstabellen vor verifizierten Drops zu veröffentlichen, ist verfrüht."] },
+    ], related: [],
+  },
+  {
+    slug: 'boss-mechanics-guide', title: "Mistfall Hunter Boss-Mechaniken-Guide",
+    description: "Boss-Mechaniken sollten durch Erkundung und sichere erste Versuche gelernt werden, statt aus Beta-Aufnahmen angenommen zu werden, da sich genaue Muster vor dem Launch noch ändern können.",
+    eyebrow: 'Guide', h1: "Boss-Mechaniken-Guide",
+    lead: "Boss-Mechaniken sollten durch Erkundung und sichere erste Versuche gelernt werden, statt aus Beta-Aufnahmen angenommen zu werden, da sich genaue Muster vor dem Launch noch ändern können.",
+    sections: [
+      { heading: "Durch Erkundung lernen", paragraphs: ["Lerne Boss-Mechaniken durch vorsichtige erste Versuche statt durch Beta-Annahmen."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Exakte Mechaniken vor Live-Tests aufzulisten, ist verfrüht."] },
+    ], related: [],
+  },
+  {
+    slug: 'pve-enemy-drops-guide', title: "Mistfall Hunter PvE-Gegner-Drops-Guide",
+    description: "Drop-Quellen für PvE-Gegner sind noch nicht vollständig aufgelistet; behandle konkrete Drop-Raten-Behauptungen als unbestätigt, bis sie auf dem Launch-Build bestätigt werden.",
+    eyebrow: 'Guide', h1: "PvE-Gegner-Drops-Guide",
+    lead: "Drop-Quellen für PvE-Gegner sind noch nicht vollständig aufgelistet; behandle konkrete Drop-Raten-Behauptungen als unbestätigt, bis sie auf dem Launch-Build bestätigt werden.",
+    sections: [
+      { heading: "Noch nicht vollständig bekannt", paragraphs: ["Drop-Quellen für PvE-Gegner sind noch nicht vollständig verifiziert."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Erfundene Drop-Raten sind irreführend."] },
+    ], related: [],
+  },
+  {
+    slug: 'rare-loot-guide', title: "Mistfall Hunter seltene-Beute-Guide",
+    description: "Seltene Beute ist es wert, extrahiert zu werden, nicht wert, dafür zu sterben — sobald du etwas Wertvolles identifiziert hast, priorisiere einen sicheren Ausgang, statt noch mehr aus demselben Lauf herauszupressen.",
+    eyebrow: 'Guide', h1: "Seltene-Beute-Guide",
+    lead: "Seltene Beute ist es wert, extrahiert zu werden, nicht wert, dafür zu sterben — sobald du etwas Wertvolles identifiziert hast, priorisiere einen sicheren Ausgang, statt noch mehr aus demselben Lauf herauszupressen.",
+    sections: [
+      { heading: "Extrahieren, nicht sterben", paragraphs: ["Priorisiere einen sicheren Ausgang, sobald du etwas Wertvolles gefunden hast."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Nach seltener Beute zu bleiben, wenn die Route schon gewonnen ist, ist ein Fehler."] },
+    ], related: [],
+  },
+  {
+    slug: 'loot-priority-list', title: "Mistfall Hunter Loot-Prioritätsliste",
+    description: "Eine praktische Loot-Priorität bevorzugt klassenrelevante Upgrades und Fortschrittsressourcen vor generischen, hochseltenen Items, die du noch nicht nutzen kannst.",
+    eyebrow: 'Guide', h1: "Loot-Prioritätsliste",
+    lead: "Eine praktische Loot-Priorität bevorzugt klassenrelevante Upgrades und Fortschrittsressourcen vor generischen, hochseltenen Items, die du noch nicht nutzen kannst.",
+    sections: [
+      { heading: "Klassenrelevanz vor Seltenheit", paragraphs: ["Bevorzuge klassenrelevante Upgrades und Fortschrittsressourcen vor generischen seltenen Items."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Universelle Listen vor verifizierter Wirtschaft zu erstellen, ist verfrüht."] },
+    ], related: [],
+  },
 ];
 
 const ja: LocalizedCorePage[] = [
@@ -1724,6 +2634,916 @@ const ja: LocalizedCorePage[] = [
     sections: [
       { heading: "ビルドより先に役割を", paragraphs: ["具体的なビルドを決める前に、まずチーム内での役割を選びましょう。"] },
       { heading: "注意点", paragraphs: ["サポート計画なしに3人が同じ役割を重ねてしまうのはよくある失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'gameplay-loop-explained', title: "Mistfall Hunter ゲームプレイループ解説",
+    description: "どのランも同じ核心的な判断に帰結します：何と戦うか、何を拾うか、いつ戦闘が安全か、そしてもう一押しするか、他のハンターより先にSoul of Returnへ向かうか。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter ゲームプレイループ解説",
+    lead: "どのランも同じ核心的な判断に帰結します：何と戦うか、何を拾うか、いつ戦闘が安全か、そしてもう一押しするか、他のハンターより先にSoul of Returnへ向かうか。",
+    sections: [
+      { heading: "コアループ", paragraphs: ["侵入、戦闘、略奪、脱出の確保、離脱——これがすべてのランに共通する核心です。"] },
+      { heading: "注意点", paragraphs: ["十分な戦利品がいつ「十分」になるかの判断は、純粋な戦闘力より重要なことが多いです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'gameplay-trailer-breakdown', title: "Mistfall Hunter ゲームプレイトレーラー解説",
+    description: "公式トレーラーは6クラス、モンストと敵対ハンター双方に対するPvPvE戦闘、脱出型の戦利品ループ、Mist Lordボス戦を確認しています。画面に映っていない要素は、隠されたメカニクスではなく単に未確認として扱ってください。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter ゲームプレイトレーラー解説",
+    lead: "公式トレーラーは6クラス、モンストと敵対ハンター双方に対するPvPvE戦闘、脱出型の戦利品ループ、Mist Lordボス戦を確認しています。画面に映っていない要素は、隠されたメカニクスではなく単に未確認として扱ってください。",
+    sections: [
+      { heading: "確認されていること", paragraphs: ["6クラス、PvPvE戦闘、脱出型戦利品ループが公式トレーラーで確認されています。"] },
+      { heading: "注意点", paragraphs: ["画面に映っていない詳細を確認済みメカニクスと決めつけないようにしましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'first-30-minutes-guide', title: "Mistfall Hunter：最初の30分",
+    description: "最初の30分は、自分のクラスの基本的な戦闘感覚を学び、近くの出口を見つけ、安価な装備で一回完全な脱出を達成することに使いましょう——操作を覚える前にボス戦を探すより重要です。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter：最初の30分",
+    lead: "最初の30分は、自分のクラスの基本的な戦闘感覚を学び、近くの出口を見つけ、安価な装備で一回完全な脱出を達成することに使いましょう——操作を覚える前にボス戦を探すより重要です。",
+    sections: [
+      { heading: "まず基本から", paragraphs: ["自分のクラスの戦闘感覚を学び、大きな挑戦の前にシンプルな脱出を一度完了させましょう。"] },
+      { heading: "注意点", paragraphs: ["操作に慣れる前にボス戦を探すのはよくある初心者の失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'combat-gameplay-guide', title: "Mistfall Hunter 戦闘ガイド",
+    description: "戦闘の中心はスタミナ管理、固定ロックオンなしのエイム、ブロックと回避、そして自分のクラス固有のツールです。最も長く生き残るプレイヤーは、スタミナを第二の体力ゲージのように扱います。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter 戦闘ガイド",
+    lead: "戦闘の中心はスタミナ管理、固定ロックオンなしのエイム、ブロックと回避、そして自分のクラス固有のツールです。最も長く生き残るプレイヤーは、スタミナを第二の体力ゲージのように扱います。",
+    sections: [
+      { heading: "スタミナは第二の体力", paragraphs: ["スタミナを単なる攻撃用リソースではなく、第二の体力ゲージとして扱いましょう。"] },
+      { heading: "注意点", paragraphs: ["スタミナを使い切ってしまうと、逃げる手段がなくなります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'pvp-gameplay-guide', title: "Mistfall Hunter PvPガイド",
+    description: "PvPは単なる決闘ではありません——音、ルート管理、脱出タイミングが、一撃が当たる前にほとんどの戦闘の結果を決めます。最も安全な勝利は、油断している相手を捉えることから生まれます。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter PvPガイド",
+    lead: "PvPは単なる決闘ではありません——音、ルート管理、脱出タイミングが、一撃が当たる前にほとんどの戦闘の結果を決めます。最も安全な勝利は、油断している相手を捉えることから生まれます。",
+    sections: [
+      { heading: "勝利は戦う前に決まる", paragraphs: ["音とルート管理が、最初の一撃より前にほとんどの戦闘を決定づけます。"] },
+      { heading: "注意点", paragraphs: ["満タンの相手に正面から挑むより、油断している相手を狙う方が安全です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'pve-gameplay-guide', title: "Mistfall Hunter PvEガイド",
+    description: "PvEの脅威は、勝ったとしても時間・音・資源を消費します。モンスターとの戦闘は、それが他のハンターを引き寄せるリスクに見合うかどうかを常に天秤にかけるべきです。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter PvEガイド",
+    lead: "PvEの脅威は、勝ったとしても時間・音・資源を消費します。モンスターとの戦闘は、それが他のハンターを引き寄せるリスクに見合うかどうかを常に天秤にかけるべきです。",
+    sections: [
+      { heading: "すべての戦闘に代償がある", paragraphs: ["PvE戦闘のたびに、他プレイヤーを引き寄せるリスクと報酬を天秤にかけましょう。"] },
+      { heading: "注意点", paragraphs: ["長く騒がしいモンスター戦は、モンスター自体より危険になり得ます。"] },
+    ], related: [],
+  },
+  {
+    slug: 'solo-gameplay-guide', title: "Mistfall Hunter ソロガイド",
+    description: "ソロプレイは短く静かなルートと、逃走手段を持つクラスに報酬を与えます。仲間と注意を分担できないため、純粋なクラスの強さよりルート規律と早めの離脱が重要です。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter ソロガイド",
+    lead: "ソロプレイは短く静かなルートと、逃走手段を持つクラスに報酬を与えます。仲間と注意を分担できないため、純粋なクラスの強さよりルート規律と早めの離脱が重要です。",
+    sections: [
+      { heading: "規律が強さより重要", paragraphs: ["ソロでは、純粋なクラスの強さより短く静かなルートと確実な逃走手段が重要です。"] },
+      { heading: "注意点", paragraphs: ["仲間がいない分、注意とリスクをすべて一人で背負うことになります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'co-op-gameplay-guide', title: "Mistfall Hunter 協力プレイガイド",
+    description: "協力プレイは、全員が同じ相手を攻撃するのではなく、一人が圧力役、一人がサポート役、一人が周囲を警戒する役と、役割を明確に分担するとうまくいきます。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter 協力プレイガイド",
+    lead: "協力プレイは、全員が同じ相手を攻撃するのではなく、一人が圧力役、一人がサポート役、一人が周囲を警戒する役と、役割を明確に分担するとうまくいきます。",
+    sections: [
+      { heading: "役割を明確に分担", paragraphs: ["全員が同じ相手を攻撃するのではなく、チーム内で役割を明確に分担しましょう。"] },
+      { heading: "注意点", paragraphs: ["役割分担がないと、チームは無防備な3人のバラバラな存在になってしまいます。"] },
+    ], related: [],
+  },
+  {
+    slug: 'mistfall-hunters-spelling', title: "Mistfall HunterかMistfall Huntersか？正しい表記",
+    description: "公式タイトルは単数形のMistfall Hunterです——Bellring自身のサイト、Steam、Xboxのリスティングすべてが単数形を使用しています。「Mistfall Hunters」は同じゲームを検索する際のよくある表記ゆれに過ぎません。",
+    eyebrow: 'ガイド', h1: "Mistfall HunterかMistfall Huntersか？",
+    lead: "公式タイトルは単数形のMistfall Hunterです——Bellring自身のサイト、Steam、Xboxのリスティングすべてが単数形を使用しています。「Mistfall Hunters」は同じゲームを検索する際のよくある表記ゆれに過ぎません。",
+    sections: [
+      { heading: "公式の表記", paragraphs: ["単数形のMistfall Hunterが、すべての公式チャンネルでの正式表記です。"] },
+      { heading: "なぜ複数形が使われるのか", paragraphs: ["「Mistfall Hunters」は別のタイトルではなく、自然な検索の癖によるものです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'mistfall-hunter-vs-mistfall-hunters', title: "Mistfall Hunter vs Mistfall Hunters：同じゲーム",
+    description: "Mistfall Huntersという別のゲームは存在しません——同じタイトル、Mistfall Hunterが検索で異なる表記をされているだけです。公式ページ、ストア、ニュースを探す際は単数形を使いましょう。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter vs Mistfall Hunters",
+    lead: "Mistfall Huntersという別のゲームは存在しません——同じタイトル、Mistfall Hunterが検索で異なる表記をされているだけです。公式ページ、ストア、ニュースを探す際は単数形を使いましょう。",
+    sections: [
+      { heading: "同じゲーム", paragraphs: ["どちらの表記も同じゲーム、Mistfall Hunterを指しています。"] },
+      { heading: "どちらを使うべきか", paragraphs: ["公式情報源を確実に見つけるには、単数形を使いましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'mistfall-hunter-name-guide', title: "Mistfall Hunter 名称・表記ガイド",
+    description: "Mistfall HuntersやMist Fall Hunterなど、様々な表記を見たとしても、すべて同じゲームを指しています。Steam、Xbox、Bellring公式サイトでの正式名称はMistfall Hunterです。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter 名称・表記ガイド",
+    lead: "Mistfall HuntersやMist Fall Hunterなど、様々な表記を見たとしても、すべて同じゲームを指しています。Steam、Xbox、Bellring公式サイトでの正式名称はMistfall Hunterです。",
+    sections: [
+      { heading: "すべての表記が同じゲームを指す", paragraphs: ["Mist Fall Hunterなど様々な表記は、すべて同じタイトルを指しています。"] },
+      { heading: "正式名称", paragraphs: ["Steam、Xbox、公式サイトでの唯一の正式名称はMistfall Hunterです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'release-time-time-zones', title: "Mistfall Hunter 発売時刻（各タイムゾーン）",
+    description: "Mistfall Hunterは2026年7月29日午後6時（太平洋時間）に発売され、これは2026年7月30日午前1時（UTC）と同じ瞬間です。中央ヨーロッパ時間ではおよそ7月30日午前3時、日本標準時ではおよそ7月30日午前11時になります。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter 発売時刻（タイムゾーン別）",
+    lead: "Mistfall Hunterは2026年7月29日午後6時（太平洋時間）に発売され、これは2026年7月30日午前1時（UTC）と同じ瞬間です。中央ヨーロッパ時間ではおよそ7月30日午前3時、日本標準時ではおよそ7月30日午前11時になります。",
+    sections: [
+      { heading: "時差の換算", paragraphs: ["7月29日午後6時（PT）は、7月30日午前1時（UTC）と世界共通の同じ瞬間です。"] },
+      { heading: "地域ごとの時刻", paragraphs: ["正確なカウントダウンは、お住まいの地域のストアで確認してください。"] },
+    ], related: [],
+  },
+  {
+    slug: 'launch-day-checklist', title: "Mistfall Hunter 発売日チェックリスト",
+    description: "発売日前に：プラットフォームアカウントの連携を確認し、ウィッシュリストに登録するかストアページをフォローし、スタンダードかデラックスかを決め、トレーラーで見ただけでなく安心して学べるクラスを選びましょう。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter 発売日チェックリスト",
+    lead: "発売日前に：プラットフォームアカウントの連携を確認し、ウィッシュリストに登録するかストアページをフォローし、スタンダードかデラックスかを決め、トレーラーで見ただけでなく安心して学べるクラスを選びましょう。",
+    sections: [
+      { heading: "発売前の確認事項", paragraphs: ["アカウント連携、ウィッシュリスト登録、エディション選択——これらが事前準備です。"] },
+      { heading: "事前ダウンロードなし", paragraphs: ["事前ダウンロードはなく、公式の発売時刻になって初めてプレイ可能になります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'launch-week-roadmap', title: "Mistfall Hunter 発売週ロードマップ",
+    description: "発売週は、初日パッチ、サーバー安定性の報告、そしてベータの印象ではなく実機データに基づく最初の本格的なバランス議論を注視する期間です。このページは公式に確認され次第、それらを追跡します。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter 発売週ロードマップ",
+    lead: "発売週は、初日パッチ、サーバー安定性の報告、そしてベータの印象ではなく実機データに基づく最初の本格的なバランス議論を注視する期間です。このページは公式に確認され次第、それらを追跡します。",
+    sections: [
+      { heading: "注目すべきこと", paragraphs: ["初日パッチとサーバー安定性が最初の週の最重要トピックです。"] },
+      { heading: "バランス議論", paragraphs: ["本格的なバランス議論は、ベータの印象ではなく実機データが揃って初めて始まります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'pre-launch-guide', title: "Mistfall Hunter 発売前ガイド",
+    description: "発売前に最も役立つ準備は、脱出ループを学び、クラスの役割を比較し、プラットフォームと価格を確認することです——発売版に引き継がれるとは限らないベータデータに基づくTier表を暗記することではありません。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter 発売前ガイド",
+    lead: "発売前に最も役立つ準備は、脱出ループを学び、クラスの役割を比較し、プラットフォームと価格を確認することです——発売版に引き継がれるとは限らないベータデータに基づくTier表を暗記することではありません。",
+    sections: [
+      { heading: "本当に役立つこと", paragraphs: ["脱出ループの理解とクラスの役割比較は、ベータのTier表を覚えるより有用です。"] },
+      { heading: "避けるべきこと", paragraphs: ["ベータ基準のTier表は、発売後には通用しなくなる可能性があります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'steam-release-time', title: "Mistfall Hunter Steam発売時刻",
+    description: "Steam自体のリスティングは2026年7月29日を発売日として表示しています。正確な解禁時刻は公式発表によると午後6時PT（7月30日午前1時UTC）で、Steamは通常どの地域でも同じ瞬間に、各地域のローカル時刻に合わせて解禁します。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter Steam発売時刻",
+    lead: "Steam自体のリスティングは2026年7月29日を発売日として表示しています。正確な解禁時刻は公式発表によると午後6時PT（7月30日午前1時UTC）で、Steamは通常どの地域でも同じ瞬間に、各地域のローカル時刻に合わせて解禁します。",
+    sections: [
+      { heading: "確定した時刻", paragraphs: ["Steamは2026年7月29日を表示し、世界共通で午後6時PTに解禁されます。"] },
+      { heading: "地域ごとの調整", paragraphs: ["時刻は各地域のローカル時間に合わせて表示されますが、瞬間自体は同じです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'steam-demo-guide', title: "Mistfall Hunter Steamデモガイド",
+    description: "Mistfall Hunterのデモは2026年6月のSteam Next Fest期間中に利用可能で、6月15〜22日のオープンベータとは別のものでした。デモの進行状況は正式版には引き継がれません——戦闘と脱出ループの味見として捉えてください。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter Steamデモガイド",
+    lead: "Mistfall Hunterのデモは2026年6月のSteam Next Fest期間中に利用可能で、6月15〜22日のオープンベータとは別のものでした。デモの進行状況は正式版には引き継がれません——戦闘と脱出ループの味見として捉えてください。",
+    sections: [
+      { heading: "デモの提供時期", paragraphs: ["デモは2026年6月のSteam Next Fest期間中に、オープンベータとは別に提供されました。"] },
+      { heading: "進行状況は引き継がれない", paragraphs: ["デモの進行状況は正式版には引き継がれません。"] },
+    ], related: [],
+  },
+  {
+    slug: 'steam-reviews-tracker', title: "Mistfall Hunter Steamレビュー追跡",
+    description: "Mistfall Hunterは7月29日に発売されたため、今では実際のプレイヤーがレビューできます。このページは、十分なデータが集まり次第、レビューの傾向やよくある称賛・不満を追跡します。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter Steamレビュー追跡",
+    lead: "Mistfall Hunterは7月29日に発売されたため、今では実際のプレイヤーがレビューできます。このページは、十分なデータが集まり次第、レビューの傾向やよくある称賛・不満を追跡します。",
+    sections: [
+      { heading: "初期のレビュー", paragraphs: ["ゲームが稼働中の今、実際のプレイヤーレビューが集まり始めています。"] },
+      { heading: "注目すべきこと", paragraphs: ["発売後数日でよくある批判点や称賛点が明らかになってきます。"] },
+    ], related: [],
+  },
+  {
+    slug: 'steam-wishlist-guide', title: "Mistfall Hunter Steamウィッシュリストガイド",
+    description: "SteamでMistfall Hunterをウィッシュリストに追加する（またはXboxやPlayStationでフォローする）と、解禁された瞬間に通知が届きます。それ以上の確認済みウィッシュリスト特典はありません。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter Steamウィッシュリストガイド",
+    lead: "SteamでMistfall Hunterをウィッシュリストに追加する（またはXboxやPlayStationでフォローする）と、解禁された瞬間に通知が届きます。それ以上の確認済みウィッシュリスト特典はありません。",
+    sections: [
+      { heading: "実用的なメリット", paragraphs: ["ウィッシュリストの主な利点は、正確な発売の瞬間を逃さないことです。"] },
+      { heading: "特別な特典はない", paragraphs: ["ウィッシュリスト限定の確認済み特典は特にありません。"] },
+    ], related: [],
+  },
+  {
+    slug: 'cross-platform-party-guide', title: "Mistfall Hunter クロスプラットフォームパーティガイド",
+    description: "PC、Xbox、PS5間の完全クロスプレイは確認済みで既に稼働中です——異なるプラットフォームのプレイヤーが今すぐパーティを組んで一緒に狩りができます。クロスプログレッションは別機能で、同様には確認されていません。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter クロスプラットフォームパーティガイド",
+    lead: "PC、Xbox、PS5間の完全クロスプレイは確認済みで既に稼働中です——異なるプラットフォームのプレイヤーが今すぐパーティを組んで一緒に狩りができます。クロスプログレッションは別機能で、同様には確認されていません。",
+    sections: [
+      { heading: "稼働中で確認済み", paragraphs: ["3プラットフォーム間のクロスプレイは今、実際に機能しています。"] },
+      { heading: "クロスプログレッションは別", paragraphs: ["プラットフォームをまたいだアカウント共有は別機能で、まだ確認されていません。"] },
+    ], related: [],
+  },
+  {
+    slug: 'cross-progression-guide', title: "Mistfall Hunter クロスプログレッションガイド",
+    description: "クロスプログレッション——プラットフォームをまたいで同じアカウントと解放要素を共有すること——は公式にはまだ確認されていません。オープンベータで確認されたのはクロスプレイ（一緒にプレイすること）で、これはクロスプログレッション（セーブデータ共有）とは関連していますが別の機能です。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter クロスプログレッションガイド",
+    lead: "クロスプログレッション——プラットフォームをまたいで同じアカウントと解放要素を共有すること——は公式にはまだ確認されていません。オープンベータで確認されたのはクロスプレイ（一緒にプレイすること）で、これはクロスプログレッション（セーブデータ共有）とは関連していますが別の機能です。",
+    sections: [
+      { heading: "クロスプログレッションとは", paragraphs: ["プラットフォームをまたいで同じアカウントと解放要素を共有することは、まだ確認されていません。"] },
+      { heading: "クロスプレイと混同しない", paragraphs: ["クロスプレイ（一緒にプレイ）は確認済みですが、クロスプログレッション（セーブ共有）は別の話です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'pc-xbox-crossplay-guide', title: "Mistfall Hunter PC＆Xboxクロスプレイガイド",
+    description: "はい——PC、Xbox、PS5間の完全クロスプレイが確認済みで稼働中のため、PCとXboxのプレイヤーは一緒にプレイできます。Xboxのコンソールオンラインマルチプレイには、Game Pass CoreまたはUltimateが必要です。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter PCとXboxのクロスプレイ",
+    lead: "はい——PC、Xbox、PS5間の完全クロスプレイが確認済みで稼働中のため、PCとXboxのプレイヤーは一緒にプレイできます。Xboxのコンソールオンラインマルチプレイには、Game Pass CoreまたはUltimateが必要です。",
+    sections: [
+      { heading: "確認済みで稼働中", paragraphs: ["PCとXboxのプレイヤーは今すぐ一緒にプレイでき、クロスプレイは実際に機能しています。"] },
+      { heading: "Xboxプレイヤーに必要なもの", paragraphs: ["Xboxでのオンラインマルチプレイには、Game Pass CoreまたはUltimateが必要です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'ps5-crossplay-guide', title: "Mistfall Hunter PS5クロスプレイガイド",
+    description: "はい——PS5は発売時に確認されたPC、Xbox、PS5間の完全クロスプレイに含まれており、PS5プレイヤーはPCやXboxのハンターと一緒にプレイできます。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter PS5クロスプレイガイド",
+    lead: "はい——PS5は発売時に確認されたPC、Xbox、PS5間の完全クロスプレイに含まれており、PS5プレイヤーはPCやXboxのハンターと一緒にプレイできます。",
+    sections: [
+      { heading: "PS5も対象に含まれる", paragraphs: ["PS5はPC・Xboxと共に、確認済みのクロスプレイの対象に含まれています。"] },
+      { heading: "実際の意味", paragraphs: ["PS5プレイヤーは制限なくPC・Xboxプレイヤーと一緒にプレイできます。"] },
+    ], related: [],
+  },
+  {
+    slug: 'steam-price-guide', title: "Mistfall Hunter Steam価格ガイド",
+    description: "Steamでは、スタンダード版が24.99ドル、デラックス版が39.99ドルで、15ドルでのアップグレードも可能です。発売時から2026年8月12日まで、10%の発売記念割引が適用されます。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter Steam価格ガイド",
+    lead: "Steamでは、スタンダード版が24.99ドル、デラックス版が39.99ドルで、15ドルでのアップグレードも可能です。発売時から2026年8月12日まで、10%の発売記念割引が適用されます。",
+    sections: [
+      { heading: "確定価格", paragraphs: ["スタンダード24.99ドル、デラックス39.99ドル、15ドルでアップグレード可能です。"] },
+      { heading: "発売記念割引", paragraphs: ["発売時から2026年8月12日まで10%割引が適用されます。"] },
+    ], related: [],
+  },
+  {
+    slug: 'xbox-price-guide', title: "Mistfall Hunter Xbox価格ガイド",
+    description: "Xboxの価格はSteamと同じです：スタンダード24.99ドル、デラックス39.99ドル。さらにXboxとPC向けにXbox Game Passで発売初日から対応しているため、Game Pass加入者は別途購入せずにプレイできます。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter Xbox価格ガイド",
+    lead: "Xboxの価格はSteamと同じです：スタンダード24.99ドル、デラックス39.99ドル。さらにXboxとPC向けにXbox Game Passで発売初日から対応しているため、Game Pass加入者は別途購入せずにプレイできます。",
+    sections: [
+      { heading: "Steamと同じ価格", paragraphs: ["Xboxの価格はSteamの価格とまったく同じです。"] },
+      { heading: "Game Passの利点", paragraphs: ["Game Pass加入者は初日から追加購入なしでプレイできます。"] },
+    ], related: [],
+  },
+  {
+    slug: 'ps5-price-guide', title: "Mistfall Hunter PS5価格ガイド",
+    description: "PS5の価格は他プラットフォームと同じ構造です：スタンダード24.99ドル／デラックス39.99ドル。Xboxとは異なり、発売時点でPS Plusには含まれないため、PS5プレイヤーは直接購入する必要があります。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter PS5価格ガイド",
+    lead: "PS5の価格は他プラットフォームと同じ構造です：スタンダード24.99ドル／デラックス39.99ドル。Xboxとは異なり、発売時点でPS Plusには含まれないため、PS5プレイヤーは直接購入する必要があります。",
+    sections: [
+      { heading: "他と同じ価格", paragraphs: ["PS5の価格は全プラットフォーム共通の24.99ドル／39.99ドル構造です。"] },
+      { heading: "PS Plusには含まれない", paragraphs: ["Xbox Game Passとは異なり、PS Plusには含まれていません。"] },
+    ], related: [],
+  },
+  {
+    slug: 'game-pass-or-buy-guide', title: "Mistfall Hunter：Game Passか購入か？",
+    description: "XboxやPCなら、Game Passで初日からサブスク料金だけでMistfall Hunterがプレイできます。Game Pass加入が終了した後も続けたい場合や、Game Passが適用されないPS5では、購入する方が理にかなっています。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter：Game Passか購入か？",
+    lead: "XboxやPCなら、Game Passで初日からサブスク料金だけでMistfall Hunterがプレイできます。Game Pass加入が終了した後も続けたい場合や、Game Passが適用されないPS5では、購入する方が理にかなっています。",
+    sections: [
+      { heading: "Xbox/PCのGame Pass", paragraphs: ["Game Passなら追加購入なしで初日からプレイできます。"] },
+      { heading: "購入が理にかなう場合", paragraphs: ["長く遊び続けたい場合や、Game Passが使えないPS5では購入がおすすめです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'classes-overview-2026', title: "Mistfall Hunter クラス概要（2026）",
+    description: "Mistfall Hunterは6クラスでスタートします：Mercenary（近接アタッカー）、Sorcerer（遠距離魔法）、Blackarrow（遠距離精密攻撃）、Shadowstrix（ステルスとバースト）、Seer（サポート）、Withered Knight（パリィ持ちの重量近接）。それぞれ単一の固定キットではなく複数の武器スタンスを持ちます。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter クラス概要",
+    lead: "Mistfall Hunterは6クラスでスタートします：Mercenary（近接アタッカー）、Sorcerer（遠距離魔法）、Blackarrow（遠距離精密攻撃）、Shadowstrix（ステルスとバースト）、Seer（サポート）、Withered Knight（パリィ持ちの重量近接）。それぞれ単一の固定キットではなく複数の武器スタンスを持ちます。",
+    sections: [
+      { heading: "6クラスの概要", paragraphs: ["Mercenary、Sorcerer、Blackarrow、Shadowstrix、Seer、Withered Knight——それぞれ複数の武器スタンスを持ちます。"] },
+      { heading: "固定された役割はない", paragraphs: ["各クラスは単一のプレイスタイルではなく、複数の武器スタンスを提供します。"] },
+    ], related: [],
+  },
+  {
+    slug: 'classes-ranked-for-launch', title: "Mistfall Hunter 発売時点のクラス評価",
+    description: "実際のバランスデータがない状態では、生の火力より役割の明確さと初心者への優しさが最も安全な評価基準です。役割ごとの内訳はベストビギナークラスガイドを参照してください。実際のTier表は発売後のデータで変わることが予想されます。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter 発売時点のクラス評価",
+    lead: "実際のバランスデータがない状態では、生の火力より役割の明確さと初心者への優しさが最も安全な評価基準です。役割ごとの内訳はベストビギナークラスガイドを参照してください。実際のTier表は発売後のデータで変わることが予想されます。",
+    sections: [
+      { heading: "明確さが火力より重要", paragraphs: ["役割の明確さと初心者への優しさは、生の火力よりも安全な評価基準です。"] },
+      { heading: "Tier表は変わる", paragraphs: ["実際のTier表は、発売後のデータが揃うにつれて変化します。"] },
+    ], related: [],
+  },
+  {
+    slug: 'classes-for-squads', title: "Mistfall Hunter スクワッド最強クラス",
+    description: "スクワッドでは仲間が弱点をカバーできるため、クラスはより尖った特化が可能です。前衛の圧力、遠距離コントロール、サポートの組み合わせは、同じ役割を3人重ねるより優れていることが多いです。",
+    eyebrow: 'ガイド', h1: "スクワッド最強クラス",
+    lead: "スクワッドでは仲間が弱点をカバーできるため、クラスはより尖った特化が可能です。前衛の圧力、遠距離コントロール、サポートの組み合わせは、同じ役割を3人重ねるより優れていることが多いです。",
+    sections: [
+      { heading: "より尖った特化が可能", paragraphs: ["仲間が弱点をカバーできるチームでは、クラスをより尖った形で特化できます。"] },
+      { heading: "適切な組み合わせ", paragraphs: ["前衛・遠距離コントロール・サポートの組み合わせは、同じ役割の重複より優れています。"] },
+    ], related: [],
+  },
+  {
+    slug: 'classes-for-beginners-2026', title: "Mistfall Hunter 初心者最強クラス（2026）",
+    description: "新規プレイヤーには、ミスに寛容なクラスが最適です——明確な防御手段とシンプルな勝ち筋は、まだ学んでいない高難度キットより優れています。",
+    eyebrow: 'ガイド', h1: "初心者最強クラス",
+    lead: "新規プレイヤーには、ミスに寛容なクラスが最適です——明確な防御手段とシンプルな勝ち筋は、まだ学んでいない高難度キットより優れています。",
+    sections: [
+      { heading: "ミスに寛容なクラスを", paragraphs: ["高難度キットより、ミスに寛容で明確な防御手段を持つクラスを選びましょう。"] },
+      { heading: "まずはシンプルさ", paragraphs: ["入門時は高いダメージ潜在力より、明確な防御手段の方が重要です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-route-for-beginners', title: "Mistfall Hunter 初心者向けベストルート",
+    description: "最も安全な初心者ルートはマップの外周にとどまり、Mist Lordの戦場を避け、追加の戦利品より先にSoul of Returnを見つけることを優先します。",
+    eyebrow: 'ガイド', h1: "初心者向けベストルート",
+    lead: "最も安全な初心者ルートはマップの外周にとどまり、Mist Lordの戦場を避け、追加の戦利品より先にSoul of Returnを見つけることを優先します。",
+    sections: [
+      { heading: "短いルートで早めの脱出", paragraphs: ["安価な装備で短く静かなルートを練習してから、さらに踏み込みましょう。"] },
+      { heading: "注意点", paragraphs: ["出口を把握するまでボスルートを避けるのが、入門時の最も安全なやり方です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'safe-loot-route-guide', title: "Mistfall Hunter 安全な戦利品ルート",
+    description: "安全な戦利品ルートは短く静かなループを繰り返し、バッグがリスクに見合う価値になったら止め、もう一つのコンテナより明確な出口を優先します。",
+    eyebrow: 'ガイド', h1: "安全な戦利品ルート",
+    lead: "安全な戦利品ルートは短く静かなループを繰り返し、バッグがリスクに見合う価値になったら止め、もう一つのコンテナより明確な出口を優先します。",
+    sections: [
+      { heading: "停止ルール付きの反復ループ", paragraphs: ["いつ止めるかを明確に決めた、短く反復可能なルートを使いましょう。"] },
+      { heading: "注意点", paragraphs: ["戦利品ランを気づかぬうちにボスランに変えてしまうのが最もよくある失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'high-risk-high-reward-route', title: "Mistfall Hunter ハイリスク・ハイリターンルート",
+    description: "ハイリスクルートはDivine AnchorやMist Lordの戦場などボス隣接エリアを通り、戦利品は良いものの、PvPの往来とエリート敵がはるかに危険です——基本の脱出ループに慣れるまでは推奨されません。",
+    eyebrow: 'ガイド', h1: "ハイリスク・ハイリターンルート",
+    lead: "ハイリスクルートはDivine AnchorやMist Lordの戦場などボス隣接エリアを通り、戦利品は良いものの、PvPの往来とエリート敵がはるかに危険です——基本の脱出ループに慣れるまでは推奨されません。",
+    sections: [
+      { heading: "良い戦利品、高いリスク", paragraphs: ["ボス隣接エリアは戦利品が良い分、PvPとエリート敵のリスクが大幅に高くなります。"] },
+      { heading: "注意点", paragraphs: ["このルートは完全な初心者向けではありません——まず基本ループを習得しましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'duo-route-guide', title: "Mistfall Hunter デュオルートガイド",
+    description: "2人ルートは、1人が圧力と戦利品回収を担当し、もう1人が角度を見張り脱出を援護する時に最もうまくいきます——役割分担は同じ場所を2人で漁るより優れています。",
+    eyebrow: 'ガイド', h1: "デュオルートガイド",
+    lead: "2人ルートは、1人が圧力と戦利品回収を担当し、もう1人が角度を見張り脱出を援護する時に最もうまくいきます——役割分担は同じ場所を2人で漁るより優れています。",
+    sections: [
+      { heading: "役割を分担する", paragraphs: ["1人が圧力と戦利品回収、もう1人が角度の見張りと脱出援護を担当しましょう。"] },
+      { heading: "注意点", paragraphs: ["打ち合いに負けるほど離れすぎるのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'trio-route-guide', title: "Mistfall Hunter トリオルートガイド",
+    description: "3人ルートは明確な役割分担の恩恵を受けます：前衛1人、遠距離またはコントロール1人、サポートまたは見張り1人が、戦闘後にバラバラにならず一緒にリセットします。",
+    eyebrow: 'ガイド', h1: "トリオルートガイド",
+    lead: "3人ルートは明確な役割分担の恩恵を受けます：前衛1人、遠距離またはコントロール1人、サポートまたは見張り1人が、戦闘後にバラバラにならず一緒にリセットします。",
+    sections: [
+      { heading: "明確な役割分担", paragraphs: ["前衛、遠距離コントロール、サポート——各役割を即興ではなく明確に割り当てましょう。"] },
+      { heading: "注意点", paragraphs: ["3人全員が漁って誰も角度を見張らないと危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'rat-route-guide', title: "Mistfall Hunter ステルスルートガイド",
+    description: "ステルス重視のルートは戦闘を完全に避け、静かな移動と人が少ない戦利品にとどまり、大きなバッグを狙うより早めに脱出します。",
+    eyebrow: 'ガイド', h1: "ステルスルートガイド",
+    lead: "ステルス重視のルートは戦闘を完全に避け、静かな移動と人が少ない戦利品にとどまり、大きなバッグを狙うより早めに脱出します。",
+    sections: [
+      { heading: "静かな移動、早めの脱出", paragraphs: ["戦闘を完全に避け、静かな移動と人が少ない戦利品にとどまりましょう。"] },
+      { heading: "注意点", paragraphs: ["ステルスルートを長居する言い訳にしないようにしましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'boss-rush-route-guide', title: "Mistfall Hunter ボスラッシュルートガイド",
+    description: "ボス重視のルートは戦闘を唯一の目標として扱います：まず戦場を偵察し、十分な物資を持ち込み、戦闘前に脱出ルートを計画しましょう（戦闘後ではなく）。",
+    eyebrow: 'ガイド', h1: "ボスラッシュルートガイド",
+    lead: "ボス重視のルートは戦闘を唯一の目標として扱います：まず戦場を偵察し、十分な物資を持ち込み、戦闘前に脱出ルートを計画しましょう（戦闘後ではなく）。",
+    sections: [
+      { heading: "一つの目標、一つの計画", paragraphs: ["まず戦場を偵察し、戦闘に入る前に脱出を計画しましょう。"] },
+      { heading: "注意点", paragraphs: ["十分な物資や出口の知識なしにボスラッシュに挑むのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'extraction-camping-counter-guide', title: "Mistfall Hunter 脱出地点待ち伏せ対策",
+    description: "脱出地点が待ち伏せされている場合、別の角度からアプローチする、待ち伏せしている相手の位置を音で確認する、あるいは物陰から様子を見るなど、まっすぐ突っ込まないようにしましょう。",
+    eyebrow: 'ガイド', h1: "脱出地点待ち伏せ対策",
+    lead: "脱出地点が待ち伏せされている場合、別の角度からアプローチする、待ち伏せしている相手の位置を音で確認する、あるいは物陰から様子を見るなど、まっすぐ突っ込まないようにしましょう。",
+    sections: [
+      { heading: "角度を変える・待つ・聞く", paragraphs: ["別の角度からアプローチするか、物陰から待ち伏せ相手をやり過ごしましょう。"] },
+      { heading: "注意点", paragraphs: ["最終脱出にまっすぐ突っ込むのは特に危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'ambush-guide', title: "Mistfall Hunter 待ち伏せガイド",
+    description: "良い待ち伏せは音の規律と明確な角度に基づきます——静かにして、相手が戦利品回収や他の戦闘に集中するのを待ち、クールダウンを整えて素早いフォロープランで攻撃しましょう。",
+    eyebrow: 'ガイド', h1: "待ち伏せガイド",
+    lead: "良い待ち伏せは音の規律と明確な角度に基づきます——静かにして、相手が戦利品回収や他の戦闘に集中するのを待ち、クールダウンを整えて素早いフォロープランで攻撃しましょう。",
+    sections: [
+      { heading: "音と角度", paragraphs: ["静かにして、攻撃する適切な瞬間を待ちましょう。"] },
+      { heading: "注意点", paragraphs: ["脱出地点から離れすぎた待ち伏せは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'escape-after-kill-guide', title: "Mistfall Hunter キル後の離脱",
+    description: "キルの後、すぐに漁りたい衝動を抑えましょう——まず耳を澄まし、それから素早く漁り、クールダウンをリセットして、音に引き寄せられた横取りが来る前にその場を離れましょう。",
+    eyebrow: 'ガイド', h1: "キル後の離脱",
+    lead: "キルの後、すぐに漁りたい衝動を抑えましょう——まず耳を澄まし、それから素早く漁り、クールダウンをリセットして、音に引き寄せられた横取りが来る前にその場を離れましょう。",
+    sections: [
+      { heading: "聞く・素早く漁う・離れる", paragraphs: ["まず耳を澄まし、素早く漁い、次の脅威が来る前にその場を離れましょう。"] },
+      { heading: "注意点", paragraphs: ["遮蔽物やクールダウンなしですぐに漁るのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-solo', title: "Mistfall Hunter ソロ最強Affix",
+    description: "ソロビルドは生存とモビリティのAffixから最も恩恵を受けます——仲間が悪い状況をカバーしてくれないため、純粋なダメージより継戦力と逃走手段が重要です。",
+    eyebrow: 'ガイド', h1: "ソロ最強Affix",
+    lead: "ソロビルドは生存とモビリティのAffixから最も恩恵を受けます——仲間が悪い状況をカバーしてくれないため、純粋なダメージより継戦力と逃走手段が重要です。",
+    sections: [
+      { heading: "ダメージより生存", paragraphs: ["ソロでは純粋なダメージより継戦力と逃走手段が重要です。"] },
+      { heading: "注意点", paragraphs: ["リセットに役立たない純粋なダメージ数値は失敗のもとです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-pvp', title: "Mistfall Hunter PvP最強Affix",
+    description: "PvP向けAffixはバーストダメージ、スタミナ効率、防御の閾値を優先します。特定のロールを最適と決めつける前に、正確な数値は正式版での検証が必要です。",
+    eyebrow: 'ガイド', h1: "PvP最強Affix",
+    lead: "PvP向けAffixはバーストダメージ、スタミナ効率、防御の閾値を優先します。特定のロールを最適と決めつける前に、正確な数値は正式版での検証が必要です。",
+    sections: [
+      { heading: "バーストとスタミナ", paragraphs: ["バーストダメージ、スタミナ効率、防御の閾値が中心です。"] },
+      { heading: "注意点", paragraphs: ["実際のバランスが確認される前に数値をランク付けするのは時期尚早です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-pve', title: "Mistfall Hunter PvE最強Affix",
+    description: "PvE向けAffixはバーストより持続ダメージと回復を優先します。ボス戦は一撃の大ダメージより継戦力を評価するためです。",
+    eyebrow: 'ガイド', h1: "PvE最強Affix",
+    lead: "PvE向けAffixはバーストより持続ダメージと回復を優先します。ボス戦は一撃の大ダメージより継戦力を評価するためです。",
+    sections: [
+      { heading: "バーストより持続ダメージ", paragraphs: ["ボス戦は一撃より継戦力を重視しましょう。"] },
+      { heading: "注意点", paragraphs: ["退路のないPvEの欲張りは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-bosses', title: "Mistfall Hunter ボス最強Affix",
+    description: "ボス向け装備は、安全で持続的なダメージと、ボス撃破後によく続く脱出戦に勝つための十分な生存力のバランスを取るべきです。",
+    eyebrow: 'ガイド', h1: "ボス最強Affix",
+    lead: "ボス向け装備は、安全で持続的なダメージと、ボス撃破後によく続く脱出戦に勝つための十分な生存力のバランスを取るべきです。",
+    sections: [
+      { heading: "ダメージと生存のバランス", paragraphs: ["安全なダメージと、ボス後の戦闘に勝てる十分な生存力をバランスさせましょう。"] },
+      { heading: "注意点", paragraphs: ["ボスに勝っても脱出戦に負ける装備は失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'gear-rarity-guide', title: "Mistfall Hunter 装備レア度ガイド",
+    description: "装備のレア度は生の強さとAffixの質の両方を反映します。ビルドを決定づけるAffixを持つ低レア度アイテムが、汎用ロールの高レア度アイテムを上回ることもあります。",
+    eyebrow: 'ガイド', h1: "装備レア度ガイド",
+    lead: "装備のレア度は生の強さとAffixの質の両方を反映します。ビルドを決定づけるAffixを持つ低レア度アイテムが、汎用ロールの高レア度アイテムを上回ることもあります。",
+    sections: [
+      { heading: "レア度がすべてではない", paragraphs: ["ビルドを決定づけるAffixは、単なるレア度より重要な場合があります。"] },
+      { heading: "注意点", paragraphs: ["検証なしに最終的なレア度階層を決めつけるのは失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'weapon-tier-list', title: "Mistfall Hunter 武器Tierリスト",
+    description: "実際のバランスデータがない状態では、発売週の安全な評価基準は純粋なダメージより役割適性と安全性です——発売前の武器Tierリストは、テストされるまで暫定的なものとして扱ってください。",
+    eyebrow: 'ガイド', h1: "武器Tierリスト",
+    lead: "実際のバランスデータがない状態では、発売週の安全な評価基準は純粋なダメージより役割適性と安全性です——発売前の武器Tierリストは、テストされるまで暫定的なものとして扱ってください。",
+    sections: [
+      { heading: "ダメージより役割適性", paragraphs: ["役割適性と安全性は、純粋なダメージより安全な評価基準です。"] },
+      { heading: "注意点", paragraphs: ["発売前のバランスで最終的なTierを断言するのは時期尚早です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'armor-guide', title: "Mistfall Hunter 防具ガイド",
+    description: "防具選びは生存力とモビリティのトレードオフです。悪い戦闘から離脱するのに必要なスタミナを犠牲にするなら、重装備が自動的に優れているわけではありません。",
+    eyebrow: 'ガイド', h1: "防具ガイド",
+    lead: "防具選びは生存力とモビリティのトレードオフです。悪い戦闘から離脱するのに必要なスタミナを犠牲にするなら、重装備が自動的に優れているわけではありません。",
+    sections: [
+      { heading: "生存力とモビリティ", paragraphs: ["モビリティを犠牲にするなら、重装備が自動的に優れているわけではありません。"] },
+      { heading: "注意点", paragraphs: ["重い方が常に良いと思い込むのは失敗のもとです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'consumables-guide', title: "Mistfall Hunter 消耗品ガイド",
+    description: "有用な消耗品は回復、長いルート中の継戦力、緊急時の回復をカバーします——具体的なリストを公開する前に、正確な名称と効果は正式版での検証が必要です。",
+    eyebrow: 'ガイド', h1: "消耗品ガイド",
+    lead: "有用な消耗品は回復、長いルート中の継戦力、緊急時の回復をカバーします——具体的なリストを公開する前に、正確な名称と効果は正式版での検証が必要です。",
+    sections: [
+      { heading: "回復・継戦力・緊急対応", paragraphs: ["消耗品は回復、継戦力、緊急時の回復をカバーすべきです。"] },
+      { heading: "注意点", paragraphs: ["検証なしに具体的なアイテムをリストするのは時期尚早です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'crafting-guide', title: "Mistfall Hunter クラフトガイド",
+    description: "クラフトは資源の貯蓄と検証済みレシピに従うことを含むと予想されます。正確なレシピと資源コストはまだ公開されておらず、推測すべきではありません。",
+    eyebrow: 'ガイド', h1: "クラフトガイド",
+    lead: "クラフトは資源の貯蓄と検証済みレシピに従うことを含むと予想されます。正確なレシピと資源コストはまだ公開されておらず、推測すべきではありません。",
+    sections: [
+      { heading: "資源貯蓄とレシピ検証", paragraphs: ["クラフトは推測ではなく、貯蓄した資源と検証済みレシピに基づきます。"] },
+      { heading: "注意点", paragraphs: ["架空のレシピや入手元表は誤解を招きます。"] },
+    ], related: [],
+  },
+  {
+    slug: 'vendor-guide', title: "Mistfall Hunter 商人ガイド",
+    description: "商人は購入、売却、成長価値の貯蓄をサポートすると予想されます。具体的な在庫と価格は、詳細を公開する前に正式版での確認が必要です。",
+    eyebrow: 'ガイド', h1: "商人ガイド",
+    lead: "商人は購入、売却、成長価値の貯蓄をサポートすると予想されます。具体的な在庫と価格は、詳細を公開する前に正式版での確認が必要です。",
+    sections: [
+      { heading: "購入・売却・貯蓄", paragraphs: ["商人は購入、売却、成長価値の貯蓄をサポートすると予想されます。"] },
+      { heading: "注意点", paragraphs: ["発売データがない状態で商人の在庫を断言するのは時期尚早です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'returner-woodling-guide', title: "Mistfall Hunter Returner Woodlingガイド",
+    description: "Returner WoodlingはSoul of Returnに紐づく目標です——早めに見つけて確保することで、ランは賭けから、いつ離脱するかという制御された判断に変わります。",
+    eyebrow: 'ガイド', h1: "Returner Woodlingガイド",
+    lead: "Returner WoodlingはSoul of Returnに紐づく目標です——早めに見つけて確保することで、ランは賭けから、いつ離脱するかという制御された判断に変わります。",
+    sections: [
+      { heading: "早めに見つけて確保する", paragraphs: ["Returner Woodlingを早めに確保することで、ランが賭けではなく制御されたものになります。"] },
+      { heading: "注意点", paragraphs: ["音や往来を生む目標を無害だと思い込まないようにしましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'soul-of-return-farming', title: "Mistfall Hunter Soul of Return 稼ぎ方",
+    description: "バッグがリスクを取るには重すぎる価値になる前にSoul of Returnを優先しましょう——すでに荷物を抱えた後に稼ぐのは、不要なリスク時間を増やすだけです。",
+    eyebrow: 'ガイド', h1: "Soul of Return 稼ぎ方",
+    lead: "バッグがリスクを取るには重すぎる価値になる前にSoul of Returnを優先しましょう——すでに荷物を抱えた後に稼ぐのは、不要なリスク時間を増やすだけです。",
+    sections: [
+      { heading: "先に確保してから拾う", paragraphs: ["バッグが重くなりすぎる前にSoul of Returnを確保しましょう。"] },
+      { heading: "注意点", paragraphs: ["バッグがすでに価値ある状態になってから目標を稼ぐのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'gyldenblood-farming-route', title: "Mistfall Hunter Gyldenblood 稼ぎルート",
+    description: "Gyldenbloodは成長に紐づく資源です。安全な稼ぎルートは、わずかな追加利益のために危険なエリアに留まるのではなく、着実に貯蓄します。",
+    eyebrow: 'ガイド', h1: "Gyldenblood 稼ぎルート",
+    lead: "Gyldenbloodは成長に紐づく資源です。安全な稼ぎルートは、わずかな追加利益のために危険なエリアに留まるのではなく、着実に貯蓄します。",
+    sections: [
+      { heading: "着実に貯蓄する", paragraphs: ["わずかな利益のために危険なエリアに留まらず、着実にGyldenbloodを貯蓄しましょう。"] },
+      { heading: "注意点", paragraphs: ["架空のドロップ元やドロップ率は誤解を招きます。"] },
+    ], related: [],
+  },
+  {
+    slug: 'corroded-enemies-guide', title: "Mistfall Hunter Corroded敵ガイド",
+    description: "Corroded敵は各ゾーンに共通する、霧に歪められた脅威です——戦うと時間と音を消費するので、それが引き寄せる注目に見合うかどうかで各戦闘を判断しましょう。",
+    eyebrow: 'ガイド', h1: "Corroded敵ガイド",
+    lead: "Corroded敵は各ゾーンに共通する、霧に歪められた脅威です——戦うと時間と音を消費するので、それが引き寄せる注目に見合うかどうかで各戦闘を判断しましょう。",
+    sections: [
+      { heading: "すべての戦闘に代償がある", paragraphs: ["Corroded敵との戦闘は、それが引き寄せる注目と見合うか天秤にかけましょう。"] },
+      { heading: "注意点", paragraphs: ["価値の低いPvE戦闘に時間を使いすぎるのは失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'mist-lord-guide', title: "Mistfall Hunter Mist Lordガイド",
+    description: "既知の遭遇、難易度層、報酬情報の完全な内訳は、専用のMist Lordボスページを参照してください。",
+    eyebrow: 'ガイド', h1: "Mist Lordガイド",
+    lead: "既知の遭遇、難易度層、報酬情報の完全な内訳は、専用のMist Lordボスページを参照してください。",
+    sections: [
+      { heading: "準備が重要", paragraphs: ["Mist Lordに挑む前に偵察し、ルートを計画しましょう。"] },
+      { heading: "注意点", paragraphs: ["撤退やサポート計画なしにボスに挑むのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'boss-rewards-guide', title: "Mistfall Hunter ボス報酬ガイド",
+    description: "確認されているボス報酬はHoly武器が中心で、それぞれ特定のマップボスに紐づき独自のゲームプレイAffixを持ちます。正確な完全な報酬テーブルはまだ正式版での検証が必要です。",
+    eyebrow: 'ガイド', h1: "ボス報酬ガイド",
+    lead: "確認されているボス報酬はHoly武器が中心で、それぞれ特定のマップボスに紐づき独自のゲームプレイAffixを持ちます。正確な完全な報酬テーブルはまだ正式版での検証が必要です。",
+    sections: [
+      { heading: "Holy武器が中心", paragraphs: ["各ボスは独自のAffixを持つユニークなHoly武器を落とします。"] },
+      { heading: "注意点", paragraphs: ["検証済みドロップがない状態で報酬テーブルを公開するのは時期尚早です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'boss-mechanics-guide', title: "Mistfall Hunter ボスメカニクスガイド",
+    description: "ボスメカニクスは、ベータ映像からの推測ではなく、偵察と安全な初回挑戦を通じて学ぶべきです。正確なパターンは発売前にまだ変わる可能性があります。",
+    eyebrow: 'ガイド', h1: "ボスメカニクスガイド",
+    lead: "ボスメカニクスは、ベータ映像からの推測ではなく、偵察と安全な初回挑戦を通じて学ぶべきです。正確なパターンは発売前にまだ変わる可能性があります。",
+    sections: [
+      { heading: "偵察を通じて学ぶ", paragraphs: ["ベータの推測ではなく、慎重な初回挑戦を通じてボスメカニクスを学びましょう。"] },
+      { heading: "注意点", paragraphs: ["実機テスト前に正確なメカニクスをリストするのは時期尚早です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'pve-enemy-drops-guide', title: "Mistfall Hunter PvEドロップガイド",
+    description: "PvE敵のドロップ元はまだ完全にはリスト化されていません。具体的なドロップ率の主張は、正式版で確認されるまで未検証として扱ってください。",
+    eyebrow: 'ガイド', h1: "PvEドロップガイド",
+    lead: "PvE敵のドロップ元はまだ完全にはリスト化されていません。具体的なドロップ率の主張は、正式版で確認されるまで未検証として扱ってください。",
+    sections: [
+      { heading: "まだ完全には判明していない", paragraphs: ["PvE敵のドロップ元はまだ完全には検証されていません。"] },
+      { heading: "注意点", paragraphs: ["架空のドロップ率は誤解を招きます。"] },
+    ], related: [],
+  },
+  {
+    slug: 'rare-loot-guide', title: "Mistfall Hunter レア戦利品ガイド",
+    description: "レアな戦利品は脱出させる価値があるものであり、そのために死ぬ価値はありません——価値あるものを見つけたら、同じランでさらに搾り取るより安全な離脱を優先しましょう。",
+    eyebrow: 'ガイド', h1: "レア戦利品ガイド",
+    lead: "レアな戦利品は脱出させる価値があるものであり、そのために死ぬ価値はありません——価値あるものを見つけたら、同じランでさらに搾り取るより安全な離脱を優先しましょう。",
+    sections: [
+      { heading: "脱出させる、死なない", paragraphs: ["価値あるものを見つけたら、安全な離脱を優先しましょう。"] },
+      { heading: "注意点", paragraphs: ["ルートがすでに成功しているのにレア戦利品の後に長居するのは失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'loot-priority-list', title: "Mistfall Hunter 戦利品優先度リスト",
+    description: "実用的な戦利品優先度は、まだ使えない汎用的な高レア度アイテムより、クラスに関連するアップグレードと成長資源を優先します。",
+    eyebrow: 'ガイド', h1: "戦利品優先度リスト",
+    lead: "実用的な戦利品優先度は、まだ使えない汎用的な高レア度アイテムより、クラスに関連するアップグレードと成長資源を優先します。",
+    sections: [
+      { heading: "レア度よりクラス適性", paragraphs: ["汎用的なレアアイテムより、クラスに関連するアップグレードと成長資源を優先しましょう。"] },
+      { heading: "注意点", paragraphs: ["経済が検証される前に万能リストを作るのは時期尚早です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-route-for-beginners', title: "Mistfall Hunter 初心者向けベストルート",
+    description: "最も安全な初心者ルートはマップの外周にとどまり、Mist Lordの戦場を避け、追加の戦利品より先にSoul of Returnを見つけることを優先します。",
+    eyebrow: 'ガイド', h1: "初心者向けベストルート",
+    lead: "最も安全な初心者ルートはマップの外周にとどまり、Mist Lordの戦場を避け、追加の戦利品より先にSoul of Returnを見つけることを優先します。",
+    sections: [
+      { heading: "短いルートで早めの脱出", paragraphs: ["安価な装備で短く静かなルートを練習してから、さらに踏み込みましょう。"] },
+      { heading: "注意点", paragraphs: ["出口を把握するまでボスルートを避けるのが、入門時の最も安全なやり方です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'safe-loot-route-guide', title: "Mistfall Hunter 安全な戦利品ルート",
+    description: "安全な戦利品ルートは短く静かなループを繰り返し、バッグがリスクに見合う価値になったら止め、もう一つのコンテナより明確な出口を優先します。",
+    eyebrow: 'ガイド', h1: "安全な戦利品ルート",
+    lead: "安全な戦利品ルートは短く静かなループを繰り返し、バッグがリスクに見合う価値になったら止め、もう一つのコンテナより明確な出口を優先します。",
+    sections: [
+      { heading: "停止ルール付きの反復ループ", paragraphs: ["いつ止めるかを明確に決めた、短く反復可能なルートを使いましょう。"] },
+      { heading: "注意点", paragraphs: ["戦利品ランを気づかぬうちにボスランに変えてしまうのが最もよくある失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'high-risk-high-reward-route', title: "Mistfall Hunter ハイリスク・ハイリターンルート",
+    description: "ハイリスクルートはDivine AnchorやMist Lordの戦場などボス隣接エリアを通り、戦利品は良いものの、PvPの往来とエリート敵がはるかに危険です——基本の脱出ループに慣れるまでは推奨されません。",
+    eyebrow: 'ガイド', h1: "ハイリスク・ハイリターンルート",
+    lead: "ハイリスクルートはDivine AnchorやMist Lordの戦場などボス隣接エリアを通り、戦利品は良いものの、PvPの往来とエリート敵がはるかに危険です——基本の脱出ループに慣れるまでは推奨されません。",
+    sections: [
+      { heading: "良い戦利品、高いリスク", paragraphs: ["ボス隣接エリアは戦利品が良い分、PvPとエリート敵のリスクが大幅に高くなります。"] },
+      { heading: "注意点", paragraphs: ["このルートは完全な初心者向けではありません——まず基本ループを習得しましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'duo-route-guide', title: "Mistfall Hunter デュオルートガイド",
+    description: "2人ルートは、1人が圧力と戦利品回収を担当し、もう1人が角度を見張り脱出を援護する時に最もうまくいきます——役割分担は同じ場所を2人で漁るより優れています。",
+    eyebrow: 'ガイド', h1: "デュオルートガイド",
+    lead: "2人ルートは、1人が圧力と戦利品回収を担当し、もう1人が角度を見張り脱出を援護する時に最もうまくいきます——役割分担は同じ場所を2人で漁るより優れています。",
+    sections: [
+      { heading: "役割を分担する", paragraphs: ["1人が圧力と戦利品回収、もう1人が角度の見張りと脱出援護を担当しましょう。"] },
+      { heading: "注意点", paragraphs: ["打ち合いに負けるほど離れすぎるのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'trio-route-guide', title: "Mistfall Hunter トリオルートガイド",
+    description: "3人ルートは明確な役割分担の恩恵を受けます：前衛1人、遠距離またはコントロール1人、サポートまたは見張り1人が、戦闘後にバラバラにならず一緒にリセットします。",
+    eyebrow: 'ガイド', h1: "トリオルートガイド",
+    lead: "3人ルートは明確な役割分担の恩恵を受けます：前衛1人、遠距離またはコントロール1人、サポートまたは見張り1人が、戦闘後にバラバラにならず一緒にリセットします。",
+    sections: [
+      { heading: "明確な役割分担", paragraphs: ["前衛、遠距離コントロール、サポート——各役割を即興ではなく明確に割り当てましょう。"] },
+      { heading: "注意点", paragraphs: ["3人全員が漁って誰も角度を見張らないと危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'rat-route-guide', title: "Mistfall Hunter ステルスルートガイド",
+    description: "ステルス重視のルートは戦闘を完全に避け、静かな移動と人が少ない戦利品にとどまり、大きなバッグを狙うより早めに脱出します。",
+    eyebrow: 'ガイド', h1: "ステルスルートガイド",
+    lead: "ステルス重視のルートは戦闘を完全に避け、静かな移動と人が少ない戦利品にとどまり、大きなバッグを狙うより早めに脱出します。",
+    sections: [
+      { heading: "静かな移動、早めの脱出", paragraphs: ["戦闘を完全に避け、静かな移動と人が少ない戦利品にとどまりましょう。"] },
+      { heading: "注意点", paragraphs: ["ステルスルートを長居する言い訳にしないようにしましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'boss-rush-route-guide', title: "Mistfall Hunter ボスラッシュルートガイド",
+    description: "ボス重視のルートは戦闘を唯一の目標として扱います：まず戦場を偵察し、十分な物資を持ち込み、戦闘前に脱出ルートを計画しましょう（戦闘後ではなく）。",
+    eyebrow: 'ガイド', h1: "ボスラッシュルートガイド",
+    lead: "ボス重視のルートは戦闘を唯一の目標として扱います：まず戦場を偵察し、十分な物資を持ち込み、戦闘前に脱出ルートを計画しましょう（戦闘後ではなく）。",
+    sections: [
+      { heading: "一つの目標、一つの計画", paragraphs: ["まず戦場を偵察し、戦闘に入る前に脱出を計画しましょう。"] },
+      { heading: "注意点", paragraphs: ["十分な物資や出口の知識なしにボスラッシュに挑むのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'extraction-camping-counter-guide', title: "Mistfall Hunter 脱出地点待ち伏せ対策",
+    description: "脱出地点が待ち伏せされている場合、別の角度からアプローチする、待ち伏せしている相手の位置を音で確認する、あるいは物陰から様子を見るなど、まっすぐ突っ込まないようにしましょう。",
+    eyebrow: 'ガイド', h1: "脱出地点待ち伏せ対策",
+    lead: "脱出地点が待ち伏せされている場合、別の角度からアプローチする、待ち伏せしている相手の位置を音で確認する、あるいは物陰から様子を見るなど、まっすぐ突っ込まないようにしましょう。",
+    sections: [
+      { heading: "角度を変える・待つ・聞く", paragraphs: ["別の角度からアプローチするか、物陰から待ち伏せ相手をやり過ごしましょう。"] },
+      { heading: "注意点", paragraphs: ["最終脱出にまっすぐ突っ込むのは特に危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'ambush-guide', title: "Mistfall Hunter 待ち伏せガイド",
+    description: "良い待ち伏せは音の規律と明確な角度に基づきます——静かにして、相手が戦利品回収や他の戦闘に集中するのを待ち、クールダウンを整えて素早いフォロープランで攻撃しましょう。",
+    eyebrow: 'ガイド', h1: "待ち伏せガイド",
+    lead: "良い待ち伏せは音の規律と明確な角度に基づきます——静かにして、相手が戦利品回収や他の戦闘に集中するのを待ち、クールダウンを整えて素早いフォロープランで攻撃しましょう。",
+    sections: [
+      { heading: "音と角度", paragraphs: ["静かにして、攻撃する適切な瞬間を待ちましょう。"] },
+      { heading: "注意点", paragraphs: ["脱出地点から離れすぎた待ち伏せは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'escape-after-kill-guide', title: "Mistfall Hunter キル後の離脱",
+    description: "キルの後、すぐに漁りたい衝動を抑えましょう——まず耳を澄まし、それから素早く漁り、クールダウンをリセットして、音に引き寄せられた横取りが来る前にその場を離れましょう。",
+    eyebrow: 'ガイド', h1: "キル後の離脱",
+    lead: "キルの後、すぐに漁りたい衝動を抑えましょう——まず耳を澄まし、それから素早く漁り、クールダウンをリセットして、音に引き寄せられた横取りが来る前にその場を離れましょう。",
+    sections: [
+      { heading: "聞く・素早く漁う・離れる", paragraphs: ["まず耳を澄まし、素早く漁い、次の脅威が来る前にその場を離れましょう。"] },
+      { heading: "注意点", paragraphs: ["遮蔽物やクールダウンなしですぐに漁るのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-solo', title: "Mistfall Hunter ソロ最強Affix",
+    description: "ソロビルドは生存とモビリティのAffixから最も恩恵を受けます——仲間が悪い状況をカバーしてくれないため、純粋なダメージより継戦力と逃走手段が重要です。",
+    eyebrow: 'ガイド', h1: "ソロ最強Affix",
+    lead: "ソロビルドは生存とモビリティのAffixから最も恩恵を受けます——仲間が悪い状況をカバーしてくれないため、純粋なダメージより継戦力と逃走手段が重要です。",
+    sections: [
+      { heading: "ダメージより生存", paragraphs: ["ソロでは純粋なダメージより継戦力と逃走手段が重要です。"] },
+      { heading: "注意点", paragraphs: ["リセットに役立たない純粋なダメージ数値は失敗のもとです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-pvp', title: "Mistfall Hunter PvP最強Affix",
+    description: "PvP向けAffixはバーストダメージ、スタミナ効率、防御の閾値を優先します。特定のロールを最適と決めつける前に、正確な数値は正式版での検証が必要です。",
+    eyebrow: 'ガイド', h1: "PvP最強Affix",
+    lead: "PvP向けAffixはバーストダメージ、スタミナ効率、防御の閾値を優先します。特定のロールを最適と決めつける前に、正確な数値は正式版での検証が必要です。",
+    sections: [
+      { heading: "バーストとスタミナ", paragraphs: ["バーストダメージ、スタミナ効率、防御の閾値が中心です。"] },
+      { heading: "注意点", paragraphs: ["実際のバランスが確認される前に数値をランク付けするのは時期尚早です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-pve', title: "Mistfall Hunter PvE最強Affix",
+    description: "PvE向けAffixはバーストより持続ダメージと回復を優先します。ボス戦は一撃の大ダメージより継戦力を評価するためです。",
+    eyebrow: 'ガイド', h1: "PvE最強Affix",
+    lead: "PvE向けAffixはバーストより持続ダメージと回復を優先します。ボス戦は一撃の大ダメージより継戦力を評価するためです。",
+    sections: [
+      { heading: "バーストより持続ダメージ", paragraphs: ["ボス戦は一撃より継戦力を重視しましょう。"] },
+      { heading: "注意点", paragraphs: ["退路のないPvEの欲張りは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-affixes-for-bosses', title: "Mistfall Hunter ボス最強Affix",
+    description: "ボス向け装備は、安全で持続的なダメージと、ボス撃破後によく続く脱出戦に勝つための十分な生存力のバランスを取るべきです。",
+    eyebrow: 'ガイド', h1: "ボス最強Affix",
+    lead: "ボス向け装備は、安全で持続的なダメージと、ボス撃破後によく続く脱出戦に勝つための十分な生存力のバランスを取るべきです。",
+    sections: [
+      { heading: "ダメージと生存のバランス", paragraphs: ["安全なダメージと、ボス後の戦闘に勝てる十分な生存力をバランスさせましょう。"] },
+      { heading: "注意点", paragraphs: ["ボスに勝っても脱出戦に負ける装備は失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'gear-rarity-guide', title: "Mistfall Hunter 装備レア度ガイド",
+    description: "装備のレア度は生の強さとAffixの質の両方を反映します。ビルドを決定づけるAffixを持つ低レア度アイテムが、汎用ロールの高レア度アイテムを上回ることもあります。",
+    eyebrow: 'ガイド', h1: "装備レア度ガイド",
+    lead: "装備のレア度は生の強さとAffixの質の両方を反映します。ビルドを決定づけるAffixを持つ低レア度アイテムが、汎用ロールの高レア度アイテムを上回ることもあります。",
+    sections: [
+      { heading: "レア度がすべてではない", paragraphs: ["ビルドを決定づけるAffixは、単なるレア度より重要な場合があります。"] },
+      { heading: "注意点", paragraphs: ["検証なしに最終的なレア度階層を決めつけるのは失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'weapon-tier-list', title: "Mistfall Hunter 武器Tierリスト",
+    description: "実際のバランスデータがない状態では、発売週の安全な評価基準は純粋なダメージより役割適性と安全性です——発売前の武器Tierリストは、テストされるまで暫定的なものとして扱ってください。",
+    eyebrow: 'ガイド', h1: "武器Tierリスト",
+    lead: "実際のバランスデータがない状態では、発売週の安全な評価基準は純粋なダメージより役割適性と安全性です——発売前の武器Tierリストは、テストされるまで暫定的なものとして扱ってください。",
+    sections: [
+      { heading: "ダメージより役割適性", paragraphs: ["役割適性と安全性は、純粋なダメージより安全な評価基準です。"] },
+      { heading: "注意点", paragraphs: ["発売前のバランスで最終的なTierを断言するのは時期尚早です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'armor-guide', title: "Mistfall Hunter 防具ガイド",
+    description: "防具選びは生存力とモビリティのトレードオフです。悪い戦闘から離脱するのに必要なスタミナを犠牲にするなら、重装備が自動的に優れているわけではありません。",
+    eyebrow: 'ガイド', h1: "防具ガイド",
+    lead: "防具選びは生存力とモビリティのトレードオフです。悪い戦闘から離脱するのに必要なスタミナを犠牲にするなら、重装備が自動的に優れているわけではありません。",
+    sections: [
+      { heading: "生存力とモビリティ", paragraphs: ["モビリティを犠牲にするなら、重装備が自動的に優れているわけではありません。"] },
+      { heading: "注意点", paragraphs: ["重い方が常に良いと思い込むのは失敗のもとです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'consumables-guide', title: "Mistfall Hunter 消耗品ガイド",
+    description: "有用な消耗品は回復、長いルート中の継戦力、緊急時の回復をカバーします——具体的なリストを公開する前に、正確な名称と効果は正式版での検証が必要です。",
+    eyebrow: 'ガイド', h1: "消耗品ガイド",
+    lead: "有用な消耗品は回復、長いルート中の継戦力、緊急時の回復をカバーします——具体的なリストを公開する前に、正確な名称と効果は正式版での検証が必要です。",
+    sections: [
+      { heading: "回復・継戦力・緊急対応", paragraphs: ["消耗品は回復、継戦力、緊急時の回復をカバーすべきです。"] },
+      { heading: "注意点", paragraphs: ["検証なしに具体的なアイテムをリストするのは時期尚早です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'crafting-guide', title: "Mistfall Hunter クラフトガイド",
+    description: "クラフトは資源の貯蓄と検証済みレシピに従うことを含むと予想されます。正確なレシピと資源コストはまだ公開されておらず、推測すべきではありません。",
+    eyebrow: 'ガイド', h1: "クラフトガイド",
+    lead: "クラフトは資源の貯蓄と検証済みレシピに従うことを含むと予想されます。正確なレシピと資源コストはまだ公開されておらず、推測すべきではありません。",
+    sections: [
+      { heading: "資源貯蓄とレシピ検証", paragraphs: ["クラフトは推測ではなく、貯蓄した資源と検証済みレシピに基づきます。"] },
+      { heading: "注意点", paragraphs: ["架空のレシピや入手元表は誤解を招きます。"] },
+    ], related: [],
+  },
+  {
+    slug: 'vendor-guide', title: "Mistfall Hunter 商人ガイド",
+    description: "商人は購入、売却、成長価値の貯蓄をサポートすると予想されます。具体的な在庫と価格は、詳細を公開する前に正式版での確認が必要です。",
+    eyebrow: 'ガイド', h1: "商人ガイド",
+    lead: "商人は購入、売却、成長価値の貯蓄をサポートすると予想されます。具体的な在庫と価格は、詳細を公開する前に正式版での確認が必要です。",
+    sections: [
+      { heading: "購入・売却・貯蓄", paragraphs: ["商人は購入、売却、成長価値の貯蓄をサポートすると予想されます。"] },
+      { heading: "注意点", paragraphs: ["発売データがない状態で商人の在庫を断言するのは時期尚早です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'returner-woodling-guide', title: "Mistfall Hunter Returner Woodlingガイド",
+    description: "Returner WoodlingはSoul of Returnに紐づく目標です——早めに見つけて確保することで、ランは賭けから、いつ離脱するかという制御された判断に変わります。",
+    eyebrow: 'ガイド', h1: "Returner Woodlingガイド",
+    lead: "Returner WoodlingはSoul of Returnに紐づく目標です——早めに見つけて確保することで、ランは賭けから、いつ離脱するかという制御された判断に変わります。",
+    sections: [
+      { heading: "早めに見つけて確保する", paragraphs: ["Returner Woodlingを早めに確保することで、ランが賭けではなく制御されたものになります。"] },
+      { heading: "注意点", paragraphs: ["音や往来を生む目標を無害だと思い込まないようにしましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'soul-of-return-farming', title: "Mistfall Hunter Soul of Return 稼ぎ方",
+    description: "バッグがリスクを取るには重すぎる価値になる前にSoul of Returnを優先しましょう——すでに荷物を抱えた後に稼ぐのは、不要なリスク時間を増やすだけです。",
+    eyebrow: 'ガイド', h1: "Soul of Return 稼ぎ方",
+    lead: "バッグがリスクを取るには重すぎる価値になる前にSoul of Returnを優先しましょう——すでに荷物を抱えた後に稼ぐのは、不要なリスク時間を増やすだけです。",
+    sections: [
+      { heading: "先に確保してから拾う", paragraphs: ["バッグが重くなりすぎる前にSoul of Returnを確保しましょう。"] },
+      { heading: "注意点", paragraphs: ["バッグがすでに価値ある状態になってから目標を稼ぐのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'gyldenblood-farming-route', title: "Mistfall Hunter Gyldenblood 稼ぎルート",
+    description: "Gyldenbloodは成長に紐づく資源です。安全な稼ぎルートは、わずかな追加利益のために危険なエリアに留まるのではなく、着実に貯蓄します。",
+    eyebrow: 'ガイド', h1: "Gyldenblood 稼ぎルート",
+    lead: "Gyldenbloodは成長に紐づく資源です。安全な稼ぎルートは、わずかな追加利益のために危険なエリアに留まるのではなく、着実に貯蓄します。",
+    sections: [
+      { heading: "着実に貯蓄する", paragraphs: ["わずかな利益のために危険なエリアに留まらず、着実にGyldenbloodを貯蓄しましょう。"] },
+      { heading: "注意点", paragraphs: ["架空のドロップ元やドロップ率は誤解を招きます。"] },
+    ], related: [],
+  },
+  {
+    slug: 'corroded-enemies-guide', title: "Mistfall Hunter Corroded敵ガイド",
+    description: "Corroded敵は各ゾーンに共通する、霧に歪められた脅威です——戦うと時間と音を消費するので、それが引き寄せる注目に見合うかどうかで各戦闘を判断しましょう。",
+    eyebrow: 'ガイド', h1: "Corroded敵ガイド",
+    lead: "Corroded敵は各ゾーンに共通する、霧に歪められた脅威です——戦うと時間と音を消費するので、それが引き寄せる注目に見合うかどうかで各戦闘を判断しましょう。",
+    sections: [
+      { heading: "すべての戦闘に代償がある", paragraphs: ["Corroded敵との戦闘は、それが引き寄せる注目と見合うか天秤にかけましょう。"] },
+      { heading: "注意点", paragraphs: ["価値の低いPvE戦闘に時間を使いすぎるのは失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'mist-lord-guide', title: "Mistfall Hunter Mist Lordガイド",
+    description: "既知の遭遇、難易度層、報酬情報の完全な内訳は、専用のMist Lordボスページを参照してください。",
+    eyebrow: 'ガイド', h1: "Mist Lordガイド",
+    lead: "既知の遭遇、難易度層、報酬情報の完全な内訳は、専用のMist Lordボスページを参照してください。",
+    sections: [
+      { heading: "準備が重要", paragraphs: ["Mist Lordに挑む前に偵察し、ルートを計画しましょう。"] },
+      { heading: "注意点", paragraphs: ["撤退やサポート計画なしにボスに挑むのは危険です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'boss-rewards-guide', title: "Mistfall Hunter ボス報酬ガイド",
+    description: "確認されているボス報酬はHoly武器が中心で、それぞれ特定のマップボスに紐づき独自のゲームプレイAffixを持ちます。正確な完全な報酬テーブルはまだ正式版での検証が必要です。",
+    eyebrow: 'ガイド', h1: "ボス報酬ガイド",
+    lead: "確認されているボス報酬はHoly武器が中心で、それぞれ特定のマップボスに紐づき独自のゲームプレイAffixを持ちます。正確な完全な報酬テーブルはまだ正式版での検証が必要です。",
+    sections: [
+      { heading: "Holy武器が中心", paragraphs: ["各ボスは独自のAffixを持つユニークなHoly武器を落とします。"] },
+      { heading: "注意点", paragraphs: ["検証済みドロップがない状態で報酬テーブルを公開するのは時期尚早です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'boss-mechanics-guide', title: "Mistfall Hunter ボスメカニクスガイド",
+    description: "ボスメカニクスは、ベータ映像からの推測ではなく、偵察と安全な初回挑戦を通じて学ぶべきです。正確なパターンは発売前にまだ変わる可能性があります。",
+    eyebrow: 'ガイド', h1: "ボスメカニクスガイド",
+    lead: "ボスメカニクスは、ベータ映像からの推測ではなく、偵察と安全な初回挑戦を通じて学ぶべきです。正確なパターンは発売前にまだ変わる可能性があります。",
+    sections: [
+      { heading: "偵察を通じて学ぶ", paragraphs: ["ベータの推測ではなく、慎重な初回挑戦を通じてボスメカニクスを学びましょう。"] },
+      { heading: "注意点", paragraphs: ["実機テスト前に正確なメカニクスをリストするのは時期尚早です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'pve-enemy-drops-guide', title: "Mistfall Hunter PvEドロップガイド",
+    description: "PvE敵のドロップ元はまだ完全にはリスト化されていません。具体的なドロップ率の主張は、正式版で確認されるまで未検証として扱ってください。",
+    eyebrow: 'ガイド', h1: "PvEドロップガイド",
+    lead: "PvE敵のドロップ元はまだ完全にはリスト化されていません。具体的なドロップ率の主張は、正式版で確認されるまで未検証として扱ってください。",
+    sections: [
+      { heading: "まだ完全には判明していない", paragraphs: ["PvE敵のドロップ元はまだ完全には検証されていません。"] },
+      { heading: "注意点", paragraphs: ["架空のドロップ率は誤解を招きます。"] },
+    ], related: [],
+  },
+  {
+    slug: 'rare-loot-guide', title: "Mistfall Hunter レア戦利品ガイド",
+    description: "レアな戦利品は脱出させる価値があるものであり、そのために死ぬ価値はありません——価値あるものを見つけたら、同じランでさらに搾り取るより安全な離脱を優先しましょう。",
+    eyebrow: 'ガイド', h1: "レア戦利品ガイド",
+    lead: "レアな戦利品は脱出させる価値があるものであり、そのために死ぬ価値はありません——価値あるものを見つけたら、同じランでさらに搾り取るより安全な離脱を優先しましょう。",
+    sections: [
+      { heading: "脱出させる、死なない", paragraphs: ["価値あるものを見つけたら、安全な離脱を優先しましょう。"] },
+      { heading: "注意点", paragraphs: ["ルートがすでに成功しているのにレア戦利品の後に長居するのは失敗です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'loot-priority-list', title: "Mistfall Hunter 戦利品優先度リスト",
+    description: "実用的な戦利品優先度は、まだ使えない汎用的な高レア度アイテムより、クラスに関連するアップグレードと成長資源を優先します。",
+    eyebrow: 'ガイド', h1: "戦利品優先度リスト",
+    lead: "実用的な戦利品優先度は、まだ使えない汎用的な高レア度アイテムより、クラスに関連するアップグレードと成長資源を優先します。",
+    sections: [
+      { heading: "レア度よりクラス適性", paragraphs: ["汎用的なレアアイテムより、クラスに関連するアップグレードと成長資源を優先しましょう。"] },
+      { heading: "注意点", paragraphs: ["経済が検証される前に万能リストを作るのは時期尚早です。"] },
     ], related: [],
   },
 ];
