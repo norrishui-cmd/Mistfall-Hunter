@@ -1778,6 +1778,256 @@ const de: LocalizedCorePage[] = [
       { heading: "Worauf du achten musst", paragraphs: ["Universelle Listen vor verifizierter Wirtschaft zu erstellen, ist verfrüht."] },
     ], related: [],
   },
+  {
+    slug: 'mound-omen-of-cthulhu-comparison', title: "Mistfall Hunter vs The Mound: Omen of Cthulhu im Vergleich",
+    description: "Mistfall Hunter hat keine Verbindung zu The Mound oder Lovecrafts Cthulhu-Mythos — es ist ein eigenständiges Dark-Fantasy-Setting namens Weavereach mit eigener Lore um verdorbene Götter, zentriert auf den Gyldenmist. Wer sich zu düsteren, monsterlastigen horror-nahen Welten hingezogen fühlt, findet hier einen ähnlichen Ton, auch ohne gemeinsame Lore.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter vs The Mound: Omen of Cthulhu",
+    lead: "Mistfall Hunter hat keine Verbindung zu The Mound oder Lovecrafts Cthulhu-Mythos — es ist ein eigenständiges Dark-Fantasy-Setting namens Weavereach mit eigener Lore um verdorbene Götter, zentriert auf den Gyldenmist. Wer sich zu düsteren, monsterlastigen horror-nahen Welten hingezogen fühlt, findet hier einen ähnlichen Ton, auch ohne gemeinsame Lore.",
+    sections: [
+      { heading: "Kein gemeinsames Universum", paragraphs: ["Beide Spiele teilen einen düsteren Ton, aber keine gemeinsame Lore oder Verbindung."] },
+      { heading: "Warum der Vergleich trotzdem passt", paragraphs: ["Fans von grimmigen, monsterlastigen Welten finden hier einen ähnlichen Ton."] },
+    ], related: [],
+  },
+  {
+    slug: 'lovecraftian-dark-fantasy-games', title: "Mistfall Hunter und Lovecraft'sche Dark-Fantasy-Spiele",
+    description: "Mistfall Hunter ist kein Cthulhu-Mythos-Spiel, aber sein Dark-Fantasy-Ton — verdorbene Götter, ein weltverschlingender Nebel und monströse Gegner — spricht einige der gleichen Spieler an, die Lovecraft'sche Horror-Settings mögen.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter und Lovecraft'sche Dark Fantasy",
+    lead: "Mistfall Hunter ist kein Cthulhu-Mythos-Spiel, aber sein Dark-Fantasy-Ton — verdorbene Götter, ein weltverschlingender Nebel und monströse Gegner — spricht einige der gleichen Spieler an, die Lovecraft'sche Horror-Settings mögen.",
+    sections: [
+      { heading: "Ähnlicher Ton, andere Lore", paragraphs: ["Verdorbene Götter und monströse Gegner erzeugen einen ähnlichen Ton wie Lovecraft'sche Settings."] },
+      { heading: "Für wen das interessant ist", paragraphs: ["Spieler, die düstere, atmosphärische Welten mögen, auch ohne Cthulhu-Mythos."] },
+    ], related: [],
+  },
+  {
+    slug: 'cthulhu-fans-mistfall-hunter-guide', title: "Mistfall Hunter: ein Guide für Cthulhu-Mythos-Fans",
+    description: "Wenn du aus dem Cosmic-Horror-Genre kommst, bekommst du bei Mistfall Hunter kein Cthulhu speziell, aber es liefert eine bedrohungsschwere Atmosphäre und Monsterdruck in seiner eigenen originalen Mythologie — dem Gyldenmist und der zerbrochenen Welt Weavereach.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter für Cthulhu-Mythos-Fans",
+    lead: "Wenn du aus dem Cosmic-Horror-Genre kommst, bekommst du bei Mistfall Hunter kein Cthulhu speziell, aber es liefert eine bedrohungsschwere Atmosphäre und Monsterdruck in seiner eigenen originalen Mythologie — dem Gyldenmist und der zerbrochenen Welt Weavereach.",
+    sections: [
+      { heading: "Eigene Mythologie statt Cthulhu", paragraphs: ["Der Gyldenmist und Weavereach bieten eine eigene, originale Bedrohungsatmosphäre."] },
+      { heading: "Was du erwarten kannst", paragraphs: ["Bedrohungsschwere Atmosphäre und Monsterdruck, aber keine Cthulhu-Mythologie selbst."] },
+    ], related: [],
+  },
+  {
+    slug: 'dark-fantasy-extraction-games-2026', title: "Beste Dark-Fantasy-Extraction-Spiele 2026: Mistfall Hunter",
+    description: "Mistfall Hunter positioniert sich in der Dark-Fantasy-Extraction-Nische neben anderen PvPvE-Loot-und-Flucht-Spielen, ausgezeichnet durch sein Souls-artiges Kampftempo und originale Lore statt eines lizenzierten oder Lovecraft'schen Settings.",
+    eyebrow: 'Guide', h1: "Dark-Fantasy-Extraction-Spiele 2026",
+    lead: "Mistfall Hunter positioniert sich in der Dark-Fantasy-Extraction-Nische neben anderen PvPvE-Loot-und-Flucht-Spielen, ausgezeichnet durch sein Souls-artiges Kampftempo und originale Lore statt eines lizenzierten oder Lovecraft'schen Settings.",
+    sections: [
+      { heading: "Eine eigene Nische", paragraphs: ["Souls-artiges Kampftempo und originale Lore heben es von lizenzierten Settings ab."] },
+      { heading: "Wo es sich einordnet", paragraphs: ["Es steht neben anderen PvPvE-Loot-und-Flucht-Spielen in der Dark-Fantasy-Nische."] },
+    ], related: [],
+  },
+  {
+    slug: 'horror-fans-guide-to-mistfall-hunter', title: "Ein Horror-Fan-Guide zu Mistfall Hunter",
+    description: "Horror-Fans sollten Atmosphäre und monstergetriebenes Grauen erwarten, statt eines Jumpscare-Horrorspiels — die Spannung in Mistfall Hunter kommt genauso aus Extraktionsrisiko und PvP-Gefahr wie aus dem düsteren Setting.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter für Horror-Fans",
+    lead: "Horror-Fans sollten Atmosphäre und monstergetriebenes Grauen erwarten, statt eines Jumpscare-Horrorspiels — die Spannung in Mistfall Hunter kommt genauso aus Extraktionsrisiko und PvP-Gefahr wie aus dem düsteren Setting.",
+    sections: [
+      { heading: "Atmosphäre statt Jumpscares", paragraphs: ["Die Spannung kommt aus Extraktionsrisiko und PvP-Gefahr, nicht aus Schockmomenten."] },
+      { heading: "Was Horror-Fans mitnehmen", paragraphs: ["Monstergetriebenes Grauen und eine düstere Atmosphäre statt klassischem Jumpscare-Horror."] },
+    ], related: [],
+  },
+  {
+    slug: 'dark-and-darker-vs-mistfall-hunter', title: "Dark and Darker vs Mistfall Hunter im Vergleich",
+    description: "Dark and Darker ist ein Ego-Perspektive-Fantasy-Extraction-Spiel mit Permadeath-artigem Beuteverlust; Mistfall Hunter ist Third-Person, mit sechs Klassen und PvPvE-Kampf gegen Monster und rivalisierende Hunter im eigenen Gyldenmist-Setting. Beide teilen die zentrale Extraktionsspannung, aber Kamera, Klassenstruktur und Welt sind unterschiedlich.",
+    eyebrow: 'Guide', h1: "Dark and Darker vs Mistfall Hunter",
+    lead: "Dark and Darker ist ein Ego-Perspektive-Fantasy-Extraction-Spiel mit Permadeath-artigem Beuteverlust; Mistfall Hunter ist Third-Person, mit sechs Klassen und PvPvE-Kampf gegen Monster und rivalisierende Hunter im eigenen Gyldenmist-Setting. Beide teilen die zentrale Extraktionsspannung, aber Kamera, Klassenstruktur und Welt sind unterschiedlich.",
+    sections: [
+      { heading: "Gemeinsamkeiten", paragraphs: ["Beide teilen die zentrale Extraktionsspannung von Loot-oder-Verlieren."] },
+      { heading: "Unterschiede", paragraphs: ["Kameraperspektive, Klassenstruktur und Welt-Setting unterscheiden sich deutlich."] },
+    ], related: [],
+  },
+  {
+    slug: 'dungeonborne-vs-mistfall-hunter', title: "Dungeonborne vs Mistfall Hunter im Vergleich",
+    description: "Dungeonborne ist ein Third-Person-Fantasy-Extraction-Spiel, das Schießen und Nahkampf mischt; Mistfall Hunter ist ein Third-Person-Nahkampf-und-Magie-Extraction-ARPG mit sechs Klassen und bewusstem, Souls-artigem Kampftempo. Beide teilen die Extrahieren-oder-verlieren-Struktur, aber Kampfgefühl und Klassendesign unterscheiden sich.",
+    eyebrow: 'Guide', h1: "Dungeonborne vs Mistfall Hunter",
+    lead: "Dungeonborne ist ein Third-Person-Fantasy-Extraction-Spiel, das Schießen und Nahkampf mischt; Mistfall Hunter ist ein Third-Person-Nahkampf-und-Magie-Extraction-ARPG mit sechs Klassen und bewusstem, Souls-artigem Kampftempo. Beide teilen die Extrahieren-oder-verlieren-Struktur, aber Kampfgefühl und Klassendesign unterscheiden sich.",
+    sections: [
+      { heading: "Gemeinsamkeiten", paragraphs: ["Beide teilen die Extrahieren-oder-verlieren-Struktur eines Third-Person-Extraction-Spiels."] },
+      { heading: "Unterschiede", paragraphs: ["Kampfgefühl und Klassendesign unterscheiden sich zwischen Schuss/Nahkampf-Mix und reinem Nahkampf/Magie."] },
+    ], related: [],
+  },
+  {
+    slug: 'elden-ring-nightreign-vs-mistfall-hunter', title: "Elden Ring Nightreign vs Mistfall Hunter im Vergleich",
+    description: "Elden Ring Nightreign ist ein laufbasiertes Roguelite, das darauf aufbaut, einen finalen Boss innerhalb einer Zeitschleife zu überleben; Mistfall Hunter ist ein PvPvE-Extraction-Spiel, bei dem du selbst entscheidest, wann du gehst, nicht nur wann du einen finalen Boss herausforderst. Beide nutzen Souls-artigen Kampf, aber Kernschleife und Einsätze sind unterschiedlich.",
+    eyebrow: 'Guide', h1: "Elden Ring Nightreign vs Mistfall Hunter",
+    lead: "Elden Ring Nightreign ist ein laufbasiertes Roguelite, das darauf aufbaut, einen finalen Boss innerhalb einer Zeitschleife zu überleben; Mistfall Hunter ist ein PvPvE-Extraction-Spiel, bei dem du selbst entscheidest, wann du gehst, nicht nur wann du einen finalen Boss herausforderst. Beide nutzen Souls-artigen Kampf, aber Kernschleife und Einsätze sind unterschiedlich.",
+    sections: [
+      { heading: "Souls-artiger Kampf gemeinsam", paragraphs: ["Beide nutzen ein Souls-artiges Kampfsystem als Grundlage."] },
+      { heading: "Unterschiedliche Kernschleife", paragraphs: ["Nightreign dreht sich um einen finalen Boss in einer Zeitschleife, Mistfall Hunter um deine eigene Ausstiegsentscheidung."] },
+    ], related: [],
+  },
+  {
+    slug: 'escape-from-tarkov-vs-mistfall-hunter', title: "Escape from Tarkov vs Mistfall Hunter im Vergleich",
+    description: "Escape from Tarkov ist ein taktischer Shooter-Extraction-Titel mit Schusswaffen und realistischer Ballistik; Mistfall Hunter ist ein Fantasy-Nahkampf-und-Magie-Extraction-ARPG mit sechs Klassen. Die Extraktionsspannung ist ähnlich, aber Kampfsystem, Genre und Setting sind es nicht.",
+    eyebrow: 'Guide', h1: "Escape from Tarkov vs Mistfall Hunter",
+    lead: "Escape from Tarkov ist ein taktischer Shooter-Extraction-Titel mit Schusswaffen und realistischer Ballistik; Mistfall Hunter ist ein Fantasy-Nahkampf-und-Magie-Extraction-ARPG mit sechs Klassen. Die Extraktionsspannung ist ähnlich, aber Kampfsystem, Genre und Setting sind es nicht.",
+    sections: [
+      { heading: "Gemeinsame Extraktionsspannung", paragraphs: ["Beide teilen die Kernspannung: Loot mitnehmen oder alles verlieren."] },
+      { heading: "Anderes Kampfsystem", paragraphs: ["Schusswaffen-Ballistik gegen Nahkampf-und-Magie-Kampf sind grundlegend verschieden."] },
+    ], related: [],
+  },
+  {
+    slug: 'hunt-showdown-vs-mistfall-hunter', title: "Hunt: Showdown vs Mistfall Hunter im Vergleich",
+    description: "Hunt: Showdown ist ein PvPvE-Kopfgeldjäger-Shooter mit geräuschgetriebener Spannung und einem einzigen Bossziel pro Match; Mistfall Hunter ist ein Fantasy-Nahkampf-und-Magie-Extraction-ARPG mit sechs Klassen, mehreren Zonen und Mist-Lord-Bosskämpfen. Beide belohnen sorgfältige Geräuschdisziplin und Routenplanung.",
+    eyebrow: 'Guide', h1: "Hunt: Showdown vs Mistfall Hunter",
+    lead: "Hunt: Showdown ist ein PvPvE-Kopfgeldjäger-Shooter mit geräuschgetriebener Spannung und einem einzigen Bossziel pro Match; Mistfall Hunter ist ein Fantasy-Nahkampf-und-Magie-Extraction-ARPG mit sechs Klassen, mehreren Zonen und Mist-Lord-Bosskämpfen. Beide belohnen sorgfältige Geräuschdisziplin und Routenplanung.",
+    sections: [
+      { heading: "Geräuschdisziplin zählt in beiden", paragraphs: ["Sorgfältige Geräuschdisziplin und Routenplanung werden in beiden Spielen belohnt."] },
+      { heading: "Unterschiedliche Struktur", paragraphs: ["Ein Bossziel pro Match gegen mehrere Zonen mit verschiedenen Mist-Lord-Bosskämpfen."] },
+    ], related: [],
+  },
+  {
+    slug: 'dark-souls-fans-guide', title: "Mistfall-Hunter-Guide für Dark-Souls-Fans",
+    description: "Von Dark Souls kommend erwarte vertrautes Ausdauer-Management, bewussten Kampf und harte Bestrafung für Fehler — aber Mistfall Hunter fügt PvPvE-Extraktions-Einsätze hinzu, sodass ein verlorener Kampf alles kosten kann, was du getragen hast, nicht nur einen Weg zurück zum letzten Checkpoint.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter für Dark-Souls-Fans",
+    lead: "Von Dark Souls kommend erwarte vertrautes Ausdauer-Management, bewussten Kampf und harte Bestrafung für Fehler — aber Mistfall Hunter fügt PvPvE-Extraktions-Einsätze hinzu, sodass ein verlorener Kampf alles kosten kann, was du getragen hast, nicht nur einen Weg zurück zum letzten Checkpoint.",
+    sections: [
+      { heading: "Vertraute Grundlagen", paragraphs: ["Ausdauer-Management, bewusster Kampf und Bestrafung für Fehler fühlen sich vertraut an."] },
+      { heading: "Der große Unterschied", paragraphs: ["Ein verlorener Kampf kostet dich alles, was du getragen hast, nicht nur einen Rückweg."] },
+    ], related: [],
+  },
+  {
+    slug: 'extraction-shooter-players-guide', title: "Mistfall-Hunter-Guide für Extraction-Shooter-Spieler",
+    description: "Von einem Extraction-Shooter kommend ist die größte Umstellung der Kampf: Mistfall Hunter nutzt Nahkampf und Magie statt Schusswaffen, mit ausdauerbasiertem Blocken und Ausweichen statt Deckung und Munitionsmanagement. Die Extraktionslogik — Loot, Risiko und wissen, wann man geht — überträgt sich direkt.",
+    eyebrow: 'Guide', h1: "Mistfall Hunter für Extraction-Shooter-Spieler",
+    lead: "Von einem Extraction-Shooter kommend ist die größte Umstellung der Kampf: Mistfall Hunter nutzt Nahkampf und Magie statt Schusswaffen, mit ausdauerbasiertem Blocken und Ausweichen statt Deckung und Munitionsmanagement. Die Extraktionslogik — Loot, Risiko und wissen, wann man geht — überträgt sich direkt.",
+    sections: [
+      { heading: "Was sich überträgt", paragraphs: ["Die Extraktionslogik — Loot, Risiko, wann man geht — bleibt gleich."] },
+      { heading: "Was sich ändert", paragraphs: ["Nahkampf und Magie ersetzen Schusswaffen; Ausdauer ersetzt Munition und Deckung."] },
+    ], related: [],
+  },
+  {
+    slug: 'soulslike-extraction-guide', title: "Mistfall Hunter Souls-artiger-Extraction-Guide",
+    description: "Bewusster, Souls-artiger Kampf verändert die Extraktionsmathematik: Jeder Kampf kostet echte Zeit und Ressourcen, daher zählt Routenplanung genauso wie Kampfgeschick. Eine sichere Route, die unnötige Kämpfe vermeidet, schlägt oft eine aggressive, die jeden Kampf gewinnt, aber Ressourcen vor der Extraktion aufbraucht.",
+    eyebrow: 'Guide', h1: "Souls-artiger Extraction-Guide",
+    lead: "Bewusster, Souls-artiger Kampf verändert die Extraktionsmathematik: Jeder Kampf kostet echte Zeit und Ressourcen, daher zählt Routenplanung genauso wie Kampfgeschick. Eine sichere Route, die unnötige Kämpfe vermeidet, schlägt oft eine aggressive, die jeden Kampf gewinnt, aber Ressourcen vor der Extraktion aufbraucht.",
+    sections: [
+      { heading: "Routenplanung zählt genauso", paragraphs: ["Jeder Kampf kostet Zeit und Ressourcen — Routenplanung ist genauso wichtig wie Kampfgeschick."] },
+      { heading: "Sicher schlägt aggressiv", paragraphs: ["Eine sichere Route ohne unnötige Kämpfe schlägt oft eine aggressive, ressourcenzehrende Route."] },
+    ], related: [],
+  },
+  {
+    slug: 'is-mistfall-hunter-like-dark-souls', title: "Ist Mistfall Hunter wie Dark Souls?",
+    description: "Der Kampf wird von Beta- und Demo-Berichten als bewusst und Souls-artig beschrieben — Ausdauer-Management, Abstand und Bestrafung für Fehler sind gemeinsame Merkmale. Der Hauptunterschied ist die Struktur: Mistfall Hunter ist ein PvPvE-Extraction-Spiel, kein lineares Einzelspieler-Action-RPG, sodass ein schlechter Kampf einen ganzen Lauf an Beute kosten kann, nicht nur eine Todesstrafe.",
+    eyebrow: 'Guide', h1: "Ist Mistfall Hunter wie Dark Souls?",
+    lead: "Der Kampf wird von Beta- und Demo-Berichten als bewusst und Souls-artig beschrieben — Ausdauer-Management, Abstand und Bestrafung für Fehler sind gemeinsame Merkmale. Der Hauptunterschied ist die Struktur: Mistfall Hunter ist ein PvPvE-Extraction-Spiel, kein lineares Einzelspieler-Action-RPG, sodass ein schlechter Kampf einen ganzen Lauf an Beute kosten kann, nicht nur eine Todesstrafe.",
+    sections: [
+      { heading: "Ähnlicher Kampf", paragraphs: ["Ausdauer-Management, Abstand und Bestrafung für Fehler sind gemeinsame Merkmale."] },
+      { heading: "Andere Struktur", paragraphs: ["Ein schlechter Kampf kostet einen ganzen Lauf an Beute, nicht nur eine einfache Todesstrafe."] },
+    ], related: [],
+  },
+  {
+    slug: 'is-mistfall-hunter-like-dark-and-darker', title: "Ist Mistfall Hunter wie Dark and Darker?",
+    description: "Beide sind Fantasy-Extraction-Spiele mit echten Beuteverlust-Einsätzen, aber Mistfall Hunter ist Third-Person mit sechs unterschiedlichen Klassen und einer eigenen Welt (Weavereach und der Gyldenmist), während Dark and Darker Ego-Perspektive mit eigenem Klassen- und Fähigkeitssystem ist. Die Extraktionsspannung ist der gemeinsame Reiz.",
+    eyebrow: 'Guide', h1: "Ist Mistfall Hunter wie Dark and Darker?",
+    lead: "Beide sind Fantasy-Extraction-Spiele mit echten Beuteverlust-Einsätzen, aber Mistfall Hunter ist Third-Person mit sechs unterschiedlichen Klassen und einer eigenen Welt (Weavereach und der Gyldenmist), während Dark and Darker Ego-Perspektive mit eigenem Klassen- und Fähigkeitssystem ist. Die Extraktionsspannung ist der gemeinsame Reiz.",
+    sections: [
+      { heading: "Gemeinsamer Reiz", paragraphs: ["Die Extraktionsspannung mit echtem Beuteverlust ist der gemeinsame Kern beider Spiele."] },
+      { heading: "Unterschiedliche Perspektive", paragraphs: ["Third-Person mit sechs Klassen gegen Ego-Perspektive mit eigenem Fähigkeitssystem."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-graphics-settings', title: "Mistfall Hunter beste Grafikeinstellungen",
+    description: "Detaillierte Grafikeinstellungen wurden vor dem Launch nicht veröffentlicht. Sobald verfügbar, priorisiere stabiles Frame-Pacing und Sichtbarkeit vor filmischen Effekten — in PvPvE zählt es mehr, einen Gegner oder Ausgang klar zu sehen, als Schattenqualität.",
+    eyebrow: 'Guide', h1: "Beste Grafikeinstellungen",
+    lead: "Detaillierte Grafikeinstellungen wurden vor dem Launch nicht veröffentlicht. Sobald verfügbar, priorisiere stabiles Frame-Pacing und Sichtbarkeit vor filmischen Effekten — in PvPvE zählt es mehr, einen Gegner oder Ausgang klar zu sehen, als Schattenqualität.",
+    sections: [
+      { heading: "Stabilität vor Optik", paragraphs: ["Priorisiere stabiles Frame-Pacing und Sichtbarkeit vor filmischen Effekten."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Klare Sicht auf Gegner und Ausgänge zählt mehr als Schattenqualität."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-visibility-settings', title: "Mistfall Hunter beste Sichtbarkeits-Einstellungen",
+    description: "Der sicherste Startpunkt für Sichtbarkeit ist, die Helligkeit leicht über den Standard zu erhöhen und Motion Blur sowie starke Tiefenschärfe auszuschalten — beide erschweren es, Gegner und Ausgänge auf Distanz zu erkennen. Genaue Menünamen werden zum Launch bestätigt.",
+    eyebrow: 'Guide', h1: "Beste Sichtbarkeits-Einstellungen",
+    lead: "Der sicherste Startpunkt für Sichtbarkeit ist, die Helligkeit leicht über den Standard zu erhöhen und Motion Blur sowie starke Tiefenschärfe auszuschalten — beide erschweren es, Gegner und Ausgänge auf Distanz zu erkennen. Genaue Menünamen werden zum Launch bestätigt.",
+    sections: [
+      { heading: "Helligkeit und Effekte", paragraphs: ["Erhöhe die Helligkeit leicht und schalte Motion Blur sowie starke Tiefenschärfe aus."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Vermeide es, Frame-Pacing für filmische Einstellungen zu opfern."] },
+    ], related: [],
+  },
+  {
+    slug: 'stutter-fix-guide', title: "Mistfall Hunter Ruckler-Fix-Guide",
+    description: "Prüfe zuerst den Serverstatus, bevor du einen Bug vermutest — Ruckler, die an einen bestimmten Moment gebunden sind, wie das Betreten einer Zone oder das Erscheinen anderer Spieler, sind oft netzwerkbedingt, nicht lokal. Bei echten lokalen Rucklern: Spieldateien prüfen, GPU-Treiber aktualisieren und Overlays wie Discord oder GeForce Experience einzeln deaktivieren.",
+    eyebrow: 'Guide', h1: "Ruckler-Fix-Guide",
+    lead: "Prüfe zuerst den Serverstatus, bevor du einen Bug vermutest — Ruckler, die an einen bestimmten Moment gebunden sind, wie das Betreten einer Zone oder das Erscheinen anderer Spieler, sind oft netzwerkbedingt, nicht lokal. Bei echten lokalen Rucklern: Spieldateien prüfen, GPU-Treiber aktualisieren und Overlays wie Discord oder GeForce Experience einzeln deaktivieren.",
+    sections: [
+      { heading: "Server oder lokal?", paragraphs: ["Prüfe zuerst den Serverstatus, bevor du lokale Einstellungen änderst."] },
+      { heading: "Lokale Fixes", paragraphs: ["Spieldateien prüfen, GPU-Treiber aktualisieren, Overlays einzeln deaktivieren."] },
+    ], related: [],
+  },
+  {
+    slug: 'crash-fix-guide', title: "Mistfall Hunter Absturz-Fix-Guide",
+    description: "Beginne mit der Überprüfung der Spieldateien und der Aktualisierung der GPU-Treiber, da diese die häufigsten Ursachen abdecken. Wenn Abstürze an einem bestimmten Punkt auftreten, wie einem Bosskampf oder einer Extraktion, notiere den genauen Moment und prüfe den Known-Issues-Tracker, bevor du dein System verantwortlich machst.",
+    eyebrow: 'Guide', h1: "Absturz-Fix-Guide",
+    lead: "Beginne mit der Überprüfung der Spieldateien und der Aktualisierung der GPU-Treiber, da diese die häufigsten Ursachen abdecken. Wenn Abstürze an einem bestimmten Punkt auftreten, wie einem Bosskampf oder einer Extraktion, notiere den genauen Moment und prüfe den Known-Issues-Tracker, bevor du dein System verantwortlich machst.",
+    sections: [
+      { heading: "Erste Schritte", paragraphs: ["Spieldateien überprüfen und GPU-Treiber aktualisieren deckt die häufigsten Ursachen ab."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Notiere den genauen Moment eines Absturzes und prüfe den Known-Issues-Tracker."] },
+    ], related: [],
+  },
+  {
+    slug: 'low-fps-fix-guide', title: "Mistfall Hunter niedrige FPS beheben",
+    description: "Framerate-Probleme in einem Third-Person-Actionspiel sind meist GPU-limitiert, bevor sie CPU-limitiert sind. Senke zuerst Auflösungsskalierung und Schattenqualität — sie kosten am meisten Leistung bei geringstem sichtbarem PvP-Einfluss — bevor du Effekte deaktivierst, die dir beim Lesen von Kämpfen helfen.",
+    eyebrow: 'Guide', h1: "Niedrige FPS beheben",
+    lead: "Framerate-Probleme in einem Third-Person-Actionspiel sind meist GPU-limitiert, bevor sie CPU-limitiert sind. Senke zuerst Auflösungsskalierung und Schattenqualität — sie kosten am meisten Leistung bei geringstem sichtbarem PvP-Einfluss — bevor du Effekte deaktivierst, die dir beim Lesen von Kämpfen helfen.",
+    sections: [
+      { heading: "GPU zuerst prüfen", paragraphs: ["Framerate-Probleme sind meist GPU-limitiert; Auflösungsskalierung und Schatten zuerst senken."] },
+      { heading: "Worauf du achten musst", paragraphs: ["Deaktiviere nicht zuerst Effekte, die dir beim Lesen von Kämpfen helfen."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-controller-sensitivity', title: "Mistfall Hunter beste Controller-Empfindlichkeit",
+    description: "Es gibt keine einzelne richtige Empfindlichkeit — Nahkampfklassen wollen generell eine schnellere Kamera-Drehgeschwindigkeit, um nahe Ziele zu verfolgen, während Fernkampfklassen etwas niedriger für Präzision fahren können. Beginne nahe dem Standard und passe nach deinen ersten Kämpfen an, nicht davor.",
+    eyebrow: 'Guide', h1: "Beste Controller-Empfindlichkeit",
+    lead: "Es gibt keine einzelne richtige Empfindlichkeit — Nahkampfklassen wollen generell eine schnellere Kamera-Drehgeschwindigkeit, um nahe Ziele zu verfolgen, während Fernkampfklassen etwas niedriger für Präzision fahren können. Beginne nahe dem Standard und passe nach deinen ersten Kämpfen an, nicht davor.",
+    sections: [
+      { heading: "Klassenabhängig", paragraphs: ["Nahkampf will schnellere Kameradrehung, Fernkampf eher niedrigere für Präzision."] },
+      { heading: "Wie du anpasst", paragraphs: ["Beginne nahe dem Standard und passe nach den ersten Kämpfen an."] },
+    ], related: [],
+  },
+  {
+    slug: 'best-keyboard-mouse-settings', title: "Mistfall Hunter beste Tastatur-und-Maus-Einstellungen",
+    description: "Maus-Einstellungen für ein Third-Person-Action-RPG priorisieren Kamerapräzision vor roher Geschwindigkeit — eine niedrigere DPI mit höherem Ingame-Sensitivitäts-Multiplikator liefert oft stabileres Tracking als eine sehr hohe DPI. Halte Ausweichen, Blocken und Waffenwechsel auf leicht erreichbaren Tasten, da du sie unter Druck brauchst.",
+    eyebrow: 'Guide', h1: "Beste Tastatur-und-Maus-Einstellungen",
+    lead: "Maus-Einstellungen für ein Third-Person-Action-RPG priorisieren Kamerapräzision vor roher Geschwindigkeit — eine niedrigere DPI mit höherem Ingame-Sensitivitäts-Multiplikator liefert oft stabileres Tracking als eine sehr hohe DPI. Halte Ausweichen, Blocken und Waffenwechsel auf leicht erreichbaren Tasten, da du sie unter Druck brauchst.",
+    sections: [
+      { heading: "Präzision vor Geschwindigkeit", paragraphs: ["Niedrigere DPI mit höherem Ingame-Multiplikator liefert stabileres Tracking."] },
+      { heading: "Wichtige Tastenbelegung", paragraphs: ["Ausweichen, Blocken und Waffenwechsel sollten leicht erreichbar sein."] },
+    ], related: [],
+  },
+  {
+    slug: 'ultrawide-support-guide', title: "Mistfall Hunter Ultrawide-Unterstützung",
+    description: "Ultrawide-Unterstützung wurde für Mistfall Hunter bisher nicht bestätigt. Prüfe direkt zum Launch das Anzeigeeinstellungen-Menü, statt Unterstützung in die eine oder andere Richtung anzunehmen.",
+    eyebrow: 'Guide', h1: "Ultrawide-Unterstützung",
+    lead: "Ultrawide-Unterstützung wurde für Mistfall Hunter bisher nicht bestätigt. Prüfe direkt zum Launch das Anzeigeeinstellungen-Menü, statt Unterstützung in die eine oder andere Richtung anzunehmen.",
+    sections: [
+      { heading: "Noch nicht bestätigt", paragraphs: ["Ultrawide-Unterstützung ist bisher nicht offiziell bestätigt."] },
+      { heading: "Was zu tun ist", paragraphs: ["Prüfe das Anzeigeeinstellungen-Menü direkt zum Launch."] },
+    ], related: [],
+  },
+  {
+    slug: 'cloud-gaming-guide', title: "Mistfall Hunter Cloud-Gaming-Guide",
+    description: "Wenn Mistfall Hunter auf Xbox Cloud Gaming verfügbar ist, erwarte die üblichen Cloud-Kompromisse: zusätzliche Eingabelatenz im Vergleich zu lokalem Spielen, und eine stabile kabelgebundene oder starke WLAN-Verbindung ist für die PvP-Reaktionszeit wichtiger als bei einem langsameren Spiel. Prüfe die Verfügbarkeit in der Xbox-App, bevor du Cloud-Zugriff annimmst.",
+    eyebrow: 'Guide', h1: "Cloud-Gaming-Guide",
+    lead: "Wenn Mistfall Hunter auf Xbox Cloud Gaming verfügbar ist, erwarte die üblichen Cloud-Kompromisse: zusätzliche Eingabelatenz im Vergleich zu lokalem Spielen, und eine stabile kabelgebundene oder starke WLAN-Verbindung ist für die PvP-Reaktionszeit wichtiger als bei einem langsameren Spiel. Prüfe die Verfügbarkeit in der Xbox-App, bevor du Cloud-Zugriff annimmst.",
+    sections: [
+      { heading: "Latenz-Kompromisse", paragraphs: ["Erwarte zusätzliche Eingabelatenz im Vergleich zu lokalem Spielen."] },
+      { heading: "Verbindung zählt", paragraphs: ["Eine stabile Verbindung ist für die PvP-Reaktionszeit besonders wichtig."] },
+    ], related: [],
+  },
+  {
+    slug: 'family-sharing-guide', title: "Mistfall Hunter Family-Sharing-Guide",
+    description: "Family-Sharing-Regeln variieren je nach Plattform und schließen oft Always-Online- oder stark multiplayer-fokussierte Spiele aus. Nimm nicht an, dass Mistfall Hunter geteiltes Bibliotheksspiel für Online-Sitzungen unterstützt, bis der Store dies ausdrücklich sagt.",
+    eyebrow: 'Guide', h1: "Family-Sharing-Guide",
+    lead: "Family-Sharing-Regeln variieren je nach Plattform und schließen oft Always-Online- oder stark multiplayer-fokussierte Spiele aus. Nimm nicht an, dass Mistfall Hunter geteiltes Bibliotheksspiel für Online-Sitzungen unterstützt, bis der Store dies ausdrücklich sagt.",
+    sections: [
+      { heading: "Plattformabhängig", paragraphs: ["Family-Sharing-Regeln unterscheiden sich je nach Plattform und Spieltyp."] },
+      { heading: "Nicht annehmen", paragraphs: ["Gehe nicht von Unterstützung aus, bis der Store dies ausdrücklich bestätigt."] },
+    ], related: [],
+  },
 ];
 
 const ja: LocalizedCorePage[] = [
@@ -3544,6 +3794,256 @@ const ja: LocalizedCorePage[] = [
     sections: [
       { heading: "レア度よりクラス適性", paragraphs: ["汎用的なレアアイテムより、クラスに関連するアップグレードと成長資源を優先しましょう。"] },
       { heading: "注意点", paragraphs: ["経済が検証される前に万能リストを作るのは時期尚早です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'mound-omen-of-cthulhu-comparison', title: "Mistfall Hunter vs The Mound: Omen of Cthulhu 徹底比較",
+    description: "Mistfall HunterはThe MoundやLovecraftのクトゥルフ神話とは関係ありません——Gyldenmistを中心とした独自の堕神ロアを持つ、Weavereachというオリジナルのダークファンタジー設定です。陰鬱でモンスターの多いホラー隣接の世界観に惹かれるなら、共通の世界観がなくても近い雰囲気を楽しめます。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunter vs The Mound: Omen of Cthulhu",
+    lead: "Mistfall HunterはThe MoundやLovecraftのクトゥルフ神話とは関係ありません——Gyldenmistを中心とした独自の堕神ロアを持つ、Weavereachというオリジナルのダークファンタジー設定です。陰鬱でモンスターの多いホラー隣接の世界観に惹かれるなら、共通の世界観がなくても近い雰囲気を楽しめます。",
+    sections: [
+      { heading: "共通の世界観ではない", paragraphs: ["両作品はダークな雰囲気を共有しますが、世界観やつながりはありません。"] },
+      { heading: "それでも比較される理由", paragraphs: ["陰鬱でモンスターの多い世界観のファンには近い雰囲気があります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'lovecraftian-dark-fantasy-games', title: "Mistfall Hunterとラヴクラフト系ダークファンタジー作品",
+    description: "Mistfall Hunterはクトゥルフ神話ゲームではありませんが、堕神・世界を飲み込む霧・怪物的な敵といったダークファンタジーの雰囲気は、ラヴクラフト系ホラー設定を好む層にも通じるものがあります。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunterとラヴクラフト系ダークファンタジー",
+    lead: "Mistfall Hunterはクトゥルフ神話ゲームではありませんが、堕神・世界を飲み込む霧・怪物的な敵といったダークファンタジーの雰囲気は、ラヴクラフト系ホラー設定を好む層にも通じるものがあります。",
+    sections: [
+      { heading: "似た雰囲気、異なるロア", paragraphs: ["堕神と怪物的な敵が、ラヴクラフト系設定に似た雰囲気を作り出します。"] },
+      { heading: "どんな人に向いているか", paragraphs: ["クトゥルフ神話でなくても、陰鬱で雰囲気のある世界を好むプレイヤー向けです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'cthulhu-fans-mistfall-hunter-guide', title: "Mistfall Hunter：クトゥルフ神話ファン向けガイド",
+    description: "コズミックホラーから来たなら、Mistfall Hunterでクトゥルフそのものは得られませんが、GyldenmistとWeavereachという独自の神話の中で、恐怖に満ちた雰囲気とモンスターの圧力を味わえます。",
+    eyebrow: 'ガイド', h1: "Mistfall Hunterをクトゥルフ神話ファンへ",
+    lead: "コズミックホラーから来たなら、Mistfall Hunterでクトゥルフそのものは得られませんが、GyldenmistとWeavereachという独自の神話の中で、恐怖に満ちた雰囲気とモンスターの圧力を味わえます。",
+    sections: [
+      { heading: "クトゥルフではなく独自の神話", paragraphs: ["GyldenmistとWeavereachが、独自の恐怖の雰囲気を提供します。"] },
+      { heading: "期待できること", paragraphs: ["恐怖に満ちた雰囲気とモンスターの圧力はありますが、クトゥルフ神話そのものではありません。"] },
+    ], related: [],
+  },
+  {
+    slug: 'dark-fantasy-extraction-games-2026', title: "2026年ベストダークファンタジー脱出ゲーム：Mistfall Hunter",
+    description: "Mistfall Hunterは他のPvPvEルート・脱出型ゲームと並ぶダークファンタジー脱出ニッチに位置し、ライセンスものやラヴクラフト系設定ではなく、Souls的な戦闘テンポとオリジナルのロアで差別化されています。",
+    eyebrow: 'ガイド', h1: "2026年のダークファンタジー脱出ゲーム",
+    lead: "Mistfall Hunterは他のPvPvEルート・脱出型ゲームと並ぶダークファンタジー脱出ニッチに位置し、ライセンスものやラヴクラフト系設定ではなく、Souls的な戦闘テンポとオリジナルのロアで差別化されています。",
+    sections: [
+      { heading: "独自のニッチ", paragraphs: ["Souls的な戦闘テンポとオリジナルロアがライセンス設定と一線を画します。"] },
+      { heading: "ジャンルでの位置づけ", paragraphs: ["他のPvPvEルート・脱出型ゲームと並ぶダークファンタジー脱出ニッチに位置します。"] },
+    ], related: [],
+  },
+  {
+    slug: 'horror-fans-guide-to-mistfall-hunter', title: "Mistfall Hunter：ホラーファン向けガイド",
+    description: "ホラーファンは、ジャンプスケア型のホラーゲームではなく、雰囲気とモンスター主導の恐怖を期待すべきです——Mistfall Hunterの緊張感は、暗い世界観と同じくらい脱出のリスクとPvPの危険から生まれます。",
+    eyebrow: 'ガイド', h1: "ホラーファン向けMistfall Hunter",
+    lead: "ホラーファンは、ジャンプスケア型のホラーゲームではなく、雰囲気とモンスター主導の恐怖を期待すべきです——Mistfall Hunterの緊張感は、暗い世界観と同じくらい脱出のリスクとPvPの危険から生まれます。",
+    sections: [
+      { heading: "ジャンプスケアより雰囲気", paragraphs: ["緊張感は脱出のリスクとPvPの危険から生まれ、驚かし演出からではありません。"] },
+      { heading: "ホラーファンが得られるもの", paragraphs: ["典型的なジャンプスケアホラーではなく、モンスター主導の恐怖と暗い雰囲気です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'dark-and-darker-vs-mistfall-hunter', title: "Dark and Darker vs Mistfall Hunter 徹底比較",
+    description: "Dark and Darkerは一人称視点のファンタジー脱出ゲームでパーマデス的な戦利品喪失があります。Mistfall Hunterは三人称視点で、6クラスと独自のGyldenmist設定でモンスターと敵対ハンター双方とのPvPvE戦闘があります。両者は核心的な脱出の緊張感を共有しますが、カメラ、クラス構造、世界観は異なります。",
+    eyebrow: 'ガイド', h1: "Dark and Darker vs Mistfall Hunter",
+    lead: "Dark and Darkerは一人称視点のファンタジー脱出ゲームでパーマデス的な戦利品喪失があります。Mistfall Hunterは三人称視点で、6クラスと独自のGyldenmist設定でモンスターと敵対ハンター双方とのPvPvE戦闘があります。両者は核心的な脱出の緊張感を共有しますが、カメラ、クラス構造、世界観は異なります。",
+    sections: [
+      { heading: "共通点", paragraphs: ["両者とも、戦利品を失うか持ち帰るかという核心的な脱出の緊張感を共有しています。"] },
+      { heading: "相違点", paragraphs: ["カメラ視点、クラス構造、世界設定は大きく異なります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'dungeonborne-vs-mistfall-hunter', title: "Dungeonborne vs Mistfall Hunter 徹底比較",
+    description: "Dungeonborneは射撃と近接を組み合わせた三人称視点のファンタジー脱出ゲームです。Mistfall Hunterは6クラスと意図的でSouls的な戦闘テンポを持つ、三人称視点の近接＋魔法の脱出型ARPGです。両者は脱出か喪失かという構造を共有しますが、戦闘感覚とクラスデザインは異なります。",
+    eyebrow: 'ガイド', h1: "Dungeonborne vs Mistfall Hunter",
+    lead: "Dungeonborneは射撃と近接を組み合わせた三人称視点のファンタジー脱出ゲームです。Mistfall Hunterは6クラスと意図的でSouls的な戦闘テンポを持つ、三人称視点の近接＋魔法の脱出型ARPGです。両者は脱出か喪失かという構造を共有しますが、戦闘感覚とクラスデザインは異なります。",
+    sections: [
+      { heading: "共通点", paragraphs: ["両者とも、三人称視点の脱出型ゲームとして脱出か喪失かの構造を共有しています。"] },
+      { heading: "相違点", paragraphs: ["射撃＋近接のミックスと、純粋な近接＋魔法とでは戦闘感覚とクラスデザインが異なります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'elden-ring-nightreign-vs-mistfall-hunter', title: "Elden Ring Nightreign vs Mistfall Hunter 徹底比較",
+    description: "Elden Ring Nightreignは、タイムループの中で最終ボスまで生き残ることを中心としたラン制のローグライトです。Mistfall HunterはPvPvE脱出ゲームで、最終ボスに挑むタイミングだけでなく、いつ離脱するかも自分で決めます。両者ともSouls的な戦闘を使いますが、コアループと賭けの性質は異なります。",
+    eyebrow: 'ガイド', h1: "Elden Ring Nightreign vs Mistfall Hunter",
+    lead: "Elden Ring Nightreignは、タイムループの中で最終ボスまで生き残ることを中心としたラン制のローグライトです。Mistfall HunterはPvPvE脱出ゲームで、最終ボスに挑むタイミングだけでなく、いつ離脱するかも自分で決めます。両者ともSouls的な戦闘を使いますが、コアループと賭けの性質は異なります。",
+    sections: [
+      { heading: "共通するSouls的戦闘", paragraphs: ["両者ともSouls的な戦闘システムを基盤としています。"] },
+      { heading: "異なるコアループ", paragraphs: ["Nightreignはタイムループ内の最終ボスが中心、Mistfall Hunterは自分の離脱判断が中心です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'escape-from-tarkov-vs-mistfall-hunter', title: "Escape from Tarkov vs Mistfall Hunter 徹底比較",
+    description: "Escape from Tarkovは銃器とリアルな弾道を軸にしたタクティカルシューター脱出ゲームです。Mistfall Hunterは6クラスを持つファンタジー近接＋魔法の脱出型ARPGです。脱出の緊張感は似ていますが、戦闘システム、ジャンル、世界観は異なります。",
+    eyebrow: 'ガイド', h1: "Escape from Tarkov vs Mistfall Hunter",
+    lead: "Escape from Tarkovは銃器とリアルな弾道を軸にしたタクティカルシューター脱出ゲームです。Mistfall Hunterは6クラスを持つファンタジー近接＋魔法の脱出型ARPGです。脱出の緊張感は似ていますが、戦闘システム、ジャンル、世界観は異なります。",
+    sections: [
+      { heading: "共通する脱出の緊張感", paragraphs: ["両者とも、戦利品を持ち帰るか全て失うかという核心的な緊張感を共有します。"] },
+      { heading: "異なる戦闘システム", paragraphs: ["銃器の弾道と近接＋魔法戦闘は根本的に異なります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'hunt-showdown-vs-mistfall-hunter', title: "Hunt: Showdown vs Mistfall Hunter 徹底比較",
+    description: "Hunt: Showdownは音が鍵となる緊張感と、1マッチにつき1つのボス目標を持つPvPvE賞金稼ぎシューターです。Mistfall Hunterは6クラス、複数ゾーン、Mist Lordボス戦を持つファンタジー近接＋魔法の脱出型ARPGです。両者とも慎重な音の管理とルート計画が報われます。",
+    eyebrow: 'ガイド', h1: "Hunt: Showdown vs Mistfall Hunter",
+    lead: "Hunt: Showdownは音が鍵となる緊張感と、1マッチにつき1つのボス目標を持つPvPvE賞金稼ぎシューターです。Mistfall Hunterは6クラス、複数ゾーン、Mist Lordボス戦を持つファンタジー近接＋魔法の脱出型ARPGです。両者とも慎重な音の管理とルート計画が報われます。",
+    sections: [
+      { heading: "どちらも音の管理が重要", paragraphs: ["慎重な音の管理とルート計画が両ゲームで報われます。"] },
+      { heading: "異なる構造", paragraphs: ["1マッチ1ボス目標に対し、複数ゾーンで異なるMist Lordボス戦があります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'dark-souls-fans-guide', title: "Mistfall Hunter：Dark Soulsファン向けガイド",
+    description: "Dark Soulsから来たなら、おなじみのスタミナ管理、意図的な戦闘、ミスへの厳しい罰を期待してください——ただしMistfall HunterはPvPvE脱出の賭けを加えており、負けた戦闘は最後のチェックポイントに戻るだけでなく、持ち込んだものすべてを失うことを意味します。",
+    eyebrow: 'ガイド', h1: "Dark SoulsファンへのMistfall Hunter",
+    lead: "Dark Soulsから来たなら、おなじみのスタミナ管理、意図的な戦闘、ミスへの厳しい罰を期待してください——ただしMistfall HunterはPvPvE脱出の賭けを加えており、負けた戦闘は最後のチェックポイントに戻るだけでなく、持ち込んだものすべてを失うことを意味します。",
+    sections: [
+      { heading: "おなじみの基本", paragraphs: ["スタミナ管理、意図的な戦闘、ミスへの罰は馴染み深く感じられます。"] },
+      { heading: "大きな違い", paragraphs: ["負けた戦闘は単なる戻り道ではなく、持ち込んだものすべてを失うことを意味します。"] },
+    ], related: [],
+  },
+  {
+    slug: 'extraction-shooter-players-guide', title: "Mistfall Hunter：脱出シューター経験者向けガイド",
+    description: "脱出シューターから来ると、最大の適応は戦闘です：Mistfall Hunterは銃器の代わりに近接と魔法を使い、カバーと弾薬管理の代わりにスタミナベースのブロックと回避があります。脱出のロジック——戦利品、リスク、いつ離脱するか——はそのまま活きます。",
+    eyebrow: 'ガイド', h1: "脱出シューター経験者へのMistfall Hunter",
+    lead: "脱出シューターから来ると、最大の適応は戦闘です：Mistfall Hunterは銃器の代わりに近接と魔法を使い、カバーと弾薬管理の代わりにスタミナベースのブロックと回避があります。脱出のロジック——戦利品、リスク、いつ離脱するか——はそのまま活きます。",
+    sections: [
+      { heading: "そのまま活きること", paragraphs: ["戦利品、リスク、いつ離脱するかという脱出のロジックは変わりません。"] },
+      { heading: "変わること", paragraphs: ["銃器の代わりに近接と魔法、弾薬とカバーの代わりにスタミナが中心になります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'soulslike-extraction-guide', title: "Mistfall Hunter Souls的脱出ガイド",
+    description: "意図的でSouls的な戦闘は、脱出の計算式を変えます：すべての戦闘が実際の時間と資源を消費するため、ルート計画は戦闘技術と同じくらい重要です。不要な戦闘を避ける安全なルートは、すべての戦闘に勝つが脱出前に資源を使い果たす攻撃的なルートに勝ることが多いです。",
+    eyebrow: 'ガイド', h1: "Souls的脱出ガイド",
+    lead: "意図的でSouls的な戦闘は、脱出の計算式を変えます：すべての戦闘が実際の時間と資源を消費するため、ルート計画は戦闘技術と同じくらい重要です。不要な戦闘を避ける安全なルートは、すべての戦闘に勝つが脱出前に資源を使い果たす攻撃的なルートに勝ることが多いです。",
+    sections: [
+      { heading: "ルート計画も同じくらい重要", paragraphs: ["すべての戦闘が時間と資源を消費するため、ルート計画は戦闘技術と同じくらい重要です。"] },
+      { heading: "安全は攻撃性に勝る", paragraphs: ["不要な戦闘を避ける安全なルートが、資源を消耗する攻撃的なルートに勝ることが多いです。"] },
+    ], related: [],
+  },
+  {
+    slug: 'is-mistfall-hunter-like-dark-souls', title: "Mistfall HunterはDark Soulsに似ていますか？",
+    description: "ベータとデモの報道では、戦闘は意図的でSouls的だと描写されています——スタミナ管理、間合い、ミスへの罰は共通の特徴です。最大の違いは構造です：Mistfall HunterはPvPvE脱出ゲームであり、直線的な一人用アクションRPGではないため、悪い戦闘はデスペナルティだけでなく、ラン全体の戦利品を失うことにつながります。",
+    eyebrow: 'ガイド', h1: "Mistfall HunterはDark Soulsに似ていますか？",
+    lead: "ベータとデモの報道では、戦闘は意図的でSouls的だと描写されています——スタミナ管理、間合い、ミスへの罰は共通の特徴です。最大の違いは構造です：Mistfall HunterはPvPvE脱出ゲームであり、直線的な一人用アクションRPGではないため、悪い戦闘はデスペナルティだけでなく、ラン全体の戦利品を失うことにつながります。",
+    sections: [
+      { heading: "似た戦闘", paragraphs: ["スタミナ管理、間合い、ミスへの罰は共通の特徴です。"] },
+      { heading: "異なる構造", paragraphs: ["悪い戦闘は単純なデスペナルティではなく、ラン全体の戦利品を失うことにつながります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'is-mistfall-hunter-like-dark-and-darker', title: "Mistfall HunterはDark and Darkerに似ていますか？",
+    description: "両者とも本物の戦利品喪失の賭けを持つファンタジー脱出ゲームですが、Mistfall Hunterは6つの異なるクラスと独自の世界（WeavereachとGyldenmist）を持つ三人称視点で、Dark and Darkerは独自のクラス・スキルシステムを持つ一人称視点です。脱出の緊張感が共通の魅力です。",
+    eyebrow: 'ガイド', h1: "Mistfall HunterはDark and Darkerに似ていますか？",
+    lead: "両者とも本物の戦利品喪失の賭けを持つファンタジー脱出ゲームですが、Mistfall Hunterは6つの異なるクラスと独自の世界（WeavereachとGyldenmist）を持つ三人称視点で、Dark and Darkerは独自のクラス・スキルシステムを持つ一人称視点です。脱出の緊張感が共通の魅力です。",
+    sections: [
+      { heading: "共通の魅力", paragraphs: ["本物の戦利品喪失の賭けを伴う脱出の緊張感が、両ゲームの核心です。"] },
+      { heading: "異なる視点", paragraphs: ["6クラスの三人称視点と、独自のスキルシステムを持つ一人称視点という違いがあります。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-graphics-settings', title: "Mistfall Hunter 最適グラフィック設定",
+    description: "詳細なグラフィック設定は発売前には公開されていませんでした。利用可能になったら、映画的なエフェクトよりも安定したフレームペーシングと視認性を優先しましょう——PvPvEでは、敵や出口をはっきり見ることが影の品質より重要です。",
+    eyebrow: 'ガイド', h1: "最適グラフィック設定",
+    lead: "詳細なグラフィック設定は発売前には公開されていませんでした。利用可能になったら、映画的なエフェクトよりも安定したフレームペーシングと視認性を優先しましょう——PvPvEでは、敵や出口をはっきり見ることが影の品質より重要です。",
+    sections: [
+      { heading: "見た目より安定性", paragraphs: ["映画的なエフェクトより、安定したフレームペーシングと視認性を優先しましょう。"] },
+      { heading: "注意点", paragraphs: ["敵や出口を明確に見ることは、影の品質より重要です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-visibility-settings', title: "Mistfall Hunter 最適視認性設定",
+    description: "視認性の最も安全な出発点は、明るさを標準より少し上げ、モーションブラーと強い被写界深度をオフにすることです——どちらも遠距離での敵や出口の発見を難しくします。正確なメニュー名は発売時に確認されます。",
+    eyebrow: 'ガイド', h1: "最適視認性設定",
+    lead: "視認性の最も安全な出発点は、明るさを標準より少し上げ、モーションブラーと強い被写界深度をオフにすることです——どちらも遠距離での敵や出口の発見を難しくします。正確なメニュー名は発売時に確認されます。",
+    sections: [
+      { heading: "明るさとエフェクト", paragraphs: ["明るさを少し上げ、モーションブラーと強い被写界深度をオフにしましょう。"] },
+      { heading: "注意点", paragraphs: ["映画的な設定のためにフレームペーシングを犠牲にしないようにしましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'stutter-fix-guide', title: "Mistfall Hunter カクつき修正ガイド",
+    description: "バグを疑う前に、まずサーバー状況を確認しましょう——ゾーンに入る瞬間や他プレイヤーの出現など特定の瞬間に紐づくカクつきは、多くの場合ローカルではなくネットワークが原因です。本当にローカルのカクつきの場合は、ゲームファイルの検証、GPUドライバーの更新、DiscordやGeForce Experienceなどのオーバーレイを一つずつ無効化してください。",
+    eyebrow: 'ガイド', h1: "カクつき修正ガイド",
+    lead: "バグを疑う前に、まずサーバー状況を確認しましょう——ゾーンに入る瞬間や他プレイヤーの出現など特定の瞬間に紐づくカクつきは、多くの場合ローカルではなくネットワークが原因です。本当にローカルのカクつきの場合は、ゲームファイルの検証、GPUドライバーの更新、DiscordやGeForce Experienceなどのオーバーレイを一つずつ無効化してください。",
+    sections: [
+      { heading: "サーバーかローカルか", paragraphs: ["ローカル設定を変更する前に、まずサーバー状況を確認しましょう。"] },
+      { heading: "ローカルでの対処法", paragraphs: ["ゲームファイルの検証、GPUドライバー更新、オーバーレイの個別無効化を試しましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'crash-fix-guide', title: "Mistfall Hunter クラッシュ修正ガイド",
+    description: "最も一般的な原因をカバーするため、まずゲームファイルの検証とGPUドライバーの更新から始めましょう。ボス戦や脱出など特定の場面でクラッシュする場合は、正確な瞬間を記録し、自分のシステムを疑う前に既知の問題トラッカーを確認してください。",
+    eyebrow: 'ガイド', h1: "クラッシュ修正ガイド",
+    lead: "最も一般的な原因をカバーするため、まずゲームファイルの検証とGPUドライバーの更新から始めましょう。ボス戦や脱出など特定の場面でクラッシュする場合は、正確な瞬間を記録し、自分のシステムを疑う前に既知の問題トラッカーを確認してください。",
+    sections: [
+      { heading: "最初にすべきこと", paragraphs: ["ゲームファイルの検証とGPUドライバーの更新が最も一般的な原因をカバーします。"] },
+      { heading: "注意点", paragraphs: ["クラッシュの正確な瞬間を記録し、既知の問題トラッカーを確認しましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'low-fps-fix-guide', title: "Mistfall Hunter 低FPS修正ガイド",
+    description: "三人称アクションゲームのフレームレート問題は、CPUよりもGPUがボトルネックであることがほとんどです。解像度スケーリングと影の品質を最初に下げましょう——PvPへの見た目の影響が最も少ない割に、パフォーマンスコストが最も高いです——戦闘を読むのに役立つエフェクトを無効化する前に。",
+    eyebrow: 'ガイド', h1: "低FPS修正ガイド",
+    lead: "三人称アクションゲームのフレームレート問題は、CPUよりもGPUがボトルネックであることがほとんどです。解像度スケーリングと影の品質を最初に下げましょう——PvPへの見た目の影響が最も少ない割に、パフォーマンスコストが最も高いです——戦闘を読むのに役立つエフェクトを無効化する前に。",
+    sections: [
+      { heading: "まずGPUを確認", paragraphs: ["フレームレート問題はGPUがボトルネックのことが多く、解像度スケーリングと影を最初に下げましょう。"] },
+      { heading: "注意点", paragraphs: ["戦闘を読むのに役立つエフェクトを最初に無効化しないようにしましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-controller-sensitivity', title: "Mistfall Hunter 最適コントローラー感度",
+    description: "唯一の正解はありません——近接クラスは近くの対象を追うために速いカメラ回転速度を求める傾向があり、遠距離クラスは精度のためにやや低めが良い場合があります。最初の数戦の前ではなく後で、標準値に近いところから調整しましょう。",
+    eyebrow: 'ガイド', h1: "最適コントローラー感度",
+    lead: "唯一の正解はありません——近接クラスは近くの対象を追うために速いカメラ回転速度を求める傾向があり、遠距離クラスは精度のためにやや低めが良い場合があります。最初の数戦の前ではなく後で、標準値に近いところから調整しましょう。",
+    sections: [
+      { heading: "クラスによって異なる", paragraphs: ["近接は速いカメラ回転、遠距離は精度のためにやや低めが向いています。"] },
+      { heading: "調整方法", paragraphs: ["標準値に近いところから始め、最初の数戦の後に調整しましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'best-keyboard-mouse-settings', title: "Mistfall Hunter 最適キーボード・マウス設定",
+    description: "三人称アクションRPGのマウス設定は、生の速度よりカメラの精度を優先します——低めのDPIとゲーム内感度倍率を高くする方が、非常に高いDPIより安定した追従性を得られることが多いです。回避、ブロック、武器切り替えは、圧力下で必要になるため、押しやすいキーに配置しましょう。",
+    eyebrow: 'ガイド', h1: "最適キーボード・マウス設定",
+    lead: "三人称アクションRPGのマウス設定は、生の速度よりカメラの精度を優先します——低めのDPIとゲーム内感度倍率を高くする方が、非常に高いDPIより安定した追従性を得られることが多いです。回避、ブロック、武器切り替えは、圧力下で必要になるため、押しやすいキーに配置しましょう。",
+    sections: [
+      { heading: "速度より精度", paragraphs: ["低めのDPIとゲーム内感度倍率を高くする方が安定した追従性を得られます。"] },
+      { heading: "重要なキー配置", paragraphs: ["回避、ブロック、武器切り替えは押しやすい位置に配置しましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'ultrawide-support-guide', title: "Mistfall Hunter ウルトラワイド対応",
+    description: "Mistfall Hunterのウルトラワイド対応は、これまでのところ確認されていません。対応の有無を決めつける前に、発売時に直接ディスプレイ設定メニューを確認してください。",
+    eyebrow: 'ガイド', h1: "ウルトラワイド対応",
+    lead: "Mistfall Hunterのウルトラワイド対応は、これまでのところ確認されていません。対応の有無を決めつける前に、発売時に直接ディスプレイ設定メニューを確認してください。",
+    sections: [
+      { heading: "まだ未確認", paragraphs: ["ウルトラワイド対応は公式にはまだ確認されていません。"] },
+      { heading: "すべきこと", paragraphs: ["発売時に直接ディスプレイ設定メニューを確認しましょう。"] },
+    ], related: [],
+  },
+  {
+    slug: 'cloud-gaming-guide', title: "Mistfall Hunter クラウドゲーミングガイド",
+    description: "Mistfall HunterがXbox Cloud Gamingで利用可能な場合、通常のクラウドのトレードオフを想定してください：ローカルプレイに比べて入力遅延が増え、安定した有線または強力なWi-Fi接続が、ゆったりしたゲームよりPvPの反応速度にとって重要になります。クラウドアクセスを前提とする前に、Xboxアプリで対応状況を確認してください。",
+    eyebrow: 'ガイド', h1: "クラウドゲーミングガイド",
+    lead: "Mistfall HunterがXbox Cloud Gamingで利用可能な場合、通常のクラウドのトレードオフを想定してください：ローカルプレイに比べて入力遅延が増え、安定した有線または強力なWi-Fi接続が、ゆったりしたゲームよりPvPの反応速度にとって重要になります。クラウドアクセスを前提とする前に、Xboxアプリで対応状況を確認してください。",
+    sections: [
+      { heading: "遅延のトレードオフ", paragraphs: ["ローカルプレイに比べて入力遅延が増えることを想定しましょう。"] },
+      { heading: "接続が重要", paragraphs: ["安定した接続はPvPの反応速度にとって特に重要です。"] },
+    ], related: [],
+  },
+  {
+    slug: 'family-sharing-guide', title: "Mistfall Hunter ファミリー共有ガイド",
+    description: "ファミリー共有のルールはプラットフォームによって異なり、常時オンラインや強くマルチプレイ重視のゲームは対象外になることが多いです。ストアが明示的に述べるまで、Mistfall Hunterがオンラインセッションの共有ライブラリプレイに対応していると決めつけないでください。",
+    eyebrow: 'ガイド', h1: "ファミリー共有ガイド",
+    lead: "ファミリー共有のルールはプラットフォームによって異なり、常時オンラインや強くマルチプレイ重視のゲームは対象外になることが多いです。ストアが明示的に述べるまで、Mistfall Hunterがオンラインセッションの共有ライブラリプレイに対応していると決めつけないでください。",
+    sections: [
+      { heading: "プラットフォーム次第", paragraphs: ["ファミリー共有のルールはプラットフォームとゲームの種類によって異なります。"] },
+      { heading: "決めつけない", paragraphs: ["ストアが明示的に確認するまで対応を前提にしないようにしましょう。"] },
     ], related: [],
   },
 ];
