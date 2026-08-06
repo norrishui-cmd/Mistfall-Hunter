@@ -4,6 +4,8 @@ import { gameData, gameDataClusters } from '../data/gameData';
 import { gameDataLocales } from '../data/gameDataLocales';
 import { getSecondEditionCopy, secondEditionGameDataSlugs } from '../data/gameDataSecondLocales';
 import RelatedFaqModule from './RelatedFaqModule.astro';
+import TabNewsModule from './TabNewsModule.astro';
+import TabFaqModule from './TabFaqModule.astro';
 import type { Lang } from '../i18n';
 interface Props { lang:Lang }
 const { lang } = Astro.props as Props; const zh=lang==='zh'; const prefix=lang==='en'?'':`/${lang}`;
@@ -36,6 +38,8 @@ const breadcrumbSchema={'@context':'https://schema.org','@type':'BreadcrumbList'
       <div class="data-grid">{visibleData.filter(i=>i.cluster===id).map(item=>{const c=localCopy(item);return <a class="data-card" href={`${prefix}/game-data/${item.slug}`}><time datetime={item.updated}>{item.updated}</time><h3>{c.title}</h3><p>{c.description}</p><span>{meta.open}</span></a>})}</div>
     </section>)}
     {(lang==='en'||lang==='zh'||lang==='de'||lang==='ja') && <RelatedFaqModule cluster="gameData" lang={lang} />}
+    {(lang==='en'||lang==='zh') && <TabNewsModule cluster="gameData" lang={lang} />}
+    {(lang==='en'||lang==='zh') && <TabFaqModule cluster="gameData" lang={lang} />}
   </div></section>
 </BaseLayout>
 <style>.data-cluster{margin-top:4rem;scroll-margin-top:7rem}.cluster-head{display:flex;justify-content:space-between;gap:1rem;align-items:end;border-bottom:1px solid var(--line);padding-bottom:1rem}.cluster-head h2{font-size:2.3rem;margin:.3rem 0}.cluster-head p{color:var(--ash);margin:0}.cluster-head>strong{font:2.5rem var(--display);color:var(--gylden)}.data-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1rem}.data-card{display:flex;flex-direction:column;padding:1.1rem;background:var(--stone);border:1px solid var(--line);text-decoration:none}.data-card time{font: .7rem var(--mono);color:var(--ash)}.data-card h3{font-size:1.2rem;color:var(--bone);margin:.6rem 0}.data-card p{color:var(--ash);font-size:.9rem;line-height:1.55}.data-card>span{margin-top:auto}@media(max-width:800px){.data-grid{grid-template-columns:1fr}.cluster-head{align-items:start}}</style>

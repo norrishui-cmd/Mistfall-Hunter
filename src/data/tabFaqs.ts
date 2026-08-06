@@ -12,7 +12,7 @@
 // EN only for now (2026-07-23) — zh is a deliberate follow-up, not an
 // oversight; see the memory/conversation this was requested in.
 
-export type TabFaqCluster = 'release' | 'guides' | 'builds' | 'faq' | 'about' | 'maps' | 'bosses';
+export type TabFaqCluster = 'release' | 'guides' | 'builds' | 'faq' | 'about' | 'maps' | 'bosses' | 'gameData';
 
 export type TabFaqItem = { q: string; a: string };
 
@@ -383,6 +383,60 @@ export const tabFaqs: Record<TabFaqCluster, TabFaqItem[]> = {
   ],
 };
 
+const gameDataFaqs: TabFaqItem[] = [
+    { q: 'How many classes does Mistfall Hunter have?', a: 'Six confirmed classes at launch: Mercenary, Sorcerer, Blackarrow, Shadowstrix, Seer, and Withered Knight.' },
+    { q: 'What is the Mercenary class?', a: 'A melee bruiser built around shield, hammer, and defensive counter windows.' },
+    { q: 'What is the Sorcerer class?', a: 'A ranged arcane class focused on burst spellcasting and area damage.' },
+    { q: 'What is the Blackarrow class?', a: 'A ranged precision class built around bow-based damage and positioning.' },
+    { q: 'What is the Shadowstrix class?', a: 'A stealth and burst class using daggers and short-range ambush tools.' },
+    { q: 'What is the Seer class?', a: 'The support class, focused on healing and crowd control for a squad.' },
+    { q: 'What is the Withered Knight class?', a: 'A heavy melee class built around parries and sustained aggression.' },
+    { q: 'Do classes have more than one weapon style?', a: 'Yes \u2014 each of the six classes has two weapon stances rather than one fixed kit.' },
+    { q: 'What did Withered Knight get at launch?', a: 'An all-new Polearm & Shield weapon stance, confirmed to ship on day one rather than a later patch.' },
+    { q: 'Which class was nerfed hardest for launch?', a: 'Seer\u2019s Mace Shapeshift, which was the dominant solo pick during the beta, received the heaviest nerf of any class change.' },
+    { q: 'Are there talent trees?', a: 'The build system is described as combining skills, talents, and affixes rather than a single traditional talent tree; exact structure needs launch-build verification.' },
+    { q: 'What are gem affixes?', a: 'Gear modifiers that push a build toward burst, survival, cooldown recovery, control, or support; exact live values still need testing.' },
+    { q: 'Is there a crafting system?', a: 'Crafting is expected to involve banking resources and following recipes; exact recipes and costs have not been published in detail.' },
+    { q: 'What is Gyldenblood?', a: 'A resource players harvest across zones, tied to the game\u2019s core story and progression \u2014 confirmed directly on the official Steam store page.' },
+    { q: 'Who is Dew?', a: 'The mysterious character, confirmed on the official store page, who revives the player as a Gyldhunter at the start of the story.' },
+    { q: 'What is the Web of Fate?', a: 'The overarching lore concept the story is built around \u2014 the player\u2019s goal is to help mend it after the gods have fallen.' },
+    { q: 'What is a Gyldhunter?', a: 'The term for the player character \u2014 someone revived by Dew to fight through the Gyldenmist and recover Gyldenblood.' },
+    { q: 'What is the Gyldenmist?', a: 'The corrupting mist that has consumed the world in Mistfall Hunter\u2019s setting, central to both the lore and the extraction danger.' },
+    { q: 'Who developed Mistfall Hunter?', a: 'Bellring Games, with Skystone Games as publisher.' },
+    { q: 'Is Bellring Games connected to other known developers?', a: 'Skystone Games, the publisher, was co-founded by David Brevik, a co-creator of the original Diablo.' },
+    { q: 'What is Season 1 called?', a: 'Season 1 is called Soul Hunt, and it ships with a free Battle Pass (named Slumbering Contract) from day one.' },
+    { q: 'How long do seasons last?', a: 'Bellring has stated seasons run roughly three to four months, with seasonal progression wipes between them.' },
+    { q: 'Is the Season 1 Battle Pass free?', a: 'Yes \u2014 Season 1 (Soul Hunt) ships with a completely free Battle Pass called Slumbering Contract, not a paid season pass.' },
+    { q: 'What are Fate Coins?', a: 'The premium in-game currency, used to purchase cosmetic items; the Deluxe Edition includes 2,500 Fate Coins.' },
+    { q: 'Is Mistfall Hunter pay-to-win?', a: 'Bellring states there are no pay-to-win mechanics and no paid stat boosts; the confirmed shop pattern so far is cosmetic-only.' },
+    { q: 'What did beta players get as rewards?', a: 'Special-event cosmetics from the June 2026 open beta carried over automatically to the same account at launch, confirmed working with no code needed.' },
+    { q: 'Did beta gameplay progress carry over to launch?', a: 'No \u2014 only special-event cosmetics carried over; regular gameplay progression from the beta was wiped.' },
+    { q: 'What is the Returner Woodling?', a: 'The creature tied to obtaining the Soul of Return, the key extraction objective in a run.' },
+    { q: 'What is the Soul of Return?', a: 'The item that opens or enables a way home during a run \u2014 the central extraction objective.' },
+    { q: 'What happens if you die during a run?', a: 'You lose everything you were carrying that run if you have not already extracted it.' },
+    { q: 'What is the main gameplay loop?', a: 'Drop in, fight AI enemies and other players, loot, and then extract via the Soul of Return before you die or run out of time.' },
+    { q: 'What does PvPvE mean in this context?', a: 'It means players fight both AI-controlled monsters and rival human players in the same shared space.' },
+    { q: 'Is combat souls-like?', a: 'Yes \u2014 beta and demo coverage consistently describes deliberate, Souls-like combat pacing with stamina management.' },
+    { q: 'Does combat use combos?', a: 'Combat is built around stamina, blocking, dodging, and class-specific tools rather than long fixed combo strings.' },
+    { q: 'Is there free aiming or lock-on?', a: 'The game uses aiming without a hard lock-on system, closer to third-person action games than traditional lock-on Soulslikes.' },
+    { q: 'Can you target weak points?', a: 'Not officially detailed in specifics; general combat relies on positioning and stamina rather than confirmed weak-point mechanics.' },
+    { q: 'Is the game first-person or third-person?', a: 'Third-person.' },
+    { q: 'Can you change fighting style mid-battle?', a: 'Yes \u2014 weapon swaps let you shift between a class\u2019s two stances mid-fight.' },
+    { q: 'Is defense useful in an extraction game?', a: 'Yes \u2014 blocking, dodging, and stamina management directly protect the loot you are trying to extract.' },
+    { q: 'What platforms is Mistfall Hunter on?', a: 'PC, Xbox Series X|S, and PlayStation 5.' },
+    { q: 'Is Mistfall Hunter on Xbox One?', a: 'No \u2014 it targets Xbox Series X|S, not the older Xbox One generation.' },
+    { q: 'Is Mistfall Hunter on Xbox Series X|S?', a: 'Yes, confirmed at launch.' },
+    { q: 'Is Mistfall Hunter on PS5?', a: 'Yes, confirmed at launch.' },
+    { q: 'Is Mistfall Hunter on Steam?', a: 'Yes, it is available on Steam for PC.' },
+    { q: 'Is Mistfall Hunter on Game Pass?', a: 'Yes \u2014 it is available on Xbox Game Pass from day one.' },
+    { q: 'Is there a native Mac version?', a: 'Not confirmed; check the current Steam listing for supported operating systems.' },
+    { q: 'Is Mistfall Hunter on Nintendo Switch?', a: 'No \u2014 confirmed platforms are PC, Xbox Series X|S, and PS5 only.' },
+    { q: 'Does it support Xbox Play Anywhere?', a: 'Not separately confirmed as of this writing; check the Xbox store listing directly.' },
+    { q: 'What languages does Mistfall Hunter support?', a: 'Steam lists 10 supported languages: English (full audio) plus Simplified Chinese, Traditional Chinese, Japanese, Korean, French, German, Russian, Spanish, and Brazilian Portuguese.' },
+    { q: 'What kind of game is Mistfall Hunter overall?', a: 'A third-person, dark fantasy PvPvE extraction ARPG blending Souls-like combat with high-stakes looting and extraction.' },
+];
+
 export function getTabFaqs(cluster: TabFaqCluster): TabFaqItem[] {
+  if (cluster === 'gameData') return gameDataFaqs;
   return tabFaqs[cluster];
 }
